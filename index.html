@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSW — World History Course Portal</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0a0f1a;
+      color: #e8e6e1;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+    header {
+      background: linear-gradient(135deg, #0f1729 0%, #1a2744 50%, #0f1729 100%);
+      border-bottom: 1px solid #1e293b;
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: #f8f6f2;
+      margin-bottom: 0.5rem;
+    }
+    header .subtitle {
+      font-size: 1rem;
+      color: #94a3b8;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+    .semesters {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 900px) {
+      .semesters { grid-template-columns: 1fr; }
+    }
+    .semester h2 {
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: #cbd5e1;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.06em;
+    }
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .day-card {
+      position: relative;
+      background: #111827;
+      border: 1px solid #1e293b;
+      border-radius: 6px;
+      padding: 1.25rem 1.5rem 1.25rem 1.25rem;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .day-card:not(.live) {
+      opacity: 0.55;
+      background: #0d1117;
+      border-color: #1a2332;
+    }
+    .day-card.live .lock { display: none; }
+    .day-card .lock {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+    .day-card .day-num {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-bottom: 0.35rem;
+    }
+    .day-card h3 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #f1f5f9;
+      margin-bottom: 0.5rem;
+      padding-right: 1.5rem;
+    }
+    .day-card .eq {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+    .day-card.live {
+      opacity: 1;
+      cursor: pointer;
+      border-color: #334155;
+    }
+    .day-card.live:hover {
+      border-color: #475569;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      transform: translateY(-2px);
+    }
+    .day-card.live h3 { color: #f8f6f2; }
+    .day-card.live .eq { color: #cbd5e1; }
+    .day-card .card-link {
+      position: absolute;
+      inset: 0;
+      border-radius: 6px;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .day-card.live .card-link {
+      pointer-events: auto;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #475569;
+      font-size: 0.85rem;
+      border-top: 1px solid #1e293b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="subtitle">SSW Course Portal</p>
+    <h1>World History</h1>
+  </header>
+  <main>
+    <div class="semesters">
+      <section class="semester">
+        <h2>Semester 1</h2>
+        <div class="cards">
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 1</span>
+          <h3>Roots of Western Political Thought</h3>
+          <p class="eq">How did ancient Greek, Roman, and Judeo-Christian ideas create the foundation for modern democracy?</p>
+          <a href="SSW_S1L01.html" class="card-link" aria-label="Open Roots of Western Political Thought"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 2</span>
+          <h3>Democratic Revolutions</h3>
+          <p class="eq">What ideas pushed people to overthrow their governments, and did those ideas survive?</p>
+          <a href="SSW_S1L02.html" class="card-link" aria-label="Open Democratic Revolutions"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 3</span>
+          <h3>The Industrial Revolution</h3>
+          <p class="eq">How did industrialization change where people lived, how they worked, and what they believed?</p>
+          <a href="SSW_S1L03.html" class="card-link" aria-label="Open The Industrial Revolution"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 4</span>
+          <h3>New Imperialism</h3>
+          <p class="eq">Why did powerful nations take over weaker ones, and what did colonized people do about it?</p>
+          <a href="SSW_S1L04.html" class="card-link" aria-label="Open New Imperialism"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 5</span>
+          <h3>Causes of World War I</h3>
+          <p class="eq">How did rivalry, nationalism, and one assassination pull the entire world into war?</p>
+          <a href="SSW_S1L05.html" class="card-link" aria-label="Open Causes of World War I"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 6</span>
+          <h3>Fighting WWI</h3>
+          <p class="eq">What was it actually like to fight in WWI, and why did so many people die?</p>
+          <a href="SSW_S1L06.html" class="card-link" aria-label="Open Fighting WWI"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 7</span>
+          <h3>The Human Cost of WWI</h3>
+          <p class="eq">Who paid the highest price in WWI, and how did the war change culture and society?</p>
+          <a href="SSW_S1L07.html" class="card-link" aria-label="Open The Human Cost of WWI"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 8</span>
+          <h3>Nationalism and the Long Road to WWI</h3>
+          <p class="eq">How did nationalism spread across Europe, get repressed, and finally explode into the 20th century?</p>
+          <a href="SSW_S1L08.html" class="card-link" aria-label="Open Nationalism and the Long Road to WWI"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 9</span>
+          <h3>Final Exam</h3>
+          <p class="eq">Comprehensive semester assessment.</p>
+          <a href="SSW_S1L09_Final.html" class="card-link" aria-label="Open Final Exam"></a>
+        </article>
+        </div>
+      </section>
+      <section class="semester">
+        <h2>Semester 2</h2>
+        <div class="cards">
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 1</span>
+          <h3>The Failed Peace After WWI</h3>
+          <p class="eq">How did the peace after WWI plant the seeds for the next war?</p>
+          <a href="SSW_S2L01.html" class="card-link" aria-label="Open The Failed Peace After WWI"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 2</span>
+          <h3>Rise of Totalitarian Governments</h3>
+          <p class="eq">How do democracies collapse, and what do dictators do once they have power?</p>
+          <a href="SSW_S2L02.html" class="card-link" aria-label="Open Rise of Totalitarian Governments"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 3</span>
+          <h3>Causes and Start of World War II</h3>
+          <p class="eq">How did the world let Hitler build an empire before anyone stopped him?</p>
+          <a href="SSW_S2L03.html" class="card-link" aria-label="Open Causes and Start of World War II"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 4</span>
+          <h3>Fighting WWII and the Holocaust</h3>
+          <p class="eq">How did WWII become the deadliest conflict in human history?</p>
+          <a href="SSW_S2L04.html" class="card-link" aria-label="Open Fighting WWII and the Holocaust"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 5</span>
+          <h3>Post-War World and Cold War Origins</h3>
+          <p class="eq">How did the end of WWII immediately create a new global conflict between former allies?</p>
+          <a href="SSW_S2L05.html" class="card-link" aria-label="Open Post-War World and Cold War Origins"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 6</span>
+          <h3>Cold War Conflicts Around the World</h3>
+          <p class="eq">How did the U.S.-Soviet rivalry drag other countries into real wars?</p>
+          <a href="SSW_S2L06.html" class="card-link" aria-label="Open Cold War Conflicts Around the World"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 7</span>
+          <h3>Decolonization and Nation-Building</h3>
+          <p class="eq">What challenges did newly independent nations face, and did independence deliver what people hoped for?</p>
+          <a href="SSW_S2L07.html" class="card-link" aria-label="Open Decolonization and Nation-Building"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 8</span>
+          <h3>Globalization and the Information Revolution</h3>
+          <p class="eq">How have technology and global economic integration changed what it means to live in the modern world?</p>
+          <a href="SSW_S2L08.html" class="card-link" aria-label="Open Globalization and the Information Revolution"></a>
+        </article>
+        <article class="day-card">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <span class="day-num">Day 9</span>
+          <h3>Final Exam</h3>
+          <p class="eq">Comprehensive semester assessment.</p>
+          <a href="SSW_S2L09_Final.html" class="card-link" aria-label="Open Final Exam"></a>
+        </article>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>World History &mdash; SSW</footer>
+</body>
+</html>
