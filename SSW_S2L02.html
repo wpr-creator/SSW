@@ -1,74 +1,855 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSW — S2 L02: Rise of Totalitarian Governments</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: #0f1729;
-      color: #f8f6f2;
-      font-family: Georgia, "Times New Roman", serif;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-    }
-    a.back {
-      position: fixed;
-      top: 1.25rem;
-      left: 1.25rem;
-      color: #94a3b8;
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.02em;
-    }
-    a.back:hover { color: #f8f6f2; }
-    .badge {
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #64748b;
-      margin-bottom: 1.25rem;
-    }
-    h1 {
-      font-size: clamp(1.75rem, 4vw, 2.75rem);
-      font-weight: 400;
-      line-height: 1.25;
-      max-width: 52rem;
-      margin-bottom: 1.5rem;
-    }
-    .eq {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      font-style: italic;
-      color: #cbd5e1;
-      max-width: 42rem;
-      line-height: 1.65;
-      margin-bottom: 3rem;
-    }
-    .eq.final-eq { font-style: normal; color: #94a3b8; }
-    .banner {
-      display: inline-block;
-      padding: 1.1rem 3.25rem;
-      border: 2px solid #334155;
-      background: linear-gradient(180deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 41, 0.95) 100%);
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #e2e8f0;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSW_S2L02 — Rise of Totalitarian Governments</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red:        #cc1a1a;
+    --red-dark:   #8a0f0f;
+    --red-mid:    #b52020;
+    --black:      #0e0e0e;
+    --black-soft: #1c1c1c;
+    --gray-dark:  #2a2a2a;
+    --gray-mid:   #3e3e3e;
+    --gray-steel: #5a5a5a;
+    --gray-light: #9a9a9a;
+    --off-white:  #e8e0d0;
+    --cream:      #f2ece0;
+    --paper:      #ddd8cc;
+    --gold:       #c8a020;
+    --gold-dim:   #8a6c10;
+    --vocab-red:  #b03030;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #111;
+    background-image:
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 80px,
+        rgba(255,255,255,0.015) 80px,
+        rgba(255,255,255,0.015) 81px
+      );
+    font-family: 'Lora', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.9;
+    color: var(--black);
+  }
+
+  .page-wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    background-color: var(--cream);
+    box-shadow: 0 0 80px rgba(0,0,0,0.9);
+  }
+
+  /* ─── HEADER ─── */
+  .site-header {
+    position: relative;
+    overflow: hidden;
+    padding: 64px 44px 54px;
+    background-color: var(--black);
+    text-align: center;
+  }
+
+  .header-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.28;
+    filter: grayscale(60%) contrast(110%);
+  }
+
+  .header-content { position: relative; z-index: 2; }
+
+  .course-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gray-light);
+    margin-bottom: 20px;
+  }
+
+  .page-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(46px, 7.5vw, 72px);
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--off-white);
+    text-shadow: 0 2px 20px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.6);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  .eq-banner {
+    display: inline-block;
+    background-color: var(--red);
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 14px 32px;
+    text-transform: uppercase;
+    max-width: 700px;
+    line-height: 1.5;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+
+  .eq-label {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    color: rgba(255,255,255,0.7);
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  /* ─── NAV ─── */
+  .section-nav {
+    background-color: var(--black-soft);
+    border-bottom: 3px solid var(--red);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+    padding: 0 10px;
+  }
+
+  .section-nav a {
+    display: inline-block;
+    color: var(--gray-light);
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 15px 18px;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .section-nav a:hover {
+    color: #fff;
+    border-bottom-color: var(--red);
+  }
+
+  /* ─── INTRO ─── */
+  .intro-section {
+    padding: 48px 44px 38px;
+    background-color: var(--gray-dark);
+    color: var(--off-white);
+    border-bottom: 4px solid var(--red-dark);
+  }
+
+  .intro-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gray-light);
+    margin-bottom: 14px;
+  }
+
+  .intro-section p {
+    color: var(--off-white);
+    font-size: 19px;
+    line-height: 1.95;
+    margin-bottom: 18px;
+  }
+
+  /* ─── CONTENT SECTIONS ─── */
+  .content-section {
+    padding: 52px 44px 40px;
+  }
+
+  .content-section:nth-child(odd) { background-color: var(--cream); }
+  .content-section:nth-child(even) { background-color: #e4ddd0; }
+
+  .section-number {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--red-mid);
+    margin-bottom: 8px;
+  }
+
+  .section-heading {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(28px, 4.5vw, 38px);
+    font-weight: 700;
+    color: var(--black-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    margin-bottom: 26px;
+    border-left: 6px solid var(--red);
+    padding-left: 18px;
+  }
+
+  p { margin-bottom: 20px; color: var(--gray-dark); }
+
+  .clearfix::after { content: ""; display: table; clear: both; }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 44px 0 34px;
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gray-steel), transparent);
+  }
+
+  .divider-star {
+    color: var(--red);
+    font-size: 18px;
+    line-height: 1;
+    font-family: 'Oswald', sans-serif;
+  }
+
+  /* ─── VOCAB ─── */
+  .vocab {
+    color: var(--vocab-red);
+    text-decoration: underline dotted var(--vocab-red);
+    cursor: help;
+    position: relative;
+  }
+
+  .vocab .tip {
+    display: none;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0e0e0e;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 1.5;
+    z-index: 100;
+    font-style: normal;
+    font-weight: 400;
+    pointer-events: none;
+    max-width: 280px;
+    white-space: normal;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    border-left: 3px solid var(--red);
+  }
+
+  .vocab:hover .tip,
+  .vocab.active .tip { display: block; }
+
+  .vocab-red { color: var(--vocab-red); }
+
+  /* ─── IMAGES ─── */
+  figure { margin: 30px 0; }
+
+  figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(15%) contrast(105%);
+    border: 1px solid var(--gray-steel);
+    box-shadow: 4px 6px 24px rgba(0,0,0,0.35);
+  }
+
+  figcaption {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--gray-steel);
+    margin-top: 8px;
+    padding: 0 4px;
+    line-height: 1.5;
+  }
+
+  .img-inset-right {
+    float: right;
+    width: 40%;
+    margin: 6px 0 20px 28px;
+  }
+
+  .img-inset-left {
+    float: left;
+    width: 40%;
+    margin: 6px 28px 20px 0;
+  }
+
+  .img-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 30px 0;
+  }
+
+  /* ─── PRIMARY SOURCE ─── */
+  .primary-source {
+    margin: 38px 0;
+    padding: 28px 32px 28px 36px;
+    background-color: #d8d0c0;
+    border-left: 7px solid var(--red);
+    box-shadow: 4px 4px 18px rgba(0,0,0,0.18);
+    position: relative;
+  }
+
+  .primary-source::before {
+    content: '\201C';
+    font-family: 'Oswald', sans-serif;
+    font-size: 100px;
+    color: var(--red);
+    opacity: 0.15;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    line-height: 1;
+  }
+
+  .ps-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--red-mid);
+    margin-bottom: 12px;
+  }
+
+  .ps-quote {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--black-soft);
+    margin-bottom: 16px;
+    padding-left: 8px;
+  }
+
+  .ps-attribution {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--gray-steel);
+    margin-bottom: 12px;
+  }
+
+  .ps-narrator {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--gray-mid);
+    letter-spacing: 0.02em;
+    border-top: 1px solid var(--gray-steel);
+    padding-top: 12px;
+    margin-bottom: 20px;
+  }
+
+  .ps-questions { list-style: none; padding: 0; }
+
+  .ps-questions li {
+    padding: 10px 0;
+    border-top: 1px solid #bbb4a4;
+    font-size: 16px;
+    color: var(--black-soft);
+    font-weight: 600;
+    line-height: 1.6;
+  }
+
+  .ps-questions li span {
+    color: var(--red);
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+
+  /* ─── COMPARISON TABLE ─── */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 15px;
+  }
+
+  .compare-table th {
+    background-color: var(--black-soft);
+    color: var(--off-white);
+    padding: 13px 16px;
+    text-align: left;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .compare-table td {
+    padding: 12px 16px;
+    vertical-align: top;
+    border: 1px solid #bbb4a4;
+    line-height: 1.65;
+  }
+
+  .compare-table tr:nth-child(even) td { background-color: #d8d0c0; }
+  .compare-table tr:nth-child(odd) td  { background-color: #e4ddd0; }
+
+  .compare-table .row-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    color: var(--red);
+    background-color: #ccc5b5 !important;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* ─── CALLOUT BOX ─── */
+  .callout-box {
+    background-color: var(--black-soft);
+    color: var(--off-white);
+    padding: 26px 30px;
+    margin: 32px 0;
+    border-top: 4px solid var(--gold);
+    border-bottom: 4px solid var(--gold);
+  }
+
+  .callout-box p { color: var(--off-white); margin-bottom: 8px; }
+
+  .callout-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  /* ─── STILL MATTERS ─── */
+  .still-matters {
+    padding: 56px 44px;
+    background-color: var(--black);
+    color: var(--off-white);
+    border-top: 6px solid var(--red);
+  }
+
+  .sm-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gray-light);
+    margin-bottom: 14px;
+  }
+
+  .sm-headline {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(22px, 3.5vw, 30px);
+    font-weight: 700;
+    color: var(--off-white);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--red);
+    padding-left: 18px;
+  }
+
+  .still-matters p { color: #ccc4b4; }
+
+  .news-links { list-style: none; padding: 0; margin: 0 0 30px; }
+
+  .news-links li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--gray-mid);
+  }
+
+  .news-links a {
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: underline;
+    line-height: 1.5;
+    font-family: 'Lora', serif;
+  }
+
+  .news-links a:hover { color: #fff; }
+
+  .sm-closing-q {
+    font-family: 'Lora', serif;
+    font-size: clamp(20px, 3vw, 26px);
+    font-style: italic;
+    color: var(--off-white);
+    line-height: 1.6;
+    margin-top: 34px;
+    padding-top: 26px;
+    border-top: 1px solid var(--gray-mid);
+  }
+
+  .sm-closing-q p { color: var(--off-white); }
+
+  /* ─── FOOTER ─── */
+  .site-footer {
+    background-color: var(--black);
+    color: var(--gray-steel);
+    text-align: center;
+    padding: 20px 44px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border-top: 3px solid var(--red-dark);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 620px) {
+    .content-section, .intro-section, .still-matters { padding: 36px 22px; }
+    .img-inset-right, .img-inset-left { float: none; width: 100%; margin: 22px 0; }
+    .img-pair { grid-template-columns: 1fr; }
+    .section-nav a { font-size: 11px; padding: 12px 10px; }
+    .primary-source { padding: 22px 20px; }
+    .compare-table { font-size: 13px; }
+    .compare-table th, .compare-table td { padding: 9px 10px; }
+  }
+</style>
 </head>
 <body>
-  <a class="back" href="index.html">&larr; Course Home</a>
-  <p class="badge">World History · Semester 2 · Day 2</p>
-  <h1>Rise of Totalitarian Governments</h1>
-  <p class="eq">How do democracies collapse, and what do dictators do once they have power?</p>
-  <div class="banner">Coming Soon</div>
+<div class="page-wrap">
+
+<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+<header class="site-header">
+
+  <!-- FILENAME: S2L02_HeaderBg_PropagandaCrowd.jpg
+       PLACE IN: images/S2/L02/
+       FIND: Mass rally or crowd scene from 1930s totalitarian regime — Nazi Nuremberg rally, Soviet parade in Red Square, or Italian Fascist mass gathering; aerial or wide shot showing enormous scale of crowd
+       SEARCH: Nuremberg rally 1934 aerial photograph crowd OR Soviet Red Square parade 1930s
+       LINK: https://commons.wikimedia.org/wiki/File:Nuremberg_rally_1934.jpg (suggested, not guaranteed) -->
+  <div class="header-bg" style="background-image: url('images/S2/L02/S2L02_HeaderBg_PropagandaCrowd.jpg');"></div>
+
+  <div class="header-content">
+    <div class="course-label">World History &mdash; Semester 2, Lesson 02</div>
+    <h1 class="page-title">Rise of<br>Totalitarian<br>Governments</h1>
+    <div class="eq-banner">
+      <span class="eq-label">Essential Question</span>
+      How do democracies collapse, and what do dictators do once they have power?
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+<nav class="section-nav" aria-label="Page sections">
+  <a href="#russia">Russia and Stalin</a>
+  <a href="#italy-germany">Italy and Germany</a>
+  <a href="#tools">Tools of Control</a>
+  <a href="#comparison">Side by Side</a>
+  <a href="#still-matters">Still Matters Today</a>
+</nav>
+
+<!-- ═══════════════════════════ INTRO ═══════════════════════════ -->
+<section class="intro-section">
+  <div class="intro-label">Introduction</div>
+  <p>In 1933, a German teacher named Friedrich Kellner wrote in his diary that something was wrong. His neighbors were cheering in the streets. A man named Adolf Hitler had just been appointed Chancellor of Germany. Kellner did not cheer. He wrote: "This is a dark day." He would spend the next twelve years secretly recording what he saw, hiding his diary in the walls of his house.</p>
+  <p>In the decade after WWI, democracies across Europe cracked and broke. Governments that had promised freedom handed power to one man. Those men built systems designed to control everything: what people read, what they believed, where they worked, and whether they lived. The word for this kind of total control is <span class="vocab">totalitarianism<span class="tip">Totalitarianism: a system of government where one leader or party controls every part of life, including speech, media, and the economy, and allows no opposition.</span></span>.</p>
+  <p>This is the story of how it happened, and why millions of ordinary people either supported it, survived it, or disappeared inside it.</p>
+</section>
+
+<!-- ═══════════════════════════ SECTION 1: RUSSIA ═══════════════════════════ -->
+<section id="russia" class="content-section clearfix">
+  <div class="section-number">Chapter One</div>
+  <h2 class="section-heading">Russia: From Revolution to Stalin's Iron Grip</h2>
+
+  <!-- FILENAME: S2L02_LeninSpeaking.jpg
+       PLACE IN: images/S2/L02/
+       FIND: Vladimir Lenin speaking to a crowd, famous photograph circa 1917-1920; iconic image of Lenin at podium or on platform addressing the Russian people
+       SEARCH: Lenin speaking crowd 1917 Russian Revolution Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:Lenin_Sverdlov_Square.jpg (suggested, not guaranteed) -->
+  <figure class="img-inset-right">
+    <img src="images/S2/L02/S2L02_LeninSpeaking.jpg" alt="Vladimir Lenin speaking to a crowd, circa 1917">
+    <figcaption>Vladimir Lenin addresses a crowd during the Russian Revolution, circa 1917. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p>In 1917, Russia was exhausted. Three years of WWI had killed millions of Russian soldiers. The people were starving. Tsar Nicholas II, the Russian emperor, seemed unable to fix anything. In February 1917, riots broke out in the capital city of Petrograd. The tsar was forced to step down.</p>
+
+  <p>A new democratic government took over, but it made a critical mistake: it kept fighting WWI. That decision kept the people hungry and angry. In October 1917, a radical group called the Bolsheviks seized power. Their leader, Vladimir Lenin, promised three things: land for the peasants, bread for the hungry, and peace from the war. His political system was called <span class="vocab">communism<span class="tip">Communism: a political system where the government owns all businesses and land, and is supposed to distribute wealth equally among all people, with no private ownership.</span></span>.</p>
+
+  <p>Lenin took Russia out of WWI, but he immediately started a new war: a civil war against anyone who opposed the Bolsheviks. By the time it ended in 1922, millions more were dead. Lenin had built a one-party state where no opposition was allowed. When Lenin died in 1924, a power struggle began. Joseph Stalin won.</p>
+
+  <!-- FILENAME: S2L02_StalinOfficialPortrait.jpg
+       PLACE IN: images/S2/L02/
+       FIND: Official Soviet portrait or photograph of Joseph Stalin, circa 1930s; formal posed photograph in military uniform or official state portrait
+       SEARCH: Joseph Stalin official portrait 1930s Soviet Union
+       LINK: https://commons.wikimedia.org/wiki/File:Stalin_USSR.jpg (suggested, not guaranteed) -->
+  <figure class="img-inset-left">
+    <img src="images/S2/L02/S2L02_StalinOfficialPortrait.jpg" alt="Official portrait of Joseph Stalin, circa 1930s">
+    <figcaption>Joseph Stalin, leader of the Soviet Union, circa 1930s. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p>Stalin transformed the Soviet Union into a fully <span class="vocab-red">totalitarian</span> state. He collectivized farming, meaning the government took control of all farms and forced peasants to work on them together. In Ukraine, when farmers resisted, Stalin seized their grain anyway. Between 1932 and 1933, a deliberate famine called the Holodomor killed an estimated 3.5 to 7 million Ukrainians. Stalin called it a management problem. Historians call it a genocide.</p>
+
+  <p>Stalin also launched the Great Purge beginning in 1936. He arrested, executed, or sent to prison camps anyone he suspected of disloyalty; military officers, scientists, artists, and ordinary factory workers were all targeted. The prison camp system was called the <span class="vocab">Gulag<span class="tip">Gulag: the Soviet system of forced labor prison camps where millions of people were sent for real or imagined crimes against the state.</span></span>. At its peak, the Gulag held approximately 1.8 million prisoners. Many never came home.</p>
+
+  <p>Modern authoritarian governments still use many of Stalin's tools: controlling the press, eliminating political opponents, and creating fear so that people monitor each other instead of organizing against the government.</p>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-star">&#9632;</div><div class="divider-line"></div></div>
+
+  <!-- PRIMARY SOURCE 1: Stalin -->
+  <div class="primary-source">
+    <div class="ps-label">Primary Source</div>
+    <div class="ps-quote">
+      "The death of one man is a tragedy. The death of millions is a statistic."
+    </div>
+    <div class="ps-attribution">Attributed to Joseph Stalin, Soviet dictator, circa 1940s. (Widely attributed; exact origin disputed by historians.)</div>
+    <div class="ps-narrator">This quote, widely attributed to Stalin, captures his willingness to treat mass suffering as a numbers problem rather than a human one; it became one of the most chilling summaries of how totalitarian leaders think about ordinary people.</div>
+    <ul class="ps-questions">
+      <li>
+        <span>Question 1: Meaning</span>
+        What does this quote say about how Stalin saw human life? Use evidence from the lesson to support your answer.
+      </li>
+      <li>
+        <span>Question 2: Connect to the EQ</span>
+        How does a leader who thinks this way use power differently than a leader in a democracy? Connect your answer to what dictators actually did once they had power.
+      </li>
+    </ul>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════ SECTION 2: ITALY AND GERMANY ═══════════════════════════ -->
+<section id="italy-germany" class="content-section clearfix">
+  <div class="section-number">Chapter Two</div>
+  <h2 class="section-heading">Italy and Germany: Two Countries, One Playbook</h2>
+
+  <p>WWI left Italy and Germany in the same condition: humiliated, economically destroyed, and politically unstable. Both countries had governments that could not control the chaos. Both had millions of unemployed, angry young men. And in both countries, a single charismatic leader stepped forward with the same basic promise: I alone can fix this.</p>
+
+  <div class="img-pair">
+    <!-- FILENAME: S2L02_MussoliniBalcony.jpg
+         PLACE IN: images/S2/L02/
+         FIND: Benito Mussolini speaking from a balcony to a crowd, famous photograph from the 1920s or 1930s, typically the Palazzo Venezia balcony in Rome
+         SEARCH: Mussolini balcony speech Palazzo Venezia 1930s crowd
+         LINK: https://commons.wikimedia.org/wiki/File:Mussolini_Venezia.jpg (suggested, not guaranteed) -->
+    <figure>
+      <img src="images/S2/L02/S2L02_MussoliniBalcony.jpg" alt="Benito Mussolini speaking from a balcony, 1930s">
+      <figcaption>Benito Mussolini addresses crowds from the Palazzo Venezia balcony, Rome, 1930s. Source: Wikimedia Commons.</figcaption>
+    </figure>
+
+    <!-- FILENAME: S2L02_HitlerReichstag.jpg
+         PLACE IN: images/S2/L02/
+         FIND: Adolf Hitler speaking at the Reichstag or at a major Nazi party event, late 1930s; dramatic photograph showing Hitler at podium with crowd
+         SEARCH: Hitler Reichstag speech 1939 OR Hitler Nuremberg rally podium speech
+         LINK: https://commons.wikimedia.org/wiki/File:Hitler_speech_Reichstag_1939.jpg (suggested, not guaranteed) -->
+    <figure>
+      <img src="images/S2/L02/S2L02_HitlerReichstag.jpg" alt="Adolf Hitler speaking at the Reichstag, late 1930s">
+      <figcaption>Adolf Hitler addresses the German Reichstag, late 1930s. Source: Bundesarchiv / Wikimedia Commons.</figcaption>
+    </figure>
+  </div>
+
+  <p>In Italy, Benito Mussolini founded the Fascist Party in 1919. <span class="vocab">Fascism<span class="tip">Fascism: a far-right political system built on extreme nationalism, a powerful single leader, and the total submission of individuals to the state; it is violently opposed to democracy and communism.</span></span> rejected both democracy and communism. Fascism demanded that citizens put the nation above everything else, including their own rights. Mussolini organized gangs of black-shirted followers who attacked political opponents in the streets. In 1922 he threatened to march on Rome with his armed followers. The king of Italy, afraid of a civil war, handed Mussolini the government. No election. No vote. Just fear and the threat of violence.</p>
+
+  <p>In Germany, Adolf Hitler led the Nazi Party using a similar strategy but with a more extreme ideology. Hitler added intense racial hatred to his <span class="vocab-red">fascism</span>. He blamed Germany's problems on Jewish people, communists, and foreigners. His message was clear: Germany lost WWI not because of military failure but because it was "stabbed in the back" by internal enemies. This was a lie, but it gave angry Germans a target for their rage.</p>
+
+  <p>Hitler rose through legal means at first. In 1932, the Nazi Party won more votes in the German parliament than any other party. In January 1933, Hitler was appointed Chancellor. Within months, he had dismantled the German democratic system entirely. He used a suspicious fire at the parliament building to justify banning all other political parties. Germany's democracy died in less than a year.</p>
+
+  <!-- FILENAME: S2L02_NaziPartyMarch.jpg
+       PLACE IN: images/S2/L02/
+       FIND: Nazi party march or torchlight parade, early 1930s Germany; columns of uniformed men marching through German streets before or shortly after Hitler took power
+       SEARCH: Nazi torchlight parade Berlin 1933 Brandenburg Gate OR SA march 1930s Germany
+       LINK: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_102-14439.jpg (suggested, not guaranteed) -->
+  <figure>
+    <img src="images/S2/L02/S2L02_NaziPartyMarch.jpg" alt="Nazi party march, Germany, early 1930s">
+    <figcaption>Nazi Party march through Berlin streets, early 1930s. Source: Bundesarchiv / Wikimedia Commons.</figcaption>
+  </figure>
+
+</section>
+
+<!-- ═══════════════════════════ SECTION 3: TOOLS OF CONTROL ═══════════════════════════ -->
+<section id="tools" class="content-section clearfix">
+  <div class="section-number">Chapter Three</div>
+  <h2 class="section-heading">The Tools of Control: How Dictators Keep Power</h2>
+
+  <!-- FILENAME: S2L02_SovietPropagandaPoster.jpg
+       PLACE IN: images/S2/L02/
+       FIND: Famous Soviet propaganda poster, 1930s; idealized worker or soldier image glorifying Stalin or the Soviet state; bold graphic design with red and gold colors
+       SEARCH: Soviet propaganda poster 1930s Stalin worker Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:Soviet_propaganda_poster_1930s.jpg (suggested, not guaranteed) -->
+  <figure class="img-inset-right">
+    <img src="images/S2/L02/S2L02_SovietPropagandaPoster.jpg" alt="Soviet propaganda poster, 1930s">
+    <figcaption>Soviet propaganda poster, 1930s. Every totalitarian regime used art to control what people believed. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p>Once a dictator has power, the real work begins: keeping it. Every totalitarian regime used the same set of tools, even when they claimed to stand for opposite ideologies.</p>
+
+  <p>The first tool was <span class="vocab">propaganda<span class="tip">Propaganda: information, often false or one-sided, that is spread to make people support a government, leader, or idea.</span></span>. Every totalitarian state controlled the press, the radio, the schools, and the arts. Citizens heard only what the government wanted them to hear. Children were taught to love the leader from their first day of school. Hitler Youth and Soviet Young Pioneers were mandatory organizations that replaced family loyalty with loyalty to the state.</p>
+
+  <p>The second tool was terror. Secret police forces watched everything. In the Soviet Union, the secret police was called the NKVD. In Nazi Germany, it was the Gestapo. In Mussolini's Italy, it was the OVRA. These organizations encouraged neighbors to report each other. Fear spread from the prisons outward through every street and apartment building. People learned to be silent.</p>
+
+  <p>The third tool was the scapegoat. Every totalitarian leader identified an enemy group to blame for the nation's problems. Stalin blamed "saboteurs" and "class enemies." Hitler blamed Jewish people, Roma, LGBTQ individuals, and disabled people. Mussolini blamed socialists and foreign powers. When the economy was bad or the government failed, there was always a ready answer: the enemy did it.</p>
+
+  <div class="callout-box">
+    <div class="callout-title">Propaganda in Your World</div>
+    <p>You encounter propaganda every day, though it does not always look like a Soviet poster. Social media algorithms are designed to show you content that makes you feel strong emotions, especially anger and fear. Governments and political groups still use images, music, slogans, and repetition to shape what people believe. The difference between information and <span style="color: var(--gold);">propaganda</span> is worth knowing how to spot.</p>
+  </div>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-star">&#9632;</div><div class="divider-line"></div></div>
+
+  <!-- PRIMARY SOURCE 2: Victor Klemperer on Nazi language control -->
+  <div class="primary-source">
+    <div class="ps-label">Primary Source</div>
+    <div class="ps-quote">
+      "Nazism permeated the flesh and blood of the people through single words, idioms and sentence structures which were imposed on them in a million repetitions and taken on board mechanically and unconsciously."
+    </div>
+    <div class="ps-attribution">Victor Klemperer, <em>The Language of the Third Reich</em>, 1947.</div>
+    <div class="ps-narrator">Klemperer was a Jewish professor in Germany who survived the Nazi years by hiding, and he spent that time secretly studying how Nazi propaganda worked through the German language itself; his book is one of the most important records of how totalitarian regimes control thought by controlling words.</div>
+  </div>
+
+  <!-- FILENAME: S2L02_GestapoPoster.jpg
+       PLACE IN: images/S2/L02/
+       FIND: Gestapo or Nazi secret police warning poster OR photograph of Gestapo headquarters exterior in Berlin; alternatively, a Nazi-era public surveillance or "report your neighbor" propaganda image
+       SEARCH: Gestapo headquarters Berlin photograph 1930s OR Nazi surveillance poster warning
+       LINK: https://commons.wikimedia.org/wiki/File:Gestapo_headquarters.jpg (suggested, not guaranteed) -->
+  <figure>
+    <img src="images/S2/L02/S2L02_GestapoPoster.jpg" alt="Gestapo headquarters or Nazi surveillance imagery, 1930s Germany">
+    <figcaption>The Gestapo maintained fear through surveillance and the threat of arrest. Germany, 1930s. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+</section>
+
+<!-- ═══════════════════════════ SECTION 4: COMPARISON ═══════════════════════════ -->
+<section id="comparison" class="content-section clearfix">
+  <div class="section-number">Chapter Four</div>
+  <h2 class="section-heading">Side by Side: Stalin, Mussolini, and Hitler Compared</h2>
+
+  <p>On the surface, Stalin, Mussolini, and Hitler looked like enemies. Stalin believed in <span class="vocab-red">communism</span>; Mussolini and Hitler believed in <span class="vocab-red">fascism</span>. Communism said the government should own everything for the workers. Fascism said the nation was supreme and the individual existed only to serve it. They called each other dangerous. But as leaders, they operated almost identically.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th style="width:22%">Category</th>
+        <th>Stalin (Soviet Union)</th>
+        <th>Mussolini (Italy)</th>
+        <th>Hitler (Germany)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="row-label">Ideology</td>
+        <td>Communism: government owns all property and industry</td>
+        <td>Fascism: total loyalty to the nation-state above all else</td>
+        <td>Nazism: extreme fascism combined with racial ideology targeting Jewish people and others</td>
+      </tr>
+      <tr>
+        <td class="row-label">How They Rose to Power</td>
+        <td>Won internal Communist Party power struggle after Lenin's death, 1924</td>
+        <td>Threatened the king with armed march; appointed Prime Minister, 1922</td>
+        <td>Won parliamentary elections, then dismantled democracy from inside, 1933</td>
+      </tr>
+      <tr>
+        <td class="row-label">Secret Police</td>
+        <td>NKVD; mass arrests, executions, Gulag camps</td>
+        <td>OVRA; monitored dissidents and opposition figures</td>
+        <td>Gestapo; arrested, tortured, and executed enemies of the state</td>
+      </tr>
+      <tr>
+        <td class="row-label">Propaganda Method</td>
+        <td>State-controlled media, mandatory youth organizations, Stalin cult of personality</td>
+        <td>Controlled press, glorified Roman Empire imagery, Mussolini as heroic leader</td>
+        <td>Joseph Goebbels ran total media control: film, radio, rallies, and posters</td>
+      </tr>
+      <tr>
+        <td class="row-label">Who They Blamed</td>
+        <td>"Class enemies," kulaks (wealthy farmers), political rivals</td>
+        <td>Socialists, communists, and foreign powers</td>
+        <td>Jewish people, Roma, communists, LGBTQ individuals, disabled people</td>
+      </tr>
+      <tr>
+        <td class="row-label">Mass Violence</td>
+        <td>Holodomor famine, Gulag system, Great Purge: millions killed</td>
+        <td>Political opponents killed or jailed; colonial atrocities in Africa</td>
+        <td>Holocaust: systematic murder of six million Jewish people and millions of others</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- FILENAME: S2L02_GulaqPrisoners.jpg
+       PLACE IN: images/S2/L02/
+       FIND: Soviet Gulag prisoners or forced labor camp photograph, 1930s-1940s; shows prisoners working in harsh conditions or being transported; documentary-style historical photograph
+       SEARCH: Soviet Gulag prisoners forced labor camp 1930s photograph
+       LINK: https://commons.wikimedia.org/wiki/File:Gulag_prisoners_1936-1937.jpg (suggested, not guaranteed) -->
+  <figure>
+    <img src="images/S2/L02/S2L02_GulaqPrisoners.jpg" alt="Soviet Gulag prisoners, 1930s">
+    <figcaption>Soviet Gulag prisoners at forced labor, 1930s. The camp system imprisoned millions. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p>The most important thing this comparison reveals: ideology is not the same as behavior. Two systems that claimed to be complete opposites produced the same results for ordinary people: fear, silence, and mass death. This is why historians study systems and structures rather than just taking leaders at their word about what they believe.</p>
+
+</section>
+
+<!-- ═══════════════════════════ STILL MATTERS TODAY ═══════════════════════════ -->
+<section id="still-matters" class="still-matters">
+  <div class="sm-label">How This Still Matters Today</div>
+
+  <div class="sm-headline">The playbook dictators used in the 1920s and 1930s is still being used today. Recognizing it is the first line of defense.</div>
+
+  <!-- FILENAME: S2L02_ModernAutocracy.jpg
+       PLACE IN: images/S2/L02/
+       FIND: Modern-era mass rally or authoritarian-style political event; a large crowd at a political rally displaying flags or nationalist imagery that echoes 1930s aesthetics; must be clearly political in nature
+       SEARCH: modern mass political rally nationalist flags crowd 2010s 2020s Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:Political_rally_modern.jpg (suggested, not guaranteed) -->
+  <figure>
+    <img src="images/S2/L02/S2L02_ModernAutocracy.jpg" alt="Modern mass political rally, flags and crowd">
+    <figcaption>Mass political rallies continue to serve as tools of political mobilization and loyalty display worldwide. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+  <ul class="news-links">
+    <li><a href="https://www.bbc.com/news/world-57922720" target="_blank" rel="noopener">"The rise of authoritarianism: How democracies are dying around the world" — BBC</a></li>
+    <li><a href="https://freedomhouse.org/report/freedom-world" target="_blank" rel="noopener">"Freedom in the World Report: Global democracy under pressure" — Freedom House</a></li>
+    <li><a href="https://www.npr.org/2022/03/12/1086093346/how-propaganda-works-today" target="_blank" rel="noopener">"How Propaganda Works in the 21st Century" — NPR</a></li>
+  </ul>
+
+  <p>Freedom House, an organization that tracks democracy worldwide, reported in 2023 that global freedom has declined for seventeen consecutive years. Countries that were democracies twenty years ago are now run by single parties or strongmen. The tools are the same: control the press, build loyalty through fear and pride, scapegoat an outgroup, and dismantle the systems that would stop you.</p>
+
+  <div class="sm-closing-q">
+    <p>If a government started controlling what you could read online, arresting journalists, and telling you that one group of people was the cause of all your problems, at what point would you recognize it as totalitarianism, and what would you do?</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer class="site-footer">
+  World History &mdash; Semester 2, Lesson 02 &nbsp;|&nbsp; Rise of Totalitarian Governments
+</footer>
+
+</div><!-- end page-wrap -->
+
+<script>
+  document.querySelectorAll('.vocab').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      document.querySelectorAll('.vocab.active').forEach(function(v) {
+        if (v !== el) v.classList.remove('active');
+      });
+      el.classList.toggle('active');
+    });
+  });
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.vocab.active').forEach(function(v) {
+      v.classList.remove('active');
+    });
+  });
+</script>
 </body>
 </html>
