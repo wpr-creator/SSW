@@ -1,74 +1,887 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSW — S2 L03: Causes and Start of World War II</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: #0f1729;
-      color: #f8f6f2;
-      font-family: Georgia, "Times New Roman", serif;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-    }
-    a.back {
-      position: fixed;
-      top: 1.25rem;
-      left: 1.25rem;
-      color: #94a3b8;
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.02em;
-    }
-    a.back:hover { color: #f8f6f2; }
-    .badge {
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #64748b;
-      margin-bottom: 1.25rem;
-    }
-    h1 {
-      font-size: clamp(1.75rem, 4vw, 2.75rem);
-      font-weight: 400;
-      line-height: 1.25;
-      max-width: 52rem;
-      margin-bottom: 1.5rem;
-    }
-    .eq {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      font-style: italic;
-      color: #cbd5e1;
-      max-width: 42rem;
-      line-height: 1.65;
-      margin-bottom: 3rem;
-    }
-    .eq.final-eq { font-style: normal; color: #94a3b8; }
-    .banner {
-      display: inline-block;
-      padding: 1.1rem 3.25rem;
-      border: 2px solid #334155;
-      background: linear-gradient(180deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 41, 0.95) 100%);
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #e2e8f0;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSW_S2L03 — Causes and Start of World War II</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --od-green:     #4a5240;
+    --od-dark:      #2c3028;
+    --od-light:     #6b7560;
+    --steel:        #7a8088;
+    --steel-dark:   #3e444c;
+    --steel-light:  #a8b0b8;
+    --khaki:        #c8b878;
+    --khaki-dim:    #8a7e50;
+    --rust:         #8a3020;
+    --rust-bright:  #b03828;
+    --paper:        #e8e0cc;
+    --paper-dark:   #d8d0b8;
+    --paper-mid:    #ccc4aa;
+    --ink:          #1a1810;
+    --ink-soft:     #2e2c20;
+    --vocab-red:    #b03030;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #1e2018;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255,255,255,0.012) 10px,
+        rgba(255,255,255,0.012) 11px
+      );
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.9;
+    color: var(--ink);
+  }
+
+  .page-wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    background-color: var(--paper);
+    box-shadow: 0 0 80px rgba(0,0,0,0.85);
+  }
+
+  /* ─── HEADER ─── */
+  .site-header {
+    position: relative;
+    overflow: hidden;
+    padding: 60px 44px 50px;
+    background-color: var(--od-dark);
+    text-align: center;
+  }
+
+  .header-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.30;
+    filter: grayscale(50%) sepia(20%) contrast(110%);
+  }
+
+  .header-content { position: relative; z-index: 2; }
+
+  .course-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.28em;
+    color: var(--steel-light);
+    margin-bottom: 18px;
+  }
+
+  .page-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(50px, 8vw, 78px);
+    line-height: 1.0;
+    color: var(--paper);
+    text-shadow: 2px 4px 16px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+    letter-spacing: 0.06em;
+    margin-bottom: 30px;
+  }
+
+  .eq-banner {
+    display: inline-block;
+    background-color: var(--rust);
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    padding: 14px 32px;
+    max-width: 720px;
+    line-height: 1.45;
+    border-top: 3px solid var(--khaki);
+    border-bottom: 3px solid var(--khaki);
+  }
+
+  .eq-label {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    color: rgba(255,255,255,0.65);
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+  }
+
+  /* ─── NAV ─── */
+  .section-nav {
+    background-color: var(--od-dark);
+    border-bottom: 4px solid var(--rust);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 8px;
+  }
+
+  .section-nav a {
+    display: inline-block;
+    color: var(--steel-light);
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    padding: 14px 18px;
+    border-bottom: 4px solid transparent;
+    margin-bottom: -4px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .section-nav a:hover {
+    color: var(--khaki);
+    border-bottom-color: var(--khaki);
+  }
+
+  /* ─── INTRO ─── */
+  .intro-section {
+    padding: 48px 44px 36px;
+    background-color: var(--steel-dark);
+    color: var(--paper);
+    border-bottom: 4px solid var(--rust);
+  }
+
+  .intro-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.26em;
+    color: var(--steel-light);
+    margin-bottom: 14px;
+  }
+
+  .intro-section p {
+    color: var(--paper);
+    font-size: 19px;
+    line-height: 1.95;
+    margin-bottom: 18px;
+  }
+
+  /* ─── CONTENT SECTIONS ─── */
+  .content-section { padding: 52px 44px 40px; }
+  .content-section:nth-child(odd)  { background-color: var(--paper); }
+  .content-section:nth-child(even) { background-color: var(--paper-dark); }
+
+  .section-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.26em;
+    color: var(--rust-bright);
+    margin-bottom: 8px;
+  }
+
+  .section-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(30px, 5vw, 42px);
+    letter-spacing: 0.06em;
+    color: var(--od-dark);
+    line-height: 1.1;
+    margin-bottom: 26px;
+    border-left: 7px solid var(--rust);
+    padding-left: 18px;
+  }
+
+  p { margin-bottom: 20px; color: var(--ink-soft); }
+
+  .clearfix::after { content: ""; display: table; clear: both; }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 44px 0 34px;
+  }
+  .divider-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--od-light), transparent);
+  }
+  .divider-mark {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: var(--rust);
+    letter-spacing: 0.1em;
+  }
+
+  /* ─── VOCAB ─── */
+  .vocab {
+    color: var(--vocab-red);
+    text-decoration: underline dotted var(--vocab-red);
+    cursor: help;
+    position: relative;
+  }
+  .vocab .tip {
+    display: none;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1a2e;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 1.5;
+    z-index: 100;
+    font-style: normal;
+    font-weight: 400;
+    pointer-events: none;
+    max-width: 280px;
+    white-space: normal;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    border-left: 3px solid var(--rust-bright);
+  }
+  .vocab:hover .tip,
+  .vocab.active .tip { display: block; }
+  .vocab-red { color: var(--vocab-red); }
+
+  /* ─── IMAGES ─── */
+  figure { margin: 30px 0; }
+  figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(20%) contrast(108%) sepia(8%);
+    border: 2px solid var(--od-light);
+    box-shadow: 5px 7px 26px rgba(0,0,0,0.35);
+  }
+  figcaption {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--steel);
+    margin-top: 8px;
+    padding: 0 4px;
+    line-height: 1.5;
+  }
+  .img-inset-right { float: right; width: 40%; margin: 6px 0 20px 28px; }
+  .img-inset-left  { float: left;  width: 40%; margin: 6px 28px 20px 0; }
+  .img-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 30px 0;
+  }
+
+  /* ─── TIMELINE BAR ─── */
+  .timeline {
+    margin: 30px 0;
+    border-left: 4px solid var(--rust);
+    padding-left: 24px;
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 22px;
+    padding-bottom: 4px;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -34px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    background: var(--rust);
+    border: 3px solid var(--paper);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px var(--rust);
+  }
+  .tl-year {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    color: var(--rust);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .tl-text {
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  /* ─── PRIMARY SOURCE ─── */
+  .primary-source {
+    margin: 38px 0;
+    padding: 28px 32px 28px 36px;
+    background-color: var(--paper-mid);
+    border-left: 7px solid var(--rust);
+    box-shadow: 4px 5px 18px rgba(0,0,0,0.18);
+    position: relative;
+  }
+  .primary-source::before {
+    content: '\201C';
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 120px;
+    color: var(--rust);
+    opacity: 0.12;
+    position: absolute;
+    top: -4px;
+    left: 8px;
+    line-height: 1;
+  }
+  .ps-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: var(--rust-bright);
+    margin-bottom: 12px;
+  }
+  .ps-quote {
+    font-family: 'Crimson Pro', serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--ink);
+    margin-bottom: 16px;
+    padding-left: 8px;
+  }
+  .ps-attribution {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--steel);
+    margin-bottom: 12px;
+  }
+  .ps-narrator {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--steel);
+    padding-top: 12px;
+    margin-bottom: 20px;
+  }
+  .ps-questions { list-style: none; padding: 0; }
+  .ps-questions li {
+    padding: 10px 0;
+    border-top: 1px solid var(--paper-dark);
+    font-size: 16px;
+    color: var(--ink-soft);
+    font-weight: 600;
+    line-height: 1.6;
+  }
+  .ps-questions li span {
+    color: var(--rust);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ─── CALLOUT BOX ─── */
+  .callout-box {
+    background-color: var(--od-dark);
+    color: var(--paper);
+    padding: 26px 30px;
+    margin: 32px 0;
+    border-top: 4px solid var(--khaki);
+    border-bottom: 4px solid var(--khaki);
+  }
+  .callout-box p { color: var(--paper-dark); margin-bottom: 8px; }
+  .callout-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    color: var(--khaki);
+    margin-bottom: 12px;
+  }
+
+  /* ─── AGGRESSOR TABLE ─── */
+  .aggressor-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 16px;
+  }
+  .aggressor-table th {
+    background-color: var(--od-dark);
+    color: var(--paper);
+    padding: 12px 16px;
+    text-align: left;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 17px;
+    letter-spacing: 0.08em;
+  }
+  .aggressor-table td {
+    padding: 12px 16px;
+    vertical-align: top;
+    border: 1px solid var(--paper-mid);
+    line-height: 1.65;
+    color: var(--ink-soft);
+  }
+  .aggressor-table tr:nth-child(even) td { background-color: var(--paper-mid); }
+  .aggressor-table tr:nth-child(odd)  td { background-color: var(--paper-dark); }
+  .aggressor-table .row-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    color: var(--rust);
+    background-color: #bbb8a8 !important;
+    width: 16%;
+  }
+
+  /* ─── STILL MATTERS ─── */
+  .still-matters {
+    padding: 56px 44px;
+    background-color: var(--od-dark);
+    color: var(--paper);
+    border-top: 6px solid var(--rust);
+  }
+  .sm-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.26em;
+    color: var(--steel-light);
+    margin-bottom: 14px;
+  }
+  .sm-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(22px, 3.8vw, 32px);
+    letter-spacing: 0.05em;
+    color: var(--paper);
+    line-height: 1.25;
+    margin-bottom: 30px;
+    border-left: 6px solid var(--rust);
+    padding-left: 18px;
+  }
+  .still-matters p { color: #c8c0a8; }
+  .news-links { list-style: none; padding: 0; margin: 0 0 30px; }
+  .news-links li { padding: 12px 0; border-bottom: 1px solid var(--od-light); }
+  .news-links a {
+    color: var(--khaki);
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: underline;
+    line-height: 1.5;
+  }
+  .news-links a:hover { color: #fff; }
+  .sm-closing-q {
+    font-family: 'Crimson Pro', serif;
+    font-size: clamp(20px, 3vw, 26px);
+    font-style: italic;
+    color: var(--paper);
+    line-height: 1.6;
+    margin-top: 34px;
+    padding-top: 26px;
+    border-top: 1px solid var(--od-light);
+  }
+  .sm-closing-q p { color: var(--paper); }
+
+  /* ─── LOCAL HISTORY ─── */
+  .local-history {
+    padding: 44px 44px;
+    background-color: #d4ccb4;
+    border-top: 4px solid var(--od-light);
+    border-bottom: 4px solid var(--od-light);
+  }
+  .lh-badge {
+    display: inline-block;
+    background-color: var(--rust);
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    padding: 4px 14px;
+    margin-bottom: 16px;
+  }
+  .lh-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 0.06em;
+    color: var(--od-dark);
+    margin-bottom: 18px;
+    line-height: 1.2;
+  }
+
+  /* ─── FOOTER ─── */
+  .site-footer {
+    background-color: var(--od-dark);
+    color: var(--od-light);
+    text-align: center;
+    padding: 20px 44px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    border-top: 3px solid var(--rust);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 620px) {
+    .content-section, .intro-section, .still-matters, .local-history { padding: 36px 22px; }
+    .img-inset-right, .img-inset-left { float: none; width: 100%; margin: 22px 0; }
+    .img-pair { grid-template-columns: 1fr; }
+    .section-nav a { font-size: 12px; padding: 12px 10px; }
+    .primary-source { padding: 22px 20px; }
+    .aggressor-table { font-size: 14px; }
+    .aggressor-table th, .aggressor-table td { padding: 9px 10px; }
+    .timeline { padding-left: 18px; }
+    .tl-item::before { left: -28px; width: 12px; height: 12px; }
+  }
+</style>
 </head>
 <body>
-  <a class="back" href="index.html">&larr; Course Home</a>
-  <p class="badge">World History · Semester 2 · Day 3</p>
-  <h1>Causes and Start of World War II</h1>
-  <p class="eq">How did the world let Hitler build an empire before anyone stopped him?</p>
-  <div class="banner">Coming Soon</div>
+<div class="page-wrap">
+
+<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+<header class="site-header">
+
+  <!-- FILENAME: S2L03_HeaderBg_TanksPoland.jpg
+       PLACE IN: images/S2/L03/
+       FIND: German tanks or military column advancing into Poland, September 1939; or German Wehrmacht infantry marching; conveys the military force of the Nazi invasion; used as faded atmospheric header background
+       SEARCH: German tanks Poland September 1939 invasion Blitzkrieg Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-S55480,_Polen,_Einmarsch_dt._Truppen.jpg (suggested, not guaranteed) -->
+  <div class="header-bg" style="background-image: url('images/S2/L03/S2L03_HeaderBg_TanksPoland.jpg');"></div>
+
+  <div class="header-content">
+    <div class="course-label">World History &mdash; Semester 2, Lesson 03</div>
+    <h1 class="page-title">Causes and Start<br>of World War II</h1>
+    <div class="eq-banner">
+      <span class="eq-label">Essential Question</span>
+      How did the world let Hitler build an empire before anyone stopped him?
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+<nav class="section-nav" aria-label="Page sections">
+  <a href="#aggressors">Three Aggressors</a>
+  <a href="#appeasement">The Appeasement Trap</a>
+  <a href="#pact">The Stalin-Hitler Pact</a>
+  <a href="#war-begins">The War Begins</a>
+  <a href="#still-matters">Still Matters Today</a>
+</nav>
+
+<!-- ═══════════════════════════ INTRO ═══════════════════════════ -->
+<section class="intro-section">
+  <div class="intro-label">Introduction</div>
+  <p>On September 1, 1939, twelve-year-old Janina Bauman was eating breakfast in Warsaw, Poland, when she heard a sound she did not recognize: bombs. The German air force had begun bombing the city before dawn. Within hours, tanks were crossing the Polish border. Janina grabbed her little sister's hand and ran to the basement. She would not feel safe again for six years.</p>
+  <p>World War II did not start by accident. It built up slowly over an entire decade. Three countries decided that they wanted more territory, and the rest of the world kept saying yes. Leaders who might have stopped the violence kept hoping the problem would go away. By the time they realized their mistake, the war machine was already rolling.</p>
+  <p>This is the story of how a second world war became inevitable, one bad decision at a time.</p>
+</section>
+
+<!-- ═══════════════════════════ SECTION 1: THREE AGGRESSORS ═══════════════════════════ -->
+<section id="aggressors" class="content-section clearfix">
+  <div class="section-number">Chapter One</div>
+  <h2 class="section-heading">Three Aggressors: Germany, Italy, and Japan on the Move</h2>
+
+  <p>By the early 1930s, three countries were building <span class="vocab">empire<span class="tip">Empire: a group of nations or territories under the control of one powerful country or ruler, often taken by force.</span></span>s through military force. They were driven by different ideologies and different grievances, but they shared one belief: their nation deserved more land, more resources, and more power. The rest of the world would have to get out of the way.</p>
+
+  <!-- FILENAME: S2L03_HitlerCrowdCheer.jpg
+       PLACE IN: images/S2/L03/
+       FIND: Adolf Hitler receiving adoring crowds in Germany, 1933-1936; crowd cheering or reaching toward Hitler; shows the mass popular support in early Nazi Germany
+       SEARCH: Hitler crowds Germany 1933 1934 cheering adoration Bundesarchiv
+       LINK: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-H1216-0500-002,_Adolf_Hitler.jpg (suggested, not guaranteed) -->
+  <figure class="img-inset-right">
+    <img src="images/S2/L03/S2L03_HitlerCrowdCheer.jpg" alt="Crowds cheering Adolf Hitler in Germany, 1930s">
+    <figcaption>German crowds cheering Adolf Hitler, mid-1930s. His rise rested on mass popular support combined with fear. Source: Bundesarchiv / Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p>Germany under Adolf Hitler moved first in Europe. After taking power in 1933, Hitler immediately began rebuilding Germany's military in direct violation of the Treaty of Versailles. The treaty had banned Germany from having a large army; Hitler ignored it. In 1936 he sent troops into the Rhineland, a strip of German territory that had been demilitarized after WWI. France and Britain did nothing. Hitler learned that the democracies would not fight back.</p>
+
+  <p>Emboldened, Hitler moved faster. In March 1938 he annexed Austria, meaning he absorbed it into Germany by force and threat. This was called the Anschluss. Hundreds of thousands of Austrians cheered in the streets; many genuinely wanted unification with Germany. But the Austrian government had no real choice. Jewish Austrians, and those who opposed the Nazis, were immediately arrested. Then Hitler turned his eyes to Czechoslovakia.</p>
+
+  <p>Meanwhile, in Asia, Japan had been building its own <span class="vocab-red">empire</span> since 1931. Japan invaded Manchuria, a northeastern region of China, and turned it into a puppet state. The League of Nations condemned the invasion. Japan walked out of the League and kept Manchuria. In 1937 Japan launched a full-scale war against China. During the capture of the Chinese city of Nanking in December 1937, Japanese soldiers massacred an estimated 200,000 to 300,000 Chinese civilians and prisoners of war in six weeks. Historians call it the Rape of Nanking. It is one of the worst atrocities of the twentieth century.</p>
+
+  <table class="aggressor-table">
+    <thead>
+      <tr>
+        <th>Country</th>
+        <th>Leader</th>
+        <th>What They Wanted</th>
+        <th>What They Did in the 1930s</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="row-label">Germany</td>
+        <td>Adolf Hitler</td>
+        <td>Reclaim territory lost in WWI; create a German <span class="vocab-red">empire</span> in Eastern Europe</td>
+        <td>Remilitarized (1935); occupied Rhineland (1936); annexed Austria (1938); seized Czechoslovakia (1938&ndash;1939)</td>
+      </tr>
+      <tr>
+        <td class="row-label">Italy</td>
+        <td>Benito Mussolini</td>
+        <td>Build a modern Roman Empire in Africa and the Mediterranean</td>
+        <td>Invaded Ethiopia (1935); invaded Albania (1939); joined the Axis alliance with Germany</td>
+      </tr>
+      <tr>
+        <td class="row-label">Japan</td>
+        <td>Emperor Hirohito / Military leadership</td>
+        <td>Dominate East Asia and the Pacific; secure oil, iron, and raw materials</td>
+        <td>Invaded Manchuria (1931); full war on China (1937); Rape of Nanking (1937); joined Axis (1940)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>In 1936, Germany, Italy, and Japan formalized their alliance. They called themselves the <span class="vocab">Axis powers<span class="tip">Axis powers: the alliance of Germany, Italy, and Japan during World War II, who fought together against the Allied nations.</span></span>. The three countries had agreed to cooperate and to support each other if any of them was attacked. The world now faced a coordinated threat on two continents and the Pacific Ocean simultaneously.</p>
+
+  <!-- FILENAME: S2L03_JapanNankingMarch.jpg
+       PLACE IN: images/S2/L03/
+       FIND: Japanese soldiers marching into Nanking or Chinese city during the 1937 invasion; OR photograph of Japanese military in China 1937; documentary-style historical photograph
+       SEARCH: Japanese soldiers Nanking 1937 march invasion China Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:Japanese_troops_outside_Nanking.jpg (suggested, not guaranteed) -->
+  <figure>
+    <img src="images/S2/L03/S2L03_JapanNankingMarch.jpg" alt="Japanese troops outside Nanking, December 1937">
+    <figcaption>Japanese troops advancing toward Nanking, China, December 1937. The city's fall led to one of the worst atrocities of the 20th century. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p>Italy's <span class="vocab-red">aggression</span> in Africa showed the world exactly what was coming: in 1935, Mussolini's forces invaded Ethiopia using chemical weapons against soldiers equipped with spears. The League of Nations voted to impose economic sanctions on Italy. They were weak and incomplete. Italy kept Ethiopia. The message to every aggressive nation was the same: the international community will talk and do very little.</p>
+
+</section>
+
+<!-- ═══════════════════════════ SECTION 2: APPEASEMENT ═══════════════════════════ -->
+<section id="appeasement" class="content-section clearfix">
+  <div class="section-number">Chapter Two</div>
+  <h2 class="section-heading">The Appeasement Trap: Giving Hitler What He Wanted</h2>
+
+  <!-- FILENAME: S2L03_ChamberlainPaper.jpg
+       PLACE IN: images/S2/L03/
+       FIND: British Prime Minister Neville Chamberlain holding the Munich Agreement paper and waving it at Heston Airport, September 30, 1938; famous photograph of "peace for our time" moment
+       SEARCH: Neville Chamberlain Munich Agreement paper Heston Airport 1938 peace for our time
+       LINK: https://commons.wikimedia.org/wiki/File:Neville_Chamberlain_waving_the_Munich_agreement.jpg (suggested, not guaranteed) -->
+  <figure class="img-inset-left">
+    <img src="images/S2/L03/S2L03_ChamberlainPaper.jpg" alt="Neville Chamberlain holds the Munich Agreement, September 1938">
+    <figcaption>Neville Chamberlain holds the Munich Agreement at Heston Airport, September 30, 1938. He promised it meant "peace for our time." Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p>The democracies of Europe, especially Britain and France, were terrified of another world war. They had just lived through WWI, which had killed seventeen million people. Their militaries were underfunded. Their populations were exhausted. They chose a strategy called <span class="vocab">appeasement<span class="tip">Appeasement: the policy of giving an aggressive nation what it demands in hopes that it will stop making more demands and avoid war.</span></span>: give Hitler what he asks for, and maybe he will stop asking.</p>
+
+  <p>The clearest example came in September 1938. Hitler demanded the Sudetenland, a German-speaking region of Czechoslovakia. Czechoslovakia refused to give it up. Britain and France were treaty-bound to defend Czechoslovakia. But instead of standing firm, British Prime Minister Neville Chamberlain flew to Munich to negotiate with Hitler directly. The Czechoslovakian government was not even allowed in the room.</p>
+
+  <p>Chamberlain, French Premier Edouard Daladier, Mussolini, and Hitler signed the Munich Agreement on September 29, 1938. They gave Hitler the Sudetenland. In exchange, Hitler promised this was his final territorial demand. Chamberlain flew home waving the signed paper and told reporters it meant "peace for our time." The crowd at the airport cheered.</p>
+
+  <p>Winston Churchill, a British member of Parliament, was not cheering. He stood up in the House of Commons the next day and delivered a verdict that history would prove correct. He called the Munich Agreement a total defeat for Britain without firing a single shot. He warned that it had only increased Hitler's appetite.</p>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-mark">&#9675; &#9632; &#9675;</div><div class="divider-line"></div></div>
+
+  <!-- PRIMARY SOURCE 1: Churchill on Munich -->
+  <div class="primary-source">
+    <div class="ps-label">Primary Source</div>
+    <div class="ps-quote">
+      "You were given the choice between war and dishonour. You chose dishonour, and you will have war."
+    </div>
+    <div class="ps-attribution">Winston Churchill, speech in the House of Commons, October 1938.</div>
+    <div class="ps-narrator">Churchill said this directly to Chamberlain and the British government the week after the Munich Agreement; he was mocked and called a warmonger at the time, but within a year, Germany had invaded Poland and the war he predicted had begun.</div>
+    <ul class="ps-questions">
+      <li>
+        <span>Question 1: Meaning</span>
+        In your own words, what is Churchill saying about Chamberlain's decision at Munich? What does "dishonour" mean in this context?
+      </li>
+      <li>
+        <span>Question 2: Connect to the EQ</span>
+        How does appeasement help explain how Hitler was able to build an empire before anyone stopped him? Use at least one specific example from the lesson.
+      </li>
+    </ul>
+  </div>
+
+  <p>Churchill was right. In March 1939, just six months after the Munich Agreement, Hitler broke his promise and seized the rest of Czechoslovakia. Britain and France had given him what he wanted and gotten nothing in return. They finally announced that if Germany attacked Poland, they would declare war. Hitler did not believe them.</p>
+
+  <p>The strategy of <span class="vocab-red">appeasement</span> is still debated by historians today. Some argue Chamberlain was buying time for Britain to rearm. Others argue he genuinely believed Hitler was a reasonable man who could be satisfied. Both things were probably true, and both things were catastrophically wrong.</p>
+
+  <!-- FILENAME: S2L03_MunichConference.jpg
+       PLACE IN: images/S2/L03/
+       FIND: Munich Conference 1938; photograph of Hitler, Mussolini, Chamberlain, and Daladier together at the conference; or interior shot of the Munich conference room with delegates
+       SEARCH: Munich Conference 1938 Hitler Mussolini Chamberlain Daladier photograph
+       LINK: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-R69173,_M%C3%BCnchener_Abkommen,_Staatschefs.jpg (suggested, not guaranteed) -->
+  <figure>
+    <img src="images/S2/L03/S2L03_MunichConference.jpg" alt="Munich Conference leaders, September 1938">
+    <figcaption>Hitler, Mussolini, Chamberlain, and Daladier at the Munich Conference, September 29, 1938. Czechoslovakia was not invited. Source: Bundesarchiv / Wikimedia Commons.</figcaption>
+  </figure>
+
+</section>
+
+<!-- ═══════════════════════════ SECTION 3: STALIN-HITLER PACT ═══════════════════════════ -->
+<section id="pact" class="content-section clearfix">
+  <div class="section-number">Chapter Three</div>
+  <h2 class="section-heading">The Stalin-Hitler Pact: The Deal That Shocked the World</h2>
+
+  <p>Through the 1930s, most people assumed that if a war started, the Soviet Union would fight against Nazi Germany. Stalin and Hitler despised each other. <span class="vocab-red">Communism</span> and fascism were supposed to be mortal enemies. Both sides called the other dangerous. Then, on August 23, 1939, the world woke up to one of the most shocking agreements in modern history.</p>
+
+  <!-- FILENAME: S2L03_MolotovRibbentropSigning.jpg
+       PLACE IN: images/S2/L03/
+       FIND: Signing of the Molotov-Ribbentrop Pact, August 23, 1939; famous photograph of Soviet Foreign Minister Molotov signing while Ribbentrop and Stalin stand behind him smiling
+       SEARCH: Molotov Ribbentrop Pact signing 1939 Stalin photograph
+       LINK: https://commons.wikimedia.org/wiki/File:Molotov_signs_Soviet-Nazi_non-aggression_pact.jpg (suggested, not guaranteed) -->
+  <figure class="img-inset-right">
+    <img src="images/S2/L03/S2L03_MolotovRibbentropSigning.jpg" alt="Signing of the Molotov-Ribbentrop Pact, August 23, 1939">
+    <figcaption>Soviet Foreign Minister Molotov signs the Nazi-Soviet Non-Aggression Pact as Stalin and German diplomat Ribbentrop look on, August 23, 1939. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p>The Nazi-Soviet Non-Aggression Pact, also called the Molotov-Ribbentrop Pact, stated that Germany and the Soviet Union would not attack each other. On the surface, it looked like a simple peace agreement. But hidden inside was a secret additional protocol: Germany and the Soviet Union had privately agreed to divide Eastern Europe between themselves. Poland would be split in half. The Baltic states of Estonia, Latvia, and Lithuania would go to the Soviet Union. Finland would go to the Soviets as well.</p>
+
+  <p>Stalin's reasons were coldly practical. He did not trust Britain and France, who had excluded the Soviet Union from the Munich negotiations. He believed a war between Germany and the Western democracies would exhaust all of them and leave the Soviet Union safer. He also wanted time to rebuild the Red Army, which he had severely weakened through the Great Purge by executing thousands of his own military officers.</p>
+
+  <p>Hitler's reasons were equally calculated. He had always planned to eventually conquer the Soviet Union and enslave its people for German expansion eastward. But he needed to avoid fighting on two fronts at the same time. By neutralizing Stalin first, he could attack Poland, France, and Britain without worrying about Russia. He planned to deal with Stalin later.</p>
+
+  <p>The pact removed the last obstacle to Hitler's <span class="vocab">aggression<span class="tip">Aggression: the use of military force to attack or invade another country without being provoked first.</span></span>. Eight days after the signing, on September 1, 1939, Germany invaded Poland from the west. Sixteen days after that, the Soviet Union invaded Poland from the east. Poland was crushed between them in less than a month.</p>
+
+  <div class="callout-box">
+    <div class="callout-title">The United States: Staying Out</div>
+    <p>While Europe descended into war, the United States stayed out. American <span class="vocab">isolationism<span class="tip">Isolationism: the foreign policy belief that a country should avoid getting involved in other nations' conflicts and focus on its own affairs.</span></span> was powerful throughout the 1930s. Congress passed a series of Neutrality Acts between 1935 and 1937 that banned American weapons sales to nations at war. Many Americans remembered WWI and had no desire to send their sons to fight in another European conflict. President Franklin Roosevelt knew Britain needed help, but he could not move faster than American public opinion would allow. That would change on December 7, 1941.</p>
+  </div>
+
+  <!-- FILENAME: S2L03_PolandBombing1939.jpg
+       PLACE IN: images/S2/L03/
+       FIND: German bombing of Poland September 1939; aerial photograph of Warsaw being bombed OR photograph of burning Polish city; one of the most iconic images of the war's opening days
+       SEARCH: German bombing Warsaw Poland September 1939 Blitzkrieg fire Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-S55480,_Polen,_Einmarsch_dt._Truppen.jpg (suggested, not guaranteed) -->
+  <figure>
+    <img src="images/S2/L03/S2L03_PolandBombing1939.jpg" alt="German forces invade Poland, September 1939">
+    <figcaption>German forces advance into Poland, September 1939. The invasion began before dawn on September 1. Source: Bundesarchiv / Wikimedia Commons.</figcaption>
+  </figure>
+
+</section>
+
+<!-- ═══════════════════════════ SECTION 4: WAR BEGINS ═══════════════════════════ -->
+<section id="war-begins" class="content-section clearfix">
+  <div class="section-number">Chapter Four</div>
+  <h2 class="section-heading">The War Begins: From Poland to Global Conflict</h2>
+
+  <p>Two days after Germany invaded Poland, Britain and France kept their promise and declared war on Germany. September 3, 1939. World War II had officially begun. But declaring war and actually stopping Germany were very different things. Britain and France had no way to reach Poland quickly, and German forces moved faster than anyone expected.</p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year">Sept. 1, 1939</div>
+      <p class="tl-text">Germany invades Poland using Blitzkrieg; a new form of warfare combining tanks, aircraft, and infantry moving at overwhelming speed. Warsaw is bombed on the first day.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">Sept. 3, 1939</div>
+      <p class="tl-text">Britain and France declare war on Germany. The Commonwealth nations of Australia, Canada, New Zealand, and South Africa follow. World War II is officially declared.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">Sept. 17, 1939</div>
+      <p class="tl-text">The Soviet Union invades Poland from the east, as secretly agreed in the Molotov-Ribbentrop Pact. Poland is now being crushed from both sides.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">Sept. 27, 1939</div>
+      <p class="tl-text">Warsaw surrenders. Poland is divided between Germany and the Soviet Union. Roughly 1.8 million Polish civilians will be sent to Siberian labor camps by the Soviets. Nazi occupation of western Poland begins immediately.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">April&ndash;June 1940</div>
+      <p class="tl-text">Germany conquers Denmark, Norway, Belgium, the Netherlands, and France in less than three months. The speed stuns the world. Britain stands almost alone.</p>
+    </div>
+  </div>
+
+  <div class="img-pair">
+    <!-- FILENAME: S2L03_BlitzWarsaw.jpg
+         PLACE IN: images/S2/L03/
+         FIND: Warsaw burning or rubble after German bombing September 1939; civilians fleeing or surveying destruction; iconic image of the destruction of Poland's capital
+         SEARCH: Warsaw ruins bombing 1939 German Blitz destruction civilians
+         LINK: https://commons.wikimedia.org/wiki/File:Warsaw_1939_bombing.jpg (suggested, not guaranteed) -->
+    <figure>
+      <img src="images/S2/L03/S2L03_BlitzWarsaw.jpg" alt="Warsaw, Poland, after German bombing, September 1939">
+      <figcaption>Warsaw after German bombing, September 1939. The city was bombed on the war's first morning. Source: Wikimedia Commons.</figcaption>
+    </figure>
+
+    <!-- FILENAME: S2L03_FranceSurrenderJune1940.jpg
+         PLACE IN: images/S2/L03/
+         FIND: French surrender June 1940; photograph of the armistice signing in the railway car at Compiègne, or French soldiers surrendering to German forces; iconic image of France's fall
+         SEARCH: France surrender June 1940 armistice Compiegne railway car photograph
+         LINK: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-H27337,_Frankreich,_Waffenstillstandsverhandlungen.jpg (suggested, not guaranteed) -->
+    <figure>
+      <img src="images/S2/L03/S2L03_FranceSurrenderJune1940.jpg" alt="French armistice signing, Compiègne, June 1940">
+      <figcaption>French armistice signing at Compiègne, June 22, 1940. France fell in six weeks. Hitler chose the same railway car where Germany surrendered in 1918. Source: Bundesarchiv / Wikimedia Commons.</figcaption>
+    </figure>
+  </div>
+
+  <p>Hitler deliberately chose the armistice location as a humiliation: the same railway car in the same forest clearing at Compiègne where Germany had surrendered to France in November 1918. He was reversing the shame of WWI in a single symbolic gesture. The French officers who signed the surrender in June 1940 were sitting in the same seats as their fathers had sat in 1918.</p>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-mark">&#9675; &#9632; &#9675;</div><div class="divider-line"></div></div>
+
+  <!-- PRIMARY SOURCE 2: Churchill Blood Toil Tears Sweat -->
+  <div class="primary-source">
+    <div class="ps-label">Primary Source</div>
+    <div class="ps-quote">
+      "I have nothing to offer but blood, toil, tears, and sweat. We have before us an ordeal of the most grievous kind. We have before us many, many months of struggle and suffering."
+    </div>
+    <div class="ps-attribution">Winston Churchill, first speech as Prime Minister to the House of Commons, May 13, 1940.</div>
+    <div class="ps-narrator">Churchill became Prime Minister of Britain just three days before Germany invaded France; this speech was his first to Parliament, and it replaced years of denial and appeasement with a completely honest statement about how dangerous the situation was.</div>
+  </div>
+
+  <p>The United States watched from a distance, deeply divided about getting involved. Isolationist groups like America First held massive rallies arguing that the war was Europe's problem. Others, including Roosevelt, pushed for ways to help Britain short of entering the war directly. In 1941, Congress passed the Lend-Lease Act, allowing the U.S. to supply war materials to Britain and later the Soviet Union without technically entering the conflict. American <span class="vocab-red">isolationism</span> was slowly breaking down, but it would take Pearl Harbor to end it completely.</p>
+
+</section>
+
+<!-- ═══════════════════════════ LOCAL HISTORY ═══════════════════════════ -->
+<section class="local-history">
+  <div class="lh-badge">Local History Connection</div>
+  <div class="lh-headline">San Diego Was Already Preparing for a War Most Americans Wanted to Avoid</div>
+
+  <!-- FILENAME: S2L03_SanDiegoNavalBase1940.jpg
+       PLACE IN: images/S2/L03/
+       FIND: San Diego Naval Base or NAS North Island circa 1939-1941; fleet of warships in San Diego Bay or aircraft at North Island; shows San Diego's growing military presence before Pearl Harbor
+       SEARCH: San Diego Naval Station 1940 1941 warships bay North Island aircraft pre-Pearl Harbor
+       LINK: https://commons.wikimedia.org/wiki/File:NAS_North_Island_1940.jpg (suggested, not guaranteed) -->
+  <figure class="img-inset-right">
+    <img src="images/S2/L03/S2L03_SanDiegoNavalBase1940.jpg" alt="San Diego Naval Air Station North Island, circa 1940">
+    <figcaption>Naval Air Station North Island, San Diego, circa 1940. San Diego was one of the primary Pacific Fleet bases as war approached. Source: Wikimedia Commons / National Archives.</figcaption>
+  </figure>
+
+  <p>As Hitler moved across Europe and Japan expanded across Asia, San Diego was already transforming into one of the most important military cities in the United States. The Pacific Fleet maintained a major presence in San Diego Bay, and Naval Air Station North Island on Coronado Island was a critical hub for the aircraft carriers that would define the coming Pacific War.</p>
+  <p>When war with Japan began in December 1941, San Diego became the primary embarkation point for hundreds of thousands of troops heading to the Pacific theater. The city's population doubled in three years. The isolationism that had kept America out of the war until Pearl Harbor meant that when the U.S. finally entered, cities like San Diego had to absorb a military mobilization of staggering speed and scale.</p>
+</section>
+
+<!-- ═══════════════════════════ STILL MATTERS TODAY ═══════════════════════════ -->
+<section id="still-matters" class="still-matters">
+  <div class="sm-label">How This Still Matters Today</div>
+
+  <div class="sm-headline">Every generation faces the appeasement question: when a powerful country starts taking territory by force, at what point does the world decide it has gone too far?</div>
+
+  <!-- FILENAME: S2L03_ModernTerritory.jpg
+       PLACE IN: images/S2/L03/
+       FIND: Modern image related to territorial aggression or international response: NATO meeting, UN Security Council emergency session, or a map showing disputed territory in Eastern Europe or the South China Sea; must be clearly political/geopolitical in nature
+       SEARCH: NATO emergency meeting 2022 OR UN Security Council Ukraine 2022 OR South China Sea territorial dispute
+       LINK: https://commons.wikimedia.org/wiki/File:NATO_summit_2022.jpg (suggested, not guaranteed) -->
+  <figure>
+    <img src="images/S2/L03/S2L03_ModernTerritory.jpg" alt="NATO or UN response to modern territorial aggression">
+    <figcaption>World leaders respond to modern territorial aggression. The debates echo 1938 in striking ways. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+  <ul class="news-links">
+    <li><a href="https://www.bbc.com/news/world-europe-60506682" target="_blank" rel="noopener">"Ukraine invasion: Is this 1938 all over again? Historians weigh in" — BBC</a></li>
+    <li><a href="https://www.npr.org/2022/03/02/1084111427/historians-see-echoes-of-1930s-appeasement-in-russias-war-on-ukraine" target="_blank" rel="noopener">"Historians see echoes of 1930s appeasement in Russia's war on Ukraine" — NPR</a></li>
+    <li><a href="https://foreignpolicy.com/2023/08/14/china-taiwan-south-china-sea-aggression-appeasement/" target="_blank" rel="noopener">"The Appeasement Debate Returns: China, Taiwan, and Hard Choices Ahead" — Foreign Policy</a></li>
+  </ul>
+
+  <p>When Russia invaded Ukraine in February 2022, historians immediately began drawing comparisons to the 1930s. An authoritarian government claiming it was "protecting" Russian-speaking people in a neighboring country; a democratic world debating how much to resist; a question of whether supplying weapons is involvement. The words "appeasement" and "Chamberlain" appeared in newspapers and political speeches within days. The argument Churchill made in 1938 is still being made today, word for word, about different countries on the same continent.</p>
+
+  <div class="sm-closing-q">
+    <p>If you had been a British voter in 1938, after watching Germany take Austria and the Sudetenland without a fight, would you have supported Chamberlain's choice to negotiate at Munich, or Churchill's call to resist? And knowing what you know now: does that change your answer?</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer class="site-footer">
+  World History &mdash; Semester 2, Lesson 03 &nbsp;|&nbsp; Causes and Start of World War II
+</footer>
+
+</div><!-- end page-wrap -->
+
+<script>
+  document.querySelectorAll('.vocab').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      document.querySelectorAll('.vocab.active').forEach(function(v) {
+        if (v !== el) v.classList.remove('active');
+      });
+      el.classList.toggle('active');
+    });
+  });
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.vocab.active').forEach(function(v) {
+      v.classList.remove('active');
+    });
+  });
+</script>
 </body>
 </html>
