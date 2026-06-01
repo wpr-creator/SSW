@@ -1,74 +1,995 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSW — S2 L05: Post-War World and Cold War Origins</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: #0f1729;
-      color: #f8f6f2;
-      font-family: Georgia, "Times New Roman", serif;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-    }
-    a.back {
-      position: fixed;
-      top: 1.25rem;
-      left: 1.25rem;
-      color: #94a3b8;
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.02em;
-    }
-    a.back:hover { color: #f8f6f2; }
-    .badge {
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #64748b;
-      margin-bottom: 1.25rem;
-    }
-    h1 {
-      font-size: clamp(1.75rem, 4vw, 2.75rem);
-      font-weight: 400;
-      line-height: 1.25;
-      max-width: 52rem;
-      margin-bottom: 1.5rem;
-    }
-    .eq {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      font-style: italic;
-      color: #cbd5e1;
-      max-width: 42rem;
-      line-height: 1.65;
-      margin-bottom: 3rem;
-    }
-    .eq.final-eq { font-style: normal; color: #94a3b8; }
-    .banner {
-      display: inline-block;
-      padding: 1.1rem 3.25rem;
-      border: 2px solid #334155;
-      background: linear-gradient(180deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 41, 0.95) 100%);
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #e2e8f0;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSW_S2L05 — Post-War World and Cold War Origins</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red:         #c01818;
+    --red-dark:    #8a0e0e;
+    --red-mid:     #aa1818;
+    --black:       #0a0a0a;
+    --black-soft:  #161616;
+    --charcoal:    #242424;
+    --gray-dark:   #383838;
+    --gray-mid:    #585858;
+    --gray-light:  #989898;
+    --gray-pale:   #c8c8c8;
+    --off-white:   #ece8e0;
+    --cream:       #f2eeE6;
+    --star-gold:   #d4a820;
+    --star-dim:    #8a6c10;
+    --vocab-red:   #b03030;
+    --us-blue:     #1a3a6a;
+    --ussr-red:    #8a0e0e;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #0a0a0a;
+    background-image:
+      radial-gradient(ellipse at top, #1a1a1a 0%, #0a0a0a 70%);
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.9;
+    color: var(--black);
+  }
+
+  .page-wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    background-color: var(--cream);
+    box-shadow: 0 0 100px rgba(0,0,0,0.95);
+  }
+
+  /* ─── HEADER ─── */
+  .site-header {
+    position: relative;
+    overflow: hidden;
+    padding: 64px 44px 54px;
+    background-color: var(--black);
+    text-align: center;
+  }
+  .header-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.28;
+    filter: grayscale(60%) contrast(120%);
+  }
+  .header-content { position: relative; z-index: 2; }
+
+  .course-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gray-light);
+    margin-bottom: 20px;
+  }
+
+  .page-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(48px, 8vw, 78px);
+    font-weight: 800;
+    line-height: 1.0;
+    color: var(--off-white);
+    text-shadow: 2px 4px 20px rgba(0,0,0,0.9);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .eq-banner {
+    display: inline-block;
+    background-color: var(--red);
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 14px 30px;
+    max-width: 720px;
+    line-height: 1.4;
+    border-left: 6px solid var(--star-gold);
+    border-right: 6px solid var(--star-gold);
+  }
+  .eq-label {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    color: rgba(255,255,255,0.55);
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'IBM Plex Serif', serif;
+    font-style: italic;
+    text-transform: none;
+    font-weight: 400;
+  }
+
+  /* ─── NAV ─── */
+  .section-nav {
+    background-color: var(--black-soft);
+    border-bottom: 4px solid var(--red);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 8px;
+  }
+  .section-nav a {
+    display: inline-block;
+    color: var(--gray-light);
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 14px 16px;
+    border-bottom: 4px solid transparent;
+    margin-bottom: -4px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .section-nav a:hover {
+    color: var(--star-gold);
+    border-bottom-color: var(--star-gold);
+  }
+
+  /* ─── INTRO ─── */
+  .intro-section {
+    padding: 50px 44px 38px;
+    background-color: var(--charcoal);
+    color: var(--off-white);
+    border-bottom: 4px solid var(--red-dark);
+  }
+  .intro-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gray-light);
+    margin-bottom: 14px;
+  }
+  .intro-section p {
+    color: var(--off-white);
+    font-size: 19px;
+    line-height: 1.95;
+    margin-bottom: 18px;
+  }
+
+  /* ─── CONTENT SECTIONS ─── */
+  .content-section { padding: 52px 44px 40px; }
+  .content-section:nth-child(odd)  { background-color: var(--cream); }
+  .content-section:nth-child(even) { background-color: #e8e4dc; }
+
+  .section-number {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--red-mid);
+    margin-bottom: 8px;
+  }
+  .section-heading {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(30px, 4.8vw, 42px);
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--black-soft);
+    line-height: 1.1;
+    margin-bottom: 26px;
+    border-left: 7px solid var(--red);
+    padding-left: 18px;
+  }
+
+  p { margin-bottom: 20px; color: var(--charcoal); }
+  .clearfix::after { content: ""; display: table; clear: both; }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 44px 0 34px;
+  }
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gray-mid), transparent);
+  }
+  .divider-star {
+    font-size: 16px;
+    color: var(--red);
+    line-height: 1;
+  }
+
+  /* ─── VOCAB ─── */
+  .vocab {
+    color: var(--vocab-red);
+    text-decoration: underline dotted var(--vocab-red);
+    cursor: help;
+    position: relative;
+  }
+  .vocab .tip {
+    display: none;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0a0a1e;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 1.5;
+    z-index: 100;
+    font-style: normal;
+    font-weight: 400;
+    pointer-events: none;
+    max-width: 280px;
+    white-space: normal;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    border-left: 3px solid var(--red);
+  }
+  .vocab:hover .tip,
+  .vocab.active .tip { display: block; }
+  .vocab-red { color: var(--vocab-red); }
+
+  /* ─── IMAGES ─── */
+  figure { margin: 30px 0; }
+  figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(25%) contrast(110%);
+    border: 2px solid var(--gray-mid);
+    box-shadow: 5px 7px 26px rgba(0,0,0,0.3);
+  }
+  figcaption {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--gray-mid);
+    margin-top: 8px;
+    padding: 0 4px;
+    line-height: 1.5;
+  }
+  .img-inset-right { float: right; width: 40%; margin: 6px 0 20px 28px; }
+  .img-inset-left  { float: left;  width: 40%; margin: 6px 28px 20px 0; }
+  .img-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 30px 0;
+  }
+
+  /* ─── US vs USSR COMPARISON ─── */
+  .vs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 16px;
+  }
+  .vs-table .vs-header-us {
+    background-color: var(--us-blue);
+    color: #fff;
+    padding: 13px 16px;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .vs-table .vs-header-ussr {
+    background-color: var(--ussr-red);
+    color: #fff;
+    padding: 13px 16px;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .vs-table .vs-header-cat {
+    background-color: var(--charcoal);
+    color: var(--off-white);
+    padding: 13px 16px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: left;
+    width: 22%;
+  }
+  .vs-table td {
+    padding: 12px 16px;
+    vertical-align: top;
+    border: 1px solid #c8c4bc;
+    line-height: 1.65;
+  }
+  .vs-table tr:nth-child(even) td { background-color: #dedad2; }
+  .vs-table tr:nth-child(odd)  td { background-color: #e8e4dc; }
+  .vs-table .row-label {
+    background-color: #c4c0b8 !important;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+  }
+
+  /* ─── SPHERE CARDS ─── */
+  .sphere-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .sphere-card {
+    padding: 20px 22px;
+  }
+  .sphere-us {
+    background-color: var(--us-blue);
+    color: #fff;
+    border-top: 4px solid var(--star-gold);
+  }
+  .sphere-ussr {
+    background-color: var(--ussr-red);
+    color: #fff;
+    border-top: 4px solid var(--star-gold);
+  }
+  .sphere-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: var(--star-gold);
+  }
+  .sphere-card p {
+    color: rgba(255,255,255,0.9);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+  .sphere-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sphere-card ul li {
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    line-height: 1.55;
+  }
+  .sphere-card ul li::before {
+    content: "► ";
+    font-size: 11px;
+    color: var(--star-gold);
+  }
+
+  /* ─── NUCLEAR TIMELINE ─── */
+  .nuke-timeline {
+    margin: 28px 0;
+    border-left: 4px solid var(--red);
+    padding-left: 26px;
+  }
+  .nuke-item {
+    position: relative;
+    margin-bottom: 22px;
+  }
+  .nuke-item::before {
+    content: '';
+    position: absolute;
+    left: -35px;
+    top: 7px;
+    width: 14px;
+    height: 14px;
+    background: var(--red);
+    border: 3px solid var(--cream);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px var(--red);
+  }
+  .nuke-year {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .nuke-text {
+    font-size: 17px;
+    color: var(--charcoal);
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  /* ─── PRIMARY SOURCE ─── */
+  .primary-source {
+    margin: 38px 0;
+    padding: 28px 32px 28px 36px;
+    background-color: #dedad0;
+    border-left: 7px solid var(--red);
+    box-shadow: 4px 5px 18px rgba(0,0,0,0.15);
+    position: relative;
+  }
+  .primary-source::before {
+    content: '\201C';
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 130px;
+    font-weight: 800;
+    color: var(--red);
+    opacity: 0.10;
+    position: absolute;
+    top: -6px;
+    left: 6px;
+    line-height: 1;
+  }
+  .ps-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--red-mid);
+    margin-bottom: 12px;
+  }
+  .ps-quote {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--black-soft);
+    margin-bottom: 16px;
+    padding-left: 8px;
+  }
+  .ps-attribution {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--gray-mid);
+    margin-bottom: 12px;
+  }
+  .ps-narrator {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--charcoal);
+    border-top: 1px solid #bcb8b0;
+    padding-top: 12px;
+    margin-bottom: 20px;
+  }
+  .ps-questions { list-style: none; padding: 0; }
+  .ps-questions li {
+    padding: 10px 0;
+    border-top: 1px solid #ccc8c0;
+    font-size: 16px;
+    color: var(--black-soft);
+    font-weight: 600;
+    line-height: 1.6;
+  }
+  .ps-questions li span {
+    color: var(--red);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ─── CALLOUT BOX ─── */
+  .callout-box {
+    background-color: var(--charcoal);
+    color: var(--off-white);
+    padding: 26px 30px;
+    margin: 32px 0;
+    border-top: 4px solid var(--star-gold);
+    border-bottom: 4px solid var(--star-gold);
+  }
+  .callout-box p { color: #c8c4bc; margin-bottom: 8px; }
+  .callout-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--star-gold);
+    margin-bottom: 12px;
+  }
+
+  /* ─── LOCAL HISTORY ─── */
+  .local-history {
+    padding: 44px;
+    background-color: #d8d4cc;
+    border-top: 4px solid var(--gray-mid);
+    border-bottom: 4px solid var(--gray-mid);
+  }
+  .lh-badge {
+    display: inline-block;
+    background-color: var(--red);
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    margin-bottom: 16px;
+  }
+  .lh-headline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--black-soft);
+    margin-bottom: 18px;
+    line-height: 1.2;
+  }
+
+  /* ─── STILL MATTERS ─── */
+  .still-matters {
+    padding: 56px 44px;
+    background-color: var(--black);
+    color: var(--off-white);
+    border-top: 6px solid var(--red);
+  }
+  .sm-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gray-light);
+    margin-bottom: 14px;
+  }
+  .sm-headline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(22px, 3.8vw, 32px);
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--off-white);
+    line-height: 1.25;
+    margin-bottom: 30px;
+    border-left: 6px solid var(--red);
+    padding-left: 18px;
+  }
+  .still-matters p { color: #a8a4a0; }
+  .news-links { list-style: none; padding: 0; margin: 0 0 30px; }
+  .news-links li { padding: 12px 0; border-bottom: 1px solid var(--gray-dark); }
+  .news-links a {
+    color: var(--star-gold);
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: underline;
+    line-height: 1.5;
+  }
+  .news-links a:hover { color: #fff; }
+  .sm-closing-q {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: clamp(20px, 3vw, 26px);
+    font-style: italic;
+    color: var(--off-white);
+    line-height: 1.6;
+    margin-top: 34px;
+    padding-top: 26px;
+    border-top: 1px solid var(--gray-dark);
+  }
+  .sm-closing-q p { color: var(--off-white); }
+
+  /* ─── FOOTER ─── */
+  .site-footer {
+    background-color: var(--black);
+    color: var(--gray-mid);
+    text-align: center;
+    padding: 20px 44px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    border-top: 3px solid var(--red-dark);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 640px) {
+    .content-section, .intro-section, .still-matters, .local-history { padding: 36px 22px; }
+    .img-inset-right, .img-inset-left { float: none; width: 100%; margin: 22px 0; }
+    .img-pair, .sphere-grid { grid-template-columns: 1fr; }
+    .section-nav a { font-size: 11px; padding: 12px 9px; }
+    .primary-source { padding: 22px 20px; }
+    .vs-table { font-size: 14px; }
+    .vs-table td { padding: 9px 10px; }
+  }
+</style>
 </head>
 <body>
-  <a class="back" href="index.html">&larr; Course Home</a>
-  <p class="badge">World History · Semester 2 · Day 5</p>
-  <h1>Post-War World and Cold War Origins</h1>
-  <p class="eq">How did the end of WWII immediately create a new global conflict between former allies?</p>
-  <div class="banner">Coming Soon</div>
+<div class="page-wrap">
+
+<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+<header class="site-header">
+
+  <!-- FILENAME: S2L05_HeaderBg_YaltaConference.jpg
+       PLACE IN: images/S2/L05/
+       FIND: Yalta Conference February 1945; famous photograph of Churchill, Roosevelt, and Stalin seated together at Yalta; the three Allied leaders who would divide the postwar world; used as faded atmospheric header background
+       SEARCH: Yalta Conference 1945 Churchill Roosevelt Stalin photograph February
+       LINK: https://commons.wikimedia.org/wiki/File:Yalta_Conference_(Churchill,_Roosevelt,_Stalin)_(B%26W).jpg (suggested, not guaranteed) -->
+  <div class="header-bg" style="background-image: url('images/S2/L05/S2L05_HeaderBg_YaltaConference.jpg');"></div>
+
+  <div class="header-content">
+    <div class="course-label">World History &mdash; Semester 2, Lesson 05</div>
+    <h1 class="page-title">Post-War World<br>and Cold War<br>Origins</h1>
+    <div class="eq-banner">
+      <span class="eq-label">Essential Question</span>
+      How did the end of WWII immediately create a new global conflict between former allies?
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+<nav class="section-nav" aria-label="Page sections">
+  <a href="#yalta">Yalta and the Division</a>
+  <a href="#iron-curtain">The Iron Curtain</a>
+  <a href="#nuclear">The Nuclear Age</a>
+  <a href="#recovery">Recovery and Rivalry</a>
+  <a href="#local-history">Local History</a>
+  <a href="#still-matters">Still Matters Today</a>
+</nav>
+
+<!-- ═══════════════════════════ INTRO ═══════════════════════════ -->
+<section class="intro-section">
+  <div class="intro-label">Introduction</div>
+  <p>In February 1945, three men sat together in a palace in Crimea on the coast of the Black Sea. The war in Europe was almost over. Franklin Roosevelt, Winston Churchill, and Joseph Stalin had traveled to the seaside resort of Yalta to decide what the world would look like when the fighting stopped. They shook hands, smiled for photographers, and made agreements that would divide entire continents for the next fifty years.</p>
+  <p>Within three years, those same three countries would be locked in a cold, tense standoff that threatened to destroy civilization with nuclear weapons. They never fired at each other directly. But millions of people in Korea, Vietnam, Latin America, Africa, and Asia would die in the wars they fought through other nations.</p>
+  <p>This is the story of how the world went from defeating one threat to creating the next one before the victory parades had even ended.</p>
+</section>
+
+<!-- ═══════════════════════════ SECTION 1: YALTA ═══════════════════════════ -->
+<section id="yalta" class="content-section clearfix">
+  <div class="section-number">Chapter One</div>
+  <h2 class="section-heading">Yalta and the Division of the World</h2>
+
+  <!-- FILENAME: S2L05_YaltaPhoto.jpg
+       PLACE IN: images/S2/L05/
+       FIND: Official photograph of the Yalta Conference, February 4-11, 1945; Churchill, Roosevelt, and Stalin seated together; the most famous photograph of the Allied leaders together
+       SEARCH: Yalta Conference 1945 Big Three Churchill Roosevelt Stalin seated
+       LINK: https://commons.wikimedia.org/wiki/File:Yalta_Conference_(Churchill,_Roosevelt,_Stalin)_(B%26W).jpg (suggested, not guaranteed) -->
+  <figure class="img-inset-right">
+    <img src="images/S2/L05/S2L05_YaltaPhoto.jpg" alt="Churchill, Roosevelt, and Stalin at the Yalta Conference, February 1945">
+    <figcaption>Churchill, Roosevelt, and Stalin at Yalta, February 1945. These three men agreed to divide Europe's future while the war was still being fought. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p>The Yalta Conference took place from February 4 to 11, 1945. Germany had not yet surrendered, but everyone knew the end of the war was close. The three leaders of the Allied powers had to decide: what happens after? Who controls what? How do you rebuild a world that has just been almost completely destroyed?</p>
+
+  <p>The three men had very different goals. Franklin Roosevelt was dying. He was thin and exhausted, and he would be dead within two months of the conference. He wanted Soviet help finishing the war against Japan, and he wanted Stalin to join the new United Nations. Winston Churchill was worried about the Soviet Union expanding into Eastern Europe. He had already made a secret "percentages agreement" with Stalin in 1944 dividing influence over countries like Greece, Romania, and Bulgaria. Joseph Stalin wanted one thing above all else: a buffer zone. He wanted the countries on his western border to be friendly governments that the Soviet Union could control, so that Germany could never invade Russia again the way it had in 1941.</p>
+
+  <p>At Yalta, the three leaders agreed on several key points. Germany would be divided into occupation zones after its defeat: the U.S., Britain, France, and Soviet Union would each control a section. Free elections would be held in the liberated countries of Eastern Europe. The Soviet Union would enter the war against Japan after Germany surrendered. And a new international organization called the United Nations would be created.</p>
+
+  <p>The agreements looked good on paper. But the key question was whether Stalin would actually allow free elections in Eastern Europe. He had already placed Soviet-friendly governments in Poland before the conference even began. Roosevelt and Churchill accepted his promises without the power to enforce them. Within two years, it was clear that Stalin never intended to keep that promise. Eastern Europe would be run by Communist governments under Soviet control, not by freely elected democracies.</p>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-star">&#9733; &#9632; &#9733;</div><div class="divider-line"></div></div>
+
+  <!-- PRIMARY SOURCE 1: Roosevelt on Yalta -->
+  <div class="primary-source">
+    <div class="ps-label">Primary Source</div>
+    <div class="ps-quote">
+      "I come from the Crimea Conference with a firm belief that we have made a good start on the road to a world of peace. The Crimea Conference was a successful effort by the three leading nations to find a common ground for peace."
+    </div>
+    <div class="ps-attribution">President Franklin D. Roosevelt, Address to Congress, March 1, 1945.</div>
+    <div class="ps-narrator">Roosevelt delivered this speech six weeks before his death, genuinely believing the Yalta agreements would hold; history would reveal that Stalin had no intention of allowing free elections in Eastern Europe, making this one of the most tragically optimistic speeches in American history.</div>
+    <ul class="ps-questions">
+      <li>
+        <span>Question 1: Meaning</span>
+        What is Roosevelt claiming Yalta accomplished? What does he seem to believe about Stalin and the future?
+      </li>
+      <li>
+        <span>Question 2: Connect to the EQ</span>
+        How does Roosevelt's optimism at Yalta help explain why the end of WWII so quickly created a new global conflict? What did the U.S. get wrong about its former ally?
+      </li>
+    </ul>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════ SECTION 2: IRON CURTAIN ═══════════════════════════ -->
+<section id="iron-curtain" class="content-section clearfix">
+  <div class="section-number">Chapter Two</div>
+  <h2 class="section-heading">The Iron Curtain Falls: Two Worlds, One Europe</h2>
+
+  <p>By 1947, the promises made at Yalta were broken. The Soviet Union had installed Communist governments in Poland, Czechoslovakia, Hungary, Romania, Bulgaria, and East Germany. These governments did not hold free elections. They arrested political opponents. They controlled the press. They answered to Moscow. A line had been drawn across Europe, separating countries under Soviet control from those under Western influence.</p>
+
+  <!-- FILENAME: S2L05_IronCurtainMap.jpg
+       PLACE IN: images/S2/L05/
+       FIND: Map of Europe showing the Iron Curtain division between Western and Eastern Europe during the Cold War, circa 1947-1950; shows NATO and Warsaw Pact countries or simply East/West division
+       SEARCH: Iron Curtain map Europe Cold War division East West 1947 1949
+       LINK: https://commons.wikimedia.org/wiki/File:Cold_war_europe_military_alliances_map_en.png (suggested, not guaranteed) -->
+  <figure>
+    <img src="images/S2/L05/S2L05_IronCurtainMap.jpg" alt="Map of Europe showing the Iron Curtain division, Cold War era">
+    <figcaption>Europe divided by the Iron Curtain, Cold War era. Western Europe aligned with the U.S.; Eastern Europe was controlled by the Soviet Union. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p>The term "Iron Curtain" came from a speech by Winston Churchill. On March 5, 1946, in Fulton, Missouri, Churchill described what he saw happening to Europe. He said an iron curtain had descended across the continent from the Baltic Sea to the Adriatic Sea. On one side were free countries. On the other side were countries living under Soviet domination. The speech shocked many Americans who still thought of the Soviet Union as a wartime ally. But Churchill was describing reality.</p>
+
+  <p>The United States responded with a policy called <span class="vocab">containment<span class="tip">Containment: the U.S. foreign policy strategy of preventing the Soviet Union from spreading communism to additional countries by surrounding it with allied nations and military alliances.</span></span>. The idea was simple: the U.S. could not undo Soviet control of Eastern Europe, but it could stop communism from spreading further. President Harry Truman announced in 1947 that the U.S. would support any country threatened by communist takeover. This became known as the Truman Doctrine. The U.S. immediately sent military and economic aid to Greece and Turkey, where Soviet-backed communist movements were threatening to take power.</p>
+
+  <p>The U.S. also launched the Marshall Plan in 1947. This was a massive program of economic aid to rebuild Western European countries that had been destroyed by the war. The logic was straightforward: poor, hungry, unemployed people were more likely to support communist movements; prosperous people with good jobs and stable governments were less likely to. The Marshall Plan sent roughly $13 billion (about $150 billion today) into Western Europe over four years. It worked. Western European economies recovered rapidly, and communist political parties in France and Italy lost the influence they had briefly gained.</p>
+
+  <div class="sphere-grid">
+    <div class="sphere-card sphere-us">
+      <div class="sphere-title">U.S. Sphere of Influence</div>
+      <p>Democratic governments, free-market economies, U.S. military alliances</p>
+      <ul>
+        <li>Western Europe (NATO alliance, 1949)</li>
+        <li>Japan (rebuilt as democratic ally)</li>
+        <li>South Korea</li>
+        <li>Much of Latin America</li>
+        <li>Australia, New Zealand</li>
+      </ul>
+    </div>
+    <div class="sphere-card sphere-ussr">
+      <div class="sphere-title">Soviet Sphere of Influence</div>
+      <p>Communist governments, state-controlled economies, Soviet military presence</p>
+      <ul>
+        <li>Eastern Europe (Warsaw Pact, 1955)</li>
+        <li>East Germany</li>
+        <li>China (after 1949)</li>
+        <li>North Korea</li>
+        <li>Cuba (after 1959)</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>A <span class="vocab">sphere of influence<span class="tip">Sphere of influence: the area of the world where one powerful country has strong political, economic, or military control over other nations.</span></span> is the area of the world where one powerful country has dominant control. During the Cold War, almost every country on earth was pulled into one sphere or the other. Nations that tried to stay neutral were pressured from both sides. The entire world became a competition between two superpowers.</p>
+
+  <p>The competition for influence did not stay peaceful. When the Communist Party took over China in 1949, the U.S. saw it as a major loss. When the Soviet Union supported North Korea's invasion of South Korea in 1950, the U.S. sent troops. The Cold War was already producing hot wars by its fifth year.</p>
+
+</section>
+
+<!-- ═══════════════════════════ SECTION 3: NUCLEAR AGE ═══════════════════════════ -->
+<section id="nuclear" class="content-section clearfix">
+  <div class="section-number">Chapter Three</div>
+  <h2 class="section-heading">The Nuclear Age: Living Under the Threat of Annihilation</h2>
+
+  <p>The thing that made the <span class="vocab">Cold War<span class="tip">Cold War: the long period of political tension and military rivalry between the United States and the Soviet Union from 1947 to 1991, fought through proxy wars, espionage, and arms races rather than direct combat.</span></span> different from every previous conflict was the nuclear weapon. The atomic bombs dropped on Hiroshima and Nagasaki in August 1945 had proven that a single device could destroy an entire city in seconds. For four years, only the United States had this technology. Then, in August 1949, the Soviet Union successfully tested its own atomic bomb. The world had changed permanently.</p>
+
+  <!-- FILENAME: S2L05_AtomicTestNevada.jpg
+       PLACE IN: images/S2/L05/
+       FIND: U.S. nuclear weapon test in Nevada or Pacific, late 1940s or 1950s; nuclear mushroom cloud from an American test; shows the scale and terror of atomic weapons development during the early Cold War
+       SEARCH: U.S. nuclear test Nevada 1951 1952 mushroom cloud atomic bomb test Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:Operation_Upshot-Knothole_-_Badger_001.jpg (suggested, not guaranteed) -->
+  <figure class="img-inset-left">
+    <img src="images/S2/L05/S2L05_AtomicTestNevada.jpg" alt="U.S. nuclear weapon test, Nevada, early 1950s">
+    <figcaption>U.S. nuclear weapons test, Nevada Test Site, early 1950s. Both the U.S. and Soviet Union conducted hundreds of atmospheric nuclear tests. Source: U.S. government / Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p>The nuclear arms race began immediately. Both sides rushed to build larger and more powerful weapons. By the 1950s, both the U.S. and Soviet Union had developed hydrogen bombs, which were hundreds of times more powerful than the atomic bombs dropped on Japan. The concept that emerged to manage this terrifying situation was called <span class="vocab">nuclear deterrence<span class="tip">Nuclear deterrence: the idea that no country will launch a nuclear attack because it knows the other side will respond with nuclear weapons, making any attack a form of mutual suicide.</span></span>. The logic was dark but simple: if both sides know that using nuclear weapons means their own country will be destroyed in return, neither side will use them. This was called Mutually Assured Destruction, or MAD.</p>
+
+  <div class="nuke-timeline">
+    <div class="nuke-item">
+      <div class="nuke-year">1945</div>
+      <p class="nuke-text">United States drops atomic bombs on Hiroshima (August 6) and Nagasaki (August 9). Japan surrenders. The U.S. is the only nuclear power on earth.</p>
+    </div>
+    <div class="nuke-item">
+      <div class="nuke-year">1949</div>
+      <p class="nuke-text">Soviet Union tests its first atomic bomb. The U.S. monopoly on nuclear weapons ends. American officials are shocked at how quickly the Soviets succeeded; Soviet spies had stolen key secrets from the U.S. nuclear program.</p>
+    </div>
+    <div class="nuke-item">
+      <div class="nuke-year">1952</div>
+      <p class="nuke-text">United States tests the first hydrogen bomb. It is 500 times more powerful than the Hiroshima bomb. A single weapon can now destroy a major city completely.</p>
+    </div>
+    <div class="nuke-item">
+      <div class="nuke-year">1953</div>
+      <p class="nuke-text">Soviet Union tests its own hydrogen bomb. Both superpowers now have the ability to destroy civilization. The arms race accelerates.</p>
+    </div>
+    <div class="nuke-item">
+      <div class="nuke-year">1957</div>
+      <p class="nuke-text">The Soviet Union launches Sputnik, the world's first artificial satellite. This proves the Soviets can deliver nuclear warheads anywhere on earth using rockets. The space race and missile race begin simultaneously.</p>
+    </div>
+  </div>
+
+  <p>Ordinary Americans experienced the nuclear threat differently than politicians did. Civil defense programs taught schoolchildren to hide under their desks in the event of a nuclear attack. Families built bomb shelters in their backyards. The government ran national duck-and-cover drills. The psychological weight of living with the possibility of nuclear annihilation shaped an entire generation's understanding of the world. Every crisis between the U.S. and Soviet Union carried the unspoken possibility of catastrophic war.</p>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-star">&#9733; &#9632; &#9733;</div><div class="divider-line"></div></div>
+
+  <!-- PRIMARY SOURCE 2: Churchill Iron Curtain Speech -->
+  <div class="primary-source">
+    <div class="ps-label">Primary Source</div>
+    <div class="ps-quote">
+      "From Stettin in the Baltic to Trieste in the Adriatic, an iron curtain has descended across the Continent. Behind that line lie all the capitals of the ancient states of Central and Eastern Europe. Warsaw, Berlin, Prague, Vienna, Budapest, Belgrade, Bucharest and Sofia; all these famous cities and the populations around them lie in what I must call the Soviet sphere, and all are subject, in one form or another, not only to Soviet influence but to a very high and in many cases increasing measure of control from Moscow."
+    </div>
+    <div class="ps-attribution">Winston Churchill, "The Sinews of Peace" speech, Westminster College, Fulton, Missouri, March 5, 1946.</div>
+    <div class="ps-narrator">Churchill was no longer Prime Minister when he gave this speech in a small Missouri college town, but his words introduced the phrase "Iron Curtain" to the world and gave Western leaders and the public a vivid image of what the Soviet Union had done to Eastern Europe.</div>
+    <ul class="ps-questions">
+      <li>
+        <span>Question 1: Meaning</span>
+        List at least three specific cities Churchill names. What does he mean when he says they are "subject to a very high measure of control from Moscow"?
+      </li>
+      <li>
+        <span>Question 2: Connect to the EQ</span>
+        Churchill gave this speech less than a year after WWII ended. How does his description of Europe explain how former allies became rivals so fast?
+      </li>
+    </ul>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════ SECTION 4: RECOVERY AND RIVALRY ═══════════════════════════ -->
+<section id="recovery" class="content-section clearfix">
+  <div class="section-number">Chapter Four</div>
+  <h2 class="section-heading">Recovery and Rivalry: Germany, Japan, and the Two Superpowers</h2>
+
+  <p>One of the most remarkable stories of the postwar world was the recovery of Germany and Japan. Both countries had been utterly destroyed by 1945. Both had caused immeasurable suffering. And both were rebuilt rapidly, becoming prosperous democracies and key American allies within a decade. This was not generosity for its own sake. It was strategy: the U.S. needed strong, stable allies positioned right next to the Soviet Union and Communist China.</p>
+
+  <div class="img-pair">
+    <!-- FILENAME: S2L05_BerlinRuins1945.jpg
+         PLACE IN: images/S2/L05/
+         FIND: Berlin in ruins, 1945; famous photograph showing massive destruction of the German capital; bombed-out buildings, rubble, civilians walking through destroyed streets
+         SEARCH: Berlin ruins 1945 destruction bombed buildings photograph Bundesarchiv
+         LINK: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-H1216-0500-002.jpg (suggested, not guaranteed) -->
+    <figure>
+      <img src="images/S2/L05/S2L05_BerlinRuins1945.jpg" alt="Berlin in ruins, 1945">
+      <figcaption>Berlin in ruins, 1945. The German capital was nearly leveled by the end of the war. Source: Bundesarchiv / Wikimedia Commons.</figcaption>
+    </figure>
+
+    <!-- FILENAME: S2L05_WestGermanyRecovery.jpg
+         PLACE IN: images/S2/L05/
+         FIND: West German economic recovery, late 1950s; new buildings or factories or busy city streets in West Germany showing the "economic miracle" (Wirtschaftswunder); or Marshall Plan aid arriving in Germany
+         SEARCH: West Germany Wirtschaftswunder economic miracle 1950s Frankfurt reconstruction
+         LINK: https://commons.wikimedia.org/wiki/File:Wiederaufbau_Deutschland_1950s.jpg (suggested, not guaranteed) -->
+    <figure>
+      <img src="images/S2/L05/S2L05_WestGermanyRecovery.jpg" alt="West Germany's economic recovery, late 1950s">
+      <figcaption>West Germany's reconstruction, late 1950s. Within a decade of total destruction, the West German economy had become one of the strongest in Europe. Source: Wikimedia Commons.</figcaption>
+    </figure>
+  </div>
+
+  <table class="vs-table">
+    <thead>
+      <tr>
+        <th class="vs-header-cat"></th>
+        <th class="vs-header-us">United States</th>
+        <th class="vs-header-ussr">Soviet Union</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="row-label">Political System</td>
+        <td>Democracy; free elections, multiple political parties, individual rights protected by law</td>
+        <td>Communist single-party state; no free elections, government controls political life</td>
+      </tr>
+      <tr>
+        <td class="row-label">Economic System</td>
+        <td>Capitalism; private businesses, free markets, individual ownership of property</td>
+        <td>Communism; government owns all major industries and controls the economy</td>
+      </tr>
+      <tr>
+        <td class="row-label">Military Strategy</td>
+        <td>NATO alliance; U.S. troops stationed in Western Europe, South Korea, and Japan; nuclear arsenal</td>
+        <td>Warsaw Pact; Soviet troops stationed throughout Eastern Europe; nuclear arsenal</td>
+      </tr>
+      <tr>
+        <td class="row-label">View of the Other Side</td>
+        <td>Communism threatens individual freedom and democracy worldwide; must be contained</td>
+        <td>Capitalism exploits workers; American imperialism threatens revolutionary movements globally</td>
+      </tr>
+      <tr>
+        <td class="row-label">How They Fought the Cold War</td>
+        <td>Foreign aid, military alliances, CIA operations, proxy wars in Korea and Vietnam</td>
+        <td>Supporting communist movements worldwide, KGB espionage, proxy wars in Korea and Vietnam</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- FILENAME: S2L05_MarshallPlanPoster.jpg
+       PLACE IN: images/S2/L05/
+       FIND: Marshall Plan poster or promotional graphic, circa 1947-1951; official U.S. government Marshall Plan aid poster with European flags or hands receiving aid; shows the economic recovery program visually
+       SEARCH: Marshall Plan poster 1947 1948 European Recovery Program ERP official poster
+       LINK: https://commons.wikimedia.org/wiki/File:Marshall_Plan_poster.jpg (suggested, not guaranteed) -->
+  <figure class="img-inset-right">
+    <img src="images/S2/L05/S2L05_MarshallPlanPoster.jpg" alt="Marshall Plan poster, circa 1948">
+    <figcaption>Official Marshall Plan poster, circa 1948. The U.S. sent approximately $13 billion to rebuild Western Europe and prevent the spread of communism. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p>Germany was a special case. After the war, it was physically divided into two countries. West Germany was rebuilt with American aid, held free elections, and joined NATO. It became one of the world's strongest democracies. East Germany was under Soviet control, run by a communist government, and separated from the West by concrete walls and armed guards. The most visible symbol of the entire Cold War was the Berlin Wall, built in 1961 to stop East Germans from fleeing to the West. For twenty-eight years, families were separated by concrete and barbed wire in the middle of a city.</p>
+
+  <div class="callout-box">
+    <div class="callout-title">Japan: Enemy to Ally in Seven Years</div>
+    <p>Japan surrendered in August 1945 after the atomic bombings. The U.S. occupied Japan and General Douglas MacArthur oversaw the rebuilding of the country from scratch. The U.S. wrote Japan a new constitution in 1947. It included democratic elections, women's voting rights, a free press, and a clause permanently banning Japan from having an offensive military. Within seven years, Japan had gone from America's most hated enemy to one of its most important allies in Asia. The U.S. needed Japan as a base to contain Communist China and North Korea. Cold War strategy shaped Japan's entire postwar identity.</p>
+  </div>
+
+  <p>Students who grew up in the United States in the 1950s and 1960s were taught that the American way of life was under constant threat from Soviet communism. That message was everywhere: in schools, on television, in government speeches, and in the movies. The Cold War was not just a military and political contest; it was also a contest of ideas, cultures, and ways of life that touched every American classroom and living room.</p>
+
+</section>
+
+<!-- ═══════════════════════════ LOCAL HISTORY ═══════════════════════════ -->
+<section id="local-history" class="local-history">
+  <div class="lh-badge">Local History Connection</div>
+  <div class="lh-headline">San Diego: The Cold War's Pacific Fortress</div>
+
+  <!-- FILENAME: S2L05_SanDiegoNavalColdWar.jpg
+       PLACE IN: images/S2/L05/
+       FIND: San Diego Naval Station or aircraft carriers in San Diego Bay, late 1940s or 1950s; shows San Diego's role as a major Pacific Fleet base during the Cold War; OR Camp Pendleton Marines training, 1950s
+       SEARCH: San Diego Naval Station Pacific Fleet 1950s aircraft carrier Cold War OR Camp Pendleton Marines 1950s
+       LINK: https://commons.wikimedia.org/wiki/File:San_Diego_Naval_Station_1950s.jpg (suggested, not guaranteed) -->
+  <figure class="img-inset-right">
+    <img src="images/S2/L05/S2L05_SanDiegoNavalColdWar.jpg" alt="San Diego Naval Station and Pacific Fleet, 1950s">
+    <figcaption>San Diego's Naval Station and Pacific Fleet, 1950s. The city became the primary anchor of the U.S. Pacific military presence during the Cold War. Source: Wikimedia Commons / National Archives.</figcaption>
+  </figure>
+
+  <p>As the Cold War took shape in the late 1940s and 1950s, San Diego became one of the most strategically important military cities in the United States. The Pacific Fleet was headquartered here, with aircraft carriers that were designed to project American power across the Pacific toward the Soviet Union, China, and North Korea. When the Korean War began in 1950, San Diego's Naval Station was the primary departure point for troops and ships heading to the western Pacific.</p>
+  <p>Camp Pendleton, opened in 1942 just north of San Diego in Oceanside, became the largest Marine Corps base in the country during the Cold War and trained the Marines who fought in Korea and later Vietnam. The Cold War did not feel abstract in San Diego; it felt like something happening just beyond the horizon, and the city's economy, culture, and identity were shaped by its role as the nation's first line of Pacific defense.</p>
+</section>
+
+<!-- ═══════════════════════════ STILL MATTERS TODAY ═══════════════════════════ -->
+<section id="still-matters" class="still-matters">
+  <div class="sm-label">How This Still Matters Today</div>
+
+  <div class="sm-headline">The Cold War ended in 1991, but the world it built is the world we still live in. The alliances, the rivalries, and the nuclear weapons are all still here.</div>
+
+  <!-- FILENAME: S2L05_NATOSummitModern.jpg
+       PLACE IN: images/S2/L05/
+       FIND: Modern NATO summit or NATO leaders meeting, 2022 or 2023; shows NATO as a still-active Cold War institution responding to current threats; or image of nuclear submarine or missile to represent ongoing nuclear deterrence
+       SEARCH: NATO summit 2022 2023 leaders meeting modern OR nuclear submarine USS Ohio Trident missile
+       LINK: https://commons.wikimedia.org/wiki/File:NATO_Madrid_Summit_2022.jpg (suggested, not guaranteed) -->
+  <figure>
+    <img src="images/S2/L05/S2L05_NATOSummitModern.jpg" alt="NATO summit, modern era">
+    <figcaption>A modern NATO summit. The alliance created in 1949 to contain Soviet communism is still the central structure of Western defense. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+  <ul class="news-links">
+    <li><a href="https://www.bbc.com/news/world-europe-60506682" target="_blank" rel="noopener">"NATO's expansion: How the Cold War alliance became a flashpoint again" — BBC</a></li>
+    <li><a href="https://www.npr.org/2022/03/09/1085843437/us-russia-nuclear-risk-ukraine" target="_blank" rel="noopener">"How the Ukraine war raised the risk of nuclear weapons use for the first time since the Cold War" — NPR</a></li>
+    <li><a href="https://foreignpolicy.com/2023/05/01/china-us-cold-war-rivalry-taiwan/" target="_blank" rel="noopener">"The New Cold War: U.S.-China rivalry is reshaping the world the same way the old one did" — Foreign Policy</a></li>
+  </ul>
+
+  <p>NATO, the military alliance created in 1949 to contain Soviet communism, is larger today than it was during the Cold War. After Russia invaded Ukraine in 2022, countries that had been neutral for decades, including Finland and Sweden, joined NATO. The nuclear arsenals of the U.S. and Russia still contain thousands of warheads. China has become a second rival superpower. The arguments about spheres of influence, containment, and the cost of military alliances that started in 1947 are happening right now in news headlines, in Congress, and in the halls of the United Nations.</p>
+
+  <div class="sm-closing-q">
+    <p>The Cold War was fought to protect democracy and freedom. But the U.S. also supported dictators, overthrew elected governments, and fought wars that killed millions of civilians. Does a country lose the moral argument when it does those things in the name of a good cause?</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer class="site-footer">
+  World History &mdash; Semester 2, Lesson 05 &nbsp;|&nbsp; Post-War World and Cold War Origins
+</footer>
+
+</div><!-- end page-wrap -->
+
+<script>
+  document.querySelectorAll('.vocab').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      document.querySelectorAll('.vocab.active').forEach(function(v) {
+        if (v !== el) v.classList.remove('active');
+      });
+      el.classList.toggle('active');
+    });
+  });
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.vocab.active').forEach(function(v) {
+      v.classList.remove('active');
+    });
+  });
+</script>
 </body>
 </html>
