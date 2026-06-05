@@ -3,927 +3,491 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSW_S2L01 — The Failed Peace After WWI</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<title>SSW_S2L01 — THE FAILED PEACE AFTER WWI</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --khaki:       #c8b98a;
-    --khaki-dark:  #a89b6a;
-    --khaki-pale:  #e8dfc8;
-    --blood:       #7a1a1a;
-    --blood-mid:   #9e2a2a;
-    --mud:         #3b2f1e;
-    --mud-mid:     #5a4430;
-    --mud-light:   #7a6048;
-    --newsprint:   #f0e8d8;
-    --ink:         #1a1208;
-    --ink-soft:    #2e2518;
-    --gray-steel:  #4a4540;
-    --gray-light:  #9a9088;
-    --vocab-red:   #b03030;
-    --accent:      #c8a84a;
-    --accent-dark: #8a6a20;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background-color: #2a2018;
-    background-image:
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 3px,
-        rgba(0,0,0,0.08) 3px,
-        rgba(0,0,0,0.08) 4px
-      );
-    color: var(--ink);
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 18px;
-    line-height: 1.9;
-  }
-
-  /* ─── PAGE WRAPPER ─── */
-  .page-wrap {
-    max-width: 820px;
-    margin: 0 auto;
-    background-color: var(--newsprint);
-    background-image:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    box-shadow: 0 0 60px rgba(0,0,0,0.7);
-  }
-
-  /* ─── HEADER ─── */
-  .site-header {
-    position: relative;
-    overflow: hidden;
-    padding: 60px 40px 50px;
-    background-color: var(--mud);
-    text-align: center;
-  }
-
-  .header-bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center top;
-    opacity: 0.32;
-    filter: grayscale(30%) sepia(40%);
-  }
-
-  <!-- FILENAME: S2L01_HeaderBg_TrenchWWI.jpg
-       PLACE IN: images/S2/L01/
-       FIND: WWI soldiers in muddy trench, Western Front, 1916-1918, iconic trench warfare image showing exhausted soldiers; used as atmospheric header background
-       SEARCH: WWI trench soldiers Western Front 1917 Imperial War Museum
-       LINK: https://commons.wikimedia.org/wiki/File:WWI_trench_warfare.jpg (suggested, not guaranteed) -->
-  <img class="header-bg" src="images/S2/L01/S2L01_HeaderBg_TrenchWWI.jpg" alt="" aria-hidden="true">
-
-  .header-content { position: relative; z-index: 2; }
-
-  .course-label {
-    font-family: 'Source Serif 4', serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--khaki);
-    margin-bottom: 18px;
-  }
-
-  .page-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(46px, 7vw, 68px);
-    font-weight: 900;
-    line-height: 1.1;
-    color: var(--khaki-pale);
-    text-shadow: 2px 4px 12px rgba(0,0,0,0.7), 0 0 40px rgba(0,0,0,0.5);
-    margin-bottom: 28px;
-  }
-
-  .eq-banner {
-    display: inline-block;
-    background-color: var(--blood);
-    color: #fff;
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    font-style: italic;
-    font-weight: 700;
-    padding: 14px 30px;
-    border: 2px solid var(--khaki);
-    box-shadow: 0 4px 18px rgba(0,0,0,0.5);
-    max-width: 700px;
-    line-height: 1.5;
-  }
-
-  .eq-label {
-    font-style: normal;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--khaki);
-    display: block;
-    margin-bottom: 4px;
-  }
-
-  /* ─── NAV BAR ─── */
-  .section-nav {
-    background-color: var(--mud);
-    border-bottom: 3px solid var(--blood);
-    padding: 0 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2px;
-    justify-content: center;
-  }
-
-  .section-nav a {
-    display: inline-block;
-    color: var(--khaki-pale);
-    text-decoration: none;
-    font-family: 'Source Serif 4', serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 14px 16px;
-    border-bottom: 3px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-  }
-
-  .section-nav a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-  }
-
-  /* ─── SECTION DIVIDER ─── */
-  .divider {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin: 48px 0 36px;
-    padding: 0 40px;
-  }
-
-  .divider-line {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--mud-light), transparent);
-  }
-
-  .divider-ornament {
-    color: var(--blood);
-    font-size: 20px;
-    line-height: 1;
-  }
-
-  /* ─── CONTENT SECTIONS ─── */
-  .content-section {
-    padding: 48px 40px 36px;
-  }
-
-  .content-section:nth-child(odd) {
-    background-color: var(--newsprint);
-  }
-
-  .content-section:nth-child(even) {
-    background-color: #e8dfc5;
-  }
-
-  .section-number {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--blood-mid);
-    margin-bottom: 8px;
-  }
-
-  .section-heading {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 4vw, 36px);
-    font-weight: 900;
-    color: var(--mud);
-    line-height: 1.2;
-    margin-bottom: 24px;
-    border-left: 5px solid var(--blood);
-    padding-left: 18px;
-  }
-
-  p {
-    margin-bottom: 20px;
-    color: var(--ink-soft);
-  }
-
-  /* ─── INTRODUCTION ─── */
-  .intro-section {
-    padding: 44px 40px 36px;
-    background-color: var(--mud-mid);
-    background-image: linear-gradient(to bottom, var(--mud-mid), var(--mud));
-    color: var(--khaki-pale);
-    border-bottom: 4px solid var(--blood);
-  }
-
-  .intro-section p {
-    color: var(--khaki-pale);
-    font-size: 19px;
-    line-height: 2;
-  }
-
-  .intro-label {
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--khaki);
-    margin-bottom: 14px;
-    font-weight: 600;
-  }
-
-  /* ─── VOCAB ─── */
-  .vocab {
-    color: var(--vocab-red);
-    text-decoration: underline dotted var(--vocab-red);
-    cursor: help;
-    position: relative;
-  }
-
-  .vocab .tip {
-    display: none;
-    position: absolute;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #1a1a2e;
-    color: #fff;
-    padding: 8px 14px;
-    border-radius: 4px;
-    font-size: 14px;
-    line-height: 1.5;
-    z-index: 100;
-    font-style: normal;
-    font-weight: 400;
-    pointer-events: none;
-    max-width: 280px;
-    white-space: normal;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-  }
-
-  .vocab:hover .tip,
-  .vocab.active .tip { display: block; }
-
-  .vocab-red { color: var(--vocab-red); }
-
-  /* ─── IMAGES ─── */
-  figure {
-    margin: 32px 0;
-  }
-
-  figure img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border: 2px solid var(--mud-light);
-    box-shadow: 4px 6px 20px rgba(0,0,0,0.3);
-  }
-
-  figcaption {
-    font-size: 13px;
-    font-style: italic;
-    color: var(--gray-steel);
-    margin-top: 8px;
-    padding: 0 4px;
-    line-height: 1.5;
-  }
-
-  .img-inset-right {
-    float: right;
-    width: 42%;
-    margin: 8px 0 20px 28px;
-  }
-
-  .img-inset-left {
-    float: left;
-    width: 42%;
-    margin: 8px 28px 20px 0;
-  }
-
-  .img-pair {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-    margin: 32px 0;
-  }
-
-  .clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  /* ─── PRIMARY SOURCE ─── */
-  .primary-source {
-    margin: 36px 0;
-    padding: 28px 32px;
-    background-color: #ddd5be;
-    border-left: 6px solid var(--blood);
-    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1), 4px 4px 16px rgba(0,0,0,0.15);
-    position: relative;
-  }
-
-  .primary-source::before {
-    content: '\201C';
-    font-family: 'Playfair Display', serif;
-    font-size: 80px;
-    color: var(--blood);
-    opacity: 0.2;
-    position: absolute;
-    top: 8px;
-    left: 14px;
-    line-height: 1;
-  }
-
-  .ps-label {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--blood-mid);
-    font-weight: 600;
-    margin-bottom: 12px;
-  }
-
-  .ps-quote {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-style: italic;
-    line-height: 1.65;
-    color: var(--mud);
-    margin-bottom: 16px;
-    padding-left: 10px;
-  }
-
-  .ps-attribution {
-    font-size: 13px;
-    font-style: italic;
-    color: var(--gray-steel);
-    margin-bottom: 12px;
-  }
-
-  .ps-narrator {
-    font-size: 15px;
-    color: var(--mud-mid);
-    font-weight: 600;
-    border-top: 1px solid var(--khaki-dark);
-    padding-top: 12px;
-    margin-bottom: 20px;
-  }
-
-  .ps-questions {
-    list-style: none;
-    padding: 0;
-  }
-
-  .ps-questions li {
-    padding: 10px 0 10px 0;
-    border-top: 1px solid var(--khaki-dark);
-    font-size: 16px;
-    color: var(--mud);
-    font-weight: 600;
-  }
-
-  .ps-questions li span {
-    color: var(--blood);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 4px;
-  }
-
-  /* ─── COMPARISON TABLE ─── */
-  .compare-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 28px 0;
-    font-size: 16px;
-  }
-
-  .compare-table th {
-    background-color: var(--mud);
-    color: var(--khaki-pale);
-    padding: 12px 16px;
-    text-align: left;
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-  }
-
-  .compare-table td {
-    padding: 12px 16px;
-    vertical-align: top;
-    border: 1px solid var(--khaki-dark);
-    line-height: 1.7;
-  }
-
-  .compare-table tr:nth-child(even) td {
-    background-color: #ddd5be;
-  }
-
-  .compare-table tr:nth-child(odd) td {
-    background-color: #e8dfc8;
-  }
-
-  .compare-table .row-label {
-    font-weight: 600;
-    color: var(--blood);
-    background-color: #cfc3a8 !important;
-    font-size: 14px;
-  }
-
-  /* ─── CALLOUT BOX ─── */
-  .callout-box {
-    background-color: var(--mud);
-    color: var(--khaki-pale);
-    padding: 28px 32px;
-    margin: 32px 0;
-    border-top: 4px solid var(--accent);
-    border-bottom: 4px solid var(--accent);
-  }
-
-  .callout-box p {
-    color: var(--khaki-pale);
-    margin-bottom: 10px;
-  }
-
-  .callout-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    color: var(--accent);
-    margin-bottom: 12px;
-    font-weight: 700;
-  }
-
-  /* ─── STILL MATTERS ─── */
-  .still-matters {
-    padding: 52px 40px;
-    background-color: var(--mud);
-    background-image: linear-gradient(135deg, var(--mud) 0%, #1e180e 100%);
-    color: var(--khaki-pale);
-    border-top: 6px solid var(--blood);
-  }
-
-  .sm-label {
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--khaki);
-    margin-bottom: 14px;
-    font-weight: 600;
-  }
-
-  .sm-headline {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(22px, 3.5vw, 30px);
-    font-weight: 900;
-    color: var(--khaki-pale);
-    line-height: 1.3;
-    margin-bottom: 32px;
-    border-left: 5px solid var(--blood-mid);
-    padding-left: 18px;
-  }
-
-  .news-links {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 32px;
-  }
-
-  .news-links li {
-    padding: 12px 0;
-    border-bottom: 1px solid var(--mud-light);
-  }
-
-  .news-links a {
-    color: var(--accent);
-    font-weight: 600;
-    font-size: 17px;
-    text-decoration: underline;
-    line-height: 1.5;
-  }
-
-  .news-links a:hover { color: var(--khaki-pale); }
-
-  .sm-closing-q {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(20px, 3vw, 26px);
-    font-style: italic;
-    color: var(--khaki-pale);
-    line-height: 1.55;
-    margin-top: 36px;
-    padding: 24px 0 0;
-    border-top: 1px solid var(--mud-light);
-  }
-
-  .sm-closing-q p { color: var(--khaki-pale); }
-
-  /* ─── LOCAL HISTORY ─── */
-  .local-history {
-    margin: 0;
-    padding: 44px 40px;
-    background-color: #e0d4b8;
-    border-top: 4px solid var(--mud-light);
-    border-bottom: 4px solid var(--mud-light);
-  }
-
-  .lh-badge {
-    display: inline-block;
-    background-color: var(--blood);
-    color: #fff;
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    font-weight: 700;
-    padding: 4px 14px;
-    margin-bottom: 16px;
-  }
-
-  .lh-headline {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    font-weight: 900;
-    color: var(--mud);
-    margin-bottom: 20px;
-    line-height: 1.3;
-  }
-
-  /* ─── FOOTER ─── */
-  .site-footer {
-    background-color: var(--mud);
-    color: var(--gray-light);
-    text-align: center;
-    padding: 22px 40px;
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border-top: 3px solid var(--blood);
-  }
-
-  /* ─── RESPONSIVE ─── */
-  @media (max-width: 620px) {
-    .content-section, .intro-section, .still-matters, .local-history { padding: 36px 22px; }
-    .img-inset-right, .img-inset-left { float: none; width: 100%; margin: 24px 0; }
-    .img-pair { grid-template-columns: 1fr; }
-    .section-nav a { font-size: 11px; padding: 12px 10px; }
-    .primary-source { padding: 22px 20px; }
-    .compare-table { font-size: 14px; }
-    .compare-table th, .compare-table td { padding: 9px 10px; }
-    .divider { padding: 0 22px; }
-  }
+:root{
+  --khaki:#c8b98a;--khaki-dark:#a89b6a;--khaki-pale:#e8dfc8;--blood:#7a1a1a;--blood-mid:#9e2a2a;
+  --mud:#3b2f1e;--mud-mid:#5a4430;--mud-light:#7a6048;--newsprint:#f0e8d8;--ink:#1a1208;
+  --ink-soft:#2e2518;--gray-steel:#4a4540;--vocab-red:#b03030;--accent:#c8a84a;
+  --break-font:'Oswald',Arial,sans-serif;--display-font:'Playfair Display',Georgia,serif;--body-font:'Source Serif 4',Georgia,serif;
+  --bb-blue:#103348;--bb-gold:#f2c14e;--bb-red:#5b1010;--bb-green:#124237;--bb-black:#151515;--bb-purple:#3b163a;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background-color:#2a2018;background-image:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.08) 3px,rgba(0,0,0,.08) 4px);color:var(--ink);font-family:var(--body-font);font-size:18px;line-height:1.9}
+.page-wrap{max-width:820px;margin:0 auto;background-color:var(--newsprint);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");box-shadow:0 0 60px rgba(0,0,0,.7)}
+.site-header{position:relative;overflow:hidden;padding:72px 40px 56px;background-color:var(--mud);text-align:center}
+.header-bg{position:absolute;inset:0;background-size:cover;background-position:center top;opacity:.34;filter:grayscale(30%) sepia(40%) contrast(1.08)}
+.header-shade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(59,47,30,.2),rgba(59,47,30,.88))}
+.header-content{position:relative;z-index:2}
+.course-label{font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--khaki);margin-bottom:18px}
+.page-title{font-family:var(--display-font);font-size:clamp(50px,7vw,72px);font-weight:900;line-height:1.06;color:var(--khaki-pale);text-transform:uppercase;text-shadow:2px 4px 12px rgba(0,0,0,.7),0 0 40px rgba(0,0,0,.5);margin-bottom:28px}
+.eq-banner{display:inline-block;background-color:var(--blood);color:#fff;font-family:var(--display-font);font-size:clamp(18px,2.5vw,22px);font-style:italic;font-weight:700;padding:16px 30px;border:2px solid var(--khaki);box-shadow:0 4px 18px rgba(0,0,0,.5);max-width:700px;line-height:1.5;text-align:left}
+.eq-label{font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--khaki);display:block;margin-bottom:4px}
+.section-nav{background-color:var(--mud);border-bottom:3px solid var(--blood);padding:0 20px;display:flex;flex-wrap:wrap;gap:2px;justify-content:center;position:sticky;top:0;z-index:100}
+.section-nav a{display:inline-block;color:var(--khaki-pale);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 14px;border-bottom:3px solid transparent;transition:color .2s,border-color .2s}
+.section-nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+#lexile-toggle{display:block;margin:20px auto 28px;padding:10px 24px;font-size:13px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:2px solid var(--blood);background:transparent;color:var(--blood);font-family:var(--body-font);font-weight:600;transition:background .2s,color .2s}
+#lexile-toggle:hover{background:var(--blood);color:var(--newsprint)}
+.para-simple{display:none}body.simplified .para-standard{display:none}body.simplified .para-simple{display:block}
+.toc-sidebar{position:fixed;right:calc(50% - 570px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;z-index:50;background:rgba(59,47,30,.88);border-left:2px solid rgba(200,168,74,.35)}
+.toc-sidebar .toc-label{font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:10px}
+.toc-sidebar a{display:block;color:var(--khaki-pale);text-decoration:none;padding:3px 0;font-size:11px;letter-spacing:.05em;line-height:1.6;text-transform:uppercase}
+.toc-sidebar a.active,.toc-sidebar a:hover{color:var(--accent);font-weight:700}
+@media(max-width:1100px){.toc-sidebar{display:none}}
+.divider{display:flex;align-items:center;gap:14px;margin:48px 0 36px;padding:0 40px}
+.divider-line{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--mud-light),transparent)}
+.divider-ornament{color:var(--blood);font-size:20px;line-height:1}
+.intro-section{padding:44px 40px 36px;background-color:var(--mud-mid);background-image:linear-gradient(to bottom,var(--mud-mid),var(--mud));color:var(--khaki-pale);border-bottom:4px solid var(--blood)}
+.intro-section p{color:var(--khaki-pale);font-size:19px;line-height:2;margin-bottom:18px}
+.intro-label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--khaki);margin-bottom:14px;font-weight:600}
+.content-section{padding:48px 40px 36px;scroll-margin-top:74px}
+.content-section:nth-of-type(odd){background-color:var(--newsprint)}
+.content-section:nth-of-type(even){background-color:#e8dfc5}
+.section-number{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--blood-mid);margin-bottom:8px}
+.section-heading{font-family:var(--display-font);font-size:clamp(30px,4vw,38px);font-weight:900;color:var(--mud);line-height:1.2;margin-bottom:24px;border-left:5px solid var(--blood);padding-left:18px;text-transform:uppercase}
+p{margin-bottom:20px;color:var(--ink-soft)}
+.vocab{color:var(--vocab-red);text-decoration:underline dotted var(--vocab-red);cursor:help;position:relative;font-weight:600}
+.vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:100;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;box-shadow:0 4px 16px rgba(0,0,0,.4)}
+.vocab:hover .tip,.vocab.active .tip{display:block}.vocab-red{color:var(--vocab-red);font-weight:600}
+figure{margin:32px 0}figure img{width:100%;height:auto;display:block;border:2px solid var(--mud-light);box-shadow:4px 6px 20px rgba(0,0,0,.3)}
+figcaption{font-size:13px;font-style:italic;color:var(--gray-steel);margin-top:8px;padding:0 4px;line-height:1.5}
+.img-inset-right{float:right;width:42%;margin:8px 0 20px 28px}.img-inset-left{float:left;width:42%;margin:8px 28px 20px 0}
+.img-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:32px 0}.img-pair figure{margin:0}
+.clearfix::after{content:"";display:table;clear:both}
+.primary-source{margin:36px 0;padding:28px 32px;background-color:#ddd5be;border-left:6px solid var(--blood);box-shadow:inset 0 0 0 1px rgba(0,0,0,.1),4px 4px 16px rgba(0,0,0,.15);position:relative}
+.primary-source::before{content:'\201C';font-family:var(--display-font);font-size:80px;color:var(--blood);opacity:.2;position:absolute;top:8px;left:14px;line-height:1}
+.ps-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blood-mid);font-weight:600;margin-bottom:12px}
+.ps-quote{font-family:var(--display-font);font-size:22px;font-style:italic;line-height:1.65;color:var(--mud);margin-bottom:16px;padding-left:10px}
+.ps-attribution{font-size:13px;font-style:italic;color:var(--gray-steel);margin-bottom:12px}
+.ps-narrator{font-size:15px;color:var(--mud-mid);font-weight:600;border-top:1px solid var(--khaki-dark);padding-top:12px;margin-bottom:20px}
+.ps-questions{list-style:none;padding:0}.ps-questions li{padding:10px 0;border-top:1px solid var(--khaki-dark);font-size:16px;color:var(--mud);font-weight:600}.ps-questions li span{color:var(--blood);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:4px}
+.compare-table{width:100%;border-collapse:collapse;margin:28px 0;font-size:16px}.compare-table th{background-color:var(--mud);color:var(--khaki-pale);padding:12px 16px;text-align:left;font-family:var(--display-font);font-size:17px;text-transform:uppercase}.compare-table td{padding:12px 16px;vertical-align:top;border:1px solid var(--khaki-dark);line-height:1.7}.compare-table tr:nth-child(even) td{background-color:#ddd5be}.compare-table tr:nth-child(odd) td{background-color:#e8dfc8}.compare-table .row-label{font-weight:600;color:var(--blood);background-color:#cfc3a8!important;font-size:14px}
+.callout-box{background-color:var(--mud);color:var(--khaki-pale);padding:28px 32px;margin:32px 0;border-top:4px solid var(--accent);border-bottom:4px solid var(--accent)}.callout-box p{color:var(--khaki-pale);margin-bottom:10px}.callout-title{font-family:var(--display-font);font-size:20px;color:var(--accent);margin-bottom:12px;font-weight:700;text-transform:uppercase}
+.brain-break{font-family:var(--break-font);margin:44px -10px;padding:36px 44px;position:relative;overflow:hidden}
+.bb-label{display:block;font-family:var(--break-font);font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.86}
+.bb-text{font-family:var(--break-font);font-size:24px;font-weight:500;line-height:1.55;margin:0}
+.dyk-break{background:var(--bb-blue);color:#fff;border-left:6px solid var(--bb-gold)}.dyk-break .bb-label{color:var(--bb-gold)}
+.ff-break{background:var(--bb-red);color:#fff;padding:36px 40px;margin:44px -10px;border-top:3px solid #f4d06f;border-bottom:3px solid #f4d06f;text-align:center}.ff-break .bb-label{text-align:center;margin-bottom:24px;color:#f4d06f}
+.ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px}.ff-item{text-align:center;padding:8px 12px}.ff-number{display:block;font-family:var(--break-font);font-size:58px;font-weight:700;color:#f4d06f;line-height:1;margin-bottom:8px}.ff-desc{display:block;font-family:var(--break-font);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#f7e9c7;max-width:130px;margin:0 auto;line-height:1.4}
+.yd-break{background:var(--bb-green);color:#fff;border-left:6px solid #96e6b3}.yd-break .bb-label{color:#96e6b3}
+.as-break{background:var(--bb-black);color:#fff;padding:44px 50px;margin:44px -10px;border-top:3px solid #ffb64a;border-bottom:3px solid #ffb64a;text-align:center}.as-break .bb-label{color:#ffb64a}.as-image{max-width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(255,182,74,.5);box-shadow:0 8px 32px rgba(0,0,0,.5)}.as-caption{font-family:var(--break-font);font-style:normal;font-size:13px;color:#ddd;line-height:1.5;margin-bottom:28px;display:block}.as-question{font-family:var(--break-font);font-size:26px;font-style:italic;font-weight:500;color:#fff;line-height:1.55;max-width:580px;margin:0 auto}
+.local-history{margin:0;padding:44px 40px;background-color:#e0d4b8;border-top:4px solid var(--mud-light);border-bottom:4px solid var(--mud-light)}.lh-badge{display:inline-block;background-color:var(--blood);color:#fff;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;padding:4px 14px;margin-bottom:16px}.lh-headline{font-family:var(--display-font);font-size:26px;font-weight:900;color:var(--mud);margin-bottom:20px;line-height:1.3;text-transform:uppercase}
+.still-matters{padding:52px 40px;background-color:var(--mud);background-image:linear-gradient(135deg,var(--mud) 0%,#1e180e 100%);color:var(--khaki-pale);border-top:6px solid var(--blood);scroll-margin-top:74px}.sm-label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--khaki);margin-bottom:14px;font-weight:600}.sm-headline{font-family:var(--display-font);font-size:clamp(24px,3.5vw,32px);font-weight:900;color:var(--khaki-pale);line-height:1.3;margin-bottom:32px;border-left:5px solid var(--blood-mid);padding-left:18px;text-transform:uppercase}.sm-closing-q{font-family:var(--display-font);font-size:clamp(22px,3vw,27px);font-style:italic;color:var(--khaki-pale);line-height:1.55;margin-top:36px;padding:24px 0 0;border-top:1px solid var(--mud-light)}.sm-closing-q p{color:var(--khaki-pale)}
+.tn-break{background:var(--bb-purple);color:#fff;padding:36px 44px;margin:30px 0 28px}.tn-break .bb-label{color:#ffcc66;text-align:center;display:block;margin-bottom:20px}.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}.tn-item{text-align:center}.tn-era-label{display:block;font-family:var(--break-font);font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:#ffcc66;margin-bottom:10px;font-weight:700}.tn-item img{width:100%;display:block;border:2px solid rgba(255,204,102,.45)}.tn-caption{font-family:var(--break-font);font-size:12px;font-style:italic;color:#eadff0;margin-top:8px;line-height:1.4}.tn-question{font-family:var(--break-font);font-size:20px;font-style:italic;font-weight:500;text-align:center;color:#fff;margin-top:16px;line-height:1.5}
+.site-footer{background-color:var(--mud);color:var(--khaki-pale);text-align:center;padding:22px 40px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;border-top:3px solid var(--blood)}
+@media(max-width:620px){.content-section,.intro-section,.still-matters,.local-history{padding:36px 22px}.img-inset-right,.img-inset-left{float:none;width:100%;margin:24px 0}.img-pair,.tn-pair{grid-template-columns:1fr}.section-nav a{font-size:11px;padding:12px 10px}.primary-source{padding:22px 20px}.compare-table{font-size:14px}.compare-table th,.compare-table td{padding:9px 10px}.divider{padding:0 22px}.brain-break{padding:28px 22px;margin:36px 0}.as-break{padding:32px 22px}.as-question{font-size:20px}}
 </style>
 </head>
 <body>
 <div class="page-wrap">
 
-<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
 <header class="site-header">
-
-  <!-- FILENAME: S2L01_HeaderBg_TrenchWWI.jpg
-       PLACE IN: images/S2/L01/
-       FIND: WWI soldiers in muddy trench, Western Front, circa 1916-1918; exhausted troops; conveys the gravity of the war that just ended; used as faded atmospheric background behind title
-       SEARCH: World War I trench soldiers Western Front 1917
-       LINK: https://commons.wikimedia.org/wiki/File:Cheshire_Regiment_trench_Somme_1916.jpg (suggested, not guaranteed) -->
-  <div class="header-bg" style="background-image: url('images/S2/L01/S2L01_HeaderBg_TrenchWWI.jpg');"></div>
-
+  <!--
+    FILENAME: S2L01_HeaderBg_TrenchWWI.jpg
+    PLACE IN: images/S2/L01/
+    FIND: WWI soldiers in muddy trench, Western Front, circa 1916-1918; exhausted troops; conveys the gravity of the war that just ended
+    SEARCH: World War I trench soldiers Western Front 1917
+    LINK: https://commons.wikimedia.org/wiki/File:Cheshire_Regiment_trench_Somme_1916.jpg (suggested, not guaranteed)
+  -->
+  <div class="header-bg" style="background-image:url('images/S2/L01/S2L01_HeaderBg_TrenchWWI.jpg');"></div>
+  <div class="header-shade"></div>
   <div class="header-content">
-    <div class="course-label">World History &mdash; Semester 2, Lesson 01</div>
-    <!-- filename: SSW_S2L01.html -->
-    <h1 class="page-title">The Failed Peace<br>After WWI</h1>
-    <div class="eq-banner">
-      <span class="eq-label">Essential Question</span>
-      How did the peace after WWI plant the seeds for the next war?
-    </div>
+    <div class="course-label">WORLD HISTORY — SEMESTER 2, LESSON 01</div>
+    <h1 class="page-title">THE FAILED PEACE<br>AFTER WWI</h1>
+    <div class="eq-banner"><span class="eq-label">ESSENTIAL QUESTION</span>How did the peace after WWI plant the seeds for the next war?</div>
   </div>
 </header>
 
-<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
 <nav class="section-nav" aria-label="Page sections">
-  <a href="#versailles">The Treaty</a>
-  <a href="#wilson">Wilson's Dream</a>
-  <a href="#league">League of Nations</a>
-  <a href="#aftermath">A Broken World</a>
-  <a href="#still-matters">Still Matters Today</a>
+  <a href="#versailles">THE TREATY</a>
+  <a href="#wilson">WILSON'S DREAM</a>
+  <a href="#league">LEAGUE OF NATIONS</a>
+  <a href="#aftermath">A BROKEN WORLD</a>
+  <a href="#local-history">LOCAL HISTORY</a>
+  <a href="#still-matters">STILL MATTERS TODAY</a>
 </nav>
+<button id="lexile-toggle">SIMPLIFY TEXT</button>
+<aside class="toc-sidebar">
+  <span class="toc-label">ON THIS PAGE</span>
+  <a href="#versailles">THE TREATY</a>
+  <a href="#wilson">WILSON'S DREAM</a>
+  <a href="#league">LEAGUE</a>
+  <a href="#aftermath">BROKEN WORLD</a>
+  <a href="#local-history">LOCAL HISTORY</a>
+  <a href="#still-matters">STILL MATTERS</a>
+</aside>
 
-<!-- ═══════════════════════════ INTRO ═══════════════════════════ -->
 <section class="intro-section">
-  <div class="intro-label">Introduction</div>
-  <p>In November 1918, a German soldier named Georg Bucher put down his rifle and walked home. The war was over. Four years of mud, poison gas, and machine guns had killed ten million soldiers and left Europe in ruins. Georg thought the killing was finally done. He was wrong.</p>
-  <p>The leaders who gathered in Paris to write the peace agreement made choices that would hurt millions of people for decades. They drew new borders on maps without asking the people who lived there. They charged one country a debt so large it could never be paid. They built an organization meant to keep the peace but left it without any real power.</p>
-  <p>What happened in Paris in 1919 did not end the war. It restarted the clock on an even bigger one.</p>
+  <div class="intro-label">INTRODUCTION</div>
+  <p class="para-standard">In November 1918, a German soldier named Georg Bucher put down his rifle and walked home. The war was over. Four years of mud, poison gas, and machine guns had killed ten million soldiers and left Europe in ruins. Georg thought the killing was finally done. He was wrong.</p>
+  <p class="para-simple">In November 1918, a German soldier named Georg Bucher put down his rifle and went home. The war was over. Four years of mud, poison gas, and machine guns had killed millions. Georg thought the killing was done. He was wrong.</p>
+  <p class="para-standard">The leaders who gathered in Paris to write the peace agreement made choices that would hurt millions of people for decades. They drew new borders on maps without asking the people who lived there. They charged one country a debt so large it could never be paid. They built an organization meant to keep the peace but left it without any real power.</p>
+  <p class="para-simple">Leaders met in Paris to write a peace agreement. Their choices hurt people for decades. They drew new borders without asking the people who lived there. They charged Germany a huge debt. They made a peace organization but gave it little power.</p>
+  <p class="para-standard">What happened in Paris in 1919 did not end the war. It restarted the clock on an even bigger one.</p>
+  <p class="para-simple">Paris did not truly end the war. It helped start the countdown to the next one.</p>
 </section>
 
-<!-- ═══════════════════════════ SECTION 1: VERSAILLES ═══════════════════════════ -->
 <section id="versailles" class="content-section clearfix">
-  <div class="section-number">Chapter One</div>
-  <h2 class="section-heading">The Treaty of Versailles: Germany Pays the Bill</h2>
+  <div class="section-number">CHAPTER ONE</div>
+  <h2 class="section-heading">THE TREATY OF VERSAILLES: GERMANY PAYS THE BILL</h2>
 
-  <p>The leaders of France, Britain, and the United States met in the Palace of Versailles outside Paris in January 1919. Germany was not invited. The winners of the war were going to decide everything.</p>
+  <p class="para-standard">The leaders of France, Britain, and the United States met in the Palace of Versailles outside Paris in January 1919. Germany was not invited. The winners of the war were going to decide everything.</p>
+  <p class="para-simple">The leaders of France, Britain, and the United States met near Paris in January 1919. Germany was not invited. The winners of the war made the decisions.</p>
 
-  <!-- FILENAME: S2L01_VersaillesHall.jpg
-       PLACE IN: images/S2/L01/
-       FIND: The Hall of Mirrors at the Palace of Versailles during the 1919 Peace Conference; the signing of the Treaty of Versailles, June 28, 1919; large historic photograph of the ceremony
-       SEARCH: Treaty of Versailles signing Hall of Mirrors 1919
-       LINK: https://commons.wikimedia.org/wiki/File:Versailles_Treaty_gallery.jpg (suggested, not guaranteed) -->
+  <!--
+    FILENAME: S2L01_VersaillesHall.jpg
+    PLACE IN: images/S2/L01/
+    FIND: The Hall of Mirrors at the Palace of Versailles during the 1919 Peace Conference; the signing of the Treaty of Versailles, June 28, 1919
+    SEARCH: Treaty of Versailles signing Hall of Mirrors 1919
+    LINK: https://commons.wikimedia.org/wiki/File:Versailles_Treaty_gallery.jpg (suggested, not guaranteed)
+  -->
   <figure class="img-inset-right">
     <img src="images/S2/L01/S2L01_VersaillesHall.jpg" alt="The signing of the Treaty of Versailles in the Hall of Mirrors, 1919">
     <figcaption>Signing of the Treaty of Versailles, Hall of Mirrors, Palace of Versailles, June 28, 1919. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p>France wanted Germany to suffer. France had been invaded twice by Germany in fifty years. French General Ferdinand Foch was furious with the final treaty. He called it "not a peace, but an armistice for twenty years." He was almost exactly right.</p>
+  <p class="para-standard">France wanted Germany to suffer. France had been invaded twice by Germany in fifty years. French General Ferdinand Foch was furious with the final treaty. He called it "not a peace, but an armistice for twenty years." He was almost exactly right.</p>
+  <p class="para-simple">France wanted Germany punished. Germany had invaded France twice in fifty years. A French general said the treaty was not real peace. He said it was only a twenty-year pause. He was almost exactly right.</p>
 
-  <p>The treaty forced Germany to accept three major punishments. First, the <span class="vocab">war guilt<span class="tip">War guilt: the official blame placed on Germany for starting WWI, written into Article 231 of the treaty.</span></span> clause. Article 231 of the treaty said Germany was responsible for starting the entire war. Germany had to sign a document saying this was true, even though many historians argue the causes were more complicated. This humiliation burned deep into German national pride.</p>
+  <p class="para-standard">The treaty forced Germany to accept three major punishments. First, the <span class="vocab">war guilt<span class="tip">The official blame placed on Germany for starting World War I.</span></span> clause said Germany was responsible for starting the entire war. Germany had to sign a document saying this was true, even though the causes of the war were more complicated. This humiliation burned deep into German national pride.</p>
+  <p class="para-simple">The treaty gave Germany three big punishments. First was <span class="vocab-red">war guilt</span>. Germany had to accept blame for the whole war. Many Germans thought this was unfair because the causes were more complicated. The blame felt humiliating.</p>
 
-  <p>Second, Germany had to pay <span class="vocab">reparations<span class="tip">Reparations: money a country must pay to make up for damage caused during a war.</span></span>. The final bill set in 1921 was 132 billion gold marks. That is roughly $500 billion in today's money. Germany's economy was already destroyed by the war. This debt was nearly impossible to pay.</p>
+  <p class="para-standard">Second, Germany had to pay <span class="vocab">reparations<span class="tip">Money a country must pay to make up for damage caused during a war.</span></span>. The final bill set in 1921 was 132 billion gold marks. Germany's economy was already damaged by the war. This debt was nearly impossible to pay.</p>
+  <p class="para-simple">Second, Germany had to pay <span class="vocab-red">reparations</span>. That means money for war damage. The bill was huge. Germany was already poor after the war, so the debt was almost impossible to pay.</p>
 
-  <p>Third, Germany lost territory on every border. The map of Europe was redrawn. Germany gave up land to France, Poland, Denmark, and Belgium. German-speaking people suddenly found themselves living in new countries they had never chosen.</p>
+  <p class="para-standard">Third, Germany lost territory on every border. Germany gave up land to France, Poland, Denmark, and Belgium. German-speaking people suddenly found themselves living in new countries they had never chosen.</p>
+  <p class="para-simple">Third, Germany lost land. Some German-speaking people suddenly lived in new countries. They had not voted for that change.</p>
 
   <div class="img-pair">
-    <!-- FILENAME: S2L01_EuropeMapBefore1914.jpg
-         PLACE IN: images/S2/L01/
-         FIND: Map of Europe in 1914 before WWI showing the major empires: German Empire, Austro-Hungarian Empire, Ottoman Empire, Russian Empire
-         SEARCH: Europe map 1914 empires before World War I
-         LINK: https://commons.wikimedia.org/wiki/File:Europe_1914.jpg (suggested, not guaranteed) -->
     <figure>
+      <!--
+        FILENAME: S2L01_EuropeMapBefore1914.jpg
+        PLACE IN: images/S2/L01/
+        FIND: Map of Europe in 1914 before WWI showing the major empires
+        SEARCH: Europe map 1914 empires before World War I
+        LINK: https://commons.wikimedia.org/wiki/File:Europe_1914.jpg (suggested, not guaranteed)
+      -->
       <img src="images/S2/L01/S2L01_EuropeMapBefore1914.jpg" alt="Map of Europe in 1914">
       <figcaption>Europe in 1914, before the war. Four great empires dominated the continent. Source: Wikimedia Commons.</figcaption>
     </figure>
-
-    <!-- FILENAME: S2L01_EuropeMapAfter1919.jpg
-         PLACE IN: images/S2/L01/
-         FIND: Map of Europe after the Paris Peace Conference 1919-1920 showing new nations created: Poland, Czechoslovakia, Yugoslavia, Baltic states; redrawn borders
-         SEARCH: Europe map 1919 after Versailles new nations redrawn borders
-         LINK: https://commons.wikimedia.org/wiki/File:Europe_1919.png (suggested, not guaranteed) -->
     <figure>
+      <!--
+        FILENAME: S2L01_EuropeMapAfter1919.jpg
+        PLACE IN: images/S2/L01/
+        FIND: Map of Europe after the Paris Peace Conference 1919-1920 showing new nations and redrawn borders
+        SEARCH: Europe map 1919 after Versailles new nations redrawn borders
+        LINK: https://commons.wikimedia.org/wiki/File:Europe_1919.png (suggested, not guaranteed)
+      -->
       <img src="images/S2/L01/S2L01_EuropeMapAfter1919.jpg" alt="Map of Europe after the Treaty of Versailles, 1919">
-      <figcaption>Europe after Versailles, 1919. New nations appeared overnight. Old empires vanished. Source: Wikimedia Commons.</figcaption>
+      <figcaption>Europe after Versailles, 1919. New nations appeared. Old empires vanished. Source: Wikimedia Commons.</figcaption>
     </figure>
   </div>
 
-  <p>The German government had to sign the treaty or face a full military invasion. They signed. But they never forgot the humiliation. A generation of Germans grew up believing their country had been cheated. That anger would have consequences.</p>
+  <p class="para-standard">The German government had to sign the treaty or face a full military invasion. They signed. But they never forgot the humiliation. A generation of Germans grew up believing their country had been cheated. That anger would have consequences.</p>
+  <p class="para-simple">Germany had to sign the treaty or face invasion. It signed. But many Germans never accepted it. A generation grew up angry. That anger would matter later.</p>
 
-  <div class="divider"><div class="divider-line"></div><div class="divider-ornament">&#9758;</div><div class="divider-line"></div></div>
-
-  <!-- PRIMARY SOURCE: War Guilt Clause -->
-  <div class="primary-source">
-    <div class="ps-label">Primary Source</div>
-    <div class="ps-quote">
-      "Germany accepts the responsibility of Germany and her allies for causing all the loss and damage to which the Allied and Associated Governments and their nationals have been subjected as a consequence of the war imposed upon them by the aggression of Germany and her allies."
-    </div>
-    <div class="ps-attribution">Article 231, Treaty of Versailles, June 28, 1919.</div>
-    <div class="ps-narrator">This is the exact sentence that forced Germany to accept official blame for the entire war. Germans called it the "War Guilt Lie," and it fueled decades of outrage.</div>
-    <ul class="ps-questions">
-      <li>
-        <span>Question 1: Meaning</span>
-        In your own words, what does Article 231 say Germany must admit? Why would this feel unfair to many Germans?
-      </li>
-      <li>
-        <span>Question 2: Connect to the EQ</span>
-        How might a sentence like this one plant the seeds for a future war?
-      </li>
-    </ul>
+  <div class="brain-break dyk-break">
+    <span class="bb-label">DID YOU KNOW</span>
+    <p class="bb-text">The Hall of Mirrors was not a random room. Germany had announced its empire there in 1871, so making Germany sign the treaty there in 1919 was a message.</p>
   </div>
 
+  <div class="primary-source">
+    <div class="ps-label">PRIMARY SOURCE</div>
+    <div class="ps-quote">"Germany accepts the responsibility of Germany and her allies for causing all the loss and damage to which the Allied and Associated Governments and their nationals have been subjected as a consequence of the war imposed upon them by the aggression of Germany and her allies."</div>
+    <div class="ps-attribution">Article 231, Treaty of Versailles, June 28, 1919.</div>
+    <div class="ps-narrator">This sentence forced Germany to accept official blame for the war. Germans called it the "War Guilt Lie," and it fueled outrage.</div>
+    <ul class="ps-questions">
+      <li><span>QUESTION 1: MEANING</span>In your own words, what does Article 231 say Germany must admit?</li>
+      <li><span>QUESTION 2: CONNECT TO THE EQ</span>How might a sentence like this plant the seeds for a future war?</li>
+    </ul>
+  </div>
 </section>
 
-<!-- ═══════════════════════════ SECTION 2: WILSON ═══════════════════════════ -->
 <section id="wilson" class="content-section clearfix">
-  <div class="section-number">Chapter Two</div>
-  <h2 class="section-heading">Wilson's Dream: Fourteen Points vs. What Actually Happened</h2>
+  <div class="section-number">CHAPTER TWO</div>
+  <h2 class="section-heading">WILSON'S DREAM: FOURTEEN POINTS VS. WHAT ACTUALLY HAPPENED</h2>
 
-  <!-- FILENAME: S2L01_WilsonPortrait.jpg
-       PLACE IN: images/S2/L01/
-       FIND: Official portrait or photograph of President Woodrow Wilson, circa 1919; formal presidential portrait
-       SEARCH: Woodrow Wilson president portrait 1919 Library of Congress
-       LINK: https://www.loc.gov/pictures/item/2002695578/ (suggested, not guaranteed) -->
   <figure class="img-inset-left">
+    <!--
+      FILENAME: S2L01_WilsonPortrait.jpg
+      PLACE IN: images/S2/L01/
+      FIND: Official portrait or photograph of President Woodrow Wilson, circa 1919
+      SEARCH: Woodrow Wilson president portrait 1919 Library of Congress
+      LINK: https://www.loc.gov/pictures/item/2002695578/ (suggested, not guaranteed)
+    -->
     <img src="images/S2/L01/S2L01_WilsonPortrait.jpg" alt="President Woodrow Wilson, 1919">
     <figcaption>President Woodrow Wilson, 1919. He traveled to Paris with a plan to make lasting peace. Source: Library of Congress.</figcaption>
   </figure>
 
-  <p>American President Woodrow Wilson arrived in Paris with a plan. He called it the Fourteen Points. It was his vision for a peaceful world after the war. Wilson believed that if nations treated each other fairly, there would be no reason to fight again.</p>
+  <p class="para-standard">American President Woodrow Wilson arrived in Paris with a plan. He called it the Fourteen Points. It was his vision for a peaceful world after the war. Wilson believed that if nations treated each other fairly, there would be no reason to fight again.</p>
+  <p class="para-simple">President Woodrow Wilson came to Paris with a plan. He called it the Fourteen Points. He wanted a fair peace. He believed fair treatment could prevent another war.</p>
 
-  <p>One of his most important ideas was <span class="vocab">self-determination<span class="tip">Self-determination: the idea that people of the same culture or nationality should be allowed to choose their own government and borders.</span></span>. Wilson believed every group of people should have the right to form their own country. Poles should have Poland. Czechs should have Czechoslovakia. No empire should rule over people who did not want to be ruled.</p>
+  <p class="para-standard">One of his most important ideas was <span class="vocab">self-determination<span class="tip">The idea that people of the same culture or nationality should be allowed to choose their own government and borders.</span></span>. Wilson believed every group of people should have the right to form their own country. No empire should rule over people who did not want to be ruled.</p>
+  <p class="para-simple">One key idea was <span class="vocab-red">self-determination</span>. This means people should help choose their own government and borders. Wilson said empires should not rule people who did not want to be ruled.</p>
 
-  <p>But Wilson's fourteen points ran into a hard wall in Paris. France and Britain had their own goals. They wanted colonies, territory, and revenge. When the final treaty was written, most of Wilson's ideals were weakened or removed entirely.</p>
+  <p class="para-standard">But Wilson's Fourteen Points ran into a hard wall in Paris. France and Britain had their own goals. They wanted colonies, territory, and revenge. When the final treaty was written, most of Wilson's ideals were weakened or removed entirely.</p>
+  <p class="para-simple">But Wilson's plan did not survive Paris. France and Britain wanted revenge, land, and colonies. Many of Wilson's ideas were weakened or removed.</p>
 
   <table class="compare-table">
-    <thead>
-      <tr>
-        <th>Wilson Wanted</th>
-        <th>What Actually Happened</th>
-      </tr>
-    </thead>
+    <thead><tr><th>WILSON WANTED</th><th>WHAT ACTUALLY HAPPENED</th></tr></thead>
     <tbody>
-      <tr>
-        <td class="row-label">Self-determination for all peoples</td>
-        <td>Applied in Europe but ignored in Africa and Asia, where Britain and France kept their colonies</td>
-      </tr>
-      <tr>
-        <td class="row-label">No punishing reparations</td>
-        <td>Germany charged 132 billion gold marks in debt</td>
-      </tr>
-      <tr>
-        <td class="row-label">Freedom of the seas</td>
-        <td>Britain continued to dominate the world's shipping lanes</td>
-      </tr>
-      <tr>
-        <td class="row-label">Open peace agreements, no secret deals</td>
-        <td>Major decisions were made in closed rooms by four leaders</td>
-      </tr>
-      <tr>
-        <td class="row-label">A League of Nations to keep the peace</td>
-        <td>The League was created but had no army and no real power to enforce anything</td>
-      </tr>
+      <tr><td class="row-label">Self-determination for all peoples</td><td>Applied in Europe but ignored in Africa and Asia, where Britain and France kept their colonies.</td></tr>
+      <tr><td class="row-label">No punishing reparations</td><td>Germany charged 132 billion gold marks in debt.</td></tr>
+      <tr><td class="row-label">Open peace agreements</td><td>Major decisions were made in closed rooms by four leaders.</td></tr>
+      <tr><td class="row-label">A League of Nations</td><td>The League was created but had no army and no real power to enforce anything.</td></tr>
     </tbody>
   </table>
 
-  <p>Wilson went home from Paris a broken man. He had traded most of his ideals away just to get the League of Nations included in the treaty. Even that victory would soon fall apart.</p>
+  <p class="para-standard">People in Asia and Africa who had hoped Wilson's words meant freedom felt deep <span class="vocab">disillusionment<span class="tip">The feeling of disappointment when something you believed in turns out not to be true.</span></span>. Ho Chi Minh, a young Vietnamese man living in Paris, tried to deliver a petition asking for Vietnamese independence. No one would meet with him. He would spend the rest of his life fighting colonial powers.</p>
+  <p class="para-simple">People in Asia and Africa hoped Wilson's words meant freedom. Many felt <span class="vocab-red">disillusionment</span>, or deep disappointment. Ho Chi Minh asked leaders in Paris to support Vietnamese independence. No one would meet with him. He later spent his life fighting colonial powers.</p>
 
-  <p>People in Asia and Africa who had hoped Wilson's words meant freedom for them felt the deepest <span class="vocab">disillusionment<span class="tip">Disillusionment: the feeling of disappointment when something you believed in turns out not to be true.</span></span>. Ho Chi Minh, a young Vietnamese man living in Paris, tried to deliver a petition asking for Vietnamese independence. No one would meet with him. He would spend the rest of his life fighting against colonial powers. His name would eventually fill American history books too.</p>
-
-  <!-- FILENAME: S2L01_BigFourParis.jpg
-       PLACE IN: images/S2/L01/
-       FIND: The "Big Four" at the Paris Peace Conference 1919: Woodrow Wilson (USA), David Lloyd George (Britain), Georges Clemenceau (France), Vittorio Orlando (Italy); famous group photograph
-       SEARCH: Big Four Paris Peace Conference 1919 Wilson Clemenceau Lloyd George
-       LINK: https://commons.wikimedia.org/wiki/File:The_Big_Four.jpg (suggested, not guaranteed) -->
   <figure>
+    <!--
+      FILENAME: S2L01_BigFourParis.jpg
+      PLACE IN: images/S2/L01/
+      FIND: The "Big Four" at the Paris Peace Conference 1919: Woodrow Wilson, David Lloyd George, Georges Clemenceau, Vittorio Orlando
+      SEARCH: Big Four Paris Peace Conference 1919 Wilson Clemenceau Lloyd George
+      LINK: https://commons.wikimedia.org/wiki/File:The_Big_Four.jpg (suggested, not guaranteed)
+    -->
     <img src="images/S2/L01/S2L01_BigFourParis.jpg" alt="The Big Four leaders at the Paris Peace Conference, 1919">
-    <figcaption>The "Big Four" at the Paris Peace Conference, 1919: Orlando (Italy), Lloyd George (Britain), Clemenceau (France), Wilson (USA). Four men redrew the world. Source: Wikimedia Commons.</figcaption>
+    <figcaption>The "Big Four" at the Paris Peace Conference, 1919. Four men redrew the world. Source: Wikimedia Commons.</figcaption>
   </figure>
 
+  <div class="brain-break ff-break">
+    <span class="bb-label">FAST FACTS</span>
+    <div class="ff-grid">
+      <div class="ff-item"><span class="ff-number">32</span><span class="ff-desc">NATIONS REPRESENTED</span></div>
+      <div class="ff-item"><span class="ff-number">4</span><span class="ff-desc">MEN MADE KEY DECISIONS</span></div>
+      <div class="ff-item"><span class="ff-number">132B</span><span class="ff-desc">GOLD MARKS OWED</span></div>
+      <div class="ff-item"><span class="ff-number">4</span><span class="ff-desc">EMPIRES COLLAPSED</span></div>
+    </div>
+  </div>
 </section>
 
-<!-- ═══════════════════════════ SECTION 3: LEAGUE ═══════════════════════════ -->
 <section id="league" class="content-section clearfix">
-  <div class="section-number">Chapter Three</div>
-  <h2 class="section-heading">The League of Nations: A Blueprint Without a Builder</h2>
+  <div class="section-number">CHAPTER THREE</div>
+  <h2 class="section-heading">THE LEAGUE OF NATIONS: A BLUEPRINT WITHOUT A BUILDER</h2>
 
-  <p>The one idea Wilson refused to give up was the <span class="vocab">League of Nations<span class="tip">League of Nations: an international organization created after WWI to solve disputes between countries and prevent future wars.</span></span>. He believed that if all nations joined together and agreed to solve problems peacefully, war could be avoided forever. It was a powerful idea. It just had one enormous problem.</p>
+  <p class="para-standard">The one idea Wilson refused to give up was the <span class="vocab">League of Nations<span class="tip">An international organization created after World War I to solve disputes and prevent future wars.</span></span>. He believed that if nations joined together and solved problems peacefully, war could be avoided forever. It was a powerful idea. It just had one enormous problem.</p>
+  <p class="para-simple">Wilson refused to give up on the <span class="vocab-red">League of Nations</span>. This was a group of countries meant to solve problems peacefully. Wilson thought it could stop future wars. But it had one huge problem.</p>
 
-  <!-- FILENAME: S2L01_LeagueAssembly.jpg
-       PLACE IN: images/S2/L01/
-       FIND: First Assembly of the League of Nations, Geneva, Switzerland, November 1920; large assembly hall photograph showing delegates seated
-       SEARCH: League of Nations first assembly Geneva 1920
-       LINK: https://commons.wikimedia.org/wiki/File:First_assembly_of_the_League_of_Nations_1920.jpg (suggested, not guaranteed) -->
   <figure class="img-inset-right">
+    <!--
+      FILENAME: S2L01_LeagueAssembly.jpg
+      PLACE IN: images/S2/L01/
+      FIND: First Assembly of the League of Nations, Geneva, Switzerland, November 1920
+      SEARCH: League of Nations first assembly Geneva 1920
+      LINK: https://commons.wikimedia.org/wiki/File:First_assembly_of_the_League_of_Nations_1920.jpg (suggested, not guaranteed)
+    -->
     <img src="images/S2/L01/S2L01_LeagueAssembly.jpg" alt="First Assembly of the League of Nations, Geneva, 1920">
     <figcaption>First Assembly of the League of Nations, Geneva, Switzerland, November 1920. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p>The United States never joined. Wilson brought the treaty home and asked the Senate to approve it. The Senate said no. Some senators worried the League would drag America into foreign wars. Others just did not want Wilson to win a political victory. The final vote failed twice.</p>
+  <p class="para-standard">The United States never joined. Wilson brought the treaty home and asked the Senate to approve it. The Senate said no. Some senators worried the League would drag America into foreign wars. Others did not want Wilson to win a political victory. The final vote failed twice.</p>
+  <p class="para-simple">The United States never joined the League. Wilson asked the Senate to approve it. The Senate said no. Some senators feared the League would pull the U.S. into more wars. The vote failed twice.</p>
 
-  <p>Wilson traveled the country by train making speeches, trying to convince the American public to pressure their senators. The campaign destroyed his health. In October 1919, he suffered a massive stroke and was partially paralyzed for the rest of his life. The Senate rejected the treaty one final time in March 1920. The United States stayed out.</p>
+  <p class="para-standard">Wilson traveled the country by train making speeches, trying to convince the public to pressure their senators. The campaign destroyed his health. In October 1919, he suffered a massive stroke and was partly paralyzed for the rest of his life.</p>
+  <p class="para-simple">Wilson traveled by train to defend the League. He gave speeches across the country. The trip ruined his health. In October 1919, he had a major stroke and was partly paralyzed.</p>
 
-  <p>The League was born without its most powerful potential member. It had no army. It had no way to force nations to follow its decisions. When aggressive countries later tested it, the League had no real answer. Wilson's great dream became a hollow institution.</p>
+  <p class="para-standard">The League was born without its most powerful potential member. It had no army. It had no way to force nations to follow its decisions. When aggressive countries later tested it, the League had no real answer.</p>
+  <p class="para-simple">The League started without the United States. It had no army. It could not force countries to obey. When powerful countries challenged it, the League had no strong answer.</p>
 
   <div class="callout-box">
-    <div class="callout-title">Why Did the U.S. Senate Say No?</div>
-    <p>Senator Henry Cabot Lodge led the opposition. He worried that Article 10 of the League's charter required the U.S. to defend any member nation that was attacked. He believed Congress, not the League, should decide when America went to war. Many Americans agreed. After losing 116,000 soldiers in a war that felt like Europe's problem, they wanted to stay out of international commitments.</p>
+    <div class="callout-title">WHY DID THE U.S. SENATE SAY NO?</div>
+    <p>Senator Henry Cabot Lodge led the opposition. He believed Congress, not the League, should decide when America went to war. Many Americans agreed. After losing 116,000 soldiers in a war that felt like Europe's problem, they wanted to stay out of international commitments.</p>
   </div>
 
-  <p>Think about what this means today: the United Nations, created after World War II, was built specifically to fix the League's weaknesses. The U.S. is a founding and permanent member of the UN Security Council. The lesson of what happened when the U.S. stayed out shaped the entire post-WWII world order.</p>
+  <div class="brain-break yd-break">
+    <span class="bb-label">YOU DECIDE</span>
+    <p class="bb-text">You are a senator in 1920. Joining the League might help stop another war, but it might also pull the U.S. into one. Do you vote yes or no?</p>
+  </div>
 
+  <div class="brain-break as-break">
+    <span class="bb-label">ART SPOTLIGHT</span>
+    <figure>
+      <!--
+        FILENAME: S2L01_BigFourParis.jpg
+        PLACE IN: images/S2/L01/
+        FIND: The Big Four at the Paris Peace Conference 1919; famous group photograph
+        SEARCH: Big Four Paris Peace Conference 1919 Wilson Clemenceau Lloyd George
+        LINK: https://commons.wikimedia.org/wiki/File:The_Big_Four.jpg (suggested, not guaranteed)
+      -->
+      <img src="images/S2/L01/S2L01_BigFourParis.jpg" alt="The Big Four leaders at the Paris Peace Conference" class="as-image">
+      <figcaption class="as-caption">The Big Four at the Paris Peace Conference, 1919.</figcaption>
+    </figure>
+    <p class="as-question">Which person in this picture looks most confident that he is getting what he wants?</p>
+  </div>
 </section>
 
-<!-- ═══════════════════════════ SECTION 4: AFTERMATH ═══════════════════════════ -->
 <section id="aftermath" class="content-section clearfix">
-  <div class="section-number">Chapter Four</div>
-  <h2 class="section-heading">A Broken World: Anger, Debt, and Shattered Trust</h2>
+  <div class="section-number">CHAPTER FOUR</div>
+  <h2 class="section-heading">A BROKEN WORLD: ANGER, DEBT, AND SHATTERED TRUST</h2>
 
-  <p>By 1920, the world that existed before the war was gone. Four empires had collapsed: the German, Austro-Hungarian, Russian, and Ottoman empires. New countries had appeared on the map. Old certainties were destroyed. And millions of people felt lied to.</p>
+  <p class="para-standard">By 1920, the world that existed before the war was gone. Four empires had collapsed: the German, Austro-Hungarian, Russian, and Ottoman empires. New countries appeared on the map. Old certainties were destroyed. Millions of people felt lied to.</p>
+  <p class="para-simple">By 1920, the old world was gone. Four empires had collapsed. New countries appeared. Many people no longer trusted their leaders.</p>
 
-  <!-- FILENAME: S2L01_GermanInflation1923.jpg
-       PLACE IN: images/S2/L01/
-       FIND: German hyperinflation 1923; famous photograph of German woman burning currency as fuel, or person with wheelbarrow full of banknotes; illustrates economic collapse under reparations burden
-       SEARCH: German hyperinflation 1923 wheelbarrow banknotes
-       LINK: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_102-00169,_Inflation,_Geldscheine_als_Brennmaterial.jpg (suggested, not guaranteed) -->
   <figure class="img-inset-left">
+    <!--
+      FILENAME: S2L01_GermanInflation1923.jpg
+      PLACE IN: images/S2/L01/
+      FIND: German hyperinflation 1923; famous photograph of banknotes used as fuel or wheelbarrow full of money
+      SEARCH: German hyperinflation 1923 wheelbarrow banknotes
+      LINK: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_102-00169,_Inflation,_Geldscheine_als_Brennmaterial.jpg (suggested, not guaranteed)
+    -->
     <img src="images/S2/L01/S2L01_GermanInflation1923.jpg" alt="German woman burning banknotes during hyperinflation, 1923">
     <figcaption>German hyperinflation, 1923. Money became so worthless some people burned it for heat. Source: Bundesarchiv / Wikimedia Commons.</figcaption>
   </figure>
 
-  <p>Germany's economy collapsed under the weight of <span class="vocab-red">reparations</span>. By 1923, German money was worth almost nothing. A loaf of bread cost billions of marks. People burned banknotes for heat because it was cheaper than buying firewood. Middle-class families who had saved money their whole lives were wiped out overnight.</p>
+  <p class="para-standard">Germany's economy collapsed under the weight of <span class="vocab-red">reparations</span>. By 1923, German money was worth almost nothing. A loaf of bread cost billions of marks. People burned banknotes for heat because it was cheaper than buying firewood. Middle-class families who had saved money their whole lives were wiped out overnight.</p>
+  <p class="para-simple">Germany's economy collapsed. By 1923, German money was almost worthless. Bread cost billions of marks. Some people burned money for heat because it was cheaper than wood. Families lost savings they had built for years.</p>
 
-  <p>Across Europe, young men came home from the trenches and found no jobs, no stability, and no respect. They had been told the war was noble. They had watched their friends die in the mud. Now they returned to broken economies and politicians who could not explain why any of it had been worth it. This <span class="vocab-red">disillusionment</span> ran deep.</p>
+  <p class="para-standard">Across Europe, young men came home from the trenches and found no jobs, no stability, and no respect. They had been told the war was noble. They had watched friends die in the mud. Now politicians could not explain why any of it had been worth it. This <span class="vocab-red">disillusionment</span> ran deep.</p>
+  <p class="para-simple">Young soldiers came home and found few jobs and little stability. They had watched friends die. Leaders could not explain why it had been worth it. Many people felt betrayed.</p>
 
-  <!-- FILENAME: S2L01_WilsonStrokeSpeech.jpg
-       PLACE IN: images/S2/L01/
-       FIND: Woodrow Wilson speaking from train or platform during his 1919 speaking tour, or photograph related to his stroke/illness in 1919; or image of Senate vote on League of Nations
-       SEARCH: Woodrow Wilson speaking tour 1919 League of Nations Senate vote
-       LINK: https://commons.wikimedia.org/wiki/File:Woodrow_Wilson_1919.jpg (suggested, not guaranteed) -->
   <figure class="img-inset-right">
+    <!--
+      FILENAME: S2L01_WilsonStrokeSpeech.jpg
+      PLACE IN: images/S2/L01/
+      FIND: Woodrow Wilson speaking from train or platform during his 1919 speaking tour, or Senate debate image related to League of Nations
+      SEARCH: Woodrow Wilson speaking tour 1919 League of Nations Senate vote
+      LINK: https://commons.wikimedia.org/wiki/File:Woodrow_Wilson_1919.jpg (suggested, not guaranteed)
+    -->
     <img src="images/S2/L01/S2L01_WilsonStrokeSpeech.jpg" alt="Woodrow Wilson during his 1919 speaking tour for the League of Nations">
     <figcaption>Woodrow Wilson during his cross-country speaking tour, 1919. The effort to save the League cost him his health. Source: Library of Congress.</figcaption>
   </figure>
 
-  <p>Writers and artists called this feeling the "Lost Generation." Soldiers came back and could not reconnect with the world they had left. Some drank. Some left for Paris. Some wrote novels about the emptiness. Ernest Hemingway, F. Scott Fitzgerald, and poet Wilfred Owen all captured this feeling in their work. The trauma of the war did not end when the guns went quiet.</p>
+  <p class="para-standard">The old institutions Europeans had trusted before the war now looked weak. Emperors were gone. Democratic governments seemed unable to solve the crisis. Into that empty space, dangerous political movements began to grow. They promised strength, pride, and revenge. Germany was listening.</p>
+  <p class="para-simple">Many people lost trust in old institutions. Emperors were gone. Democracies looked weak. New political movements promised pride and revenge. Many Germans listened.</p>
 
-  <p>The old institutions that Europeans had trusted before the war were now suspect. Emperors were gone. The church seemed unable to explain the slaughter. Democratic governments appeared weak. Into that empty space, new and dangerous political movements began to grow. They promised strength, pride, and revenge. Germany was listening.</p>
-
-  <div class="divider"><div class="divider-line"></div><div class="divider-ornament">&#9758;</div><div class="divider-line"></div></div>
-
-  <!-- PRIMARY SOURCE 2: John Maynard Keynes -->
   <div class="primary-source">
-    <div class="ps-label">Primary Source</div>
-    <div class="ps-quote">
-      "The policy of reducing Germany to servitude for a generation, of degrading the lives of millions of human beings, and of depriving a whole nation of happiness should be abhorrent and detestable; abhorrent and detestable, even if it enriches ourselves, even if it does not sow the decay of the whole civilised life of Europe."
-    </div>
+    <div class="ps-label">PRIMARY SOURCE</div>
+    <div class="ps-quote">"The policy of reducing Germany to servitude for a generation, of degrading the lives of millions of human beings, and of depriving a whole nation of happiness should be abhorrent and detestable."</div>
     <div class="ps-attribution">John Maynard Keynes, <em>The Economic Consequences of the Peace</em>, 1919.</div>
-    <div class="ps-narrator">Keynes was a British economist who worked at the peace conference and then quit in protest; he published this book warning that punishing Germany so harshly would destroy Europe's economy and set the stage for another war.</div>
+    <div class="ps-narrator">Keynes was a British economist who worked at the peace conference and then quit in protest. He warned that punishing Germany too harshly would damage Europe and help cause another war.</div>
+    <ul class="ps-questions">
+      <li><span>QUESTION 1: MEANING</span>What is Keynes warning leaders not to do to Germany?</li>
+      <li><span>QUESTION 2: CONNECT TO THE EQ</span>How does this warning connect to the idea that peace can plant seeds for war?</li>
+    </ul>
   </div>
 
-  <!-- FILENAME: S2L01_KeynesBook.jpg
-       PLACE IN: images/S2/L01/
-       FIND: Cover of John Maynard Keynes book "The Economic Consequences of the Peace" 1919 first edition; or portrait of Keynes circa 1919-1920
-       SEARCH: John Maynard Keynes Economic Consequences of the Peace 1919
-       LINK: https://commons.wikimedia.org/wiki/File:John_Maynard_Keynes.jpg (suggested, not guaranteed) -->
   <figure>
+    <!--
+      FILENAME: S2L01_KeynesPortrait.jpg
+      PLACE IN: images/S2/L01/
+      FIND: Portrait of John Maynard Keynes circa 1919-1920
+      SEARCH: John Maynard Keynes 1919 portrait Wikimedia Commons
+      LINK: https://commons.wikimedia.org/wiki/File:John_Maynard_Keynes.jpg (suggested, not guaranteed)
+    -->
     <img src="images/S2/L01/S2L01_KeynesPortrait.jpg" alt="John Maynard Keynes, British economist, circa 1919">
-    <figcaption>John Maynard Keynes, British economist, circa 1919. He resigned from the peace conference and published a book predicting exactly what would happen. Source: Wikimedia Commons.</figcaption>
+    <figcaption>John Maynard Keynes, British economist, circa 1919. He resigned from the peace conference and predicted that the treaty would cause disaster. Source: Wikimedia Commons.</figcaption>
   </figure>
-
 </section>
 
-<!-- ═══════════════════════════ LOCAL HISTORY ═══════════════════════════ -->
-<section class="local-history">
-  <div class="lh-badge">Local History Connection</div>
-  <div class="lh-headline">San Diego and the War That Reshaped the World</div>
+<section class="local-history" id="local-history">
+  <div class="lh-badge">LOCAL HISTORY CONNECTION</div>
+  <div class="lh-headline">SAN DIEGO AND THE WAR THAT RESHAPED THE WORLD</div>
 
-  <!-- FILENAME: S2L01_SanDiegoNavyWWI.jpg
-       PLACE IN: images/S2/L01/
-       FIND: San Diego harbor or naval base during WWI era, 1917-1919; fleet of ships at San Diego, or Camp Kearny San Diego during WWI troop mobilization
-       SEARCH: San Diego Navy WWI 1917 1918 harbor Camp Kearny
-       LINK: https://commons.wikimedia.org/wiki/File:San_Diego_Bay_1919.jpg (suggested, not guaranteed) -->
   <figure class="img-inset-right">
+    <!--
+      FILENAME: S2L01_SanDiegoNavyWWI.jpg
+      PLACE IN: images/S2/L01/
+      FIND: San Diego harbor or naval base during WWI era, 1917-1919; fleet of ships at San Diego, or Camp Kearny during WWI mobilization
+      SEARCH: San Diego Navy WWI 1917 1918 harbor Camp Kearny
+      LINK: https://commons.wikimedia.org/wiki/File:San_Diego_Bay_1919.jpg (suggested, not guaranteed)
+    -->
     <img src="images/S2/L01/S2L01_SanDiegoNavyWWI.jpg" alt="San Diego harbor during WWI era, circa 1917-1919">
-    <figcaption>San Diego's harbor and growing naval presence, circa 1917-1919. The war transformed San Diego into a major military city. Source: Wikimedia Commons.</figcaption>
+    <figcaption>San Diego's harbor and growing naval presence, circa 1917-1919. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p>San Diego was already home to a growing U.S. Navy base when WWI ended in 1918. The Treaty of Versailles and the growth of the U.S. military during the war permanently accelerated San Diego's transformation into one of the most important military cities in the country. Camp Kearny, opened in 1917 just north of San Diego, trained tens of thousands of soldiers for the Western Front.</p>
-  <p>The failure of the peace and the rise of global instability in the 1920s and 1930s would push more military investment into San Diego. The very reasons the Versailles peace failed, including unresolved power struggles and a broken international order, are part of the story of why military San Diego grew into what it is today.</p>
+  <p>San Diego was already home to a growing U.S. Navy base when WWI ended in 1918. Camp Kearny, opened in 1917 just north of San Diego, trained tens of thousands of soldiers for the Western Front.</p>
+  <p>The failure of the peace and the rise of global instability in the 1920s and 1930s pushed more military investment into San Diego. The reasons Versailles failed are part of why military San Diego grew into what it is today.</p>
+  <div class="clearfix"></div>
 </section>
 
-<!-- ═══════════════════════════ STILL MATTERS TODAY ═══════════════════════════ -->
 <section id="still-matters" class="still-matters">
-  <div class="sm-label">How This Still Matters Today</div>
-  <div class="sm-headline">Every time a peace deal punishes instead of rebuilds, it plants the seeds of the next conflict. We are still living in the world that Versailles broke.</div>
+  <div class="sm-label">HOW THIS STILL MATTERS TODAY</div>
+  <div class="sm-headline">WHEN PEACE DEALS CREATE HUMILIATION, THE CONFLICT OFTEN RETURNS.</div>
 
-  <!-- FILENAME: S2L01_UNSecurityCouncil.jpg
-       PLACE IN: images/S2/L01/
-       FIND: United Nations Security Council chamber in session; modern photograph of the circular chamber with flags and delegates seated
-       SEARCH: United Nations Security Council chamber session modern
-       LINK: https://commons.wikimedia.org/wiki/File:UN_Security_Council_2013.jpg (suggested, not guaranteed) -->
-  <figure>
-    <img src="images/S2/L01/S2L01_UNSecurityCouncil.jpg" alt="United Nations Security Council chamber in session">
-    <figcaption>The United Nations Security Council in session. The UN was created specifically to fix every flaw in the League of Nations. Source: Wikimedia Commons.</figcaption>
-  </figure>
-
-  <ul class="news-links">
-    <li><a href="https://www.bbc.com/news/world-europe-50759139" target="_blank" rel="noopener">"How the Treaty of Versailles and German guilt led to World War II" — BBC History</a></li>
-    <li><a href="https://www.npr.org/2019/06/28/736329617/100-years-later-historians-debate-the-legacy-of-the-treaty-of-versailles" target="_blank" rel="noopener">"100 Years Later, Historians Debate the Legacy of the Treaty of Versailles" — NPR</a></li>
-    <li><a href="https://www.theguardian.com/world/2019/jun/28/treaty-of-versailles-centenary-world-war-one-peace-europe" target="_blank" rel="noopener">"Treaty of Versailles at 100: The Peace That Never Was" — The Guardian</a></li>
-  </ul>
-
-  <p>The United Nations exists because the League of Nations failed. The rules that govern how countries treat each other after wars, including requirements to rebuild rather than just punish, exist because of what went wrong at Versailles. When you hear debates about rebuilding Iraq, or handling conflict in Ukraine, or writing sanctions against countries, you are watching the same questions play out that first appeared in Paris in 1919.</p>
+  <div class="brain-break tn-break">
+    <span class="bb-label">THEN AND NOW</span>
+    <div class="tn-pair">
+      <div class="tn-item">
+        <span class="tn-era-label">1919</span>
+        <!--
+          FILENAME: S2L01_VersaillesHall.jpg
+          PLACE IN: images/S2/L01/
+          FIND: Treaty of Versailles signing in the Hall of Mirrors, 1919
+          SEARCH: Treaty of Versailles signing Hall of Mirrors 1919
+          LINK: https://commons.wikimedia.org/wiki/File:Versailles_Treaty_gallery.jpg (suggested, not guaranteed)
+        -->
+        <img src="images/S2/L01/S2L01_VersaillesHall.jpg" alt="Delegates signing the Treaty of Versailles in 1919">
+        <p class="tn-caption">A peace treaty is signed in a room where Germany is not treated as an equal partner.</p>
+      </div>
+      <div class="tn-item">
+        <span class="tn-era-label">TODAY</span>
+        <!--
+          FILENAME: S2L01_UNSecurityCouncil.jpg
+          PLACE IN: images/S2/L01/
+          FIND: United Nations Security Council chamber in session; modern photograph with flags and delegates
+          SEARCH: United Nations Security Council chamber session modern
+          LINK: https://commons.wikimedia.org/wiki/File:UN_Security_Council_2013.jpg (suggested, not guaranteed)
+        -->
+        <img src="images/S2/L01/S2L01_UNSecurityCouncil.jpg" alt="United Nations Security Council chamber in session">
+        <p class="tn-caption">Modern leaders still meet in formal rooms to decide how wars should end.</p>
+      </div>
+    </div>
+    <p class="tn-question">Which room would you rather trust to decide your future if your country was not invited inside?</p>
+  </div>
 
   <div class="sm-closing-q">
-    <p>If you had been a German citizen in 1920 watching your savings disappear, your borders shrink, and your country forced to sign a statement of guilt for a war still not fully understood, what would you have believed about your government, your future, and the people who wrote that treaty?</p>
+    <p>If you had to write a peace deal after a terrible war, would you focus more on punishment, rebuilding, or preventing revenge?</p>
   </div>
 </section>
 
-<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
-<footer class="site-footer">
-  World History &mdash; Semester 2, Lesson 01 &nbsp;|&nbsp; The Failed Peace After WWI
-</footer>
-
-</div><!-- end page-wrap -->
+<footer class="site-footer">WORLD HISTORY — SEMESTER 2, LESSON 01 — THE FAILED PEACE AFTER WWI</footer>
+</div>
 
 <script>
-  // Vocabulary tooltip tap support
-  document.querySelectorAll('.vocab').forEach(function(el) {
-    el.addEventListener('click', function(e) {
-      e.stopPropagation();
-      document.querySelectorAll('.vocab.active').forEach(function(v) {
-        if (v !== el) v.classList.remove('active');
-      });
-      el.classList.toggle('active');
-    });
-  });
-  document.addEventListener('click', function() {
-    document.querySelectorAll('.vocab.active').forEach(function(v) {
-      v.classList.remove('active');
-    });
-  });
+document.getElementById('lexile-toggle').addEventListener('click', function() {
+ document.body.classList.toggle('simplified');
+ this.textContent = document.body.classList.contains('simplified') ? 'STANDARD TEXT' : 'SIMPLIFY TEXT';
+});
+document.querySelectorAll('.vocab').forEach(function(el) {
+ el.addEventListener('click', function(e) {
+   e.stopPropagation();
+   document.querySelectorAll('.vocab.active').forEach(function(v) { if (v !== el) v.classList.remove('active'); });
+   el.classList.toggle('active');
+ });
+});
+document.addEventListener('click', function() {
+ document.querySelectorAll('.vocab.active').forEach(function(v) { v.classList.remove('active'); });
+});
+const tocObserver = new IntersectionObserver(entries => {
+ entries.forEach(entry => {
+   const id = entry.target.getAttribute('id');
+   const link = document.querySelector('.toc-sidebar a[href="#' + id + '"]');
+   if (link) { if (entry.isIntersecting) link.classList.add('active'); else link.classList.remove('active'); }
+ });
+}, { threshold: 0.25 });
+document.querySelectorAll('section[id]').forEach(el => tocObserver.observe(el));
 </script>
 </body>
 </html>
+<!--
+IMAGE CHECKLIST FOR SSW_S2L01.html
+1. S2L01_HeaderBg_TrenchWWI.jpg — WWI trench soldiers, header background — Suggested link: https://commons.wikimedia.org/wiki/File:Cheshire_Regiment_trench_Somme_1916.jpg
+2. S2L01_VersaillesHall.jpg — Treaty of Versailles signing, Hall of Mirrors, 1919 — Suggested link: https://commons.wikimedia.org/wiki/File:Versailles_Treaty_gallery.jpg
+3. S2L01_EuropeMapBefore1914.jpg — Europe before WWI map — Suggested link: https://commons.wikimedia.org/wiki/File:Europe_1914.jpg
+4. S2L01_EuropeMapAfter1919.jpg — Europe after Versailles map — Suggested link: https://commons.wikimedia.org/wiki/File:Europe_1919.png
+5. S2L01_WilsonPortrait.jpg — Woodrow Wilson portrait, 1919 — Suggested link: https://www.loc.gov/pictures/item/2002695578/
+6. S2L01_BigFourParis.jpg — Big Four Paris Peace Conference photo, 1919 — Suggested link: https://commons.wikimedia.org/wiki/File:The_Big_Four.jpg
+7. S2L01_LeagueAssembly.jpg — First Assembly of League of Nations, 1920 — Suggested link: https://commons.wikimedia.org/wiki/File:First_assembly_of_the_League_of_Nations_1920.jpg
+8. S2L01_GermanInflation1923.jpg — German hyperinflation image, 1923 — Suggested link: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_102-00169,_Inflation,_Geldscheine_als_Brennmaterial.jpg
+9. S2L01_WilsonStrokeSpeech.jpg — Wilson speaking tour, 1919 — Suggested link: https://commons.wikimedia.org/wiki/File:Woodrow_Wilson_1919.jpg
+10. S2L01_KeynesPortrait.jpg — John Maynard Keynes portrait — Suggested link: https://commons.wikimedia.org/wiki/File:John_Maynard_Keynes.jpg
+11. S2L01_SanDiegoNavyWWI.jpg — San Diego harbor or WWI naval presence — Suggested link: https://commons.wikimedia.org/wiki/File:San_Diego_Bay_1919.jpg
+12. S2L01_UNSecurityCouncil.jpg — United Nations Security Council chamber — Suggested link: https://commons.wikimedia.org/wiki/File:UN_Security_Council_2013.jpg
+TOTAL IMAGES: 12 INCLUDING HEADER BACKGROUND
+-->

@@ -3,728 +3,464 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roots of Western Political Thought — World History S1L01</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<title>SSW S1L01 — ROOTS OF WESTERN POLITICAL THOUGHT</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Cardo:ital,wght@0,400;0,700;1,400&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --marble: #f5f0e8;
-    --marble-dark: #e8e0d0;
-    --aegean: #1a3a5c;
-    --aegean-deep: #0f2540;
-    --aegean-mid: #2a5a8c;
-    --gold: #c8a84b;
-    --gold-light: #e0c070;
-    --terracotta: #a0522d;
-    --vocab-red: #b03030;
-    --text-dark: #1a1a1a;
-    --text-mid: #2c2c2c;
-    --section-bg: #f0ebe0;
-    --pullquote-bg: #1a3a5c;
-    --ornament: #c8a84b;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background-color: var(--marble);
-    font-family: 'Cardo', Georgia, serif;
-    font-size: 18px;
-    line-height: 1.85;
-    color: var(--text-dark);
-  }
-
-  /* ===== HEADER ===== */
-  .page-header {
-    position: relative;
-    background-color: var(--aegean-deep);
-    overflow: hidden;
-    padding: 60px 24px 50px;
-    text-align: center;
-  }
-
-  .header-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.32;
-    filter: grayscale(20%);
-  }
-
-  .header-inner {
-    position: relative;
-    z-index: 2;
-    max-width: 820px;
-    margin: 0 auto;
-  }
-
-  .course-label {
-    font-family: 'Cinzel', serif;
-    font-size: 13px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    margin-bottom: 16px;
-  }
-
-  .page-title {
-    font-family: 'Cinzel', serif;
-    font-size: 54px;
-    font-weight: 900;
-    color: #fff;
-    line-height: 1.15;
-    margin-bottom: 28px;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
-  }
-
-  .eq-banner {
-    background: var(--gold);
-    color: var(--aegean-deep);
-    padding: 18px 28px;
-    border-radius: 4px;
-    font-family: 'Cinzel', serif;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    display: inline-block;
-    max-width: 700px;
-  }
-
-  /* ===== NAV BAR ===== */
-  .section-nav {
-    background: var(--aegean);
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0;
-    border-bottom: 3px solid var(--gold);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .section-nav a {
-    font-family: 'Cinzel', serif;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    text-decoration: none;
-    padding: 14px 18px;
-    border-right: 1px solid rgba(200,168,75,0.2);
-    transition: background 0.2s, color 0.2s;
-    display: block;
-  }
-
-  .section-nav a:last-child { border-right: none; }
-
-  .section-nav a:hover {
-    background: var(--gold);
-    color: var(--aegean-deep);
-  }
-
-  /* ===== CONTENT WRAPPER ===== */
-  .content-wrap {
-    max-width: 820px;
-    margin: 0 auto;
-    padding: 0 24px 60px;
-  }
-
-  /* ===== INTRO ===== */
-  .intro-section {
-    padding: 48px 0 32px;
-    border-bottom: none;
-  }
-
-  .intro-section p {
-    font-size: 19px;
-    line-height: 1.9;
-    color: var(--text-mid);
-  }
-
-  /* ===== SECTION DIVIDER ===== */
-  .divider {
-    text-align: center;
-    margin: 48px 0 40px;
-    color: var(--gold);
-    font-size: 22px;
-    letter-spacing: 0.3em;
-  }
-
-  .divider::before,
-  .divider::after {
-    content: '';
-    display: inline-block;
-    width: 80px;
-    height: 1px;
-    background: var(--gold);
-    vertical-align: middle;
-    margin: 0 14px;
-    opacity: 0.6;
-  }
-
-  /* ===== CONTENT SECTIONS ===== */
-  .content-section {
-    padding: 48px 0 24px;
-  }
-
-  .section-heading {
-    font-family: 'Cinzel', serif;
-    font-size: 34px;
-    font-weight: 700;
-    color: var(--aegean-deep);
-    margin-bottom: 24px;
-    line-height: 1.2;
-    border-left: 5px solid var(--gold);
-    padding-left: 18px;
-  }
-
-  .content-section p {
-    margin-bottom: 20px;
-    font-size: 18px;
-    line-height: 1.85;
-  }
-
-  /* ===== VOCAB ===== */
-  .vocab {
-    color: var(--vocab-red);
-    text-decoration: underline dotted var(--vocab-red);
-    cursor: help;
-    position: relative;
-  }
-
-  .vocab .tip {
-    display: none;
-    position: absolute;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #1a1a2e;
-    color: #fff;
-    padding: 8px 14px;
-    border-radius: 4px;
-    font-size: 14px;
-    line-height: 1.5;
-    z-index: 10;
-    font-style: normal;
-    font-weight: 400;
-    pointer-events: none;
-    max-width: 280px;
-    white-space: normal;
-    font-family: 'Cardo', serif;
-  }
-
-  .vocab:hover .tip,
-  .vocab.active .tip { display: block; }
-
-  .vocab-only { color: var(--vocab-red); }
-
-  /* ===== IMAGES ===== */
-  .img-full {
-    width: 100%;
-    margin: 32px 0 8px;
-    border: 2px solid var(--gold);
-    display: block;
-  }
-
-  .img-inset-right {
-    float: right;
-    width: 42%;
-    margin: 6px 0 20px 28px;
-    border: 2px solid var(--gold);
-  }
-
-  .img-inset-left {
-    float: left;
-    width: 42%;
-    margin: 6px 28px 20px 0;
-    border: 2px solid var(--gold);
-  }
-
-  .img-pair {
-    display: flex;
-    gap: 16px;
-    margin: 32px 0 8px;
-  }
-
-  .img-pair img {
-    width: 50%;
-    border: 2px solid var(--gold);
-  }
-
-  .img-caption {
-    font-size: 13px;
-    font-style: italic;
-    color: #666;
-    margin-bottom: 24px;
-    clear: both;
-    line-height: 1.4;
-  }
-
-  .clearfix::after { content: ''; display: table; clear: both; }
-
-  /* ===== PULLQUOTE ===== */
-  .pullquote {
-    background: var(--pullquote-bg);
-    border-left: 6px solid var(--gold);
-    padding: 32px 36px;
-    margin: 40px 0 12px;
-    border-radius: 0 4px 4px 0;
-  }
-
-  .pullquote blockquote {
-    font-family: 'Cardo', serif;
-    font-size: 22px;
-    font-style: italic;
-    color: var(--marble);
-    line-height: 1.7;
-    margin-bottom: 16px;
-  }
-
-  .pullquote .attribution {
-    font-size: 14px;
-    font-style: italic;
-    color: var(--gold-light);
-    margin-bottom: 10px;
-  }
-
-  .pullquote .narrator {
-    font-size: 15px;
-    color: #aac8e8;
-    font-style: normal;
-    line-height: 1.6;
-  }
-
-  .pullquote-questions {
-    background: var(--marble-dark);
-    border-left: 4px solid var(--aegean-mid);
-    padding: 22px 28px;
-    margin-bottom: 36px;
-  }
-
-  .pullquote-questions p {
-    font-size: 17px;
-    margin-bottom: 10px;
-    font-style: italic;
-  }
-
-  .pullquote-questions p:last-child { margin-bottom: 0; }
-
-  /* ===== CALLOUT CARD — Local History ===== */
-  .local-card {
-    background: #1a3a5c;
-    border: 2px solid var(--gold);
-    border-radius: 6px;
-    padding: 32px 36px;
-    margin: 48px 0 24px;
-  }
-
-  .local-card-headline {
-    font-family: 'Cinzel', serif;
-    font-size: 20px;
-    color: var(--gold);
-    margin-bottom: 18px;
-  }
-
-  .local-card p {
-    color: var(--marble);
-    font-size: 17px;
-    line-height: 1.8;
-    margin-bottom: 14px;
-  }
-
-  .local-card p:last-child { margin-bottom: 0; }
-
-  .local-card .local-anchor {
-    color: var(--gold-light);
-    font-weight: 700;
-    font-style: italic;
-  }
-
-  /* ===== HOW THIS STILL MATTERS ===== */
-  .still-matters {
-    background: var(--aegean-deep);
-    padding: 48px 36px;
-    margin: 48px 0 0;
-    border-top: 4px solid var(--gold);
-  }
-
-  .still-matters-headline {
-    font-family: 'Cinzel', serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--gold);
-    margin-bottom: 28px;
-    line-height: 1.3;
-  }
-
-  .news-links {
-    list-style: none;
-    margin: 0 0 28px;
-    padding: 0;
-  }
-
-  .news-links li {
-    margin-bottom: 10px;
-  }
-
-  .news-links a {
-    font-family: 'Cinzel', serif;
-    font-size: 15px;
-    color: var(--gold-light);
-    text-decoration: underline;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-  }
-
-  .news-links a:hover { color: #fff; }
-
-  .closing-question {
-    font-size: 23px;
-    font-style: italic;
-    color: var(--marble);
-    margin-top: 28px;
-    line-height: 1.6;
-    border-top: 1px solid rgba(200,168,75,0.4);
-    padding-top: 24px;
-  }
-
-  /* ===== FOOTER ===== */
-  .page-footer {
-    background: var(--aegean-deep);
-    border-top: 3px solid var(--gold);
-    padding: 20px 24px;
-    text-align: center;
-    font-family: 'Cinzel', serif;
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-  }
-
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 600px) {
-    .page-title { font-size: 36px; }
-    .section-heading { font-size: 26px; }
-    .img-inset-right, .img-inset-left { float: none; width: 100%; margin: 16px 0; }
-    .img-pair { flex-direction: column; }
-    .img-pair img { width: 100%; }
-    .section-nav a { font-size: 10px; padding: 10px 10px; }
-    .pullquote blockquote { font-size: 18px; }
-    .still-matters { padding: 32px 20px; }
-    .local-card { padding: 24px 20px; }
-  }
+:root{
+  --marble:#f5f0e8; --marble-dark:#e8e0d0; --aegean:#1a3a5c; --aegean-deep:#0f2540;
+  --aegean-mid:#2a5a8c; --gold:#c8a84b; --gold-light:#e0c070; --terracotta:#a0522d;
+  --vocab-red:#b03030; --text-dark:#1a1a1a; --text-mid:#2c2c2c; --section-bg:#f0ebe0;
+  --break-font:'Oswald',Arial,sans-serif; --display-font:'Cinzel',Georgia,serif; --body-font:'Cardo',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(circle at 20% 10%, rgba(200,168,75,.18), transparent 28%),
+    linear-gradient(180deg,#f5f0e8 0%,#e8e0d0 100%);
+  color:var(--text-dark);font-family:var(--body-font);font-size:18px;line-height:1.85;
+}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(90deg,rgba(26,58,92,.12) 1px,transparent 1px),linear-gradient(rgba(26,58,92,.08) 1px,transparent 1px);background-size:54px 54px;z-index:-1}
+.page-header{position:relative;overflow:hidden;background:var(--aegean-deep);padding:70px 24px 58px;text-align:center;border-bottom:4px solid var(--gold)}
+.header-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.34;filter:grayscale(15%) contrast(1.05)}
+.header-inner{position:relative;z-index:2;max-width:820px;margin:0 auto}
+.course-label{font-family:var(--display-font);font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px}
+.page-title{font-family:var(--display-font);font-size:clamp(52px,7vw,72px);font-weight:900;color:#fff;line-height:1.08;margin-bottom:28px;text-shadow:0 3px 14px rgba(0,0,0,.65)}
+.eq-banner{background:var(--gold);color:var(--aegean-deep);padding:18px 28px;border-radius:4px;font-family:var(--display-font);font-size:18px;font-weight:700;line-height:1.5;display:inline-block;max-width:730px;border-left:7px solid #fff;border-right:7px solid #fff}
+.eq-label{display:block;font-size:10px;letter-spacing:.35em;text-transform:uppercase;margin-bottom:5px;color:var(--aegean)}
+.section-nav{background:var(--aegean);display:flex;flex-wrap:wrap;justify-content:center;border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:100}
+.section-nav a{font-family:var(--display-font);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);text-decoration:none;padding:14px 16px;border-right:1px solid rgba(200,168,75,.22);transition:.2s}
+.section-nav a:hover{background:var(--gold);color:var(--aegean-deep)}
+#lexile-toggle{display:block;margin:20px auto 28px;padding:10px 24px;font-size:13px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:2px solid var(--aegean);background:transparent;color:var(--aegean);font-family:var(--display-font);transition:background .2s,color .2s}
+#lexile-toggle:hover{background:var(--aegean);color:var(--marble)}
+.para-simple{display:none} body.simplified .para-standard{display:none} body.simplified .para-simple{display:block}
+.toc-sidebar{position:fixed;right:calc(50% - 570px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;z-index:50;background:rgba(15,37,64,.86);border-left:2px solid rgba(200,168,75,.35)}
+.toc-sidebar .toc-label{font-family:var(--display-font);font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:10px}
+.toc-sidebar a{display:block;color:#d8cfae;text-decoration:none;padding:4px 0;font-size:11px;letter-spacing:.05em;line-height:1.45;font-family:var(--display-font)}
+.toc-sidebar a.active,.toc-sidebar a:hover{color:var(--gold-light);font-weight:700}
+@media(max-width:1100px){.toc-sidebar{display:none}}
+.content-wrap{max-width:820px;margin:0 auto;padding:0 24px 60px}
+.intro-section{padding:6px 0 36px}
+.intro-section p{font-size:19px;line-height:1.9;color:var(--text-mid);margin-bottom:18px}
+.divider{text-align:center;margin:46px 0 38px;color:var(--gold);font-size:22px;letter-spacing:.3em}
+.divider::before,.divider::after{content:"";display:inline-block;width:80px;height:1px;background:var(--gold);vertical-align:middle;margin:0 14px;opacity:.6}
+.content-section{padding:42px 0 22px;scroll-margin-top:72px}
+.section-heading{font-family:var(--display-font);font-size:34px;font-weight:900;color:var(--aegean-deep);margin-bottom:24px;line-height:1.2;border-left:5px solid var(--gold);padding-left:18px;text-transform:uppercase}
+.content-section p{margin-bottom:20px}
+.chapter-card{font-family:var(--break-font);margin:34px 0 0;padding:18px 22px;background:#111827;color:#fef3c7;border-left:8px solid #f59e0b;font-size:22px;line-height:1.35;letter-spacing:.03em;text-transform:uppercase}
+.vocab{color:var(--vocab-red);text-decoration:underline dotted var(--vocab-red);cursor:help;position:relative;font-weight:700}
+.vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:10;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;font-family:var(--body-font)}
+.vocab:hover .tip,.vocab.active .tip{display:block}.vocab-only{color:var(--vocab-red);font-weight:700}
+figure{margin:32px 0}.img-full img,.img-inset-right img,.img-inset-left img,.img-pair img{border:2px solid var(--gold);box-shadow:0 8px 24px rgba(15,37,64,.18)}
+.img-full img{width:100%;display:block}.img-inset-right{float:right;width:42%;margin:6px 0 20px 28px}.img-inset-left{float:left;width:42%;margin:6px 28px 20px 0}.img-inset-right img,.img-inset-left img{width:100%;display:block}
+.img-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}.img-pair figure{margin:0}.img-pair img{width:100%;display:block}
+figcaption{font-size:13px;font-style:italic;color:#666;margin-top:8px;line-height:1.45}.clearfix::after,.section-body::after{content:"";display:table;clear:both}
+.pullquote{background:var(--aegean);border-left:6px solid var(--gold);padding:32px 36px;margin:40px 0 12px;border-radius:0 4px 4px 0;color:var(--marble)}
+.pullquote blockquote{font-family:var(--body-font);font-size:22px;font-style:italic;line-height:1.7;margin-bottom:16px}
+.pullquote .attribution{font-size:14px;font-style:italic;color:var(--gold-light);margin-bottom:10px}.pullquote .narrator{font-size:15px;color:#cce0f2;line-height:1.6}
+.pullquote-questions{background:var(--marble-dark);border-left:4px solid var(--aegean-mid);padding:22px 28px;margin-bottom:36px}.pullquote-questions p{font-size:17px;margin-bottom:10px;font-style:italic}
+.brain-break{font-family:var(--break-font);margin:44px -10px;padding:36px 44px;position:relative;overflow:hidden}
+.bb-label{display:block;font-family:var(--break-font);font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.82}
+.bb-text{font-family:var(--break-font);font-size:22px;font-weight:500;line-height:1.65;margin:0}
+.dyk-break{background:#3b0f2f;color:#fff7ed;border-left:6px solid #f59e0b}.dyk-break .bb-label{color:#fbbf24}
+.ff-break{background:#052e2b;color:#ecfeff;padding:36px 40px;margin:0 -10px 44px;border-top:3px solid #22d3ee;border-bottom:3px solid #22d3ee;text-align:center}.ff-break .bb-label{text-align:center;margin-bottom:24px;color:#67e8f9}
+.ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px}.ff-item{text-align:center;padding:8px 12px}.ff-number{display:block;font-family:var(--break-font);font-size:58px;font-weight:900;color:#67e8f9;line-height:1;margin-bottom:8px}.ff-desc{display:block;font-family:var(--break-font);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#b8f4f8;max-width:130px;margin:0 auto;line-height:1.4}
+.yd-break{background:#7c2d12;color:#fff7ed;border-top:4px solid #fde047;border-bottom:4px solid #fde047}.yd-break .bb-label{color:#fde047}.yd-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}.yd-options span{border:2px solid rgba(253,224,71,.6);padding:10px;text-align:center;font-family:var(--break-font);font-size:18px}
+.as-break{background:#111827;color:#f9fafb;padding:44px 50px;margin:44px -10px;border-top:3px solid #a78bfa;border-bottom:3px solid #a78bfa;text-align:center}.as-break .bb-label{color:#c4b5fd}.as-image{max-width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(196,181,253,.6);box-shadow:0 8px 32px rgba(0,0,0,.5)}.as-caption{font-family:var(--break-font);font-style:normal;font-size:13px;color:#d1d5db;line-height:1.5;margin-bottom:28px;display:block}.as-question{font-family:var(--break-font);font-size:26px;font-style:italic;font-weight:500;color:#fff;line-height:1.55;max-width:600px;margin:0 auto}
+.tn-break{background:#172554;color:#eff6ff;padding:36px 44px;margin:30px 0 28px}.tn-break .bb-label{color:#facc15;text-align:center;display:block;margin-bottom:20px}.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}.tn-item{text-align:center}.tn-era-label{display:block;font-family:var(--break-font);font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:#facc15;margin-bottom:10px;font-weight:700}.tn-item img{width:100%;display:block;border:2px solid rgba(250,204,21,.5)}.tn-caption{font-family:var(--break-font);font-size:12px;font-style:italic;color:#dbeafe;margin-top:8px;line-height:1.4}.tn-question{font-family:var(--break-font);font-size:20px;font-style:italic;font-weight:500;text-align:center;color:#fff;margin-top:16px;line-height:1.5}
+.still-matters{background:var(--aegean-deep);padding:48px 36px;margin:48px 0 0;border-top:4px solid var(--gold);scroll-margin-top:72px}.still-matters h2{font-family:var(--display-font);font-size:34px;color:var(--gold);margin-bottom:22px;text-transform:uppercase}.still-matters-headline{font-family:var(--display-font);font-size:26px;font-weight:700;color:#fff;margin-bottom:28px;line-height:1.35}.closing-question{font-size:23px;font-style:italic;color:var(--marble);margin-top:28px;line-height:1.6;border-top:1px solid rgba(200,168,75,.4);padding-top:24px}
+.local-card{background:#1a3a5c;border:2px solid var(--gold);border-radius:6px;padding:32px 36px;margin:48px 0 24px;scroll-margin-top:72px}.local-card h2{font-family:var(--display-font);font-size:30px;color:var(--gold);margin-bottom:18px;text-transform:uppercase}.local-card-headline{font-family:var(--display-font);font-size:20px;color:#fff;margin-bottom:18px;font-weight:700}.local-card p{color:var(--marble);font-size:17px;line-height:1.8;margin-bottom:14px}
+.page-footer{background:var(--aegean-deep);border-top:3px solid var(--gold);padding:20px 24px;text-align:center;font-family:var(--display-font);font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-light)}
+@media(max-width:600px){.page-title{font-size:40px}.section-heading{font-size:28px}.img-inset-right,.img-inset-left{float:none;width:100%;margin:16px 0}.img-pair,.tn-pair,.yd-options{grid-template-columns:1fr}.section-nav a{font-size:10px;padding:10px}.pullquote blockquote{font-size:18px}.brain-break{padding:28px 22px;margin:36px 0}.as-break{padding:32px 22px}.as-question{font-size:20px}.still-matters,.local-card{padding:32px 20px}}
 </style>
 </head>
 <body>
-
-<!-- ===== HEADER ===== -->
 <header class="page-header">
-  <!-- FILENAME: S1L01_ParthenonHeader.jpg
-       PLACE IN: images/S1/L01/
-       FIND: The Parthenon on the Acropolis in Athens, Greece — iconic symbol of ancient Greek democracy and architecture, ideal for a lesson on Greek political thought
-       SEARCH: Parthenon Acropolis Athens Greece Wikimedia Commons
-       LINK: https://commons.wikimedia.org/wiki/File:The_Parthenon_in_Athens.jpg (suggested, not guaranteed) -->
+  <!--
+   FILENAME: S1L01_ParthenonHeader.jpg
+   PLACE IN: images/S1/L01/
+   FIND: The Parthenon on the Acropolis in Athens, Greece, iconic symbol of ancient Greek democracy and architecture
+   SEARCH: Parthenon Acropolis Athens Greece Wikimedia Commons
+   LINK: https://commons.wikimedia.org/wiki/File:The_Parthenon_in_Athens.jpg (suggested, not guaranteed)
+  -->
   <img class="header-bg" src="images/S1/L01/S1L01_ParthenonHeader.jpg" alt="The Parthenon, Athens">
-
   <div class="header-inner">
-    <div class="course-label">World History &mdash; Semester 1, Lesson 01</div>
-    <h1 class="page-title">Roots of Western<br>Political Thought</h1>
-    <div class="eq-banner">Essential Question: How did ancient Greek, Roman, and Judeo-Christian ideas create the foundation for modern democracy?</div>
+    <div class="course-label">WORLD HISTORY — SEMESTER 1, LESSON 01</div>
+    <h1 class="page-title">ROOTS OF WESTERN POLITICAL THOUGHT</h1>
+    <div class="eq-banner"><span class="eq-label">ESSENTIAL QUESTION</span>How did ancient Greek, Roman, and Judeo-Christian ideas create the foundation for modern democracy?</div>
   </div>
 </header>
 
-<!-- ===== NAV BAR ===== -->
 <nav class="section-nav" aria-label="Section navigation">
-  <a href="#greek-thinkers">Greek Thinkers</a>
-  <a href="#roman-republic">The Roman Republic</a>
-  <a href="#judeo-christian">Judeo-Christian Ideas</a>
-  <a href="#rule-of-law">Rule of Law vs. Tyranny</a>
-  <a href="#local-history">Local History</a>
-  <a href="#still-matters">How This Still Matters</a>
+  <a href="#greek-thinkers">GREEK THINKERS</a>
+  <a href="#roman-republic">ROMAN REPUBLIC</a>
+  <a href="#judeo-christian">JUDEO-CHRISTIAN IDEAS</a>
+  <a href="#rule-of-law">RULE OF LAW</a>
+  <a href="#still-matters">STILL MATTERS TODAY</a>
+  <a href="#local-history">LOCAL HISTORY</a>
 </nav>
 
-<!-- ===== CONTENT ===== -->
+<button id="lexile-toggle">SIMPLIFY TEXT</button>
+
+<aside class="toc-sidebar" aria-label="On this page">
+  <span class="toc-label">ON THIS PAGE</span>
+  <a href="#greek-thinkers">GREEK THINKERS</a>
+  <a href="#roman-republic">ROMAN REPUBLIC</a>
+  <a href="#judeo-christian">JUDEO-CHRISTIAN IDEAS</a>
+  <a href="#rule-of-law">RULE OF LAW</a>
+  <a href="#still-matters">STILL MATTERS TODAY</a>
+  <a href="#local-history">LOCAL HISTORY</a>
+</aside>
+
 <div class="content-wrap">
-
-  <!-- INTRO -->
   <section class="intro-section">
-    <p>In 399 BCE, a 70-year-old man stood in front of a jury of 500 citizens in Athens, Greece. His name was Socrates. He had spent his entire life asking questions: What is justice? Who should rule? What makes a law fair? The jury found him guilty of questioning the government. They sentenced him to death. Before he died, his student Plato wrote down his ideas. Those ideas are still shaping governments today.</p>
-    <p>The rules that govern your school, your city, and your country did not appear from nowhere. They grew from ideas first argued in ancient Greece and Rome, and from religious texts written thousands of years ago. This lesson traces where those ideas came from and how they reached you.</p>
+    <p class="para-standard">In 399 BCE, a 70-year-old man stood in front of a jury of 500 citizens in Athens, Greece. His name was Socrates. He had spent his life asking hard questions: What is justice? Who should rule? What makes a law fair? The jury found him guilty of questioning the government and sentenced him to death.</p>
+    <p class="para-simple">In 399 BCE, Socrates stood in front of 500 citizens in Athens. He was 70 years old. He had spent his life asking hard questions about justice, leaders, and fair laws. The jury said he was guilty and sentenced him to death.</p>
+    <p class="para-standard">The rules that govern your school, your city, and your country did not appear from nowhere. They grew from ideas first argued in ancient Greece and Rome, and from religious traditions written thousands of years ago. This lesson follows those ideas as they move from ancient streets and temples into modern government.</p>
+    <p class="para-simple">The rules in your school, city, and country did not come from nowhere. Many started in ancient Greece and Rome. Others came from old religious traditions. This lesson shows how those ideas still shape government today.</p>
   </section>
 
-  <div class="divider">&#10070; &#10070; &#10070;</div>
+  <div class="divider">❖ ❖ ❖</div>
 
-  <!-- SECTION 1 — GREEK THINKERS -->
   <section class="content-section" id="greek-thinkers">
-    <h2 class="section-heading">The Greek Thinkers Who Changed Everything</h2>
+    <h2 class="section-heading">THE GREEK THINKERS WHO CHANGED EVERYTHING</h2>
+    <div class="section-body">
+      <!--
+       FILENAME: S1L01_SocratesHerm.jpg
+       PLACE IN: images/S1/L01/
+       FIND: Ancient Roman marble herm bust of Socrates, copy of a Greek original, standard portrait used to represent Socrates
+       SEARCH: Socrates bust marble Louvre Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:Socrates_Louvre.jpg (suggested, not guaranteed)
+      -->
+      <figure class="img-inset-right">
+        <img src="images/S1/L01/S1L01_SocratesHerm.jpg" alt="Marble bust of Socrates">
+        <figcaption>Marble bust of Socrates, Roman copy of a Greek original. Louvre Museum. Wikimedia Commons.</figcaption>
+      </figure>
 
-    <!-- FILENAME: S1L01_SocratesHerm.jpg
-         PLACE IN: images/S1/L01/
-         FIND: Ancient Roman marble herm bust of Socrates, copy of a Greek original — standard portrait used to represent Socrates in museums worldwide
-         SEARCH: Socrates bust marble Louvre Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Socrates_Louvre.jpg (suggested, not guaranteed) -->
-    <img class="img-inset-right" src="images/S1/L01/S1L01_SocratesHerm.jpg" alt="Marble bust of Socrates, Roman copy of a Greek original">
-    <p class="img-caption" style="float:right; width:42%; margin-left:28px; margin-top:-18px;">Marble bust of Socrates, Roman copy of a Greek original. Louvre Museum, Paris. <em>Wikimedia Commons.</em></p>
+      <p class="para-standard">Around 500 BCE, Athens began an experiment that no civilization had tried on this scale before. The experiment was <span class="vocab">democracy<span class="tip">A system where citizens vote and make decisions about how their community is governed.</span></span>. Not everyone could vote; women, enslaved people, and foreigners were left out. Still, free male citizens could speak, vote, and help decide laws.</p>
+      <p class="para-simple">Around 500 BCE, Athens tried a new kind of government. It was called <span class="vocab-only">democracy</span>. Not everyone could vote. Women, enslaved people, and foreigners were left out. But free male citizens could speak, vote, and help make laws.</p>
 
-    <p>Around 500 BCE, a small city-state on the coast of Greece began an experiment that no civilization had ever tried before. The city was Athens. The experiment was <span class="vocab">democracy<span class="tip">A system where citizens vote and make decisions about how their community is governed.</span></span>. Not everyone could vote — women, enslaved people, and foreigners were left out — but for the first time, free male citizens had a say in the laws that ruled them.</p>
+      <p class="para-standard">Socrates believed people should question everything, including their leaders. His student Plato wrote down his ideas after Socrates was executed. Plato worried that crowds could make bad choices if they acted on anger instead of wisdom.</p>
+      <p class="para-simple">Socrates believed people should ask questions about everything. That included leaders and laws. His student Plato wrote down his ideas. Plato worried that crowds could make bad choices when they were angry or uninformed.</p>
 
-    <p>Out of Athens came three thinkers whose ideas spread across the ancient world. The first was Socrates. He believed that people should question everything, including their leaders. He said a government only has the right to rule if it acts with wisdom and justice.</p>
+      <!--
+       FILENAME: S1L01_AristotleBust.jpg
+       PLACE IN: images/S1/L01/
+       FIND: Ancient bust of Aristotle, Roman marble copy of Greek original, classical portrait
+       SEARCH: Aristotle bust marble Roman copy Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:Aristotle_Altemps_Inv8575.jpg (suggested, not guaranteed)
+      -->
+      <figure class="img-inset-left">
+        <img src="images/S1/L01/S1L01_AristotleBust.jpg" alt="Marble bust of Aristotle">
+        <figcaption>Marble bust of Aristotle, Roman copy of a Greek original. Wikimedia Commons.</figcaption>
+      </figure>
 
-    <p>His student was Plato. Plato wrote down Socrates' ideas after his teacher was executed. Plato believed that the best government should be run by the wisest and most educated people. He called them philosopher-kings. He worried that <span class="vocab">democracy<span class="tip">A system where citizens vote and make decisions about how their community is governed.</span></span> could become dangerous if uneducated crowds made bad decisions.</p>
+      <p class="para-standard">Aristotle, Plato's student, studied more than 150 governments across the ancient world. He believed the best government mixed parts of different systems. He also argued that rulers must follow the law just like everyone else. That idea became one root of the <span class="vocab">rule of law<span class="tip">The principle that everyone, including rulers and governments, must follow the same laws.</span></span>.</p>
+      <p class="para-simple">Aristotle studied more than 150 governments. He thought the best government mixed different ideas together. He also said rulers must follow the law like everyone else. This helped create the idea called the <span class="vocab-only">rule of law</span>.</p>
 
-    <div class="clearfix"></div>
-
-    <!-- FILENAME: S1L01_AristotleBust.jpg
-         PLACE IN: images/S1/L01/
-         FIND: Ancient bust of Aristotle — Roman marble copy of Greek original, classical portrait
-         SEARCH: Aristotle bust marble Roman copy Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Aristotle_Altemps_Inv8575.jpg (suggested, not guaranteed) -->
-    <img class="img-inset-left" src="images/S1/L01/S1L01_AristotleBust.jpg" alt="Marble bust of Aristotle">
-    <p class="img-caption" style="float:left; width:42%; margin-right:28px; margin-top:-18px;">Marble bust of Aristotle, Roman copy of a Greek original. Palazzo Altemps, Rome. <em>Wikimedia Commons.</em></p>
-
-    <p>The third great thinker was Aristotle, Plato's student. Aristotle studied more than 150 governments across the ancient world. He concluded that the best government mixes elements of different systems. He called this a <span class="vocab">republic<span class="tip">A system of government where citizens elect representatives to make laws for them, rather than voting on every decision themselves.</span></span>. He also argued that every person, including rulers, must follow the same laws. No one is above the rules.</p>
-
-    <p>These ideas did not stay in Athens. They spread east to Persia, south to Egypt, and eventually west to Rome. A young Macedonian general named Alexander the Great — himself a student of Aristotle — carried Greek culture across three continents. Within 200 years, Greek ideas about government, law, and justice had reached every major civilization in the known world.</p>
-
-    <p>Today, when your city council holds a public meeting and allows citizens to speak, that practice connects directly to ancient Athens. The right to question your government is one of the oldest ideas in Western politics.</p>
-
-    <div class="clearfix"></div>
+      <p class="para-standard">These ideas did not stay in Athens. They spread across the Mediterranean world through trade, war, and education. Today, when citizens question leaders at public meetings, they are using one of the oldest tools in democratic life.</p>
+      <p class="para-simple">These ideas did not stay in Athens. Trade, war, and schools spread them to other places. Today, when people question leaders in public meetings, they are using an old democratic idea.</p>
+    </div>
   </section>
 
-  <div class="divider">&#10070; &#10070; &#10070;</div>
+  <div class="brain-break dyk-break">
+    <span class="bb-label">DID YOU KNOW</span>
+    <p class="bb-text">Socrates never wrote a book. Almost everything we know about his ideas comes from other people writing down what they said he said.</p>
+  </div>
 
-  <!-- PRIMARY SOURCE 1 — ARISTOTLE -->
+  <div class="brain-break ff-break">
+    <span class="bb-label">FAST FACTS</span>
+    <div class="ff-grid">
+      <div class="ff-item"><span class="ff-number">500</span><span class="ff-desc">JURORS AT TRIAL</span></div>
+      <div class="ff-item"><span class="ff-number">0</span><span class="ff-desc">BOOKS BY SOCRATES</span></div>
+      <div class="ff-item"><span class="ff-number">150+</span><span class="ff-desc">GOVERNMENTS STUDIED</span></div>
+      <div class="ff-item"><span class="ff-number">2,500</span><span class="ff-desc">YEARS LATER</span></div>
+    </div>
+  </div>
+
   <div class="pullquote">
     <blockquote>"It is not possible to rule well without having been ruled."</blockquote>
     <p class="attribution">Aristotle, <em>Politics</em>, approximately 350 BCE</p>
-    <p class="narrator">Aristotle believed that before anyone can lead fairly, they must first understand what it feels like to be a citizen who must follow the law — because leaders who have never been ruled tend to think the rules do not apply to them.</p>
+    <p class="narrator para-standard">Aristotle believed leaders understand power better when they have also lived under rules made by others.</p>
+    <p class="narrator para-simple">Aristotle thought leaders should know what it feels like to follow rules before they make rules for others.</p>
   </div>
   <div class="pullquote-questions">
-    <p>1. What do you think Aristotle means? Why would a leader need to know what it feels like to follow rules?</p>
-    <p>2. Does this idea connect to our Essential Question? How does it relate to what makes a government fair or unfair?</p>
+    <p>1. What do you think Aristotle means?</p>
+    <p>2. How does this idea connect to what makes a government fair?</p>
   </div>
 
-  <div class="divider">&#10070; &#10070; &#10070;</div>
+  <div class="chapter-card">ATHENS ASKED WHO SHOULD RULE. ROME ASKED HOW TO STOP ONE PERSON FROM RULING EVERYTHING.</div>
 
-  <!-- SECTION 2 — THE ROMAN REPUBLIC -->
   <section class="content-section" id="roman-republic">
-    <h2 class="section-heading">Rome Builds on the Blueprint</h2>
+    <h2 class="section-heading">ROME BUILDS ON THE BLUEPRINT</h2>
+    <div class="section-body">
+      <!--
+       FILENAME: S1L01_RomanForumFull.jpg
+       PLACE IN: images/S1/L01/
+       FIND: The Roman Forum ruins in Rome, wide panoramic view showing columns and ancient government buildings
+       SEARCH: Roman Forum ruins panorama Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:Forum_Romanum_7.jpg (suggested, not guaranteed)
+      -->
+      <figure class="img-full">
+        <img src="images/S1/L01/S1L01_RomanForumFull.jpg" alt="The Roman Forum, Rome">
+        <figcaption>The Roman Forum, the center of political and legal life in ancient Rome. Wikimedia Commons.</figcaption>
+      </figure>
 
-    <!-- FILENAME: S1L01_RomanForumFull.jpg
-         PLACE IN: images/S1/L01/
-         FIND: The Roman Forum — archaeological ruins in Rome, wide panoramic view showing columns and ancient government buildings
-         SEARCH: Roman Forum ruins panorama Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Forum_Romanum_7.jpg (suggested, not guaranteed) -->
-    <img class="img-full" src="images/S1/L01/S1L01_RomanForumFull.jpg" alt="The Roman Forum, Rome, Italy">
-    <p class="img-caption">The Roman Forum, the center of political and legal life in ancient Rome. Rome, Italy. <em>Wikimedia Commons.</em></p>
+      <p class="para-standard">About 500 BCE, Rome threw out its last king. Romans were tired of being ruled by one person who could do whatever he wanted. They built a <span class="vocab">republic<span class="tip">A system of government where citizens elect representatives to make laws for them.</span></span>, where elected leaders shared power and served for limited time.</p>
+      <p class="para-simple">About 500 BCE, Rome removed its last king. Romans did not want one person to have all the power. They built a <span class="vocab-only">republic</span>. In a republic, citizens choose leaders to make laws.</p>
 
-    <p>About 500 BCE — around the same time Athens was experimenting with democracy — Rome threw out its last king. Romans were tired of being ruled by one person who could do whatever he wanted. They built something new: a <span class="vocab-only">republic</span>. Instead of one ruler, Rome created a Senate made up of elected representatives. Two consuls shared executive power and served for only one year at a time. No single person could control everything.</p>
+      <!--
+       FILENAME: S1L01_CicerobustParis.jpg
+       PLACE IN: images/S1/L01/
+       FIND: Ancient bust of Marcus Tullius Cicero, Roman statesman and philosopher who argued for natural law and rule of law
+       SEARCH: Cicero bust marble Rome Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:Marcus_Tullius_Cicero.jpg (suggested, not guaranteed)
+      -->
+      <figure class="img-inset-right">
+        <img src="images/S1/L01/S1L01_CicerobustParis.jpg" alt="Marble bust of Cicero">
+        <figcaption>Marble bust of Marcus Tullius Cicero, Roman statesman and orator. Wikimedia Commons.</figcaption>
+      </figure>
 
-    <!-- FILENAME: S1L01_CicerobustParis.jpg
-         PLACE IN: images/S1/L01/
-         FIND: Ancient bust of Marcus Tullius Cicero — Roman statesman and philosopher who argued for natural law and rule of law
-         SEARCH: Cicero bust marble Rome Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Marcus_Tullius_Cicero.jpg (suggested, not guaranteed) -->
-    <img class="img-inset-right" src="images/S1/L01/S1L01_CicerobustParis.jpg" alt="Marble bust of Cicero">
-    <p class="img-caption" style="float:right; width:42%; margin-left:28px; margin-top:-18px;">Marble bust of Marcus Tullius Cicero, Roman statesman and orator. <em>Wikimedia Commons.</em></p>
+      <p class="para-standard">The Romans also created a written legal code called the Twelve Tables. Before this, powerful people could twist unwritten laws. The Twelve Tables were posted in public so citizens could see the rules. Written law made it harder for leaders to secretly change the rules to help themselves.</p>
+      <p class="para-simple">Rome wrote down its laws in the Twelve Tables. Before that, powerful people could change the meaning of laws. Written laws helped citizens see the rules. This made it harder for leaders to cheat.</p>
 
-    <p>The Romans also created a written legal code called the Twelve Tables around 450 BCE. Before this, laws existed only in the memory of judges. Rich and powerful people could twist the law however they wanted. The Twelve Tables changed that. Laws were carved in stone and posted in public so everyone could read them. The idea was simple: if the law is written down and public, no one can secretly change it to help themselves.</p>
+      <p class="para-standard">Cicero argued that a law higher than government exists. He called this idea <span class="vocab">natural rights<span class="tip">Basic rights every human being has simply because they are human.</span></span>. If a government violates basic human rights, Cicero said that law is not truly just.</p>
+      <p class="para-simple">Cicero said people have basic rights because they are human. These are called <span class="vocab-only">natural rights</span>. He believed an unfair law is not truly just.</p>
 
-    <p>A Roman lawyer and politician named Cicero took these ideas further. He argued that there is a law higher than any government's rules. He called it <span class="vocab">natural rights<span class="tip">Basic rights that every human being has simply because they are human — rights that no government created and no government should be able to take away.</span></span> — the idea that all people are born with certain rights that no ruler can legally take away. Cicero said that any law that violates these natural rights is not a real law at all.</p>
+      <!--
+       FILENAME: S1L01_TwelveTablesForum.jpg
+       PLACE IN: images/S1/L01/
+       FIND: Artistic reconstruction or museum illustration of the Twelve Tables, first written law code of Rome, circa 450 BCE
+       SEARCH: Twelve Tables Roman law reconstruction illustration Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:Twelve_Tables.jpg (suggested, not guaranteed)
+      -->
+      <figure class="img-inset-left">
+        <img src="images/S1/L01/S1L01_TwelveTablesForum.jpg" alt="Illustration of the Roman Twelve Tables legal code">
+        <figcaption>Engraving depicting the Twelve Tables, Rome's first written law code, circa 450 BCE. Wikimedia Commons.</figcaption>
+      </figure>
 
-    <p>Rome did not last forever. By 27 BCE, the republic gave way to an empire. Generals with armies seized power. But the Roman legal system, including the idea of written laws and natural rights, survived. Roman law became the foundation for legal codes across Europe. When Spanish explorers arrived in the Americas, they brought Roman legal traditions with them.</p>
-
-    <div class="clearfix"></div>
-
-    <!-- FILENAME: S1L01_TwelveTablesForum.jpg
-         PLACE IN: images/S1/L01/
-         FIND: Artistic reconstruction or museum illustration of the Twelve Tables — the first written law code of Rome, circa 450 BCE
-         SEARCH: Twelve Tables Roman law reconstruction illustration Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Twelve_Tables.jpg (suggested, not guaranteed) -->
-    <img class="img-inset-left" src="images/S1/L01/S1L01_TwelveTablesForum.jpg" alt="Illustration of the Roman Twelve Tables legal code">
-    <p class="img-caption" style="float:left; width:42%; margin-right:28px; margin-top:-18px;">Engraving depicting the Twelve Tables, Rome's first written law code, circa 450 BCE. <em>Wikimedia Commons.</em></p>
-
-    <p>When the founders of the United States designed their government, they looked directly at Rome. They created a Senate. They divided power among three branches. They wrote their laws in a public document. Every one of those choices came from lessons Rome had already learned — and from the mistakes Rome made when it stopped following them.</p>
-
-    <div class="clearfix"></div>
-  </section>
-
-  <div class="divider">&#10070; &#10070; &#10070;</div>
-
-  <!-- SECTION 3 — JUDEO-CHRISTIAN IDEAS -->
-  <section class="content-section" id="judeo-christian">
-    <h2 class="section-heading">A Different Kind of Law: Judeo-Christian Tradition</h2>
-
-    <div class="img-pair">
-      <!-- FILENAME: S1L01_MosesTablets.jpg
-           PLACE IN: images/S1/L01/
-           FIND: Painting or illustration of Moses with the Ten Commandments tablets — classical biblical scene, Rembrandt or similar Old Masters preferred
-           SEARCH: Moses Ten Commandments tablets painting Rembrandt Wikimedia Commons
-           LINK: https://commons.wikimedia.org/wiki/File:Rembrandt_Harmensz._van_Rijn_079.jpg (suggested, not guaranteed) -->
-      <img src="images/S1/L01/S1L01_MosesTablets.jpg" alt="Moses with the Tablets of the Law, classical painting">
-      <!-- FILENAME: S1L01_SermonOnMount.jpg
-           PLACE IN: images/S1/L01/
-           FIND: Classical painting of the Sermon on the Mount — Jesus speaking to a crowd, depicting the moral teachings of early Christianity
-           SEARCH: Sermon on the Mount painting Bloch Wikimedia Commons
-           LINK: https://commons.wikimedia.org/wiki/File:Bloch-SermonOnTheMount.jpg (suggested, not guaranteed) -->
-      <img src="images/S1/L01/S1L01_SermonOnMount.jpg" alt="The Sermon on the Mount, Carl Heinrich Bloch painting">
+      <p class="para-standard">When later governments copied Rome, they copied both its strengths and its warnings. The United States created a Senate, divided power among branches, and wrote rules in public documents. Rome showed that laws can limit power; Rome also showed that a republic can collapse when powerful people stop respecting those limits.</p>
+      <p class="para-simple">Later governments copied Rome. The United States created a Senate and divided power into branches. It also wrote its rules in public documents. Rome showed that laws can limit power, but it also showed that a republic can fall apart.</p>
     </div>
-    <p class="img-caption">Left: Moses with the Tablets of the Law, classical painting. Right: The Sermon on the Mount, Carl Heinrich Bloch, 1877. <em>Wikimedia Commons.</em></p>
-
-    <p>While Greek and Roman thinkers focused on reason and logic, a different tradition was developing in the Middle East. Jewish scripture — what Christians call the Old Testament — taught that all human beings are created in the image of God. This was a radical idea in the ancient world. Most cultures believed that kings and emperors were gods or spoke directly for gods. The Jewish tradition said something different: every person has dignity, not just rulers.</p>
-
-    <p>The Ten Commandments, given to the Jewish people according to scripture, were also a form of law. They applied to everyone: kings and commoners alike. No one was above the moral law. This idea connects directly to what Aristotle and Cicero were arguing from a completely different direction: that power must be limited and everyone must follow the rules.</p>
-
-    <p>Christianity built on this foundation. Jesus of Nazareth taught that every person, regardless of wealth or social status, had equal worth in the eyes of God. This idea of human dignity and equality was radical in the Roman Empire, where enslaved people made up a third of the population. Early Christian thinkers argued that because all people have dignity, no ruler has the right to treat people as less than human.</p>
-
-    <!-- FILENAME: S1L01_MagnaCarta.jpg
-         PLACE IN: images/S1/L01/
-         FIND: The Magna Carta, 1215 — original document photograph, British Library
-         SEARCH: Magna Carta 1215 British Library photograph Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Magna_Carta_(British_Library_Cotton_MS_Augustus_II.106).jpg (suggested, not guaranteed) -->
-    <img class="img-inset-right" src="images/S1/L01/S1L01_MagnaCarta.jpg" alt="The Magna Carta, 1215, British Library">
-    <p class="img-caption" style="float:right; width:42%; margin-left:28px; margin-top:-18px;">The Magna Carta, 1215. British Library, London. <em>Wikimedia Commons.</em></p>
-
-    <p>By the Middle Ages in Europe, Christian scholars were blending Greco-Roman philosophy with Christian theology. A monk named Thomas Aquinas argued in the 1200s that human laws must follow a higher moral law rooted in God's design for humanity. He called this <span class="vocab">natural rights<span class="tip">Basic rights that every human being has simply because they are human — rights that no government created and no government should be able to take away.</span></span> thinking applied to Christian belief. If a ruler's law contradicts God's moral law, citizens have a duty to resist it.</p>
-
-    <p>This idea became explosive. In 1215, English barons used it to force King John to sign the Magna Carta. They argued that even the king must follow the law. Five hundred years later, American colonists used the same argument against King George III. When Thomas Jefferson wrote that all men are endowed by their Creator with certain unalienable rights, he was drawing directly from centuries of Judeo-Christian and Greco-Roman thought blended together.</p>
-
-    <div class="clearfix"></div>
   </section>
 
-  <div class="divider">&#10070; &#10070; &#10070;</div>
+  <div class="brain-break yd-break">
+    <span class="bb-label">YOU DECIDE</span>
+    <p class="bb-text">You are building a republic. You can keep only two protections. Which two survive?</p>
+    <div class="yd-options"><span>WRITTEN LAWS</span><span>SHORT TERMS</span><span>PUBLIC TRIALS</span><span>SHARED POWER</span></div>
+  </div>
 
-  <!-- PRIMARY SOURCE 2 — MAGNA CARTA -->
+  <div class="chapter-card">ROME WROTE LAWS IN PUBLIC. THE NEXT TRADITION ASKED WHY EVERY PERSON DESERVES DIGNITY IN THE FIRST PLACE.</div>
+
+  <section class="content-section" id="judeo-christian">
+    <h2 class="section-heading">A DIFFERENT KIND OF LAW: JUDEO-CHRISTIAN TRADITION</h2>
+    <div class="section-body">
+      <div class="img-pair">
+        <figure>
+          <!--
+           FILENAME: S1L01_MosesTablets.jpg
+           PLACE IN: images/S1/L01/
+           FIND: Painting or illustration of Moses with the Ten Commandments tablets, classical biblical scene
+           SEARCH: Moses Ten Commandments tablets painting Rembrandt Wikimedia Commons
+           LINK: https://commons.wikimedia.org/wiki/File:Rembrandt_Harmensz._van_Rijn_079.jpg (suggested, not guaranteed)
+          -->
+          <img src="images/S1/L01/S1L01_MosesTablets.jpg" alt="Moses with the Tablets of the Law">
+          <figcaption>Moses with the Tablets of the Law, classical painting. Wikimedia Commons.</figcaption>
+        </figure>
+        <figure>
+          <!--
+           FILENAME: S1L01_SermonOnMount.jpg
+           PLACE IN: images/S1/L01/
+           FIND: Classical painting of the Sermon on the Mount, Jesus speaking to a crowd
+           SEARCH: Sermon on the Mount painting Bloch Wikimedia Commons
+           LINK: https://commons.wikimedia.org/wiki/File:Bloch-SermonOnTheMount.jpg (suggested, not guaranteed)
+          -->
+          <img src="images/S1/L01/S1L01_SermonOnMount.jpg" alt="The Sermon on the Mount">
+          <figcaption>The Sermon on the Mount, Carl Heinrich Bloch, 1877. Wikimedia Commons.</figcaption>
+        </figure>
+      </div>
+
+      <p class="para-standard">While Greek and Roman thinkers focused on reason, a different tradition developed in the Middle East. Jewish scripture taught that all human beings are created in the image of God. In the ancient world, this was a powerful claim. It said every person has dignity, not only kings and priests.</p>
+      <p class="para-simple">Greek and Roman thinkers focused on reason. A different tradition grew in the Middle East. Jewish scripture said all people are created in the image of God. This meant every person has dignity, not just rulers.</p>
+
+      <p class="para-standard">The Ten Commandments were also a form of law. They applied to everyone: kings and common people alike. This connected with Greek and Roman ideas in a new way. Power should be limited because human beings have worth.</p>
+      <p class="para-simple">The Ten Commandments were a kind of law. They applied to everyone, including kings. This connected to Greek and Roman ideas. Leaders should have limits because people matter.</p>
+
+      <p class="para-standard">Christianity built on this idea by teaching that every person has equal worth in the eyes of God. That idea challenged the Roman world, where status, wealth, citizenship, and slavery divided people sharply. Later Christian thinkers argued that unjust rulers could be resisted because rulers also answer to a higher moral law.</p>
+      <p class="para-simple">Christianity taught that every person has equal worth to God. This challenged the Roman world, where people were divided by wealth, status, citizenship, and slavery. Later Christian thinkers said unfair rulers could be resisted.</p>
+
+      <!--
+       FILENAME: S1L01_MagnaCarta.jpg
+       PLACE IN: images/S1/L01/
+       FIND: The Magna Carta, 1215, original document photograph, British Library
+       SEARCH: Magna Carta 1215 British Library photograph Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:Magna_Carta_(British_Library_Cotton_MS_Augustus_II.106).jpg (suggested, not guaranteed)
+      -->
+      <figure class="img-inset-right">
+        <img src="images/S1/L01/S1L01_MagnaCarta.jpg" alt="The Magna Carta, 1215">
+        <figcaption>The Magna Carta, 1215. British Library. Wikimedia Commons.</figcaption>
+      </figure>
+
+      <p class="para-standard">In 1215, English nobles forced King John to sign the Magna Carta. It said even the king had to follow the law. Centuries later, American colonists used similar arguments against King George III. The idea moved across time: rulers do not create all rights, and rulers cannot simply erase them.</p>
+      <p class="para-simple">In 1215, English nobles forced King John to sign the Magna Carta. It said even the king had to follow the law. Later, American colonists used a similar idea against King George III. Rights do not come only from rulers, so rulers cannot simply take them away.</p>
+    </div>
+  </section>
+
+  <div class="brain-break as-break">
+    <span class="bb-label">ART SPOTLIGHT</span>
+    <figure>
+      <!--
+       FILENAME: S1L01_SchoolOfAthens.jpg
+       PLACE IN: images/S1/L01/
+       FIND: Raphael's The School of Athens, 1509 to 1511, famous fresco showing Plato, Aristotle, and other ancient thinkers gathered together
+       SEARCH: Raphael School of Athens Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg (suggested, not guaranteed)
+      -->
+      <img src="images/S1/L01/S1L01_SchoolOfAthens.jpg" alt="Raphael's School of Athens" class="as-image">
+      <figcaption class="as-caption">Raphael, <em>The School of Athens</em>, 1509 to 1511. Wikimedia Commons.</figcaption>
+    </figure>
+    <p class="as-question">If you had to sit on these steps for one hour, which person in this picture would you avoid talking to?</p>
+  </div>
+
   <div class="pullquote">
     <blockquote>"No free man shall be seized, imprisoned, dispossessed, outlawed, exiled or ruined in any way, nor in any way proceeded against, except by the lawful judgement of his peers and the law of the land."</blockquote>
     <p class="attribution">Magna Carta, Clause 39, 1215 CE</p>
-    <p class="narrator">This single sentence, written 800 years ago to limit a king's power, became the direct ancestor of your right to a fair trial in the United States today.</p>
+    <p class="narrator para-standard">This sentence helped create the idea that government must follow legal steps before it can take away a person's freedom.</p>
+    <p class="narrator para-simple">This sentence helped create the idea that the government must follow the law before taking away someone's freedom.</p>
   </div>
   <div class="pullquote-questions">
-    <p>1. What rights does this document say a king cannot take away? Put it in your own words.</p>
-    <p>2. How does the Magna Carta connect to our Essential Question about how ancient ideas created modern democracy?</p>
+    <p>1. What rights does this document say a king cannot take away?</p>
+    <p>2. How does the Magna Carta connect to modern democracy?</p>
   </div>
 
-  <div class="divider">&#10070; &#10070; &#10070;</div>
+  <div class="chapter-card">ALL THREE TRADITIONS POINT TO ONE FIGHT: LAW WITH LIMITS OR POWER WITHOUT LIMITS.</div>
 
-  <!-- SECTION 4 — RULE OF LAW vs. TYRANNY -->
   <section class="content-section" id="rule-of-law">
-    <h2 class="section-heading">Rule of Law vs. Tyranny: Two Ways to Run a Government</h2>
+    <h2 class="section-heading">RULE OF LAW VS. TYRANNY</h2>
+    <div class="section-body">
+      <!--
+       FILENAME: S1L01_USConstitutionDoc.jpg
+       PLACE IN: images/S1/L01/
+       FIND: The United States Constitution, photograph of original parchment document, National Archives
+       SEARCH: United States Constitution original document photograph National Archives Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:Constitution_of_the_United_States,_page_1.jpg (suggested, not guaranteed)
+      -->
+      <figure class="img-full">
+        <img src="images/S1/L01/S1L01_USConstitutionDoc.jpg" alt="The United States Constitution, original document">
+        <figcaption>The United States Constitution, original document, 1787. National Archives. Wikimedia Commons.</figcaption>
+      </figure>
 
-    <!-- FILENAME: S1L01_USConstitutionDoc.jpg
-         PLACE IN: images/S1/L01/
-         FIND: The United States Constitution — photograph of the original parchment document, National Archives, Washington D.C.
-         SEARCH: United States Constitution original document photograph National Archives Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Constitution_of_the_United_States,_page_1.jpg (suggested, not guaranteed) -->
-    <img class="img-full" src="images/S1/L01/S1L01_USConstitutionDoc.jpg" alt="The United States Constitution, original document, National Archives">
-    <p class="img-caption">The United States Constitution, original document, 1787. National Archives, Washington, D.C. <em>Wikimedia Commons.</em></p>
+      <p class="para-standard">All the ideas from this lesson point toward one central question. Will the government follow the <span class="vocab-only">rule of law</span>, or will it fall into <span class="vocab">tyranny<span class="tip">A system where one ruler or a small group holds power without legal limits.</span></span>? The difference matters because laws can protect people, but laws can also be ignored by people with power.</p>
+      <p class="para-simple">All the ideas in this lesson lead to one question. Will the government follow the <span class="vocab-only">rule of law</span>, or will it become <span class="vocab-only">tyranny</span>? This matters because laws can protect people, but powerful people can also ignore laws.</p>
 
-    <p>All the ideas from the previous sections point toward one central argument: governments can either follow the <span class="vocab">rule of law<span class="tip">The principle that everyone — including rulers and governments — must follow the same laws and no one is above them.</span></span>, or they can fall into <span class="vocab">tyranny<span class="tip">A system where one ruler or a small group holds all the power and uses it without legal limits, often treating citizens cruelly or unfairly.</span></span>. Understanding the difference between these two systems is one of the most important ideas in this entire course.</p>
+      <p class="para-standard">Under the rule of law, the law applies to everyone. A president, judge, police officer, or ordinary citizen can be held responsible for breaking it. Courts exist to interpret laws, and citizens can challenge laws they believe are unjust.</p>
+      <p class="para-simple">Under the rule of law, the law applies to everyone. Leaders, judges, police officers, and citizens must follow it. Courts help explain laws. Citizens can challenge laws they think are unfair.</p>
 
-    <p>Under the rule of law, the law applies to everyone equally. A president who breaks the law can be removed. A police officer who breaks the law can be prosecuted. The rules are written down and public so everyone can see them. Courts exist to interpret the law fairly. If you believe a law is unjust, there is a legal process to challenge it.</p>
+      <!--
+       FILENAME: S1L01_GreekDemocracyVase.jpg
+       PLACE IN: images/S1/L01/
+       FIND: Ancient Greek red-figure vase depicting civic or democratic scene, citizens in assembly if possible
+       SEARCH: Ancient Greek red figure vase democracy assembly citizens Wikimedia Commons
+       LINK: https://commons.wikimedia.org/wiki/File:Athenian_democracy_Louvre.jpg (suggested, not guaranteed)
+      -->
+      <figure class="img-inset-left">
+        <img src="images/S1/L01/S1L01_GreekDemocracyVase.jpg" alt="Ancient Greek vase depicting civic life">
+        <figcaption>Ancient Greek red-figure vase depicting civic life, 5th century BCE. Wikimedia Commons.</figcaption>
+      </figure>
 
-    <p>Under <span class="vocab-only">tyranny</span>, one person or one group makes the rules and also decides when the rules apply. The ruler can change the law whenever it is inconvenient. People can be arrested without charges. Courts can be pressured to deliver verdicts the ruler wants. There is no safe way to disagree.</p>
+      <p class="para-standard">Under tyranny, one person or one group decides when rules matter. The ruler can change the law whenever it gets in the way. People can be punished for disagreeing, and courts can be pressured to obey the ruler instead of the law.</p>
+      <p class="para-simple">Under tyranny, one person or group controls the rules. The ruler can change the law when it is inconvenient. People can be punished for disagreeing. Courts may serve the ruler instead of justice.</p>
 
-    <!-- FILENAME: S1L01_GreekDemocracyVase.jpg
-         PLACE IN: images/S1/L01/
-         FIND: Ancient Greek red-figure vase depicting civic or democratic scene — citizens in assembly, ideally from 5th century BCE Athens
-         SEARCH: Ancient Greek red figure vase democracy assembly citizens Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Athenian_democracy_Louvre.jpg (suggested, not guaranteed) -->
-    <img class="img-inset-left" src="images/S1/L01/S1L01_GreekDemocracyVase.jpg" alt="Ancient Greek vase depicting civic life in Athens">
-    <p class="img-caption" style="float:left; width:42%; margin-right:28px; margin-top:-18px;">Ancient Greek red-figure vase depicting civic life, 5th century BCE. Louvre Museum, Paris. <em>Wikimedia Commons.</em></p>
-
-    <p>The United States government was designed specifically to prevent <span class="vocab-only">tyranny</span>. The founders had lived under what they believed was the <span class="vocab-only">tyranny</span> of King George III. They read their Aristotle, their Cicero, and their Bible. They built a system with three branches of government, each one able to check the others. They wrote the rules in a public document: the Constitution. They added a Bill of Rights that lists specific things the government cannot do to citizens — drawing directly from natural rights thinking.</p>
-
-    <p>The first ten amendments to the Constitution are called the Bill of Rights. Freedom of speech, freedom of religion, the right to a fair trial: all of these connect directly to ideas that Aristotle, Cicero, and Aquinas debated thousands of years earlier. The next time you hear about a Supreme Court case or a debate about rights, you are watching that ancient conversation continue in real time.</p>
-
-    <div class="clearfix"></div>
-  </section>
-
-  <div class="divider">&#10070; &#10070; &#10070;</div>
-
-  <!-- LOCAL HISTORY CONNECTION -->
-  <section id="local-history">
-    <div class="local-card">
-      <div class="local-card-headline">&#9670; Local History: Roman Law Reaches San Diego Bay</div>
-
-      <!-- FILENAME: S1L01_MissionSanDiego.jpg
-           PLACE IN: images/S1/L01/
-           FIND: Mission San Diego de Alcalá — the first Spanish mission in California, founded 1769. Photograph of the historic mission church.
-           SEARCH: Mission San Diego de Alcala historic photograph Wikimedia Commons
-           LINK: https://commons.wikimedia.org/wiki/File:Mission_San_Diego_de_Alcala.jpg (suggested, not guaranteed) -->
-      <img style="width:100%; margin-bottom:16px; border:2px solid var(--gold-light);" src="images/S1/L01/S1L01_MissionSanDiego.jpg" alt="Mission San Diego de Alcalá, California, founded 1769">
-      <p class="img-caption" style="color:#aac8e8; margin-top:-10px; margin-bottom:16px;">Mission San Diego de Alcalá, California, founded 1769 — the first Spanish mission in what is now the state of California. <em>Wikimedia Commons.</em></p>
-
-      <p>When Spanish colonizers arrived in what is now San Diego in 1769, they did not start from scratch. They brought with them a legal system rooted in Roman law. Spain's legal codes — which governed land ownership, courts, and individual rights — descended directly from <em>Roman</em> law. The same ideas that Cicero argued in the Roman Forum shaped the rules that governed the first Spanish settlements at what the Spanish called <span class="local-anchor">San Diego de Alcalá</span>.</p>
-      <p>When California became part of the United States in 1850, the new state constitution blended two traditions: Spanish and Roman law on one side, and Anglo-American common law — itself rooted in the Magna Carta — on the other. That blend still shapes California law today. Aristotle and Cicero have been in San Diego longer than the city's name has existed.</p>
+      <p class="para-standard">The United States government was designed to prevent tyranny. The founders read Greek philosophy, Roman history, English law, and religious arguments about human dignity. They built a system with written laws, divided power, courts, elections, and rights that the government is not supposed to violate.</p>
+      <p class="para-simple">The United States government was built to stop tyranny. The founders studied Greek ideas, Roman history, English law, and religious ideas about human dignity. They created written laws, divided power, courts, elections, and protected rights.</p>
     </div>
   </section>
 
-  <div class="divider">&#10070; &#10070; &#10070;</div>
+  <section id="still-matters" class="still-matters">
+    <h2>HOW THIS STILL MATTERS TODAY</h2>
+    <div class="still-matters-headline">Every fight over rights, courts, and government power is still using ideas born in Athens, Rome, and medieval England.</div>
 
-  <!-- HOW THIS STILL MATTERS TODAY -->
-  <section id="still-matters">
-    <div class="still-matters">
-      <div class="still-matters-headline">The Arguments Ancient Greeks and Romans Had Are Happening Right Now</div>
-
-      <p style="color:var(--marble); font-size:18px; margin-bottom:20px;">Every debate about presidential power, every Supreme Court ruling, and every protest march over civil rights is a continuation of a conversation that started in Athens 2,500 years ago. The same core question is always underneath: Who holds power? Who does the law protect? And who decides when a law is unjust?</p>
-
-      <ul class="news-links">
-        <li><a href="https://www.nytimes.com/topic/subject/supreme-court" target="_blank" rel="noopener">Supreme Court Debates What the Constitution Protects — New York Times, ongoing coverage</a></li>
-        <li><a href="https://www.reuters.com/world/us/rule-of-law/" target="_blank" rel="noopener">Rule of Law Under Pressure: Global Trends in Democratic Backsliding — Reuters</a></li>
-        <li><a href="https://www.pbs.org/newshour/tag/civil-rights" target="_blank" rel="noopener">Civil Rights in the Courts: When Citizens Challenge Government Power — PBS NewsHour</a></li>
-      </ul>
-
-      <!-- FILENAME: S1L01_SupremeCourtBuilding.jpg
+    <div class="brain-break tn-break">
+      <span class="bb-label">THEN AND NOW</span>
+      <div class="tn-pair">
+        <div class="tn-item">
+          <span class="tn-era-label">ANCIENT ATHENS</span>
+          <!--
+           FILENAME: S1L01_ParthenonHeader.jpg
            PLACE IN: images/S1/L01/
-           FIND: United States Supreme Court building exterior — the iconic marble facade in Washington D.C.
+           FIND: The Parthenon on the Acropolis in Athens, Greece, iconic symbol of ancient Greek civic life
+           SEARCH: Parthenon Acropolis Athens Greece Wikimedia Commons
+           LINK: https://commons.wikimedia.org/wiki/File:The_Parthenon_in_Athens.jpg (suggested, not guaranteed)
+          -->
+          <img src="images/S1/L01/S1L01_ParthenonHeader.jpg" alt="The Parthenon in Athens">
+          <p class="tn-caption">The Parthenon in Athens, symbol of a city that argued publicly about power.</p>
+        </div>
+        <div class="tn-item">
+          <span class="tn-era-label">TODAY</span>
+          <!--
+           FILENAME: S1L01_SupremeCourtBuilding.jpg
+           PLACE IN: images/S1/L01/
+           FIND: United States Supreme Court building exterior, iconic marble facade in Washington D.C.
            SEARCH: United States Supreme Court building exterior Washington DC Wikimedia Commons
-           LINK: https://commons.wikimedia.org/wiki/File:US_Supreme_Court.JPG (suggested, not guaranteed) -->
-      <img style="width:100%; margin:24px 0 10px; border:2px solid var(--gold-light);" src="images/S1/L01/S1L01_SupremeCourtBuilding.jpg" alt="United States Supreme Court building, Washington D.C.">
-      <p style="font-size:13px; font-style:italic; color:#aac8e8; margin-bottom:0;">United States Supreme Court building, Washington D.C. Built in marble — the same material the Greeks used for the Parthenon. <em>Wikimedia Commons.</em></p>
-
-      <p class="closing-question">If a government passes a law you believe is deeply unjust, what tools did the people in this lesson leave you to fight it — and do those tools still work today?</p>
+           LINK: https://commons.wikimedia.org/wiki/File:US_Supreme_Court.JPG (suggested, not guaranteed)
+          -->
+          <img src="images/S1/L01/S1L01_SupremeCourtBuilding.jpg" alt="United States Supreme Court building">
+          <p class="tn-caption">The U.S. Supreme Court, where arguments about law and rights still get decided.</p>
+        </div>
+      </div>
+      <p class="tn-question">Which building looks more powerful, and which one would feel more intimidating to walk into?</p>
     </div>
+
+    <p class="closing-question">If a government passes a law you believe is deeply unjust, what tool from this lesson would you reach for first?</p>
   </section>
 
-</div><!-- end content-wrap -->
+  <section id="local-history" class="local-card">
+    <h2>LOCAL HISTORY CONNECTION</h2>
+    <p class="local-card-headline">ROMAN LAW REACHED SAN DIEGO BAY THROUGH SPAIN.</p>
+    <!--
+     FILENAME: S1L01_MissionSanDiego.jpg
+     PLACE IN: images/S1/L01/
+     FIND: Mission San Diego de Alcalá, the first Spanish mission in California, founded 1769, historic mission church photograph
+     SEARCH: Mission San Diego de Alcala historic photograph Wikimedia Commons
+     LINK: https://commons.wikimedia.org/wiki/File:Mission_San_Diego_de_Alcala.jpg (suggested, not guaranteed)
+    -->
+    <figure class="img-full">
+      <img src="images/S1/L01/S1L01_MissionSanDiego.jpg" alt="Mission San Diego de Alcalá">
+      <figcaption style="color:#cce0f2">Mission San Diego de Alcalá, founded in 1769. Wikimedia Commons.</figcaption>
+    </figure>
+    <p>When Spanish colonizers arrived in what is now San Diego in 1769, they brought legal traditions rooted partly in Roman law. Later, California law blended Spanish legal ideas with Anglo-American ideas rooted in the Magna Carta.</p>
+    <p>That means the legal story in this lesson is not only ancient; parts of it shaped courts, land, and citizenship in California.</p>
+  </section>
+</div>
 
-<!-- ===== FOOTER ===== -->
-<footer class="page-footer">
-  World History &mdash; Semester 1, Lesson 01 &nbsp;|&nbsp; Roots of Western Political Thought
-</footer>
+<footer class="page-footer">WORLD HISTORY — SEMESTER 1, LESSON 01 | ROOTS OF WESTERN POLITICAL THOUGHT</footer>
 
-<!-- ===== MOBILE TAP VOCABULARY SUPPORT ===== -->
 <script>
-  document.querySelectorAll('.vocab').forEach(function(el) {
-    el.addEventListener('click', function(e) {
-      e.stopPropagation();
-      document.querySelectorAll('.vocab.active').forEach(function(v) {
-        if (v !== el) v.classList.remove('active');
-      });
-      el.classList.toggle('active');
-    });
+document.getElementById('lexile-toggle').addEventListener('click', function() {
+  document.body.classList.toggle('simplified');
+  this.textContent = document.body.classList.contains('simplified') ? 'STANDARD TEXT' : 'SIMPLIFY TEXT';
+});
+document.querySelectorAll('.vocab').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelectorAll('.vocab.active').forEach(function(v) { if (v !== el) v.classList.remove('active'); });
+    el.classList.toggle('active');
   });
-  document.addEventListener('click', function() {
-    document.querySelectorAll('.vocab.active').forEach(function(v) {
-      v.classList.remove('active');
-    });
+});
+document.addEventListener('click', function() {
+  document.querySelectorAll('.vocab.active').forEach(function(v) { v.classList.remove('active'); });
+});
+const tocObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const id = entry.target.getAttribute('id');
+    const link = document.querySelector('.toc-sidebar a[href="#' + id + '"]');
+    if (link) {
+      if (entry.isIntersecting) link.classList.add('active');
+      else link.classList.remove('active');
+    }
   });
-
-  // Smooth scroll for nav
-  document.querySelectorAll('.section-nav a').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      var target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
+}, { threshold: 0.25 });
+document.querySelectorAll('.content-section[id], #still-matters, #local-history').forEach(el => tocObserver.observe(el));
 </script>
 
 </body>
@@ -732,18 +468,29 @@
 
 <!--
 IMAGE CHECKLIST FOR SSW_S1L01.html
+1. S1L01_ParthenonHeader.jpg — Parthenon header and Then and Now left — Suggested link: https://commons.wikimedia.org/wiki/File:The_Parthenon_in_Athens.jpg
+2. S1L01_SocratesHerm.jpg — Marble bust of Socrates — Suggested link: https://commons.wikimedia.org/wiki/File:Socrates_Louvre.jpg
+3. S1L01_AristotleBust.jpg — Marble bust of Aristotle — Suggested link: https://commons.wikimedia.org/wiki/File:Aristotle_Altemps_Inv8575.jpg
+4. S1L01_RomanForumFull.jpg — Roman Forum ruins — Suggested link: https://commons.wikimedia.org/wiki/File:Forum_Romanum_7.jpg
+5. S1L01_CicerobustParis.jpg — Marble bust of Cicero — Suggested link: https://commons.wikimedia.org/wiki/File:Marcus_Tullius_Cicero.jpg
+6. S1L01_TwelveTablesForum.jpg — Twelve Tables engraving — Suggested link: https://commons.wikimedia.org/wiki/File:Twelve_Tables.jpg
+7. S1L01_MosesTablets.jpg — Moses with Tablets of the Law — Suggested link: https://commons.wikimedia.org/wiki/File:Rembrandt_Harmensz._van_Rijn_079.jpg
+8. S1L01_SermonOnMount.jpg — Sermon on the Mount painting — Suggested link: https://commons.wikimedia.org/wiki/File:Bloch-SermonOnTheMount.jpg
+9. S1L01_MagnaCarta.jpg — Magna Carta document — Suggested link: https://commons.wikimedia.org/wiki/File:Magna_Carta_(British_Library_Cotton_MS_Augustus_II.106).jpg
+10. S1L01_SchoolOfAthens.jpg — Raphael's School of Athens, added Art Spotlight image — Suggested link: https://commons.wikimedia.org/wiki/File:%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg
+11. S1L01_USConstitutionDoc.jpg — U.S. Constitution document — Suggested link: https://commons.wikimedia.org/wiki/File:Constitution_of_the_United_States,_page_1.jpg
+12. S1L01_GreekDemocracyVase.jpg — Ancient Greek civic vase — Suggested link: https://commons.wikimedia.org/wiki/File:Athenian_democracy_Louvre.jpg
+13. S1L01_SupremeCourtBuilding.jpg — U.S. Supreme Court building and Then and Now right — Suggested link: https://commons.wikimedia.org/wiki/File:US_Supreme_Court.JPG
+14. S1L01_MissionSanDiego.jpg — Mission San Diego de Alcalá — Suggested link: https://commons.wikimedia.org/wiki/File:Mission_San_Diego_de_Alcala.jpg
 
-S1L01_ParthenonHeader.jpg — Header background: The Parthenon, Athens, Greece — Suggested link: https://commons.wikimedia.org/wiki/File:The_Parthenon_in_Athens.jpg
-S1L01_SocratesHerm.jpg — Marble bust of Socrates, Roman copy of Greek original — Suggested link: https://commons.wikimedia.org/wiki/File:Socrates_Louvre.jpg
-S1L01_AristotleBust.jpg — Marble bust of Aristotle, Roman copy of Greek original — Suggested link: https://commons.wikimedia.org/wiki/File:Aristotle_Altemps_Inv8575.jpg
-S1L01_RomanForumFull.jpg — The Roman Forum ruins, wide panoramic view — Suggested link: https://commons.wikimedia.org/wiki/File:Forum_Romanum_7.jpg
-S1L01_CicerobustParis.jpg — Marble bust of Cicero, Roman statesman — Suggested link: https://commons.wikimedia.org/wiki/File:Marcus_Tullius_Cicero.jpg
-S1L01_TwelveTablesForum.jpg — Engraving depicting the Roman Twelve Tables legal code — Suggested link: https://commons.wikimedia.org/wiki/File:Twelve_Tables.jpg
-S1L01_MosesTablets.jpg — Moses with the Tablets of the Law, classical painting — Suggested link: https://commons.wikimedia.org/wiki/File:Rembrandt_Harmensz._van_Rijn_079.jpg
-S1L01_SermonOnMount.jpg — The Sermon on the Mount, Carl Heinrich Bloch, 1877 — Suggested link: https://commons.wikimedia.org/wiki/File:Bloch-SermonOnTheMount.jpg
-S1L01_MagnaCarta.jpg — The Magna Carta, 1215, British Library photograph — Suggested link: https://commons.wikimedia.org/wiki/File:Magna_Carta_(British_Library_Cotton_MS_Augustus_II.106).jpg
-S1L01_USConstitutionDoc.jpg — United States Constitution, original document, National Archives — Suggested link: https://commons.wikimedia.org/wiki/File:Constitution_of_the_United_States,_page_1.jpg
-S1L01_GreekDemocracyVase.jpg — Ancient Greek red-figure vase depicting civic life — Suggested link: https://commons.wikimedia.org/wiki/File:Athenian_democracy_Louvre.jpg
-S1L01_MissionSanDiego.jpg — Mission San Diego de Alcalá, California, founded 1769 — Suggested link: https://commons.wikimedia.org/wiki/File:Mission_San_Diego_de_Alcala.jpg
-S1L01_SupremeCourtBuilding.jpg — United States Supreme Court building, Washington D.C. — Suggested link: https://commons.wikimedia.org/wiki/File:US_Supreme_Court.JPG
+CHANGES MADE
+- Added third Google Font for engagement breaks.
+- Added Lexile toggle with standard and simplified paragraph versions.
+- Added floating table of contents sidebar with IntersectionObserver.
+- Converted headings, nav labels, and footer to ALL CAPS.
+- Removed news link lists and body paragraph from HOW THIS STILL MATTERS TODAY.
+- Added logical engagement breaks: Did You Know after Greek thinkers, Fast Facts after Greek section, You Decide after Roman Republic, Art Spotlight after Judeo-Christian ideas, and Then and Now inside Still Matters.
+- Preserved all original image paths and added S1L01_SchoolOfAthens.jpg for the Art Spotlight.
+- Moved LOCAL HISTORY after HOW THIS STILL MATTERS TODAY.
+- Replaced student-facing em dashes with commas, colons, or semicolons where needed.
 -->
