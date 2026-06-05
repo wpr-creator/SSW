@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Democratic Revolutions — World History S1L02</title>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<title>DEMOCRATIC REVOLUTIONS | WORLD HISTORY S1L02</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;900&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
     --parchment: #f4edd8;
@@ -19,797 +19,496 @@
     --gold-light: #d4a820;
     --vocab-red: #b03030;
     --text-body: #1e1608;
-    --section-alt: #ede4c8;
+    --break-teal: #063f47;
+    --break-orange: #c45120;
+    --break-black: #101217;
+    --break-yellow: #ffd451;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
+  html { scroll-behavior: smooth; }
   body {
-    background-color: var(--parchment);
+    background:
+      radial-gradient(circle at top left, rgba(180,134,11,0.16), transparent 30%),
+      linear-gradient(180deg, var(--parchment) 0%, var(--parchment-dark) 100%);
     font-family: 'Libre Baskerville', Georgia, serif;
     font-size: 18px;
     line-height: 1.85;
     color: var(--text-body);
   }
-
-  /* ===== HEADER ===== */
-  .page-header {
-    position: relative;
-    background-color: var(--navy-deep);
-    overflow: hidden;
-    padding: 60px 24px 52px;
-    text-align: center;
-  }
-
-  .header-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.30;
-  }
-
-  .header-inner {
-    position: relative;
-    z-index: 2;
-    max-width: 820px;
-    margin: 0 auto;
-  }
-
-  .course-label {
-    font-family: 'EB Garamond', serif;
-    font-size: 13px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    margin-bottom: 14px;
-    font-variant: small-caps;
-  }
-
-  .page-title {
-    font-family: 'EB Garamond', serif;
-    font-size: 58px;
-    font-weight: 700;
-    color: #fff;
-    line-height: 1.1;
-    margin-bottom: 28px;
-    text-shadow: 0 2px 14px rgba(0,0,0,0.7);
-  }
-
-  .eq-banner {
-    background: var(--red-seal);
-    color: #fff;
-    padding: 18px 30px;
-    border-radius: 3px;
-    font-family: 'EB Garamond', serif;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    display: inline-block;
-    max-width: 720px;
-    border: 2px solid var(--gold-light);
-  }
-
-  /* ===== NAV BAR ===== */
-  .section-nav {
-    background: var(--navy);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    border-bottom: 3px solid var(--gold-ink);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .section-nav a {
-    font-family: 'EB Garamond', serif;
-    font-size: 13px;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    text-decoration: none;
-    padding: 13px 17px;
-    border-right: 1px solid rgba(180,140,20,0.25);
-    transition: background 0.2s, color 0.2s;
-    display: block;
-    font-variant: small-caps;
-  }
-
-  .section-nav a:last-child { border-right: none; }
+  .page-header { position: relative; background-color: var(--navy-deep); overflow: hidden; padding: 62px 24px 54px; text-align: center; }
+  .header-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.34; }
+  .page-header::after { content: ''; position: absolute; inset: 0; background: linear-gradient(rgba(17,30,51,0.48), rgba(17,30,51,0.72)); }
+  .header-inner { position: relative; z-index: 2; max-width: 820px; margin: 0 auto; }
+  .course-label { font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 14px; font-weight: 700; }
+  .page-title { font-family: 'EB Garamond', serif; font-size: 58px; font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 28px; text-transform: uppercase; text-shadow: 0 2px 14px rgba(0,0,0,0.7); }
+  .eq-banner { background: var(--red-seal); color: #fff; padding: 18px 30px; border-radius: 3px; font-family: 'EB Garamond', serif; font-size: 19px; font-weight: 700; line-height: 1.5; display: inline-block; max-width: 720px; border: 2px solid var(--gold-light); }
+  .section-nav { background: var(--navy); display: flex; flex-wrap: wrap; justify-content: center; border-bottom: 3px solid var(--gold-ink); position: sticky; top: 0; z-index: 100; }
+  .section-nav a { font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gold-light); text-decoration: none; padding: 13px 15px; border-right: 1px solid rgba(180,140,20,0.25); transition: background 0.2s, color 0.2s; display: block; font-weight: 700; }
   .section-nav a:hover { background: var(--red-seal); color: #fff; }
-
-  /* ===== CONTENT WRAPPER ===== */
-  .content-wrap {
-    max-width: 820px;
-    margin: 0 auto;
-    padding: 0 24px 60px;
-  }
-
-  /* ===== INTRO ===== */
-  .intro-section {
-    padding: 48px 0 32px;
-  }
-
-  .intro-section p {
-    font-size: 19px;
-    line-height: 1.9;
-    color: var(--ink);
-    margin-bottom: 18px;
-  }
-
-  /* ===== DIVIDER ===== */
-  .divider {
-    text-align: center;
-    margin: 44px 0 36px;
-    color: var(--gold-ink);
-    font-size: 18px;
-    letter-spacing: 0.35em;
-    font-family: 'EB Garamond', serif;
-  }
-
-  .divider::before,
-  .divider::after {
-    content: '';
-    display: inline-block;
-    width: 90px;
-    height: 1px;
-    background: var(--gold-ink);
-    vertical-align: middle;
-    margin: 0 14px;
-    opacity: 0.7;
-  }
-
-  /* ===== CONTENT SECTIONS ===== */
-  .content-section {
-    padding: 44px 0 20px;
-  }
-
-  .section-heading {
-    font-family: 'EB Garamond', serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--navy-deep);
-    margin-bottom: 22px;
-    line-height: 1.2;
-    border-left: 5px solid var(--red-seal);
-    padding-left: 18px;
-  }
-
-  .content-section p {
-    margin-bottom: 20px;
-    font-size: 18px;
-    line-height: 1.85;
-  }
-
-  /* ===== VOCAB ===== */
-  .vocab {
-    color: var(--vocab-red);
-    text-decoration: underline dotted var(--vocab-red);
-    cursor: help;
-    position: relative;
-  }
-
-  .vocab .tip {
-    display: none;
-    position: absolute;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #1a1a2e;
-    color: #fff;
-    padding: 8px 14px;
-    border-radius: 4px;
-    font-size: 14px;
-    line-height: 1.5;
-    z-index: 10;
-    font-style: normal;
-    font-weight: 400;
-    pointer-events: none;
-    max-width: 280px;
-    white-space: normal;
-    font-family: 'Libre Baskerville', serif;
-  }
-
-  .vocab:hover .tip,
-  .vocab.active .tip { display: block; }
-
+  #lexile-toggle { display: block; margin: 20px auto 28px; padding: 10px 24px; font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; border: 2px solid var(--red-seal); background: transparent; color: var(--red-seal); font-family: 'Libre Baskerville', serif; font-weight: 700; transition: background 0.2s, color 0.2s; }
+  #lexile-toggle:hover { background: var(--red-seal); color: var(--parchment); }
+  .para-simple { display: none; }
+  body.simplified .para-standard { display: none; }
+  body.simplified .para-simple { display: block; }
+  .toc-sidebar { position: fixed; right: calc(50% - 570px); top: 50%; transform: translateY(-50%); width: 155px; padding: 14px 12px; font-size: 12px; line-height: 1.7; z-index: 50; background: rgba(17,30,51,0.88); border-left: 2px solid rgba(212,168,32,0.35); }
+  .toc-sidebar .toc-label { font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold-light); display: block; margin-bottom: 10px; font-weight: 700; }
+  .toc-sidebar a { display: block; color: #e8dfc0; text-decoration: none; padding: 3px 0; font-size: 11px; letter-spacing: 0.05em; transition: color 0.2s; text-transform: uppercase; }
+  .toc-sidebar a.active, .toc-sidebar a:hover { color: var(--gold-light); font-weight: 700; }
+  @media (max-width: 1100px) { .toc-sidebar { display: none; } }
+  .content-wrap { max-width: 820px; margin: 0 auto; padding: 0 24px 60px; }
+  .intro-section { padding: 10px 0 32px; }
+  .intro-section p, .content-section p { margin-bottom: 20px; font-size: 18px; line-height: 1.85; }
+  .intro-section p { font-size: 19px; line-height: 1.9; color: var(--ink); }
+  .divider { text-align: center; margin: 44px 0 36px; color: var(--gold-ink); font-size: 18px; letter-spacing: 0.35em; font-family: 'EB Garamond', serif; }
+  .divider::before, .divider::after { content: ''; display: inline-block; width: 90px; height: 1px; background: var(--gold-ink); vertical-align: middle; margin: 0 14px; opacity: 0.7; }
+  .content-section { padding: 44px 0 20px; }
+  .section-heading, .local-card-headline { font-family: 'EB Garamond', serif; font-size: 36px; font-weight: 700; color: var(--navy-deep); margin-bottom: 22px; line-height: 1.2; border-left: 5px solid var(--red-seal); padding-left: 18px; text-transform: uppercase; }
+  .vocab { color: var(--vocab-red); text-decoration: underline dotted var(--vocab-red); cursor: help; position: relative; }
+  .vocab .tip { display: none; position: absolute; bottom: 125%; left: 50%; transform: translateX(-50%); background: #1a1a2e; color: #fff; padding: 8px 14px; border-radius: 4px; font-size: 14px; line-height: 1.5; z-index: 10; font-style: normal; font-weight: 400; pointer-events: none; max-width: 280px; white-space: normal; font-family: 'Libre Baskerville', serif; }
+  .vocab:hover .tip, .vocab.active .tip { display: block; }
   .vocab-only { color: var(--vocab-red); }
-
-  /* ===== IMAGES ===== */
-  .img-full {
-    width: 100%;
-    margin: 32px 0 8px;
-    border: 2px solid var(--gold-ink);
-    display: block;
-  }
-
-  .img-inset-right {
-    float: right;
-    width: 42%;
-    margin: 4px 0 20px 28px;
-    border: 2px solid var(--gold-ink);
-  }
-
-  .img-inset-left {
-    float: left;
-    width: 42%;
-    margin: 4px 28px 20px 0;
-    border: 2px solid var(--gold-ink);
-  }
-
-  .img-pair {
-    display: flex;
-    gap: 16px;
-    margin: 32px 0 8px;
-  }
-
-  .img-pair img {
-    width: 50%;
-    border: 2px solid var(--gold-ink);
-  }
-
-  .img-caption {
-    font-size: 13px;
-    font-style: italic;
-    color: #666;
-    margin-bottom: 24px;
-    clear: both;
-    line-height: 1.4;
-  }
-
+  .img-full { width: 100%; margin: 32px 0 8px; border: 2px solid var(--gold-ink); display: block; }
+  .img-inset-right { float: right; width: 42%; margin: 4px 0 20px 28px; border: 2px solid var(--gold-ink); }
+  .img-inset-left { float: left; width: 42%; margin: 4px 28px 20px 0; border: 2px solid var(--gold-ink); }
+  .img-pair { display: flex; gap: 16px; margin: 32px 0 8px; }
+  .img-pair img { width: 50%; border: 2px solid var(--gold-ink); object-fit: cover; }
+  .img-caption { font-size: 13px; font-style: italic; color: #665943; margin-bottom: 24px; clear: both; line-height: 1.4; }
   .clearfix::after { content: ''; display: table; clear: both; }
-
-  /* ===== PULLQUOTE ===== */
-  .pullquote {
-    background: var(--navy-deep);
-    border-left: 6px solid var(--red-seal);
-    padding: 32px 36px;
-    margin: 40px 0 12px;
-    border-radius: 0 4px 4px 0;
-  }
-
-  .pullquote blockquote {
-    font-family: 'EB Garamond', serif;
-    font-size: 23px;
-    font-style: italic;
-    color: var(--parchment);
-    line-height: 1.7;
-    margin-bottom: 16px;
-  }
-
-  .pullquote .attribution {
-    font-size: 14px;
-    font-style: italic;
-    color: var(--gold-light);
-    margin-bottom: 10px;
-  }
-
-  .pullquote .narrator {
-    font-size: 15px;
-    color: #aabbd4;
-    font-style: normal;
-    line-height: 1.6;
-  }
-
-  .pullquote-questions {
-    background: var(--parchment-dark);
-    border-left: 4px solid var(--navy-mid);
-    padding: 22px 28px;
-    margin-bottom: 36px;
-  }
-
-  .pullquote-questions p {
-    font-size: 17px;
-    margin-bottom: 10px;
-    font-style: italic;
-    color: var(--navy-deep);
-  }
-
-  .pullquote-questions p:last-child { margin-bottom: 0; }
-
-  /* ===== COMPARISON TABLE ===== */
-  .compare-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 28px 0 32px;
-    font-size: 15px;
-  }
-
-  .compare-table thead tr {
-    background: var(--navy);
-    color: var(--gold-light);
-  }
-
-  .compare-table thead th {
-    padding: 10px 14px;
-    text-align: left;
-    font-family: 'EB Garamond', serif;
-    font-size: 14px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
+  .pullquote { background: var(--navy-deep); border-left: 6px solid var(--red-seal); padding: 32px 36px; margin: 40px 0 12px; border-radius: 0 4px 4px 0; }
+  .pullquote blockquote { font-family: 'EB Garamond', serif; font-size: 23px; font-style: italic; color: var(--parchment); line-height: 1.7; margin-bottom: 16px; }
+  .pullquote .attribution { font-size: 14px; font-style: italic; color: var(--gold-light); margin-bottom: 10px; }
+  .pullquote .narrator { font-size: 15px; color: #d7e1ef; font-style: normal; line-height: 1.6; }
+  .pullquote-questions { background: var(--parchment-dark); border-left: 4px solid var(--navy-mid); padding: 22px 28px; margin-bottom: 36px; }
+  .pullquote-questions p { font-size: 17px; margin-bottom: 10px; font-style: italic; color: var(--navy-deep); }
+  .compare-table { width: 100%; border-collapse: collapse; margin: 28px 0 32px; font-size: 15px; }
+  .compare-table thead tr { background: var(--navy); color: var(--gold-light); }
+  .compare-table th, .compare-table td { padding: 10px 14px; text-align: left; border: 1px solid #c8b880; vertical-align: top; line-height: 1.55; }
+  .compare-table th { text-transform: uppercase; font-family: 'EB Garamond', serif; letter-spacing: 0.08em; }
   .compare-table tbody tr:nth-child(odd) { background: var(--parchment); }
   .compare-table tbody tr:nth-child(even) { background: var(--parchment-dark); }
-
-  .compare-table tbody td {
-    padding: 10px 14px;
-    border: 1px solid #c8b880;
-    vertical-align: top;
-    line-height: 1.55;
-  }
-
-  .compare-table tbody td:first-child {
-    font-weight: 700;
-    color: var(--navy-deep);
-    width: 22%;
-  }
-
-  /* ===== LOCAL CARD ===== */
-  .local-card {
-    background: var(--navy-deep);
-    border: 2px solid var(--gold-ink);
-    border-radius: 5px;
-    padding: 32px 36px;
-    margin: 48px 0 24px;
-  }
-
-  .local-card-headline {
-    font-family: 'EB Garamond', serif;
-    font-size: 21px;
-    font-weight: 700;
-    color: var(--gold-light);
-    margin-bottom: 18px;
-  }
-
-  .local-card p {
-    color: var(--parchment);
-    font-size: 17px;
-    line-height: 1.8;
-    margin-bottom: 14px;
-  }
-
-  .local-card p:last-child { margin-bottom: 0; }
-
-  .local-anchor {
-    color: var(--gold-light);
-    font-weight: 700;
-    font-style: italic;
-  }
-
-  /* ===== HOW THIS STILL MATTERS ===== */
-  .still-matters {
-    background: var(--navy-deep);
-    padding: 48px 36px;
-    margin: 48px 0 0;
-    border-top: 4px solid var(--red-seal);
-  }
-
-  .still-matters-headline {
-    font-family: 'EB Garamond', serif;
-    font-size: 27px;
-    font-weight: 700;
-    color: var(--gold-light);
-    margin-bottom: 24px;
-    line-height: 1.3;
-  }
-
-  .news-links {
-    list-style: none;
-    margin: 0 0 28px;
-    padding: 0;
-  }
-
-  .news-links li { margin-bottom: 10px; }
-
-  .news-links a {
-    font-family: 'EB Garamond', serif;
-    font-size: 16px;
-    color: var(--gold-light);
-    text-decoration: underline;
-    font-weight: 600;
-    letter-spacing: 0.03em;
-  }
-
-  .news-links a:hover { color: #fff; }
-
-  .closing-question {
-    font-size: 23px;
-    font-style: italic;
-    color: var(--parchment);
-    margin-top: 28px;
-    line-height: 1.6;
-    border-top: 1px solid rgba(180,140,20,0.4);
-    padding-top: 24px;
-  }
-
-  /* ===== FOOTER ===== */
-  .page-footer {
-    background: var(--navy-deep);
-    border-top: 3px solid var(--gold-ink);
-    padding: 20px 24px;
-    text-align: center;
-    font-family: 'EB Garamond', serif;
-    font-size: 13px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    font-variant: small-caps;
-  }
-
-  /* ===== RESPONSIVE ===== */
+  .compare-table td:first-child { font-weight: 700; color: var(--navy-deep); width: 22%; }
+  .brain-break { font-family: 'Barlow Condensed', sans-serif; margin: 44px -10px; padding: 36px 44px; position: relative; overflow: hidden; }
+  .bb-label { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 900; letter-spacing: 0.55em; text-transform: uppercase; margin-bottom: 14px; opacity: 0.85; }
+  .bb-text { font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 500; line-height: 1.55; margin: 0; }
+  .dyk-break { background: var(--break-teal); color: #fff7d1; border-left: 6px solid var(--break-yellow); }
+  .dyk-break .bb-label { color: var(--break-yellow); }
+  .ff-break { background: var(--break-black); color: #f5f0df; padding: 36px 40px; margin: 0 -10px 44px; border-top: 3px solid var(--break-yellow); border-bottom: 3px solid var(--break-yellow); text-align: center; }
+  .ff-break .bb-label { text-align: center; margin-bottom: 24px; color: var(--break-yellow); }
+  .ff-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
+  .ff-item { text-align: center; padding: 8px 12px; }
+  .ff-number { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 58px; font-weight: 900; color: var(--break-yellow); line-height: 1; margin-bottom: 8px; }
+  .ff-desc { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #ddd3b0; max-width: 125px; margin: 0 auto; line-height: 1.4; }
+  .as-break { background: #2b1111; color: #f7edd4; padding: 44px 50px; margin: 44px -10px; border-top: 3px solid var(--gold-light); border-bottom: 3px solid var(--gold-light); text-align: center; }
+  .as-break .bb-label { color: var(--gold-light); }
+  .as-image { max-width: 100%; display: block; margin: 0 auto 16px; border: 3px solid rgba(212,168,32,0.55); box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
+  .as-caption { font-family: 'Barlow Condensed', sans-serif; font-style: normal; font-size: 13px; color: #decda2; line-height: 1.5; margin-bottom: 28px; display: block; }
+  .as-question { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-style: italic; font-weight: 500; color: #fff7d1; line-height: 1.55; max-width: 580px; margin: 0 auto; }
+  .tn-break { background: #132f36; color: #f7edd4; padding: 36px 44px; margin: 30px 0 28px; }
+  .tn-break .bb-label { color: var(--break-yellow); text-align: center; display: block; margin-bottom: 20px; }
+  .tn-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 20px; }
+  .tn-item { text-align: center; }
+  .tn-era-label { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--break-yellow); margin-bottom: 10px; font-weight: 900; }
+  .tn-item img { width: 100%; display: block; border: 2px solid rgba(255,212,81,0.45); }
+  .tn-caption { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-style: italic; color: #ddd3b0; margin-top: 8px; line-height: 1.4; }
+  .tn-question { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-style: italic; font-weight: 500; text-align: center; color: #fff7d1; margin-top: 16px; line-height: 1.5; }
+  .local-card { background: var(--navy-deep); border: 2px solid var(--gold-ink); border-radius: 5px; padding: 32px 36px; margin: 48px 0 24px; }
+  .local-card-headline { color: var(--gold-light); border-left-color: var(--gold-light); font-size: 30px; }
+  .local-card p { color: var(--parchment); font-size: 17px; line-height: 1.8; margin-bottom: 14px; }
+  .local-anchor { color: var(--gold-light); font-weight: 700; font-style: italic; }
+  .still-matters { background: var(--navy-deep); padding: 48px 36px; margin: 48px 0 0; border-top: 4px solid var(--red-seal); }
+  .still-matters h2 { color: var(--gold-light); border-left-color: var(--gold-light); }
+  .still-matters-headline { font-family: 'EB Garamond', serif; font-size: 29px; font-weight: 700; color: var(--gold-light); margin-bottom: 24px; line-height: 1.3; }
+  .closing-question { font-size: 23px; font-style: italic; color: var(--parchment); margin-top: 28px; line-height: 1.6; border-top: 1px solid rgba(180,140,20,0.4); padding-top: 24px; }
+  .page-footer { background: var(--navy-deep); border-top: 3px solid var(--gold-ink); padding: 20px 24px; text-align: center; font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light); font-weight: 700; }
   @media (max-width: 600px) {
     .page-title { font-size: 38px; }
     .section-heading { font-size: 28px; }
     .img-inset-right, .img-inset-left { float: none; width: 100%; margin: 16px 0; }
-    .img-pair { flex-direction: column; }
-    .img-pair img { width: 100%; }
+    .img-pair, .tn-pair { flex-direction: column; display: block; }
+    .img-pair img { width: 100%; margin-bottom: 12px; }
     .section-nav a { font-size: 10px; padding: 9px 9px; }
     .pullquote blockquote { font-size: 19px; }
-    .still-matters { padding: 32px 20px; }
-    .local-card { padding: 24px 20px; }
+    .still-matters, .local-card { padding: 32px 20px; }
     .compare-table { font-size: 13px; }
+    .brain-break { padding: 28px 22px; margin: 36px 0; }
+    .as-break { padding: 32px 22px; }
+    .as-question { font-size: 20px; }
+    .tn-break { padding: 28px 22px; }
   }
 </style>
 </head>
 <body>
-
-<!-- ===== HEADER ===== -->
 <header class="page-header">
-  <!-- FILENAME: S1L02_DeclarationHeader.jpg
-       PLACE IN: images/S1/L02/
-       FIND: John Trumbull's painting "Declaration of Independence" 1819 — the most famous depiction of the Founders presenting the Declaration, Capitol Rotunda version
-       SEARCH: Trumbull Declaration of Independence painting 1819 Wikimedia Commons
-       LINK: https://commons.wikimedia.org/wiki/File:Declaration_of_Independence_(1819),_by_John_Trumbull.jpg (suggested, not guaranteed) -->
+  <!--
+    FILENAME: S1L02_DeclarationHeader.jpg
+    PLACE IN: images/S1/L02/
+    FIND: John Trumbull's painting Declaration of Independence, 1819, the most famous depiction of the Founders presenting the Declaration.
+    SEARCH: Trumbull Declaration of Independence painting 1819 Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/File:Declaration_of_Independence_(1819),_by_John_Trumbull.jpg (suggested, not guaranteed)
+  -->
   <img class="header-bg" src="images/S1/L02/S1L02_DeclarationHeader.jpg" alt="Declaration of Independence, John Trumbull, 1819">
-
   <div class="header-inner">
-    <div class="course-label">World History &mdash; Semester 1, Lesson 02</div>
-    <h1 class="page-title">Democratic Revolutions</h1>
+    <div class="course-label">WORLD HISTORY | SEMESTER 1, LESSON 02</div>
+    <h1 class="page-title">DEMOCRATIC REVOLUTIONS</h1>
     <div class="eq-banner">Essential Question: What ideas pushed people to overthrow their governments, and did those ideas survive?</div>
   </div>
 </header>
-
-<!-- ===== NAV BAR ===== -->
 <nav class="section-nav" aria-label="Section navigation">
-  <a href="#enlightenment">The Enlightenment</a>
-  <a href="#three-revolutions">Three Revolutions</a>
-  <a href="#latin-america">Latin America Rises</a>
-  <a href="#napoleon">Napoleon's Arc</a>
-  <a href="#local-history">Local History</a>
-  <a href="#still-matters">How This Still Matters</a>
+  <a href="#enlightenment">THE ENLIGHTENMENT</a>
+  <a href="#three-revolutions">THREE REVOLUTIONS</a>
+  <a href="#latin-america">LATIN AMERICA RISES</a>
+  <a href="#napoleon">NAPOLEON'S ARC</a>
+  <a href="#primary-source-moment">PRIMARY SOURCE</a>
+  <a href="#still-matters">HOW THIS STILL MATTERS TODAY</a>
+  <a href="#local-history">LOCAL HISTORY</a>
 </nav>
-
-<!-- ===== CONTENT ===== -->
+<button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
+<aside class="toc-sidebar" aria-label="On this page">
+  <span class="toc-label">ON THIS PAGE</span>
+  <a href="#enlightenment">THE ENLIGHTENMENT</a>
+  <a href="#three-revolutions">THREE REVOLUTIONS</a>
+  <a href="#latin-america">LATIN AMERICA RISES</a>
+  <a href="#napoleon">NAPOLEON'S ARC</a>
+  <a href="#primary-source-moment">PRIMARY SOURCE</a>
+  <a href="#still-matters">HOW THIS STILL MATTERS TODAY</a>
+  <a href="#local-history">LOCAL HISTORY</a>
+</aside>
 <div class="content-wrap">
-
-  <!-- INTRO -->
-  <section class="intro-section">
-    <p>In the summer of 1789, a woman named Marie Grosholtz stood at the gates of a Paris prison called the Bastille. She was 28 years old. The crowd around her was furious: furious about bread prices, about taxes, about a king who never listened. By the end of that day, the prison had fallen, and a revolution had begun that would shake every throne in Europe.</p>
-    <p>What pushed ordinary people to risk their lives against kings and emperors? The answer begins not in the streets of Paris, but in the libraries and coffee houses of Europe a century earlier, where a new way of thinking was spreading fast. It was called the <span class="vocab">Enlightenment<span class="tip">A movement in the 1600s and 1700s when European thinkers argued that reason and science, not tradition and kings, should guide society and government.</span></span>. And once those ideas got loose, no government was ever truly safe again.</p>
+  <section class="intro-section" id="intro">
+    <p class="para-standard">In the summer of 1789, a woman named Marie Grosholtz stood near the gates of a Paris prison called the Bastille. She was 28 years old. The crowd around her was furious: furious about bread prices, taxes, and a king who seemed not to listen. By the end of that day, the prison had fallen, and a revolution had begun that would shake every throne in Europe.</p>
+    <p class="para-simple">In the summer of 1789, Marie Grosholtz stood near a prison in Paris called the Bastille. She was 28 years old. People around her were angry about high bread prices, taxes, and a king who did not seem to listen. By the end of the day, the prison had fallen, and a revolution had started.</p>
+    <p class="para-standard">What pushed ordinary people to risk their lives against kings and emperors? The answer begins in the libraries and coffee houses of Europe, where a new way of thinking was spreading fast. It was called the <span class="vocab">Enlightenment<span class="tip">A movement in the 1600s and 1700s when European thinkers argued that reason and science should guide society and government.</span></span>. Once those ideas got loose, no government was ever truly safe again.</p>
+    <p class="para-simple">Why would ordinary people risk their lives against kings and emperors? The answer began in European libraries and coffee houses. A new way of thinking was spreading. It was called the <span class="vocab-only">Enlightenment</span>, and it made people question old power.</p>
   </section>
-
-  <div class="divider">&#10022; &#10022; &#10022;</div>
-
-  <!-- SECTION 1 — THE ENLIGHTENMENT -->
+  <div class="divider">✦ ✦ ✦</div>
   <section class="content-section" id="enlightenment">
-    <h2 class="section-heading">New Ideas That Lit the Fuse</h2>
-
-    <!-- FILENAME: S1L02_JohnLockPortrait.jpg
-         PLACE IN: images/S1/L02/
-         FIND: Portrait of John Locke by Godfrey Kneller, 1697 — the most recognized portrait of the English philosopher who argued for natural rights and government by consent
-         SEARCH: John Locke portrait Godfrey Kneller 1697 Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:JohnLocke.png (suggested, not guaranteed) -->
+    <h2 class="section-heading">NEW IDEAS THAT LIT THE FUSE</h2>
+    <!--
+      FILENAME: S1L02_JohnLockPortrait.jpg
+      PLACE IN: images/S1/L02/
+      FIND: Portrait of John Locke by Godfrey Kneller, 1697, the most recognized portrait of the philosopher who argued for natural rights and government by consent.
+      SEARCH: John Locke portrait Godfrey Kneller 1697 Wikimedia Commons
+      LINK: https://commons.wikimedia.org/wiki/File:JohnLocke.png (suggested, not guaranteed)
+    -->
     <img class="img-inset-right" src="images/S1/L02/S1L02_JohnLockPortrait.jpg" alt="Portrait of John Locke by Godfrey Kneller, 1697">
     <p class="img-caption" style="float:right; width:42%; margin-left:28px; margin-top:-18px;">John Locke, portrait by Godfrey Kneller, 1697. <em>Wikimedia Commons.</em></p>
-
-    <p>For most of human history, people believed kings ruled because God chose them. This idea was called the divine right of kings. No one was supposed to question it. Then, in the 1600s and 1700s, a group of European thinkers began asking a dangerous question: What if kings do not get their power from God? What if they get it from the people?</p>
-
-    <p>An English philosopher named John Locke argued that all people are born with three basic rights: life, liberty, and property. He said that people form governments to protect those rights. And here was the explosive part: if a government fails to protect those rights, the people have the right to replace it. Locke called this the <span class="vocab">social contract<span class="tip">The idea that governments get their power from the agreement of the people they govern, and if the government breaks that agreement, the people can change it.</span></span>. This was not just a philosophical argument. It was a blueprint for revolution.</p>
-
-    <!-- FILENAME: S1L02_MontesquieuPortrait.jpg
-         PLACE IN: images/S1/L02/
-         FIND: Portrait of Baron de Montesquieu, 18th century — French political philosopher who argued for separation of powers
-         SEARCH: Montesquieu portrait 18th century Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Montesquieu_2.jpg (suggested, not guaranteed) -->
+    <p class="para-standard">For most of human history, people believed kings ruled because God chose them. This idea was called the divine right of kings. No one was supposed to question it. Then, in the 1600s and 1700s, European thinkers began asking a dangerous question: What if kings get their power from the people?</p>
+    <p class="para-simple">For a long time, many people believed kings ruled because God chose them. This was called the divine right of kings. People were not supposed to question it. Then European thinkers asked a dangerous question: What if kings get power from the people?</p>
+    <p class="para-standard">An English philosopher named John Locke argued that all people are born with basic rights: life, liberty, and property. He said people create governments to protect those rights. Here was the explosive part: if a government fails to protect those rights, the people have the right to replace it. Locke called this the <span class="vocab">social contract<span class="tip">The idea that governments get power from the agreement of the people, and people can change a government that breaks that agreement.</span></span>.</p>
+    <p class="para-simple">John Locke said all people are born with basic rights: life, liberty, and property. He said people make governments to protect those rights. If a government does not protect them, people can replace it. Locke called this the <span class="vocab-only">social contract</span>.</p>
+    <!--
+      FILENAME: S1L02_MontesquieuPortrait.jpg
+      PLACE IN: images/S1/L02/
+      FIND: Portrait of Baron de Montesquieu, 18th century, French political philosopher who argued for separation of powers.
+      SEARCH: Montesquieu portrait 18th century Wikimedia Commons
+      LINK: https://commons.wikimedia.org/wiki/File:Montesquieu_2.jpg (suggested, not guaranteed)
+    -->
     <img class="img-inset-left" src="images/S1/L02/S1L02_MontesquieuPortrait.jpg" alt="Portrait of Baron de Montesquieu, 18th century">
     <p class="img-caption" style="float:left; width:42%; margin-right:28px; margin-top:-18px;">Baron de Montesquieu, French political philosopher, 18th century. <em>Wikimedia Commons.</em></p>
-
-    <p>A French thinker named Montesquieu went further. He studied governments around the world and argued that no single person should hold all the power. He proposed dividing government into three separate branches: one to make laws, one to carry them out, and one to judge whether they are fair. When the American founders built their government, they used Montesquieu's design almost exactly.</p>
-
-    <p>A third thinker, Jean-Jacques Rousseau, argued that <span class="vocab-only">sovereignty</span> — the right to rule — belongs to the people, not to kings. He said that a just government must represent the will of all citizens. Kings who ruled only for themselves were not just tyrants; they were thieves, stealing power that belonged to everyone. These three men: Locke, Montesquieu, and Rousseau, handed the coming generations the words and the arguments they needed to justify revolution.</p>
-
-    <p>Today, when politicians argue about whether the government is overstepping or failing the people, they are still using the framework these thinkers built. The debate has never stopped.</p>
-
+    <p class="para-standard">A French thinker named Montesquieu went further. He argued that no single person should hold all government power. He proposed three branches: one to make laws, one to carry them out, and one to judge whether they are fair. When the American founders built their government, they used Montesquieu's design almost exactly.</p>
+    <p class="para-simple">Montesquieu was a French thinker. He said one person should not hold all power. He wanted government split into three branches. The American founders later used this idea when they built the United States government.</p>
+    <!--
+      FILENAME: S1L02_RousseauPortrait.jpg
+      PLACE IN: images/S1/L02/
+      FIND: NEW: Portrait of Jean-Jacques Rousseau, 18th century, a key Enlightenment writer whose ideas shaped popular sovereignty.
+      SEARCH: Jean-Jacques Rousseau portrait 18th century Wikimedia Commons
+      LINK: https://commons.wikimedia.org/wiki/File:Jean-Jacques_Rousseau_(painted_portrait).jpg (suggested, not guaranteed)
+    -->
+    <img class="img-inset-right" src="images/S1/L02/S1L02_RousseauPortrait.jpg" alt="Portrait of Jean-Jacques Rousseau, 18th century">
+    <p class="img-caption" style="float:right; width:42%; margin-left:28px; margin-top:-18px;">Jean-Jacques Rousseau, 18th century portrait. <em>Wikimedia Commons.</em></p>
+    <p class="para-standard">Jean-Jacques Rousseau argued that <span class="vocab">sovereignty<span class="tip">The highest right to rule in a government, such as the power of a king, the people, or a constitution.</span></span>, or the right to rule, belongs to the people. He said a just government must represent the will of its citizens. Kings who ruled only for themselves were not just selfish; they were stealing power that belonged to everyone.</p>
+    <p class="para-simple">Jean-Jacques Rousseau said <span class="vocab-only">sovereignty</span>, or the right to rule, belongs to the people. He believed a fair government should follow the will of its citizens. A king who ruled only for himself was taking power that did not belong to him.</p>
+    <p class="para-standard">Today, when people argue about whether a government is overstepping or failing the public, they are still using the framework these thinkers built. The debate has never stopped.</p>
+    <p class="para-simple">Today, people still argue about how much power government should have. They also argue about what people should do when government fails them. Those arguments come from Enlightenment ideas.</p>
     <div class="clearfix"></div>
   </section>
-
-  <div class="divider">&#10022; &#10022; &#10022;</div>
-
-  <!-- PRIMARY SOURCE 1 — JOHN LOCKE -->
+  <div class="brain-break dyk-break">
+    <span class="bb-label">DID YOU KNOW</span>
+    <p class="bb-text">Voltaire reportedly drank 40 to 50 cups of coffee a day while he wrote. One of the loudest voices for reason may have been powered by a shocking amount of coffee.</p>
+  </div>
+  <div class="brain-break ff-break">
+    <span class="bb-label">FAST FACTS</span>
+    <div class="ff-grid">
+      <div class="ff-item"><span class="ff-number">3</span><span class="ff-desc">RIGHTS: LIFE, LIBERTY, PROPERTY</span></div>
+      <div class="ff-item"><span class="ff-number">1688</span><span class="ff-desc">ENGLAND REMOVED A KING</span></div>
+      <div class="ff-item"><span class="ff-number">1776</span><span class="ff-desc">COLONIES DECLARED INDEPENDENCE</span></div>
+      <div class="ff-item"><span class="ff-number">1789</span><span class="ff-desc">PARIS CROWDS STORMED THE BASTILLE</span></div>
+      <div class="ff-item"><span class="ff-number">1</span><span class="ff-desc">BIG IDEA: POWER COMES FROM PEOPLE</span></div>
+    </div>
+  </div>
+  <div class="divider">✦ ✦ ✦</div>
   <div class="pullquote">
     <blockquote>"Whenever the legislators endeavour to take away and destroy the property of the people, or to reduce them to slavery under arbitrary power, they put themselves into a state of war with the people, who are thereupon absolved from any farther obedience."</blockquote>
     <p class="attribution">John Locke, <em>Second Treatise of Government</em>, 1689</p>
-    <p class="narrator">Locke wrote this in 1689 — and within 90 years, American colonists and French revolutionaries were quoting it while picking up weapons against their own governments.</p>
+    <p class="narrator">Locke was saying that a government can lose its right to be obeyed when it attacks the rights of the people.</p>
   </div>
   <div class="pullquote-questions">
-    <p>1. In your own words, what is Locke saying a government must never do? What happens if it does?</p>
-    <p>2. How does this connect to our Essential Question? What idea is Locke giving to people who want to overthrow their government?</p>
+    <p>1. In your own words, what is Locke saying a government must never do?</p>
+    <p>2. How does this connect to the Essential Question?</p>
   </div>
-
-  <div class="divider">&#10022; &#10022; &#10022;</div>
-
-  <!-- SECTION 2 — THREE REVOLUTIONS -->
+  <div class="divider">✦ ✦ ✦</div>
   <section class="content-section" id="three-revolutions">
-    <h2 class="section-heading">Three Revolutions, One Big Idea</h2>
-
-    <p>The ideas of the <span class="vocab-only">Enlightenment</span> did not stay in books. Between 1688 and 1789, three different countries took those ideas and used them to change their governments forever. Each revolution built on the last one.</p>
-
-    <!-- FILENAME: S1L02_GloriousRevolutionBillRights.jpg
-         PLACE IN: images/S1/L02/
-         FIND: The English Bill of Rights 1689 — photograph of the original document, Parliamentary Archives, London
-         SEARCH: English Bill of Rights 1689 original document Parliamentary Archives Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Bill_of_Rights_1689.jpg (suggested, not guaranteed) -->
+    <h2 class="section-heading">THREE REVOLUTIONS, ONE BIG IDEA</h2>
+    <p class="para-standard">The ideas of the <span class="vocab-only">Enlightenment</span> did not stay in books. Between 1688 and 1789, three different countries used those ideas to change their governments. Each revolution built on the last one.</p>
+    <p class="para-simple">Enlightenment ideas did not stay in books. Between 1688 and 1789, three countries used those ideas to change their governments. Each revolution helped inspire the next one.</p>
+    <!--
+      FILENAME: S1L02_GloriousRevolutionBillRights.jpg
+      PLACE IN: images/S1/L02/
+      FIND: The English Bill of Rights, 1689, photograph of the original document from the Parliamentary Archives.
+      SEARCH: English Bill of Rights 1689 original document Parliamentary Archives Wikimedia Commons
+      LINK: https://commons.wikimedia.org/wiki/File:Bill_of_Rights_1689.jpg (suggested, not guaranteed)
+    -->
     <img class="img-inset-right" src="images/S1/L02/S1L02_GloriousRevolutionBillRights.jpg" alt="English Bill of Rights, 1689, Parliamentary Archives">
     <p class="img-caption" style="float:right; width:42%; margin-left:28px; margin-top:-18px;">English Bill of Rights, 1689, Parliamentary Archives, London. <em>Wikimedia Commons.</em></p>
-
-    <p>England went first. In 1688, Parliament removed King James II without a single battle in what historians call the Glorious Revolution. Parliament replaced him with a new monarch who agreed to share power. In 1689, England produced a Bill of Rights that limited what the king could do. England became a <span class="vocab">constitutional monarchy<span class="tip">A government where a king or queen rules, but their power is limited by a written set of laws that they must follow.</span></span>. The king still existed, but Parliament now held real power.</p>
-
-    <p>America went next. By the 1760s, American colonists were reading Locke and arguing that the British Parliament had no right to tax them without their consent. In 1776, Thomas Jefferson sat down and wrote the Declaration of Independence. He took Locke's ideas almost word for word: all men are created equal; they have unalienable rights; when a government destroys those rights, the people may alter or abolish it.</p>
-
+    <p class="para-standard">England went first. In 1688, Parliament removed King James II without a major battle in what historians call the Glorious Revolution. In 1689, England produced a Bill of Rights that limited what the king could do. England became a <span class="vocab">constitutional monarchy<span class="tip">A government where a king or queen rules, but written laws limit their power.</span></span>: the king still existed, but Parliament now held real power.</p>
+    <p class="para-simple">England went first. In 1688, Parliament removed King James II. In 1689, England made a Bill of Rights that limited the king. England became a <span class="vocab-only">constitutional monarchy</span>. The king still existed, but Parliament had real power.</p>
+    <p class="para-standard">America went next. By the 1760s, American colonists were reading Locke and arguing that Britain had no right to tax them without their consent. In 1776, Thomas Jefferson wrote the Declaration of Independence. He used Locke's ideas: people have rights, and people may change a government that destroys those rights.</p>
+    <p class="para-simple">America went next. Colonists read Locke and said Britain could not tax them without their consent. In 1776, Thomas Jefferson wrote the Declaration of Independence. He said people have rights, and people can change a government that destroys those rights.</p>
     <div class="clearfix"></div>
-
-    <!-- FILENAME: S1L02_DeclarationOriginalDoc.jpg
-         PLACE IN: images/S1/L02/
-         FIND: Photograph of the Declaration of Independence original parchment, National Archives, Washington D.C.
-         SEARCH: Declaration of Independence original parchment National Archives photograph Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:United_States_Declaration_of_Independence.jpg (suggested, not guaranteed) -->
+    <!--
+      FILENAME: S1L02_DeclarationOriginalDoc.jpg
+      PLACE IN: images/S1/L02/
+      FIND: Photograph of the Declaration of Independence original parchment, National Archives.
+      SEARCH: Declaration of Independence original parchment National Archives photograph Wikimedia Commons
+      LINK: https://commons.wikimedia.org/wiki/File:United_States_Declaration_of_Independence.jpg (suggested, not guaranteed)
+    -->
     <img class="img-full" src="images/S1/L02/S1L02_DeclarationOriginalDoc.jpg" alt="Declaration of Independence, original parchment, National Archives">
     <p class="img-caption">Declaration of Independence, original parchment, 1776. National Archives, Washington, D.C. <em>Wikimedia Commons.</em></p>
-
-    <p>France exploded next. By 1789, French citizens were starving while the royal family lived in a palace of gold at Versailles. When the French Revolution began, it borrowed language directly from Jefferson's Declaration. The French produced their own document: the Declaration of the Rights of Man and Citizen. It declared that <span class="vocab">sovereignty<span class="tip">The right to rule; the highest authority in a government — the idea that the power to govern belongs to someone or something, whether a king, a people, or a constitution.</span></span> belongs to the people, not the king.</p>
-
-    <p>But the French Revolution did not stay peaceful. By 1793, the revolutionary government was executing thousands of people — including the king and queen — in what became known as the Reign of Terror. The revolution that promised liberty turned into a machine of death. This is the pattern that would repeat in revolutions across the next two centuries: the overthrow of one tyrant often created the conditions for another.</p>
-
-    <!-- FILENAME: S1L02_RightsOfManDoc.jpg
-         PLACE IN: images/S1/L02/
-         FIND: Declaration of the Rights of Man and of the Citizen, 1789 — famous allegorical painting or the original document illustration
-         SEARCH: Declaration Rights of Man and Citizen 1789 France painting Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Declaration_of_the_Rights_of_Man_and_of_the_Citizen_in_1789.jpg (suggested, not guaranteed) -->
-    <img class="img-inset-left" src="images/S1/L02/S1L02_RightsOfManDoc.jpg" alt="Declaration of the Rights of Man and of the Citizen, France, 1789">
-    <p class="img-caption" style="float:left; width:42%; margin-right:28px; margin-top:-18px;">Declaration of the Rights of Man and of the Citizen, France, 1789. <em>Wikimedia Commons.</em></p>
-
-    <!-- COMPARISON TABLE -->
-    <div class="clearfix"></div>
+    <p class="para-standard">France exploded next. By 1789, many French citizens were hungry while the royal family lived in a palace at Versailles. When the French Revolution began, it borrowed language from the American Declaration. The French Declaration of the Rights of Man and Citizen declared that <span class="vocab-only">sovereignty</span> belongs to the people, not the king.</p>
+    <p class="para-simple">France came next. By 1789, many French people were hungry while the royal family lived in a palace. The French Revolution borrowed ideas from America. Its Declaration of the Rights of Man said power belongs to the people, not the king.</p>
+    <!--
+      FILENAME: S1L02_StormingBastille.jpg
+      PLACE IN: images/S1/L02/
+      FIND: NEW: Painting or engraving of the Storming of the Bastille, July 14, 1789, showing the prison attack that became the symbol of the French Revolution.
+      SEARCH: Storming of the Bastille 1789 painting Wikimedia Commons
+      LINK: https://commons.wikimedia.org/wiki/File:Prise_de_la_Bastille.jpg (suggested, not guaranteed)
+    -->
+    <img class="img-inset-left" src="images/S1/L02/S1L02_StormingBastille.jpg" alt="The Storming of the Bastille, Paris, 1789">
+    <p class="img-caption" style="float:left; width:42%; margin-right:28px; margin-top:-18px;">The Storming of the Bastille, Paris, July 14, 1789. <em>Wikimedia Commons.</em></p>
+    <p class="para-standard">But the French Revolution did not stay peaceful. By 1793, the revolutionary government was executing thousands of people, including the king and queen, during the Reign of Terror. The revolution that promised liberty became a warning: removing one tyrant can create space for another kind of violence.</p>
+    <p class="para-simple">The French Revolution did not stay peaceful. By 1793, the revolutionary government was executing thousands of people, including the king and queen. This was called the Reign of Terror. A revolution that promised freedom also became violent.</p>
+    <!--
+      FILENAME: S1L02_RightsOfManDoc.jpg
+      PLACE IN: images/S1/L02/
+      FIND: Declaration of the Rights of Man and of the Citizen, 1789, famous French revolutionary document illustration.
+      SEARCH: Declaration Rights of Man and Citizen 1789 France painting Wikimedia Commons
+      LINK: https://commons.wikimedia.org/wiki/File:Declaration_of_the_Rights_of_Man_and_of_the_Citizen_in_1789.jpg (suggested, not guaranteed)
+    -->
+    <img class="img-full" src="images/S1/L02/S1L02_RightsOfManDoc.jpg" alt="Declaration of the Rights of Man and of the Citizen, France, 1789">
+    <p class="img-caption">Declaration of the Rights of Man and of the Citizen, France, 1789. <em>Wikimedia Commons.</em></p>
     <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Revolution</th>
-          <th>Country &amp; Year</th>
-          <th>Key Document</th>
-          <th>What Changed</th>
-        </tr>
-      </thead>
+      <thead><tr><th>REVOLUTION</th><th>COUNTRY AND YEAR</th><th>KEY DOCUMENT</th><th>WHAT CHANGED</th></tr></thead>
       <tbody>
-        <tr>
-          <td>Glorious Revolution</td>
-          <td>England, 1688</td>
-          <td>English Bill of Rights (1689)</td>
-          <td>King shares power with Parliament; first constitutional monarchy</td>
-        </tr>
-        <tr>
-          <td>American Revolution</td>
-          <td>United States, 1776</td>
-          <td>Declaration of Independence (1776)</td>
-          <td>Colonies break from Britain; republic formed with elected government</td>
-        </tr>
-        <tr>
-          <td>French Revolution</td>
-          <td>France, 1789</td>
-          <td>Declaration of the Rights of Man (1789)</td>
-          <td>Monarchy abolished; sovereignty declared to belong to the people</td>
-        </tr>
+        <tr><td>Glorious Revolution</td><td>England, 1688</td><td>English Bill of Rights</td><td>The king shared power with Parliament.</td></tr>
+        <tr><td>American Revolution</td><td>United States, 1776</td><td>Declaration of Independence</td><td>The colonies broke from Britain and formed a republic.</td></tr>
+        <tr><td>French Revolution</td><td>France, 1789</td><td>Declaration of the Rights of Man</td><td>The monarchy fell, and the people claimed political power.</td></tr>
       </tbody>
     </table>
-
-    <p>When immigrants came to the United States from countries with no free elections, they often said they came for freedom. That freedom was defined by the American Revolution. The words in those founding documents still shape who gets to enter this country and what rights they are promised when they arrive.</p>
-
+    <p class="para-standard">When people around the world later demanded free elections, written rights, and limits on rulers, they often used the language of these revolutions. The words changed from country to country, but the core question stayed the same: does government serve the people, or do the people serve the government?</p>
+    <p class="para-simple">Later, people around the world demanded free elections, written rights, and limits on rulers. They used ideas from these revolutions. The main question stayed the same: does government serve the people, or do people serve the government?</p>
     <div class="clearfix"></div>
   </section>
-
-  <div class="divider">&#10022; &#10022; &#10022;</div>
-
-  <!-- SECTION 3 — LATIN AMERICA -->
+  <div class="divider">✦ ✦ ✦</div>
   <section class="content-section" id="latin-america">
-    <h2 class="section-heading">The Fire Spreads: Latin America Rises</h2>
-
+    <h2 class="section-heading">THE FIRE SPREADS: LATIN AMERICA RISES</h2>
     <div class="img-pair">
-      <!-- FILENAME: S1L02_SimonBolivarPortrait.jpg
-           PLACE IN: images/S1/L02/
-           FIND: Portrait of Simón Bolívar — the most recognized official portrait, José Gil de Castro version or similar 19th century portrait
-           SEARCH: Simon Bolivar portrait oil painting 19th century Wikimedia Commons
-           LINK: https://commons.wikimedia.org/wiki/File:Portrait_of_Sim%C3%B3n_Bol%C3%ADvar.jpg (suggested, not guaranteed) -->
+      <!--
+        FILENAME: S1L02_SimonBolivarPortrait.jpg
+        PLACE IN: images/S1/L02/
+        FIND: Portrait of Simón Bolívar, the most recognized official portrait of the South American independence leader.
+        SEARCH: Simon Bolivar portrait oil painting 19th century Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/File:Portrait_of_Sim%C3%B3n_Bol%C3%ADvar.jpg (suggested, not guaranteed)
+      -->
       <img src="images/S1/L02/S1L02_SimonBolivarPortrait.jpg" alt="Portrait of Simón Bolívar, 19th century">
-      <!-- FILENAME: S1L02_MiguelHidalgoPortrait.jpg
-           PLACE IN: images/S1/L02/
-           FIND: Portrait of Miguel Hidalgo y Costilla — Mexican priest who launched the Mexican War of Independence in 1810
-           SEARCH: Miguel Hidalgo portrait painting Mexico independence Wikimedia Commons
-           LINK: https://commons.wikimedia.org/wiki/File:Miguel_Hidalgo_y_Costilla.jpg (suggested, not guaranteed) -->
+      <!--
+        FILENAME: S1L02_MiguelHidalgoPortrait.jpg
+        PLACE IN: images/S1/L02/
+        FIND: Portrait of Miguel Hidalgo y Costilla, Mexican priest who launched the Mexican War of Independence in 1810.
+        SEARCH: Miguel Hidalgo portrait painting Mexico independence Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/File:Miguel_Hidalgo_y_Costilla.jpg (suggested, not guaranteed)
+      -->
       <img src="images/S1/L02/S1L02_MiguelHidalgoPortrait.jpg" alt="Portrait of Miguel Hidalgo y Costilla, Mexican independence leader">
     </div>
-    <p class="img-caption">Left: Simón Bolívar, Liberator of South America, 19th century portrait. Right: Miguel Hidalgo y Costilla, who launched Mexico's independence movement in 1810. <em>Wikimedia Commons.</em></p>
-
-    <p>By 1810, the fire of revolution had jumped the Atlantic. In the Spanish colonies of Latin America, people had been watching the American and French revolutions for decades. They had the same complaints: colonial governments taxed them without representation; Spanish-born officials held all the power; people born in the Americas were treated as second-class subjects. The ideas of Locke and Rousseau had traveled south, and now they were about to ignite.</p>
-
-    <p>In Mexico, a Catholic priest named Miguel Hidalgo rang his church bell before dawn on September 16, 1810. He gave a speech that historians call the Grito de Dolores: the Cry of Dolores. He called on mestizos, Indigenous people, and poor farmers to rise up against Spanish rule. His followers had farm tools, not weapons. They were defeated militarily. But the spark was lit; Mexico would win its independence in 1821.</p>
-
-    <p>In South America, a Venezuelan general named Simón Bolívar led an army across mountains that Napoleon's generals had said were impassable. Between 1810 and 1825, Bolívar liberated six countries. He read Locke and Montesquieu. He quoted Jefferson. He believed that <span class="vocab">nationalism<span class="tip">The strong belief that people who share a culture, language, or history should govern themselves as one independent nation, not be ruled by a foreign power.</span></span> — pride in your own people and land — was powerful enough to defeat any empire.</p>
-
-    <!-- FILENAME: S1L02_GritoDoloresmural.jpg
-         PLACE IN: images/S1/L02/
-         FIND: Mural depicting the Grito de Dolores — Juan O'Gorman or similar Mexican muralist depiction of Hidalgo's 1810 call for independence
-         SEARCH: Grito de Dolores mural Hidalgo Mexican independence Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Grito_de_Dolores.jpg (suggested, not guaranteed) -->
+    <p class="img-caption">Left: Simón Bolívar, 19th century portrait. Right: Miguel Hidalgo y Costilla, Mexican independence leader. <em>Wikimedia Commons.</em></p>
+    <p class="para-standard">By 1810, the fire of revolution had jumped the Atlantic. In Spain's Latin American colonies, people had watched the American and French revolutions for decades. They had similar complaints: colonial governments taxed them without representation, Spanish-born officials held power, and people born in the Americas were treated as second-class subjects.</p>
+    <p class="para-simple">By 1810, revolutionary ideas had crossed the Atlantic. People in Latin America had watched the American and French revolutions. Many had the same complaints. They were taxed without representation, and Spanish-born officials held most power.</p>
+    <p class="para-standard">In Mexico, a Catholic priest named Miguel Hidalgo rang his church bell before dawn on September 16, 1810. He gave a speech called the Grito de Dolores, or Cry of Dolores. He called on mestizos, Indigenous people, and poor farmers to rise up against Spanish rule. His army lost, but Mexico would win independence in 1821.</p>
+    <p class="para-simple">In Mexico, Miguel Hidalgo rang his church bell before dawn on September 16, 1810. His speech is called the Grito de Dolores. He called on poor farmers, Indigenous people, and mestizos to fight Spanish rule. His army lost, but Mexico became independent in 1821.</p>
+    <p class="para-standard">In South America, Simón Bolívar led armies across mountains and plains. Between 1810 and 1825, Bolívar helped liberate six countries. He read Locke and Montesquieu. He believed that <span class="vocab">nationalism<span class="tip">A strong belief that people who share a culture, language, or history should govern themselves as an independent nation.</span></span>, or pride in a shared people and land, could defeat empire.</p>
+    <p class="para-simple">In South America, Simón Bolívar led armies across mountains and plains. He helped free six countries. He read Locke and Montesquieu. He believed <span class="vocab-only">nationalism</span>, or pride in a shared people and land, could defeat empire.</p>
+    <!--
+      FILENAME: S1L02_GritoDoloresmural.jpg
+      PLACE IN: images/S1/L02/
+      FIND: Mural depicting the Grito de Dolores and Hidalgo's 1810 call for Mexican independence.
+      SEARCH: Grito de Dolores mural Hidalgo Mexican independence Wikimedia Commons
+      LINK: https://commons.wikimedia.org/wiki/File:Grito_de_Dolores.jpg (suggested, not guaranteed)
+    -->
     <img class="img-inset-right" src="images/S1/L02/S1L02_GritoDoloresmural.jpg" alt="Mural depicting the Grito de Dolores, Mexican independence, 1810">
     <p class="img-caption" style="float:right; width:42%; margin-left:28px; margin-top:-18px;">Mural depicting the Grito de Dolores, Hidalgo's 1810 call for Mexican independence. <em>Wikimedia Commons.</em></p>
-
-    <p>But Latin American independence movements faced a challenge that the American Revolution had avoided. The United States was built mostly by one ethnic group with shared English legal traditions. Latin American countries were made up of Spanish colonizers, Indigenous peoples, enslaved Africans, and mixed-race populations with no shared history of self-governance. Building a unified <span class="vocab-only">nation</span> out of those groups was enormously hard. Many of the new republics quickly fell into civil wars and military dictatorships.</p>
-
-    <p>September 16 is still celebrated in Mexico as Independence Day. Across San Diego and California, communities with deep Mexican roots mark that day every year. The revolution Hidalgo started is part of the history that built the border you see today.</p>
-
+    <p class="para-standard">Latin American independence movements faced a hard problem after victory. New countries included Spanish colonizers, Indigenous peoples, enslaved Africans, and mixed-race communities with different histories and unequal power. Building a unified <span class="vocab-only">nation</span> was difficult. Many new republics soon fell into civil wars or military dictatorships.</p>
+    <p class="para-simple">After independence, Latin American countries faced a hard problem. Their people came from many groups with different histories and unequal power. Building one <span class="vocab-only">nation</span> was difficult. Many new countries had civil wars or military dictatorships.</p>
+    <p class="para-standard">September 16 is still celebrated in Mexico as Independence Day. Across California, communities with deep Mexican roots mark that day every year. The revolution Hidalgo started is part of the history that shaped the border region students see today.</p>
+    <p class="para-simple">September 16 is still Mexico's Independence Day. Many communities in California celebrate it every year. Hidalgo's revolution helped shape the border region students see today.</p>
     <div class="clearfix"></div>
   </section>
-
-  <div class="divider">&#10022; &#10022; &#10022;</div>
-
-  <!-- PRIMARY SOURCE 2 — DECLARATION OF INDEPENDENCE -->
-  <div class="pullquote">
-    <blockquote>"We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness. That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed."</blockquote>
-    <p class="attribution">Thomas Jefferson, <em>Declaration of Independence</em>, July 4, 1776</p>
-    <p class="narrator">Jefferson pulled these exact ideas from Locke's Second Treatise, rewrote them in plain language, and changed the course of history — every revolutionary movement for the next 200 years would quote these words.</p>
+  <div class="brain-break as-break">
+    <span class="bb-label">ART SPOTLIGHT</span>
+    <figure>
+      <!--
+        FILENAME: S1L02_GritoDoloresmural.jpg
+        PLACE IN: images/S1/L02/
+        FIND: Mural depicting the Grito de Dolores and Hidalgo's 1810 call for Mexican independence.
+        SEARCH: Grito de Dolores mural Hidalgo Mexican independence Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/File:Grito_de_Dolores.jpg (suggested, not guaranteed)
+      -->
+      <img src="images/S1/L02/S1L02_GritoDoloresmural.jpg" alt="Mural depicting the Grito de Dolores" class="as-image">
+      <figcaption class="as-caption">Mural depicting Hidalgo's call for Mexican independence, 1810. Wikimedia Commons.</figcaption>
+    </figure>
+    <p class="as-question">Look at the faces and bodies in this crowd. Who looks like they decided there was no safe way to stay quiet?</p>
   </div>
-  <div class="pullquote-questions">
-    <p>1. According to Jefferson, where does a government get its power? What does that mean for a government that stops protecting people's rights?</p>
-    <p>2. How does this document connect to our Essential Question? What idea in it explains why people would risk their lives to overthrow a government?</p>
-  </div>
-
-  <div class="divider">&#10022; &#10022; &#10022;</div>
-
-  <!-- SECTION 4 — NAPOLEON -->
+  <div class="divider">✦ ✦ ✦</div>
   <section class="content-section" id="napoleon">
-    <h2 class="section-heading">Napoleon: Revolution's Greatest Hero and Biggest Betrayal</h2>
-
-    <!-- FILENAME: S1L02_NapoleonCoronation.jpg
-         PLACE IN: images/S1/L02/
-         FIND: Jacques-Louis David's painting "The Coronation of Napoleon" 1807 — Napoleon crowning himself Emperor in Notre-Dame Cathedral, Louvre Museum
-         SEARCH: Napoleon coronation painting David 1807 Louvre Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Jacques-Louis_David_-_The_Coronation_of_Napoleon_(1805-1807).jpg (suggested, not guaranteed) -->
+    <h2 class="section-heading">NAPOLEON: REVOLUTION'S HERO AND BETRAYAL</h2>
+    <!--
+      FILENAME: S1L02_NapoleonCoronation.jpg
+      PLACE IN: images/S1/L02/
+      FIND: Jacques-Louis David's painting The Coronation of Napoleon, 1807, showing Napoleon crowning himself Emperor in Notre-Dame Cathedral.
+      SEARCH: Napoleon coronation painting David 1807 Louvre Wikimedia Commons
+      LINK: https://commons.wikimedia.org/wiki/File:Jacques-Louis_David_-_The_Coronation_of_Napoleon_(1805-1807).jpg (suggested, not guaranteed)
+    -->
     <img class="img-full" src="images/S1/L02/S1L02_NapoleonCoronation.jpg" alt="The Coronation of Napoleon, Jacques-Louis David, 1807, Louvre Museum">
-    <p class="img-caption">The Coronation of Napoleon, Jacques-Louis David, 1807. Louvre Museum, Paris. Napoleon crowning himself Emperor — the moment that shocked Europe and betrayed the revolution. <em>Wikimedia Commons.</em></p>
-
-    <p>Out of the chaos of the French Revolution came one of the most complicated figures in modern history. Napoleon Bonaparte was a short military general from the island of Corsica. By 1799, he had seized control of France. He told the French people he was saving the revolution. He promised order, law, and national pride.</p>
-
-    <p>And in some ways, he delivered. Napoleon created the Napoleonic Code: a set of laws that guaranteed equal treatment under the law and was based on the principles of the Revolution. He spread those laws across Europe as his armies conquered country after country. He abolished feudal systems that had kept peasants bound to land for centuries. For millions of people, Napoleon's conquests actually meant more freedom, not less.</p>
-
-    <!-- FILENAME: S1L02_NapoleonicCode.jpg
-         PLACE IN: images/S1/L02/
-         FIND: Original copy of the Napoleonic Code (Code Civil des Français) 1804 — photograph of the published legal text
-         SEARCH: Napoleonic Code Code Civil 1804 original book Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Napoleonic_Code.jpg (suggested, not guaranteed) -->
+    <p class="img-caption">The Coronation of Napoleon, Jacques-Louis David, 1807. Louvre Museum, Paris. <em>Wikimedia Commons.</em></p>
+    <p class="para-standard">Out of the chaos of the French Revolution came Napoleon Bonaparte. He was a military general from Corsica who seized control of France in 1799. He told the French people he was saving the revolution. He promised order, law, and national pride.</p>
+    <p class="para-simple">Napoleon Bonaparte rose during the chaos of the French Revolution. He was a general from Corsica. In 1799, he took control of France. He told people he would save the revolution and bring order.</p>
+    <p class="para-standard">In some ways, Napoleon delivered. He created the Napoleonic Code: a set of laws that promised equal treatment under the law. He spread those laws across Europe as his armies conquered country after country. For many people, Napoleon's conquests ended old feudal rules and gave them more legal freedom.</p>
+    <p class="para-simple">In some ways, Napoleon kept his promise. He created the Napoleonic Code. It said people should be treated equally under the law. His armies spread these laws across Europe and weakened old feudal rules.</p>
+    <!--
+      FILENAME: S1L02_NapoleonicCode.jpg
+      PLACE IN: images/S1/L02/
+      FIND: Original copy or early printed copy of the Napoleonic Code, Code Civil des Français, 1804.
+      SEARCH: Napoleonic Code Code Civil 1804 original book Wikimedia Commons
+      LINK: https://commons.wikimedia.org/wiki/File:Napoleonic_Code.jpg (suggested, not guaranteed)
+    -->
     <img class="img-inset-right" src="images/S1/L02/S1L02_NapoleonicCode.jpg" alt="The Napoleonic Code, Code Civil des Français, 1804">
     <p class="img-caption" style="float:right; width:42%; margin-left:28px; margin-top:-18px;">The Napoleonic Code, Code Civil des Français, 1804. <em>Wikimedia Commons.</em></p>
-
-    <p>But Napoleon also betrayed the revolution's central promise. In 1804, in the cathedral of Notre-Dame in Paris, he took the crown from the Pope's hands and placed it on his own head. He declared himself Emperor. The man who had claimed to represent the people had made himself a king. Beethoven had been writing a symphony in Napoleon's honor. When he heard the news, he crossed out the dedication and called Napoleon a tyrant.</p>
-
-    <p>Napoleon's wars eventually turned even his supporters against him. He invaded Russia in 1812 with 600,000 soldiers. Fewer than 100,000 returned. He was finally defeated in 1815 at the Battle of Waterloo. The old monarchies of Europe rushed back in to fill the vacuum. Kings were restored. The revolutions seemed to have failed.</p>
-
-    <p>But they had not failed. <span class="vocab">Nationalism<span class="tip">The strong belief that people who share a culture, language, or history should govern themselves as one independent nation, not be ruled by a foreign power.</span></span> — the idea that people have the right to govern themselves — had been released into the world. Napoleon's armies had carried that idea into every corner of Europe and Latin America. Even in defeat, the revolutions had changed what people believed was possible. No monarch would ever feel completely safe again.</p>
-
+    <p class="para-standard">But Napoleon also betrayed the revolution's central promise. In 1804, inside Notre-Dame Cathedral in Paris, he placed the crown on his own head and declared himself Emperor. The man who claimed to represent the people had made himself a ruler above the people.</p>
+    <p class="para-simple">But Napoleon also betrayed the revolution. In 1804, he placed a crown on his own head and became Emperor. He had claimed to represent the people, but now he ruled above them.</p>
+    <!--
+      FILENAME: S1L02_NapoleonRussiaRetreat.jpg
+      PLACE IN: images/S1/L02/
+      FIND: NEW: Painting or chart of Napoleon's retreat from Russia in 1812, showing the human disaster after the failed invasion.
+      SEARCH: Napoleon retreat from Russia 1812 Wikimedia Commons
+      LINK: https://commons.wikimedia.org/wiki/File:Napoleons_retreat_from_moscow.jpg (suggested, not guaranteed)
+    -->
+    <img class="img-inset-left" src="images/S1/L02/S1L02_NapoleonRussiaRetreat.jpg" alt="Napoleon's retreat from Russia, 1812">
+    <p class="img-caption" style="float:left; width:42%; margin-right:28px; margin-top:-18px;">Napoleon's retreat from Russia, 1812. <em>Wikimedia Commons.</em></p>
+    <p class="para-standard">Napoleon's wars eventually turned even his supporters against him. He invaded Russia in 1812 with about 600,000 soldiers. Fewer than 100,000 returned. He was finally defeated in 1815 at the Battle of Waterloo, and Europe's old monarchies rushed back into power.</p>
+    <p class="para-simple">Napoleon's wars later turned many people against him. In 1812, he invaded Russia with about 600,000 soldiers. Fewer than 100,000 came back. In 1815, he was defeated at Waterloo, and old kings returned to power.</p>
+    <p class="para-standard">Still, the revolutions had not failed. The idea that people had the right to govern themselves had been released into the world. Napoleon's armies carried that idea across Europe and Latin America. Even after he lost, no monarch could feel completely safe again.</p>
+    <p class="para-simple">Even after Napoleon lost, revolutionary ideas survived. People had heard that they could govern themselves. Napoleon's armies spread that idea across Europe and Latin America. Kings could not feel completely safe anymore.</p>
     <div class="clearfix"></div>
   </section>
-
-  <div class="divider">&#10022; &#10022; &#10022;</div>
-
-  <!-- LOCAL HISTORY CONNECTION -->
-  <section id="local-history">
-    <div class="local-card">
-      <div class="local-card-headline">&#9670; Local History: Revolution Reaches the California Coast</div>
-
-      <!-- FILENAME: S1L02_MexicanIndependenceSanDiego.jpg
-           PLACE IN: images/S1/L02/
-           FIND: Old Town San Diego State Historic Park — photograph of Plaza de las Armas or the historic adobe buildings representing Spanish/Mexican colonial San Diego
-           SEARCH: Old Town San Diego historic park plaza adobe colonial photograph Wikimedia Commons
-           LINK: https://commons.wikimedia.org/wiki/File:Old_Town_San_Diego_State_Historic_Park.jpg (suggested, not guaranteed) -->
-      <img style="width:100%; margin-bottom:16px; border:2px solid var(--gold-light);" src="images/S1/L02/S1L02_MexicanIndependenceSanDiego.jpg" alt="Old Town San Diego State Historic Park, former Spanish and Mexican colonial settlement">
-      <p class="img-caption" style="color:#aabbd4; margin-top:-10px; margin-bottom:16px;">Old Town San Diego State Historic Park — built during the Spanish colonial era and transformed by Mexican independence in 1821. <em>Wikimedia Commons.</em></p>
-
-      <p>When Mexico won independence from Spain in 1821, the change reached all the way to the California coast. The small Spanish settlement of <span class="local-anchor">San Diego de Alcalá</span> — a presidio, a mission, and a pueblo — suddenly became part of a new Mexican republic. The soldiers stationed there swore allegiance to Mexico instead of Spain. The same revolutionary ideas that Bolívar and Hidalgo had used to justify independence were now reshaping everyday life in what is today Old Town San Diego.</p>
-      <p>When California became a U.S. state in 1850 after the Mexican-American War, it inherited Mexican land law, Mexican place names, and communities that had lived through three different governments: Spanish colonial, Mexican republican, and finally American. The revolutions of this lesson did not just happen in Paris and Caracas; they happened here too.</p>
+  <div class="divider">✦ ✦ ✦</div>
+  <section class="content-section" id="primary-source-moment">
+    <h2 class="section-heading">PRIMARY SOURCE MOMENT</h2>
+    <div class="pullquote">
+      <blockquote>"We hold these truths to be self-evident, that all men are created equal... Governments are instituted among Men, deriving their just powers from the consent of the governed."</blockquote>
+      <p class="attribution">Thomas Jefferson, <em>Declaration of Independence</em>, July 4, 1776</p>
+      <p class="narrator">Jefferson turned Enlightenment ideas into a public argument for revolution.</p>
+    </div>
+    <div class="pullquote-questions">
+      <p>1. According to Jefferson, where does a government get its power?</p>
+      <p>2. How does this idea help explain why people would overthrow a government?</p>
     </div>
   </section>
-
-  <div class="divider">&#10022; &#10022; &#10022;</div>
-
-  <!-- HOW THIS STILL MATTERS TODAY -->
   <section id="still-matters">
     <div class="still-matters">
-      <div class="still-matters-headline">Every protest, every election, every time someone says "the government works for us" — that idea came from this era.</div>
-
-      <p style="color:var(--parchment); font-size:18px; margin-bottom:20px; line-height:1.8;">The revolutions in this lesson did not just change governments in the 1700s and 1800s. They rewrote the rules of what a government is allowed to do and what citizens are allowed to demand. That rewrite is still happening. When citizens protest today, they are using the language of Locke and Jefferson. When a government uses force to silence protesters, we call it tyranny because people in this era gave us that word and its meaning.</p>
-
-      <ul class="news-links">
-        <li><a href="https://www.pbs.org/newshour/world/democracy-under-pressure-global-protests" target="_blank" rel="noopener">Democracy Under Pressure: Why People Are Taking to the Streets Worldwide — PBS NewsHour</a></li>
-        <li><a href="https://www.nytimes.com/topic/subject/protests-demonstrations-and-riots" target="_blank" rel="noopener">The Global Protest Wave: Citizens Challenging Governments on Every Continent — New York Times</a></li>
-        <li><a href="https://www.bbc.com/news/world/latin-america" target="_blank" rel="noopener">Latin America's Ongoing Fight for Democratic Government — BBC World News</a></li>
-      </ul>
-
-      <!-- FILENAME: S1L02_ModernProtestCapitol.jpg
-           PLACE IN: images/S1/L02/
-           FIND: Modern protest or demonstration at the U.S. Capitol or a state capitol — large civic protest showing citizens exercising democratic rights
-           SEARCH: protest demonstration US Capitol Washington DC Wikimedia Commons
-           LINK: https://commons.wikimedia.org/wiki/Category:Protests_in_Washington,_D.C. (suggested, not guaranteed) -->
-      <img style="width:100%; margin:24px 0 10px; border:2px solid var(--gold-light);" src="images/S1/L02/S1L02_ModernProtestCapitol.jpg" alt="Civic protest at the U.S. Capitol, Washington, D.C.">
-      <p style="font-size:13px; font-style:italic; color:#aabbd4; margin-bottom:0;">Civic protest at the U.S. Capitol, Washington, D.C. Citizens exercising the right to challenge their government: a right that people in this lesson risked their lives to establish. <em>Wikimedia Commons.</em></p>
-
-      <p class="closing-question">Locke said people have the right to replace a government that fails them. What does that look like in a country with free elections; and what does it look like in a country that does not have them?</p>
+      <h2 class="section-heading">HOW THIS STILL MATTERS TODAY</h2>
+      <div class="still-matters-headline">Every time people say “the government works for us,” they are using an idea that revolutions made impossible to ignore.</div>
+      <div class="brain-break tn-break">
+        <span class="bb-label">THEN AND NOW</span>
+        <div class="tn-pair">
+          <div class="tn-item">
+            <span class="tn-era-label">1776</span>
+            <!--
+              FILENAME: S1L02_DeclarationOriginalDoc.jpg
+              PLACE IN: images/S1/L02/
+              FIND: Photograph of the Declaration of Independence original parchment, National Archives.
+              SEARCH: Declaration of Independence original parchment National Archives photograph Wikimedia Commons
+              LINK: https://commons.wikimedia.org/wiki/File:United_States_Declaration_of_Independence.jpg (suggested, not guaranteed)
+            -->
+            <img src="images/S1/L02/S1L02_DeclarationOriginalDoc.jpg" alt="Declaration of Independence, original parchment, 1776">
+            <p class="tn-caption">A written claim that government power comes from the people.</p>
+          </div>
+          <div class="tn-item">
+            <span class="tn-era-label">TODAY</span>
+            <!--
+              FILENAME: S1L02_ModernProtestCapitol.jpg
+              PLACE IN: images/S1/L02/
+              FIND: Modern civic protest at the U.S. Capitol or a state capitol showing citizens exercising democratic rights.
+              SEARCH: protest demonstration US Capitol Washington DC Wikimedia Commons
+              LINK: https://commons.wikimedia.org/wiki/Category:Protests_in_Washington,_D.C. (suggested, not guaranteed)
+            -->
+            <img src="images/S1/L02/S1L02_ModernProtestCapitol.jpg" alt="Civic protest at the U.S. Capitol, Washington, D.C.">
+            <p class="tn-caption">People gathering in public to challenge government power.</p>
+          </div>
+        </div>
+        <p class="tn-question">The first image is a written promise. The second image is people using that promise. Which one would feel more powerful if you were standing there?</p>
+      </div>
+      <p class="closing-question">Locke said people may replace a government that fails them. What does that look like in a country with free elections, and what does it look like in a country without them?</p>
     </div>
   </section>
-
-</div><!-- end content-wrap -->
-
-<!-- ===== FOOTER ===== -->
-<footer class="page-footer">
-  World History &mdash; Semester 1, Lesson 02 &nbsp;|&nbsp; Democratic Revolutions
-</footer>
-
-<!-- ===== VOCAB + SMOOTH SCROLL JS ===== -->
+  <div class="divider">✦ ✦ ✦</div>
+  <section id="local-history">
+    <div class="local-card">
+      <div class="local-card-headline">LOCAL HISTORY: REVOLUTION REACHES THE CALIFORNIA COAST</div>
+      <!--
+        FILENAME: S1L02_MexicanIndependenceSanDiego.jpg
+        PLACE IN: images/S1/L02/
+        FIND: Old Town San Diego State Historic Park, photograph of historic adobe buildings from Spanish and Mexican California.
+        SEARCH: Old Town San Diego historic park plaza adobe colonial photograph Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/File:Old_Town_San_Diego_State_Historic_Park.jpg (suggested, not guaranteed)
+      -->
+      <img class="img-full" src="images/S1/L02/S1L02_MexicanIndependenceSanDiego.jpg" alt="Old Town San Diego State Historic Park, former Spanish and Mexican colonial settlement">
+      <p class="img-caption" style="color:#d7e1ef;">Old Town San Diego State Historic Park, connected to Spanish and Mexican California. <em>Wikimedia Commons.</em></p>
+      <p class="para-standard">When Mexico won independence from Spain in 1821, the change reached the California coast. The small Spanish settlement of <span class="local-anchor">San Diego de Alcalá</span> became part of a new Mexican republic. Soldiers there swore allegiance to Mexico instead of Spain.</p>
+      <p class="para-simple">When Mexico became independent from Spain in 1821, the change reached California. San Diego de Alcalá became part of Mexico. Soldiers there now promised loyalty to Mexico instead of Spain.</p>
+      <p class="para-standard">When California became a U.S. state in 1850 after the Mexican-American War, it inherited Mexican land law, Mexican place names, and communities that had lived under three governments. The revolutions in this lesson did not only happen in Paris and Caracas. They also reshaped life here.</p>
+      <p class="para-simple">In 1850, California became a U.S. state after the Mexican-American War. It kept many Mexican place names and communities. The revolutions in this lesson did not only happen far away. They changed life in California too.</p>
+    </div>
+  </section>
+</div>
+<footer class="page-footer">WORLD HISTORY | SEMESTER 1, LESSON 02 | DEMOCRATIC REVOLUTIONS</footer>
 <script>
+  document.getElementById('lexile-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('simplified');
+    this.textContent = document.body.classList.contains('simplified') ? 'STANDARD TEXT' : 'SIMPLIFY TEXT';
+  });
   document.querySelectorAll('.vocab').forEach(function(el) {
     el.addEventListener('click', function(e) {
       e.stopPropagation();
-      document.querySelectorAll('.vocab.active').forEach(function(v) {
-        if (v !== el) v.classList.remove('active');
-      });
+      document.querySelectorAll('.vocab.active').forEach(function(v) { if (v !== el) v.classList.remove('active'); });
       el.classList.toggle('active');
     });
   });
-  document.addEventListener('click', function() {
-    document.querySelectorAll('.vocab.active').forEach(function(v) {
-      v.classList.remove('active');
-    });
-  });
-
-  document.querySelectorAll('.section-nav a').forEach(function(link) {
+  document.addEventListener('click', function() { document.querySelectorAll('.vocab.active').forEach(function(v) { v.classList.remove('active'); }); });
+  document.querySelectorAll('.section-nav a, .toc-sidebar a').forEach(function(link) {
     link.addEventListener('click', function(e) {
       var target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
+  const tocObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      const link = document.querySelector('.toc-sidebar a[href="#' + id + '"]');
+      if (link) {
+        if (entry.isIntersecting) link.classList.add('active');
+        else link.classList.remove('active');
+      }
+    });
+  }, { threshold: 0.25 });
+  document.querySelectorAll('section[id]').forEach(el => tocObserver.observe(el));
 </script>
-
 </body>
 </html>
-
-<!--
-IMAGE CHECKLIST FOR SSW_S1L02.html
-
-S1L02_DeclarationHeader.jpg — Header background: Trumbull's "Declaration of Independence" painting, 1819 — Suggested link: https://commons.wikimedia.org/wiki/File:Declaration_of_Independence_(1819),_by_John_Trumbull.jpg
-S1L02_JohnLockPortrait.jpg — Portrait of John Locke by Godfrey Kneller, 1697 — Suggested link: https://commons.wikimedia.org/wiki/File:JohnLocke.png
-S1L02_MontesquieuPortrait.jpg — Portrait of Baron de Montesquieu, 18th century — Suggested link: https://commons.wikimedia.org/wiki/File:Montesquieu_2.jpg
-S1L02_GloriousRevolutionBillRights.jpg — English Bill of Rights, 1689, Parliamentary Archives — Suggested link: https://commons.wikimedia.org/wiki/File:Bill_of_Rights_1689.jpg
-S1L02_DeclarationOriginalDoc.jpg — Declaration of Independence original parchment, National Archives — Suggested link: https://commons.wikimedia.org/wiki/File:United_States_Declaration_of_Independence.jpg
-S1L02_RightsOfManDoc.jpg — Declaration of the Rights of Man and of the Citizen, France, 1789 — Suggested link: https://commons.wikimedia.org/wiki/File:Declaration_of_the_Rights_of_Man_and_of_the_Citizen_in_1789.jpg
-S1L02_SimonBolivarPortrait.jpg — Portrait of Simón Bolívar, 19th century — Suggested link: https://commons.wikimedia.org/wiki/File:Portrait_of_Sim%C3%B3n_Bol%C3%ADvar.jpg
-S1L02_MiguelHidalgoPortrait.jpg — Portrait of Miguel Hidalgo y Costilla, Mexican independence leader — Suggested link: https://commons.wikimedia.org/wiki/File:Miguel_Hidalgo_y_Costilla.jpg
-S1L02_GritoDoloresmural.jpg — Mural depicting the Grito de Dolores, Hidalgo 1810 — Suggested link: https://commons.wikimedia.org/wiki/File:Grito_de_Dolores.jpg
-S1L02_NapoleonCoronation.jpg — The Coronation of Napoleon, Jacques-Louis David, 1807, Louvre — Suggested link: https://commons.wikimedia.org/wiki/File:Jacques-Louis_David_-_The_Coronation_of_Napoleon_(1805-1807).jpg
-S1L02_NapoleonicCode.jpg — The Napoleonic Code, Code Civil des Français, 1804 — Suggested link: https://commons.wikimedia.org/wiki/File:Napoleonic_Code.jpg
-S1L02_MexicanIndependenceSanDiego.jpg — Old Town San Diego State Historic Park, Spanish/Mexican colonial settlement — Suggested link: https://commons.wikimedia.org/wiki/File:Old_Town_San_Diego_State_Historic_Park.jpg
-S1L02_ModernProtestCapitol.jpg — Modern civic protest at the U.S. Capitol, Washington, D.C. — Suggested link: https://commons.wikimedia.org/wiki/Category:Protests_in_Washington,_D.C.
--->
