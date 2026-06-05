@@ -561,14 +561,14 @@
   .as-image { max-width: 100%; display: block; margin: 0 auto 16px; border: 3px solid rgba(247,198,0,0.65); box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
   .as-caption { font-style: normal; font-size: 13px; color: #d8d0c0; line-height: 1.5; margin-bottom: 28px; display: block; }
   .as-question { font-size: 25px; font-style: italic; font-weight: 700; color: var(--off-white); line-height: 1.55; max-width: 620px; margin: 0 auto; }
-  .tn-break { background: #f7c600; color: #111; padding: 36px 44px; margin: 30px 0 28px; }
-  .tn-break .bb-label { color: var(--red-dark); text-align: center; display: block; margin-bottom: 20px; }
+  .tn-break { background: #111820; color: var(--off-white); padding: 36px 44px; margin: 30px 0 28px; border-top: 4px solid var(--red); border-bottom: 4px solid var(--red); }
+  .tn-break .bb-label { color: var(--gold); text-align: center; display: block; margin-bottom: 20px; }
   .tn-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 20px; }
   .tn-item { text-align: center; }
-  .tn-era-label { display: block; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--red-dark); margin-bottom: 10px; font-weight: 900; }
-  .tn-item img { width: 100%; display: block; border: 2px solid rgba(14,14,14,0.65); filter: grayscale(20%) contrast(105%); }
-  .tn-caption { font-size: 12px; font-style: italic; color: #111; margin-top: 8px; line-height: 1.4; font-weight: 700; }
-  .tn-question { font-size: 20px; font-style: italic; font-weight: 900; text-align: center; color: #111; margin-top: 16px; line-height: 1.5; }
+  .tn-era-label { display: block; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; font-weight: 900; }
+  .tn-item img { width: 100%; display: block; border: 2px solid rgba(200,160,32,0.65); filter: grayscale(10%) contrast(105%); }
+  .tn-caption { font-size: 12px; font-style: italic; color: #d8d0c0; margin-top: 8px; line-height: 1.4; font-weight: 700; }
+  .tn-question { font-size: 20px; font-style: italic; font-weight: 900; text-align: center; color: var(--off-white); margin-top: 16px; line-height: 1.5; }
   @media (max-width: 620px) { .brain-break, .ff-break, .as-break { padding: 28px 22px; margin: 36px 22px; } .tn-pair { grid-template-columns: 1fr; } .tn-break { padding: 28px 22px; } }
 
   /* ─── RESPONSIVE ─── */
@@ -836,15 +836,15 @@
 <div class="brain-break as-break">
   <span class="bb-label">ART SPOTLIGHT</span>
   <figure>
-    <!-- FILENAME: S2L02_SovietPropagandaPoster.jpg
+    <!-- FILENAME: S2L02_ArtSpotlight_StalinRetouchedPhoto.jpg
          PLACE IN: images/S2/L02/
-         FIND: Famous Soviet propaganda poster, 1930s; idealized worker or soldier image glorifying Stalin or the Soviet state; bold graphic design with red and gold colors
-         SEARCH: Soviet propaganda poster 1930s Stalin worker Wikimedia Commons
-         LINK: https://commons.wikimedia.org/wiki/File:Soviet_propaganda_poster_1930s.jpg (suggested, not guaranteed) -->
-    <img src="images/S2/L02/S2L02_SovietPropagandaPoster.jpg" alt="Soviet propaganda poster from the 1930s" class="as-image">
-    <figcaption class="as-caption">Soviet propaganda poster, 1930s. Source: Wikimedia Commons.</figcaption>
+         FIND: A before-and-after Soviet retouched photograph connected to Stalin's purges, especially images where Nikolai Yezhov or another purged official was removed from an official photo
+         SEARCH: Stalin retouched photograph Nikolai Yezhov removed Wikimedia Commons
+         LINK: https://commons.wikimedia.org/wiki/File:Nikolai_Yezhov_after_removal_from_photo.jpg (suggested, not guaranteed) -->
+    <img src="images/S2/L02/S2L02_ArtSpotlight_StalinRetouchedPhoto.jpg" alt="A Soviet photograph retouched after a political purge" class="as-image">
+    <figcaption class="as-caption">A Soviet photograph retouched after an official fell from power. Source: Wikimedia Commons.</figcaption>
   </figure>
-  <p class="as-question">What do you think the artist wanted your eyes to notice first?</p>
+  <p class="as-question">What would it feel like to realize someone you knew had been erased from a photograph?</p>
 </div>
 
 <!-- ═══════════════════════════ SECTION 4: COMPARISON ═══════════════════════════ -->
@@ -921,7 +921,7 @@
 
 <!-- ═══════════════════════════ STILL MATTERS TODAY ═══════════════════════════ -->
 <section id="still-matters" class="still-matters">
-  <div class="sm-label">How This HOW THIS STILL MATTERS TODAY</div>
+  <div class="sm-label">HOW THIS STILL MATTERS TODAY</div>
 
   <div class="sm-headline">The playbook dictators used in the 1920s and 1930s is still being used today. Recognizing it is the first line of defense.</div>
 
@@ -930,26 +930,26 @@
     <div class="tn-pair">
       <div class="tn-item">
         <span class="tn-era-label">1930S</span>
-        <!-- FILENAME: S2L02_HeaderBg_PropagandaCrowd.jpg
+        <!-- FILENAME: S2L02_Then_NurembergGroundCrowd.jpg
              PLACE IN: images/S2/L02/
-             FIND: Mass rally or crowd scene from 1930s totalitarian regime; Nazi Nuremberg rally, Soviet parade in Red Square, or Italian Fascist mass gathering; wide shot showing enormous scale of crowd
-             SEARCH: Nuremberg rally 1934 aerial photograph crowd OR Soviet Red Square parade 1930s
-             LINK: https://commons.wikimedia.org/wiki/File:Nuremberg_rally_1934.jpg (suggested, not guaranteed) -->
-        <img src="images/S2/L02/S2L02_HeaderBg_PropagandaCrowd.jpg" alt="Mass political rally from a 1930s totalitarian regime">
-        <p class="tn-caption">A 1930s totalitarian rally used size, flags, and noise to make one leader look unstoppable.</p>
+             FIND: Ground-level or street-level photograph of a Nazi Nuremberg rally crowd in the 1930s, showing ordinary people packed together beneath flags or banners
+             SEARCH: Nuremberg rally crowd ground level 1930s Wikimedia Commons
+             LINK: https://commons.wikimedia.org/wiki/Category:Nuremberg_Rallies (suggested, not guaranteed) -->
+        <img src="images/S2/L02/S2L02_Then_NurembergGroundCrowd.jpg" alt="Ground-level crowd at a Nazi Nuremberg rally in the 1930s">
+        <p class="tn-caption">A 1930s rally packed ordinary people into a scene built to make one leader feel unstoppable.</p>
       </div>
       <div class="tn-item">
         <span class="tn-era-label">TODAY</span>
-        <!-- FILENAME: S2L02_ModernAutocracy.jpg
+        <!-- FILENAME: S2L02_Now_FreePressProtest.jpg
              PLACE IN: images/S2/L02/
-             FIND: Modern-era mass political rally or authoritarian-style political event; large crowd with flags or nationalist imagery that echoes 1930s rally design
-             SEARCH: modern mass political rally nationalist flags crowd Wikimedia Commons
-             LINK: https://commons.wikimedia.org/wiki/File:Political_rally_modern.jpg (suggested, not guaranteed) -->
-        <img src="images/S2/L02/S2L02_ModernAutocracy.jpg" alt="Modern mass political rally with flags and crowd">
-        <p class="tn-caption">Modern mass rallies can still turn politics into a show of loyalty, power, and belonging.</p>
+             FIND: Modern protest or public demonstration defending free press, voting rights, or democracy, showing a crowd where disagreement is visible and protected
+             SEARCH: free press protest democracy crowd Wikimedia Commons
+             LINK: https://commons.wikimedia.org/wiki/Category:Demonstrations_and_protests_for_freedom_of_speech (suggested, not guaranteed) -->
+        <img src="images/S2/L02/S2L02_Now_FreePressProtest.jpg" alt="Modern public demonstration defending democratic freedoms">
+        <p class="tn-caption">A modern democratic protest can show public disagreement instead of forced loyalty.</p>
       </div>
     </div>
-    <p class="tn-question">Which crowd do you think felt safer disagreeing with the speaker?</p>
+    <p class="tn-question">In which image would it be safer to say, “I disagree,” and how can you tell?</p>
   </div>
 
   <div class="sm-closing-q">
@@ -960,7 +960,7 @@
 
 <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
 <footer class="site-footer">
-  WORLD HISTORY ; SEMESTER 2, LESSON 02 &nbsp;|&nbsp; Rise of Totalitarian Governments
+  WORLD HISTORY ; SEMESTER 2, LESSON 02 &nbsp;|&nbsp; RISE OF TOTALITARIAN GOVERNMENTS
 </footer>
 
 </div><!-- end page-wrap -->
