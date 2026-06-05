@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSW_S2L02 — Rise of Totalitarian Governments</title>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<title>SSW_S2L02 ; Rise of Totalitarian Governments</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Roboto+Slab:wght@500;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
     --red:        #cc1a1a;
@@ -517,6 +517,60 @@
     border-top: 3px solid var(--red-dark);
   }
 
+
+
+  /* ─── LEXILE TOGGLE ─── */
+  .toggle-zone { background: var(--black-soft); padding: 18px 44px 8px; border-bottom: 3px solid var(--red-dark); }
+  .para-simple { display: none; }
+  body.simplified .para-standard { display: none; }
+  body.simplified .para-simple { display: block; }
+  #lexile-toggle {
+    display: block; margin: 0 auto 10px; padding: 10px 24px; font-size: 13px;
+    letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer;
+    border: 2px solid var(--red); background: transparent; color: var(--off-white);
+    font-family: 'Oswald', sans-serif; transition: background 0.2s, color 0.2s;
+  }
+  #lexile-toggle:hover { background: var(--red); color: #fff; }
+
+  /* ─── FLOATING TABLE OF CONTENTS ─── */
+  .toc-sidebar {
+    position: fixed; right: calc(50% - 570px); top: 50%; transform: translateY(-50%);
+    width: 165px; padding: 14px 12px; font-size: 12px; line-height: 1.7; z-index: 50;
+    background: rgba(14, 14, 14, 0.88); border-left: 2px solid rgba(204, 26, 26, 0.45);
+  }
+  .toc-sidebar .toc-label { font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--red); display: block; margin-bottom: 10px; }
+  .toc-sidebar a { display: block; color: var(--gray-light); text-decoration: none; padding: 3px 0; font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 0.05em; transition: color 0.2s; text-transform: uppercase; }
+  .toc-sidebar a.active, .toc-sidebar a:hover { color: var(--off-white); font-weight: 600; }
+  @media (max-width: 1100px) { .toc-sidebar { display: none; } }
+
+  /* ─── ENGAGEMENT BREAKS ─── */
+  .brain-break { font-family: 'Roboto Slab', serif; margin: 44px 44px; padding: 36px 44px; position: relative; overflow: hidden; }
+  .brain-break p, .brain-break span, .brain-break figcaption { font-family: 'Roboto Slab', serif; }
+  .bb-label { display: block; font-size: 11px; font-weight: 900; letter-spacing: 0.45em; text-transform: uppercase; margin-bottom: 14px; opacity: 0.85; }
+  .bb-text { font-size: 22px; font-weight: 700; line-height: 1.65; margin: 0; }
+  .dyk-break { background: #f7c600; color: #111; border-left: 7px solid #111; }
+  .dyk-break .bb-label { color: #8a0f0f; }
+  .ff-break { background: #f2ece0; color: #111; padding: 36px 40px; margin: 0 44px 44px; border-top: 5px solid var(--red); border-bottom: 5px solid var(--red); text-align: center; box-shadow: inset 0 0 0 2px #111; }
+  .ff-break .bb-label { text-align: center; margin-bottom: 24px; color: var(--red-dark); }
+  .ff-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 18px; }
+  .ff-item { text-align: center; padding: 8px 10px; flex: 1 1 120px; }
+  .ff-number { display: block; font-size: 46px; font-weight: 900; color: var(--red); line-height: 1; margin-bottom: 8px; }
+  .ff-desc { display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #111; max-width: 150px; margin: 0 auto; line-height: 1.35; font-weight: 900; }
+  .as-break { background: #111; color: var(--off-white); padding: 44px 50px; margin: 44px; border-top: 4px solid #f7c600; border-bottom: 4px solid #f7c600; text-align: center; }
+  .as-break .bb-label { color: #f7c600; }
+  .as-image { max-width: 100%; display: block; margin: 0 auto 16px; border: 3px solid rgba(247,198,0,0.65); box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
+  .as-caption { font-style: normal; font-size: 13px; color: #d8d0c0; line-height: 1.5; margin-bottom: 28px; display: block; }
+  .as-question { font-size: 25px; font-style: italic; font-weight: 700; color: var(--off-white); line-height: 1.55; max-width: 620px; margin: 0 auto; }
+  .tn-break { background: #f7c600; color: #111; padding: 36px 44px; margin: 30px 0 28px; }
+  .tn-break .bb-label { color: var(--red-dark); text-align: center; display: block; margin-bottom: 20px; }
+  .tn-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 20px; }
+  .tn-item { text-align: center; }
+  .tn-era-label { display: block; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--red-dark); margin-bottom: 10px; font-weight: 900; }
+  .tn-item img { width: 100%; display: block; border: 2px solid rgba(14,14,14,0.65); filter: grayscale(20%) contrast(105%); }
+  .tn-caption { font-size: 12px; font-style: italic; color: #111; margin-top: 8px; line-height: 1.4; font-weight: 700; }
+  .tn-question { font-size: 20px; font-style: italic; font-weight: 900; text-align: center; color: #111; margin-top: 16px; line-height: 1.5; }
+  @media (max-width: 620px) { .brain-break, .ff-break, .as-break { padding: 28px 22px; margin: 36px 22px; } .tn-pair { grid-template-columns: 1fr; } .tn-break { padding: 28px 22px; } }
+
   /* ─── RESPONSIVE ─── */
   @media (max-width: 620px) {
     .content-section, .intro-section, .still-matters { padding: 36px 22px; }
@@ -537,16 +591,16 @@
 
   <!-- FILENAME: S2L02_HeaderBg_PropagandaCrowd.jpg
        PLACE IN: images/S2/L02/
-       FIND: Mass rally or crowd scene from 1930s totalitarian regime — Nazi Nuremberg rally, Soviet parade in Red Square, or Italian Fascist mass gathering; aerial or wide shot showing enormous scale of crowd
+       FIND: Mass rally or crowd scene from 1930s totalitarian regime ; Nazi Nuremberg rally, Soviet parade in Red Square, or Italian Fascist mass gathering; aerial or wide shot showing enormous scale of crowd
        SEARCH: Nuremberg rally 1934 aerial photograph crowd OR Soviet Red Square parade 1930s
        LINK: https://commons.wikimedia.org/wiki/File:Nuremberg_rally_1934.jpg (suggested, not guaranteed) -->
   <div class="header-bg" style="background-image: url('images/S2/L02/S2L02_HeaderBg_PropagandaCrowd.jpg');"></div>
 
   <div class="header-content">
-    <div class="course-label">World History &mdash; Semester 2, Lesson 02</div>
+    <div class="course-label">WORLD HISTORY ; SEMESTER 2, LESSON 02</div>
     <h1 class="page-title">Rise of<br>Totalitarian<br>Governments</h1>
     <div class="eq-banner">
-      <span class="eq-label">Essential Question</span>
+      <span class="eq-label">ESSENTIAL QUESTION</span>
       How do democracies collapse, and what do dictators do once they have power?
     </div>
   </div>
@@ -554,25 +608,41 @@
 
 <!-- ═══════════════════════════ NAV ═══════════════════════════ -->
 <nav class="section-nav" aria-label="Page sections">
-  <a href="#russia">Russia and Stalin</a>
-  <a href="#italy-germany">Italy and Germany</a>
-  <a href="#tools">Tools of Control</a>
-  <a href="#comparison">Side by Side</a>
-  <a href="#still-matters">Still Matters Today</a>
+  <a href="#russia">RUSSIA AND STALIN</a>
+  <a href="#italy-germany">ITALY AND GERMANY</a>
+  <a href="#tools">TOOLS OF CONTROL</a>
+  <a href="#comparison">SIDE BY SIDE</a>
+  <a href="#still-matters">HOW THIS STILL MATTERS TODAY</a>
 </nav>
+
+<div class="toggle-zone">
+  <button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
+</div>
+
+<aside class="toc-sidebar" aria-label="On this page">
+  <span class="toc-label">ON THIS PAGE</span>
+  <a href="#russia">RUSSIA AND STALIN</a>
+  <a href="#italy-germany">ITALY AND GERMANY</a>
+  <a href="#tools">TOOLS OF CONTROL</a>
+  <a href="#comparison">SIDE BY SIDE</a>
+  <a href="#still-matters">HOW THIS STILL MATTERS</a>
+</aside>
 
 <!-- ═══════════════════════════ INTRO ═══════════════════════════ -->
 <section class="intro-section">
-  <div class="intro-label">Introduction</div>
-  <p>In 1933, a German teacher named Friedrich Kellner wrote in his diary that something was wrong. His neighbors were cheering in the streets. A man named Adolf Hitler had just been appointed Chancellor of Germany. Kellner did not cheer. He wrote: "This is a dark day." He would spend the next twelve years secretly recording what he saw, hiding his diary in the walls of his house.</p>
-  <p>In the decade after WWI, democracies across Europe cracked and broke. Governments that had promised freedom handed power to one man. Those men built systems designed to control everything: what people read, what they believed, where they worked, and whether they lived. The word for this kind of total control is <span class="vocab">totalitarianism<span class="tip">Totalitarianism: a system of government where one leader or party controls every part of life, including speech, media, and the economy, and allows no opposition.</span></span>.</p>
-  <p>This is the story of how it happened, and why millions of ordinary people either supported it, survived it, or disappeared inside it.</p>
+  <div class="intro-label">INTRODUCTION</div>
+  <p class="para-standard">In 1933, a German teacher named Friedrich Kellner wrote in his diary that something was wrong. His neighbors were cheering in the streets. A man named Adolf Hitler had just been appointed Chancellor of Germany. Kellner did not cheer. He wrote: "This is a dark day." He would spend the next twelve years secretly recording what he saw, hiding his diary in the walls of his house.</p>
+  <p class="para-simple">In 1933, a German teacher named Friedrich Kellner watched his neighbors cheer for Adolf Hitler. Kellner did not cheer. He wrote in his diary, "This is a dark day." For the next twelve years, he secretly wrote down what he saw and hid the diary inside his house.</p>
+  <p class="para-standard">In the decade after WWI, democracies across Europe cracked and broke. Governments that had promised freedom handed power to one man. Those men built systems designed to control everything: what people read, what they believed, where they worked, and whether they lived. The word for this kind of total control is <span class="vocab">totalitarianism<span class="tip">Totalitarianism: a system of government where one leader or party controls every part of life, including speech, media, and the economy, and allows no opposition.</span></span>.</p>
+  <p class="para-simple">After WWI, many democracies in Europe became weak. Some countries gave power to one leader. These leaders tried to control what people read, believed, said, and did. This kind of control is called <span class="vocab">totalitarianism<span class="tip">Totalitarianism: a system of government where one leader or party controls every part of life, including speech, media, and the economy, and allows no opposition.</span></span>.</p>
+  <p class="para-standard">This is the story of how it happened, and why millions of ordinary people either supported it, survived it, or disappeared inside it.</p>
+  <p class="para-simple">This lesson explains how that happened. It also shows why some people supported these governments, some survived them, and many disappeared because of them.</p>
 </section>
 
 <!-- ═══════════════════════════ SECTION 1: RUSSIA ═══════════════════════════ -->
 <section id="russia" class="content-section clearfix">
-  <div class="section-number">Chapter One</div>
-  <h2 class="section-heading">Russia: From Revolution to Stalin's Iron Grip</h2>
+  <div class="section-number">CHAPTER ONE</div>
+  <h2 class="section-heading">RUSSIA: FROM REVOLUTION TO STALIN'S IRON GRIP</h2>
 
   <!-- FILENAME: S2L02_LeninSpeaking.jpg
        PLACE IN: images/S2/L02/
@@ -584,11 +654,14 @@
     <figcaption>Vladimir Lenin addresses a crowd during the Russian Revolution, circa 1917. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p>In 1917, Russia was exhausted. Three years of WWI had killed millions of Russian soldiers. The people were starving. Tsar Nicholas II, the Russian emperor, seemed unable to fix anything. In February 1917, riots broke out in the capital city of Petrograd. The tsar was forced to step down.</p>
+  <p class="para-standard">In 1917, Russia was exhausted. Three years of WWI had killed millions of Russian soldiers. The people were starving. Tsar Nicholas II, the Russian emperor, seemed unable to fix anything. In February 1917, riots broke out in the capital city of Petrograd. The tsar was forced to step down.</p>
+  <p class="para-simple">In 1917, Russia was exhausted. Three years of WWI had killed millions of Russian soldiers. The people were starving. Tsar Nicholas II, the Russian emperor, seemed unable to fix anything. In February 1917, riots broke out in the capital city of Petrograd. The tsar was forced to step down.</p>
 
-  <p>A new democratic government took over, but it made a critical mistake: it kept fighting WWI. That decision kept the people hungry and angry. In October 1917, a radical group called the Bolsheviks seized power. Their leader, Vladimir Lenin, promised three things: land for the peasants, bread for the hungry, and peace from the war. His political system was called <span class="vocab">communism<span class="tip">Communism: a political system where the government owns all businesses and land, and is supposed to distribute wealth equally among all people, with no private ownership.</span></span>.</p>
+  <p class="para-standard">A new democratic government took over, but it made a critical mistake: it kept fighting WWI. That decision kept the people hungry and angry. In October 1917, a radical group called the Bolsheviks seized power. Their leader, Vladimir Lenin, promised three things: land for the peasants, bread for the hungry, and peace from the war. His political system was called <span class="vocab">communism<span class="tip">Communism: a political system where the government owns all businesses and land, and is supposed to distribute wealth equally among all people, with no private ownership.</span></span>.</p>
+  <p class="para-simple">A new democratic government took over, but it made a critical mistake: it kept fighting WWI. That decision kept the people hungry and angry. In October 1917, a radical group called the Bolsheviks seized power. Their leader, Vladimir Lenin, promised three things: land for the peasants, bread for the hungry, and peace from the war. His political system was called <span class="vocab">communism<span class="tip">Communism: a political system where the government owns all businesses and land, and is supposed to distribute wealth equally among all people, with no private ownership.</span></span>.</p>
 
-  <p>Lenin took Russia out of WWI, but he immediately started a new war: a civil war against anyone who opposed the Bolsheviks. By the time it ended in 1922, millions more were dead. Lenin had built a one-party state where no opposition was allowed. When Lenin died in 1924, a power struggle began. Joseph Stalin won.</p>
+  <p class="para-standard">Lenin took Russia out of WWI, but he immediately started a new war: a civil war against anyone who opposed the Bolsheviks. By the time it ended in 1922, millions more were dead. Lenin had built a one-party state where no opposition was allowed. When Lenin died in 1924, a power struggle began. Joseph Stalin won.</p>
+  <p class="para-simple">Lenin took Russia out of WWI, but he immediately started a new war: a civil war against anyone who opposed the Bolsheviks. By the time it ended in 1922, millions more were dead. Lenin had built a one-party state where no opposition was allowed. When Lenin died in 1924, a power struggle began. Joseph Stalin won.</p>
 
   <!-- FILENAME: S2L02_StalinOfficialPortrait.jpg
        PLACE IN: images/S2/L02/
@@ -600,17 +673,20 @@
     <figcaption>Joseph Stalin, leader of the Soviet Union, circa 1930s. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p>Stalin transformed the Soviet Union into a fully <span class="vocab-red">totalitarian</span> state. He collectivized farming, meaning the government took control of all farms and forced peasants to work on them together. In Ukraine, when farmers resisted, Stalin seized their grain anyway. Between 1932 and 1933, a deliberate famine called the Holodomor killed an estimated 3.5 to 7 million Ukrainians. Stalin called it a management problem. Historians call it a genocide.</p>
+  <p class="para-standard">Stalin transformed the Soviet Union into a fully <span class="vocab-red">totalitarian</span> state. He collectivized farming, meaning the government took control of all farms and forced peasants to work on them together. In Ukraine, when farmers resisted, Stalin seized their grain anyway. Between 1932 and 1933, a deliberate famine called the Holodomor killed an estimated 3.5 to 7 million Ukrainians. Stalin called it a management problem. Historians call it a genocide.</p>
+  <p class="para-simple">Stalin transformed the Soviet Union into a fully <span class="vocab-red">totalitarian</span> state. He collectivized farming, meaning the government took control of all farms and forced peasants to work on them together. In Ukraine, when farmers resisted, Stalin seized their grain anyway. Between 1932 and 1933, a deliberate famine called the Holodomor killed an estimated 3.5 to 7 million Ukrainians. Stalin called it a management problem. Historians call it a genocide.</p>
 
-  <p>Stalin also launched the Great Purge beginning in 1936. He arrested, executed, or sent to prison camps anyone he suspected of disloyalty; military officers, scientists, artists, and ordinary factory workers were all targeted. The prison camp system was called the <span class="vocab">Gulag<span class="tip">Gulag: the Soviet system of forced labor prison camps where millions of people were sent for real or imagined crimes against the state.</span></span>. At its peak, the Gulag held approximately 1.8 million prisoners. Many never came home.</p>
+  <p class="para-standard">Stalin also launched the Great Purge beginning in 1936. He arrested, executed, or sent to prison camps anyone he suspected of disloyalty; military officers, scientists, artists, and ordinary factory workers were all targeted. The prison camp system was called the <span class="vocab">Gulag<span class="tip">Gulag: the Soviet system of forced labor prison camps where millions of people were sent for real or imagined crimes against the state.</span></span>. At its peak, the Gulag held approximately 1.8 million prisoners. Many never came home.</p>
+  <p class="para-simple">Stalin also launched the Great Purge beginning in 1936. He arrested, executed, or sent to prison camps anyone he suspected of disloyalty; military officers, scientists, artists, and ordinary factory workers were all targeted. The prison camp system was called the <span class="vocab">Gulag<span class="tip">Gulag: the Soviet system of forced labor prison camps where millions of people were sent for real or imagined crimes against the state.</span></span>. At its peak, the Gulag held approximately 1.8 million prisoners. Many never came home.</p>
 
-  <p>Modern authoritarian governments still use many of Stalin's tools: controlling the press, eliminating political opponents, and creating fear so that people monitor each other instead of organizing against the government.</p>
+  <p class="para-standard">Modern authoritarian governments still use many of Stalin's tools: controlling the press, eliminating political opponents, and creating fear so that people monitor each other instead of organizing against the government.</p>
+  <p class="para-simple">Modern authoritarian governments still use many of Stalin's tools: controlling the press, eliminating political opponents, and creating fear so that people monitor each other instead of organizing against the government.</p>
 
   <div class="divider"><div class="divider-line"></div><div class="divider-star">&#9632;</div><div class="divider-line"></div></div>
 
   <!-- PRIMARY SOURCE 1: Stalin -->
   <div class="primary-source">
-    <div class="ps-label">Primary Source</div>
+    <div class="ps-label">PRIMARY SOURCE</div>
     <div class="ps-quote">
       "The death of one man is a tragedy. The death of millions is a statistic."
     </div>
@@ -618,11 +694,11 @@
     <div class="ps-narrator">This quote, widely attributed to Stalin, captures his willingness to treat mass suffering as a numbers problem rather than a human one; it became one of the most chilling summaries of how totalitarian leaders think about ordinary people.</div>
     <ul class="ps-questions">
       <li>
-        <span>Question 1: Meaning</span>
+        <span>QUESTION 1: MEANING</span>
         What does this quote say about how Stalin saw human life? Use evidence from the lesson to support your answer.
       </li>
       <li>
-        <span>Question 2: Connect to the EQ</span>
+        <span>QUESTION 2: CONNECT TO THE EQ</span>
         How does a leader who thinks this way use power differently than a leader in a democracy? Connect your answer to what dictators actually did once they had power.
       </li>
     </ul>
@@ -630,12 +706,30 @@
 
 </section>
 
+
+
+<div class="brain-break dyk-break">
+  <span class="bb-label">DID YOU KNOW</span>
+  <p class="bb-text">Stalin's government sometimes edited arrested people out of official photographs. A person could stand next to Stalin in one photo and vanish from the next version.</p>
+</div>
+
+<div class="brain-break ff-break">
+  <span class="bb-label">FAST FACTS</span>
+  <div class="ff-grid">
+    <div class="ff-item"><span class="ff-number">1</span><span class="ff-desc">PARTY ALLOWED IN STALIN'S USSR</span></div>
+    <div class="ff-item"><span class="ff-number">1.8M</span><span class="ff-desc">PEOPLE HELD IN THE GULAG AT ITS PEAK</span></div>
+    <div class="ff-item"><span class="ff-number">3.5-7M</span><span class="ff-desc">UKRAINIANS DIED IN THE HOLODOMOR</span></div>
+    <div class="ff-item"><span class="ff-number">1933</span><span class="ff-desc">HITLER TOOK POWER IN GERMANY</span></div>
+  </div>
+</div>
+
 <!-- ═══════════════════════════ SECTION 2: ITALY AND GERMANY ═══════════════════════════ -->
 <section id="italy-germany" class="content-section clearfix">
-  <div class="section-number">Chapter Two</div>
-  <h2 class="section-heading">Italy and Germany: Two Countries, One Playbook</h2>
+  <div class="section-number">CHAPTER TWO</div>
+  <h2 class="section-heading">ITALY AND GERMANY: Two Countries, One Playbook</h2>
 
-  <p>WWI left Italy and Germany in the same condition: humiliated, economically destroyed, and politically unstable. Both countries had governments that could not control the chaos. Both had millions of unemployed, angry young men. And in both countries, a single charismatic leader stepped forward with the same basic promise: I alone can fix this.</p>
+  <p class="para-standard">WWI left ITALY AND GERMANY in the same condition: humiliated, economically destroyed, and politically unstable. Both countries had governments that could not control the chaos. Both had millions of unemployed, angry young men. And in both countries, a single charismatic leader stepped forward with the same basic promise: I alone can fix this.</p>
+  <p class="para-simple">WWI left ITALY AND GERMANY in the same condition: humiliated, economically destroyed, and politically unstable. Both countries had governments that could not control the chaos. Both had millions of unemployed, angry young men. And in both countries, a single charismatic leader stepped forward with the same basic promise: I alone can fix this.</p>
 
   <div class="img-pair">
     <!-- FILENAME: S2L02_MussoliniBalcony.jpg
@@ -659,11 +753,14 @@
     </figure>
   </div>
 
-  <p>In Italy, Benito Mussolini founded the Fascist Party in 1919. <span class="vocab">Fascism<span class="tip">Fascism: a far-right political system built on extreme nationalism, a powerful single leader, and the total submission of individuals to the state; it is violently opposed to democracy and communism.</span></span> rejected both democracy and communism. Fascism demanded that citizens put the nation above everything else, including their own rights. Mussolini organized gangs of black-shirted followers who attacked political opponents in the streets. In 1922 he threatened to march on Rome with his armed followers. The king of Italy, afraid of a civil war, handed Mussolini the government. No election. No vote. Just fear and the threat of violence.</p>
+  <p class="para-standard">In Italy, Benito Mussolini founded the Fascist Party in 1919. <span class="vocab">Fascism<span class="tip">Fascism: a far-right political system built on extreme nationalism, a powerful single leader, and the total submission of individuals to the state; it is violently opposed to democracy and communism.</span></span> rejected both democracy and communism. Fascism demanded that citizens put the nation above everything else, including their own rights. Mussolini organized gangs of black-shirted followers who attacked political opponents in the streets. In 1922 he threatened to march on Rome with his armed followers. The king of Italy, afraid of a civil war, handed Mussolini the government. No election. No vote. Just fear and the threat of violence.</p>
+  <p class="para-simple">In Italy, Benito Mussolini founded the Fascist Party in 1919. <span class="vocab">Fascism<span class="tip">Fascism: a far-right political system built on extreme nationalism, a powerful single leader, and the total submission of individuals to the state; it is violently opposed to democracy and communism.</span></span> rejected both democracy and communism. Fascism demanded that citizens put the nation above everything else, including their own rights. Mussolini organized gangs of black-shirted followers who attacked political opponents in the streets. In 1922 he threatened to march on Rome with his armed followers. The king of Italy, afraid of a civil war, handed Mussolini the government. No election. No vote. Just fear and the threat of violence.</p>
 
-  <p>In Germany, Adolf Hitler led the Nazi Party using a similar strategy but with a more extreme ideology. Hitler added intense racial hatred to his <span class="vocab-red">fascism</span>. He blamed Germany's problems on Jewish people, communists, and foreigners. His message was clear: Germany lost WWI not because of military failure but because it was "stabbed in the back" by internal enemies. This was a lie, but it gave angry Germans a target for their rage.</p>
+  <p class="para-standard">In Germany, Adolf Hitler led the Nazi Party using a similar strategy but with a more extreme ideology. Hitler added intense racial hatred to his <span class="vocab-red">fascism</span>. He blamed Germany's problems on Jewish people, communists, and foreigners. His message was clear: Germany lost WWI not because of military failure but because it was "stabbed in the back" by internal enemies. This was a lie, but it gave angry Germans a target for their rage.</p>
+  <p class="para-simple">In Germany, Adolf Hitler led the Nazi Party using a similar strategy but with a more extreme ideology. Hitler added intense racial hatred to his <span class="vocab-red">fascism</span>. He blamed Germany's problems on Jewish people, communists, and foreigners. His message was clear: Germany lost WWI not because of military failure but because it was "stabbed in the back" by internal enemies. This was a lie, but it gave angry Germans a target for their rage.</p>
 
-  <p>Hitler rose through legal means at first. In 1932, the Nazi Party won more votes in the German parliament than any other party. In January 1933, Hitler was appointed Chancellor. Within months, he had dismantled the German democratic system entirely. He used a suspicious fire at the parliament building to justify banning all other political parties. Germany's democracy died in less than a year.</p>
+  <p class="para-standard">Hitler rose through legal means at first. In 1932, the Nazi Party won more votes in the German parliament than any other party. In January 1933, Hitler was appointed Chancellor. Within months, he had dismantled the German democratic system entirely. He used a suspicious fire at the parliament building to justify banning all other political parties. Germany's democracy died in less than a year.</p>
+  <p class="para-simple">Hitler rose through legal means at first. In 1932, the Nazi Party won more votes in the German parliament than any other party. In January 1933, Hitler was appointed Chancellor. Within months, he had dismantled the German democratic system entirely. He used a suspicious fire at the parliament building to justify banning all other political parties. Germany's democracy died in less than a year.</p>
 
   <!-- FILENAME: S2L02_NaziPartyMarch.jpg
        PLACE IN: images/S2/L02/
@@ -679,8 +776,8 @@
 
 <!-- ═══════════════════════════ SECTION 3: TOOLS OF CONTROL ═══════════════════════════ -->
 <section id="tools" class="content-section clearfix">
-  <div class="section-number">Chapter Three</div>
-  <h2 class="section-heading">The Tools of Control: How Dictators Keep Power</h2>
+  <div class="section-number">CHAPTER THREE</div>
+  <h2 class="section-heading">The TOOLS OF CONTROL: How Dictators Keep Power</h2>
 
   <!-- FILENAME: S2L02_SovietPropagandaPoster.jpg
        PLACE IN: images/S2/L02/
@@ -692,24 +789,29 @@
     <figcaption>Soviet propaganda poster, 1930s. Every totalitarian regime used art to control what people believed. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p>Once a dictator has power, the real work begins: keeping it. Every totalitarian regime used the same set of tools, even when they claimed to stand for opposite ideologies.</p>
+  <p class="para-standard">Once a dictator has power, the real work begins: keeping it. Every totalitarian regime used the same set of tools, even when they claimed to stand for opposite ideologies.</p>
+  <p class="para-simple">Once a dictator has power, the real work begins: keeping it. Every totalitarian regime used the same set of tools, even when they claimed to stand for opposite ideologies.</p>
 
-  <p>The first tool was <span class="vocab">propaganda<span class="tip">Propaganda: information, often false or one-sided, that is spread to make people support a government, leader, or idea.</span></span>. Every totalitarian state controlled the press, the radio, the schools, and the arts. Citizens heard only what the government wanted them to hear. Children were taught to love the leader from their first day of school. Hitler Youth and Soviet Young Pioneers were mandatory organizations that replaced family loyalty with loyalty to the state.</p>
+  <p class="para-standard">The first tool was <span class="vocab">propaganda<span class="tip">Propaganda: information, often false or one-sided, that is spread to make people support a government, leader, or idea.</span></span>. Every totalitarian state controlled the press, the radio, the schools, and the arts. Citizens heard only what the government wanted them to hear. Children were taught to love the leader from their first day of school. Hitler Youth and Soviet Young Pioneers were mandatory organizations that replaced family loyalty with loyalty to the state.</p>
+  <p class="para-simple">The first tool was <span class="vocab">propaganda<span class="tip">Propaganda: information, often false or one-sided, that is spread to make people support a government, leader, or idea.</span></span>. Every totalitarian state controlled the press, the radio, the schools, and the arts. Citizens heard only what the government wanted them to hear. Children were taught to love the leader from their first day of school. Hitler Youth and Soviet Young Pioneers were mandatory organizations that replaced family loyalty with loyalty to the state.</p>
 
-  <p>The second tool was terror. Secret police forces watched everything. In the Soviet Union, the secret police was called the NKVD. In Nazi Germany, it was the Gestapo. In Mussolini's Italy, it was the OVRA. These organizations encouraged neighbors to report each other. Fear spread from the prisons outward through every street and apartment building. People learned to be silent.</p>
+  <p class="para-standard">The second tool was terror. Secret police forces watched everything. In the Soviet Union, the secret police was called the NKVD. In Nazi Germany, it was the Gestapo. In Mussolini's Italy, it was the OVRA. These organizations encouraged neighbors to report each other. Fear spread from the prisons outward through every street and apartment building. People learned to be silent.</p>
+  <p class="para-simple">The second tool was terror. Secret police forces watched everything. In the Soviet Union, the secret police was called the NKVD. In Nazi Germany, it was the Gestapo. In Mussolini's Italy, it was the OVRA. These organizations encouraged neighbors to report each other. Fear spread from the prisons outward through every street and apartment building. People learned to be silent.</p>
 
-  <p>The third tool was the scapegoat. Every totalitarian leader identified an enemy group to blame for the nation's problems. Stalin blamed "saboteurs" and "class enemies." Hitler blamed Jewish people, Roma, LGBTQ individuals, and disabled people. Mussolini blamed socialists and foreign powers. When the economy was bad or the government failed, there was always a ready answer: the enemy did it.</p>
+  <p class="para-standard">The third tool was the scapegoat. Every totalitarian leader identified an enemy group to blame for the nation's problems. Stalin blamed "saboteurs" and "class enemies." Hitler blamed Jewish people, Roma, LGBTQ individuals, and disabled people. Mussolini blamed socialists and foreign powers. When the economy was bad or the government failed, there was always a ready answer: the enemy did it.</p>
+  <p class="para-simple">The third tool was the scapegoat. Every totalitarian leader identified an enemy group to blame for the nation's problems. Stalin blamed "saboteurs" and "class enemies." Hitler blamed Jewish people, Roma, LGBTQ individuals, and disabled people. Mussolini blamed socialists and foreign powers. When the economy was bad or the government failed, there was always a ready answer: the enemy did it.</p>
 
   <div class="callout-box">
-    <div class="callout-title">Propaganda in Your World</div>
-    <p>You encounter propaganda every day, though it does not always look like a Soviet poster. Social media algorithms are designed to show you content that makes you feel strong emotions, especially anger and fear. Governments and political groups still use images, music, slogans, and repetition to shape what people believe. The difference between information and <span style="color: var(--gold);">propaganda</span> is worth knowing how to spot.</p>
+    <div class="callout-title">PROPAGANDA IN YOUR WORLD</div>
+    <p class="para-standard">You encounter propaganda every day, though it does not always look like a Soviet poster. Social media algorithms are designed to show you content that makes you feel strong emotions, especially anger and fear. Governments and political groups still use images, music, slogans, and repetition to shape what people believe. The difference between information and <span style="color: var(--gold);">propaganda</span> is worth knowing how to spot.</p>
+  <p class="para-simple">You encounter propaganda every day, though it does not always look like a Soviet poster. Social media algorithms are designed to show you content that makes you feel strong emotions, especially anger and fear. Governments and political groups still use images, music, slogans, and repetition to shape what people believe. The difference between information and <span style="color: var(--gold);">propaganda</span> is worth knowing how to spot.</p>
   </div>
 
   <div class="divider"><div class="divider-line"></div><div class="divider-star">&#9632;</div><div class="divider-line"></div></div>
 
   <!-- PRIMARY SOURCE 2: Victor Klemperer on Nazi language control -->
   <div class="primary-source">
-    <div class="ps-label">Primary Source</div>
+    <div class="ps-label">PRIMARY SOURCE</div>
     <div class="ps-quote">
       "Nazism permeated the flesh and blood of the people through single words, idioms and sentence structures which were imposed on them in a million repetitions and taken on board mechanically and unconsciously."
     </div>
@@ -729,12 +831,29 @@
 
 </section>
 
+
+
+<div class="brain-break as-break">
+  <span class="bb-label">ART SPOTLIGHT</span>
+  <figure>
+    <!-- FILENAME: S2L02_SovietPropagandaPoster.jpg
+         PLACE IN: images/S2/L02/
+         FIND: Famous Soviet propaganda poster, 1930s; idealized worker or soldier image glorifying Stalin or the Soviet state; bold graphic design with red and gold colors
+         SEARCH: Soviet propaganda poster 1930s Stalin worker Wikimedia Commons
+         LINK: https://commons.wikimedia.org/wiki/File:Soviet_propaganda_poster_1930s.jpg (suggested, not guaranteed) -->
+    <img src="images/S2/L02/S2L02_SovietPropagandaPoster.jpg" alt="Soviet propaganda poster from the 1930s" class="as-image">
+    <figcaption class="as-caption">Soviet propaganda poster, 1930s. Source: Wikimedia Commons.</figcaption>
+  </figure>
+  <p class="as-question">What do you think the artist wanted your eyes to notice first?</p>
+</div>
+
 <!-- ═══════════════════════════ SECTION 4: COMPARISON ═══════════════════════════ -->
 <section id="comparison" class="content-section clearfix">
-  <div class="section-number">Chapter Four</div>
-  <h2 class="section-heading">Side by Side: Stalin, Mussolini, and Hitler Compared</h2>
+  <div class="section-number">CHAPTER FOUR</div>
+  <h2 class="section-heading">SIDE BY SIDE: Stalin, Mussolini, and Hitler Compared</h2>
 
-  <p>On the surface, Stalin, Mussolini, and Hitler looked like enemies. Stalin believed in <span class="vocab-red">communism</span>; Mussolini and Hitler believed in <span class="vocab-red">fascism</span>. Communism said the government should own everything for the workers. Fascism said the nation was supreme and the individual existed only to serve it. They called each other dangerous. But as leaders, they operated almost identically.</p>
+  <p class="para-standard">On the surface, Stalin, Mussolini, and Hitler looked like enemies. Stalin believed in <span class="vocab-red">communism</span>; Mussolini and Hitler believed in <span class="vocab-red">fascism</span>. Communism said the government should own everything for the workers. Fascism said the nation was supreme and the individual existed only to serve it. They called each other dangerous. But as leaders, they operated almost identically.</p>
+  <p class="para-simple">On the surface, Stalin, Mussolini, and Hitler looked like enemies. Stalin believed in <span class="vocab-red">communism</span>; Mussolini and Hitler believed in <span class="vocab-red">fascism</span>. Communism said the government should own everything for the workers. Fascism said the nation was supreme and the individual existed only to serve it. They called each other dangerous. But as leaders, they operated almost identically.</p>
 
   <table class="compare-table">
     <thead>
@@ -795,42 +914,53 @@
     <figcaption>Soviet Gulag prisoners at forced labor, 1930s. The camp system imprisoned millions. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p>The most important thing this comparison reveals: ideology is not the same as behavior. Two systems that claimed to be complete opposites produced the same results for ordinary people: fear, silence, and mass death. This is why historians study systems and structures rather than just taking leaders at their word about what they believe.</p>
+  <p class="para-standard">The most important thing this comparison reveals: ideology is not the same as behavior. Two systems that claimed to be complete opposites produced the same results for ordinary people: fear, silence, and mass death. This is why historians study systems and structures rather than just taking leaders at their word about what they believe.</p>
+  <p class="para-simple">The most important thing this comparison reveals: ideology is not the same as behavior. Two systems that claimed to be complete opposites produced the same results for ordinary people: fear, silence, and mass death. This is why historians study systems and structures rather than just taking leaders at their word about what they believe.</p>
 
 </section>
 
 <!-- ═══════════════════════════ STILL MATTERS TODAY ═══════════════════════════ -->
 <section id="still-matters" class="still-matters">
-  <div class="sm-label">How This Still Matters Today</div>
+  <div class="sm-label">How This HOW THIS STILL MATTERS TODAY</div>
 
   <div class="sm-headline">The playbook dictators used in the 1920s and 1930s is still being used today. Recognizing it is the first line of defense.</div>
 
-  <!-- FILENAME: S2L02_ModernAutocracy.jpg
-       PLACE IN: images/S2/L02/
-       FIND: Modern-era mass rally or authoritarian-style political event; a large crowd at a political rally displaying flags or nationalist imagery that echoes 1930s aesthetics; must be clearly political in nature
-       SEARCH: modern mass political rally nationalist flags crowd 2010s 2020s Wikimedia Commons
-       LINK: https://commons.wikimedia.org/wiki/File:Political_rally_modern.jpg (suggested, not guaranteed) -->
-  <figure>
-    <img src="images/S2/L02/S2L02_ModernAutocracy.jpg" alt="Modern mass political rally, flags and crowd">
-    <figcaption>Mass political rallies continue to serve as tools of political mobilization and loyalty display worldwide. Source: Wikimedia Commons.</figcaption>
-  </figure>
-
-  <ul class="news-links">
-    <li><a href="https://www.bbc.com/news/world-57922720" target="_blank" rel="noopener">"The rise of authoritarianism: How democracies are dying around the world" — BBC</a></li>
-    <li><a href="https://freedomhouse.org/report/freedom-world" target="_blank" rel="noopener">"Freedom in the World Report: Global democracy under pressure" — Freedom House</a></li>
-    <li><a href="https://www.npr.org/2022/03/12/1086093346/how-propaganda-works-today" target="_blank" rel="noopener">"How Propaganda Works in the 21st Century" — NPR</a></li>
-  </ul>
-
-  <p>Freedom House, an organization that tracks democracy worldwide, reported in 2023 that global freedom has declined for seventeen consecutive years. Countries that were democracies twenty years ago are now run by single parties or strongmen. The tools are the same: control the press, build loyalty through fear and pride, scapegoat an outgroup, and dismantle the systems that would stop you.</p>
+  <div class="brain-break tn-break">
+    <span class="bb-label">THEN AND NOW</span>
+    <div class="tn-pair">
+      <div class="tn-item">
+        <span class="tn-era-label">1930S</span>
+        <!-- FILENAME: S2L02_HeaderBg_PropagandaCrowd.jpg
+             PLACE IN: images/S2/L02/
+             FIND: Mass rally or crowd scene from 1930s totalitarian regime; Nazi Nuremberg rally, Soviet parade in Red Square, or Italian Fascist mass gathering; wide shot showing enormous scale of crowd
+             SEARCH: Nuremberg rally 1934 aerial photograph crowd OR Soviet Red Square parade 1930s
+             LINK: https://commons.wikimedia.org/wiki/File:Nuremberg_rally_1934.jpg (suggested, not guaranteed) -->
+        <img src="images/S2/L02/S2L02_HeaderBg_PropagandaCrowd.jpg" alt="Mass political rally from a 1930s totalitarian regime">
+        <p class="tn-caption">A 1930s totalitarian rally used size, flags, and noise to make one leader look unstoppable.</p>
+      </div>
+      <div class="tn-item">
+        <span class="tn-era-label">TODAY</span>
+        <!-- FILENAME: S2L02_ModernAutocracy.jpg
+             PLACE IN: images/S2/L02/
+             FIND: Modern-era mass political rally or authoritarian-style political event; large crowd with flags or nationalist imagery that echoes 1930s rally design
+             SEARCH: modern mass political rally nationalist flags crowd Wikimedia Commons
+             LINK: https://commons.wikimedia.org/wiki/File:Political_rally_modern.jpg (suggested, not guaranteed) -->
+        <img src="images/S2/L02/S2L02_ModernAutocracy.jpg" alt="Modern mass political rally with flags and crowd">
+        <p class="tn-caption">Modern mass rallies can still turn politics into a show of loyalty, power, and belonging.</p>
+      </div>
+    </div>
+    <p class="tn-question">Which crowd do you think felt safer disagreeing with the speaker?</p>
+  </div>
 
   <div class="sm-closing-q">
-    <p>If a government started controlling what you could read online, arresting journalists, and telling you that one group of people was the cause of all your problems, at what point would you recognize it as totalitarianism, and what would you do?</p>
+    <p class="para-standard">If a government started controlling what you could read online, arresting journalists, and telling you that one group of people was the cause of all your problems, at what point would you recognize it as totalitarianism, and what would you do?</p>
+  <p class="para-simple">If a government started controlling what you could read online, arresting journalists, and telling you that one group of people was the cause of all your problems, at what point would you recognize it as totalitarianism, and what would you do?</p>
   </div>
 </section>
 
 <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
 <footer class="site-footer">
-  World History &mdash; Semester 2, Lesson 02 &nbsp;|&nbsp; Rise of Totalitarian Governments
+  WORLD HISTORY ; SEMESTER 2, LESSON 02 &nbsp;|&nbsp; Rise of Totalitarian Governments
 </footer>
 
 </div><!-- end page-wrap -->
@@ -850,6 +980,25 @@
       v.classList.remove('active');
     });
   });
+
+
+  document.getElementById('lexile-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('simplified');
+    this.textContent = document.body.classList.contains('simplified') ? 'STANDARD TEXT' : 'SIMPLIFY TEXT';
+  });
+
+  const tocObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      const link = document.querySelector('.toc-sidebar a[href="#' + id + '"]');
+      if (link) {
+        if (entry.isIntersecting) link.classList.add('active');
+        else link.classList.remove('active');
+      }
+    });
+  }, { threshold: 0.25 });
+  document.querySelectorAll('section[id]').forEach(el => tocObserver.observe(el));
+
 </script>
 </body>
 </html>
