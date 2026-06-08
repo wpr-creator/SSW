@@ -7,20 +7,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Roboto+Slab:wght@500;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --red:        #8d1f1f;
-    --red-dark:   #641414;
-    --red-mid:    #9b2424;
-    --black:      #15171a;
-    --black-soft: #23262b;
-    --gray-dark:  #2b2d31;
-    --gray-mid:   #3e3e3e;
-    --gray-steel: #5a5a5a;
-    --gray-light: #9a9a9a;
-    --off-white:  #ece8df;
-    --cream:      #f2ece0;
-    --paper:      #ddd8cc;
-    --gold:       #d6b45e;
-    --gold-dim:   #8a6c10;
+    --red:        #9f2424;
+    --red-dark:   #6e1717;
+    --red-mid:    #a42a2a;
+    --black:      #111111;
+    --black-soft: #202225;
+    --gray-dark:  #303030;
+    --gray-mid:   #4c4c4c;
+    --gray-steel: #686868;
+    --gray-light: #c8c2b5;
+    --off-white:  #f4efe4;
+    --cream:      #f5f0e6;
+    --paper:      #e6dfd1;
+    --gold:       #d8b24c;
+    --gold-dim:   #8b6f20;
     --vocab-red:  #b03030;
   }
 
@@ -28,19 +28,19 @@
   html { scroll-behavior: smooth; }
 
   body {
-    background-color: #111;
+    background-color: #171717;
     background-image:
       repeating-linear-gradient(
         90deg,
         transparent,
         transparent 80px,
-        rgba(255,255,255,0.015) 80px,
-        rgba(255,255,255,0.015) 81px
+        rgba(255,255,255,0.01) 80px,
+        rgba(255,255,255,0.01) 81px
       );
     font-family: 'Lora', Georgia, serif;
     font-size: 18px;
-    line-height: 1.9;
-    color: var(--black);
+    line-height: 1.85;
+    color: #202020;
   }
 
   .page-wrap {
@@ -76,13 +76,13 @@
     font-weight: 400;
     letter-spacing: 0.26em;
     text-transform: uppercase;
-    color: var(--gray-light);
+    color: #e6d4a7;
     margin-bottom: 20px;
   }
 
   .page-title {
     font-family: 'Oswald', sans-serif;
-    font-size: clamp(46px, 7.5vw, 72px);
+    font-size: clamp(44px, 7vw, 66px);
     font-weight: 700;
     line-height: 1.05;
     color: var(--off-white);
@@ -101,7 +101,7 @@
     font-weight: 600;
     letter-spacing: 0.04em;
     padding: 14px 32px;
-    text-transform: uppercase;
+    text-transform: none;
     max-width: 700px;
     line-height: 1.5;
     clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
@@ -128,7 +128,7 @@
 
   .section-nav a {
     display: inline-block;
-    color: var(--gray-light);
+    color: #eee3cc;
     text-decoration: none;
     font-family: 'Oswald', sans-serif;
     font-size: 12px;
@@ -149,7 +149,7 @@
   /* ─── INTRO ─── */
   .intro-section {
     padding: 48px 44px 38px;
-    background-color: var(--gray-dark);
+    background-color: #25272b;
     color: var(--off-white);
     border-bottom: 4px solid var(--red-dark);
   }
@@ -164,7 +164,7 @@
   }
 
   .intro-section p {
-    color: var(--off-white);
+    color: #f5efe3;
     font-size: 19px;
     line-height: 1.95;
     margin-bottom: 18px;
@@ -175,8 +175,8 @@
     padding: 52px 44px 40px;
   }
 
-  .content-section:nth-child(odd) { background-color: var(--cream); }
-  .content-section:nth-child(even) { background-color: #e4ddd0; }
+  .content-section:nth-child(odd) { background-color: #f5f0e6; }
+  .content-section:nth-child(even) { background-color: #ebe4d6; }
 
   .section-number {
     font-family: 'Oswald', sans-serif;
@@ -193,14 +193,14 @@
     font-weight: 700;
     color: var(--black-soft);
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.025em;
     line-height: 1.15;
     margin-bottom: 26px;
     border-left: 6px solid var(--red);
     padding-left: 18px;
   }
 
-  p { margin-bottom: 20px; color: var(--gray-dark); }
+  p { margin-bottom: 20px; color: #262626; }
 
   .clearfix::after { content: ""; display: table; clear: both; }
 
@@ -304,7 +304,7 @@
   .primary-source {
     margin: 38px 0;
     padding: 28px 32px 28px 36px;
-    background-color: #d8d0c0;
+    background-color: #e4dccd;
     border-left: 7px solid var(--red);
     box-shadow: 4px 4px 18px rgba(0,0,0,0.18);
     position: relative;
@@ -352,7 +352,7 @@
     font-family: 'Oswald', sans-serif;
     font-size: 15px;
     font-weight: 400;
-    color: var(--gray-mid);
+    color: #333;
     letter-spacing: 0.02em;
     border-top: 1px solid var(--gray-steel);
     padding-top: 12px;
@@ -407,8 +407,8 @@
     line-height: 1.65;
   }
 
-  .compare-table tr:nth-child(even) td { background-color: #d8d0c0; }
-  .compare-table tr:nth-child(odd) td  { background-color: #e4ddd0; }
+  .compare-table tr:nth-child(even) td { background-color: #e4dccd; }
+  .compare-table tr:nth-child(odd) td  { background-color: #f0e8d8; }
 
   .compare-table .row-label {
     font-family: 'Oswald', sans-serif;
@@ -547,28 +547,28 @@
   .brain-break { font-family: 'Roboto Slab', serif; margin: 44px -50px; padding: 36px 44px; position: relative; overflow: hidden; }
   .brain-break p, .brain-break span, .brain-break figcaption { font-family: 'Roboto Slab', serif; }
   .bb-label { display: block; font-size: 11px; font-weight: 900; letter-spacing: 0.45em; text-transform: uppercase; margin-bottom: 14px; opacity: 0.85; }
-  .bb-text { font-size: 22px; font-weight: 700; line-height: 1.65; margin: 0; }
-  .dyk-break { background: #102d74; color: #fff8c9; border-left: 7px solid #f7c600; }
-  .dyk-break .bb-label { color: #f7c600; }
-  .ff-break { background: #0b0b0b; color: #f4eedf; padding: 36px 40px; margin: 0 -50px 44px; border-top: 5px solid var(--red); border-bottom: 5px solid var(--red); text-align: center; box-shadow: inset 0 0 0 2px #111; }
-  .ff-break .bb-label { text-align: center; margin-bottom: 24px; color: var(--red-dark); }
+  .bb-text { font-size: 21px; font-weight: 500; line-height: 1.65; margin: 0; }
+  .dyk-break { background: #16365f; color: #fff6d7; border-left: 7px solid #f2c94c; }
+  .dyk-break .bb-label { color: #ffe083; }
+  .ff-break { background: #151515; color: #f4eedf; padding: 36px 40px; margin: 0 -50px 44px; border-top: 5px solid var(--red); border-bottom: 5px solid var(--red); text-align: center; box-shadow: inset 0 0 0 2px #111; }
+  .ff-break .bb-label { text-align: center; margin-bottom: 24px; color: #f0ca63; }
   .ff-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 18px; }
   .ff-item { text-align: center; padding: 8px 10px; flex: 1 1 120px; }
-  .ff-number { display: block; font-size: 46px; font-weight: 900; color: var(--red); line-height: 1; margin-bottom: 8px; }
-  .ff-desc { display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #111; max-width: 150px; margin: 0 auto; line-height: 1.35; font-weight: 900; }
-  .as-break { background: #351217; color: var(--off-white); padding: 44px 50px; margin: 44px -50px; border-top: 4px solid #f7c600; border-bottom: 4px solid #f7c600; text-align: center; }
+  .ff-number { display: block; font-size: 46px; font-weight: 900; color: #f0ca63; line-height: 1; margin-bottom: 8px; }
+  .ff-desc { display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #f4eedf; max-width: 150px; margin: 0 auto; line-height: 1.35; font-weight: 900; }
+  .as-break { background: #2b1717; color: #f8f0df; padding: 44px 50px; margin: 44px -50px; border-top: 4px solid #f7c600; border-bottom: 4px solid #f7c600; text-align: center; }
   .as-break .bb-label { color: #f7c600; }
   .as-image { max-width: 100%; display: block; margin: 0 auto 16px; border: 3px solid rgba(247,198,0,0.65); box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
-  .as-caption { font-style: normal; font-size: 13px; color: #d8d0c0; line-height: 1.5; margin-bottom: 28px; display: block; }
-  .as-fact { font-size: 22px; font-weight: 700; color: var(--off-white); line-height: 1.6; max-width: 620px; margin: 0 auto; text-align: center; }
-  .tn-break { background: #123324; color: var(--off-white); padding: 36px 50px; margin: 30px -50px 0; border-top: 4px solid var(--gold); border-bottom: 4px solid var(--gold); }
+  .as-caption { font-style: normal; font-size: 13px; color: #eee1c5; line-height: 1.5; margin-bottom: 28px; display: block; }
+  .as-fact { font-size: 22px; font-weight: 700; color: #fff7e6; line-height: 1.6; max-width: 620px; margin: 0 auto; text-align: center; }
+  .tn-break { background: #173426; color: #f7f0df; padding: 36px 50px; margin: 30px -50px 0; border-top: 4px solid var(--gold); border-bottom: 4px solid var(--gold); }
   .tn-break .bb-label { color: var(--gold); text-align: center; display: block; margin-bottom: 20px; }
   .tn-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 20px; }
   .tn-item { text-align: center; }
   .tn-era-label { display: block; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; font-weight: 900; }
   .tn-item img { width: 100%; display: block; border: 2px solid rgba(200,160,32,0.65); filter: grayscale(10%) contrast(105%); }
-  .tn-caption { font-size: 12px; font-style: italic; color: #d8d0c0; margin-top: 8px; line-height: 1.4; font-weight: 700; }
-  .tn-payoff { font-size: clamp(22px, 3.5vw, 30px); font-weight: 900; line-height: 1.35; text-align: center; color: var(--gold); margin-bottom: 28px; max-width: 680px; margin-left: auto; margin-right: auto; } .tn-closing { font-size: 20px; font-weight: 900; text-align: center; color: var(--off-white); margin-top: 24px; line-height: 1.5; border-top: 1px solid rgba(214,180,94,0.35); padding-top: 20px; }
+  .tn-caption { font-size: 12px; font-style: italic; color: #eee1c5; margin-top: 8px; line-height: 1.4; font-weight: 700; }
+  .tn-payoff { font-size: clamp(22px, 3.5vw, 30px); font-weight: 900; line-height: 1.35; text-align: center; color: #f0ca63; margin-bottom: 28px; max-width: 680px; margin-left: auto; margin-right: auto; } .tn-closing { font-size: 20px; font-weight: 800; text-align: center; color: #fff7e6; margin-top: 24px; line-height: 1.5; border-top: 1px solid rgba(214,180,94,0.35); padding-top: 20px; }
   @media (max-width: 620px) { .brain-break, .ff-break, .as-break { padding: 28px 22px; margin: 36px 0; } .tn-pair { grid-template-columns: 1fr; } .tn-break { padding: 28px 22px; margin: 30px 0 0; } .as-fact { font-size: 18px; } }
 
   /* ─── RESPONSIVE ─── */
@@ -581,6 +581,148 @@
     .compare-table { font-size: 13px; }
     .compare-table th, .compare-table td { padding: 9px 10px; }
   }
+
+/* ─── FINAL CONTRAST SAFETY OVERRIDES ─── */
+/* Light content areas: force readable dark text */
+.content-section,
+.content-section p,
+.content-section li,
+.content-section td,
+.content-section .ps-narrator,
+.content-section .ps-questions li {
+  color: #1f1f1f !important;
+}
+
+/* Dark content areas: force readable light text */
+.site-header,
+.site-header *,
+.intro-section,
+.intro-section *,
+.toggle-zone,
+.toggle-zone *,
+.section-nav,
+.section-nav *,
+.toc-sidebar,
+.toc-sidebar *,
+.still-matters,
+.still-matters *,
+.site-footer,
+.site-footer * {
+  color: #f4efe4 !important;
+}
+
+/* Keep accent labels readable on dark backgrounds */
+.course-label,
+.eq-label,
+.toc-label,
+.section-nav a:hover,
+.bb-label,
+.tn-era-label,
+.ff-number,
+.tn-payoff {
+  color: #f0ca63 !important;
+}
+
+/* Brain breaks: never allow inherited black text on dark panels */
+.brain-break,
+.brain-break p,
+.brain-break span,
+.brain-break figcaption,
+.brain-break .bb-text,
+.brain-break .as-fact,
+.brain-break .tn-closing,
+.brain-break .tn-caption,
+.brain-break .as-caption {
+  color: inherit !important;
+}
+
+/* Specific brain-break contrast */
+.dyk-break,
+.dyk-break p,
+.dyk-break span,
+.dyk-break figcaption {
+  color: #fff6d7 !important;
+}
+.dyk-break .bb-label {
+  color: #ffe083 !important;
+}
+
+.ff-break,
+.ff-break p,
+.ff-break span,
+.ff-break figcaption,
+.ff-break .ff-desc {
+  color: #f4eedf !important;
+}
+.ff-break .ff-number,
+.ff-break .bb-label {
+  color: #f0ca63 !important;
+}
+
+.as-break,
+.as-break p,
+.as-break span,
+.as-break figcaption,
+.as-break .as-fact,
+.as-break .as-caption {
+  color: #fff7e6 !important;
+}
+.as-break .bb-label {
+  color: #f0ca63 !important;
+}
+
+.tn-break,
+.tn-break p,
+.tn-break span,
+.tn-break figcaption,
+.tn-break .tn-closing,
+.tn-break .tn-caption {
+  color: #fff7e6 !important;
+}
+.tn-break .bb-label,
+.tn-break .tn-era-label,
+.tn-break .tn-payoff {
+  color: #f0ca63 !important;
+}
+
+/* Dark pullquote/source boxes */
+.primary-source {
+  background: #e6dece !important;
+}
+.primary-source,
+.primary-source * {
+  color: #1f1f1f !important;
+}
+.primary-source .ps-label,
+.primary-source .ps-questions li span {
+  color: #9f2424 !important;
+}
+
+/* Tables remain dark header / light body */
+.compare-table th,
+.compare-table th * {
+  color: #f4efe4 !important;
+}
+.compare-table td,
+.compare-table td * {
+  color: #1f1f1f !important;
+}
+
+/* Captions on light content */
+.content-section figcaption {
+  color: #4a4a4a !important;
+}
+
+/* Vocab remains visible */
+.vocab,
+.vocab-red {
+  color: #b03030 !important;
+}
+.vocab .tip {
+  color: #ffffff !important;
+  background: #111111 !important;
+}
+
 </style>
 </head>
 <body>
