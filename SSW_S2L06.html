@@ -1,74 +1,628 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSW — S2 L06: Cold War Conflicts Around the World</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: #0f1729;
-      color: #f8f6f2;
-      font-family: Georgia, "Times New Roman", serif;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-    }
-    a.back {
-      position: fixed;
-      top: 1.25rem;
-      left: 1.25rem;
-      color: #94a3b8;
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.02em;
-    }
-    a.back:hover { color: #f8f6f2; }
-    .badge {
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #64748b;
-      margin-bottom: 1.25rem;
-    }
-    h1 {
-      font-size: clamp(1.75rem, 4vw, 2.75rem);
-      font-weight: 400;
-      line-height: 1.25;
-      max-width: 52rem;
-      margin-bottom: 1.5rem;
-    }
-    .eq {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      font-style: italic;
-      color: #cbd5e1;
-      max-width: 42rem;
-      line-height: 1.65;
-      margin-bottom: 3rem;
-    }
-    .eq.final-eq { font-style: normal; color: #94a3b8; }
-    .banner {
-      display: inline-block;
-      padding: 1.1rem 3.25rem;
-      border: 2px solid #334155;
-      background: linear-gradient(180deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 41, 0.95) 100%);
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #e2e8f0;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSW S2L06 — COLD WAR CONFLICTS AROUND THE WORLD</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#c01818;
+  --red-dark:#8a0e0e;
+  --black:#0a0a0a;
+  --charcoal:#242424;
+  --gray:#585858;
+  --pale:#ece8e0;
+  --cream:#f2eee6;
+  --gold:#d4a820;
+  --blue:#173a70;
+  --ussr:#8a0e0e;
+  --vocab:#b03030;
+  --green:#044d37;
+  --lime:#d7ff3f;
+  --purple:#32134d;
+  --pink:#ff4fd8;
+  --cyan:#1bd6ff;
+  --orange:#ff8a21;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:radial-gradient(ellipse at top,#252525 0%,#070707 70%);
+  font-family:'Atkinson Hyperlegible',Arial,sans-serif;
+  font-size:18px;
+  line-height:1.85;
+  color:var(--charcoal);
+}
+.page-wrap{
+  max-width:920px;
+  margin:0 auto;
+  background:var(--cream);
+  box-shadow:0 0 100px rgba(0,0,0,.95);
+  border-left:6px solid var(--black);
+  border-right:6px solid var(--black);
+}
+.site-header{
+  position:relative;
+  min-height:455px;
+  overflow:hidden;
+  background:var(--black);
+  display:flex;
+  align-items:center;
+  text-align:center;
+}
+.header-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.34;
+  filter:grayscale(.7) contrast(1.15);
+}
+.site-header:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.15),rgba(0,0,0,.72) 55%,rgba(0,0,0,.96));
+}
+.header-inner{
+  position:relative;
+  z-index:2;
+  max-width:820px;
+  margin:0 auto;
+  padding:56px 34px 50px;
+}
+.course-label{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:18px;
+}
+.page-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(52px,8vw,80px);
+  font-weight:800;
+  line-height:.98;
+  color:#fff;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  text-shadow:2px 5px 22px rgba(0,0,0,.9);
+  margin-bottom:30px;
+}
+.eq-banner{
+  display:inline-block;
+  background:rgba(192,24,24,.96);
+  color:#fff;
+  border:3px solid var(--gold);
+  border-left-width:8px;
+  border-right-width:8px;
+  padding:18px 28px;
+  max-width:760px;
+  font-weight:700;
+  font-size:20px;
+  line-height:1.45;
+}
+.eq-label{
+  display:block;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:#ffe58a;
+  margin-bottom:8px;
+}
+.section-nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  background:#151515;
+  border-bottom:4px solid var(--red);
+}
+.section-nav a{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#c8c8c8;
+  text-decoration:none;
+  padding:14px 12px;
+  border-bottom:4px solid transparent;
+  margin-bottom:-4px;
+}
+.section-nav a:hover{color:#fff;border-bottom-color:var(--gold)}
+#lexile-toggle{
+  display:block;
+  margin:20px auto 28px;
+  padding:10px 24px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  cursor:pointer;
+  border:2px solid var(--red);
+  background:transparent;
+  color:var(--red);
+  transition:background .2s,color .2s;
+}
+#lexile-toggle:hover{background:var(--red);color:#fff}
+.para-simple{display:none}
+body.simplified .para-standard{display:none}
+body.simplified .para-simple{display:block}
+.toc-sidebar{
+  position:fixed;
+  right:calc(50% - 590px);
+  top:50%;
+  transform:translateY(-50%);
+  width:155px;
+  padding:14px 12px;
+  font-family:'Barlow Condensed',sans-serif;
+  z-index:50;
+  background:rgba(10,10,10,.9);
+  border-left:2px solid rgba(212,168,32,.45);
+}
+.toc-sidebar .toc-label{
+  display:block;
+  font-size:10px;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:10px;
+}
+.toc-sidebar a{
+  display:block;
+  color:#c8c8c8;
+  text-decoration:none;
+  padding:3px 0;
+  font-size:11px;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+.toc-sidebar a.active,.toc-sidebar a:hover{color:#fff;font-weight:700}
+main{max-width:820px;margin:0 auto;padding:0 28px 68px}
+.intro-section{padding:48px 0 30px}
+.intro-section p{font-size:19px;line-height:1.9;margin-bottom:18px}
+.content-section{padding:50px 0 28px;border-top:3px double rgba(88,88,88,.45)}
+.section-kicker{
+  display:block;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  color:var(--red);
+  margin-bottom:8px;
+}
+.section-heading{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(36px,5vw,48px);
+  line-height:1.05;
+  font-weight:800;
+  color:var(--black);
+  text-transform:uppercase;
+  border-left:7px solid var(--red);
+  padding-left:16px;
+  margin-bottom:26px;
+}
+p{margin-bottom:20px}
+.real-world{background:#dedad0;border-left:5px solid var(--red);padding:17px 21px;margin:30px 0;font-weight:700}
+.vocab{color:var(--vocab);text-decoration:underline dotted var(--vocab);cursor:help;position:relative;font-weight:700}
+.vocab-red{color:var(--vocab);font-weight:700}
+.vocab .tip{
+  display:none;
+  position:absolute;
+  bottom:125%;
+  left:50%;
+  transform:translateX(-50%);
+  background:#0a0a1e;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:4px;
+  font-size:14px;
+  line-height:1.5;
+  z-index:10;
+  font-style:normal;
+  font-weight:400;
+  pointer-events:none;
+  max-width:280px;
+  white-space:normal;
+  font-family:'Atkinson Hyperlegible',Arial,sans-serif;
+  box-shadow:0 4px 18px rgba(0,0,0,.45);
+  border-left:3px solid var(--red);
+}
+.vocab:hover .tip,.vocab.active .tip{display:block}
+figure{margin:32px 0}
+figure img{width:100%;display:block;border:3px solid var(--gray);box-shadow:0 8px 24px rgba(0,0,0,.28);filter:grayscale(.15) contrast(1.08)}
+figcaption{font-size:13px;font-style:italic;color:#5b5b5b;margin-top:8px;line-height:1.45}
+.img-right{float:right;width:42%;margin:6px 0 20px 28px}
+.img-left{float:left;width:42%;margin:6px 28px 20px 0}
+.img-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}
+.img-pair figure{margin:0}
+.clearfix:after{content:"";display:table;clear:both}
+.policy-grid,.proxy-grid,.collapse-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0}
+.policy-card,.proxy-card,.collapse-card{padding:22px 24px;color:#fff;border-top:5px solid var(--gold)}
+.us-card{background:var(--blue)}
+.ussr-card{background:var(--ussr)}
+.dark-card{background:var(--charcoal)}
+.policy-card h3,.proxy-card h3,.collapse-card h3{
+  font-family:'Barlow Condensed',sans-serif;
+  color:#ffe58a;
+  font-size:24px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+.policy-card p,.proxy-card p,.collapse-card p{color:#fff;font-size:16px;line-height:1.7;margin:0}
+.timeline{border-left:4px solid var(--red);margin:30px 0 34px 18px;padding-left:28px}
+.timeline-event{margin-bottom:24px;position:relative}
+.timeline-event:before{content:"";position:absolute;left:-38px;top:6px;width:14px;height:14px;background:var(--red);border:2px solid var(--cream);border-radius:50%;box-shadow:0 0 0 2px var(--red)}
+.timeline-date{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:var(--red);letter-spacing:.1em}
+.timeline-event p{font-size:16px;line-height:1.7;margin-bottom:0}
+.primary-source{background:#dedad0;border-left:7px solid var(--red);padding:30px 34px;margin:38px 0;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.ps-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.ps-quote{font-size:22px;font-style:italic;line-height:1.65;color:var(--black);margin-bottom:14px}
+.ps-attribution{font-size:13px;font-style:italic;color:#555;margin-bottom:12px}
+.ps-narrator{border-top:1px solid #b8b4ac;padding-top:12px;font-size:15px;line-height:1.6;font-weight:700}
+.ps-questions{background:#e8e4dc;border:1px solid #c8c4bc;padding:22px 26px;margin-bottom:38px}
+.ps-questions p{font-size:17px;margin-bottom:12px}
+.brain-break{font-family:'Roboto Slab',serif;margin:44px -50px;padding:36px 50px;position:relative;overflow:hidden}
+.bb-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.85}
+.bb-text{font-family:'Roboto Slab',serif;font-size:22px;font-weight:500;line-height:1.65;margin:0}
+.dyk-break{background:var(--green);color:#fff;border-left:6px solid var(--lime)}
+.dyk-break .bb-label{color:var(--lime)}
+.dyk-break p,.dyk-break span{color:#fff}
+.ff-break{background:#090909;color:#fff;padding:36px 40px;margin:0 -50px 44px;border-top:3px solid var(--orange);border-bottom:3px solid var(--orange);text-align:center}
+.ff-break .bb-label{text-align:center;margin-bottom:24px;color:var(--orange)}
+.ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px}
+.ff-item{text-align:center;padding:8px 12px}
+.ff-number{display:block;font-family:'Roboto Slab',serif;font-size:52px;font-weight:700;color:var(--orange);line-height:1;margin-bottom:8px}
+.ff-desc{display:block;font-family:'Roboto Slab',serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#ffe8b7;max-width:130px;margin:0 auto;line-height:1.4}
+.as-break{background:var(--purple);color:#fff;padding:44px 50px;margin:44px -50px;border-top:3px solid var(--pink);border-bottom:3px solid var(--pink);text-align:center}
+.as-break .bb-label{color:var(--pink)}
+.as-image{max-width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(255,79,216,.75);box-shadow:0 8px 32px rgba(0,0,0,.55);filter:none}
+.as-caption{font-family:'Roboto Slab',serif;font-style:normal;font-size:13px;color:#ffe8fb;line-height:1.5;margin-bottom:28px;display:block}
+.as-fact{font-family:'Roboto Slab',serif;font-size:22px;font-weight:500;color:#fff;line-height:1.6;max-width:700px;margin:0 auto;text-align:center}
+.tn-break{background:#0d2342;color:#fff;padding:36px 50px;margin:30px -50px 0}
+.tn-break .bb-label{color:var(--cyan);text-align:center;display:block;margin-bottom:20px}
+.tn-payoff{font-family:'Roboto Slab',serif;font-size:clamp(22px,3.5vw,30px);font-weight:700;line-height:1.35;text-align:center;color:var(--cyan);margin-bottom:28px;max-width:720px;margin-left:auto;margin-right:auto}
+.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
+.tn-item{text-align:center}
+.tn-era-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px;font-weight:700}
+.tn-item img{width:100%;display:block;border:2px solid rgba(27,214,255,.65);filter:none}
+.tn-caption{font-family:'Roboto Slab',serif;font-size:12px;font-style:italic;color:#d9f7ff;margin-top:8px;line-height:1.4}
+.tn-closing{font-family:'Roboto Slab',serif;font-size:20px;font-weight:500;text-align:center;color:#fff;margin-top:24px;line-height:1.5;border-top:1px solid rgba(27,214,255,.35);padding-top:20px}
+footer{background:#050505;color:#aaa;text-align:center;padding:24px 30px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.24em;text-transform:uppercase;border-top:5px solid var(--red)}
+@media(max-width:1100px){.toc-sidebar{display:none}}
+@media(max-width:880px){.page-wrap{border:0}main{padding:0 22px 50px}.header-inner{padding:44px 24px 42px}.img-left,.img-right{float:none;width:100%;margin:24px 0}.img-pair,.policy-grid,.proxy-grid,.collapse-grid,.tn-pair{grid-template-columns:1fr}.brain-break,.ff-break,.as-break{margin:36px 0;padding:28px 22px}.tn-break{padding:28px 22px;margin:30px 0 0}.section-nav a{font-size:11px;padding:11px 8px}}
+@media(max-width:600px){.page-title{font-size:42px}.section-heading{font-size:31px}.bb-text,.as-fact{font-size:18px}}
+</style>
 </head>
 <body>
-  <a class="back" href="index.html">&larr; Course Home</a>
-  <p class="badge">World History · Semester 2 · Day 6</p>
-  <h1>Cold War Conflicts Around the World</h1>
-  <p class="eq">How did the U.S.-Soviet rivalry drag other countries into real wars?</p>
-  <div class="banner">Coming Soon</div>
+<div class="page-wrap">
+<header class="site-header">
+  <!--
+    FILENAME: S2L06_Header_KoreanWarRefugees.jpg
+    PLACE IN: images/S2/L06/
+    FIND: Korean War refugees or soldiers, 1950-1953; shows the human cost of the first hot war of the Cold War
+    SEARCH: Korean War refugees 1950 Wikimedia Commons National Archives
+    LINK: https://commons.wikimedia.org/wiki/Category:Korean_War_refugees (suggested, not guaranteed)
+  -->
+  <img class="header-bg" src="images/S2/L06/S2L06_Header_KoreanWarRefugees.jpg" alt="Korean War refugees during the Cold War">
+  <div class="header-inner">
+    <div class="course-label">WORLD HISTORY — SEMESTER 2, LESSON 06</div>
+    <h1 class="page-title">COLD WAR CONFLICTS AROUND THE WORLD</h1>
+    <div class="eq-banner"><span class="eq-label">ESSENTIAL QUESTION</span>How did the U.S.-Soviet rivalry drag other countries into real wars?</div>
+  </div>
+</header>
+
+<nav class="section-nav" aria-label="Page sections">
+  <a href="#containment">CONTAINMENT</a>
+  <a href="#hot-wars">HOT WARS</a>
+  <a href="#soviet-control">SOVIET CONTROL</a>
+  <a href="#proxy-collapse">PROXY WARS</a>
+  <a href="#primary-source-moment">PRIMARY SOURCE</a>
+  <a href="#then-now">THEN AND NOW</a>
+</nav>
+
+<button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
+
+<aside class="toc-sidebar">
+  <span class="toc-label">ON THIS PAGE</span>
+  <a href="#containment">CONTAINMENT</a>
+  <a href="#hot-wars">HOT WARS</a>
+  <a href="#soviet-control">SOVIET CONTROL</a>
+  <a href="#proxy-collapse">PROXY WARS</a>
+  <a href="#primary-source-moment">SOURCE</a>
+  <a href="#then-now">THEN AND NOW</a>
+</aside>
+
+<main>
+<section class="intro-section">
+  <p class="para-standard">In June 1950, families in Korea woke up to a war that had started because two superpowers were staring at each other from opposite sides of the world. North Korean forces crossed the 38th parallel and attacked South Korea. Soon, the United States, the United Nations, China, and the Soviet Union were all part of the crisis.</p>
+  <p class="para-simple">In June 1950, families in Korea woke up to war. North Korea crossed the 38th parallel and attacked South Korea. Soon, the United States, the United Nations, China, and the Soviet Union were involved.</p>
+  <p class="para-standard">This is how the Cold War worked. The U.S. and Soviet Union usually avoided fighting each other directly. But their rivalry pulled other countries into wars, revolutions, coups, invasions, and long struggles that killed millions.</p>
+  <p class="para-simple">This is how the Cold War worked. The U.S. and Soviet Union usually did not fight each other directly. But other countries were pulled into real wars. Millions of people died.</p>
+</section>
+
+<section class="content-section clearfix" id="containment">
+  <span class="section-kicker">CHAPTER ONE</span>
+  <h2 class="section-heading">CONTAINMENT BECOMES A GLOBAL PROMISE</h2>
+  <!--
+    FILENAME: S2L06_TrumanDoctrineSpeech.jpg
+    PLACE IN: images/S2/L06/
+    FIND: President Harry Truman addressing Congress about the Truman Doctrine, 1947; shows U.S. commitment to contain communism
+    SEARCH: Truman Doctrine speech 1947 Congress Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/Category:Harry_S._Truman_in_1947 (suggested, not guaranteed)
+  -->
+  <figure class="img-right">
+    <img src="images/S2/L06/S2L06_TrumanDoctrineSpeech.jpg" alt="President Truman speaking to Congress">
+    <figcaption>President Harry Truman asked Congress to support Greece and Turkey in 1947. This became the Truman Doctrine. Wikimedia Commons.</figcaption>
+  </figure>
+  <p class="para-standard">In 1947, President Harry Truman announced the <span class="vocab">Truman Doctrine<span class="tip">U.S. promise to help countries resist communism.</span></span>. The United States would support countries threatened by communist takeover. This became a major part of <span class="vocab">containment<span class="tip">Stopping communism from spreading farther.</span></span>, the policy of stopping Soviet power from spreading.</p>
+  <p class="para-simple">In 1947, President Harry Truman announced the <span class="vocab-red">Truman Doctrine</span>. The United States would help countries threatened by communism. This was part of <span class="vocab-red">containment</span>. Containment meant stopping communism from spreading.</p>
+  <p class="para-standard">The U.S. also used money as a weapon against communism. The <span class="vocab">Marshall Plan<span class="tip">U.S. money to rebuild Western Europe.</span></span> gave about $13 billion to rebuild Western Europe. U.S. leaders believed poor and hungry countries were more likely to support communist parties, so recovery became part of Cold War strategy.</p>
+  <p class="para-simple">The U.S. also used money to fight communism. The <span class="vocab-red">Marshall Plan</span> gave about $13 billion to rebuild Western Europe. U.S. leaders thought poor countries might turn to communism. Rebuilding Europe became part of Cold War strategy.</p>
+  <!--
+    FILENAME: S2L06_MarshallPlanPoster.jpg
+    PLACE IN: images/S2/L06/
+    FIND: Marshall Plan poster or European Recovery Program poster, 1948; shows economic aid as Cold War strategy
+    SEARCH: Marshall Plan poster 1948 Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/File:Marshall_Plan_poster.jpg (suggested, not guaranteed)
+  -->
+  <figure>
+    <img src="images/S2/L06/S2L06_MarshallPlanPoster.jpg" alt="Marshall Plan poster">
+    <figcaption>Marshall Plan poster, late 1940s. Rebuilding Europe also helped the U.S. contain communism. Wikimedia Commons.</figcaption>
+  </figure>
+  <p class="para-standard">In 1949, the U.S. and its allies created <span class="vocab">NATO<span class="tip">Military alliance led by the United States.</span></span>, a military alliance. The Soviet Union later answered with the <span class="vocab">Warsaw Pact<span class="tip">Military alliance led by the Soviet Union.</span></span>. By the 1950s, the world was divided into rival camps with weapons, money, and armies behind them.</p>
+  <p class="para-simple">In 1949, the U.S. and its allies created <span class="vocab-red">NATO</span>. NATO was a military alliance. The Soviet Union later created the <span class="vocab-red">Warsaw Pact</span>. By the 1950s, the world was split into rival camps.</p>
+  <p class="real-world para-standard">Real-world connection: When powerful countries promise to defend allies everywhere, local conflicts can turn into global crises.</p>
+  <p class="real-world para-simple">Real-world connection: Local conflicts can grow when powerful countries promise to help allies.</p>
+</section>
+
+<div class="brain-break dyk-break">
+  <span class="bb-label">DID YOU KNOW</span>
+  <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
+    <div style="flex:1;min-width:200px;">
+      <!--
+        FILENAME: S2L06_DYK_CheckpointCharlie.jpg
+        PLACE IN: images/S2/L06/
+        FIND: Checkpoint Charlie sign in Berlin, "You are leaving the American Sector"; physical symbol of Cold War division
+        SEARCH: Checkpoint Charlie sign You are leaving the American Sector Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/File:Checkpoint_Charlie_sign.jpg (suggested, not guaranteed)
+      -->
+      <img src="images/S2/L06/S2L06_DYK_CheckpointCharlie.jpg" alt="Checkpoint Charlie sign" style="width:100%;display:block;border:3px solid var(--lime);box-shadow:0 4px 18px rgba(0,0,0,.4);">
+      <p style="font-size:12px;margin-top:8px;opacity:.85;font-family:'Roboto Slab',serif;">Checkpoint Charlie sign in Berlin.</p>
+    </div>
+    <p class="bb-text" style="flex:1;min-width:200px;">One Cold War border sign became a tourist photo spot, but its original message was deadly serious. It told people they were leaving the American sector of Berlin and entering a world where the wrong step could lead to arrest, interrogation, or a bullet.</p>
+  </div>
+</div>
+
+<div class="brain-break ff-break">
+  <span class="bb-label">FAST FACTS</span>
+  <div class="ff-grid">
+    <div class="ff-item"><span class="ff-number">$13B</span><span class="ff-desc">MARSHALL PLAN AID</span></div>
+    <div class="ff-item"><span class="ff-number">3M</span><span class="ff-desc">KOREAN WAR DEAD</span></div>
+    <div class="ff-item"><span class="ff-number">1956</span><span class="ff-desc">HUNGARY CRUSHED</span></div>
+    <div class="ff-item"><span class="ff-number">1979</span><span class="ff-desc">AFGHAN WAR BEGINS</span></div>
+  </div>
+</div>
+
+<section class="content-section clearfix" id="hot-wars">
+  <span class="section-kicker">CHAPTER TWO</span>
+  <h2 class="section-heading">THE COLD WAR TURNS HOT IN ASIA</h2>
+  <p class="para-standard">In 1949, the Chinese Civil War ended with Mao Zedong's communist victory. Mao created the People's Republic of China. To U.S. leaders, the largest country on earth had become communist, and that made the Cold War feel much bigger and more dangerous.</p>
+  <p class="para-simple">In 1949, Mao Zedong won the Chinese Civil War. He created the People's Republic of China. U.S. leaders were shocked. The largest country on earth had become communist.</p>
+  <!--
+    FILENAME: S2L06_MaoPRC1949.jpg
+    PLACE IN: images/S2/L06/
+    FIND: Mao Zedong proclaiming the People's Republic of China, October 1, 1949; shows largest country becoming communist
+    SEARCH: Mao proclaiming People's Republic of China 1949 Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/Category:Proclamation_of_the_People%27s_Republic_of_China (suggested, not guaranteed)
+  -->
+  <figure class="img-left">
+    <img src="images/S2/L06/S2L06_MaoPRC1949.jpg" alt="Mao Zedong proclaiming the People's Republic of China">
+    <figcaption>Mao Zedong proclaimed the People's Republic of China in 1949. Wikimedia Commons.</figcaption>
+  </figure>
+  <p class="para-standard">One year later, the <span class="vocab">Korean War<span class="tip">War between communist North Korea and U.S.-backed South Korea.</span></span> began. North Korea invaded South Korea in 1950. The <span class="vocab">United Nations<span class="tip">World organization created after World War II.</span></span>, led mostly by the United States, defended South Korea. China later joined on North Korea's side.</p>
+  <p class="para-simple">One year later, the <span class="vocab-red">Korean War</span> began. North Korea invaded South Korea in 1950. The <span class="vocab-red">United Nations</span>, led mostly by the United States, defended South Korea. China later joined North Korea's side.</p>
+  <!--
+    FILENAME: S2L06_KoreanWarRefugees.jpg
+    PLACE IN: images/S2/L06/
+    FIND: Korean War refugees fleeing, 1950; shows human cost of the first hot war of the Cold War
+    SEARCH: Korean War refugees 1950 National Archives Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/Category:Korean_War_refugees (suggested, not guaranteed)
+  -->
+  <figure>
+    <img src="images/S2/L06/S2L06_KoreanWarRefugees.jpg" alt="Korean War refugees">
+    <figcaption>Korean civilians fleeing during the Korean War. The war killed millions of Koreans and Chinese and about 36,000 Americans. Wikimedia Commons / National Archives.</figcaption>
+  </figure>
+  <p class="para-standard">The war ended in 1953 at almost the same place it began: the 38th parallel. That made it a stalemate. About 36,000 Americans died, and an estimated 3 million Korean and Chinese people died. The Cold War had turned into a real war for the people living there.</p>
+  <p class="para-simple">The war ended in 1953 near the place it began: the 38th parallel. That made it a stalemate. About 36,000 Americans died. Around 3 million Korean and Chinese people died.</p>
+</section>
+
+<section class="content-section clearfix" id="soviet-control">
+  <span class="section-kicker">CHAPTER THREE</span>
+  <h2 class="section-heading">REVOLUTIONS INSIDE THE SOVIET SPHERE</h2>
+  <p class="para-standard">The Soviet Union controlled many Eastern European countries after World War II. These countries were called <span class="vocab">satellite states<span class="tip">Countries controlled by a stronger nearby power.</span></span>. They had communist governments that followed Moscow's orders, even when many people wanted more freedom.</p>
+  <p class="para-simple">After World War II, the Soviet Union controlled many Eastern European countries. These were called <span class="vocab-red">satellite states</span>. They had communist governments that followed Moscow. Many people wanted more freedom.</p>
+  <p class="para-standard">In 1956, protests broke out in Poland and Hungary. In Hungary, people demanded free elections and an end to Soviet control. Soviet tanks entered Budapest and crushed the uprising. Thousands were killed, and many more fled as refugees.</p>
+  <p class="para-simple">In 1956, protests happened in Poland and Hungary. In Hungary, people wanted free elections and less Soviet control. Soviet tanks entered Budapest. Thousands were killed. Many people became refugees.</p>
+  <!--
+    FILENAME: S2L06_HungarianRevolution1956.jpg
+    PLACE IN: images/S2/L06/
+    FIND: Soviet tank or street fighting during Hungarian Revolution, Budapest, 1956; shows Soviet crackdown
+    SEARCH: Hungarian Revolution 1956 Soviet tank Budapest Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/Category:Hungarian_Revolution_of_1956 (suggested, not guaranteed)
+  -->
+  <figure class="img-right">
+    <img src="images/S2/L06/S2L06_HungarianRevolution1956.jpg" alt="Hungarian Revolution and Soviet tanks in Budapest">
+    <figcaption>Soviet tanks crushed the Hungarian Revolution in Budapest, 1956. Wikimedia Commons.</figcaption>
+  </figure>
+  <p class="para-standard">In 1968, Czechoslovakia tried to create "socialism with a human face." This reform movement became known as the Prague Spring. It allowed more speech and more openness. The Soviet Union invaded and ended the experiment.</p>
+  <p class="para-simple">In 1968, Czechoslovakia tried to reform communism. This was called the Prague Spring. People had more speech and openness. The Soviet Union invaded and ended it.</p>
+  <!--
+    FILENAME: S2L06_PragueSpring1968.jpg
+    PLACE IN: images/S2/L06/
+    FIND: Soviet tanks in Prague during the invasion of Czechoslovakia, 1968; shows Prague Spring crushed
+    SEARCH: Prague Spring 1968 Soviet tanks Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/Category:Warsaw_Pact_invasion_of_Czechoslovakia (suggested, not guaranteed)
+  -->
+  <figure>
+    <img src="images/S2/L06/S2L06_PragueSpring1968.jpg" alt="Soviet tanks in Prague during the Prague Spring">
+    <figcaption>Soviet-led forces entered Czechoslovakia in 1968 and ended the Prague Spring. Wikimedia Commons.</figcaption>
+  </figure>
+  <p class="para-standard">These uprisings showed a major Cold War truth: Soviet power looked strong from the outside, but many people inside the system wanted out. The Soviet Union could control countries with tanks, but that did not mean people accepted Soviet rule in their hearts.</p>
+  <p class="para-simple">These uprisings showed an important truth. Soviet power looked strong. But many people inside the system wanted freedom. Tanks could control streets, but not people's beliefs.</p>
+</section>
+
+<div class="brain-break as-break">
+  <span class="bb-label">ART SPOTLIGHT</span>
+  <figure>
+    <!--
+      FILENAME: S2L06_ArtSpotlight_KoreaUNPoster.jpg
+      PLACE IN: images/S2/L06/
+      FIND: Specific Korean War poster "Help Korea!" or United Nations Korean War aid poster, early 1950s; shows how the war was sold as a global emergency
+      SEARCH: Korean War United Nations poster Help Korea Wikimedia Commons Library of Congress
+      LINK: https://www.loc.gov/pictures/search/?q=Korean%20War%20poster%20United%20Nations (suggested, not guaranteed)
+    -->
+    <img src="images/S2/L06/S2L06_ArtSpotlight_KoreaUNPoster.jpg" alt="Korean War United Nations poster" class="as-image">
+    <figcaption class="as-caption">Korean War United Nations aid poster, early 1950s. Posters framed Korea as a world emergency, not only a local war.</figcaption>
+  </figure>
+  <p class="as-fact">The poster style matters because it makes the war look clean and simple. Real Korea was cities burning, refugees walking, and families split by a border. Propaganda often gives people one clear symbol because the real picture is too messy to fit on a wall.</p>
+</div>
+
+<section class="content-section clearfix" id="proxy-collapse">
+  <span class="section-kicker">CHAPTER FOUR</span>
+  <h2 class="section-heading">PROXY WARS AND SOVIET COLLAPSE</h2>
+  <p class="para-standard">A <span class="vocab">proxy war<span class="tip">A war where big powers support other fighters.</span></span> happens when powerful countries support opposing sides instead of fighting each other directly. The U.S. and Soviet Union did this in Vietnam, Angola, Mozambique, Nicaragua, Afghanistan, and other places. Local people fought and died, while superpowers sent money, weapons, training, and political pressure.</p>
+  <p class="para-simple">A <span class="vocab-red">proxy war</span> happens when powerful countries support other fighters. The U.S. and Soviet Union did this in Vietnam, Angola, Mozambique, Nicaragua, Afghanistan, and other places. Local people fought. Superpowers sent money, weapons, and training.</p>
+  <div class="proxy-grid">
+    <div class="proxy-card us-card"><h3>U.S. GOAL</h3><p>Stop communism from spreading and protect allies or friendly governments.</p></div>
+    <div class="proxy-card ussr-card"><h3>SOVIET GOAL</h3><p>Support communist movements and weaken U.S. influence around the world.</p></div>
+  </div>
+  <!--
+    FILENAME: S2L06_AfghanWarMujahideen.jpg
+    PLACE IN: images/S2/L06/
+    FIND: Afghan mujahedeen fighters during Soviet-Afghan War, 1979-1989; shows CIA-backed fighters against Soviet forces
+    SEARCH: Afghan mujahideen Soviet Afghan War 1980 Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/Category:Soviet%E2%80%93Afghan_War (suggested, not guaranteed)
+  -->
+  <figure class="img-left">
+    <img src="images/S2/L06/S2L06_AfghanWarMujahideen.jpg" alt="Afghan mujahedeen fighters during the Soviet-Afghan War">
+    <figcaption>Afghan mujahedeen fighters during the Soviet-Afghan War. The CIA supported fighters resisting Soviet forces. Wikimedia Commons.</figcaption>
+  </figure>
+  <p class="para-standard">In 1979, the Soviet Union invaded Afghanistan to support a communist government. The United States funded mujahedeen fighters who resisted the Soviets. Some networks that grew from this war later helped form the Taliban. A Cold War move created consequences that lasted long after the Cold War ended.</p>
+  <p class="para-simple">In 1979, the Soviet Union invaded Afghanistan. It supported a communist government. The United States helped mujahedeen fighters resist the Soviets. Some networks from this war later helped form the Taliban.</p>
+  <p class="para-standard">By the 1980s, the Soviet system was under huge pressure. It spent too much on the military, struggled with a weak command economy, and faced resistance from people in satellite states. The arms race with the United States drained money and energy. Nationalist movements grew stronger.</p>
+  <p class="para-simple">By the 1980s, the Soviet system was in trouble. It spent too much on the military. Its economy was weak. People in satellite states resisted Soviet control. The arms race cost too much.</p>
+  <div class="collapse-grid">
+    <div class="collapse-card dark-card"><h3>OVEREXTENSION</h3><p>The Soviet Union tried to control too much with too many troops and too much money.</p></div>
+    <div class="collapse-card dark-card"><h3>ECONOMIC FAILURE</h3><p>The command economy could not keep up with people's needs or the arms race.</p></div>
+    <div class="collapse-card dark-card"><h3>NATIONALISM</h3><p>People in satellite states wanted their own nations and freedom from Moscow.</p></div>
+    <div class="collapse-card dark-card"><h3>LOSS OF TRUST</h3><p>Many citizens stopped believing the system could improve their lives.</p></div>
+  </div>
+  <p class="para-standard">In 1991, the Soviet Union collapsed. The Cold War ended, but the effects remained. Borders, alliances, weapons, refugee crises, and memories of proxy wars still shape the world today.</p>
+  <p class="para-simple">In 1991, the Soviet Union collapsed. The Cold War ended. But its effects stayed. Borders, alliances, weapons, refugees, and memories of proxy wars still matter.</p>
+</section>
+
+<section class="content-section" id="primary-source-moment">
+  <span class="section-kicker">PRIMARY SOURCE MOMENT</span>
+  <h2 class="section-heading">TWO COLD WAR PROMISES</h2>
+  <div class="primary-source">
+    <div class="ps-label">PRIMARY SOURCE</div>
+    <div class="ps-quote">"It must be the policy of the United States to support free peoples who are resisting attempted subjugation."</div>
+    <div class="ps-attribution">President Harry Truman, address to Congress, March 12, 1947</div>
+    <div class="ps-narrator">Truman turned containment into a promise that could send U.S. money and power almost anywhere.</div>
+  </div>
+  <div class="primary-source">
+    <div class="ps-label">PRIMARY SOURCE</div>
+    <div class="ps-quote">"The people and the government of the Democratic Republic of Vietnam are determined to fight to the end."</div>
+    <div class="ps-attribution">Ho Chi Minh, appeal during the Vietnam War, 1960s</div>
+    <div class="ps-narrator">Ho Chi Minh showed that local leaders did not see themselves as chess pieces in someone else's Cold War game.</div>
+  </div>
+  <div class="ps-questions">
+    <p><strong>Question 1:</strong> What promise is Truman making about the role of the United States?</p>
+    <p><strong>Question 2:</strong> How do these sources show that Cold War conflicts were both global and local?</p>
+  </div>
+</section>
+
+<div class="brain-break tn-break" id="then-now">
+  <span class="bb-label">THEN AND NOW</span>
+  <p class="tn-payoff">When superpowers compete, smaller countries often pay the bill.</p>
+  <div class="tn-pair">
+    <div class="tn-item">
+      <span class="tn-era-label">1950S-1980S</span>
+      <!--
+        FILENAME: S2L06_Then_ColdWarProxyMap.jpg
+        PLACE IN: images/S2/L06/
+        FIND: Map of Cold War proxy conflicts around the world; shows global spread of conflicts
+        SEARCH: Cold War proxy wars map Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/Category:Maps_of_the_Cold_War (suggested, not guaranteed)
+      -->
+      <img src="images/S2/L06/S2L06_Then_ColdWarProxyMap.jpg" alt="Map of Cold War proxy wars">
+      <p class="tn-caption">Cold War conflicts spread across Asia, Africa, Latin America, and Europe.</p>
+    </div>
+    <div class="tn-item">
+      <span class="tn-era-label">TODAY</span>
+      <!--
+        FILENAME: S2L06_Now_GlobalConflictMap.jpg
+        PLACE IN: images/S2/L06/
+        FIND: Modern map or image showing global alliances, refugee movement, or conflict zones; shows lasting Cold War patterns
+        SEARCH: modern global conflict map Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/Category:Maps_of_wars (suggested, not guaranteed)
+      -->
+      <img src="images/S2/L06/S2L06_Now_GlobalConflictMap.jpg" alt="Modern global conflict map">
+      <p class="tn-caption">Modern conflicts still involve outside powers, weapons, money, and alliances.</p>
+    </div>
+  </div>
+  <p class="tn-closing">The maps look neat from far away, but every dot on them means people deciding whether to stay, fight, flee, or bury someone.</p>
+</div>
+</main>
+
+<footer>WORLD HISTORY — SEMESTER 2, LESSON 06 — COLD WAR CONFLICTS AROUND THE WORLD</footer>
+</div>
+
+<script>
+document.querySelectorAll('.vocab').forEach(function(el){
+  el.addEventListener('click',function(e){
+    e.stopPropagation();
+    document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});
+    el.classList.toggle('active');
+  });
+});
+document.addEventListener('click',function(){document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});});
+document.getElementById('lexile-toggle').addEventListener('click',function(){
+  document.body.classList.toggle('simplified');
+  this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';
+});
+const tocObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    const id=entry.target.getAttribute('id');
+    const link=document.querySelector('.toc-sidebar a[href="#'+id+'"]');
+    if(link){if(entry.isIntersecting)link.classList.add('active');else link.classList.remove('active');}
+  });
+},{threshold:.25});
+document.querySelectorAll('[id]').forEach(el=>tocObserver.observe(el));
+</script>
 </body>
 </html>
+
+<!--
+IMAGE CHECKLIST FOR SSW_S2L06.html
+1. S2L06_Header_KoreanWarRefugees.jpg — Korean War refugees, 1950-1953 — Suggested link: https://commons.wikimedia.org/wiki/Category:Korean_War_refugees
+2. S2L06_TrumanDoctrineSpeech.jpg — Truman speaking to Congress about containment, 1947 — Suggested link: https://commons.wikimedia.org/wiki/Category:Harry_S._Truman_in_1947
+3. S2L06_MarshallPlanPoster.jpg — Marshall Plan poster, late 1940s — Suggested link: https://commons.wikimedia.org/wiki/File:Marshall_Plan_poster.jpg
+4. S2L06_DYK_CheckpointCharlie.jpg — Checkpoint Charlie sign in Berlin — Suggested link: https://commons.wikimedia.org/wiki/File:Checkpoint_Charlie_sign.jpg
+5. S2L06_MaoPRC1949.jpg — Mao proclaiming the People's Republic of China, 1949 — Suggested link: https://commons.wikimedia.org/wiki/Category:Proclamation_of_the_People%27s_Republic_of_China
+6. S2L06_KoreanWarRefugees.jpg — Korean War refugees fleeing, 1950 — Suggested link: https://commons.wikimedia.org/wiki/Category:Korean_War_refugees
+7. S2L06_HungarianRevolution1956.jpg — Hungarian Revolution and Soviet tanks, 1956 — Suggested link: https://commons.wikimedia.org/wiki/Category:Hungarian_Revolution_of_1956
+8. S2L06_PragueSpring1968.jpg — Soviet tanks in Prague, 1968 — Suggested link: https://commons.wikimedia.org/wiki/Category:Warsaw_Pact_invasion_of_Czechoslovakia
+9. S2L06_ArtSpotlight_KoreaUNPoster.jpg — Korean War United Nations poster — Suggested link: https://www.loc.gov/pictures/search/?q=Korean%20War%20poster%20United%20Nations
+10. S2L06_AfghanWarMujahideen.jpg — Afghan mujahedeen during Soviet-Afghan War — Suggested link: https://commons.wikimedia.org/wiki/Category:Soviet%E2%80%93Afghan_War
+11. S2L06_Then_ColdWarProxyMap.jpg — Map of Cold War proxy conflicts — Suggested link: https://commons.wikimedia.org/wiki/Category:Maps_of_the_Cold_War
+12. S2L06_Now_GlobalConflictMap.jpg — Modern global conflict map — Suggested link: https://commons.wikimedia.org/wiki/Category:Maps_of_wars
+-->
