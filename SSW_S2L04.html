@@ -3,980 +3,966 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSW_S2L04 — Fighting WWII and the Holocaust</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<title>SSW S2L04 — FIGHTING WWII AND THE HOLOCAUST</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Slab:wght@700;900&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --od-dark:     #252820;
-    --od-green:    #3e4438;
-    --od-mid:      #5a6050;
-    --od-light:    #7a8068;
-    --steel:       #6a7278;
-    --steel-dark:  #3a4248;
-    --steel-light: #a8b4bc;
-    --khaki:       #c0b070;
-    --khaki-dim:   #8a7c48;
-    --rust:        #922818;
-    --rust-bright: #b03020;
-    --paper:       #e4dcc8;
-    --paper-dark:  #d4ccb4;
-    --paper-mid:   #c8c0a4;
-    --ink:         #18160c;
-    --ink-soft:    #2c2a1c;
-    --gold:        #c8a828;
-    --vocab-red:   #b03030;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    background-color: #1a1c18;
-    background-image:
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 4px,
-        rgba(255,255,255,0.013) 4px,
-        rgba(255,255,255,0.013) 5px
-      );
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 18px;
-    line-height: 1.9;
-    color: var(--ink);
-  }
-
-  .page-wrap {
-    max-width: 820px;
-    margin: 0 auto;
-    background-color: var(--paper);
-    box-shadow: 0 0 80px rgba(0,0,0,0.9);
-  }
-
-  /* ─── HEADER ─── */
-  .site-header {
-    position: relative;
-    overflow: hidden;
-    padding: 60px 44px 52px;
-    background-color: var(--od-dark);
-    text-align: center;
-  }
-  .header-bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center 40%;
-    opacity: 0.30;
-    filter: grayscale(55%) sepia(15%) contrast(115%);
-  }
-  .header-content { position: relative; z-index: 2; }
-  .course-label {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.28em;
-    color: var(--steel-light);
-    margin-bottom: 18px;
-  }
-  .page-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(48px, 8vw, 76px);
-    line-height: 1.0;
-    color: var(--paper);
-    text-shadow: 2px 4px 18px rgba(0,0,0,0.85), 0 0 50px rgba(0,0,0,0.6);
-    letter-spacing: 0.05em;
-    margin-bottom: 28px;
-  }
-  .eq-banner {
-    display: inline-block;
-    background-color: var(--rust);
-    color: #fff;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 19px;
-    letter-spacing: 0.08em;
-    padding: 14px 30px;
-    max-width: 720px;
-    line-height: 1.45;
-    border-top: 3px solid var(--khaki);
-    border-bottom: 3px solid var(--khaki);
-  }
-  .eq-label {
-    font-size: 10px;
-    letter-spacing: 0.26em;
-    color: rgba(255,255,255,0.6);
-    display: block;
-    margin-bottom: 5px;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-  }
-
-  /* ─── NAV ─── */
-  .section-nav {
-    background-color: var(--od-dark);
-    border-bottom: 4px solid var(--rust);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0 8px;
-  }
-  .section-nav a {
-    display: inline-block;
-    color: var(--steel-light);
-    text-decoration: none;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    padding: 14px 16px;
-    border-bottom: 4px solid transparent;
-    margin-bottom: -4px;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .section-nav a:hover {
-    color: var(--khaki);
-    border-bottom-color: var(--khaki);
-  }
-
-  /* ─── INTRO ─── */
-  .intro-section {
-    padding: 48px 44px 36px;
-    background-color: var(--steel-dark);
-    color: var(--paper);
-    border-bottom: 4px solid var(--rust);
-  }
-  .intro-label {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.26em;
-    color: var(--steel-light);
-    margin-bottom: 14px;
-  }
-  .intro-section p {
-    color: var(--paper);
-    font-size: 19px;
-    line-height: 1.95;
-    margin-bottom: 18px;
-  }
-
-  /* ─── CONTENT SECTIONS ─── */
-  .content-section { padding: 52px 44px 40px; }
-  .content-section:nth-child(odd)  { background-color: var(--paper); }
-  .content-section:nth-child(even) { background-color: var(--paper-dark); }
-
-  .section-number {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.26em;
-    color: var(--rust-bright);
-    margin-bottom: 8px;
-  }
-  .section-heading {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(30px, 4.8vw, 42px);
-    letter-spacing: 0.05em;
-    color: var(--od-dark);
-    line-height: 1.1;
-    margin-bottom: 26px;
-    border-left: 7px solid var(--rust);
-    padding-left: 18px;
-  }
-  p { margin-bottom: 20px; color: var(--ink-soft); }
-  .clearfix::after { content: ""; display: table; clear: both; }
-
-  /* ─── DIVIDER ─── */
-  .divider {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin: 44px 0 34px;
-  }
-  .divider-line {
-    flex: 1;
-    height: 2px;
-    background: linear-gradient(to right, transparent, var(--od-mid), transparent);
-  }
-  .divider-mark {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 15px;
-    color: var(--rust);
-    letter-spacing: 0.1em;
-  }
-
-  /* ─── VOCAB ─── */
-  .vocab {
-    color: var(--vocab-red);
-    text-decoration: underline dotted var(--vocab-red);
-    cursor: help;
-    position: relative;
-  }
-  .vocab .tip {
-    display: none;
-    position: absolute;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #1a1a2e;
-    color: #fff;
-    padding: 8px 14px;
-    border-radius: 3px;
-    font-size: 14px;
-    line-height: 1.5;
-    z-index: 100;
-    font-style: normal;
-    font-weight: 400;
-    pointer-events: none;
-    max-width: 280px;
-    white-space: normal;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    border-left: 3px solid var(--rust-bright);
-  }
-  .vocab:hover .tip,
-  .vocab.active .tip { display: block; }
-  .vocab-red { color: var(--vocab-red); }
-
-  /* ─── IMAGES ─── */
-  figure { margin: 30px 0; }
-  figure img {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: grayscale(18%) contrast(108%) sepia(6%);
-    border: 2px solid var(--od-light);
-    box-shadow: 5px 7px 26px rgba(0,0,0,0.35);
-  }
-  figcaption {
-    font-size: 13px;
-    font-style: italic;
-    color: var(--steel);
-    margin-top: 8px;
-    padding: 0 4px;
-    line-height: 1.5;
-  }
-  .img-inset-right { float: right; width: 40%; margin: 6px 0 20px 28px; }
-  .img-inset-left  { float: left;  width: 40%; margin: 6px 28px 20px 0; }
-  .img-pair {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin: 30px 0;
-  }
-
-  /* ─── LEADER GRID ─── */
-  .leader-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin: 28px 0;
-  }
-  .leader-card {
-    background-color: var(--od-dark);
-    padding: 14px 16px;
-    text-align: center;
-  }
-  .leader-card img {
-    width: 100%;
-    height: 130px;
-    object-fit: cover;
-    object-position: top;
-    filter: grayscale(30%) contrast(110%);
-    border: 1px solid var(--od-mid);
-    display: block;
-    margin-bottom: 10px;
-  }
-  .leader-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 16px;
-    letter-spacing: 0.1em;
-    color: var(--khaki);
-    margin-bottom: 4px;
-  }
-  .leader-role {
-    font-size: 12px;
-    color: var(--steel-light);
-    font-style: italic;
-    line-height: 1.4;
-  }
-  .leader-side-allied { border-top: 3px solid #4a88c8; }
-  .leader-side-axis   { border-top: 3px solid var(--rust); }
-
-  /* ─── TURNING POINT CARDS ─── */
-  .tp-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin: 28px 0;
-  }
-  .tp-card {
-    background-color: var(--od-dark);
-    padding: 18px 20px;
-    border-left: 5px solid var(--khaki);
-  }
-  .tp-year {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    letter-spacing: 0.1em;
-    color: var(--khaki);
-    margin-bottom: 4px;
-  }
-  .tp-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 17px;
-    letter-spacing: 0.06em;
-    color: var(--paper);
-    margin-bottom: 8px;
-  }
-  .tp-text {
-    font-size: 15px;
-    color: var(--paper-dark);
-    line-height: 1.65;
-    margin-bottom: 0;
-  }
-
-  /* ─── PRIMARY SOURCE ─── */
-  .primary-source {
-    margin: 38px 0;
-    padding: 28px 32px 28px 36px;
-    background-color: var(--paper-mid);
-    border-left: 7px solid var(--rust);
-    box-shadow: 4px 5px 18px rgba(0,0,0,0.18);
-    position: relative;
-  }
-  .primary-source::before {
-    content: '\201C';
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 120px;
-    color: var(--rust);
-    opacity: 0.12;
-    position: absolute;
-    top: -4px;
-    left: 8px;
-    line-height: 1;
-  }
-  .ps-label {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    color: var(--rust-bright);
-    margin-bottom: 12px;
-  }
-  .ps-quote {
-    font-family: 'Crimson Pro', serif;
-    font-size: 22px;
-    font-style: italic;
-    line-height: 1.65;
-    color: var(--ink);
-    margin-bottom: 16px;
-    padding-left: 8px;
-  }
-  .ps-attribution {
-    font-size: 13px;
-    font-style: italic;
-    color: var(--steel);
-    margin-bottom: 12px;
-  }
-  .ps-narrator {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 15px;
-    letter-spacing: 0.03em;
-    color: var(--ink-soft);
-    border-top: 1px solid var(--steel);
-    padding-top: 12px;
-    margin-bottom: 20px;
-  }
-  .ps-questions { list-style: none; padding: 0; }
-  .ps-questions li {
-    padding: 10px 0;
-    border-top: 1px solid var(--paper-dark);
-    font-size: 16px;
-    color: var(--ink-soft);
-    font-weight: 600;
-    line-height: 1.6;
-  }
-  .ps-questions li span {
-    color: var(--rust);
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    display: block;
-    margin-bottom: 4px;
-  }
-
-  /* ─── CALLOUT BOX ─── */
-  .callout-box {
-    background-color: var(--od-dark);
-    color: var(--paper);
-    padding: 26px 30px;
-    margin: 32px 0;
-    border-top: 4px solid var(--gold);
-    border-bottom: 4px solid var(--gold);
-  }
-  .callout-box p { color: var(--paper-dark); margin-bottom: 8px; }
-  .callout-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
-    letter-spacing: 0.1em;
-    color: var(--gold);
-    margin-bottom: 12px;
-  }
-
-  /* ─── HOLOCAUST TIMELINE ─── */
-  .holocaust-timeline {
-    margin: 30px 0;
-    border-left: 4px solid var(--rust);
-    padding-left: 26px;
-  }
-  .ht-item {
-    position: relative;
-    margin-bottom: 24px;
-  }
-  .ht-item::before {
-    content: '';
-    position: absolute;
-    left: -35px;
-    top: 6px;
-    width: 16px;
-    height: 16px;
-    background: var(--rust);
-    border: 3px solid var(--paper);
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px var(--rust);
-  }
-  .ht-year {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
-    letter-spacing: 0.1em;
-    color: var(--rust);
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-  .ht-text {
-    font-size: 17px;
-    color: var(--ink-soft);
-    line-height: 1.7;
-    margin-bottom: 0;
-  }
-
-  /* ─── SURVIVOR TESTIMONY ─── */
-  .testimony-block {
-    margin: 36px 0;
-    padding: 28px 32px;
-    background-color: #1a1c18;
-    color: var(--paper);
-    border-left: 7px solid var(--gold);
-    box-shadow: 4px 5px 20px rgba(0,0,0,0.4);
-  }
-  .testimony-label {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    color: var(--gold);
-    margin-bottom: 14px;
-  }
-  .testimony-text {
-    font-family: 'Crimson Pro', serif;
-    font-size: 20px;
-    font-style: italic;
-    line-height: 1.75;
-    color: var(--paper);
-    margin-bottom: 14px;
-  }
-  .testimony-attribution {
-    font-size: 13px;
-    font-style: italic;
-    color: var(--steel-light);
-  }
-
-  /* ─── LOCAL HISTORY ─── */
-  .local-history {
-    padding: 44px;
-    background-color: #d0c8b0;
-    border-top: 4px solid var(--od-mid);
-    border-bottom: 4px solid var(--od-mid);
-  }
-  .lh-badge {
-    display: inline-block;
-    background-color: var(--rust);
-    color: #fff;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    padding: 4px 14px;
-    margin-bottom: 16px;
-  }
-  .lh-headline {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 26px;
-    letter-spacing: 0.06em;
-    color: var(--od-dark);
-    margin-bottom: 18px;
-    line-height: 1.2;
-  }
-
-  /* ─── STILL MATTERS ─── */
-  .still-matters {
-    padding: 56px 44px;
-    background-color: var(--od-dark);
-    color: var(--paper);
-    border-top: 6px solid var(--rust);
-  }
-  .sm-label {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.26em;
-    color: var(--steel-light);
-    margin-bottom: 14px;
-  }
-  .sm-headline {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(22px, 3.8vw, 32px);
-    letter-spacing: 0.05em;
-    color: var(--paper);
-    line-height: 1.25;
-    margin-bottom: 30px;
-    border-left: 6px solid var(--rust);
-    padding-left: 18px;
-  }
-  .still-matters p { color: #c0b898; }
-  .news-links { list-style: none; padding: 0; margin: 0 0 30px; }
-  .news-links li { padding: 12px 0; border-bottom: 1px solid var(--od-mid); }
-  .news-links a {
-    color: var(--khaki);
-    font-weight: 600;
-    font-size: 17px;
-    text-decoration: underline;
-    line-height: 1.5;
-  }
-  .news-links a:hover { color: #fff; }
-  .sm-closing-q {
-    font-family: 'Crimson Pro', serif;
-    font-size: clamp(20px, 3vw, 26px);
-    font-style: italic;
-    color: var(--paper);
-    line-height: 1.6;
-    margin-top: 34px;
-    padding-top: 26px;
-    border-top: 1px solid var(--od-mid);
-  }
-  .sm-closing-q p { color: var(--paper); }
-
-  /* ─── FOOTER ─── */
-  .site-footer {
-    background-color: var(--od-dark);
-    color: var(--od-light);
-    text-align: center;
-    padding: 20px 44px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.2em;
-    border-top: 3px solid var(--rust);
-  }
-
-  /* ─── RESPONSIVE ─── */
-  @media (max-width: 640px) {
-    .content-section, .intro-section, .still-matters, .local-history { padding: 36px 22px; }
-    .img-inset-right, .img-inset-left { float: none; width: 100%; margin: 22px 0; }
-    .img-pair, .tp-grid { grid-template-columns: 1fr; }
-    .leader-grid { grid-template-columns: repeat(2, 1fr); }
-    .section-nav a { font-size: 11px; padding: 12px 9px; }
-    .primary-source { padding: 22px 20px; }
-    .ht-item::before { left: -34px; }
-  }
+:root{
+  --od-dark:#252820;
+  --od-green:#3e4438;
+  --od-mid:#5a6050;
+  --steel:#6a7278;
+  --steel-dark:#3a4248;
+  --steel-light:#a8b4bc;
+  --khaki:#c0b070;
+  --paper:#e4dcc8;
+  --paper-dark:#d4ccb4;
+  --paper-mid:#c8c0a4;
+  --ink:#18160c;
+  --ink-soft:#2c2a1c;
+  --rust:#922818;
+  --rust-bright:#b03020;
+  --gold:#c8a828;
+  --vocab-red:#b03030;
+  --navy:#14284c;
+  --teal:#006f73;
+  --purple:#35154f;
+  --forest:#113d2c;
+  --yellow:#ffcf33;
+  --orange:#ff7a21;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:#1a1c18;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 4px,rgba(255,255,255,.015) 4px,rgba(255,255,255,.015) 5px);
+  color:var(--ink);
+  font-family:'Atkinson Hyperlegible',Arial,sans-serif;
+  font-size:18px;
+  line-height:1.85;
+}
+.page-wrap{
+  max-width:920px;
+  margin:0 auto;
+  background:var(--paper);
+  box-shadow:0 0 80px rgba(0,0,0,.9);
+  border-left:6px solid var(--od-dark);
+  border-right:6px solid var(--od-dark);
+}
+.site-header{
+  position:relative;
+  min-height:460px;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+  background:var(--od-dark);
+  border-bottom:5px solid var(--rust);
+}
+.header-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.34;
+  filter:grayscale(55%) sepia(15%) contrast(115%);
+}
+.site-header:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom,rgba(20,22,18,.12),rgba(37,40,32,.68) 58%,rgba(20,22,18,.96));
+}
+.header-inner{
+  position:relative;
+  z-index:2;
+  max-width:820px;
+  margin:0 auto;
+  padding:58px 34px 52px;
+  text-align:center;
+}
+.course-label{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:13px;
+  letter-spacing:.28em;
+  color:var(--steel-light);
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+.page-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(50px,8vw,78px);
+  line-height:1;
+  color:var(--paper);
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  text-shadow:2px 4px 18px rgba(0,0,0,.85);
+  margin-bottom:28px;
+}
+.eq-banner{
+  display:inline-block;
+  background:var(--rust);
+  color:#fff;
+  font-size:20px;
+  font-weight:700;
+  padding:16px 30px;
+  max-width:740px;
+  line-height:1.45;
+  border-top:3px solid var(--khaki);
+  border-bottom:3px solid var(--khaki);
+}
+.eq-label{
+  display:block;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:11px;
+  letter-spacing:.3em;
+  color:rgba(255,255,255,.72);
+  text-transform:uppercase;
+  margin-bottom:6px;
+}
+.section-nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:var(--od-dark);
+  border-bottom:4px solid var(--rust);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.section-nav a{
+  color:var(--steel-light);
+  text-decoration:none;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:13px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  padding:14px 13px;
+  border-bottom:4px solid transparent;
+  margin-bottom:-4px;
+}
+.section-nav a:hover{color:var(--khaki);border-bottom-color:var(--khaki)}
+#lexile-toggle{
+  display:block;
+  margin:20px auto 28px;
+  padding:10px 24px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:13px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  cursor:pointer;
+  border:2px solid var(--rust);
+  background:transparent;
+  color:var(--rust);
+  transition:background .2s,color .2s;
+}
+#lexile-toggle:hover{background:var(--rust);color:#fff}
+.para-simple{display:none}
+body.simplified .para-standard{display:none}
+body.simplified .para-simple{display:block}
+.toc-sidebar{
+  position:fixed;
+  right:calc(50% - 590px);
+  top:50%;
+  transform:translateY(-50%);
+  width:155px;
+  padding:14px 12px;
+  font-family:'Bebas Neue',sans-serif;
+  z-index:50;
+  background:rgba(37,40,32,.92);
+  border-left:2px solid rgba(176,48,32,.45);
+}
+.toc-sidebar .toc-label{
+  display:block;
+  font-size:10px;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  color:var(--khaki);
+  margin-bottom:10px;
+}
+.toc-sidebar a{
+  display:block;
+  color:var(--steel-light);
+  text-decoration:none;
+  padding:3px 0;
+  font-size:12px;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+.toc-sidebar a.active,.toc-sidebar a:hover{color:#fff}
+main{max-width:820px;margin:0 auto;padding:0 28px 70px}
+.intro-section{padding:48px 0 30px}
+.intro-section p{font-size:19px;line-height:1.9;margin-bottom:18px;color:var(--ink-soft)}
+.content-section{
+  padding:52px 0 30px;
+  border-top:3px double rgba(90,96,80,.45);
+}
+.section-kicker{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:12px;
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  color:var(--rust);
+  margin-bottom:8px;
+}
+.section-heading{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(32px,5vw,45px);
+  letter-spacing:.05em;
+  color:var(--od-dark);
+  line-height:1.1;
+  text-transform:uppercase;
+  margin-bottom:26px;
+  border-left:7px solid var(--rust);
+  padding-left:18px;
+}
+p{margin-bottom:20px;color:var(--ink-soft)}
+.real-world{
+  background:#f0d8aa;
+  border-left:5px solid var(--navy);
+  padding:17px 21px;
+  margin:30px 0;
+  font-weight:700;
+}
+.vocab{
+  color:var(--vocab-red);
+  text-decoration:underline dotted var(--vocab-red);
+  cursor:help;
+  position:relative;
+  font-weight:700;
+}
+.vocab-red{color:var(--vocab-red);font-weight:700}
+.vocab .tip{
+  display:none;
+  position:absolute;
+  bottom:125%;
+  left:50%;
+  transform:translateX(-50%);
+  background:#1a1a2e;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:3px;
+  font-size:14px;
+  line-height:1.5;
+  z-index:100;
+  font-style:normal;
+  font-weight:400;
+  pointer-events:none;
+  max-width:280px;
+  white-space:normal;
+  box-shadow:0 4px 20px rgba(0,0,0,.5);
+  border-left:3px solid var(--rust-bright);
+}
+.vocab:hover .tip,.vocab.active .tip{display:block}
+figure{margin:32px 0}
+figure img{
+  width:100%;
+  display:block;
+  filter:grayscale(18%) contrast(108%) sepia(6%);
+  border:2px solid var(--od-mid);
+  box-shadow:5px 7px 26px rgba(0,0,0,.35);
+}
+figcaption{
+  font-size:13px;
+  font-style:italic;
+  color:var(--steel);
+  margin-top:8px;
+  line-height:1.5;
+}
+.img-right{float:right;width:42%;margin:6px 0 20px 28px}
+.img-left{float:left;width:42%;margin:6px 28px 20px 0}
+.img-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}
+.img-pair figure{margin:0}
+.clearfix:after{content:"";display:table;clear:both}
+.leader-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin:28px 0;
+}
+.leader-card{
+  background:var(--od-dark);
+  padding:14px 16px;
+  text-align:center;
+}
+.leader-card img{
+  width:100%;
+  height:130px;
+  object-fit:cover;
+  object-position:top;
+  filter:grayscale(30%) contrast(110%);
+  border:1px solid var(--od-mid);
+  display:block;
+  margin-bottom:10px;
+}
+.leader-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:16px;
+  letter-spacing:.1em;
+  color:var(--khaki);
+  margin-bottom:4px;
+  text-transform:uppercase;
+}
+.leader-role{
+  font-size:12px;
+  color:var(--steel-light);
+  font-style:italic;
+  line-height:1.4;
+}
+.leader-side-allied{border-top:3px solid #4a88c8}
+.leader-side-axis{border-top:3px solid var(--rust)}
+.tp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
+.tp-card{background:var(--od-dark);padding:18px 20px;border-left:5px solid var(--khaki)}
+.tp-year{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:22px;
+  letter-spacing:.1em;
+  color:var(--khaki);
+  margin-bottom:4px;
+}
+.tp-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:17px;
+  letter-spacing:.06em;
+  color:var(--paper);
+  margin-bottom:8px;
+  text-transform:uppercase;
+}
+.tp-text{font-size:15px;color:var(--paper-dark);line-height:1.65;margin-bottom:0}
+.timeline{
+  margin:30px 0;
+  border-left:4px solid var(--rust);
+  padding-left:26px;
+}
+.t-item{position:relative;margin-bottom:24px}
+.t-item:before{
+  content:"";
+  position:absolute;
+  left:-35px;
+  top:6px;
+  width:16px;
+  height:16px;
+  background:var(--rust);
+  border:3px solid var(--paper);
+  border-radius:50%;
+  box-shadow:0 0 0 2px var(--rust);
+}
+.t-year{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:20px;
+  letter-spacing:.1em;
+  color:var(--rust);
+  line-height:1;
+  margin-bottom:4px;
+}
+.t-text{font-size:17px;color:var(--ink-soft);line-height:1.7;margin-bottom:0}
+.primary-source{
+  margin:38px 0;
+  padding:28px 32px 28px 36px;
+  background:var(--paper-mid);
+  border-left:7px solid var(--rust);
+  box-shadow:4px 5px 18px rgba(0,0,0,.18);
+}
+.ps-label{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:11px;
+  letter-spacing:.22em;
+  color:var(--rust-bright);
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+.ps-quote{
+  font-size:22px;
+  font-style:italic;
+  line-height:1.65;
+  color:var(--ink);
+  margin-bottom:16px;
+}
+.ps-attribution{font-size:13px;font-style:italic;color:var(--steel);margin-bottom:12px}
+.ps-narrator{
+  font-weight:700;
+  border-top:1px solid var(--steel);
+  padding-top:12px;
+  font-size:15px;
+  color:var(--ink-soft);
+}
+.ps-questions{
+  background:#f0d8aa;
+  border:1px solid rgba(146,40,24,.35);
+  padding:22px 26px;
+  margin-bottom:38px;
+}
+.ps-questions p{font-size:17px;margin-bottom:12px}
+.brain-break{
+  font-family:'Roboto Slab',serif;
+  margin:44px -50px;
+  padding:36px 50px;
+  position:relative;
+  overflow:hidden;
+}
+.bb-label{
+  display:block;
+  font-family:'Roboto Slab',serif;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.55em;
+  text-transform:uppercase;
+  margin-bottom:14px;
+  opacity:.86;
+}
+.bb-text{
+  font-family:'Roboto Slab',serif;
+  font-size:22px;
+  font-weight:700;
+  line-height:1.65;
+  margin:0;
+}
+.dyk-break{background:var(--teal);color:#fff;border-left:6px solid var(--yellow)}
+.dyk-break .bb-label{color:var(--yellow)}
+.dyk-break p,.dyk-break span{color:#fff}
+.ff-break{
+  background:#17110d;
+  color:#fff;
+  padding:36px 40px;
+  margin:0 -50px 44px;
+  border-top:3px solid var(--yellow);
+  border-bottom:3px solid var(--yellow);
+  text-align:center;
+}
+.ff-break .bb-label{text-align:center;margin-bottom:24px;color:var(--yellow)}
+.ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px}
+.ff-item{text-align:center;padding:8px 12px}
+.ff-number{
+  display:block;
+  font-family:'Roboto Slab',serif;
+  font-size:54px;
+  font-weight:900;
+  color:var(--yellow);
+  line-height:1;
+  margin-bottom:8px;
+}
+.ff-desc{
+  display:block;
+  font-family:'Roboto Slab',serif;
+  font-size:12px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#ffe8b7;
+  max-width:130px;
+  margin:0 auto;
+  line-height:1.4;
+}
+.as-break{
+  background:var(--purple);
+  color:#fff;
+  padding:44px 50px;
+  margin:44px -50px;
+  border-top:3px solid var(--yellow);
+  border-bottom:3px solid var(--yellow);
+  text-align:center;
+}
+.as-break .bb-label{color:var(--yellow)}
+.as-image{
+  max-width:100%;
+  display:block;
+  margin:0 auto 16px;
+  border:3px solid rgba(255,207,51,.65);
+  box-shadow:0 8px 32px rgba(0,0,0,.5);
+}
+.as-caption{
+  font-family:'Roboto Slab',serif;
+  font-style:normal;
+  font-size:13px;
+  color:#ffe8b7;
+  line-height:1.5;
+  margin-bottom:28px;
+  display:block;
+}
+.as-fact{
+  font-family:'Roboto Slab',serif;
+  font-size:22px;
+  font-weight:700;
+  color:#fff;
+  line-height:1.6;
+  max-width:700px;
+  margin:0 auto;
+  text-align:center;
+}
+.tn-break{
+  background:var(--navy);
+  color:#fff;
+  padding:36px 50px;
+  margin:30px -50px 0;
+}
+.tn-break .bb-label{color:var(--yellow);text-align:center;display:block;margin-bottom:20px}
+.tn-payoff{
+  font-family:'Roboto Slab',serif;
+  font-size:clamp(22px,3.5vw,30px);
+  font-weight:900;
+  line-height:1.35;
+  text-align:center;
+  color:var(--yellow);
+  margin-bottom:28px;
+  max-width:740px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
+.tn-item{text-align:center}
+.tn-era-label{
+  display:block;
+  font-family:'Roboto Slab',serif;
+  font-size:11px;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  color:var(--yellow);
+  margin-bottom:10px;
+  font-weight:900;
+}
+.tn-item img{width:100%;display:block;border:2px solid rgba(255,207,51,.55)}
+.tn-caption{
+  font-family:'Roboto Slab',serif;
+  font-size:12px;
+  font-style:italic;
+  color:#ffe8b7;
+  margin-top:8px;
+  line-height:1.4;
+}
+.tn-closing{
+  font-family:'Roboto Slab',serif;
+  font-size:20px;
+  font-weight:700;
+  text-align:center;
+  color:#fff;
+  margin-top:24px;
+  line-height:1.5;
+  border-top:1px solid rgba(255,207,51,.35);
+  padding-top:20px;
+}
+footer{
+  background:var(--od-dark);
+  color:var(--steel-light);
+  text-align:center;
+  padding:22px 30px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:13px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  border-top:3px solid var(--rust);
+}
+@media(max-width:1100px){.toc-sidebar{display:none}}
+@media(max-width:880px){
+  .page-wrap{border:0}
+  main{padding:0 22px 50px}
+  .header-inner{padding:44px 24px 42px}
+  .img-left,.img-right{float:none;width:100%;margin:24px 0}
+  .img-pair,.tp-grid,.tn-pair{grid-template-columns:1fr}
+  .leader-grid{grid-template-columns:repeat(2,1fr)}
+  .brain-break,.ff-break,.as-break{margin:36px 0;padding:28px 22px}
+  .tn-break{padding:28px 22px;margin:30px 0 0}
+  .section-nav a{font-size:11px;padding:11px 8px}
+}
+@media(max-width:600px){
+  .page-title{font-size:42px}
+  .section-heading{font-size:30px}
+  .leader-grid{grid-template-columns:1fr}
+  .bb-text,.as-fact{font-size:18px}
+}
 </style>
 </head>
 <body>
 <div class="page-wrap">
-
-<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
 <header class="site-header">
-
-  <!-- FILENAME: S2L04_HeaderBg_DDayBeach.jpg
-       PLACE IN: images/S2/L04/
-       FIND: D-Day Normandy beach landing June 6 1944; iconic photograph of American troops wading ashore from landing craft at Omaha or Utah Beach; Robert Capa's famous photograph or similar US Army Signal Corps image
-       SEARCH: D-Day Normandy landing June 6 1944 soldiers beach Omaha Utah
-       LINK: https://commons.wikimedia.org/wiki/File:Omaha_Beach_Landing_Craft_Approaches.jpg (suggested, not guaranteed) -->
-  <div class="header-bg" style="background-image: url('images/S2/L04/S2L04_HeaderBg_DDayBeach.jpg');"></div>
-
-  <div class="header-content">
-    <div class="course-label">World History &mdash; Semester 2, Lesson 04</div>
-    <h1 class="page-title">Fighting WWII<br>and the Holocaust</h1>
-    <div class="eq-banner">
-      <span class="eq-label">Essential Question</span>
-      How did WWII become the deadliest conflict in human history?
-    </div>
+  <!--
+    FILENAME: S2L04_HeaderBg_DDayBeach.jpg
+    PLACE IN: images/S2/L04/
+    FIND: D-Day Normandy beach landing June 6, 1944; American troops wading ashore from landing craft at Omaha or Utah Beach
+    SEARCH: D-Day Normandy landing June 6 1944 soldiers beach Omaha Utah Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/File:Omaha_Beach_Landing_Craft_Approaches.jpg (suggested, not guaranteed)
+  -->
+  <img class="header-bg" src="images/S2/L04/S2L04_HeaderBg_DDayBeach.jpg" alt="D-Day Normandy landing, June 6, 1944">
+  <div class="header-inner">
+    <div class="course-label">WORLD HISTORY — SEMESTER 2, LESSON 04</div>
+    <h1 class="page-title">FIGHTING WWII AND THE HOLOCAUST</h1>
+    <div class="eq-banner"><span class="eq-label">ESSENTIAL QUESTION</span>How did WWII become the deadliest conflict in human history?</div>
   </div>
 </header>
 
-<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
 <nav class="section-nav" aria-label="Page sections">
-  <a href="#leaders">Leaders and Sides</a>
-  <a href="#turning-points">Turning Points</a>
-  <a href="#holocaust">The Holocaust</a>
-  <a href="#end">The War Ends</a>
-  <a href="#local-history">Local History</a>
-  <a href="#still-matters">Still Matters Today</a>
+  <a href="#world-war">WORLD WAR</a>
+  <a href="#turning-points">TURNING POINTS</a>
+  <a href="#holocaust">HOLOCAUST</a>
+  <a href="#war-ends">WAR ENDS</a>
+  <a href="#primary-source-moment">PRIMARY SOURCE</a>
+  <a href="#then-now">THEN AND NOW</a>
 </nav>
 
-<!-- ═══════════════════════════ INTRO ═══════════════════════════ -->
+<button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
+
+<aside class="toc-sidebar">
+  <span class="toc-label">ON THIS PAGE</span>
+  <a href="#world-war">WORLD WAR</a>
+  <a href="#turning-points">TURNING POINTS</a>
+  <a href="#holocaust">HOLOCAUST</a>
+  <a href="#war-ends">WAR ENDS</a>
+  <a href="#primary-source-moment">SOURCE</a>
+  <a href="#then-now">THEN AND NOW</a>
+</aside>
+
+<main>
 <section class="intro-section">
-  <div class="intro-label">Introduction</div>
-  <p>On June 6, 1944, nineteen-year-old J.D. Salinger waded ashore at Utah Beach in Normandy, France. He was a soldier in the 4th Infantry Division. By the end of that single day, more than 4,400 Allied soldiers were dead. Salinger survived, went on to write one of the most famous novels in American history, and reportedly never fully recovered from what he witnessed. He carried it for the rest of his life.</p>
-  <p>World War II was fought on every continent except Antarctica. It involved more than thirty nations and killed an estimated 70 to 85 million people, roughly three percent of the entire world's population in 1940. Most of those who died were not soldiers. They were civilians: farmers, children, factory workers, and families caught inside a war they did not choose.</p>
-  <p>And within the larger horror of the war, one government carried out a systematic, deliberate program to murder an entire group of people simply because of who they were. That program killed six million Jewish people and millions of others. It has its own name. It is called the Holocaust.</p>
+  <p class="para-standard">On June 6, 1944, nineteen-year-old J.D. Salinger waded ashore at Utah Beach in Normandy, France. He was a soldier in the 4th Infantry Division. By the end of that single day, more than 4,400 Allied soldiers were dead. Salinger survived, later wrote one of the most famous novels in American history, and carried the war for the rest of his life.</p>
+  <p class="para-simple">On June 6, 1944, nineteen-year-old J.D. Salinger landed at Utah Beach in Normandy, France. He was a soldier. By the end of that day, more than 4,400 Allied soldiers were dead. Salinger survived and later became a famous writer. He carried the war for the rest of his life.</p>
+  <p class="para-standard">World War II was fought on land, at sea, and in the air across Europe, Africa, Asia, and the Pacific. It killed an estimated 70 to 85 million people. Most were civilians. Inside that larger war, Nazi Germany carried out the Holocaust: the systematic murder of six million Jewish people and millions of others.</p>
+  <p class="para-simple">World War II was fought across Europe, Africa, Asia, and the Pacific. It killed about 70 to 85 million people. Most were civilians. During the war, Nazi Germany carried out the Holocaust. Nazis murdered six million Jewish people and millions of others.</p>
 </section>
 
-<!-- ═══════════════════════════ SECTION 1: LEADERS ═══════════════════════════ -->
-<section id="leaders" class="content-section clearfix">
-  <div class="section-number">Chapter One</div>
-  <h2 class="section-heading">Leaders and Sides: The Allied Powers vs. The Axis</h2>
+<section id="world-war" class="content-section clearfix">
+  <span class="section-kicker">CHAPTER ONE</span>
+  <h2 class="section-heading">A TOTAL WAR WITH TWO SIDES</h2>
+  <p class="para-standard">World War II became a <span class="vocab">total war<span class="tip">A war that uses a whole society's people, money, and industry.</span></span>. Governments drafted soldiers, rationed food, built weapons, censored information, bombed cities, and asked civilians to sacrifice. This was not a war fought only by armies. Entire societies were pulled into it.</p>
+  <p class="para-simple">World War II became a <span class="vocab-red">total war</span>. Governments drafted soldiers, rationed food, built weapons, and bombed cities. Civilians had to sacrifice. This was not only a war between armies. Whole societies were pulled into it.</p>
 
-  <p>The war divided the world into two main sides. The <span class="vocab">Allied powers<span class="tip">Allied powers: the countries that fought together against the Axis in WWII, primarily the United States, Britain, the Soviet Union, France, and China.</span></span> were led by Britain, the Soviet Union, and the United States. The Axis powers were led by Germany, Italy, and Japan. Each side was directed by leaders whose personalities, decisions, and mistakes shaped the course of the entire conflict.</p>
+  <p class="para-standard">The main sides were the <span class="vocab">Allied powers<span class="tip">Countries that fought together against Germany, Italy, and Japan.</span></span> and the Axis powers. Britain, the Soviet Union, the United States, China, and Free France fought for the Allies. Germany, Italy, and Japan led the Axis. The Axis wanted empire through conquest. The Allies fought to stop them, though each Allied country had its own goals and fears.</p>
+  <p class="para-simple">The main sides were the <span class="vocab-red">Allied powers</span> and the Axis powers. Britain, the Soviet Union, the United States, China, and Free France fought for the Allies. Germany, Italy, and Japan led the Axis. The Axis wanted empire through conquest. The Allies fought to stop them.</p>
 
-  <!-- Leader grid: Allied -->
-  <p style="font-family:'Bebas Neue',sans-serif; font-size:15px; letter-spacing:0.14em; color:var(--steel); margin-bottom:8px;">ALLIED LEADERS</p>
+  <p style="font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.14em;color:var(--steel);margin-bottom:8px;">ALLIED LEADERS</p>
   <div class="leader-grid">
-
-    <!-- FILENAME: S2L04_ChurchillPortrait.jpg
-         PLACE IN: images/S2/L04/
-         FIND: Official portrait or famous photograph of Winston Churchill as British Prime Minister, circa 1940-1945; serious expression, formal attire
-         SEARCH: Winston Churchill Prime Minister portrait 1940 1941 World War II
-         LINK: https://commons.wikimedia.org/wiki/File:Winston_Churchill_1941_photo_by_Yousuf_Karsh.jpg (suggested, not guaranteed) -->
     <div class="leader-card leader-side-allied">
+      <!--
+        FILENAME: S2L04_ChurchillPortrait.jpg
+        PLACE IN: images/S2/L04/
+        FIND: Winston Churchill as British Prime Minister during WWII, circa 1940-1945
+        SEARCH: Winston Churchill Prime Minister portrait 1941 World War II Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/File:Winston_Churchill_1941_photo_by_Yousuf_Karsh.jpg (suggested, not guaranteed)
+      -->
       <img src="images/S2/L04/S2L04_ChurchillPortrait.jpg" alt="Winston Churchill">
-      <div class="leader-name">Winston Churchill</div>
-      <div class="leader-role">Prime Minister, Britain<br>Refused to negotiate with Hitler; kept Britain fighting alone in 1940</div>
+      <div class="leader-name">WINSTON CHURCHILL</div>
+      <div class="leader-role">Britain: refused to negotiate with Hitler in 1940.</div>
     </div>
-
-    <!-- FILENAME: S2L04_RooseveltPortrait.jpg
-         PLACE IN: images/S2/L04/
-         FIND: Official portrait or photograph of Franklin D. Roosevelt as U.S. President during WWII, circa 1941-1944; formal presidential photograph
-         SEARCH: Franklin Roosevelt President portrait 1941 1942 World War II Library of Congress
-         LINK: https://www.loc.gov/pictures/item/2016687753/ (suggested, not guaranteed) -->
     <div class="leader-card leader-side-allied">
+      <!--
+        FILENAME: S2L04_RooseveltPortrait.jpg
+        PLACE IN: images/S2/L04/
+        FIND: Franklin D. Roosevelt presidential photograph during WWII, circa 1941-1944
+        SEARCH: Franklin Roosevelt President portrait 1941 World War II Library of Congress
+        LINK: https://www.loc.gov/pictures/item/2016687753/ (suggested, not guaranteed)
+      -->
       <img src="images/S2/L04/S2L04_RooseveltPortrait.jpg" alt="Franklin D. Roosevelt">
-      <div class="leader-name">Franklin Roosevelt</div>
-      <div class="leader-role">President, United States<br>Led the U.S. into the war after Pearl Harbor; managed the two-front global strategy</div>
+      <div class="leader-name">FRANKLIN ROOSEVELT</div>
+      <div class="leader-role">United States: led the country after Pearl Harbor.</div>
     </div>
-
-    <!-- FILENAME: S2L04_StalinWWIIPortrait.jpg
-         PLACE IN: images/S2/L04/
-         FIND: Portrait or photograph of Joseph Stalin during WWII era, circa 1941-1945; formal military uniform or official state portrait from the war years
-         SEARCH: Joseph Stalin WWII portrait 1941 1943 military photograph
-         LINK: https://commons.wikimedia.org/wiki/File:Stalin_1943.jpg (suggested, not guaranteed) -->
     <div class="leader-card leader-side-allied">
+      <!--
+        FILENAME: S2L04_StalinWWIIPortrait.jpg
+        PLACE IN: images/S2/L04/
+        FIND: Joseph Stalin during WWII, circa 1943
+        SEARCH: Joseph Stalin WWII portrait 1943 Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/File:Stalin_1943.jpg (suggested, not guaranteed)
+      -->
       <img src="images/S2/L04/S2L04_StalinWWIIPortrait.jpg" alt="Joseph Stalin">
-      <div class="leader-name">Joseph Stalin</div>
-      <div class="leader-role">Premier, Soviet Union<br>Led the Soviet Union after Germany's surprise invasion; the Eastern Front became the war's bloodiest theater</div>
+      <div class="leader-name">JOSEPH STALIN</div>
+      <div class="leader-role">Soviet Union: led the bloodiest front of the war.</div>
     </div>
   </div>
 
-  <p style="font-family:'Bebas Neue',sans-serif; font-size:15px; letter-spacing:0.14em; color:var(--steel); margin-bottom:8px; margin-top:24px;">AXIS LEADERS</p>
+  <p style="font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.14em;color:var(--steel);margin-bottom:8px;margin-top:24px;">AXIS LEADERS</p>
   <div class="leader-grid">
-
-    <!-- FILENAME: S2L04_HitlerUniformPortrait.jpg
-         PLACE IN: images/S2/L04/
-         FIND: Official portrait or photograph of Adolf Hitler in Nazi uniform during WWII, circa 1939-1942; formal pose, not a rally image
-         SEARCH: Adolf Hitler official portrait WWII 1939 1940 military uniform Bundesarchiv
-         LINK: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-H1216-0500-002,_Adolf_Hitler.jpg (suggested, not guaranteed) -->
     <div class="leader-card leader-side-axis">
+      <!--
+        FILENAME: S2L04_HitlerUniformPortrait.jpg
+        PLACE IN: images/S2/L04/
+        FIND: Adolf Hitler in Nazi uniform during WWII, formal portrait
+        SEARCH: Adolf Hitler official portrait WWII 1939 1940 Bundesarchiv Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-H1216-0500-002,_Adolf_Hitler.jpg (suggested, not guaranteed)
+      -->
       <img src="images/S2/L04/S2L04_HitlerUniformPortrait.jpg" alt="Adolf Hitler">
-      <div class="leader-name">Adolf Hitler</div>
-      <div class="leader-role">Führer, Germany<br>Ordered the Holocaust; made the fatal decision to invade the Soviet Union</div>
+      <div class="leader-name">ADOLF HITLER</div>
+      <div class="leader-role">Germany: ordered the Holocaust and invaded the Soviet Union.</div>
     </div>
-
-    <!-- FILENAME: S2L04_MussoliniWWIIPortrait.jpg
-         PLACE IN: images/S2/L04/
-         FIND: Photograph or portrait of Benito Mussolini during WWII era, circa 1940-1943; in military uniform or formal pose
-         SEARCH: Benito Mussolini WWII 1940 1941 portrait uniform
-         LINK: https://commons.wikimedia.org/wiki/File:Benito_Mussolini.jpg (suggested, not guaranteed) -->
     <div class="leader-card leader-side-axis">
+      <!--
+        FILENAME: S2L04_MussoliniWWIIPortrait.jpg
+        PLACE IN: images/S2/L04/
+        FIND: Benito Mussolini during WWII era, circa 1940-1943
+        SEARCH: Benito Mussolini WWII 1940 portrait uniform Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/File:Benito_Mussolini.jpg (suggested, not guaranteed)
+      -->
       <img src="images/S2/L04/S2L04_MussoliniWWIIPortrait.jpg" alt="Benito Mussolini">
-      <div class="leader-name">Benito Mussolini</div>
-      <div class="leader-role">Il Duce, Italy<br>Allied Italy with Germany; overthrown by his own government in 1943 after Allied invasion</div>
+      <div class="leader-name">BENITO MUSSOLINI</div>
+      <div class="leader-role">Italy: allied Italy with Nazi Germany.</div>
     </div>
-
-    <!-- FILENAME: S2L04_HirohitoPortrait.jpg
-         PLACE IN: images/S2/L04/
-         FIND: Official portrait or photograph of Emperor Hirohito of Japan during WWII era, circa 1940-1945; formal imperial or military photograph
-         SEARCH: Emperor Hirohito Japan WWII portrait 1940 1941 official photograph
-         LINK: https://commons.wikimedia.org/wiki/File:Hirohito_in_dress_uniform.jpg (suggested, not guaranteed) -->
     <div class="leader-card leader-side-axis">
+      <!--
+        FILENAME: S2L04_HirohitoPortrait.jpg
+        PLACE IN: images/S2/L04/
+        FIND: Emperor Hirohito of Japan during WWII era, formal imperial or military photograph
+        SEARCH: Emperor Hirohito Japan WWII portrait 1940 official Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/File:Hirohito_in_dress_uniform.jpg (suggested, not guaranteed)
+      -->
       <img src="images/S2/L04/S2L04_HirohitoPortrait.jpg" alt="Emperor Hirohito">
-      <div class="leader-name">Emperor Hirohito</div>
-      <div class="leader-role">Emperor, Japan<br>Led Japan's Pacific empire; authorized the attack on Pearl Harbor</div>
+      <div class="leader-name">EMPEROR HIROHITO</div>
+      <div class="leader-role">Japan: led Japan's Pacific empire during the war.</div>
     </div>
   </div>
 
-  <p>These six leaders made decisions that determined whether millions of people lived or died. Some showed courage under impossible pressure. Others issued orders that history has judged as crimes against humanity. Understanding who they were and what they chose helps explain how this war became so total and so devastating.</p>
-
+  <p class="para-standard">The war spread because each victory created a new crisis. Germany conquered much of Europe. Japan attacked across Asia and the Pacific. The Soviet Union lost millions after Germany invaded in 1941. The United States entered after Pearl Harbor. By 1942, the war had become a global fight over survival, empire, and mass violence.</p>
+  <p class="para-simple">The war spread because each victory created a new crisis. Germany conquered much of Europe. Japan attacked across Asia and the Pacific. Germany invaded the Soviet Union in 1941. The United States entered after Pearl Harbor. By 1942, the war was global.</p>
 </section>
 
-<!-- ═══════════════════════════ SECTION 2: TURNING POINTS ═══════════════════════════ -->
-<section id="turning-points" class="content-section clearfix">
-  <div class="section-number">Chapter Two</div>
-  <h2 class="section-heading">Turning Points: The Battles That Changed Everything</h2>
+<div class="brain-break dyk-break">
+  <span class="bb-label">DID YOU KNOW</span>
+  <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
+    <div style="flex:1;min-width:200px;">
+      <!--
+        FILENAME: S2L04_DYK_SalingerSoldier.jpg
+        PLACE IN: images/S2/L04/
+        FIND: J.D. Salinger in uniform or 4th Infantry Division troops in Normandy; visualizes the strange link between a famous novelist and D-Day
+        SEARCH: J.D. Salinger soldier World War II uniform Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/Category:J._D._Salinger (suggested, not guaranteed)
+      -->
+      <img src="images/S2/L04/S2L04_DYK_SalingerSoldier.jpg" alt="J.D. Salinger or U.S. soldiers in Normandy" style="width:100%;display:block;border:3px solid #ffcf33;box-shadow:0 4px 18px rgba(0,0,0,0.4);">
+      <p style="font-size:12px;margin-top:8px;opacity:.9;font-family:'Roboto Slab',serif;color:#fff;">J.D. Salinger survived D-Day before becoming a famous novelist.</p>
+    </div>
+    <p class="bb-text" style="flex:1;min-width:200px;">J.D. Salinger landed at Normandy carrying chapters of a novel in his pack. He later fought through some of the worst combat in Europe and helped liberate a concentration camp. One of America's most famous teenage voices was written by a man who had seen the war up close and never really left it behind.</p>
+  </div>
+</div>
 
-  <p>From 1939 to 1942, the Axis powers won almost everywhere. Germany conquered most of Europe. Japan swept across Asia and the Pacific. Italy held North Africa. The <span class="vocab">Allied powers<span class="tip">Allied powers: the countries that fought together against the Axis in WWII, primarily the United States, Britain, the Soviet Union, France, and China.</span></span> were on the defensive. Then, between 1942 and 1944, the tide turned in four critical battles. Each one is called a <span class="vocab">turning point<span class="tip">Turning point: a battle or event that marks the moment when one side in a war shifts from losing to winning, or stops the enemy's advance.</span></span>.</p>
+<div class="brain-break ff-break">
+  <span class="bb-label">FAST FACTS</span>
+  <div class="ff-grid">
+    <div class="ff-item"><span class="ff-number">70M+</span><span class="ff-desc">PEOPLE KILLED</span></div>
+    <div class="ff-item"><span class="ff-number">6M</span><span class="ff-desc">JEWISH VICTIMS</span></div>
+    <div class="ff-item"><span class="ff-number">156K</span><span class="ff-desc">D-DAY TROOPS</span></div>
+    <div class="ff-item"><span class="ff-number">27M</span><span class="ff-desc">SOVIET DEAD</span></div>
+    <div class="ff-item"><span class="ff-number">2</span><span class="ff-desc">ATOMIC BOMBS</span></div>
+  </div>
+</div>
+
+<section id="turning-points" class="content-section clearfix">
+  <span class="section-kicker">CHAPTER TWO</span>
+  <h2 class="section-heading">TURNING POINTS: THE WAR STARTS TO CHANGE</h2>
+  <p class="para-standard">From 1939 to 1942, the Axis powers won almost everywhere. Germany dominated Europe. Japan swept across Asia and the Pacific. Then the war began to turn. A <span class="vocab">turning point<span class="tip">A battle or event that changes who has the advantage.</span></span> does not end a war by itself. It changes the direction of the war.</p>
+  <p class="para-simple">From 1939 to 1942, the Axis powers won in many places. Germany dominated Europe. Japan swept across Asia and the Pacific. Then the war began to turn. A <span class="vocab-red">turning point</span> does not end a war. It changes the direction of the war.</p>
 
   <div class="tp-grid">
-    <div class="tp-card">
-      <div class="tp-year">1942</div>
-      <div class="tp-title">Battle of Midway</div>
-      <p class="tp-text">June 1942. The U.S. Navy destroyed four Japanese aircraft carriers in four days in the Pacific Ocean. Japan never fully recovered its naval power. This stopped Japan's expansion eastward and gave the United States the initiative in the Pacific.</p>
-    </div>
-    <div class="tp-card">
-      <div class="tp-year">1942&ndash;43</div>
-      <div class="tp-title">Battle of Stalingrad</div>
-      <p class="tp-text">The bloodiest single battle in human history. Germany attempted to capture the Soviet city of Stalingrad. After six months of street-by-street fighting in brutal winter conditions, the entire German 6th Army was surrounded and forced to surrender. An estimated 800,000 Axis soldiers were killed, captured, or wounded. Germany never advanced deep into the Soviet Union again.</p>
-    </div>
-    <div class="tp-card">
-      <div class="tp-year">1944</div>
-      <div class="tp-title">D-Day: Normandy</div>
-      <p class="tp-text">June 6, 1944. The largest seaborne invasion in history. More than 156,000 Allied troops crossed the English Channel and stormed five beaches in German-occupied France. Within a year, Allied forces had liberated Paris and pushed into Germany from the west while the Soviet Union pushed from the east. Germany was being crushed from both sides.</p>
-    </div>
-    <div class="tp-card">
-      <div class="tp-year">1944&ndash;45</div>
-      <div class="tp-title">Pacific Island-Hopping</div>
-      <p class="tp-text">American forces developed a strategy of capturing key Pacific islands and using them as stepping stones toward Japan. Battles at Guadalcanal, Iwo Jima, and Okinawa were some of the bloodiest of the war. Each island brought the U.S. closer to the Japanese home islands and the final confrontation.</p>
-    </div>
+    <div class="tp-card"><div class="tp-year">1942</div><div class="tp-title">BATTLE OF MIDWAY</div><p class="tp-text">The U.S. Navy destroyed four Japanese aircraft carriers. Japan never fully recovered its naval power.</p></div>
+    <div class="tp-card"><div class="tp-year">1942-43</div><div class="tp-title">STALINGRAD</div><p class="tp-text">The Soviet Union trapped and defeated the German 6th Army after months of street fighting.</p></div>
+    <div class="tp-card"><div class="tp-year">1944</div><div class="tp-title">D-DAY</div><p class="tp-text">More than 156,000 Allied troops landed in Normandy and opened a western front against Germany.</p></div>
+    <div class="tp-card"><div class="tp-year">1944-45</div><div class="tp-title">ISLAND-HOPPING</div><p class="tp-text">U.S. forces captured key Pacific islands and moved closer to Japan.</p></div>
   </div>
 
-  <!-- FILENAME: S2L04_StalingradRuins.jpg
-       PLACE IN: images/S2/L04/
-       FIND: Battle of Stalingrad ruins photograph, winter 1942-1943; destroyed buildings, Soviet or German soldiers in rubble; one of the most iconic images of the Eastern Front
-       SEARCH: Battle of Stalingrad 1942 1943 ruins soldiers rubble winter
-       LINK: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-W0506-316,_Russland,_Kampf_um_Stalingrad,_Siegermeldung.jpg (suggested, not guaranteed) -->
+  <!--
+    FILENAME: S2L04_StalingradRuins.jpg
+    PLACE IN: images/S2/L04/
+    FIND: Battle of Stalingrad ruins photograph, winter 1942-1943; destroyed buildings and soldiers in rubble
+    SEARCH: Battle of Stalingrad 1942 1943 ruins soldiers rubble winter Wikimedia Commons Bundesarchiv
+    LINK: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-W0506-316,_Russland,_Kampf_um_Stalingrad,_Siegermeldung.jpg (suggested, not guaranteed)
+  -->
   <figure>
     <img src="images/S2/L04/S2L04_StalingradRuins.jpg" alt="Stalingrad in ruins, winter 1942-1943">
-    <figcaption>Soviet soldiers advance through the ruins of Stalingrad, winter 1942&ndash;1943. The city was reduced to rubble before Germany surrendered. Source: Bundesarchiv / Wikimedia Commons.</figcaption>
+    <figcaption>Soviet soldiers advance through the ruins of Stalingrad, winter 1942-1943. Bundesarchiv / Wikimedia Commons.</figcaption>
   </figure>
 
-  <p>The Eastern Front between Germany and the Soviet Union was the largest and bloodiest theater of the entire war. Approximately 30 million Soviet citizens died between 1941 and 1945, including both soldiers and civilians. Nearly every Soviet family lost someone. This scale of death shaped Soviet foreign policy, Russian national identity, and the Cold War that followed for decades afterward.</p>
+  <p class="para-standard">Stalingrad showed why World War II became so deadly. German and Soviet soldiers fought building by building. Civilians were trapped in the city. Hunger, cold, bombing, and street combat killed on a massive scale. Germany lost an entire army, and the Soviet Union began pushing west toward Berlin.</p>
+  <p class="para-simple">Stalingrad showed why WWII was so deadly. German and Soviet soldiers fought building by building. Civilians were trapped. Hunger, cold, bombing, and street fighting killed many people. Germany lost an entire army. The Soviet Union began pushing west.</p>
 
-  <div class="divider"><div class="divider-line"></div><div class="divider-mark">&#9632; &#9675; &#9632;</div><div class="divider-line"></div></div>
-
-  <!-- PRIMARY SOURCE 1: Eisenhower D-Day order -->
   <div class="primary-source">
-    <div class="ps-label">Primary Source</div>
-    <div class="ps-quote">
-      "You are about to embark upon the Great Crusade, toward which we have striven these many months. The eyes of the world are upon you. The hopes and prayers of liberty-loving people everywhere march with you."
-    </div>
-    <div class="ps-attribution">General Dwight D. Eisenhower, Order of the Day to Allied Expeditionary Forces, June 6, 1944.</div>
-    <div class="ps-narrator">Eisenhower wrote and distributed this message to every Allied soldier, sailor, and airman on the morning of D-Day; what the message does not mention is that Eisenhower had also written a second letter in his pocket, ready to release if the invasion failed, taking full personal responsibility for the defeat.</div>
-    <ul class="ps-questions">
-      <li>
-        <span>Question 1: Meaning</span>
-        What is Eisenhower trying to accomplish with this message? What does he want the soldiers to feel as they go into battle?
-      </li>
-      <li>
-        <span>Question 2: Connect to the EQ</span>
-        D-Day involved more than 156,000 soldiers in a single day. How does the scale of this operation connect to the question of why WWII became the deadliest conflict in human history?
-      </li>
-    </ul>
+    <div class="ps-label">PRIMARY SOURCE</div>
+    <div class="ps-quote">"You are about to embark upon the Great Crusade... The eyes of the world are upon you."</div>
+    <div class="ps-attribution">General Dwight D. Eisenhower, Order of the Day, June 6, 1944</div>
+    <div class="ps-narrator">Eisenhower gave this message to Allied forces on D-Day to frame the invasion as a fight for the future of Europe.</div>
   </div>
 
-  <!-- FILENAME: S2L04_DDayLandingCraft.jpg
-       PLACE IN: images/S2/L04/
-       FIND: D-Day June 6 1944; American soldiers emerging from landing craft at Normandy beach; famous US Army Signal Corps photograph; soldiers wading through water toward beach under fire
-       SEARCH: D-Day Normandy landing craft soldiers beach June 6 1944 US Army
-       LINK: https://commons.wikimedia.org/wiki/File:Normandy_Invasion,_June_1944.jpg (suggested, not guaranteed) -->
+  <!--
+    FILENAME: S2L04_DDayLandingCraft.jpg
+    PLACE IN: images/S2/L04/
+    FIND: D-Day June 6, 1944; American soldiers emerging from landing craft at Normandy beach
+    SEARCH: D-Day Normandy landing craft soldiers beach June 6 1944 US Army Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/File:Normandy_Invasion,_June_1944.jpg (suggested, not guaranteed)
+  -->
   <figure>
     <img src="images/S2/L04/S2L04_DDayLandingCraft.jpg" alt="American troops land at Normandy, June 6, 1944">
-    <figcaption>American troops wade ashore from landing craft at Normandy, France, June 6, 1944. Source: U.S. Army Signal Corps / Wikimedia Commons.</figcaption>
+    <figcaption>American troops wade ashore from landing craft at Normandy, June 6, 1944. U.S. Army Signal Corps / Wikimedia Commons.</figcaption>
   </figure>
-
 </section>
 
-<!-- ═══════════════════════════ SECTION 3: HOLOCAUST ═══════════════════════════ -->
 <section id="holocaust" class="content-section clearfix">
-  <div class="section-number">Chapter Three</div>
-  <h2 class="section-heading">The Holocaust: A Systematic Murder</h2>
+  <span class="section-kicker">CHAPTER THREE</span>
+  <h2 class="section-heading">THE HOLOCAUST: MURDER BY SYSTEM</h2>
+  <p class="para-standard">While armies fought across the world, Nazi Germany carried out the <span class="vocab">Holocaust<span class="tip">The Nazi murder of six million Jewish people and millions of others.</span></span>. The Nazis targeted Jewish people above all others. They also murdered Roma people, disabled people, LGBTQ people, political opponents, Soviet prisoners of war, and others they called enemies or "inferior."</p>
+  <p class="para-simple">While armies fought, Nazi Germany carried out the <span class="vocab-red">Holocaust</span>. Nazis targeted Jewish people most of all. They also murdered Roma people, disabled people, LGBTQ people, political opponents, Soviet prisoners of war, and others.</p>
 
-  <p>While the war was being fought on the battlefields, the Nazi German government was simultaneously carrying out a separate, organized program of mass murder. This program is called the <span class="vocab">Holocaust<span class="tip">Holocaust: the systematic, state-sponsored murder of six million Jewish people and millions of others by the Nazi German government and its collaborators during WWII.</span></span>. It targeted Jewish people above all others, but also Roma, disabled people, LGBTQ individuals, political opponents, Soviet prisoners of war, and others the Nazis labeled as enemies or subhuman.</p>
+  <p class="para-standard">The Holocaust did not begin with death camps. It began with laws, propaganda, and the slow removal of rights. The Nazis took away Jewish citizenship, jobs, businesses, and legal protections. This dehumanization made later violence easier. Step by step, discrimination became <span class="vocab">genocide<span class="tip">The organized attempt to destroy an entire group of people.</span></span>.</p>
+  <p class="para-simple">The Holocaust did not begin with death camps. It began with laws and propaganda. Nazis took away Jewish citizenship, jobs, businesses, and rights. This made later violence easier. Step by step, discrimination became <span class="vocab-red">genocide</span>.</p>
 
-  <p>The Holocaust did not begin with murder. It began with laws. Starting in 1933, the Nazi government passed legislation that stripped Jewish Germans of their citizenship, their jobs, and their legal rights. The goal was to make Jewish life in Germany impossible. This ideology was called racial purity: the belief that German society had to be cleansed of anyone the Nazis defined as racially inferior. That ideology, combined with total government power, led step by step to <span class="vocab">genocide<span class="tip">Genocide: the deliberate, organized attempt to destroy an entire group of people based on their race, ethnicity, religion, or nationality.</span></span>.</p>
-
-  <div class="holocaust-timeline">
-    <div class="ht-item">
-      <div class="ht-year">1933</div>
-      <p class="ht-text">Nuremberg Laws passed. Jewish Germans lose citizenship. Intermarriage between Jewish and non-Jewish Germans is made illegal. Jewish businesses are boycotted.</p>
-    </div>
-    <div class="ht-item">
-      <div class="ht-year">1938</div>
-      <p class="ht-text">Kristallnacht. On November 9 and 10, Nazi mobs attack Jewish synagogues, homes, and businesses across Germany and Austria. Over 7,000 Jewish-owned businesses are destroyed. Approximately 30,000 Jewish men are arrested and sent to concentration camps. The broken glass gives the night its name: Night of Broken Glass.</p>
-    </div>
-    <div class="ht-item">
-      <div class="ht-year">1941</div>
-      <p class="ht-text">Mobile killing units called Einsatzgruppen follow German armies into the Soviet Union. They shoot Jewish communities en masse. At Babi Yar near Kyiv, Ukraine, 33,771 Jewish people are shot over two days in September 1941. It is one of the largest single massacres of the Holocaust.</p>
-    </div>
-    <div class="ht-item">
-      <div class="ht-year">1942</div>
-      <p class="ht-text">The <span class="vocab">Final Solution<span class="tip">Final Solution: the Nazi plan to murder all of Europe's Jewish population, carried out through death camps equipped with gas chambers.</span></span> is formalized at the Wannsee Conference. Nazi leaders meet outside Berlin and plan the systematic murder of all Jews in Europe. Death camps are built in occupied Poland: Auschwitz-Birkenau, Treblinka, Sobibor, Belzec. Millions of people are transported by train and murdered on arrival.</p>
-    </div>
-    <div class="ht-item">
-      <div class="ht-year">1945</div>
-      <p class="ht-text">Allied forces liberate the death and concentration camps in spring 1945. Soldiers who enter the camps are unprepared for what they find. Six million Jewish people are dead. An estimated five to six million additional victims, including Roma, disabled people, Soviet POWs, and others, have also been murdered.</p>
-    </div>
+  <div class="timeline">
+    <div class="t-item"><div class="t-year">1935</div><p class="t-text">Nuremberg Laws strip Jewish Germans of citizenship and basic rights.</p></div>
+    <div class="t-item"><div class="t-year">1938</div><p class="t-text">Kristallnacht destroys synagogues, homes, and businesses. About 30,000 Jewish men are arrested.</p></div>
+    <div class="t-item"><div class="t-year">1941</div><p class="t-text">Einsatzgruppen follow German armies east and shoot Jewish communities in mass killings.</p></div>
+    <div class="t-item"><div class="t-year">1942</div><p class="t-text">The <span class="vocab">Final Solution<span class="tip">The Nazi plan to murder Europe's Jewish population.</span></span> is organized at the Wannsee Conference.</p></div>
+    <div class="t-item"><div class="t-year">1945</div><p class="t-text">Allied forces liberate the camps and discover the full scale of Nazi crimes.</p></div>
   </div>
 
-  <!-- FILENAME: S2L04_AuschwitzGate.jpg
-       PLACE IN: images/S2/L04/
-       FIND: The gate of Auschwitz concentration camp with the infamous "Arbeit Macht Frei" sign; either a wartime photograph or the famous postwar photograph of the gate; the most iconic image of the Holocaust
-       SEARCH: Auschwitz gate Arbeit Macht Frei photograph
-       LINK: https://commons.wikimedia.org/wiki/File:Arbeit_macht_frei_sign.jpg (suggested, not guaranteed) -->
+  <!--
+    FILENAME: S2L04_AuschwitzGate.jpg
+    PLACE IN: images/S2/L04/
+    FIND: Auschwitz concentration camp gate with "Arbeit Macht Frei" sign
+    SEARCH: Auschwitz gate Arbeit Macht Frei photograph Wikimedia Commons
+    LINK: https://commons.wikimedia.org/wiki/File:Arbeit_macht_frei_sign.jpg (suggested, not guaranteed)
+  -->
   <figure>
-    <img src="images/S2/L04/S2L04_AuschwitzGate.jpg" alt="Gate of Auschwitz concentration camp with the sign 'Arbeit Macht Frei'">
-    <figcaption>The entrance gate of Auschwitz concentration camp. The German words mean "Work Sets You Free." More than 1.1 million people were murdered at Auschwitz alone. Source: Wikimedia Commons.</figcaption>
+    <img src="images/S2/L04/S2L04_AuschwitzGate.jpg" alt="Gate of Auschwitz concentration camp">
+    <figcaption>The entrance gate of Auschwitz concentration camp. More than 1.1 million people were murdered at Auschwitz alone. Wikimedia Commons.</figcaption>
   </figure>
 
-  <!-- SURVIVOR TESTIMONY BLOCK -->
-  <div class="testimony-block">
-    <div class="testimony-label">Survivor Testimony &mdash; Adapted Account</div>
-    <div class="testimony-text">
-      "We were on the train for three days. There was no food. There was no water. When the doors finally opened, there were men in uniforms shouting. They separated us immediately: men to the left, women and children to the right. I held my mother's hand and then I did not hold it anymore. I never saw her again. I was sixteen years old."
-    </div>
-    <div class="testimony-attribution">Adapted from multiple survivor testimonies, United States Holocaust Memorial Museum archives. The experiences described are representative of documented accounts from Auschwitz-Birkenau arrivals, 1942&ndash;1944.</div>
-  </div>
-
-  <p>The Holocaust required thousands of ordinary people to participate or look away. Train conductors drove the trains. Bureaucrats processed the paperwork. Soldiers carried out the orders. Neighbors reported Jewish families in hiding. Historians have spent decades studying how a modern, educated government was able to organize industrialized murder on this scale. The answer involves propaganda, dehumanization, fear, obedience to authority, and the slow removal of moral red lines one step at a time.</p>
-
-  <div class="divider"><div class="divider-line"></div><div class="divider-mark">&#9632; &#9675; &#9632;</div><div class="divider-line"></div></div>
-
-  <!-- PRIMARY SOURCE 2: Elie Wiesel -->
-  <div class="primary-source">
-    <div class="ps-label">Primary Source</div>
-    <div class="ps-quote">
-      "Never shall I forget that night, the first night in camp, which has turned my life into one long night, seven times cursed and seven times sealed. Never shall I forget those flames which consumed my faith forever."
-    </div>
-    <div class="ps-attribution">Elie Wiesel, <em>Night</em>, 1960. Wiesel was a Holocaust survivor who was fifteen years old when he arrived at Auschwitz.</div>
-    <div class="ps-narrator">Elie Wiesel survived Auschwitz and Buchenwald; he wrote this book to make sure the world could never claim it did not know what happened, and he later won the Nobel Peace Prize for his lifelong work against genocide and hatred.</div>
-    <ul class="ps-questions">
-      <li>
-        <span>Question 1: Meaning</span>
-        What does Wiesel mean when he says "his faith" was consumed? What kind of faith might a fifteen-year-old lose on his first night in a death camp?
-      </li>
-      <li>
-        <span>Question 2: Connect to the EQ</span>
-        How does Wiesel's testimony help explain why WWII became the deadliest conflict in human history? Think beyond battlefield casualties.
-      </li>
-    </ul>
-  </div>
-
+  <p class="para-standard">The Holocaust required a modern system. Train schedules moved people to camps. Bureaucrats processed paperwork. Guards followed orders. Neighbors reported families in hiding. The killing happened because leaders ordered it, but also because thousands of ordinary people helped the system work or chose to look away.</p>
+  <p class="para-simple">The Holocaust used a modern system. Train schedules moved people to camps. Bureaucrats handled paperwork. Guards followed orders. Neighbors reported families in hiding. Leaders ordered the killing. Many ordinary people helped the system or looked away.</p>
 </section>
 
-<!-- ═══════════════════════════ SECTION 4: THE WAR ENDS ═══════════════════════════ -->
-<section id="end" class="content-section clearfix">
-  <div class="section-number">Chapter Four</div>
-  <h2 class="section-heading">The War Ends: Victory, Atomic Bombs, and the World Left Behind</h2>
+<div class="brain-break as-break">
+  <span class="bb-label">ART SPOTLIGHT</span>
+  <figure>
+    <!--
+      FILENAME: S2L04_ArtSpotlight_LiberationSketch.jpg
+      PLACE IN: images/S2/L04/
+      FIND: Artwork by a Holocaust survivor or camp liberation drawing, not a reused lesson image; use survivor-made art from Yad Vashem, USHMM, or Wikimedia
+      SEARCH: Holocaust survivor drawing liberation camp Wikimedia Commons
+      LINK: https://commons.wikimedia.org/wiki/Category:Holocaust_art (suggested, not guaranteed)
+    -->
+    <img src="images/S2/L04/S2L04_ArtSpotlight_LiberationSketch.jpg" alt="Holocaust survivor artwork or camp liberation drawing" class="as-image">
+    <figcaption class="as-caption">HOLOCAUST SURVIVOR ARTWORK OR LIBERATION DRAWING. WIKIMEDIA COMMONS.</figcaption>
+  </figure>
+  <p class="as-fact">Some survivors drew what they had seen before they could explain it in full sentences. The paper was not just art material; it became memory storage. A sketch could hold faces, uniforms, fences, and fear when words felt too small for what had happened.</p>
+</div>
 
-  <p>By early 1945, Germany was collapsing. Soviet forces were closing in from the east. American, British, and French forces were pushing in from the west. On April 30, 1945, with Soviet troops less than a mile from his underground bunker in Berlin, Adolf Hitler killed himself. Germany surrendered seven days later on May 8, 1945. Europe called it V-E Day: Victory in Europe Day.</p>
+<section id="war-ends" class="content-section clearfix">
+  <span class="section-kicker">CHAPTER FOUR</span>
+  <h2 class="section-heading">VICTORY, ATOMIC BOMBS, AND A BROKEN WORLD</h2>
+  <p class="para-standard">By early 1945, Germany was collapsing. Soviet forces pushed from the east while American, British, and French forces pushed from the west. Hitler killed himself in Berlin on April 30, 1945. Germany surrendered on May 8. Europe called it V-E Day: Victory in Europe.</p>
+  <p class="para-simple">By early 1945, Germany was collapsing. Soviet forces came from the east. American, British, and French forces came from the west. Hitler killed himself on April 30, 1945. Germany surrendered on May 8. Europe called it V-E Day.</p>
 
   <div class="img-pair">
-    <!-- FILENAME: S2L04_VEDayCelebration.jpg
-         PLACE IN: images/S2/L04/
-         FIND: V-E Day celebration May 8 1945; crowds celebrating in London, New York, or Paris; famous photograph of jubilant civilians marking Germany's surrender
-         SEARCH: VE Day May 8 1945 celebration London Times Square crowd
-         LINK: https://commons.wikimedia.org/wiki/File:VE_Day_Celebrations_in_London_1945.jpg (suggested, not guaranteed) -->
     <figure>
+      <!--
+        FILENAME: S2L04_VEDayCelebration.jpg
+        PLACE IN: images/S2/L04/
+        FIND: V-E Day celebration May 8, 1945; crowds celebrating in London, New York, or Paris
+        SEARCH: VE Day May 8 1945 celebration London Times Square crowd Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/File:VE_Day_Celebrations_in_London_1945.jpg (suggested, not guaranteed)
+      -->
       <img src="images/S2/L04/S2L04_VEDayCelebration.jpg" alt="V-E Day celebrations, May 8, 1945">
-      <figcaption>V-E Day celebrations, May 8, 1945. Source: Wikimedia Commons / Library of Congress.</figcaption>
+      <figcaption>V-E Day celebrations, May 8, 1945. Wikimedia Commons.</figcaption>
     </figure>
-
-    <!-- FILENAME: S2L04_AtomicBombCloud.jpg
-         PLACE IN: images/S2/L04/
-         FIND: Atomic bomb mushroom cloud over Hiroshima or Nagasaki, August 1945; famous U.S. Army Air Force photograph of the mushroom cloud; among the most significant images in history
-         SEARCH: Hiroshima atomic bomb mushroom cloud 1945 Nagasaki photograph
-         LINK: https://commons.wikimedia.org/wiki/File:Atomic_bombing_of_Japan.jpg (suggested, not guaranteed) -->
     <figure>
-      <img src="images/S2/L04/S2L04_AtomicBombCloud.jpg" alt="Atomic bomb mushroom cloud over Hiroshima, August 6, 1945">
-      <figcaption>Atomic bomb mushroom cloud over Hiroshima, Japan, August 6, 1945. Source: U.S. Army Air Forces / Wikimedia Commons.</figcaption>
+      <!--
+        FILENAME: S2L04_AtomicBombCloud.jpg
+        PLACE IN: images/S2/L04/
+        FIND: Atomic bomb mushroom cloud over Hiroshima or Nagasaki, August 1945
+        SEARCH: Hiroshima atomic bomb mushroom cloud 1945 Nagasaki photograph Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/File:Atomic_bombing_of_Japan.jpg (suggested, not guaranteed)
+      -->
+      <img src="images/S2/L04/S2L04_AtomicBombCloud.jpg" alt="Atomic bomb mushroom cloud over Hiroshima, 1945">
+      <figcaption>Atomic bomb mushroom cloud over Hiroshima, August 6, 1945. U.S. Army Air Forces / Wikimedia Commons.</figcaption>
     </figure>
   </div>
 
-  <p>Japan refused to surrender after Germany fell. American leaders faced a decision with no good options. A land invasion of Japan was estimated to cost hundreds of thousands of American lives and potentially millions of Japanese lives. President Harry Truman chose a different path. On August 6, 1945, the United States dropped an atomic bomb on the Japanese city of Hiroshima. An estimated 80,000 people died instantly. Tens of thousands more died from radiation in the weeks and months that followed. Three days later, a second bomb was dropped on Nagasaki, killing an estimated 40,000 more people immediately. Japan surrendered on September 2, 1945. World War II was over.</p>
+  <p class="para-standard">Japan did not surrender after Germany fell. American leaders expected a land invasion of Japan to be extremely deadly. President Harry Truman chose to use a new weapon: the atomic bomb. The United States dropped one bomb on Hiroshima on August 6, 1945, and another on Nagasaki on August 9. Japan surrendered on September 2, 1945.</p>
+  <p class="para-simple">Japan did not surrender after Germany fell. American leaders thought invading Japan would be extremely deadly. President Truman chose to use the atomic bomb. The United States dropped one bomb on Hiroshima and another on Nagasaki. Japan surrendered on September 2, 1945.</p>
 
-  <div class="callout-box">
-    <div class="callout-title">The Human Cost: By the Numbers</div>
-    <p>Total WWII deaths: 70 to 85 million people, roughly 3% of the world's entire population.</p>
-    <p>Soviet Union: approximately 27 million dead, the highest of any nation.</p>
-    <p>China: approximately 20 million dead.</p>
-    <p>Poland: approximately 6 million dead, including 3 million Polish Jews.</p>
-    <p>Germany: approximately 8 million dead.</p>
-    <p>United States: approximately 420,000 military dead.</p>
-    <p>Holocaust victims: 6 million Jewish people. 5 to 6 million others targeted by Nazi genocide.</p>
+  <p class="para-standard">The war ended, but it left a new world behind. The United Nations formed to prevent another world war. Nazi leaders faced trial at Nuremberg. The word genocide entered international law. The United States and Soviet Union became the two dominant powers. The Cold War began almost immediately.</p>
+  <p class="para-simple">The war ended, but it left a new world behind. The United Nations formed to prevent another world war. Nazi leaders faced trial at Nuremberg. The word genocide became part of international law. The United States and Soviet Union became the two strongest powers. The Cold War began.</p>
+
+  <p class="real-world para-standard">Real-world connection: WWII changed international law, nuclear weapons, human rights, and the way the world talks about genocide.</p>
+  <p class="real-world para-simple">Real-world connection: WWII changed international law, nuclear weapons, human rights, and the meaning of genocide.</p>
+</section>
+
+<section id="primary-source-moment" class="content-section">
+  <span class="section-kicker">PRIMARY SOURCE</span>
+  <h2 class="section-heading">PRIMARY SOURCE MOMENT</h2>
+  <div class="primary-source">
+    <div class="ps-label">PRIMARY SOURCE A</div>
+    <div class="ps-quote">"Never shall I forget that night, the first night in camp, which has turned my life into one long night."</div>
+    <div class="ps-attribution">Elie Wiesel, <em>Night</em>, 1960</div>
+    <div class="ps-narrator">Wiesel was fifteen when he arrived at Auschwitz. His words show how genocide destroys a person's sense of safety, faith, and time.</div>
   </div>
-
-  <p>The world that existed after 1945 was fundamentally different from the world that had existed before. The United States and the Soviet Union emerged as the two dominant global powers. The United Nations was created specifically to prevent another world war. The Nuremberg Trials held surviving Nazi leaders accountable for crimes against humanity. The concept of genocide was formally defined in international law. And a cold war between the U.S. and Soviet Union began immediately, creating fifty years of tension that shaped every corner of the globe.</p>
-
-</section>
-
-<!-- ═══════════════════════════ LOCAL HISTORY ═══════════════════════════ -->
-<section id="local-history" class="local-history">
-  <div class="lh-badge">Local History Connection</div>
-  <div class="lh-headline">San Diego Was the Pacific War's Front Porch: Japanese American Incarceration and the Military Home Front</div>
-
-  <!-- FILENAME: S2L04_JapaneseAmericanIncarceration.jpg
-       PLACE IN: images/S2/L04/
-       FIND: Japanese Americans being transported to or living in an incarceration camp, 1942; famous Dorothea Lange or Ansel Adams photograph from Manzanar or another War Relocation Authority camp; shows the injustice of Executive Order 9066
-       SEARCH: Japanese American incarceration camp 1942 Manzanar Dorothea Lange Library of Congress
-       LINK: https://www.loc.gov/pictures/search/?q=japanese+american+incarceration+manzanar+1942 (suggested, not guaranteed) -->
-  <figure class="img-inset-right">
-    <img src="images/S2/L04/S2L04_JapaneseAmericanIncarceration.jpg" alt="Japanese Americans at a War Relocation Authority camp, 1942">
-    <figcaption>Japanese Americans at a War Relocation Authority incarceration camp, 1942. Source: Dorothea Lange / Library of Congress.</figcaption>
-  </figure>
-
-  <p>After Japan attacked Pearl Harbor on December 7, 1941, President Roosevelt signed Executive Order 9066 in February 1942, forcibly removing approximately 120,000 Japanese Americans from their homes on the West Coast. Many were from San Diego and the surrounding region. Families were given days to sell or abandon their possessions and were sent to incarceration camps in the California desert and other remote locations. The largest camp was Manzanar, in the Owens Valley northeast of Los Angeles.</p>
-  <p>At the same time, San Diego's military presence exploded. The city became the primary embarkation point for the Pacific theater, and Convair and other defense manufacturers transformed the local economy. The tension between the injustice done to Japanese American families and the patriotic sacrifice of many of those same families, including the 442nd Regimental Combat Team made up entirely of Japanese Americans, is a defining story of San Diego and Southern California in WWII.</p>
-</section>
-
-<!-- ═══════════════════════════ STILL MATTERS TODAY ═══════════════════════════ -->
-<section id="still-matters" class="still-matters">
-  <div class="sm-label">How This Still Matters Today</div>
-
-  <div class="sm-headline">The Holocaust happened in a modern country with laws, schools, and universities. The question is never just "how did they let that happen?" The question is: what are we letting happen right now?</div>
-
-  <!-- FILENAME: S2L04_HolocaustMemorial.jpg
-       PLACE IN: images/S2/L04/
-       FIND: Holocaust memorial, either the Memorial to the Murdered Jews of Europe in Berlin, or the U.S. Holocaust Memorial Museum entrance, or the Yad Vashem memorial in Jerusalem; powerful modern memorial image
-       SEARCH: Holocaust memorial Berlin Memorial to Murdered Jews of Europe OR Yad Vashem Jerusalem
-       LINK: https://commons.wikimedia.org/wiki/File:Holocaust_memorial_Berlin.jpg (suggested, not guaranteed) -->
-  <figure>
-    <img src="images/S2/L04/S2L04_HolocaustMemorial.jpg" alt="Memorial to the Murdered Jews of Europe, Berlin">
-    <figcaption>Memorial to the Murdered Jews of Europe, Berlin, Germany. Completed in 2005. Source: Wikimedia Commons.</figcaption>
-  </figure>
-
-  <ul class="news-links">
-    <li><a href="https://www.ushmm.org/genocide-prevention/what-is-genocide" target="_blank" rel="noopener">"What Is Genocide? Lessons from the Holocaust for Today" — U.S. Holocaust Memorial Museum</a></li>
-    <li><a href="https://www.bbc.com/news/world-56465467" target="_blank" rel="noopener">"Holocaust remembrance: Why the world still forgets" — BBC</a></li>
-    <li><a href="https://apnews.com/article/genocide-prevention-modern-warning-signs" target="_blank" rel="noopener">"Genocide Prevention: The Warning Signs That Still Appear Today" — AP News</a></li>
-  </ul>
-
-  <p>Genocide has happened multiple times since the Holocaust. Cambodia in the 1970s. Rwanda in 1994. Bosnia in 1995. Darfur in the 2000s. The international community has responded inconsistently every time. The United Nations created a formal genocide prevention framework, but enforcement depends on the political will of powerful countries. In every case, historians have noted that the same warning signs appeared first: dehumanizing language, scapegoating a group, state-controlled media, and the removal of legal protections. These patterns are documented, teachable, and recognizable. The question is whether the world acts on what it knows.</p>
-
-  <div class="sm-closing-q">
-    <p>Elie Wiesel said the opposite of love is not hate, it is indifference. Looking at the list of genocides that happened after the Holocaust, do you think the world learned what it needed to learn from WWII? What would actually change things?</p>
+  <div class="primary-source">
+    <div class="ps-label">PRIMARY SOURCE B</div>
+    <div class="ps-quote">"The wrongs which we seek to condemn and punish have been so calculated, so malignant, and so devastating that civilization cannot tolerate their being ignored."</div>
+    <div class="ps-attribution">Robert H. Jackson, opening statement at the Nuremberg Trials, November 21, 1945</div>
+    <div class="ps-narrator">Jackson argued that Nazi crimes had to be judged in public because ignoring them would endanger civilization itself.</div>
+  </div>
+  <div class="ps-questions">
+    <p><strong>QUESTION 1:</strong> What does Wiesel's quote show that a death count alone cannot show?</p>
+    <p><strong>QUESTION 2:</strong> How do both sources help explain why WWII changed the way the world thinks about human rights?</p>
   </div>
 </section>
 
-<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
-<footer class="site-footer">
-  World History &mdash; Semester 2, Lesson 04 &nbsp;|&nbsp; Fighting WWII and the Holocaust
-</footer>
+<div class="brain-break tn-break" id="then-now">
+  <span class="bb-label">THEN AND NOW</span>
+  <p class="tn-payoff">WWII ENDED IN 1945, BUT THE WORLD STILL LIVES INSIDE THE SYSTEMS CREATED TO PREVENT IT FROM HAPPENING AGAIN.</p>
+  <div class="tn-pair">
+    <div class="tn-item">
+      <span class="tn-era-label">1945</span>
+      <!--
+        FILENAME: S2L04_NurembergTrial.jpg
+        PLACE IN: images/S2/L04/
+        FIND: Nuremberg Trial courtroom, 1945-1946; Nazi leaders on trial for war crimes and crimes against humanity
+        SEARCH: Nuremberg Trial courtroom 1945 Nazi defendants Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/File:Nuremberg_Trials_1945.jpg (suggested, not guaranteed)
+      -->
+      <img src="images/S2/L04/S2L04_NurembergTrial.jpg" alt="Nuremberg Trial courtroom, 1945">
+      <p class="tn-caption">After WWII, Nazi leaders were tried for war crimes and crimes against humanity.</p>
+    </div>
+    <div class="tn-item">
+      <span class="tn-era-label">TODAY</span>
+      <!--
+        FILENAME: S2L04_UnitedNationsToday.jpg
+        PLACE IN: images/S2/L04/
+        FIND: United Nations General Assembly Hall or UN Headquarters today; connects WWII aftermath to modern world institutions
+        SEARCH: United Nations General Assembly Hall Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/File:United_Nations_General_Assembly_Hall_(3).jpg (suggested, not guaranteed)
+      -->
+      <img src="images/S2/L04/S2L04_UnitedNationsToday.jpg" alt="United Nations General Assembly Hall today">
+      <p class="tn-caption">The United Nations was created after WWII to help prevent another world war.</p>
+    </div>
+  </div>
+  <p class="tn-closing">One room shows defendants facing judgment; the other shows countries arguing before war begins. Both rooms exist because the world saw what happened when aggression and genocide were ignored too long.</p>
+</div>
+</main>
 
-</div><!-- end page-wrap -->
+<footer>WORLD HISTORY — SEMESTER 2, LESSON 04 — FIGHTING WWII AND THE HOLOCAUST</footer>
+</div>
 
 <script>
-  document.querySelectorAll('.vocab').forEach(function(el) {
-    el.addEventListener('click', function(e) {
-      e.stopPropagation();
-      document.querySelectorAll('.vocab.active').forEach(function(v) {
-        if (v !== el) v.classList.remove('active');
-      });
-      el.classList.toggle('active');
-    });
-  });
-  document.addEventListener('click', function() {
+document.getElementById('lexile-toggle').addEventListener('click', function() {
+  document.body.classList.toggle('simplified');
+  this.textContent = document.body.classList.contains('simplified') ? 'STANDARD TEXT' : 'SIMPLIFY TEXT';
+});
+document.querySelectorAll('.vocab').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.stopPropagation();
     document.querySelectorAll('.vocab.active').forEach(function(v) {
-      v.classList.remove('active');
+      if (v !== el) v.classList.remove('active');
     });
+    el.classList.toggle('active');
   });
+});
+document.addEventListener('click', function() {
+  document.querySelectorAll('.vocab.active').forEach(function(v) {
+    v.classList.remove('active');
+  });
+});
+const tocObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const id = entry.target.getAttribute('id');
+    const link = document.querySelector('.toc-sidebar a[href="#' + id + '"]');
+    if (link) {
+      if (entry.isIntersecting) link.classList.add('active');
+      else link.classList.remove('active');
+    }
+  });
+}, { threshold: 0.25 });
+document.querySelectorAll('section[id], div[id="then-now"]').forEach(el => tocObserver.observe(el));
 </script>
 </body>
 </html>
