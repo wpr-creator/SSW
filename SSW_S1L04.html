@@ -269,6 +269,32 @@ figcaption{
 .img-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0}
 .img-pair figure{margin:0}
 .clearfix:after{content:"";display:table;clear:both}
+.timeline{
+  margin:34px 0 18px;
+  border-left:4px solid var(--burgundy);
+  padding-left:24px;
+}
+.timeline-event{position:relative;margin-bottom:22px}
+.timeline-event:before{
+  content:"";
+  position:absolute;
+  left:-33px;
+  top:7px;
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 0 3px var(--ivory);
+}
+.t-year{
+  display:block;
+  font-family:'Oswald',sans-serif;
+  font-size:14px;
+  letter-spacing:.18em;
+  color:var(--burgundy);
+  margin-bottom:3px;
+}
+.t-text{display:block;color:var(--ink);font-size:16px;line-height:1.65}
 .primary-source{
   background:var(--burgundy);
   border-left:7px solid var(--gold-light);
@@ -306,6 +332,20 @@ figcaption{
   color:#f4ead8;
   font-weight:700;
 }
+.ps-visual{
+  display:grid;
+  grid-template-columns:minmax(190px,34%) 1fr;
+  gap:24px;
+  align-items:start;
+}
+.ps-visual figure{margin:0}
+.ps-visual img{
+  width:100%;
+  display:block;
+  border:3px solid var(--gold-light);
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
+}
+@media(max-width:700px){.ps-visual{grid-template-columns:1fr}}
 .ps-questions{
   background:#f1dbac;
   border:1px solid rgba(92,16,32,.3);
@@ -388,9 +428,9 @@ figcaption{
   letter-spacing:.2em;
   text-transform:uppercase;
   color:#ffe8b7;
-  max-width:126px;
+  max-width:190px;
   margin:0 auto;
-  line-height:1.4;
+  line-height:1.45;
 }
 .as-break{
   background:var(--purple);
@@ -515,6 +555,7 @@ footer{
   <!--
     FILENAME: S1L04_AfricaColonialMapHeader.jpg
     PLACE IN: images/S1/L04/
+    PRIORITY: ESSENTIAL
     FIND: Map of <span class="vocab">Africa<span class="tip">A large continent with many peoples and nations.</span></span> showing European colonial territories, circa 1914; use as the faded header because it shows imperialism as lines drawn across a continent
     SEARCH: Africa colonial map 1914 European empires <span class="vocab">Scramble for Africa<span class="tip">European race to claim African land.</span></span> Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Colonisation_of_Africa_1880_to_1913.png (suggested, not guaranteed)
@@ -538,6 +579,14 @@ footer{
 
 <button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
 
+<section class="timeline" aria-label="Lesson timeline">
+  <div class="timeline-event"><span class="t-year">1870S</span><span class="t-text">Industrial powers begin a faster race for colonies, raw materials, and global status.</span></div>
+  <div class="timeline-event"><span class="t-year">1884-1885</span><span class="t-text">European powers meet at the Berlin Conference and set rules for claiming African land without African representatives present.</span></div>
+  <div class="timeline-event"><span class="t-year">1896</span><span class="t-text">Ethiopia defeats Italy at the Battle of Adwa and remains independent.</span></div>
+  <div class="timeline-event"><span class="t-year">1899</span><span class="t-text">Imperial ideas and anti-imperial criticism spread through poems, cartoons, speeches, and newspapers.</span></div>
+  <div class="timeline-event"><span class="t-year">1914</span><span class="t-text">European powers control more than 90 percent of Africa, while resistance continues across colonized regions.</span></div>
+</section>
+
 <aside class="toc-sidebar">
   <span class="toc-label">ON THIS PAGE</span>
   <a href="#scramble">SCRAMBLE</a>
@@ -553,7 +602,7 @@ footer{
   <p class="para-standard">In 1884, <span class="vocab">European diplomats<span class="tip">Officials who represent countries in foreign talks.</span></span> met in <span class="vocab">Berlin<span class="tip">Capital city of Germany.</span></span> and argued over a giant map of Africa. They used rulers, colored pencils, and treaty language. What they did not have was a single <span class="vocab">African representative<span class="tip">Someone speaking for African people or states.</span></span> in the room. They drew <span class="vocab">borders<span class="tip">Lines that separate countries or territories.</span></span> across rivers, deserts, villages, and <span class="vocab">kingdoms<span class="tip">States ruled by kings or queens.</span></span> as if people were not already living there.</p>
   <p class="para-simple">In 1884, <span class="vocab-red">European diplomats</span> met in <span class="vocab-red">Berlin</span>. They argued over a giant map of <span class="vocab-red">Africa</span>. They used rulers and colored pencils. No African representative was in the room. They drew <span class="vocab-red">borders</span> across rivers, deserts, villages, and kingdoms.</p>
   <p class="para-standard">This meeting became a symbol of <span class="vocab">New Imperialism<span class="tip">Fast empire-building from about 1870 to 1914.</span></span>. Powerful nations claimed they were spreading <span class="vocab">progress<span class="tip">The idea that society is improving.</span></span>, religion, and order. In reality, they took <span class="vocab">land, labor, and resources<span class="tip">Territory, workers, and valuable materials.</span></span> from millions of people. Colonized people did not simply accept this. They resisted from the start.</p>
-  <p class="para-simple">This meeting became a symbol of <span class="vocab-red">New <span class="vocab-red">Imperialism</span></span>. Powerful nations said they were spreading progress and order. In reality, they took land, labor, and resources. Colonized people did not simply accept this. They resisted from the start.</p>
+  <p class="para-simple">This meeting became a symbol of <span class="vocab-red">New Imperialism</span>. Powerful nations said they were spreading progress and order. In reality, they took land, labor, and resources. Colonized people did not simply accept this. They resisted from the start.</p>
 </section>
 
 <section class="content-section clearfix" id="scramble">
@@ -562,6 +611,7 @@ footer{
   <!--
     FILENAME: S1L04_BerlinConferenceIllustration.jpg
     PLACE IN: images/S1/L04/
+    PRIORITY: ESSENTIAL
     FIND: Illustration or engraving of the Berlin Conference of 1884-1885; European diplomats around a table with maps of Africa
     SEARCH: Berlin Conference 1884 Africa illustration engraving Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_137-002376,_Westafrika-Konferenz.jpg (suggested, not guaranteed)
@@ -580,6 +630,7 @@ footer{
   <!--
     FILENAME: S1L04_AfricaScrambleMap1914.jpg
     PLACE IN: images/S1/L04/
+    PRIORITY: ESSENTIAL
     FIND: Full color map of Africa in 1914 showing European colonial territories, with <span class="vocab">Ethiopia<span class="tip">African country that defeated Italy at Adwa.</span></span> and Liberia independent
     SEARCH: Africa 1914 colonial map European empires color Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Colonial_Africa_1914_map.svg (suggested, not guaranteed)
@@ -603,6 +654,7 @@ footer{
       <!--
         FILENAME: S1L04_DYK_RubberCollection.jpg
         PLACE IN: images/S1/L04/
+    PRIORITY: SUPPORTING
         FIND: Congo <span class="vocab">rubber<span class="tip">A stretchy material made from tree sap.</span></span> collection or rubber workers during the Congo Free State; connects modern rubber demand to forced labor
         SEARCH: Congo Free State rubber collection workers Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/Category:Congo_Free_State (suggested, not guaranteed)
@@ -616,12 +668,13 @@ footer{
 
 <div class="brain-break ff-break">
   <span class="bb-label">FAST FACTS</span>
+  <p class="ff-context">THE SCALE OF NEW IMPERIALISM IN AFRICA</p>
   <div class="ff-grid">
-    <div class="ff-item"><span class="ff-number">14</span><span class="ff-desc">MEN IN BERLIN</span></div>
-    <div class="ff-item"><span class="ff-number">0</span><span class="ff-desc">AFRICANS INVITED</span></div>
-    <div class="ff-item"><span class="ff-number">90%</span><span class="ff-desc">AFRICA CLAIMED</span></div>
-    <div class="ff-item"><span class="ff-number">10M</span><span class="ff-desc">CONGO DEATHS</span></div>
-    <div class="ff-item"><span class="ff-number">2</span><span class="ff-desc">AFRICAN STATES</span></div>
+    <div class="ff-item"><span class="ff-number">14</span><span class="ff-desc">European and U.S. representatives took part in the Berlin Conference that shaped rules for claiming African land.</span></div>
+    <div class="ff-item"><span class="ff-number">0</span><span class="ff-desc">African representatives were invited to the Berlin Conference, even though African land and people were being discussed.</span></div>
+    <div class="ff-item"><span class="ff-number">90%+</span><span class="ff-desc">More than 90 percent of Africa was under European colonial control by 1914.</span></div>
+    <div class="ff-item"><span class="ff-number">10M</span><span class="ff-desc">About ten million people were lost from Congo's population during the most violent decades of rubber exploitation.</span></div>
+    <div class="ff-item"><span class="ff-number">2</span><span class="ff-desc">Only Ethiopia and Liberia remained independent African states when the Scramble for Africa ended.</span></div>
   </div>
 </div>
 
@@ -631,6 +684,7 @@ footer{
   <!--
     FILENAME: S1L04_MaximGunDemo.jpg
     PLACE IN: images/S1/L04/
+    PRIORITY: SUPPORTING
     FIND: British soldiers with a <span class="vocab">Maxim machine gun<span class="tip">Early rapid-fire gun used by empires.</span></span>, circa 1890s; shows military technology used in imperial <span class="vocab">conquest<span class="tip">Taking land or power by force.</span></span>
     SEARCH: Maxim gun British soldiers demonstration 1890s colonial Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Maxim_gun_1895.jpg (suggested, not guaranteed)
@@ -641,7 +695,7 @@ footer{
   </figure>
 
   <p class="para-standard">New Imperialism grew because <span class="vocab">industrial nations<span class="tip">Countries with factories, machines, and mass production.</span></span> had new tools. <span class="vocab">Steamships<span class="tip">Ships powered by steam engines.</span></span> moved soldiers and supplies across oceans. <span class="vocab">Railroads<span class="tip">Train systems that move people and goods.</span></span> moved armies inland. <span class="vocab">Telegraph cables<span class="tip">Wires that sent messages over long distances.</span></span> let officials send orders across continents. <span class="vocab">Quinine<span class="tip">Medicine used to treat <span class="vocab">malaria<span class="tip">A dangerous disease spread by mosquitoes.</span></span>.</span></span> helped Europeans survive malaria in <span class="vocab">tropical regions<span class="tip">Warm areas near the equator.</span></span>. Technology made conquest faster and easier.</p>
-  <p class="para-simple"><span class="vocab-red">New <span class="vocab-red">Imperialism</span></span> grew because industrial nations had new tools. <span class="vocab-red">Steamships</span> moved soldiers across oceans. <span class="vocab-red">Railroads</span> moved armies inland. <span class="vocab-red">Telegraph cables</span> sent orders quickly. <span class="vocab-red">Quinine</span> helped Europeans survive malaria. Technology made <span class="vocab-red">conquest</span> faster.</p>
+  <p class="para-simple"><span class="vocab-red">New Imperialism</span> grew because industrial nations had new tools. <span class="vocab-red">Steamships</span> moved soldiers across oceans. <span class="vocab-red">Railroads</span> moved armies inland. <span class="vocab-red">Telegraph cables</span> sent orders quickly. <span class="vocab-red">Quinine</span> helped Europeans survive malaria. Technology made <span class="vocab-red">conquest</span> faster.</p>
 
   <p class="para-standard">The Maxim machine gun became one of the most deadly tools. It could fire hundreds of rounds per minute. Many African and Asian armies fought bravely, but courage could not erase the gap in weapons. Industrial power turned battles into one-sided massacres.</p>
   <p class="para-simple">The <span class="vocab-red">Maxim machine gun</span> was one of the deadliest tools. It could fire hundreds of rounds each minute. Many <span class="vocab-red">Africa</span>n and Asian armies fought bravely. But courage could not erase the <span class="vocab">weapons gap<span class="tip">A major difference in military technology.</span></span>. Industrial power made many battles one-sided.</p>
@@ -649,6 +703,7 @@ footer{
   <!--
     FILENAME: S1L04_ImperialRailwayIndia.jpg
     PLACE IN: images/S1/L04/
+    PRIORITY: SUPPORTING
     FIND: British colonial railway in <span class="vocab">India<span class="tip">South Asian country ruled by Britain then.</span></span>, late 1800s; shows railroads as tools for moving goods, troops, and raw materials
     SEARCH: British India railway 19th century Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/Category:Rail_transport_in_British_India (suggested, not guaranteed)
@@ -661,12 +716,6 @@ footer{
   <p class="para-standard">Ideas also became tools. <span class="vocab">Social Darwinism<span class="tip">The false idea that some groups are naturally superior.</span></span> twisted science into an excuse for empire. It claimed that powerful nations deserved to rule weaker ones. Missionaries and politicians also used religion and education to argue that imperialism helped colonized people. These arguments made conquest sound generous.</p>
   <p class="para-simple">Ideas also became tools. <span class="vocab-red">Social Darwinism</span> twisted science into an excuse for empire. It claimed powerful nations deserved to rule weaker ones. Some <span class="vocab">missionaries<span class="tip">Religious workers who spread their faith.</span></span> and politicians said imperialism helped <span class="vocab-red">colonized people</span>. These arguments made <span class="vocab-red">conquest</span> sound generous.</p>
 
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE</div>
-    <div class="ps-quote">"Take up the White Man's burden... to serve your captives' need."</div>
-    <div class="ps-attribution">Rudyard Kipling, "The <span class="vocab">White Man&#39;s Burden<span class="tip">Poem defending empire as a duty.</span></span>," 1899</div>
-    <div class="ps-narrator">Kipling described empire as a sacrifice by powerful nations, but his language treated colonized people as helpless and inferior.</div>
-  </div>
 
   <p class="real-world para-standard">Real-world connection: Technology is never neutral when it is used to control people, move armies, or extract wealth.</p>
   <p class="real-world para-simple">Real-world connection: Technology is not neutral when it helps control people or take wealth.</p>
@@ -678,6 +727,7 @@ footer{
   <!--
     FILENAME: S1L04_CongoAtrocityPhoto.jpg
     PLACE IN: images/S1/L04/
+    PRIORITY: ESSENTIAL
     FIND: Nsala of Wala looking at the severed hand and foot of his daughter, 1904, Congo Free State; historically significant image documenting Leopold's atrocities. Use with care.
     SEARCH: Nsala of Wala Congo Free State photograph 1904 Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Nsala_of_Wala_in_the_Congo.jpg (suggested, not guaranteed)
@@ -715,16 +765,17 @@ footer{
   <span class="bb-label">ART SPOTLIGHT</span>
   <figure>
     <!--
-      FILENAME: S1L04_ArtSpotlight_CongoPhoto.jpg
+      FILENAME: S1L04_ArtSpotlight_RhodesColossus.jpg
       PLACE IN: images/S1/L04/
-      FIND: Nsala of Wala photograph, 1904, or a separate Congo Reform Association image. Use as unique Art Spotlight image only if not already used in the main page; if using the same subject, save a different crop or related reform image.
-      SEARCH: Congo Reform Association atrocity photograph 1904 Wikimedia Commons
-      LINK: https://commons.wikimedia.org/wiki/File:Nsala_of_Wala_in_the_Congo.jpg (suggested, not guaranteed)
+      PRIORITY: ESSENTIAL
+      FIND: The Rhodes Colossus political cartoon by Edward Linley Sambourne, published in Punch in 1892. Cecil Rhodes should appear standing over Africa with one foot in southern Africa and one foot near Egypt, showing the imperial dream of a British-controlled route from Cape Town to Cairo.
+      SEARCH: Rhodes Colossus Edward Linley Sambourne 1892 Punch Wikimedia Commons
+      LINK: https://commons.wikimedia.org/wiki/File:Punch_Rhodes_Colossus.png
     -->
-    <img src="images/S1/L04/S1L04_ArtSpotlight_CongoPhoto.jpg" alt="Congo Reform image exposing rubber atrocities" class="as-image">
-    <figcaption class="as-caption">CONGO REFORM PHOTOGRAPH, 1904. WIKIMEDIA COMMONS.</figcaption>
+    <img src="images/S1/L04/S1L04_ArtSpotlight_RhodesColossus.jpg" alt="The Rhodes Colossus political cartoon by Edward Linley Sambourne, 1892" class="as-image">
+    <figcaption class="as-caption">"THE RHODES COLOSSUS" BY EDWARD LINLEY SAMBOURNE, 1892. THIS POLITICAL CARTOON SHOWS CECIL RHODES STRETCHING ACROSS AFRICA TO SYMBOLIZE BRITISH IMPERIAL AMBITION. WIKIMEDIA COMMONS.</figcaption>
   </figure>
-  <p class="as-fact">Photographs from the Congo became evidence in one of the first major international human-rights campaigns. Activists printed images, gave public lectures, and forced people in Europe to look directly at what rubber profits had done. The camera turned distant colonial violence into something readers could no longer pretend was only a rumor.</p>
+  <p class="as-fact">The cartoon made empire look almost heroic by turning Cecil Rhodes into a giant figure towering over a continent. That visual trick mattered: it made one man's dream of control look bold and simple, while hiding the African communities whose land, labor, and futures were being claimed.</p>
 </div>
 
 <section class="content-section clearfix" id="resistance">
@@ -733,6 +784,7 @@ footer{
   <!--
     FILENAME: S1L04_ZuluWarBattleIsandlwana.jpg
     PLACE IN: images/S1/L04/
+    PRIORITY: SUPPORTING
     FIND: Illustration or painting of the Battle of <span class="vocab">Isandlwana<span class="tip">1879 Zulu victory over British forces.</span></span>, 1879; Zulu victory over British forces
     SEARCH: Battle of Isandlwana 1879 Zulu painting illustration Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Isandlwana.jpg (suggested, not guaranteed)
@@ -753,6 +805,7 @@ footer{
       <!--
         FILENAME: S1L04_MenelikII.jpg
         PLACE IN: images/S1/L04/
+    PRIORITY: ESSENTIAL
         FIND: Emperor Menelik II of Ethiopia, leader at the Battle of Adwa, 1896
         SEARCH: Menelik II Ethiopia portrait Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:Menelik_II.jpg (suggested, not guaranteed)
@@ -764,6 +817,7 @@ footer{
       <!--
         FILENAME: S1L04_EmilioAguinaldoPortrait.jpg
         PLACE IN: images/S1/L04/
+    PRIORITY: SUPPORTING
         FIND: Portrait photograph of Emilio Aguinaldo, Filipino independence leader, circa 1898-1902
         SEARCH: Emilio Aguinaldo portrait photograph 1898 Philippines Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:Emilio_Aguinaldo_y_Famy.jpg (suggested, not guaranteed)
@@ -783,21 +837,25 @@ footer{
 <section id="primary-source-moment" class="content-section">
   <span class="section-kicker">PRIMARY SOURCE</span>
   <h2 class="section-heading">PRIMARY SOURCE MOMENT</h2>
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE A</div>
-    <div class="ps-quote">"Take up the White Man's burden... to serve your captives' need."</div>
-    <div class="ps-attribution">Rudyard Kipling, "The White Man's Burden," 1899</div>
-    <div class="ps-narrator">Kipling framed empire as a duty, but his words show how imperialists viewed <span class="vocab">colonized people as inferior<span class="tip">Claiming colonized people were less valuable.</span></span>.</div>
-  </div>
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE B</div>
-    <div class="ps-quote">"I have seen that we do not intend to free, but to <span class="vocab">subjugate<span class="tip">To bring people under forced control.</span></span> the people of the Philippines... I am opposed to the eagle putting its talons on any other land."</div>
-    <div class="ps-attribution"><span class="vocab">Mark Twain<span class="tip">American writer who criticized imperialism.</span></span>, interview in the New York Herald, October 15, 1900</div>
-    <div class="ps-narrator">Twain criticized American imperialism from inside the powerful country doing the conquering.</div>
-  </div>
-  <div class="ps-questions">
-    <p><strong>QUESTION 1:</strong> How do Kipling and Twain disagree about what empire really is?</p>
-    <p><strong>QUESTION 2:</strong> Which source better answers what powerful nations said about conquest, and which better shows why people resisted?</p>
+  <div class="primary-source ps-visual">
+    <figure>
+      <!--
+        FILENAME: S1L04_MenelikII.jpg
+        PLACE IN: images/S1/L04/
+        PRIORITY: ESSENTIAL
+        FIND: Emperor Menelik II of Ethiopia, formal portrait or photograph from the late 1800s. Use a clear image that shows him as the Ethiopian ruler who organized resistance before the Battle of Adwa.
+        SEARCH: Menelik II Ethiopia portrait Wikimedia Commons late 1800s
+        LINK: https://commons.wikimedia.org/wiki/File:Menelik_II.jpg
+      -->
+      <img src="images/S1/L04/S1L04_MenelikII.jpg" alt="Emperor Menelik II of Ethiopia">
+      <figcaption>Emperor Menelik II of Ethiopia. His call for unity helped Ethiopia resist Italian invasion. Wikimedia Commons.</figcaption>
+    </figure>
+    <div>
+      <div class="ps-label">PRIMARY SOURCE</div>
+      <div class="ps-quote">"Enemies have now come upon us to ruin our country and to change our religion. Our enemies have begun the affair by advancing and digging into the country like moles."</div>
+      <div class="ps-attribution">Emperor Menelik II, proclamation to the Ethiopian people, 1895</div>
+      <div class="ps-narrator">Menelik II spoke as an African ruler facing European invasion. His words show that colonized and threatened people understood imperialism as an attack on land, faith, and self-rule. This source connects directly to the lesson question because it shows both why powerful nations tried to take control and how people organized to resist.</div>
+    </div>
   </div>
 </section>
 
@@ -810,6 +868,7 @@ footer{
       <!--
         FILENAME: S1L04_AfricaScrambleMap1914.jpg
         PLACE IN: images/S1/L04/
+    PRIORITY: ESSENTIAL
         FIND: Colonial Africa map in 1914; reused for Then and Now left
         SEARCH: Africa 1914 colonial map European empires color Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:Colonial_Africa_1914_map.svg (suggested, not guaranteed)
@@ -822,6 +881,7 @@ footer{
       <!--
         FILENAME: S1L04_ModernAfricaMap.jpg
         PLACE IN: images/S1/L04/
+    PRIORITY: SUPPORTING
         FIND: Modern political map of Africa with country borders; use to compare with colonial borders
         SEARCH: modern political map Africa countries Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:Africa_countries_map.svg (suggested, not guaranteed)
@@ -830,7 +890,7 @@ footer{
       <p class="tn-caption">Modern African borders still show many lines shaped by the colonial era.</p>
     </div>
   </div>
-  <p class="tn-closing">The colors changed and the flags changed, but many of the straight border lines still cut across landscapes and communities as if a ruler were still lying on the map.</p>
+  <p class="tn-closing"><strong>THEN:</strong> The 1914 map shows European empires dividing Africa into colonies. These borders were often drawn by outside powers, not by the communities who lived there.<br><br><strong>NOW:</strong> The modern map shows independent African countries. Many borders still reflect the colonial period, even though African nations later fought for and won independence.<br><br><strong>CONNECTION:</strong> New Imperialism did not end when the map colors changed. Its borders, economies, languages, and conflicts continued to shape the modern world.<br><br>How should countries today deal with borders and problems created by imperialism?</p>
 </div>
 </main>
 
@@ -868,5 +928,17 @@ const tocObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.25 });
 document.querySelectorAll('section[id], div[id="then-now"]').forEach(el => tocObserver.observe(el));
 </script>
+<!--
+  IMAGE CHECK: Open browser DevTools (F12), go to the Console tab, paste and
+  run this to see which images are missing:
+
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.complete || img.naturalWidth === 0) {
+      console.warn('MISSING:', img.src);
+    } else {
+      console.log('OK:', img.src);
+    }
+  });
+-->
 </body>
 </html>
