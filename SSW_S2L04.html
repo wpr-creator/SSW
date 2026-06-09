@@ -392,6 +392,14 @@ figcaption{
   margin-bottom:38px;
 }
 .ps-questions p{font-size:17px;margin-bottom:12px}
+
+.ps-visual{display:grid;grid-template-columns:minmax(220px,36%) 1fr;gap:24px;align-items:start}
+.ps-visual figure{margin:0}
+.ps-visual img{width:100%;display:block;filter:grayscale(18%) contrast(108%) sepia(6%);border:2px solid var(--od-mid);box-shadow:5px 7px 26px rgba(0,0,0,.35)}
+.tn-text-block{margin-top:22px;border-top:1px solid rgba(255,207,51,.35);padding-top:20px}
+.tn-text-block h3{font-family:'Roboto Slab',serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);margin:18px 0 6px}
+.tn-text-block p{font-family:'Roboto Slab',serif;font-size:17px;line-height:1.65;color:#fff;margin-bottom:10px}
+
 .brain-break{
   font-family:'Roboto Slab',serif;
   margin:44px -50px;
@@ -574,6 +582,7 @@ footer{
 <header class="site-header">
   <!--
     FILENAME: S2L04_HeaderBg_DDayBeach.jpg
+    PRIORITY: ESSENTIAL
     PLACE IN: images/S2/L04/
     FIND: D-Day <span class="vocab">Normandy<span class="tip">Region of France invaded by Allies on D-Day.</span></span> beach landing June 6, 1944; American troops wading ashore from landing craft at Omaha or <span class="vocab">Utah Beach<span class="tip">One Normandy landing beach on D-Day.</span></span>
     SEARCH: D-Day Normandy landing June 6 1944 soldiers beach Omaha Utah Wikimedia Commons
@@ -588,6 +597,7 @@ footer{
 </header>
 
 <nav class="section-nav" aria-label="Page sections">
+  <a href="#timeline">TIMELINE</a>
   <a href="#world-war">WORLD WAR</a>
   <a href="#turning-points">TURNING POINTS</a>
   <a href="#holocaust">HOLOCAUST</a>
@@ -600,6 +610,7 @@ footer{
 
 <aside class="toc-sidebar">
   <span class="toc-label">ON THIS PAGE</span>
+  <a href="#timeline">TIMELINE</a>
   <a href="#world-war">WORLD WAR</a>
   <a href="#turning-points">TURNING POINTS</a>
   <a href="#holocaust">HOLOCAUST</a>
@@ -616,6 +627,18 @@ footer{
   <p class="para-simple"><span class="vocab-red">World War II</span> was fought across Europe, Africa, Asia, and the Pacific. It killed about 70 to 85 million people. Most were civilians. During the war, <span class="vocab-red">Nazi Germany</span> carried out the <span class="vocab-red">Holocaust</span>. Nazis murdered six million <span class="vocab-red">Jewish people</span> and millions of others.</p>
 </section>
 
+<section class="content-section" id="timeline">
+  <span class="section-kicker">TIMELINE</span>
+  <h2 class="section-heading">WORLD WAR II AT A GLANCE</h2>
+  <div class="timeline">
+    <div class="t-item"><div class="t-year">1939</div><p class="t-text">Germany invades Poland. Britain and France declare war, and World War II begins in Europe.</p></div>
+    <div class="t-item"><div class="t-year">1941</div><p class="t-text">Germany invades the Soviet Union. Japan attacks Pearl Harbor, and the United States enters the war.</p></div>
+    <div class="t-item"><div class="t-year">1942-1943</div><p class="t-text">The Battles of Midway and Stalingrad become major turning points against the Axis powers.</p></div>
+    <div class="t-item"><div class="t-year">1944</div><p class="t-text">Allied troops land in Normandy on D-Day and begin pushing Nazi Germany back from the west.</p></div>
+    <div class="t-item"><div class="t-year">1945</div><p class="t-text">Germany surrenders in May. The United States drops atomic bombs on Hiroshima and Nagasaki in August. Japan surrenders in September.</p></div>
+  </div>
+</section>
+
 <section id="world-war" class="content-section clearfix">
   <span class="section-kicker">CHAPTER ONE</span>
   <h2 class="section-heading">A TOTAL WAR WITH TWO SIDES</h2>
@@ -630,7 +653,8 @@ footer{
     <div class="leader-card leader-side-allied">
       <!--
         FILENAME: S2L04_ChurchillPortrait.jpg
-        PLACE IN: images/S2/L04/
+        PRIORITY: SUPPORTING
+    PLACE IN: images/S2/L04/
         FIND: <span class="vocab">Winston Churchill<span class="tip">British leader during World War II.</span></span> as British Prime Minister during WWII, circa 1940-1945
         SEARCH: Winston Churchill Prime Minister portrait 1941 World War II Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:Winston_Churchill_1941_photo_by_Yousuf_Karsh.jpg (suggested, not guaranteed)
@@ -642,7 +666,8 @@ footer{
     <div class="leader-card leader-side-allied">
       <!--
         FILENAME: S2L04_RooseveltPortrait.jpg
-        PLACE IN: images/S2/L04/
+        PRIORITY: SUPPORTING
+    PLACE IN: images/S2/L04/
         FIND: Franklin D. Roosevelt presidential photograph during WWII, circa 1941-1944
         SEARCH: <span class="vocab">Franklin Roosevelt<span class="tip">U.S. president during most of WWII.</span></span> President portrait 1941 World War II Library of Congress
         LINK: https://www.loc.gov/pictures/item/2016687753/ (suggested, not guaranteed)
@@ -654,7 +679,8 @@ footer{
     <div class="leader-card leader-side-allied">
       <!--
         FILENAME: S2L04_StalinWWIIPortrait.jpg
-        PLACE IN: images/S2/L04/
+        PRIORITY: SUPPORTING
+    PLACE IN: images/S2/L04/
         FIND: <span class="vocab">Joseph Stalin<span class="tip">Soviet dictator during World War II.</span></span> during WWII, circa 1943
         SEARCH: Joseph Stalin WWII portrait 1943 Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:Stalin_1943.jpg (suggested, not guaranteed)
@@ -670,7 +696,8 @@ footer{
     <div class="leader-card leader-side-axis">
       <!--
         FILENAME: S2L04_HitlerUniformPortrait.jpg
-        PLACE IN: images/S2/L04/
+        PRIORITY: SUPPORTING
+    PLACE IN: images/S2/L04/
         FIND: <span class="vocab">Adolf Hitler<span class="tip">Nazi dictator who ruled Germany.</span></span> in Nazi uniform during WWII, formal portrait
         SEARCH: Adolf Hitler official portrait WWII 1939 1940 Bundesarchiv Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-H1216-0500-002,_Adolf_Hitler.jpg (suggested, not guaranteed)
@@ -682,7 +709,8 @@ footer{
     <div class="leader-card leader-side-axis">
       <!--
         FILENAME: S2L04_MussoliniWWIIPortrait.jpg
-        PLACE IN: images/S2/L04/
+        PRIORITY: SUPPORTING
+    PLACE IN: images/S2/L04/
         FIND: <span class="vocab">Benito Mussolini<span class="tip">Fascist dictator who ruled Italy.</span></span> during WWII era, circa 1940-1943
         SEARCH: Benito Mussolini WWII 1940 portrait uniform Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:Benito_Mussolini.jpg (suggested, not guaranteed)
@@ -694,7 +722,8 @@ footer{
     <div class="leader-card leader-side-axis">
       <!--
         FILENAME: S2L04_HirohitoPortrait.jpg
-        PLACE IN: images/S2/L04/
+        PRIORITY: SUPPORTING
+    PLACE IN: images/S2/L04/
         FIND: <span class="vocab">Emperor Hirohito<span class="tip">Emperor of Japan during World War II.</span></span> of Japan during WWII era, formal imperial or military photograph
         SEARCH: Emperor Hirohito Japan WWII portrait 1940 official Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:Hirohito_in_dress_uniform.jpg (suggested, not guaranteed)
@@ -715,7 +744,8 @@ footer{
     <div style="flex:1;min-width:200px;">
       <!--
         FILENAME: S2L04_DYK_SalingerSoldier.jpg
-        PLACE IN: images/S2/L04/
+        PRIORITY: SUPPORTING
+    PLACE IN: images/S2/L04/
         FIND: J.D. Salinger in uniform or 4th Infantry Division troops in Normandy; visualizes the strange link between a famous novelist and D-Day
         SEARCH: J.D. Salinger soldier World War II uniform Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/Category:J._D._Salinger (suggested, not guaranteed)
@@ -729,13 +759,15 @@ footer{
 
 <div class="brain-break ff-break">
   <span class="bb-label">FAST FACTS</span>
+  <p class="ff-context" style="font-family:'Roboto Slab',serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#ffe8b7;text-align:center;margin-bottom:24px;">THE HUMAN COST AND SCALE OF WORLD WAR II</p>
   <div class="ff-grid">
-    <div class="ff-item"><span class="ff-number">70M+</span><span class="ff-desc">PEOPLE KILLED</span></div>
-    <div class="ff-item"><span class="ff-number">6M</span><span class="ff-desc">JEWISH VICTIMS</span></div>
-    <div class="ff-item"><span class="ff-number">156K</span><span class="ff-desc"><span class="vocab">D-DAY<span class="tip">The Allied invasion of France in 1944.</span></span> TROOPS</span></div>
-    <div class="ff-item"><span class="ff-number">27M</span><span class="ff-desc">SOVIET DEAD</span></div>
-    <div class="ff-item"><span class="ff-number">2</span><span class="ff-desc">ATOMIC BOMBS</span></div>
+    <div class="ff-item"><span class="ff-number">70M+</span><span class="ff-desc">PEOPLE WERE KILLED WORLDWIDE, MAKING WWII THE DEADLIEST WAR IN HUMAN HISTORY.</span></div>
+    <div class="ff-item"><span class="ff-number">6M</span><span class="ff-desc">JEWISH PEOPLE WERE MURDERED BY NAZI GERMANY DURING THE HOLOCAUST.</span></div>
+    <div class="ff-item"><span class="ff-number">156K</span><span class="ff-desc">ALLIED TROOPS LANDED IN NORMANDY ON D-DAY TO OPEN A WESTERN FRONT.</span></div>
+    <div class="ff-item"><span class="ff-number">27M</span><span class="ff-desc">SOVIET PEOPLE DIED, SHOWING THE HUGE HUMAN COST OF THE EASTERN FRONT.</span></div>
+    <div class="ff-item"><span class="ff-number">2</span><span class="ff-desc">ATOMIC BOMBS WERE USED AGAINST JAPAN BEFORE THE WAR ENDED IN 1945.</span></div>
   </div>
+</div>
 </div>
 
 <section id="turning-points" class="content-section clearfix">
@@ -753,6 +785,7 @@ footer{
 
   <!--
     FILENAME: S2L04_StalingradRuins.jpg
+    PRIORITY: SUPPORTING
     PLACE IN: images/S2/L04/
     FIND: Battle of <span class="vocab">Stalingrad<span class="tip">Soviet city where Germany suffered a major defeat.</span></span> ruins photograph, winter 1942-1943; destroyed buildings and soldiers in rubble
     SEARCH: Battle of Stalingrad 1942 1943 ruins soldiers rubble winter Wikimedia Commons Bundesarchiv
@@ -766,15 +799,9 @@ footer{
   <p class="para-standard">Stalingrad showed why World War II became so deadly. German and Soviet soldiers fought building by building. Civilians were trapped in the city. Hunger, cold, bombing, and <span class="vocab">street combat<span class="tip">Fighting block by block inside a city.</span></span> killed on a massive scale. Germany lost an entire army, and the Soviet Union began pushing west toward Berlin.</p>
   <p class="para-simple"><span class="vocab-red">Stalingrad</span> showed why WWII was so deadly. German and Soviet soldiers fought building by building. Civilians were trapped. Hunger, cold, bombing, and street fighting killed many people. Germany lost an entire army. The <span class="vocab-red">Soviet Union</span> began pushing west.</p>
 
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE</div>
-    <div class="ps-quote">"You are about to embark upon the Great Crusade... The eyes of the world are upon you."</div>
-    <div class="ps-attribution">General <span class="vocab">Dwight D. Eisenhower<span class="tip">Allied commander who led D-Day planning.</span></span>, <span class="vocab">Order of the Day<span class="tip">Message given to troops before D-Day.</span></span>, June 6, 1944</div>
-    <div class="ps-narrator">Eisenhower gave this message to Allied forces on D-Day to frame the invasion as a fight for the future of Europe.</div>
-  </div>
-
   <!--
     FILENAME: S2L04_DDayLandingCraft.jpg
+    PRIORITY: ESSENTIAL
     PLACE IN: images/S2/L04/
     FIND: D-Day June 6, 1944; American soldiers emerging from landing craft at Normandy beach
     SEARCH: D-Day Normandy landing craft soldiers beach June 6 1944 US Army Wikimedia Commons
@@ -805,6 +832,7 @@ footer{
 
   <!--
     FILENAME: S2L04_AuschwitzGate.jpg
+    PRIORITY: ESSENTIAL
     PLACE IN: images/S2/L04/
     FIND: <span class="vocab"><span class="vocab">Auschwitz<span class="tip">Nazi camp where over one million were murdered.</span></span><span class="tip">Nazi camp where over one million were murdered.</span></span> concentration camp gate with "Arbeit Macht Frei" sign
     SEARCH: Auschwitz gate Arbeit Macht Frei photograph Wikimedia Commons
@@ -823,16 +851,17 @@ footer{
   <span class="bb-label">ART SPOTLIGHT</span>
   <figure>
     <!--
-      FILENAME: S2L04_ArtSpotlight_LiberationSketch.jpg
+      FILENAME: S2L04_ArtSpotlight_NussbaumSelfPortrait.jpg
+      PRIORITY: ESSENTIAL
       PLACE IN: images/S2/L04/
-      FIND: Artwork by a Holocaust survivor or camp liberation drawing, not a reused lesson image; use survivor-made art from Yad Vashem, USHMM, or Wikimedia
-      SEARCH: Holocaust survivor drawing liberation camp Wikimedia Commons
-      LINK: https://commons.wikimedia.org/wiki/Category:Holocaust_art (suggested, not guaranteed)
+      FIND: Felix Nussbaum's painting "Self-Portrait with Jewish Identity Card," 1943. Look for the image showing Nussbaum holding or displaying his Jewish identity card, painted while he was living in hiding before he was murdered at Auschwitz.
+      SEARCH: Felix Nussbaum Self-Portrait with Jewish Identity Card 1943 Wikimedia Commons
+      LINK: https://commons.wikimedia.org/wiki/Category:Felix_Nussbaum (suggested, not guaranteed)
     -->
-    <img src="images/S2/L04/S2L04_ArtSpotlight_LiberationSketch.jpg" alt="Holocaust survivor artwork or camp liberation drawing" class="as-image">
-    <figcaption class="as-caption">HOLOCAUST SURVIVOR ARTWORK OR LIBERATION DRAWING. WIKIMEDIA COMMONS.</figcaption>
+    <img src="images/S2/L04/S2L04_ArtSpotlight_NussbaumSelfPortrait.jpg" alt="Felix Nussbaum, Self-Portrait with Jewish Identity Card, 1943" class="as-image">
+    <figcaption class="as-caption">SELF-PORTRAIT WITH JEWISH IDENTITY CARD — FELIX NUSSBAUM, 1943. Nussbaum was a German Jewish artist who painted the fear and pressure of Nazi persecution while living in hiding.</figcaption>
   </figure>
-  <p class="as-fact">Some survivors drew what they had seen before they could explain it in full sentences. The paper was not just art material; it became memory storage. A sketch could hold faces, uniforms, fences, and fear when words felt too small for what had happened.</p>
+  <p class="as-fact">Nussbaum did not paint this as a distant history scene. He painted himself holding the identity papers that marked him as Jewish under Nazi rule. The artwork feels personal because it is personal: the artist was later murdered at Auschwitz in 1944.</p>
 </div>
 
 <section id="war-ends" class="content-section clearfix">
@@ -845,7 +874,8 @@ footer{
     <figure>
       <!--
         FILENAME: S2L04_VEDayCelebration.jpg
-        PLACE IN: images/S2/L04/
+        PRIORITY: SUPPORTING
+    PLACE IN: images/S2/L04/
         FIND: V-E Day celebration May 8, 1945; crowds celebrating in London, New York, or Paris
         SEARCH: VE Day May 8 1945 celebration London Times Square crowd Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:VE_Day_Celebrations_in_London_1945.jpg (suggested, not guaranteed)
@@ -856,7 +886,8 @@ footer{
     <figure>
       <!--
         FILENAME: S2L04_AtomicBombCloud.jpg
-        PLACE IN: images/S2/L04/
+        PRIORITY: SUPPORTING
+    PLACE IN: images/S2/L04/
         FIND: Atomic bomb mushroom cloud over <span class="vocab">Hiroshima<span class="tip">Japanese city hit by an atomic bomb.</span></span> or <span class="vocab">Nagasaki<span class="tip">Japanese city hit by an atomic bomb.</span></span>, August 1945
         SEARCH: Hiroshima <span class="vocab">atomic bomb<span class="tip">A powerful bomb created using nuclear energy.</span></span> mushroom cloud 1945 Nagasaki photograph Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:Atomic_bombing_of_Japan.jpg (suggested, not guaranteed)
@@ -879,21 +910,25 @@ footer{
 <section id="primary-source-moment" class="content-section">
   <span class="section-kicker">PRIMARY SOURCE</span>
   <h2 class="section-heading">PRIMARY SOURCE MOMENT</h2>
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE A</div>
-    <div class="ps-quote">"Never shall I forget that night, the first night in camp, which has turned my life into one long night."</div>
-    <div class="ps-attribution"><span class="vocab">Elie Wiesel<span class="tip">Holocaust survivor who wrote Night.</span></span>, <em>Night</em>, 1960</div>
-    <div class="ps-narrator">Wiesel was fifteen when he arrived at Auschwitz. His words show how genocide destroys a person's sense of safety, faith, and time.</div>
-  </div>
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE B</div>
-    <div class="ps-quote">"The wrongs which we seek to condemn and punish have been so calculated, so malignant, and so devastating that civilization cannot tolerate their being ignored."</div>
-    <div class="ps-attribution"><span class="vocab">Robert H. Jackson<span class="tip">U.S. prosecutor at the <span class="vocab">Nuremberg Trials<span class="tip">Court trials for Nazi leaders after World War II.</span></span>.</span></span>, opening statement at the Nuremberg Trials, November 21, 1945</div>
-    <div class="ps-narrator">Jackson argued that Nazi crimes had to be judged in public because ignoring them would endanger civilization itself.</div>
-  </div>
-  <div class="ps-questions">
-    <p><strong>QUESTION 1:</strong> What does Wiesel's quote show that a death count alone cannot show?</p>
-    <p><strong>QUESTION 2:</strong> How do both sources help explain why WWII changed the way the world thinks about human rights?</p>
+  <div class="primary-source ps-visual">
+    <figure>
+      <!--
+        FILENAME: S2L04_PrimarySource_ElieWiesel.jpg
+        PRIORITY: ESSENTIAL
+        PLACE IN: images/S2/L04/
+        FIND: Elie Wiesel as a young Holocaust survivor, author, or witness. Prefer a serious portrait from the 1960s or later that shows him as the survivor-writer of Night rather than a casual event photo.
+        SEARCH: Elie Wiesel portrait Night Holocaust survivor Wikimedia Commons
+        LINK: https://commons.wikimedia.org/wiki/Category:Elie_Wiesel (suggested, not guaranteed)
+      -->
+      <img src="images/S2/L04/S2L04_PrimarySource_ElieWiesel.jpg" alt="Elie Wiesel, Holocaust survivor and author of Night">
+      <figcaption>Elie Wiesel, Holocaust survivor and author of <em>Night</em>. Wikimedia Commons.</figcaption>
+    </figure>
+    <div>
+      <div class="ps-label">PRIMARY SOURCE</div>
+      <div class="ps-quote">"Never shall I forget that night, the first night in camp, which has turned my life into one long night."</div>
+      <div class="ps-attribution">Elie Wiesel, <em>Night</em>, 1960</div>
+      <div class="ps-narrator">Wiesel was fifteen when he arrived at Auschwitz. His words help students understand something numbers alone cannot show: genocide destroys memory, safety, family, faith, and time. This source connects the larger death toll of WWII to one human voice.</div>
+    </div>
   </div>
 </section>
 
@@ -905,8 +940,9 @@ footer{
       <span class="tn-era-label">1945</span>
       <!--
         FILENAME: S2L04_NurembergTrial.jpg
+        PRIORITY: ESSENTIAL
         PLACE IN: images/S2/L04/
-        FIND: Nuremberg Trial courtroom, 1945-1946; Nazi leaders on trial for <span class="vocab">war crimes<span class="tip">Serious violations of the laws of war.</span></span> and <span class="vocab">crimes against humanity<span class="tip">Mass attacks on civilians by a government or group.</span></span>
+        FIND: Nuremberg Trial courtroom, 1945-1946; Nazi leaders on trial for war crimes and crimes against humanity
         SEARCH: Nuremberg Trial courtroom 1945 Nazi defendants Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:Nuremberg_Trials_1945.jpg (suggested, not guaranteed)
       -->
@@ -917,8 +953,9 @@ footer{
       <span class="tn-era-label">TODAY</span>
       <!--
         FILENAME: S2L04_UnitedNationsToday.jpg
+        PRIORITY: SUPPORTING
         PLACE IN: images/S2/L04/
-        FIND: United Nations General Assembly Hall or UN Headquarters today; connects WWII aftermath to modern world institutions
+        FIND: United Nations General Assembly Hall or UN Headquarters today; shows countries meeting in a modern institution created after WWII to prevent future global war
         SEARCH: United Nations General Assembly Hall Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:United_Nations_General_Assembly_Hall_(3).jpg (suggested, not guaranteed)
       -->
@@ -926,7 +963,15 @@ footer{
       <p class="tn-caption">The United Nations was created after WWII to help prevent another world war.</p>
     </div>
   </div>
-  <p class="tn-closing">One room shows defendants facing judgment; the other shows countries arguing before war begins. Both rooms exist because the world saw what happened when aggression and genocide were ignored too long.</p>
+  <div class="tn-text-block">
+    <h3>THEN</h3>
+    <p>After WWII, the Nuremberg Trials put Nazi leaders before an international court. The trials showed that leaders could be judged for war crimes and crimes against humanity.</p>
+    <h3>NOW</h3>
+    <p>Today, the United Nations gives countries a place to debate conflicts before they become world wars. It does not stop every crisis, but it reflects the lesson the world took from WWII: ignoring aggression and genocide can become deadly.</p>
+    <h3>CONNECTION</h3>
+    <p>One room shows defendants facing judgment; the other shows countries arguing before war begins. Both rooms exist because the world saw what happened when aggression and genocide were ignored too long.</p>
+  </div>
+  <p class="tn-closing">Final reflection: What responsibility do countries have when they see mass violence happening somewhere else?</p>
 </div>
 </main>
 
@@ -964,5 +1009,18 @@ const tocObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.25 });
 document.querySelectorAll('section[id], div[id="then-now"]').forEach(el => tocObserver.observe(el));
 </script>
+
+<!--
+  IMAGE CHECK: Open browser DevTools (F12), go to the Console tab, paste and
+  run this to see which images are missing:
+
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.complete || img.naturalWidth === 0) {
+      console.warn('MISSING:', img.src);
+    } else {
+      console.log('OK:', img.src);
+    }
+  });
+-->
 </body>
 </html>
