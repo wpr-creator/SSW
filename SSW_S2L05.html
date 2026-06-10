@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSW S2L05 — POST-WAR WORLD AND COLD WAR ORIGINS</title>
+<title>SSW S2L05 : POST-WAR WORLD AND COLD WAR ORIGINS</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -50,41 +50,80 @@ figure{margin:32px 0}figure img{width:100%;display:block;border:3px solid var(--
 .tn-break{background:#0d2342;color:#fff;padding:36px 50px;margin:30px -50px 0}.tn-break .bb-label{color:var(--cyan);text-align:center;display:block;margin-bottom:20px}.tn-payoff{font-family:'Roboto Slab',serif;font-size:clamp(22px,3.5vw,30px);font-weight:700;line-height:1.35;text-align:center;color:var(--cyan);margin-bottom:28px;max-width:720px;margin-left:auto;margin-right:auto}.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}.tn-item{text-align:center}.tn-era-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px;font-weight:700}.tn-item img{width:100%;display:block;border:2px solid rgba(27,214,255,.65);filter:none}.tn-caption{font-family:'Roboto Slab',serif;font-size:12px;font-style:italic;color:#d9f7ff;margin-top:8px;line-height:1.4}.tn-closing{font-family:'Roboto Slab',serif;font-size:20px;font-weight:500;text-align:center;color:#fff;margin-top:24px;line-height:1.5;border-top:1px solid rgba(27,214,255,.35);padding-top:20px}
 footer{background:#050505;color:#aaa;text-align:center;padding:24px 30px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.24em;text-transform:uppercase;border-top:5px solid var(--red)}
 @media(max-width:1100px){.toc-sidebar{display:none}}@media(max-width:880px){main{padding:0 22px 50px}.header-inner{padding:44px 24px 42px}.img-left,.img-right{float:none;width:100%;margin:24px 0}.img-pair,.vs-grid,.sphere-grid,.tn-pair{grid-template-columns:1fr}.brain-break,.ff-break,.as-break{margin:36px 0;padding:28px 22px}.tn-break{padding:28px 22px;margin:30px 0 0}.section-nav a{font-size:11px;padding:11px 8px}}@media(max-width:600px){.page-title{font-size:42px}.section-heading{font-size:31px}.bb-text,.as-fact{font-size:18px}}
+
+/* V4 TECHNICAL SYSTEMS */
+#reading-progress{position:fixed;top:0;left:0;height:4px;width:0%;background:var(--gold);z-index:9999;transition:width .1s linear}
+.section-nav{top:4px}
+.section-nav a.active{color:#fff;border-bottom-color:var(--gold);background:rgba(255,255,255,.08)}
+.vocab:focus{outline:2px solid var(--gold);outline-offset:2px;border-radius:2px}
+img{opacity:0;transition:opacity .4s ease}
+img.loaded{opacity:1}
+.section-animate{opacity:0;transform:translateY(24px);transition:opacity .45s ease-out,transform .45s ease-out}
+.section-animate.visible{opacity:1;transform:translateY(0)}
+.lesson-timeline{max-width:820px;margin:0 auto 28px;padding:28px;background:#151515;color:#fff;border-top:4px solid var(--red);border-bottom:4px solid var(--gold)}
+.lesson-timeline h2{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);font-size:28px;margin-bottom:18px}
+.lesson-timeline .timeline-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.lesson-timeline .timeline-node{border-left:4px solid var(--red);padding:10px 12px;background:#242424}
+.lesson-timeline .timeline-year{display:block;font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:#fff}
+.lesson-timeline .timeline-text{font-size:13px;line-height:1.45;color:#ddd}
+.ps-visual{display:grid;grid-template-columns:minmax(210px,36%) 1fr;gap:24px;align-items:start}
+.ps-visual figure{margin:0}
+.ps-visual img{width:100%;display:block;border:3px solid var(--gray);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+.tn-text-block{margin-top:24px;border-top:1px solid rgba(27,214,255,.35);padding-top:20px}
+.tn-text-block h3{font-family:'Roboto Slab',serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--cyan);margin:18px 0 8px}
+.tn-text-block p{font-family:'Roboto Slab',serif;font-size:17px;line-height:1.65;color:#fff;margin-bottom:12px}
+.ff-context{font-family:'Roboto Slab',serif;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:#ffe8b7;text-align:center;margin-bottom:26px;font-weight:700}
+@media(max-width:880px){.lesson-timeline{margin:0 22px 28px}.lesson-timeline .timeline-row{grid-template-columns:1fr}.ps-visual{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.section-animate{opacity:1;transform:none;transition:none}}
+
 </style>
 </head>
 <body>
+<div id="reading-progress"></div>
 <div class="page-wrap">
 <header class="site-header">
   <!--
-    FILENAME: S2L05_HeaderBg_YaltaConference.jpg
+    FILENAME: S2L05_HeaderBg_PotsdamTable.jpg
     PLACE IN: images/S2/L05/
-    FIND: Yalta Conference, February 1945, Churchill, Roosevelt, and Stalin seated together; shows former allies deciding the postwar world
-    SEARCH: Yalta Conference 1945 Churchill Roosevelt Stalin photograph Wikimedia Commons
-    LINK: https://commons.wikimedia.org/wiki/File:Yalta_Conference_(Churchill,_Roosevelt,_Stalin)_(B%26W).jpg (suggested, not guaranteed)
+    FIND: Potsdam Conference table or Allied leaders meeting in 1945; use as the faded header because it shows former allies trying to decide the postwar world
+    SEARCH: Potsdam Conference 1945 Truman Churchill Stalin table Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Potsdam_Conference
   -->
-  <img class="header-bg" src="images/S2/L05/S2L05_HeaderBg_YaltaConference.jpg" alt="Churchill, Roosevelt, and Stalin at the Yalta Conference">
+  <img class="header-bg" src="images/S2/L05/S2L05_HeaderBg_PotsdamTable.jpg" alt="Allied leaders meeting at the Potsdam Conference">
   <div class="header-inner">
-    <div class="course-label">WORLD HISTORY — SEMESTER 2, LESSON 05</div>
+    <div class="course-label">WORLD HISTORY : SEMESTER 2, LESSON 05</div>
     <h1 class="page-title">POST-WAR WORLD AND COLD WAR ORIGINS</h1>
     <div class="eq-banner"><span class="eq-label">ESSENTIAL QUESTION</span>How did the end of World War II quickly create a new global conflict between former allies?</div>
   </div>
 </header>
 
 <nav class="section-nav" aria-label="Page sections">
-  <a href="#yalta">YALTA</a><a href="#iron-curtain">IRON CURTAIN</a><a href="#nuclear">NUCLEAR AGE</a><a href="#recovery">RECOVERY</a><a href="#primary-source-moment">PRIMARY SOURCE</a><a href="#then-now">THEN AND NOW</a>
+  <a href="#postwar-timeline">TIMELINE</a><a href="#yalta">YALTA</a><a href="#iron-curtain">IRON CURTAIN</a><a href="#nuclear">NUCLEAR AGE</a><a href="#recovery">RECOVERY</a><a href="#primary-source-moment">PRIMARY SOURCE</a><a href="#then-now">THEN AND NOW</a>
 </nav>
 <button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
-<aside class="toc-sidebar"><span class="toc-label">ON THIS PAGE</span><a href="#yalta">YALTA</a><a href="#iron-curtain">IRON CURTAIN</a><a href="#nuclear">NUCLEAR AGE</a><a href="#recovery">RECOVERY</a><a href="#primary-source-moment">SOURCE</a><a href="#then-now">THEN AND NOW</a></aside>
+<aside class="toc-sidebar"><span class="toc-label">ON THIS PAGE</span><a href="#postwar-timeline">TIMELINE</a><a href="#yalta">YALTA</a><a href="#iron-curtain">IRON CURTAIN</a><a href="#nuclear">NUCLEAR AGE</a><a href="#recovery">RECOVERY</a><a href="#primary-source-moment">SOURCE</a><a href="#then-now">THEN AND NOW</a></aside>
 
 <main>
-<section class="intro-section">
+
+<section class="lesson-timeline section-animate" id="postwar-timeline">
+  <h2>POSTWAR COLD WAR ROADMAP</h2>
+  <div class="timeline-row">
+    <div class="timeline-node"><span class="timeline-year">1945</span><span class="timeline-text">Yalta and Potsdam divide Germany and expose distrust among former allies.</span></div>
+    <div class="timeline-node"><span class="timeline-year">1946</span><span class="timeline-text">Churchill warns that an Iron Curtain has divided Europe.</span></div>
+    <div class="timeline-node"><span class="timeline-year">1947</span><span class="timeline-text">The Truman Doctrine turns containment into official U.S. policy.</span></div>
+    <div class="timeline-node"><span class="timeline-year">1948</span><span class="timeline-text">The Marshall Plan uses money to rebuild Western Europe and resist communism.</span></div>
+    <div class="timeline-node"><span class="timeline-year">1949</span><span class="timeline-text">NATO forms and the Soviet Union tests its first atomic bomb.</span></div>
+  </div>
+</section>
+
+<section class="intro-section section-animate" id="introduction">
   <p class="para-standard">In February 1945, three leaders sat together in a palace on the Black Sea. <span class="vocab">Franklin Roosevelt<span class="tip">U.S. president during most of World War II.</span></span>, <span class="vocab">Winston Churchill<span class="tip">British prime minister during World War II.</span></span>, and <span class="vocab">Joseph Stalin<span class="tip">Soviet dictator who ruled the USSR.</span></span> had helped defeat Nazi Germany. Now they had to decide what the world would look like after the fighting stopped.</p>
   <p class="para-simple">In February 1945, three leaders met near the Black Sea. <span class="vocab-red">Roosevelt</span>, <span class="vocab-red">Churchill</span>, and <span class="vocab-red">Stalin</span> had helped defeat Nazi Germany. Now they had to decide what would happen after the war.</p>
   <p class="para-standard">They smiled for cameras and talked about peace. But underneath the smiles were deep fears. The United States and Britain wanted free elections and open trade. Stalin wanted control over Eastern Europe to protect the Soviet Union. The war was ending, but a new rivalry was already beginning.</p>
   <p class="para-simple">They smiled for pictures and talked about peace. But they did not trust each other. The United States and Britain wanted free elections. Stalin wanted control over Eastern Europe. The war was ending, but a new conflict was beginning.</p>
 </section>
 
-<section class="content-section clearfix" id="yalta">
+<section class="content-section section-animate clearfix" id="yalta">
   <span class="section-kicker">CHAPTER ONE</span>
   <h2 class="section-heading">YALTA AND THE DIVISION OF THE WORLD</h2>
   <!--
@@ -92,7 +131,7 @@ footer{background:#050505;color:#aaa;text-align:center;padding:24px 30px;font-fa
     PLACE IN: images/S2/L05/
     FIND: Official photograph of the Yalta Conference, February 1945, showing Churchill, Roosevelt, and Stalin
     SEARCH: Yalta Conference 1945 Big Three Churchill Roosevelt Stalin seated Wikimedia Commons
-    LINK: https://commons.wikimedia.org/wiki/File:Yalta_Conference_(Churchill,_Roosevelt,_Stalin)_(B%26W).jpg (suggested, not guaranteed)
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Potsdam_Conference
   -->
   <figure class="img-right"><img src="images/S2/L05/S2L05_YaltaPhoto.jpg" alt="Yalta Conference leaders"><figcaption>Churchill, Roosevelt, and Stalin at Yalta, February 1945. Wikimedia Commons.</figcaption></figure>
   <p class="para-standard">The <span class="vocab">Yalta Conference<span class="tip">A 1945 meeting about the postwar world.</span></span> took place before Germany surrendered. The Allies agreed that Germany would be divided into occupation zones. They also agreed that countries freed from Nazi control should hold free elections. On paper, this sounded like a plan for peace.</p>
@@ -103,7 +142,7 @@ footer{background:#050505;color:#aaa;text-align:center;padding:24px 30px;font-fa
   <p class="para-simple">Within two years, many Eastern European countries had communist governments controlled by Moscow. Yalta did not stop division. It showed where the division would start.</p>
 </section>
 
-<div class="brain-break dyk-break">
+<div class="brain-break section-animate dyk-break">
   <span class="bb-label">DID YOU KNOW</span>
   <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
     <div style="flex:1;min-width:200px;">
@@ -121,17 +160,18 @@ footer{background:#050505;color:#aaa;text-align:center;padding:24px 30px;font-fa
   </div>
 </div>
 
-<div class="brain-break ff-break">
+<div class="brain-break section-animate ff-break">
   <span class="bb-label">FAST FACTS</span>
+  <p class="ff-context">HOW QUICKLY ALLIED VICTORY TURNED INTO COLD WAR RIVALRY</p>
   <div class="ff-grid">
-    <div class="ff-item"><span class="ff-number">1945</span><span class="ff-desc">WWII ENDS</span></div>
-    <div class="ff-item"><span class="ff-number">1947</span><span class="ff-desc">TRUMAN DOCTRINE</span></div>
-    <div class="ff-item"><span class="ff-number">1949</span><span class="ff-desc">NATO CREATED</span></div>
-    <div class="ff-item"><span class="ff-number">1991</span><span class="ff-desc">SOVIET UNION FALLS</span></div>
+    <div class="ff-item"><span class="ff-number">1945</span><span class="ff-desc">the year World War II ended and the United States and Soviet Union began arguing over Europe’s future</span></div>
+    <div class="ff-item"><span class="ff-number">1946</span><span class="ff-desc">the year Churchill’s Iron Curtain speech gave people a powerful image for Europe’s division</span></div>
+    <div class="ff-item"><span class="ff-number">1947</span><span class="ff-desc">the year the Truman Doctrine promised U.S. support for countries resisting communist pressure</span></div>
+    <div class="ff-item"><span class="ff-number">1949</span><span class="ff-desc">the year NATO formed and the Soviet atomic bomb ended America’s nuclear monopoly</span></div>
   </div>
 </div>
 
-<section class="content-section clearfix" id="iron-curtain">
+<section class="content-section section-animate clearfix" id="iron-curtain">
   <span class="section-kicker">CHAPTER TWO</span>
   <h2 class="section-heading">THE IRON CURTAIN FALLS</h2>
   <p class="para-standard">By 1947, Europe was divided. Western Europe was mostly connected to the United States. Eastern Europe was controlled or heavily influenced by the Soviet Union. Churchill called this divide the <span class="vocab">Iron Curtain<span class="tip">The Cold War divide between Eastern and Western Europe.</span></span>.</p>
@@ -154,7 +194,7 @@ footer{background:#050505;color:#aaa;text-align:center;padding:24px 30px;font-fa
   <p class="para-simple">A <span class="vocab-red">sphere of influence</span> is an area shaped by a powerful country. During the Cold War, many countries were pushed to choose a side. Even neutral countries felt pressure.</p>
 </section>
 
-<section class="content-section clearfix" id="nuclear">
+<section class="content-section section-animate clearfix" id="nuclear">
   <span class="section-kicker">CHAPTER THREE</span>
   <h2 class="section-heading">THE NUCLEAR AGE</h2>
   <!--
@@ -178,7 +218,7 @@ footer{background:#050505;color:#aaa;text-align:center;padding:24px 30px;font-fa
   </div>
 </section>
 
-<div class="brain-break as-break">
+<div class="brain-break section-animate as-break">
   <span class="bb-label">ART SPOTLIGHT</span>
   <!--
     FILENAME: S2L05_ArtSpotlight_DuckAndCover.jpg
@@ -192,7 +232,7 @@ footer{background:#050505;color:#aaa;text-align:center;padding:24px 30px;font-fa
   <p class="as-fact">The strangest part is not that Bert the Turtle existed. It is that adults used a cheerful cartoon turtle to explain nuclear war to schoolchildren. The cute drawing made the impossible fear feel like a classroom routine.</p>
 </div>
 
-<section class="content-section clearfix" id="recovery">
+<section class="content-section section-animate clearfix" id="recovery">
   <span class="section-kicker">CHAPTER FOUR</span>
   <h2 class="section-heading">RECOVERY AND RIVALRY</h2>
   <div class="img-pair">
@@ -227,63 +267,178 @@ footer{background:#050505;color:#aaa;text-align:center;padding:24px 30px;font-fa
   </div>
 </section>
 
-<section class="content-section" id="primary-source-moment">
+<section class="content-section section-animate" id="primary-source-moment">
   <span class="section-kicker">PRIMARY SOURCE MOMENT</span>
-  <h2 class="section-heading">THE IRON CURTAIN SPEECH</h2>
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE</div>
-    <div class="ps-quote">"From Stettin in the Baltic to Trieste in the Adriatic, an iron curtain has descended across the Continent."</div>
-    <div class="ps-attribution">Winston Churchill, "The Sinews of Peace" speech, March 5, 1946</div>
-    <div class="ps-narrator">Churchill was warning that Europe had been divided. His phrase "Iron Curtain" gave people a clear image of the new Cold War boundary.</div>
+  <h2 class="section-heading">THE TRUMAN DOCTRINE</h2>
+  <div class="primary-source section-animate">
+    <div class="ps-visual">
+      <figure>
+        <!--
+          FILENAME: S2L05_TrumanDoctrineAddress.jpg
+          PLACE IN: images/S2/L05/
+          PRIORITY: ESSENTIAL
+          FIND: President Harry S. Truman addressing Congress on March 12, 1947, as he asks for aid to Greece and Turkey and announces the policy that becomes containment
+          SEARCH: Truman Doctrine address Congress March 12 1947 Wikimedia Commons Library of Congress
+          LINK: Suggested: https://commons.wikimedia.org/wiki/File:President_Truman_addressing_Congress.jpg
+        -->
+        <img src="images/S2/L05/S2L05_TrumanDoctrineAddress.jpg" alt="President Harry Truman addressing Congress in 1947">
+        <figcaption>President Harry S. Truman addresses Congress, 1947. His speech made containment official U.S. policy. Wikimedia Commons / Library of Congress.</figcaption>
+      </figure>
+      <div>
+        <div class="ps-label">PRIMARY SOURCE</div>
+        <div class="ps-quote">“I believe that it must be the policy of the United States to support free peoples who are resisting attempted subjugation by armed minorities or by outside pressures. I believe that we must assist free peoples to work out their own destinies in their own way.”</div>
+        <div class="ps-attribution">President Harry S. Truman, Address before a Joint Session of Congress, March 12, 1947.</div>
+        <div class="ps-narrator">Truman’s words show how quickly the United States moved from wartime alliance to Cold War containment. He described Soviet pressure as a threat to free peoples and argued that the United States had a duty to act beyond its borders.</div>
+      </div>
+    </div>
   </div>
-  <div class="ps-questions">
-    <p><strong>Question 1:</strong> What image does the phrase "Iron Curtain" create in your mind?</p>
-    <p><strong>Question 2:</strong> How does this quote show that former allies had quickly become rivals?</p>
-  </div>
+  <p class="para-standard">This source connects directly to the essential question because it shows the new global conflict forming after World War II. Truman did not say the United States was fighting the Soviet Union directly. Instead, he argued that the United States should support countries under pressure so communism would not spread. That idea shaped decades of Cold War policy.</p>
+  <p class="para-simple">This source connects to the essential question. Truman did not say the U.S. would fight the Soviet Union directly. He said the U.S. should help countries under pressure. That idea became containment and shaped the Cold War.</p>
 </section>
 
-<div class="brain-break tn-break" id="then-now">
+<div class="brain-break section-animate tn-break" id="then-now">
   <span class="bb-label">THEN AND NOW</span>
-  <p class="tn-payoff">The Cold War ended, but the world it built did not disappear.</p>
+  <p class="tn-payoff">THE COLD WAR ENDED, BUT ITS ALLIANCES, BORDERS, AND NUCLEAR FEARS STILL SHAPE THE WORLD.</p>
   <div class="tn-pair">
     <div class="tn-item">
-      <span class="tn-era-label">THEN</span>
+      <span class="tn-era-label">1961</span>
       <!--
         FILENAME: S2L05_Then_BerlinWall1961.jpg
         PLACE IN: images/S2/L05/
+        PRIORITY: SUPPORTING
         FIND: Berlin Wall construction or early Berlin Wall scene, 1961; shows Cold War division becoming physical
         SEARCH: Berlin Wall construction 1961 Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/Category:Berlin_Wall_in_1961 (suggested, not guaranteed)
       -->
-      <img src="images/S2/L05/S2L05_Then_BerlinWall1961.jpg" alt="Berlin Wall in 1961">
-      <p class="tn-caption">The Berlin Wall showed Cold War division in concrete and barbed wire.</p>
+      <img src="images/S2/L05/S2L05_Then_BerlinWall1961.jpg" alt="Berlin Wall construction in 1961">
+      <p class="tn-caption">The Berlin Wall made Cold War division visible in concrete, barbed wire, and guarded streets.</p>
     </div>
     <div class="tn-item">
       <span class="tn-era-label">NOW</span>
       <!--
         FILENAME: S2L05_Now_NATOSummit.jpg
         PLACE IN: images/S2/L05/
-        FIND: Modern NATO summit or NATO leaders meeting, 2022 or later; shows Cold War alliance still shaping world politics
+        PRIORITY: SUPPORTING
+        FIND: Modern NATO summit or NATO leaders meeting, 2022 or later; shows a Cold War alliance still shaping present-day security
         SEARCH: NATO Madrid Summit 2022 Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:NATO_Madrid_Summit_2022.jpg (suggested, not guaranteed)
       -->
       <img src="images/S2/L05/S2L05_Now_NATOSummit.jpg" alt="Modern NATO summit">
-      <p class="tn-caption">NATO began during the Cold War and still shapes global security today.</p>
+      <p class="tn-caption">NATO began during the Cold War and still shapes global security decisions today.</p>
     </div>
   </div>
-  <p class="tn-closing">The Cold War was fought to protect freedom, but both sides also supported violence and unfair governments. Does a country lose the moral argument when it does harmful things for what it calls a good cause?</p>
+  <div class="tn-text-block">
+    <h3>THEN</h3>
+    <p>During the Cold War, Europe was divided into rival spheres of influence. The Berlin Wall became the clearest symbol of that division. It showed that the conflict was not only about speeches and weapons; it changed streets, families, travel, and daily life.</p>
+    <h3>NOW</h3>
+    <p>Today, the Soviet Union no longer exists, but NATO still does. Many countries still make security decisions based on fears that grew during the Cold War. Modern alliances show that choices made after World War II did not disappear when the Cold War ended.</p>
+    <h3>CONNECTION</h3>
+    <p>The past and present connect through power, fear, and protection. After World War II, former allies stopped trusting one another and built rival systems for security. Those systems left behind alliances, nuclear weapons, borders, and memories that still influence world politics. How can a war that ended decades ago still shape the choices countries make today?</p>
+  </div>
 </div>
+
 </main>
 
-<footer>WORLD HISTORY — SEMESTER 2, LESSON 05 — POST-WAR WORLD AND COLD WAR ORIGINS</footer>
+<footer>WORLD HISTORY : SEMESTER 2, LESSON 05 : POST-WAR WORLD AND COLD WAR ORIGINS</footer>
 </div>
 
 <script>
-document.querySelectorAll('.vocab').forEach(function(el){el.addEventListener('click',function(e){e.stopPropagation();document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});el.classList.toggle('active');});});
+(function(){
+  var bar=document.getElementById('reading-progress');
+  window.addEventListener('scroll',function(){
+    var scrollTop=window.scrollY||document.documentElement.scrollTop;
+    var docHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    var progress=docHeight>0?(scrollTop/docHeight)*100:0;
+    bar.style.width=progress+'%';
+  },{passive:true});
+})();
+
+document.getElementById('lexile-toggle').addEventListener('click',function(){
+  document.body.classList.toggle('simplified');
+  this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';
+});
+
+function repositionTip(el){
+  var tip=el.querySelector('.tip');
+  if(!tip)return;
+  tip.style.left='50%';
+  tip.style.transform='translateX(-50%)';
+  var rect=tip.getBoundingClientRect();
+  if(rect.left<8){
+    var shift=8-rect.left;
+    tip.style.transform='translateX(calc(-50% + '+shift+'px))';
+  }else if(rect.right>window.innerWidth-8){
+    var shift=rect.right-(window.innerWidth-8);
+    tip.style.transform='translateX(calc(-50% - '+shift+'px))';
+  }
+}
+
+document.querySelectorAll('.vocab').forEach(function(el){
+  el.setAttribute('tabindex','0');
+  el.addEventListener('click',function(e){
+    e.stopPropagation();
+    document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});
+    el.classList.toggle('active');
+    if(el.classList.contains('active'))repositionTip(el);
+  });
+  el.addEventListener('focus',function(){el.classList.add('active');repositionTip(el);});
+  el.addEventListener('blur',function(){el.classList.remove('active');});
+  el.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);}
+    if(e.key==='Escape')el.classList.remove('active');
+  });
+});
 document.addEventListener('click',function(){document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});});
-document.getElementById('lexile-toggle').addEventListener('click',function(){document.body.classList.toggle('simplified');this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';});
-const tocObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{const id=entry.target.getAttribute('id');const link=document.querySelector('.toc-sidebar a[href="#'+id+'"]');if(link){if(entry.isIntersecting)link.classList.add('active');else link.classList.remove('active');}});},{threshold:.25});
-document.querySelectorAll('[id]').forEach(el=>tocObserver.observe(el));
+
+const tocObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    const id=entry.target.getAttribute('id');
+    const tocLink=document.querySelector('.toc-sidebar a[href="#'+id+'"]');
+    const navLink=document.querySelector('.section-nav a[href="#'+id+'"]');
+    if(entry.isIntersecting){
+      if(tocLink)tocLink.classList.add('active');
+      if(navLink)navLink.classList.add('active');
+    }else{
+      if(tocLink)tocLink.classList.remove('active');
+      if(navLink)navLink.classList.remove('active');
+    }
+  });
+},{threshold:.25});
+document.querySelectorAll('section[id], div[id="then-now"]').forEach(el=>tocObserver.observe(el));
+
+(function(){
+  var animObserver=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        animObserver.unobserve(entry.target);
+      }
+    });
+  },{threshold:.08});
+  document.querySelectorAll('.section-animate').forEach(function(el){animObserver.observe(el);});
+})();
+
+document.querySelectorAll('img').forEach(function(img){
+  if(img.complete&&img.naturalWidth>0){
+    img.classList.add('loaded');
+  }else{
+    img.addEventListener('load',function(){img.classList.add('loaded');});
+    img.addEventListener('error',function(){img.style.opacity='0.15';img.style.border='2px dashed rgba(255,255,255,0.2)';});
+  }
+});
 </script>
 </body>
+
+
+<!--
+  IMAGE CHECK: Open browser DevTools (F12), go to Console, paste and run:
+
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.complete || img.naturalWidth === 0) {
+      console.warn('MISSING:', img.src);
+    } else {
+      console.log('OK:', img.src);
+    }
+  });
+-->
 </html>
