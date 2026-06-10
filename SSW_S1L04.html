@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSW S1L04 — NEW IMPERIALISM</title>
+<title>SSW S1L04 : NEW IMPERIALISM</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700;900&family=Atkinson+Hyperlegible:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -24,6 +24,17 @@
   --forest:#113d2c;
   --orange:#ff7a21;
   --yellow:#ffcf33;
+}
+
+#reading-progress{
+  position:fixed;
+  top:0;
+  left:0;
+  height:4px;
+  width:0%;
+  background:var(--gold-light);
+  z-index:9999;
+  transition:width .1s linear;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -117,7 +128,7 @@ body{
 }
 .section-nav{
   position:sticky;
-  top:0;
+  top:4px;
   z-index:100;
   display:flex;
   flex-wrap:wrap;
@@ -137,6 +148,7 @@ body{
   margin-bottom:-4px;
 }
 .section-nav a:hover{background:rgba(255,255,255,.08);color:#fff;border-bottom-color:#fff}
+.section-nav a.active{color:#fff;border-bottom-color:var(--gold-light);background:rgba(255,255,255,.1)}
 #lexile-toggle{
   display:block;
   margin:20px auto 28px;
@@ -157,7 +169,7 @@ body.simplified .para-standard{display:none}
 body.simplified .para-simple{display:block}
 .toc-sidebar{
   position:fixed;
-  right:calc(50% - 590px);
+  left:calc(50% - 590px);
   top:50%;
   transform:translateY(-50%);
   width:155px;
@@ -165,7 +177,7 @@ body.simplified .para-simple{display:block}
   font-family:'Oswald',sans-serif;
   z-index:50;
   background:rgba(58,10,20,.92);
-  border-left:2px solid rgba(214,180,73,.45);
+  border-right:2px solid rgba(214,180,73,.45);
 }
 .toc-sidebar .toc-label{
   display:block;
@@ -184,7 +196,7 @@ body.simplified .para-simple{display:block}
   letter-spacing:.05em;
   text-transform:uppercase;
 }
-.toc-sidebar a.active,.toc-sidebar a:hover{color:#fff;font-weight:700}
+.toc-sidebar a.active,.toc-sidebar a:hover{color:var(--gold-pale);font-weight:700}
 main{max-width:820px;margin:0 auto;padding:0 28px 68px}
 .intro-section{padding:48px 0 30px}
 .intro-section p{font-size:19px;line-height:1.9;margin-bottom:18px;color:var(--ink)}
@@ -250,7 +262,10 @@ p{margin-bottom:20px;color:var(--ink)}
   box-shadow:0 4px 18px rgba(0,0,0,.45);
 }
 .vocab:hover .tip,.vocab.active .tip{display:block}
+.vocab:focus{outline:2px solid var(--gold-light);outline-offset:2px;border-radius:2px}
 figure{margin:32px 0}
+img{opacity:0;transition:opacity .4s ease}
+img.loaded{opacity:1}
 figure img{
   width:100%;
   display:block;
@@ -346,13 +361,6 @@ figcaption{
   box-shadow:0 8px 24px rgba(0,0,0,.35);
 }
 @media(max-width:700px){.ps-visual{grid-template-columns:1fr}}
-.ps-questions{
-  background:#f1dbac;
-  border:1px solid rgba(92,16,32,.3);
-  padding:22px 26px;
-  margin-bottom:38px;
-}
-.ps-questions p{font-size:17px;margin-bottom:12px}
 .compare-card{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -404,12 +412,22 @@ figcaption{
   background:#1a120c;
   color:#fff;
   padding:36px 40px;
-  margin:0 -50px 44px;
+  margin:44px -50px;
   border-top:3px solid var(--yellow);
   border-bottom:3px solid var(--yellow);
   text-align:center;
 }
-.ff-break .bb-label{text-align:center;margin-bottom:24px;color:var(--yellow)}
+.ff-break .bb-label{text-align:center;margin-bottom:8px;color:var(--yellow)}
+.ff-context{
+  font-family:'Oswald',sans-serif;
+  font-size:14px;
+  letter-spacing:.08em;
+  color:#ffe8b7;
+  text-align:center;
+  margin-bottom:28px;
+  opacity:.85;
+  font-weight:700;
+}
 .ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px}
 .ff-item{text-align:center;padding:8px 12px}
 .ff-number{
@@ -508,6 +526,26 @@ figcaption{
   margin-top:8px;
   line-height:1.4;
 }
+.tn-text-block{
+  margin-top:24px;
+  border-top:1px solid rgba(255,207,51,.35);
+  padding-top:20px;
+}
+.tn-text-block h3{
+  font-family:'Oswald',sans-serif;
+  font-size:13px;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  color:var(--yellow);
+  margin:18px 0 8px;
+}
+.tn-text-block p{
+  font-family:'Oswald',sans-serif;
+  font-size:17px;
+  line-height:1.65;
+  color:#fff;
+  margin-bottom:12px;
+}
 .tn-closing{
   font-family:'Oswald',sans-serif;
   font-size:20px;
@@ -518,6 +556,19 @@ figcaption{
   line-height:1.5;
   border-top:1px solid rgba(255,207,51,.35);
   padding-top:20px;
+}
+
+.section-animate{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .45s ease-out,transform .45s ease-out;
+}
+.section-animate.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+@media(prefers-reduced-motion:reduce){
+  .section-animate{opacity:1;transform:none;transition:none}
 }
 footer{
   background:var(--burgundy);
@@ -550,21 +601,22 @@ footer{
 </style>
 </head>
 <body>
+<div id="reading-progress"></div>
 <div class="page-wrap">
 <header class="site-header">
   <!--
     FILENAME: S1L04_AfricaColonialMapHeader.jpg
     PLACE IN: images/S1/L04/
     PRIORITY: ESSENTIAL
-    FIND: Map of <span class="vocab">Africa<span class="tip">A large continent with many peoples and nations.</span></span> showing European colonial territories, circa 1914; use as the faded header because it shows imperialism as lines drawn across a continent
-    SEARCH: Africa colonial map 1914 European empires <span class="vocab">Scramble for Africa<span class="tip">European race to claim African land.</span></span> Wikimedia Commons
+    FIND: Map of AfricaA large continent with many peoples and nations. showing European colonial territories, circa 1914; use as the faded header because it shows imperialism as lines drawn across a continent
+    SEARCH: Africa colonial map 1914 European empires Scramble for AfricaEuropean race to claim African land. Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Colonisation_of_Africa_1880_to_1913.png (suggested, not guaranteed)
   -->
   <img class="header-bg" src="images/S1/L04/S1L04_AfricaColonialMapHeader.jpg" alt="European colonial map of Africa, circa 1914">
   <div class="header-inner">
-    <div class="course-label">WORLD HISTORY — SEMESTER 1, LESSON 04</div>
+    <div class="course-label">WORLD HISTORY : SEMESTER 1, LESSON 04</div>
     <h1 class="page-title">NEW IMPERIALISM</h1>
-    <div class="eq-banner"><span class="eq-label">ESSENTIAL QUESTION</span>Why did powerful nations take over weaker ones, and what did <span class="vocab">colonized people<span class="tip">People living under foreign control.</span></span> do about it?</div>
+    <div class="eq-banner"><span class="eq-label">ESSENTIAL QUESTION</span>Why did powerful nations take over weaker ones, and what did <span class="vocab" tabindex="0">colonized people<span class="tip">People living under foreign control.</span></span> do about it?</div>
   </div>
 </header>
 
@@ -589,6 +641,7 @@ footer{
 
 <aside class="toc-sidebar">
   <span class="toc-label">ON THIS PAGE</span>
+  <a href="#introduction">INTRODUCTION</a>
   <a href="#scramble">SCRAMBLE</a>
   <a href="#tools">TOOLS</a>
   <a href="#under-empire">UNDER EMPIRE</a>
@@ -598,14 +651,14 @@ footer{
 </aside>
 
 <main>
-<section class="intro-section">
-  <p class="para-standard">In 1884, <span class="vocab">European diplomats<span class="tip">Officials who represent countries in foreign talks.</span></span> met in <span class="vocab">Berlin<span class="tip">Capital city of Germany.</span></span> and argued over a giant map of Africa. They used rulers, colored pencils, and treaty language. What they did not have was a single <span class="vocab">African representative<span class="tip">Someone speaking for African people or states.</span></span> in the room. They drew <span class="vocab">borders<span class="tip">Lines that separate countries or territories.</span></span> across rivers, deserts, villages, and <span class="vocab">kingdoms<span class="tip">States ruled by kings or queens.</span></span> as if people were not already living there.</p>
+<section class="intro-section section-animate" id="introduction">
+  <p class="para-standard">In 1884, <span class="vocab" tabindex="0">European diplomats<span class="tip">Officials who represent countries in foreign talks.</span></span> met in <span class="vocab" tabindex="0">Berlin<span class="tip">Capital city of Germany.</span></span> and argued over a giant map of Africa. They used rulers, colored pencils, and treaty language. What they did not have was a single <span class="vocab" tabindex="0">African representative<span class="tip">Someone speaking for African people or states.</span></span> in the room. They drew <span class="vocab" tabindex="0">borders<span class="tip">Lines that separate countries or territories.</span></span> across rivers, deserts, villages, and <span class="vocab" tabindex="0">kingdoms<span class="tip">States ruled by kings or queens.</span></span> as if people were not already living there.</p>
   <p class="para-simple">In 1884, <span class="vocab-red">European diplomats</span> met in <span class="vocab-red">Berlin</span>. They argued over a giant map of <span class="vocab-red">Africa</span>. They used rulers and colored pencils. No African representative was in the room. They drew <span class="vocab-red">borders</span> across rivers, deserts, villages, and kingdoms.</p>
-  <p class="para-standard">This meeting became a symbol of <span class="vocab">New Imperialism<span class="tip">Fast empire-building from about 1870 to 1914.</span></span>. Powerful nations claimed they were spreading <span class="vocab">progress<span class="tip">The idea that society is improving.</span></span>, religion, and order. In reality, they took <span class="vocab">land, labor, and resources<span class="tip">Territory, workers, and valuable materials.</span></span> from millions of people. Colonized people did not simply accept this. They resisted from the start.</p>
+  <p class="para-standard">This meeting became a symbol of <span class="vocab" tabindex="0">New Imperialism<span class="tip">Fast empire-building from about 1870 to 1914.</span></span>. Powerful nations claimed they were spreading <span class="vocab" tabindex="0">progress<span class="tip">The idea that society is improving.</span></span>, religion, and order. In reality, they took <span class="vocab" tabindex="0">land, labor, and resources<span class="tip">Territory, workers, and valuable materials.</span></span> from millions of people. Colonized people did not simply accept this. They resisted from the start.</p>
   <p class="para-simple">This meeting became a symbol of <span class="vocab-red">New Imperialism</span>. Powerful nations said they were spreading progress and order. In reality, they took land, labor, and resources. Colonized people did not simply accept this. They resisted from the start.</p>
 </section>
 
-<section class="content-section clearfix" id="scramble">
+<section class="content-section clearfix section-animate" id="scramble">
   <span class="section-kicker">CHAPTER ONE</span>
   <h2 class="section-heading">THE SCRAMBLE FOR AFRICA</h2>
   <!--
@@ -621,17 +674,17 @@ footer{
     <figcaption>The Berlin Conference, 1884-1885. European powers discussed Africa without African leaders present. Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard"><span class="vocab">Imperialism<span class="tip">When a powerful country controls another place for power or profit.</span></span> means one country takes control of another place. <span class="vocab">Empires<span class="tip">States that control other lands and peoples.</span></span> had existed before, but New Imperialism moved with unusual speed. Between about 1870 and 1914, European powers and the United States claimed huge parts of Africa, Asia, and the Pacific. They wanted land, <span class="vocab">raw materials<span class="tip">Natural resources used to make products.</span></span>, <span class="vocab">trade routes<span class="tip">Paths used to move goods for trade.</span></span>, and <span class="vocab">status<span class="tip">Power, respect, or rank.</span></span>.</p>
+  <p class="para-standard"><span class="vocab" tabindex="0">Imperialism<span class="tip">When a powerful country controls another place for power or profit.</span></span> means one country takes control of another place. <span class="vocab" tabindex="0">Empires<span class="tip">States that control other lands and peoples.</span></span> had existed before, but New Imperialism moved with unusual speed. Between about 1870 and 1914, European powers and the United States claimed huge parts of Africa, Asia, and the Pacific. They wanted land, <span class="vocab" tabindex="0">raw materials<span class="tip">Natural resources used to make products.</span></span>, <span class="vocab" tabindex="0">trade routes<span class="tip">Paths used to move goods for trade.</span></span>, and <span class="vocab" tabindex="0">status<span class="tip">Power, respect, or rank.</span></span>.</p>
   <p class="para-simple"><span class="vocab-red">Imperialism</span> means one country controls another place. Empires had existed before. <span class="vocab-red">New Imperialism</span> moved faster. From about 1870 to 1914, Europe and the United States claimed huge areas in <span class="vocab-red">Africa</span>, Asia, and the Pacific. They wanted land, materials, trade, and power.</p>
 
-  <p class="para-standard">Africa became the clearest example. In 1880, Europeans controlled only a small part of the continent. By 1914, they controlled more than 90 percent. Britain, France, Germany, Belgium, Portugal, Italy, and Spain raced to claim <span class="vocab">territory<span class="tip">Land controlled by a government.</span></span> before rivals could take it. This race became known as the Scramble for Africa.</p>
+  <p class="para-standard">Africa became the clearest example. In 1880, Europeans controlled only a small part of the continent. By 1914, they controlled more than 90 percent. Britain, France, Germany, Belgium, Portugal, Italy, and Spain raced to claim <span class="vocab" tabindex="0">territory<span class="tip">Land controlled by a government.</span></span> before rivals could take it. This race became known as the Scramble for Africa.</p>
   <p class="para-simple"><span class="vocab-red">Africa</span> became the clearest example. In 1880, Europeans controlled only a small part of Africa. By 1914, they controlled more than 90 percent. European countries raced to claim land before rivals could take it. This was the <span class="vocab-red">Scramble for Africa</span>.</p>
 
   <!--
     FILENAME: S1L04_AfricaScrambleMap1914.jpg
     PLACE IN: images/S1/L04/
     PRIORITY: ESSENTIAL
-    FIND: Full color map of Africa in 1914 showing European colonial territories, with <span class="vocab">Ethiopia<span class="tip">African country that defeated Italy at Adwa.</span></span> and Liberia independent
+    FIND: Full color map of Africa in 1914 showing European colonial territories, with EthiopiaAfrican country that defeated Italy at Adwa. and Liberia independent
     SEARCH: Africa 1914 colonial map European empires color Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Colonial_Africa_1914_map.svg (suggested, not guaranteed)
   -->
@@ -640,14 +693,14 @@ footer{
     <figcaption>Colonial Africa, 1914. Almost the whole continent was under European rule. Only Ethiopia and Liberia remained independent. Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard">European leaders often said they were bringing <span class="vocab">civilization<span class="tip">A word empires used to claim superiority.</span></span>. That word hid what was really happening. <span class="vocab">Colonizers<span class="tip">People or countries that take control of others.</span></span> set borders, controlled governments, taxed people, <span class="vocab">forced labor<span class="tip">Work people are made to do by force.</span></span>, and took resources. They treated <span class="vocab">African kingdoms<span class="tip">African states with their own rulers and systems.</span></span> as obstacles instead of nations with their own histories and systems of rule.</p>
+  <p class="para-standard">European leaders often said they were bringing <span class="vocab" tabindex="0">civilization<span class="tip">A word empires used to claim superiority.</span></span>. That word hid what was really happening. <span class="vocab" tabindex="0">Colonizers<span class="tip">People or countries that take control of others.</span></span> set borders, controlled governments, taxed people, <span class="vocab" tabindex="0">forced labor<span class="tip">Work people are made to do by force.</span></span>, and took resources. They treated <span class="vocab" tabindex="0">African kingdoms<span class="tip">African states with their own rulers and systems.</span></span> as obstacles instead of nations with their own histories and systems of rule.</p>
   <p class="para-simple">European leaders often said they were bringing civilization. That word hid what was really happening. Colonizers drew <span class="vocab-red">borders</span>, controlled governments, taxed people, <span class="vocab-red">forced labor</span>, and took resources. They treated <span class="vocab-red">Africa</span>n kingdoms like obstacles.</p>
 
   <p class="real-world para-standard">Real-world connection: Many borders created during imperialism still shape modern countries, conflicts, and identities.</p>
   <p class="real-world para-simple">Real-world connection: Many borders made during imperialism still shape countries today.</p>
 </section>
 
-<div class="brain-break dyk-break">
+<div class="brain-break dyk-break section-animate">
   <span class="bb-label">DID YOU KNOW</span>
   <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
     <div style="flex:1;min-width:200px;">
@@ -655,18 +708,18 @@ footer{
         FILENAME: S1L04_DYK_RubberCollection.jpg
         PLACE IN: images/S1/L04/
     PRIORITY: SUPPORTING
-        FIND: Congo <span class="vocab">rubber<span class="tip">A stretchy material made from tree sap.</span></span> collection or rubber workers during the Congo Free State; connects modern rubber demand to forced labor
+        FIND: Congo rubberA stretchy material made from tree sap. collection or rubber workers during the Congo Free State; connects modern rubber demand to forced labor
         SEARCH: Congo Free State rubber collection workers Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/Category:Congo_Free_State (suggested, not guaranteed)
       -->
       <img src="images/S1/L04/S1L04_DYK_RubberCollection.jpg" alt="Rubber collection in the Congo Free State" style="width:100%;display:block;border:3px solid #ffcf33;box-shadow:0 4px 18px rgba(0,0,0,0.4);">
       <p style="font-size:12px;margin-top:8px;opacity:.9;font-family:'Oswald',sans-serif;color:#fff;">Rubber demand helped drive forced labor in the Congo.</p>
     </div>
-    <p class="bb-text" style="flex:1;min-width:200px;">One of the strangest links in this era runs from bicycle tires to terror in Central Africa. As rubber became useful for tires, hoses, and machines, King Leopold's agents forced Congolese workers to meet brutal rubber <span class="vocab">quotas<span class="tip">Required amounts people had to produce.</span></span>. A product that looked modern and exciting in Europe was tied to violence thousands of miles away.</p>
+    <p class="bb-text" style="flex:1;min-width:200px;">One of the strangest links in this era runs from bicycle tires to terror in Central Africa. As rubber became useful for tires, hoses, and machines, King Leopold's agents forced Congolese workers to meet brutal rubber <span class="vocab" tabindex="0">quotas<span class="tip">Required amounts people had to produce.</span></span>. A product that looked modern and exciting in Europe was tied to violence thousands of miles away.</p>
   </div>
 </div>
 
-<div class="brain-break ff-break">
+<div class="brain-break ff-break section-animate">
   <span class="bb-label">FAST FACTS</span>
   <p class="ff-context">THE SCALE OF NEW IMPERIALISM IN AFRICA</p>
   <div class="ff-grid">
@@ -678,14 +731,14 @@ footer{
   </div>
 </div>
 
-<section class="content-section clearfix" id="tools">
+<section class="content-section clearfix section-animate" id="tools">
   <span class="section-kicker">CHAPTER TWO</span>
   <h2 class="section-heading">THE TOOLS OF EMPIRE</h2>
   <!--
     FILENAME: S1L04_MaximGunDemo.jpg
     PLACE IN: images/S1/L04/
     PRIORITY: SUPPORTING
-    FIND: British soldiers with a <span class="vocab">Maxim machine gun<span class="tip">Early rapid-fire gun used by empires.</span></span>, circa 1890s; shows military technology used in imperial <span class="vocab">conquest<span class="tip">Taking land or power by force.</span></span>
+    FIND: British soldiers with a Maxim machine gunEarly rapid-fire gun used by empires., circa 1890s; shows military technology used in imperial conquestTaking land or power by force.
     SEARCH: Maxim gun British soldiers demonstration 1890s colonial Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Maxim_gun_1895.jpg (suggested, not guaranteed)
   -->
@@ -694,17 +747,17 @@ footer{
     <figcaption>British soldiers with a Maxim gun, circa 1895. The machine gun became a symbol of the military gap between imperial powers and many local armies. Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard">New Imperialism grew because <span class="vocab">industrial nations<span class="tip">Countries with factories, machines, and mass production.</span></span> had new tools. <span class="vocab">Steamships<span class="tip">Ships powered by steam engines.</span></span> moved soldiers and supplies across oceans. <span class="vocab">Railroads<span class="tip">Train systems that move people and goods.</span></span> moved armies inland. <span class="vocab">Telegraph cables<span class="tip">Wires that sent messages over long distances.</span></span> let officials send orders across continents. <span class="vocab">Quinine<span class="tip">Medicine used to treat <span class="vocab">malaria<span class="tip">A dangerous disease spread by mosquitoes.</span></span>.</span></span> helped Europeans survive malaria in <span class="vocab">tropical regions<span class="tip">Warm areas near the equator.</span></span>. Technology made conquest faster and easier.</p>
+  <p class="para-standard">New Imperialism grew because <span class="vocab" tabindex="0">industrial nations<span class="tip">Countries with factories, machines, and mass production.</span></span> had new tools. <span class="vocab" tabindex="0">Steamships<span class="tip">Ships powered by steam engines.</span></span> moved soldiers and supplies across oceans. <span class="vocab" tabindex="0">Railroads<span class="tip">Train systems that move people and goods.</span></span> moved armies inland. <span class="vocab" tabindex="0">Telegraph cables<span class="tip">Wires that sent messages over long distances.</span></span> let officials send orders across continents. <span class="vocab" tabindex="0">Quinine<span class="tip">Medicine used to treat <span class="vocab" tabindex="0">malaria<span class="tip">A dangerous disease spread by mosquitoes.</span></span>.</span></span> helped Europeans survive malaria in <span class="vocab" tabindex="0">tropical regions<span class="tip">Warm areas near the equator.</span></span>. Technology made conquest faster and easier.</p>
   <p class="para-simple"><span class="vocab-red">New Imperialism</span> grew because industrial nations had new tools. <span class="vocab-red">Steamships</span> moved soldiers across oceans. <span class="vocab-red">Railroads</span> moved armies inland. <span class="vocab-red">Telegraph cables</span> sent orders quickly. <span class="vocab-red">Quinine</span> helped Europeans survive malaria. Technology made <span class="vocab-red">conquest</span> faster.</p>
 
   <p class="para-standard">The Maxim machine gun became one of the most deadly tools. It could fire hundreds of rounds per minute. Many African and Asian armies fought bravely, but courage could not erase the gap in weapons. Industrial power turned battles into one-sided massacres.</p>
-  <p class="para-simple">The <span class="vocab-red">Maxim machine gun</span> was one of the deadliest tools. It could fire hundreds of rounds each minute. Many <span class="vocab-red">Africa</span>n and Asian armies fought bravely. But courage could not erase the <span class="vocab">weapons gap<span class="tip">A major difference in military technology.</span></span>. Industrial power made many battles one-sided.</p>
+  <p class="para-simple">The <span class="vocab-red">Maxim machine gun</span> was one of the deadliest tools. It could fire hundreds of rounds each minute. Many <span class="vocab-red">Africa</span>n and Asian armies fought bravely. But courage could not erase the <span class="vocab" tabindex="0">weapons gap<span class="tip">A major difference in military technology.</span></span>. Industrial power made many battles one-sided.</p>
 
   <!--
     FILENAME: S1L04_ImperialRailwayIndia.jpg
     PLACE IN: images/S1/L04/
     PRIORITY: SUPPORTING
-    FIND: British colonial railway in <span class="vocab">India<span class="tip">South Asian country ruled by Britain then.</span></span>, late 1800s; shows railroads as tools for moving goods, troops, and raw materials
+    FIND: British colonial railway in IndiaSouth Asian country ruled by Britain then., late 1800s; shows railroads as tools for moving goods, troops, and raw materials
     SEARCH: British India railway 19th century Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/Category:Rail_transport_in_British_India (suggested, not guaranteed)
   -->
@@ -713,15 +766,15 @@ footer{
     <figcaption>Railways in British India moved people, goods, troops, and raw materials. Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard">Ideas also became tools. <span class="vocab">Social Darwinism<span class="tip">The false idea that some groups are naturally superior.</span></span> twisted science into an excuse for empire. It claimed that powerful nations deserved to rule weaker ones. Missionaries and politicians also used religion and education to argue that imperialism helped colonized people. These arguments made conquest sound generous.</p>
-  <p class="para-simple">Ideas also became tools. <span class="vocab-red">Social Darwinism</span> twisted science into an excuse for empire. It claimed powerful nations deserved to rule weaker ones. Some <span class="vocab">missionaries<span class="tip">Religious workers who spread their faith.</span></span> and politicians said imperialism helped <span class="vocab-red">colonized people</span>. These arguments made <span class="vocab-red">conquest</span> sound generous.</p>
+  <p class="para-standard">Ideas also became tools. <span class="vocab" tabindex="0">Social Darwinism<span class="tip">The false idea that some groups are naturally superior.</span></span> twisted science into an excuse for empire. It claimed that powerful nations deserved to rule weaker ones. Missionaries and politicians also used religion and education to argue that imperialism helped colonized people. These arguments made conquest sound generous.</p>
+  <p class="para-simple">Ideas also became tools. <span class="vocab-red">Social Darwinism</span> twisted science into an excuse for empire. It claimed powerful nations deserved to rule weaker ones. Some <span class="vocab" tabindex="0">missionaries<span class="tip">Religious workers who spread their faith.</span></span> and politicians said imperialism helped <span class="vocab-red">colonized people</span>. These arguments made <span class="vocab-red">conquest</span> sound generous.</p>
 
 
   <p class="real-world para-standard">Real-world connection: Technology is never neutral when it is used to control people, move armies, or extract wealth.</p>
   <p class="real-world para-simple">Real-world connection: Technology is not neutral when it helps control people or take wealth.</p>
 </section>
 
-<section class="content-section clearfix" id="under-empire">
+<section class="content-section clearfix section-animate" id="under-empire">
   <span class="section-kicker">CHAPTER THREE</span>
   <h2 class="section-heading">LIFE UNDER EMPIRE</h2>
   <!--
@@ -734,16 +787,16 @@ footer{
   -->
   <figure class="img-right">
     <img src="images/S1/L04/S1L04_CongoAtrocityPhoto.jpg" alt="Nsala of Wala, Congo Free State, 1904">
-    <figcaption>Nsala of Wala, Congo Free State, 1904. Photographs like this helped expose the violence of <span class="vocab">King Leopold II<span class="tip">Belgian king who controlled the Congo Free State.</span></span>'s rubber system. Wikimedia Commons.</figcaption>
+    <figcaption>Nsala of Wala, Congo Free State, 1904. Photographs like this helped expose the violence of <span class="vocab" tabindex="0">King Leopold II<span class="tip">Belgian king who controlled the Congo Free State.</span></span>'s rubber system. Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard"><span class="vocab">Colonialism<span class="tip">When one country rules another place and uses its resources.</span></span> changed everyday life in different ways. In the <span class="vocab">Belgian Congo<span class="tip">Central African colony controlled by Belgium.</span></span>, King Leopold II treated the territory as his personal business. Agents forced Congolese people to collect rubber. Communities that failed to meet quotas faced beatings, hostage-taking, <span class="vocab">mutilation<span class="tip">Severe injury meant to damage a body.</span></span>, and death.</p>
+  <p class="para-standard"><span class="vocab" tabindex="0">Colonialism<span class="tip">When one country rules another place and uses its resources.</span></span> changed everyday life in different ways. In the <span class="vocab" tabindex="0">Belgian Congo<span class="tip">Central African colony controlled by Belgium.</span></span>, King Leopold II treated the territory as his personal business. Agents forced Congolese people to collect rubber. Communities that failed to meet quotas faced beatings, hostage-taking, <span class="vocab" tabindex="0">mutilation<span class="tip">Severe injury meant to damage a body.</span></span>, and death.</p>
   <p class="para-simple"><span class="vocab-red">Colonialism</span> changed everyday life in many ways. In the <span class="vocab-red">Belgian Congo</span>, <span class="vocab-red">King Leopold II</span> treated the land like his business. Agents forced Congolese people to collect <span class="vocab-red">rubber</span>. People who failed <span class="vocab-red">quotas</span> faced violence and death.</p>
 
-  <p class="para-standard">The human cost was enormous. <span class="vocab">Historians estimate<span class="tip">Scholars use evidence to make careful guesses.</span></span> that the Congo's population fell by about ten million people between 1880 and 1920. Murder, hunger, disease, forced labor, and broken families all played a role. This was not a side effect of empire. It was part of the system that made profit possible.</p>
+  <p class="para-standard">The human cost was enormous. <span class="vocab" tabindex="0">Historians estimate<span class="tip">Scholars use evidence to make careful guesses.</span></span> that the Congo's population fell by about ten million people between 1880 and 1920. Murder, hunger, disease, forced labor, and broken families all played a role. This was not a side effect of empire. It was part of the system that made profit possible.</p>
   <p class="para-simple">The human cost was enormous. Historians estimate that Congo's population fell by about ten million people between 1880 and 1920. Murder, hunger, disease, <span class="vocab-red">forced labor</span>, and broken families all played a role. This was part of the system that made profit possible.</p>
 
-  <p class="para-standard">India showed a different form of control. Britain built railroads, telegraph lines, courts, and schools. <span class="vocab">British officials<span class="tip">Government workers serving the British Empire.</span></span> used those changes as proof that empire brought progress. Indian critics answered that the system was built mainly to help Britain. Railroads moved British troops and Indian cotton. Schools trained Indians to help run the <span class="vocab">colonial government<span class="tip">Government controlled by a foreign empire.</span></span>. Trade rules hurt <span class="vocab">Indian textile makers<span class="tip">Indian workers and businesses making cloth.</span></span> while helping British factories.</p>
+  <p class="para-standard">India showed a different form of control. Britain built railroads, telegraph lines, courts, and schools. <span class="vocab" tabindex="0">British officials<span class="tip">Government workers serving the British Empire.</span></span> used those changes as proof that empire brought progress. Indian critics answered that the system was built mainly to help Britain. Railroads moved British troops and Indian cotton. Schools trained Indians to help run the <span class="vocab" tabindex="0">colonial government<span class="tip">Government controlled by a foreign empire.</span></span>. Trade rules hurt <span class="vocab" tabindex="0">Indian textile makers<span class="tip">Indian workers and businesses making cloth.</span></span> while helping British factories.</p>
   <p class="para-simple"><span class="vocab-red">India</span> showed a different kind of control. Britain built railroads, courts, and schools. British officials said empire brought progress. Indian critics said the system mainly helped Britain. <span class="vocab-red">Railroads</span> moved troops and cotton. Schools trained Indians to help run colonial rule. Trade rules hurt Indian textile makers.</p>
 
   <div class="compare-card">
@@ -757,11 +810,11 @@ footer{
     </div>
   </div>
 
-  <p class="para-standard">Empire also attacked culture. Colonizers often treated local languages, religions, and customs as backward. Some colonized people adapted to <span class="vocab">colonial schools<span class="tip">Schools run or shaped by imperial rulers.</span></span> and laws because they had to survive. Others protected their culture through family, religion, art, and memory. Living under empire meant making choices inside a system built to limit those choices.</p>
+  <p class="para-standard">Empire also attacked culture. Colonizers often treated local languages, religions, and customs as backward. Some colonized people adapted to <span class="vocab" tabindex="0">colonial schools<span class="tip">Schools run or shaped by imperial rulers.</span></span> and laws because they had to survive. Others protected their culture through family, religion, art, and memory. Living under empire meant making choices inside a system built to limit those choices.</p>
   <p class="para-simple">Empire also attacked culture. Colonizers often called local languages, religions, and customs backward. Some <span class="vocab-red">colonized people</span> adapted to survive. Others protected their culture through family, religion, art, and memory. Life under empire meant making choices inside an unfair system.</p>
 </section>
 
-<div class="brain-break as-break">
+<div class="brain-break as-break section-animate">
   <span class="bb-label">ART SPOTLIGHT</span>
   <figure>
     <!--
@@ -778,26 +831,26 @@ footer{
   <p class="as-fact">The cartoon made empire look almost heroic by turning Cecil Rhodes into a giant figure towering over a continent. That visual trick mattered: it made one man's dream of control look bold and simple, while hiding the African communities whose land, labor, and futures were being claimed.</p>
 </div>
 
-<section class="content-section clearfix" id="resistance">
+<section class="content-section clearfix section-animate" id="resistance">
   <span class="section-kicker">CHAPTER FOUR</span>
   <h2 class="section-heading">PEOPLE FOUGHT BACK EVERYWHERE</h2>
   <!--
     FILENAME: S1L04_ZuluWarBattleIsandlwana.jpg
     PLACE IN: images/S1/L04/
     PRIORITY: SUPPORTING
-    FIND: Illustration or painting of the Battle of <span class="vocab">Isandlwana<span class="tip">1879 Zulu victory over British forces.</span></span>, 1879; Zulu victory over British forces
+    FIND: Illustration or painting of the Battle of Isandlwana1879 Zulu victory over British forces., 1879; Zulu victory over British forces
     SEARCH: Battle of Isandlwana 1879 Zulu painting illustration Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Isandlwana.jpg (suggested, not guaranteed)
   -->
   <figure class="img-left">
     <img src="images/S1/L04/S1L04_ZuluWarBattleIsandlwana.jpg" alt="Battle of Isandlwana, 1879">
-    <figcaption>Battle of Isandlwana, 1879. Zulu forces defeated a British army column in one of the most famous <span class="vocab">anti-colonial victories<span class="tip">Wins against foreign control.</span></span> of the era. Wikimedia Commons.</figcaption>
+    <figcaption>Battle of Isandlwana, 1879. Zulu forces defeated a British army column in one of the most famous <span class="vocab" tabindex="0">anti-colonial victories<span class="tip">Wins against foreign control.</span></span> of the era. Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard">Colonized people did not accept conquest quietly. They resisted with armies, protests, newspapers, religion, education, and political organizing. <span class="vocab">Resistance<span class="tip">Fighting back against a power that controls you.</span></span> looked different in each place, but the message was similar: foreign rule was not natural, permanent, or accepted.</p>
+  <p class="para-standard">Colonized people did not accept conquest quietly. They resisted with armies, protests, newspapers, religion, education, and political organizing. <span class="vocab" tabindex="0">Resistance<span class="tip">Fighting back against a power that controls you.</span></span> looked different in each place, but the message was similar: foreign rule was not natural, permanent, or accepted.</p>
   <p class="para-simple">Colonized people did not accept <span class="vocab-red">conquest</span> quietly. They resisted with armies, protests, newspapers, religion, schools, and politics. <span class="vocab-red">Resistance</span> looked different in each place. The message was similar: foreign rule was not natural or accepted.</p>
 
-  <p class="para-standard">In southern Africa, <span class="vocab">Zulu warriors<span class="tip">Fighters from the Zulu kingdom in southern Africa.</span></span> defeated the British at Isandlwana in 1879. In Ethiopia, <span class="vocab">Emperor Menelik II<span class="tip">Ethiopian ruler who defeated Italy in 1896.</span></span> defeated Italy at the <span class="vocab">Battle of Adwa<span class="tip">1896 Ethiopian victory over Italy.</span></span> in 1896 and kept Ethiopia independent. In China, the <span class="vocab">Boxer Rebellion<span class="tip">Chinese uprising against foreign influence.</span></span> attacked foreign influence, though foreign armies crushed the uprising. In the <span class="vocab">Philippines<span class="tip">Island nation in Southeast Asia.</span></span>, <span class="vocab">Emilio Aguinaldo<span class="tip">Filipino leader who fought for independence.</span></span> fought first against Spain and then against the United States.</p>
+  <p class="para-standard">In southern Africa, <span class="vocab" tabindex="0">Zulu warriors<span class="tip">Fighters from the Zulu kingdom in southern Africa.</span></span> defeated the British at Isandlwana in 1879. In Ethiopia, <span class="vocab" tabindex="0">Emperor Menelik II<span class="tip">Ethiopian ruler who defeated Italy in 1896.</span></span> defeated Italy at the <span class="vocab" tabindex="0">Battle of Adwa<span class="tip">1896 Ethiopian victory over Italy.</span></span> in 1896 and kept Ethiopia independent. In China, the <span class="vocab" tabindex="0">Boxer Rebellion<span class="tip">Chinese uprising against foreign influence.</span></span> attacked foreign influence, though foreign armies crushed the uprising. In the <span class="vocab" tabindex="0">Philippines<span class="tip">Island nation in Southeast Asia.</span></span>, <span class="vocab" tabindex="0">Emilio Aguinaldo<span class="tip">Filipino leader who fought for independence.</span></span> fought first against Spain and then against the United States.</p>
   <p class="para-simple">In southern <span class="vocab-red">Africa</span>, <span class="vocab-red">Zulu warriors</span> defeated the British at <span class="vocab-red">Isandlwana</span> in 1879. In <span class="vocab-red">Ethiopia</span>, <span class="vocab-red">Menelik II</span> defeated Italy at Adwa in 1896 and kept Ethiopia independent. In China, the Boxers attacked foreign influence. In the <span class="vocab-red">Philippines</span>, <span class="vocab-red">Emilio Aguinaldo</span> fought Spain and then the United States.</p>
 
   <div class="img-pair">
@@ -827,14 +880,14 @@ footer{
     </figure>
   </div>
 
-  <p class="para-standard">Resistance did not always win immediately. Many rebellions were crushed. Leaders were killed, exiled, or imprisoned. But resistance kept alive the idea that colonized people had the right to rule themselves. That idea later became the foundation for <span class="vocab">independence movements<span class="tip">Campaigns to end foreign rule.</span></span> across Africa and Asia.</p>
+  <p class="para-standard">Resistance did not always win immediately. Many rebellions were crushed. Leaders were killed, exiled, or imprisoned. But resistance kept alive the idea that colonized people had the right to rule themselves. That idea later became the foundation for <span class="vocab" tabindex="0">independence movements<span class="tip">Campaigns to end foreign rule.</span></span> across Africa and Asia.</p>
   <p class="para-simple"><span class="vocab-red">Resistance</span> did not always win right away. Many rebellions were crushed. Leaders were killed, exiled, or jailed. But resistance kept one idea alive. Colonized people had the right to rule themselves. That idea later helped <span class="vocab-red">independence movements</span>.</p>
 
   <p class="real-world para-standard">Real-world connection: Independence movements did not appear from nowhere after World War II; they grew from decades of earlier resistance.</p>
   <p class="real-world para-simple">Real-world connection: Independence movements grew from decades of earlier resistance.</p>
 </section>
 
-<section id="primary-source-moment" class="content-section">
+<section id="primary-source-moment" class="content-section section-animate">
   <span class="section-kicker">PRIMARY SOURCE</span>
   <h2 class="section-heading">PRIMARY SOURCE MOMENT</h2>
   <div class="primary-source ps-visual">
@@ -859,7 +912,7 @@ footer{
   </div>
 </section>
 
-<div class="brain-break tn-break" id="then-now">
+<div class="brain-break tn-break section-animate" id="then-now">
   <span class="bb-label">THEN AND NOW</span>
   <p class="tn-payoff">MANY OF AFRICA'S BORDERS WERE DRAWN BY EUROPEAN EMPIRES, NOT BY THE PEOPLE WHO LIVED THERE.</p>
   <div class="tn-pair">
@@ -890,43 +943,124 @@ footer{
       <p class="tn-caption">Modern African borders still show many lines shaped by the colonial era.</p>
     </div>
   </div>
-  <p class="tn-closing"><strong>THEN:</strong> The 1914 map shows European empires dividing Africa into colonies. These borders were often drawn by outside powers, not by the communities who lived there.<br><br><strong>NOW:</strong> The modern map shows independent African countries. Many borders still reflect the colonial period, even though African nations later fought for and won independence.<br><br><strong>CONNECTION:</strong> New Imperialism did not end when the map colors changed. Its borders, economies, languages, and conflicts continued to shape the modern world.<br><br>How should countries today deal with borders and problems created by imperialism?</p>
+  <div class="tn-text-block">
+    <h3>THEN</h3>
+    <p>The 1914 map shows European empires dividing Africa into colonies. These borders were often drawn by outside powers, not by the communities who lived there.</p>
+    <h3>NOW</h3>
+    <p>The modern map shows independent African countries. Many borders still reflect the colonial period, even though African nations later fought for and won independence.</p>
+    <h3>CONNECTION</h3>
+    <p>New Imperialism did not end when the map colors changed. Its borders, economies, languages, and conflicts continued to shape the modern world.</p>
+    <p>How should countries today deal with borders and problems created by imperialism?</p>
+  </div>
 </div>
 </main>
 
-<footer>WORLD HISTORY — SEMESTER 1, LESSON 04 — NEW IMPERIALISM</footer>
+<footer>WORLD HISTORY : SEMESTER 1, LESSON 04 : NEW IMPERIALISM</footer>
 </div>
 
 <script>
-document.getElementById('lexile-toggle').addEventListener('click', function() {
+(function(){
+  var bar=document.getElementById('reading-progress');
+  window.addEventListener('scroll',function(){
+    var scrollTop=window.scrollY||document.documentElement.scrollTop;
+    var docHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    var progress=docHeight>0?(scrollTop/docHeight)*100:0;
+    bar.style.width=progress+'%';
+  },{passive:true});
+})();
+
+document.getElementById('lexile-toggle').addEventListener('click',function(){
   document.body.classList.toggle('simplified');
-  this.textContent = document.body.classList.contains('simplified') ? 'STANDARD TEXT' : 'SIMPLIFY TEXT';
+  this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';
 });
-document.querySelectorAll('.vocab').forEach(function(el) {
-  el.addEventListener('click', function(e) {
+
+function repositionTip(el){
+  var tip=el.querySelector('.tip');
+  if(!tip)return;
+  tip.style.left='50%';
+  tip.style.transform='translateX(-50%)';
+  var rect=tip.getBoundingClientRect();
+  if(rect.left<8){
+    var shift=8-rect.left;
+    tip.style.transform='translateX(calc(-50% + '+shift+'px))';
+  }else if(rect.right>window.innerWidth-8){
+    var shift=rect.right-(window.innerWidth-8);
+    tip.style.transform='translateX(calc(-50% - '+shift+'px))';
+  }
+}
+
+document.querySelectorAll('.vocab').forEach(function(el){
+  el.setAttribute('tabindex','0');
+  el.addEventListener('click',function(e){
     e.stopPropagation();
-    document.querySelectorAll('.vocab.active').forEach(function(v) {
-      if (v !== el) v.classList.remove('active');
+    document.querySelectorAll('.vocab.active').forEach(function(v){
+      if(v!==el)v.classList.remove('active');
     });
     el.classList.toggle('active');
+    if(el.classList.contains('active'))repositionTip(el);
+  });
+  el.addEventListener('focus',function(){
+    el.classList.add('active');
+    repositionTip(el);
+  });
+  el.addEventListener('blur',function(){
+    el.classList.remove('active');
+  });
+  el.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '){
+      e.preventDefault();
+      el.classList.toggle('active');
+      if(el.classList.contains('active'))repositionTip(el);
+    }
+    if(e.key==='Escape')el.classList.remove('active');
   });
 });
-document.addEventListener('click', function() {
-  document.querySelectorAll('.vocab.active').forEach(function(v) {
+
+document.addEventListener('click',function(){
+  document.querySelectorAll('.vocab.active').forEach(function(v){
     v.classList.remove('active');
   });
 });
-const tocObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    const id = entry.target.getAttribute('id');
-    const link = document.querySelector('.toc-sidebar a[href="#' + id + '"]');
-    if (link) {
-      if (entry.isIntersecting) link.classList.add('active');
-      else link.classList.remove('active');
+
+const tocObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    const id=entry.target.getAttribute('id');
+    const tocLink=document.querySelector('.toc-sidebar a[href="#'+id+'"]');
+    const navLink=document.querySelector('.section-nav a[href="#'+id+'"]');
+    if(entry.isIntersecting){
+      if(tocLink)tocLink.classList.add('active');
+      if(navLink)navLink.classList.add('active');
+    }else{
+      if(tocLink)tocLink.classList.remove('active');
+      if(navLink)navLink.classList.remove('active');
     }
   });
-}, { threshold: 0.25 });
-document.querySelectorAll('section[id], div[id="then-now"]').forEach(el => tocObserver.observe(el));
+},{threshold:.25});
+document.querySelectorAll('section[id], div[id="then-now"]').forEach(el=>tocObserver.observe(el));
+
+(function(){
+  var animObserver=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        animObserver.unobserve(entry.target);
+      }
+    });
+  },{threshold:.08});
+  document.querySelectorAll('.section-animate').forEach(function(el){animObserver.observe(el);});
+})();
+
+document.querySelectorAll('img').forEach(function(img){
+  if(img.complete&&img.naturalWidth>0){
+    img.classList.add('loaded');
+  }else{
+    img.addEventListener('load',function(){img.classList.add('loaded');});
+    img.addEventListener('error',function(){
+      img.style.opacity='0.15';
+      img.style.border='2px dashed rgba(58,10,20,0.35)';
+    });
+  }
+});
 </script>
 <!--
   IMAGE CHECK: Open browser DevTools (F12), go to the Console tab, paste and
