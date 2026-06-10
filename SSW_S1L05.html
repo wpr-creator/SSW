@@ -529,14 +529,162 @@ footer{
   .section-heading{font-size:31px}
   .bb-text,.as-fact{font-size:18px}
 }
+
+#reading-progress{
+  position:fixed;
+  top:0;
+  left:0;
+  height:4px;
+  width:0%;
+  background:var(--blood);
+  z-index:9999;
+  transition:width .1s linear;
+}
+.section-nav{top:4px}
+.section-nav a.active{
+  background:rgba(139,26,26,.55);
+  color:#fff;
+  border-bottom-color:var(--brass-light);
+}
+.vocab:focus{
+  outline:2px solid var(--brass-light);
+  outline-offset:2px;
+  border-radius:2px;
+}
+.toc-sidebar{
+  left:calc(50% - 590px);
+  right:auto;
+  border-left:0;
+  border-right:2px solid rgba(213,189,103,.45);
+}
+.timeline-roadmap{
+  max-width:820px;
+  margin:0 auto 22px;
+  padding:28px;
+  background:#e4d5ad;
+  border-top:4px solid var(--blood);
+  border-bottom:4px solid var(--brass);
+}
+.timeline-roadmap .section-kicker{margin-bottom:14px}
+.timeline-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
+}
+.timeline-node{
+  background:var(--khaki);
+  color:#fff;
+  border-top:4px solid var(--blood);
+  padding:14px 12px;
+  min-height:128px;
+}
+.timeline-node .timeline-date{
+  display:block;
+  color:var(--brass-light);
+  font-family:'Special Elite',cursive;
+  font-size:16px;
+  margin-bottom:8px;
+}
+.timeline-node p{
+  color:#efe4c3;
+  font-size:14px;
+  line-height:1.55;
+  margin:0;
+}
+.ps-visual{
+  display:grid;
+  grid-template-columns:minmax(200px,36%) 1fr;
+  gap:24px;
+  align-items:start;
+}
+.ps-visual figure{margin:0}
+.ps-visual img{
+  width:100%;
+  display:block;
+  border:3px solid var(--brass);
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
+}
+.ps-visual figcaption{
+  color:#eadfbd;
+  font-size:12px;
+}
+.ff-context{
+  font-family:'Oswald',sans-serif;
+  font-size:14px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#ffe8b7;
+  text-align:center;
+  margin-bottom:28px;
+  opacity:.9;
+  font-weight:700;
+}
+.ff-item{max-width:180px}
+.ff-desc{
+  max-width:180px;
+  text-transform:none;
+  letter-spacing:.08em;
+  line-height:1.5;
+}
+.tn-text-block{
+  margin-top:24px;
+  border-top:1px solid rgba(41,212,255,.35);
+  padding-top:20px;
+}
+.tn-text-block h3{
+  font-family:'Oswald',sans-serif;
+  font-size:13px;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  color:var(--cyan);
+  margin:18px 0 8px;
+}
+.tn-text-block p{
+  font-family:'Oswald',sans-serif;
+  font-size:17px;
+  line-height:1.65;
+  color:#fff;
+  margin-bottom:12px;
+}
+.section-animate{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .45s ease-out,transform .45s ease-out;
+}
+.section-animate.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+img{
+  opacity:0;
+  transition:opacity .4s ease;
+}
+img.loaded{opacity:1}
+@media(prefers-reduced-motion:reduce){
+  .section-animate{
+    opacity:1;
+    transform:none;
+    transition:none;
+  }
+}
+@media(max-width:700px){
+  .ps-visual{grid-template-columns:1fr}
+}
+@media(max-width:880px){
+  .timeline-grid{grid-template-columns:1fr}
+  .timeline-roadmap{margin:0 22px 22px;padding:22px}
+}
+
 </style>
 </head>
 <body>
+<div id="reading-progress"></div>
 <div class="page-wrap">
 <header class="site-header">
   <!--
     FILENAME: S1L05_TrenchWarfareHeader.jpg
     PLACE IN: images/S1/L05/
+    PRIORITY: ESSENTIAL
     FIND: World War I soldiers in a Western Front trench, circa 1916; use as faded header because trenches became the most recognizable image of the war
     SEARCH: Cheshire Regiment trench Somme 1916 Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Cheshire_Regiment_trench_Somme_1916.jpg (suggested, not guaranteed)
@@ -560,8 +708,20 @@ footer{
 
 <button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
 
+<section class="timeline-roadmap" aria-label="World War I timeline">
+  <span class="section-kicker">TIMELINE</span>
+  <div class="timeline-grid">
+    <div class="timeline-node"><span class="timeline-date">1906</span><p>Britain launches HMS Dreadnought, increasing the naval arms race with Germany.</p></div>
+    <div class="timeline-node"><span class="timeline-date">1914</span><p>Franz Ferdinand is assassinated in Sarajevo, turning long-term tensions into crisis.</p></div>
+    <div class="timeline-node"><span class="timeline-date">JULY 1914</span><p>Austria-Hungary sends Serbia an ultimatum with demands that threaten Serbian independence.</p></div>
+    <div class="timeline-node"><span class="timeline-date">AUG. 1914</span><p>Alliances and mobilization pull Germany, Russia, France, and Britain into war.</p></div>
+    <div class="timeline-node"><span class="timeline-date">1918</span><p>The war ends after years of trench warfare, mass death, and global disruption.</p></div>
+  </div>
+</section>
+
 <aside class="toc-sidebar">
   <span class="toc-label">ON THIS PAGE</span>
+  <a href="#introduction">INTRO</a>
   <a href="#main-causes">MAIN CAUSES</a>
   <a href="#assassination">ASSASSINATION</a>
   <a href="#dominoes">DOMINOES</a>
@@ -571,41 +731,42 @@ footer{
 </aside>
 
 <main>
-<section class="intro-section">
-  <p class="para-standard">On June 28, 1914, a nineteen-year-old named <span class="vocab">Gavrilo Princip<span class="tip">The young man who assassinated Franz Ferdinand.</span></span> stood in a crowd in Sarajevo, Bosnia, holding a pistol. Earlier that morning, another attacker had failed to kill <span class="vocab">Archduke Franz Ferdinand<span class="tip">The heir to the Austro-Hungarian throne.</span></span>. Then the Archduke's car took a wrong turn and stopped almost directly in front of Princip.</p>
+<section class="intro-section section-animate" id="introduction">
+  <p class="para-standard">On June 28, 1914, a nineteen-year-old named <span class="vocab" tabindex="0">Gavrilo Princip<span class="tip">The young man who assassinated Franz Ferdinand.</span></span> stood in a crowd in Sarajevo, Bosnia, holding a pistol. Earlier that morning, another attacker had failed to kill <span class="vocab" tabindex="0">Archduke Franz Ferdinand<span class="tip">The heir to the Austro-Hungarian throne.</span></span>. Then the Archduke's car took a wrong turn and stopped almost directly in front of Princip.</p>
   <p class="para-simple">On June 28, 1914, <span class="vocab-red">Gavrilo Princip</span> stood in a crowd in Sarajevo with a pistol. He was nineteen years old. Earlier, another attacker had failed to kill <span class="vocab-red">Archduke Franz Ferdinand</span>. Then the Archduke's car took a wrong turn and stopped right near Princip.</p>
   <p class="para-standard">Princip fired twice. Within six weeks, Europe's most powerful nations were at war. Within four years, more than 20 million soldiers and civilians were dead. The big question is not only who fired the first shot. The bigger question is why Europe was so ready to explode.</p>
   <p class="para-simple">Princip fired two shots. Six weeks later, many powerful countries were at war. Four years later, more than 20 million people were dead. The question is not only who started it. The bigger question is why Europe was so close to war already.</p>
 </section>
 
-<section class="content-section" id="main-causes">
+<section class="content-section section-animate" id="main-causes">
   <span class="section-kicker">CHAPTER ONE</span>
   <h2 class="section-heading">EUROPE WAS ALREADY A POWDER KEG</h2>
-  <p class="para-standard">The assassination pulled the trigger, but the gun had been loaded for decades. Historians often use the acronym <span class="vocab">M.A.I.N.<span class="tip">Militarism, alliances, imperialism, and nationalism.</span></span> to explain the four long-term causes of World War I. Each one made war more likely. Together, they made one crisis feel impossible to stop.</p>
+  <p class="para-standard">The assassination pulled the trigger, but the gun had been loaded for decades. Historians often use the acronym <span class="vocab" tabindex="0">M.A.I.N.<span class="tip">Militarism, alliances, imperialism, and nationalism.</span></span> to explain the four long-term causes of World War I. Each one made war more likely. Together, they made one crisis feel impossible to stop.</p>
   <p class="para-simple">The assassination started the crisis, but Europe had been tense for years. Historians use <span class="vocab-red">M.A.I.N.</span> to explain four causes of World War I. These were militarism, alliances, imperialism, and nationalism. Each one made war more likely.</p>
 
   <div class="main-grid">
     <div class="main-card">
       <h3>MILITARISM</h3>
-      <p><span class="vocab">Militarism<span class="tip">Building a powerful military and being ready to use it.</span></span> meant armies and navies became symbols of national pride. Countries spent more money on weapons and soldiers.</p>
+      <p><span class="vocab" tabindex="0">Militarism<span class="tip">Building a powerful military and being ready to use it.</span></span> meant armies and navies became symbols of national pride. Countries spent more money on weapons and soldiers.</p>
     </div>
     <div class="main-card">
       <h3>ALLIANCES</h3>
-      <p>An <span class="vocab">alliance<span class="tip">An agreement between countries to help each other.</span></span> meant one country could pull its friends into war. A local conflict could become a continent-wide war.</p>
+      <p>An <span class="vocab" tabindex="0">alliance<span class="tip">An agreement between countries to help each other.</span></span> meant one country could pull its friends into war. A local conflict could become a continent-wide war.</p>
     </div>
     <div class="main-card">
       <h3>IMPERIALISM</h3>
-      <p><span class="vocab">Imperialism<span class="tip">When powerful countries control weaker places.</span></span> made European countries compete for colonies, trade, and power around the world.</p>
+      <p><span class="vocab" tabindex="0">Imperialism<span class="tip">When powerful countries control weaker places.</span></span> made European countries compete for colonies, trade, and power around the world.</p>
     </div>
     <div class="main-card">
       <h3>NATIONALISM</h3>
-      <p><span class="vocab">Nationalism<span class="tip">Pride and loyalty to a nation.</span></span> made people see compromise as weakness and war as honor.</p>
+      <p><span class="vocab" tabindex="0">Nationalism<span class="tip">Pride and loyalty to a nation.</span></span> made people see compromise as weakness and war as honor.</p>
     </div>
   </div>
 
   <!--
     FILENAME: S1L05_EuropeAllianceMap1914.jpg
     PLACE IN: images/S1/L05/
+    PRIORITY: SUPPORTING
     FIND: Map of Europe in 1914 showing Triple Alliance and Triple Entente; shows how Europe split into armed camps before the war
     SEARCH: Map Europe alliances 1914 Triple Alliance Triple Entente Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Map_Europe_alliances_1914-en.svg (suggested, not guaranteed)
@@ -619,13 +780,14 @@ footer{
   <p class="para-simple">These causes made each other worse. Militarism made alliances seem needed. Alliances made countries build bigger armies. Imperialism made countries distrust each other. Nationalism made each argument feel like a fight for honor. Europe was ready to explode.</p>
 </section>
 
-<div class="brain-break dyk-break">
+<div class="brain-break dyk-break section-animate">
   <span class="bb-label">DID YOU KNOW</span>
   <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
     <div style="flex:1;min-width:200px;">
       <!--
         FILENAME: S1L05_DreadnoughtBattleship.jpg
         PLACE IN: images/S1/L05/
+    PRIORITY: SUPPORTING
         FIND: HMS Dreadnought British battleship, launched 1906; visual proof of the naval arms race before World War I
         SEARCH: HMS Dreadnought 1906 Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:HMS_Dreadnought_1906_H61017.jpg (suggested, not guaranteed)
@@ -637,17 +799,19 @@ footer{
   </div>
 </div>
 
-<div class="brain-break ff-break">
+<div class="brain-break ff-break section-animate">
   <span class="bb-label">FAST FACTS</span>
+  <p class="ff-context">The scale of World War I from crisis to catastrophe</p>
   <div class="ff-grid">
-    <div class="ff-item"><span class="ff-number">1914</span><span class="ff-desc">YEAR THE WAR BEGAN</span></div>
-    <div class="ff-item"><span class="ff-number">6</span><span class="ff-desc">WEEKS FROM SHOT TO WAR</span></div>
-    <div class="ff-item"><span class="ff-number">20M+</span><span class="ff-desc">DEAD BY 1918</span></div>
-    <div class="ff-item"><span class="ff-number">4</span><span class="ff-desc">MAIN LONG-TERM CAUSES</span></div>
+    <div class="ff-item"><span class="ff-number">1914</span><span class="ff-desc">the year one assassination became a European war because alliances and mobilization plans moved quickly</span></div>
+    <div class="ff-item"><span class="ff-number">6</span><span class="ff-desc">weeks between the assassination in Sarajevo and the start of a wider European war</span></div>
+    <div class="ff-item"><span class="ff-number">20M+</span><span class="ff-desc">soldiers and civilians who died by 1918, showing how a regional crisis became a human disaster</span></div>
+    <div class="ff-item"><span class="ff-number">4</span><span class="ff-desc">long-term causes often remembered as M.A.I.N.: militarism, alliances, imperialism, and nationalism</span></div>
   </div>
 </div>
+</div>
 
-<section class="content-section clearfix" id="assassination">
+<section class="content-section clearfix section-animate" id="assassination">
   <span class="section-kicker">CHAPTER TWO</span>
   <h2 class="section-heading">THE SHOT THAT STARTED THE CRISIS</h2>
   <div class="img-pair">
@@ -655,6 +819,7 @@ footer{
       <!--
         FILENAME: S1L05_FranzFerdinandPortrait.jpg
         PLACE IN: images/S1/L05/
+    PRIORITY: ESSENTIAL
         FIND: Portrait photograph of Archduke Franz Ferdinand in military uniform, circa 1910-1914
         SEARCH: Archduke Franz Ferdinand portrait photograph Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:Archduke_Franz_Ferdinand_of_Austria.jpg (suggested, not guaranteed)
@@ -666,6 +831,7 @@ footer{
       <!--
         FILENAME: S1L05_GavriloPrincipTrial.jpg
         PLACE IN: images/S1/L05/
+    PRIORITY: ESSENTIAL
         FIND: Gavrilo Princip at trial after the assassination, 1914; shows the assassin as a young defendant
         SEARCH: Gavrilo Princip trial 1914 Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:Proces_w_Sarajewie_s.jpg (suggested, not guaranteed)
@@ -675,12 +841,13 @@ footer{
     </figure>
   </div>
 
-  <p class="para-standard">Princip was connected to a secret Serbian nationalist group often linked to the <span class="vocab">Black Hand<span class="tip">A secret Serbian nationalist organization.</span></span>. The group wanted to weaken Austria-Hungary and support Slavic unity. Franz Ferdinand was visiting <span class="vocab">Sarajevo<span class="tip">A city in Bosnia where the assassination happened.</span></span>, the capital of Bosnia, a region controlled by Austria-Hungary but filled with people who did not all want Austrian rule.</p>
+  <p class="para-standard">Princip was connected to a secret Serbian nationalist group often linked to the <span class="vocab" tabindex="0">Black Hand<span class="tip">A secret Serbian nationalist organization.</span></span>. The group wanted to weaken Austria-Hungary and support Slavic unity. Franz Ferdinand was visiting <span class="vocab" tabindex="0">Sarajevo<span class="tip">A city in Bosnia where the assassination happened.</span></span>, the capital of Bosnia, a region controlled by Austria-Hungary but filled with people who did not all want Austrian rule.</p>
   <p class="para-simple">Princip was connected to a secret Serbian nationalist group called the <span class="vocab-red">Black Hand</span>. The group wanted Austria-Hungary out of Bosnia. Franz Ferdinand was visiting <span class="vocab-red">Sarajevo</span>, the capital of Bosnia. Many people there did not want Austrian rule.</p>
 
   <!--
     FILENAME: S1L05_SarajevoCarBeforeAssassination.jpg
     PLACE IN: images/S1/L05/
+    PRIORITY: SUPPORTING
     FIND: Franz Ferdinand and Sophie in Sarajevo shortly before the assassination, June 28, 1914; more engaging than an empty bridge because it shows the final public moment
     SEARCH: Franz Ferdinand Sophie Sarajevo before assassination June 1914 Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:The_Assassination_of_Archduke_Franz_Ferdinand,_June_1914_Q79761.jpg (suggested, not guaranteed)
@@ -693,16 +860,17 @@ footer{
   <p class="para-standard">The assassination plan almost failed. One attacker threw a bomb, but it bounced off the Archduke's car and exploded under another vehicle. Later, the driver took a wrong turn while heading to visit injured officers. The car stopped near Princip. He fired two shots at close range. Franz Ferdinand and his wife Sophie died within the hour.</p>
   <p class="para-simple">The plan almost failed. One attacker threw a bomb, but it missed the Archduke's car. Later, the driver took a wrong turn. The car stopped near Princip. He fired two shots. Franz Ferdinand and his wife Sophie died soon after.</p>
 
-  <p class="para-standard">Austria-Hungary blamed Serbia for the attack. It sent Serbia an <span class="vocab">ultimatum<span class="tip">A final demand before punishment or war.</span></span> with harsh demands. Serbia accepted most of them, but Austria-Hungary declared war anyway on July 28, 1914. A murder had become a government crisis. A government crisis was about to become a world war.</p>
+  <p class="para-standard">Austria-Hungary blamed Serbia for the attack. It sent Serbia an <span class="vocab" tabindex="0">ultimatum<span class="tip">A final demand before punishment or war.</span></span> with harsh demands. Serbia accepted most of them, but Austria-Hungary declared war anyway on July 28, 1914. A murder had become a government crisis. A government crisis was about to become a world war.</p>
   <p class="para-simple">Austria-Hungary blamed Serbia. It sent Serbia an <span class="vocab-red">ultimatum</span>, which means a final list of demands. Serbia accepted most of the demands. Austria-Hungary declared war anyway on July 28, 1914.</p>
 </section>
 
-<section class="content-section clearfix" id="dominoes">
+<section class="content-section clearfix section-animate" id="dominoes">
   <span class="section-kicker">CHAPTER THREE</span>
   <h2 class="section-heading">THE DOMINOES FALL</h2>
   <!--
     FILENAME: S1L05_GermanMobilizationTroops.jpg
     PLACE IN: images/S1/L05/
+    PRIORITY: SUPPORTING
     FIND: German soldiers boarding trains in August 1914; shows early war enthusiasm before trench reality
     SEARCH: German soldiers mobilization August 1914 train departure World War I Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Departure_of_troops_1914.jpg (suggested, not guaranteed)
@@ -712,10 +880,10 @@ footer{
     <figcaption>German soldiers leaving for the front, August 1914. Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard">Once Austria-Hungary declared war on Serbia, the alliance system took over. Russia began to <span class="vocab">mobilize<span class="tip">To prepare troops and supplies for war.</span></span> to defend Serbia. Germany warned Russia to stop. Russia refused. Germany declared war on Russia on August 1, then declared war on France on August 3.</p>
+  <p class="para-standard">Once Austria-Hungary declared war on Serbia, the alliance system took over. Russia began to <span class="vocab" tabindex="0">mobilize<span class="tip">To prepare troops and supplies for war.</span></span> to defend Serbia. Germany warned Russia to stop. Russia refused. Germany declared war on Russia on August 1, then declared war on France on August 3.</p>
   <p class="para-simple">After Austria-Hungary declared war on Serbia, alliances took over. Russia began to <span class="vocab-red">mobilize</span> to help Serbia. Germany told Russia to stop. Russia did not stop. Germany declared war on Russia, then on France.</p>
 
-  <p class="para-standard">Germany wanted to defeat France quickly before turning east to fight Russia. This plan was called the <span class="vocab">Schlieffen Plan<span class="tip">Germany's plan to defeat France quickly first.</span></span>. To do it, Germany invaded neutral Belgium. Britain had promised to defend Belgian neutrality, so Britain declared war on Germany on August 4. In a little more than a month, a Balkan crisis had become a European war.</p>
+  <p class="para-standard">Germany wanted to defeat France quickly before turning east to fight Russia. This plan was called the <span class="vocab" tabindex="0">Schlieffen Plan<span class="tip">Germany's plan to defeat France quickly first.</span></span>. To do it, Germany invaded neutral Belgium. Britain had promised to defend Belgian neutrality, so Britain declared war on Germany on August 4. In a little more than a month, a Balkan crisis had become a European war.</p>
   <p class="para-simple">Germany planned to beat France quickly, then fight Russia. This was the <span class="vocab-red">Schlieffen Plan</span>. Germany invaded Belgium to reach France. Britain had promised to defend Belgium. So Britain declared war on Germany.</p>
 
   <div class="timeline">
@@ -731,11 +899,12 @@ footer{
   <p class="para-simple">The speed shocked leaders. Each country said it was only defending itself. Each army moving made the next country move faster. No one planned the whole war alone. But their choices created a chain reaction.</p>
 </section>
 
-<div class="brain-break as-break">
+<div class="brain-break as-break section-animate">
   <span class="bb-label">ART SPOTLIGHT</span>
   <!--
     FILENAME: S1L05_ArtSpotlight_ChainOfFriendship.jpg
     PLACE IN: images/S1/L05/
+    PRIORITY: ESSENTIAL
     FIND: "The Chain of Friendship" political cartoon, Brooklyn Eagle, July 1914; specific cartoon showing alliance chain reaction before World War I
     SEARCH: The Chain of Friendship cartoon Brooklyn Eagle July 1914 Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Chain_of_Friendship_cartoon.jpg (suggested, not guaranteed)
@@ -745,7 +914,7 @@ footer{
   <p class="as-fact">The title sounds friendly, but the cartoon is basically a warning label. It turns alliances into a human chain where every person yanks the next one into danger. That is the whole July Crisis in one picture.</p>
 </div>
 
-<section class="content-section clearfix" id="propaganda">
+<section class="content-section clearfix section-animate" id="propaganda">
   <span class="section-kicker">CHAPTER FOUR</span>
   <h2 class="section-heading">SELLING THE WAR</h2>
   <div class="img-pair">
@@ -753,6 +922,7 @@ footer{
       <!--
         FILENAME: S1L05_KitchenerPoster.jpg
         PLACE IN: images/S1/L05/
+    PRIORITY: SUPPORTING
         FIND: Alfred Leete, "London Opinion: Your Country Needs You," 1914; famous British recruitment poster with Lord Kitchener pointing at viewer
         SEARCH: London Opinion Your Country Needs You Alfred Leete 1914 Library of Congress
         LINK: https://www.loc.gov/pictures/item/93517736/ (suggested, not guaranteed)
@@ -764,6 +934,7 @@ footer{
       <!--
         FILENAME: S1L05_UncleSamPoster.jpg
         PLACE IN: images/S1/L05/
+    PRIORITY: SUPPORTING
         FIND: James Montgomery Flagg, "I Want YOU for U.S. Army," 1917; famous American WWI recruitment poster
         SEARCH: Uncle Sam I Want You U.S. Army James Montgomery Flagg 1917 Library of Congress Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/File:Uncle_Sam_(pointing_finger).jpg (suggested, not guaranteed)
@@ -773,7 +944,7 @@ footer{
     </figure>
   </div>
 
-  <p class="para-standard">Once war began, governments needed soldiers, money, and public support. They used <span class="vocab">propaganda<span class="tip">Messages made to persuade people toward one side.</span></span> to shape how citizens felt. Propaganda is not always a lie, but it is always selective. It shows what leaders want people to notice and hides what might make them question the war.</p>
+  <p class="para-standard">Once war began, governments needed soldiers, money, and public support. They used <span class="vocab" tabindex="0">propaganda<span class="tip">Messages made to persuade people toward one side.</span></span> to shape how citizens felt. Propaganda is not always a lie, but it is always selective. It shows what leaders want people to notice and hides what might make them question the war.</p>
   <p class="para-simple">Once war began, governments needed soldiers and support. They used <span class="vocab-red">propaganda</span> to shape people's feelings. Propaganda is not always false. But it only shows the part leaders want people to see.</p>
 
   <p class="para-standard">Recruitment posters used direct eye contact, pointing fingers, flags, uniforms, and emotional language. They made war feel personal. If the country needed you, then staying home could feel selfish or cowardly. Posters also made the enemy look cruel or dangerous, which made the war seem necessary.</p>
@@ -783,51 +954,75 @@ footer{
   <p class="para-simple">Propaganda helped governments get soldiers and support. It also made peace harder. When people are told the enemy is evil, negotiation can feel like giving up.</p>
 </section>
 
-<section class="content-section" id="primary-source-moment">
+<section class="content-section section-animate" id="primary-source-moment">
   <span class="section-kicker">PRIMARY SOURCE MOMENT</span>
-  <h2 class="section-heading">THE LAMPS GO OUT</h2>
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE</div>
-    <div class="ps-quote">"The lamps are going out all over Europe; we shall not see them lit again in our lifetime."</div>
-    <div class="ps-attribution">Sir Edward Grey, British Foreign Secretary, August 3, 1914</div>
-    <div class="ps-narrator">Grey said this as Britain prepared to enter the war. He understood that Europe was not entering a small conflict. It was stepping into a disaster that would change the century.</div>
+  <h2 class="section-heading">THE ULTIMATUM THAT MADE WAR HARD TO STOP</h2>
+  <div class="primary-source section-animate">
+    <div class="ps-visual">
+      <figure>
+        <!--
+          FILENAME: S1L05_AustrianUltimatumDocument.jpg
+          PLACE IN: images/S1/L05/
+          PRIORITY: ESSENTIAL
+          FIND: Austro-Hungarian ultimatum to Serbia, July 23, 1914, diplomatic document or newspaper reproduction; shows the written demands that turned the assassination into an international crisis
+          SEARCH: Austro-Hungarian ultimatum to Serbia July 23 1914 document Wikimedia Commons
+          LINK: Suggested: https://commons.wikimedia.org/wiki/Category:July_Crisis
+        -->
+        <img src="images/S1/L05/S1L05_AustrianUltimatumDocument.jpg" alt="Austro-Hungarian ultimatum to Serbia document">
+        <figcaption>Austro-Hungary sent Serbia an ultimatum on July 23, 1914. The demands helped turn the assassination into a wider crisis.</figcaption>
+      </figure>
+      <div>
+        <div class="ps-label">PRIMARY SOURCE</div>
+        <div class="ps-quote">“The Royal Serbian Government will furthermore pledge itself: to suppress every publication which shall incite to hatred and contempt of the Monarchy ... to proceed at once to the dissolution of the society called Narodna Odbrana ... to remove without delay from public instruction in Serbia everything that serves or might serve to foment the propaganda against Austria-Hungary.”</div>
+        <div class="ps-attribution">Austro-Hungarian ultimatum to Serbia, July 23, 1914.</div>
+        <div class="ps-narrator">This source shows why the assassination did not stay a police investigation. Austria-Hungary demanded that Serbia control newspapers, organizations, schools, and nationalist groups. The ultimatum turned anger over one killing into a test of national power, pride, and alliance promises.</div>
+      </div>
+    </div>
   </div>
-  <div class="ps-questions">
-    <p><strong>Question 1:</strong> What do you think Grey meant when he said the lamps were going out?</p>
-    <p><strong>Question 2:</strong> How does this quote connect to the idea that leaders understood the danger but still moved toward war?</p>
-  </div>
+  <p class="para-standard">The ultimatum connects directly to the essential question. It shows how nationalism, imperial power, and fear of weakness pushed leaders toward confrontation. Serbia could accept some demands, but accepting all of them would make it look controlled by Austria-Hungary. Once pride and alliances entered the crisis, compromise became much harder.</p>
+  <p class="para-simple">The ultimatum connects to the essential question. It shows how nationalism and power pushed leaders toward war. Serbia could accept some demands, but accepting all of them would make Serbia look controlled by Austria-Hungary. Pride and alliances made compromise harder.</p>
 </section>
 
-<div class="brain-break tn-break" id="then-now">
+<div class="brain-break tn-break section-animate" id="then-now">
   <span class="bb-label">THEN AND NOW</span>
-  <p class="tn-payoff">The old alliance question has not disappeared: when one country is attacked, who else is pulled in?</p>
+  <p class="tn-payoff">ALLIANCES CAN PROTECT COUNTRIES, BUT THEY CAN ALSO TURN ONE CRISIS INTO EVERYONE'S CRISIS.</p>
   <div class="tn-pair">
     <div class="tn-item">
-      <span class="tn-era-label">THEN</span>
+      <span class="tn-era-label">1914</span>
       <!--
-        FILENAME: S1L05_Then_AllianceMap1914.jpg
+        FILENAME: S1L05_Then_JulyCrisisNewspaper.jpg
         PLACE IN: images/S1/L05/
-        FIND: Military alliances map of Europe in 1914; use to show alliance blocs before World War I
-        SEARCH: Europe 1914 alliances map Wikimedia Commons
-        LINK: https://commons.wikimedia.org/wiki/File:Map_Europe_alliances_1914-en.svg (suggested, not guaranteed)
+        PRIORITY: SUPPORTING
+        FIND: Newspaper front page or illustrated news coverage of the July Crisis or Austria-Hungary declaring war on Serbia in 1914; shows how one regional crisis became international news
+        SEARCH: Austria Hungary declares war on Serbia 1914 newspaper Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:July_Crisis
       -->
-      <img src="images/S1/L05/S1L05_Then_AllianceMap1914.jpg" alt="Europe alliance map in 1914">
-      <p class="tn-caption">Europe's military alliances in 1914 turned a regional crisis into a wider war.</p>
+      <img src="images/S1/L05/S1L05_Then_JulyCrisisNewspaper.jpg" alt="Newspaper coverage of the July Crisis in 1914">
+      <p class="tn-caption">In 1914, news of the crisis spread as countries prepared armies and honored alliance promises.</p>
     </div>
     <div class="tn-item">
       <span class="tn-era-label">NOW</span>
       <!--
-        FILENAME: S1L05_Now_NATOMap.jpg
+        FILENAME: S1L05_Now_NATOLeadersSummit.jpg
         PLACE IN: images/S1/L05/
-        FIND: NATO member states map; use to show a modern military alliance system
-        SEARCH: NATO member states map Wikimedia Commons
-        LINK: https://commons.wikimedia.org/wiki/Category:Maps_of_NATO (suggested, not guaranteed)
+        PRIORITY: SUPPORTING
+        FIND: Modern NATO leaders summit or NATO meeting photograph showing alliance leaders gathered together; use to show alliances as living political decisions rather than only maps
+        SEARCH: NATO leaders summit Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:NATO_summits
       -->
-      <img src="images/S1/L05/S1L05_Now_NATOMap.jpg" alt="Map of NATO member states">
-      <p class="tn-caption">Modern alliances still raise the same question: when does defense of one member require action from all?</p>
+      <img src="images/S1/L05/S1L05_Now_NATOLeadersSummit.jpg" alt="Modern NATO leaders gathered at a summit">
+      <p class="tn-caption">Modern alliances still require leaders to decide what defense promises mean in a crisis.</p>
     </div>
   </div>
-  <p class="tn-closing">If you had been a leader in late July 1914, where was the last possible moment to stop the war, and what might it have cost to try?</p>
+  <div class="tn-text-block">
+    <h3>THEN</h3>
+    <p>In 1914, Austria-Hungary's conflict with Serbia did not stay between two countries. Russia supported Serbia, Germany supported Austria-Hungary, and France and Britain were pulled toward their own alliance commitments. The July Crisis showed how a local conflict could become a world war.</p>
+    <h3>NOW</h3>
+    <p>Today, alliances like NATO are meant to prevent war by warning enemies that an attack on one member can bring a response from others. Leaders meet, plan, and make promises before crises happen. Those promises can create security, but they also carry serious responsibilities.</p>
+    <h3>CONNECTION</h3>
+    <p>The connection is not that today's alliances are the same as 1914. The connection is that alliance promises still shape how countries judge risk, loyalty, and power. World War I shows why leaders must think carefully before one crisis becomes everyone's crisis.</p>
+    <p>If you had been a leader in late July 1914, where was the last possible moment to stop the war, and what might it have cost to try?</p>
+  </div>
 </div>
 </main>
 
@@ -835,31 +1030,105 @@ footer{
 </div>
 
 <script>
-document.querySelectorAll('.vocab').forEach(function(el){
-  el.addEventListener('click',function(e){
-    e.stopPropagation();
-    document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});
-    el.classList.toggle('active');
-  });
-});
-document.addEventListener('click',function(){
-  document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});
-});
+(function(){
+  var bar=document.getElementById('reading-progress');
+  window.addEventListener('scroll',function(){
+    var scrollTop=window.scrollY||document.documentElement.scrollTop;
+    var docHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    var progress=docHeight>0?(scrollTop/docHeight)*100:0;
+    bar.style.width=progress+'%';
+  },{passive:true});
+})();
+
 document.getElementById('lexile-toggle').addEventListener('click',function(){
   document.body.classList.toggle('simplified');
   this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';
 });
+
+function repositionTip(el){
+  var tip=el.querySelector('.tip');
+  if(!tip)return;
+  tip.style.left='50%';
+  tip.style.transform='translateX(-50%)';
+  var rect=tip.getBoundingClientRect();
+  if(rect.left<8){
+    var shift=8-rect.left;
+    tip.style.transform='translateX(calc(-50% + '+shift+'px))';
+  }else if(rect.right>window.innerWidth-8){
+    var shift=rect.right-(window.innerWidth-8);
+    tip.style.transform='translateX(calc(-50% - '+shift+'px))';
+  }
+}
+
+document.querySelectorAll('.vocab').forEach(function(el){
+  el.setAttribute('tabindex','0');
+  el.addEventListener('click',function(e){
+    e.stopPropagation();
+    document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});
+    el.classList.toggle('active');
+    if(el.classList.contains('active'))repositionTip(el);
+  });
+  el.addEventListener('focus',function(){el.classList.add('active');repositionTip(el);});
+  el.addEventListener('blur',function(){el.classList.remove('active');});
+  el.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);}
+    if(e.key==='Escape')el.classList.remove('active');
+  });
+});
+
+document.addEventListener('click',function(){
+  document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});
+});
+
 const tocObserver=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     const id=entry.target.getAttribute('id');
-    const link=document.querySelector('.toc-sidebar a[href="#'+id+'"]');
-    if(link){
-      if(entry.isIntersecting)link.classList.add('active');
-      else link.classList.remove('active');
+    const tocLink=document.querySelector('.toc-sidebar a[href="#'+id+'"]');
+    const navLink=document.querySelector('.section-nav a[href="#'+id+'"]');
+    if(entry.isIntersecting){
+      if(tocLink)tocLink.classList.add('active');
+      if(navLink)navLink.classList.add('active');
+    }else{
+      if(tocLink)tocLink.classList.remove('active');
+      if(navLink)navLink.classList.remove('active');
     }
   });
 },{threshold:.25});
-document.querySelectorAll('[id]').forEach(el=>tocObserver.observe(el));
+
+document.querySelectorAll('section[id], div[id="then-now"]').forEach(el=>tocObserver.observe(el));
+
+(function(){
+  var animObserver=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        animObserver.unobserve(entry.target);
+      }
+    });
+  },{threshold:.08});
+  document.querySelectorAll('.section-animate').forEach(function(el){animObserver.observe(el);});
+})();
+
+document.querySelectorAll('img').forEach(function(img){
+  if(img.complete&&img.naturalWidth>0){
+    img.classList.add('loaded');
+  }else{
+    img.addEventListener('load',function(){img.classList.add('loaded');});
+    img.addEventListener('error',function(){img.style.opacity='0.15';img.style.border='2px dashed rgba(255,255,255,0.2)';});
+  }
+});
 </script>
 </body>
+
+<!--
+  IMAGE CHECK: Open browser DevTools (F12), go to Console, paste and run:
+
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.complete || img.naturalWidth === 0) {
+      console.warn('MISSING:', img.src);
+    } else {
+      console.log('OK:', img.src);
+    }
+  });
+-->
 </html>
