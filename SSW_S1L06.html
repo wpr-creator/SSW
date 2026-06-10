@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSW S1L06 — FIGHTING WORLD WAR I</title>
+<title>SSW S1L06 : FIGHTING WORLD WAR I</title>
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Atkinson+Hyperlegible:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -27,6 +27,7 @@
   --navy:#102747;
   --cyan:#29d4ff;
 }
+#reading-progress{position:fixed;top:0;left:0;height:4px;width:0%;background:var(--blood-light);z-index:9999;transition:width .1s linear}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
@@ -116,7 +117,7 @@ body{
 }
 .section-nav{
   position:sticky;
-  top:0;
+  top:4px;
   z-index:100;
   display:flex;
   flex-wrap:wrap;
@@ -136,6 +137,7 @@ body{
   margin-bottom:-4px;
 }
 .section-nav a:hover{background:rgba(139,26,26,.55);color:#fff;border-bottom-color:var(--brass-light)}
+.section-nav a.active{color:#fff;border-bottom-color:var(--blood-light);background:rgba(139,26,26,.45)}
 #lexile-toggle{
   display:block;
   margin:20px auto 28px;
@@ -156,7 +158,7 @@ body.simplified .para-standard{display:none}
 body.simplified .para-simple{display:block}
 .toc-sidebar{
   position:fixed;
-  right:calc(50% - 590px);
+  left:calc(50% - 570px);
   top:50%;
   transform:translateY(-50%);
   width:155px;
@@ -164,7 +166,7 @@ body.simplified .para-simple{display:block}
   font-family:'Oswald',sans-serif;
   z-index:50;
   background:rgba(47,42,29,.92);
-  border-left:2px solid rgba(214,189,103,.45);
+  border-right:2px solid rgba(214,189,103,.45);
 }
 .toc-sidebar .toc-label{
   display:block;
@@ -246,25 +248,87 @@ figcaption{font-size:13px;font-style:italic;color:var(--muted);margin-top:8px;li
 .tn-item img{width:100%;display:block;border:2px solid rgba(41,212,255,.65);filter:none}
 .tn-caption{font-family:'Oswald',sans-serif;font-size:12px;font-style:italic;color:#d9f7ff;margin-top:8px;line-height:1.4}
 .tn-closing{font-family:'Oswald',sans-serif;font-size:20px;font-weight:500;text-align:center;color:#fff;margin-top:24px;line-height:1.5;border-top:1px solid rgba(41,212,255,.35);padding-top:20px}
+
+.vocab:focus{outline:2px solid var(--brass-light);outline-offset:2px;border-radius:2px}
+img{opacity:0;transition:opacity .4s ease}
+img.loaded{opacity:1}
+.section-animate{opacity:0;transform:translateY(24px);transition:opacity .45s ease-out,transform .45s ease-out}
+.section-animate.visible{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion: reduce){.section-animate{opacity:1;transform:none;transition:none}}
+.timeline-wrap{max-width:820px;margin:0 auto 36px;padding:0 28px}
+.timeline-title{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--blood);margin:0 0 12px;text-align:center}
+.timeline{border-left:0;margin:0;padding:22px;background:#e4d5ad;border-top:4px solid var(--blood);border-bottom:4px solid var(--blood);display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.timeline-event{margin-bottom:0;position:relative;border-left:3px solid var(--brass);padding-left:12px}
+.timeline-event:before{display:none}
+.timeline-date{font-family:'Special Elite',cursive;font-size:15px;color:var(--blood);letter-spacing:.1em;margin-bottom:4px}
+.timeline-event p{font-size:15px;line-height:1.55;margin-bottom:0}
+.ps-visual{display:grid;grid-template-columns:minmax(200px,36%) 1fr;gap:24px;align-items:start}.ps-visual figure{margin:0}.ps-visual img{width:100%;display:block;border:3px solid var(--brass);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.ff-context{font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#f4dfad;text-align:center;margin-bottom:28px;opacity:.9;font-weight:700}.ff-break .bb-label{margin-bottom:8px}.ff-item{max-width:180px}.ff-desc{text-transform:none;letter-spacing:.08em;max-width:180px;font-size:13px}
+.tn-text-block{margin-top:24px;border-top:1px solid rgba(41,212,255,.35);padding-top:20px}.tn-text-block h3{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--cyan);margin:18px 0 8px}.tn-text-block p{font-family:'Oswald',sans-serif;font-size:17px;line-height:1.65;margin-bottom:12px;color:#fff}
+
 footer{background:var(--khaki);color:var(--brass-light);text-align:center;padding:24px 30px;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.24em;text-transform:uppercase;border-top:5px solid var(--brass)}
 @media(max-width:1100px){.toc-sidebar{display:none}}
-@media(max-width:880px){.page-wrap{border:0}main{padding:0 22px 50px}.header-inner{padding:44px 24px 42px}.img-left,.img-right{float:none;width:100%;margin:24px 0}.img-pair,.weapon-grid,.tn-pair{grid-template-columns:1fr}.brain-break,.ff-break,.as-break{margin:36px 0;padding:28px 22px}.tn-break{padding:28px 22px;margin:30px 0 0}.section-nav a{font-size:11px;padding:11px 8px}}
-@media(max-width:600px){.page-title{font-size:42px}.section-heading{font-size:31px}.bb-text,.as-fact{font-size:18px}}
+@media(max-width:880px){.page-wrap{border:0}main{padding:0 22px 50px}.header-inner{padding:44px 24px 42px}.img-left,.img-right{float:none;width:100%;margin:24px 0}.img-pair,.weapon-grid,.tn-pair,.timeline{grid-template-columns:1fr}.brain-break,.ff-break,.as-break{margin:36px 0;padding:28px 22px}.tn-break{padding:28px 22px;margin:30px 0 0}.section-nav a{font-size:11px;padding:11px 8px}}
+@media(max-width:700px){.ps-visual{grid-template-columns:1fr}}
+@media(max-width:600px){.page-title{font-size:42px}.section-heading{font-size:31px}.bb-text,.as-fact{font-size:18px}.ff-number{font-size:44px}}
+
+
+
+/* FINAL FORMAT FIX: v4-safe width and contrast controls */
+html, body { max-width: 100%; overflow-x: clip; }
+body { min-width: 0; }
+.page-wrap { width: min(920px, 100%); max-width: 100%; overflow-x: clip; }
+main, .timeline-wrap { width: 100%; max-width: 820px; }
+figure, img, .timeline, .primary-source, .weapon-grid, .tn-pair, .img-pair { max-width: 100%; }
+img { height: auto; }
+.brain-break { width: auto; max-width: none; margin: 44px -50px; }
+.ff-break { margin: 44px -50px; }
+.tn-break { margin: 30px -50px 0; }
+.section-nav { overflow-x: auto; overscroll-behavior-inline: contain; -webkit-overflow-scrolling: touch; }
+.section-nav a { white-space: nowrap; flex: 0 0 auto; }
+.dyk-break, .dyk-break .bb-label, .dyk-break .bb-text, .dyk-break p, .dyk-break span { color: #ffffff; }
+.dyk-break .bb-label { color: var(--lime); }
+.ff-break, .ff-break p, .ff-break span { color: #ffffff; }
+.ff-break .bb-label, .ff-number { color: var(--orange); }
+.ff-context, .ff-desc { color: #fff1c4; }
+.as-break, .as-break p, .as-break span { color: #ffffff; }
+.as-break .bb-label { color: var(--pink); }
+.as-caption { color: #ffe8fb; }
+.tn-break, .tn-break p, .tn-break span, .tn-text-block p { color: #ffffff; }
+.tn-break .bb-label, .tn-payoff, .tn-era-label, .tn-text-block h3 { color: var(--cyan); }
+.tn-caption { color: #e9fbff; }
+.weapon-card p { color: #fff6d5; }
+.weapon-card h3 { color: var(--brass-light); }
+.primary-source, .primary-source p, .primary-source figcaption { color: #ffffff; }
+.ps-narrator { color: #f3e7bf; }
+.ps-attribution { color: #e8d48f; }
+.timeline { overflow-wrap: anywhere; }
+@media(max-width:980px){
+  .brain-break, .ff-break, .as-break, .tn-break { margin-left: 0; margin-right: 0; padding-left: 28px; padding-right: 28px; }
+}
+@media(max-width:880px){
+  .page-wrap { width: 100%; }
+  .brain-break, .ff-break, .as-break, .tn-break { margin: 36px 0; padding: 28px 22px; }
+  .tn-break { margin: 30px 0 0; }
+}
+
 </style>
 </head>
 <body>
+<div id="reading-progress"></div>
 <div class="page-wrap">
 <header class="site-header">
   <!--
     FILENAME: S1L06_Header_TrenchSoldiers.jpg
     PLACE IN: images/S1/L06/
+    PRIORITY: ESSENTIAL
     FIND: WWI soldiers in a muddy trench on the Western Front, circa 1916; wide dramatic image for header
     SEARCH: World War I soldiers trench Western Front 1916 Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Cheshire_Regiment_trench_Somme_1916.jpg (suggested, not guaranteed)
   -->
   <img class="header-bg" src="images/S1/L06/S1L06_Header_TrenchSoldiers.jpg" alt="World War I soldiers in a trench">
   <div class="header-inner">
-    <div class="course-label">WORLD HISTORY — SEMESTER 1, LESSON 06</div>
+    <div class="course-label">WORLD HISTORY : SEMESTER 1, LESSON 06</div>
     <h1 class="page-title">FIGHTING WORLD WAR I</h1>
     <div class="eq-banner"><span class="eq-label">ESSENTIAL QUESTION</span>What was it actually like to fight in WWI, and why did so many people die?</div>
   </div>
@@ -283,6 +347,7 @@ footer{background:var(--khaki);color:var(--brass-light);text-align:center;paddin
 
 <aside class="toc-sidebar">
   <span class="toc-label">ON THIS PAGE</span>
+  <a href="#introduction">OPENING</a>
   <a href="#trenches">TRENCHES</a>
   <a href="#weapons">WEAPONS</a>
   <a href="#genocide">GENOCIDE</a>
@@ -292,19 +357,29 @@ footer{background:var(--khaki);color:var(--brass-light);text-align:center;paddin
 </aside>
 
 <main>
-<section class="intro-section">
+<div class="timeline-wrap" aria-label="World War I timeline">
+  <div class="timeline-title">TIMELINE</div>
+  <div class="timeline">
+    <div class="timeline-event"><div class="timeline-date">1915-1916</div><p>Armenian civilians are deported and killed during the genocide.</p></div>
+    <div class="timeline-event"><div class="timeline-date">1916</div><p>Somme and Verdun show the terrible cost of trench warfare.</p></div>
+    <div class="timeline-event"><div class="timeline-date">1917</div><p>Russia leaves the war, and the United States enters.</p></div>
+    <div class="timeline-event"><div class="timeline-date">NOV. 11, 1918</div><p>An armistice stops the fighting on the Western Front.</p></div>
+  </div>
+</div>
+<section class="intro-section section-animate" id="introduction">
   <p class="para-standard">At sunrise on July 1, 1916, British soldiers climbed ladders out of their trenches and walked toward German lines. Many had been told the enemy would already be destroyed by artillery. Instead, German machine guns opened fire almost immediately.</p>
   <p class="para-simple">At sunrise on July 1, 1916, British soldiers climbed out of their trenches. They walked toward German lines. Many had been told the enemy would already be destroyed. German machine guns started firing almost right away.</p>
   <p class="para-standard">By the end of that first day at the Somme, the British army had lost about 57,000 men killed, wounded, or missing. World War I was not a war of quick victories. It was a war where modern weapons met old battle plans, and the human cost was almost impossible to understand.</p>
   <p class="para-simple">By the end of that first day at the Somme, Britain had lost about 57,000 men. Some were killed. Some were wounded or missing. World War I was not quick. Modern weapons made old battle plans deadly.</p>
 </section>
 
-<section class="content-section clearfix" id="trenches">
+<section class="content-section clearfix section-animate" id="trenches">
   <span class="section-kicker">CHAPTER ONE</span>
   <h2 class="section-heading">THE WESTERN FRONT BECOMES A 400-MILE SCAR</h2>
   <!--
     FILENAME: S1L06_WesternFrontMap.jpg
     PLACE IN: images/S1/L06/
+    PRIORITY: SUPPORTING
     FIND: Map of the Western Front in World War I from Belgium to Switzerland; shows 400-mile line of trenches
     SEARCH: Western Front map World War I Belgium Switzerland Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/Category:Maps_of_the_Western_Front_in_World_War_I (suggested, not guaranteed)
@@ -313,13 +388,14 @@ footer{background:var(--khaki);color:var(--brass-light);text-align:center;paddin
     <img src="images/S1/L06/S1L06_WesternFrontMap.jpg" alt="Map of the Western Front during World War I">
     <figcaption>The Western Front stretched from Belgium to Switzerland. For almost four years, the line barely moved. Wikimedia Commons.</figcaption>
   </figure>
-  <p class="para-standard">The <span class="vocab">Western Front<span class="tip">The main fighting line in France and Belgium.</span></span> was a long line of trenches that ran from Belgium to Switzerland. It stretched for about 400 miles. Soldiers lived underground in muddy ditches because standing in the open meant death.</p>
+  <p class="para-standard">The <span class="vocab" tabindex="0">Western Front<span class="tip">The main fighting line in France and Belgium.</span></span> was a long line of trenches that ran from Belgium to Switzerland. It stretched for about 400 miles. Soldiers lived underground in muddy ditches because standing in the open meant death.</p>
   <p class="para-simple">The <span class="vocab-red">Western Front</span> was a long line of trenches. It ran from Belgium to Switzerland. It was about 400 miles long. Soldiers lived in muddy ditches because open ground was too dangerous.</p>
-  <p class="para-standard"><span class="vocab">Trench warfare<span class="tip">Fighting from long dug-out ditches.</span></span> was brutal even when soldiers were not attacking. Trenches filled with mud, rats, lice, and freezing water. Men got trench foot when their feet stayed wet too long. Shells exploded day and night, and the smell of bodies never fully left the air.</p>
+  <p class="para-standard"><span class="vocab" tabindex="0">Trench warfare<span class="tip">Fighting from long dug-out ditches.</span></span> was brutal even when soldiers were not attacking. Trenches filled with mud, rats, lice, and freezing water. Men got trench foot when their feet stayed wet too long. Shells exploded day and night, and the smell of bodies never fully left the air.</p>
   <p class="para-simple"><span class="vocab-red">Trench warfare</span> was terrible even on quiet days. Trenches had mud, rats, lice, and cold water. Men got trench foot when their feet stayed wet. Shells exploded day and night.</p>
   <!--
     FILENAME: S1L06_TrenchLifeMud.jpg
     PLACE IN: images/S1/L06/
+    PRIORITY: SUPPORTING
     FIND: WWI soldiers in muddy flooded trenches, Western Front; shows daily life in trenches
     SEARCH: World War I muddy trench soldiers Western Front Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/Category:Trench_warfare_in_World_War_I (suggested, not guaranteed)
@@ -334,38 +410,28 @@ footer{background:var(--khaki);color:var(--brass-light);text-align:center;paddin
   <p class="real-world para-simple">Real-world connection: New weapons can make old battle plans deadly.</p>
 </section>
 
-<div class="brain-break dyk-break">
+<div class="brain-break dyk-break section-animate">
   <span class="bb-label">DID YOU KNOW</span>
   <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
     <div style="flex:1;min-width:200px;">
       <!--
         FILENAME: S1L06_DYK_TrenchRat.jpg
         PLACE IN: images/S1/L06/
+    PRIORITY: SUPPORTING
         FIND: WWI trench rat or soldiers with rats; visualizes the rat problem in the trenches
         SEARCH: World War I trench rats soldiers Wikimedia Commons
         LINK: https://commons.wikimedia.org/wiki/Category:World_War_I_trenches (suggested, not guaranteed)
       -->
       <img src="images/S1/L06/S1L06_DYK_TrenchRat.jpg" alt="Rat in World War I trench" style="width:100%;display:block;border:3px solid var(--lime);box-shadow:0 4px 18px rgba(0,0,0,.4);">
-      <p style="font-size:12px;margin-top:8px;opacity:.8;font-family:'Oswald',sans-serif;">Rats became part of trench life.</p>
+      <p style="font-size:12px;margin-top:8px;opacity:1;color:#ffffff;font-family:'Oswald',sans-serif;">Rats became part of trench life.</p>
     </div>
     <p class="bb-text" style="flex:1;min-width:200px;">Trench rats were not tiny background pests. Some soldiers wrote that rats grew fat from the food scraps and bodies around the trenches. Imagine trying to sleep in mud while rats ran over your face, and then being told tomorrow you might have to climb out and attack.</p>
   </div>
 </div>
-
-<div class="brain-break ff-break">
-  <span class="bb-label">FAST FACTS</span>
-  <div class="ff-grid">
-    <div class="ff-item"><span class="ff-number">400</span><span class="ff-desc">MILES OF TRENCHES</span></div>
-    <div class="ff-item"><span class="ff-number">57K</span><span class="ff-desc">BRITISH LOSSES DAY ONE</span></div>
-    <div class="ff-item"><span class="ff-number">10</span><span class="ff-desc">MONTHS AT VERDUN</span></div>
-    <div class="ff-item"><span class="ff-number">1918</span><span class="ff-desc">ARMISTICE SIGNED</span></div>
-  </div>
-</div>
-
-<section class="content-section clearfix" id="weapons">
+<section class="content-section clearfix section-animate" id="weapons">
   <span class="section-kicker">CHAPTER TWO</span>
   <h2 class="section-heading">MODERN WEAPONS, OLD BATTLE PLANS</h2>
-  <p class="para-standard">World War I became a <span class="vocab">stalemate<span class="tip">A fight where neither side can win.</span></span>. Each side tried to break through the other side's trenches. Most attacks failed because defense was stronger than offense. Machine guns, artillery, poison gas, and barbed wire all punished men moving across open ground.</p>
+  <p class="para-standard">World War I became a <span class="vocab" tabindex="0">stalemate<span class="tip">A fight where neither side can win.</span></span>. Each side tried to break through the other side's trenches. Most attacks failed because defense was stronger than offense. Machine guns, artillery, poison gas, and barbed wire all punished men moving across open ground.</p>
   <p class="para-simple">World War I became a <span class="vocab-red">stalemate</span>. That means neither side could win quickly. Each side tried to break through trenches. Most attacks failed. Defense was stronger than attack.</p>
   <div class="weapon-grid">
     <div class="weapon-card"><h3>MACHINE GUNS</h3><p>They fired bullets faster than men could cross open ground.</p></div>
@@ -376,6 +442,7 @@ footer{background:var(--khaki);color:var(--brass-light);text-align:center;paddin
   <!--
     FILENAME: S1L06_MachineGunCrew.jpg
     PLACE IN: images/S1/L06/
+    PRIORITY: SUPPORTING
     FIND: World War I machine gun crew in trench or battlefield; shows defensive firepower
     SEARCH: World War I machine gun crew trench Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/Category:Machine_guns_of_World_War_I (suggested, not guaranteed)
@@ -384,11 +451,12 @@ footer{background:var(--khaki);color:var(--brass-light);text-align:center;paddin
     <img src="images/S1/L06/S1L06_MachineGunCrew.jpg" alt="World War I machine gun crew">
     <figcaption>Machine guns made open attacks extremely deadly. Wikimedia Commons.</figcaption>
   </figure>
-  <p class="para-standard"><span class="vocab">Total war<span class="tip">A war using a whole nation's people and resources.</span></span> meant the whole country supported the war effort. Factories made shells, guns, uniforms, and food. Civilians worked, saved supplies, and were targeted by enemy blockades. The line between soldier and civilian became less clear.</p>
+  <p class="para-standard"><span class="vocab" tabindex="0">Total war<span class="tip">A war using a whole nation's people and resources.</span></span> meant the whole country supported the war effort. Factories made shells, guns, uniforms, and food. Civilians worked, saved supplies, and were targeted by enemy blockades. The line between soldier and civilian became less clear.</p>
   <p class="para-simple"><span class="vocab-red">Total war</span> meant the whole country was part of the war effort. Factories made weapons and supplies. Civilians worked and saved food. Civilians could also suffer from blockades and attacks.</p>
   <!--
     FILENAME: S1L06_PoisonGasMasks.jpg
     PLACE IN: images/S1/L06/
+    PRIORITY: SUPPORTING
     FIND: World War I soldiers wearing gas masks; shows poison gas and fear of chemical weapons
     SEARCH: World War I soldiers gas masks poison gas Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/Category:Gas_masks_of_World_War_I (suggested, not guaranteed)
@@ -399,14 +467,26 @@ footer{background:var(--khaki);color:var(--brass-light);text-align:center;paddin
   </figure>
 </section>
 
-<section class="content-section clearfix" id="genocide">
+<div class="brain-break ff-break section-animate">
+  <span class="bb-label">FAST FACTS</span>
+  <p class="ff-context">THE SCALE OF WORLD WAR I FIGHTING</p>
+  <div class="ff-grid">
+    <div class="ff-item"><span class="ff-number">400</span><span class="ff-desc">miles of trenches shaped the Western Front from Belgium to Switzerland.</span></div>
+    <div class="ff-item"><span class="ff-number">57K</span><span class="ff-desc">British soldiers were killed, wounded, or missing on the first day of the Somme.</span></div>
+    <div class="ff-item"><span class="ff-number">10</span><span class="ff-desc">months of fighting at Verdun showed how long one battle could grind on.</span></div>
+    <div class="ff-item"><span class="ff-number">1918</span><span class="ff-desc">was the year the armistice finally stopped the fighting on the Western Front.</span></div>
+  </div>
+</div>
+
+<section class="content-section clearfix section-animate" id="genocide">
   <span class="section-kicker">CHAPTER THREE</span>
   <h2 class="section-heading">THE ARMENIAN GENOCIDE</h2>
-  <p class="para-standard">While battles raged in Europe, the Ottoman government targeted Armenian Christians inside the Ottoman Empire. In 1915 and 1916, officials forced Armenians from their homes, sent many on deadly marches, and carried out mass killings. This is known as the <span class="vocab">Armenian Genocide<span class="tip">Ottoman killing of Armenian Christians during WWI.</span></span>.</p>
+  <p class="para-standard">While battles raged in Europe, the Ottoman government targeted Armenian Christians inside the Ottoman Empire. In 1915 and 1916, officials forced Armenians from their homes, sent many on deadly marches, and carried out mass killings. This is known as the <span class="vocab" tabindex="0">Armenian Genocide<span class="tip">Ottoman killing of Armenian Christians during WWI.</span></span>.</p>
   <p class="para-simple">While fighting happened in Europe, the Ottoman government targeted Armenian Christians. In 1915 and 1916, Armenians were forced from their homes. Many were sent on deadly marches. Many were killed. This is called the <span class="vocab-red">Armenian Genocide</span>.</p>
   <!--
     FILENAME: S1L06_ArmenianDeportees.jpg
     PLACE IN: images/S1/L06/
+    PRIORITY: SUPPORTING
     FIND: Armenian deportees or refugees during the Armenian Genocide, 1915; serious documentary image
     SEARCH: Armenian Genocide deportees 1915 Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/Category:Armenian_Genocide_deportation (suggested, not guaranteed)
@@ -415,18 +495,19 @@ footer{background:var(--khaki);color:var(--brass-light);text-align:center;paddin
     <img src="images/S1/L06/S1L06_ArmenianDeportees.jpg" alt="Armenian deportees during the genocide">
     <figcaption>Armenian civilians forced from their homes during the genocide, 1915. Wikimedia Commons.</figcaption>
   </figure>
-  <p class="para-standard"><span class="vocab">Genocide<span class="tip">Trying to destroy a whole people.</span></span> means trying to destroy a national, ethnic, racial, or religious group. Historians estimate that between about 600,000 and 1.5 million Armenians were killed. The Ottoman government used the chaos of war as cover.</p>
+  <p class="para-standard"><span class="vocab" tabindex="0">Genocide<span class="tip">Trying to destroy a whole people.</span></span> means trying to destroy a national, ethnic, racial, or religious group. Historians estimate that between about 600,000 and 1.5 million Armenians were killed. The Ottoman government used the chaos of war as cover.</p>
   <p class="para-simple"><span class="vocab-red">Genocide</span> means trying to destroy a whole group of people. Historians estimate that 600,000 to 1.5 million Armenians were killed. The Ottoman government used wartime chaos as cover.</p>
   <p class="para-standard">This part of WWI matters because war can hide crimes against civilians. The Armenian Genocide shows that modern war was not only soldiers dying in trenches. It was also governments using war to attack people they saw as enemies inside their own borders.</p>
   <p class="para-simple">This part of WWI matters because war can hide crimes against civilians. The Armenian Genocide shows that WWI was not only soldiers in trenches. It was also governments attacking civilians.</p>
 </section>
 
-<div class="brain-break as-break">
+<div class="brain-break as-break section-animate">
   <span class="bb-label">ART SPOTLIGHT</span>
   <figure>
     <!--
       FILENAME: S1L06_ArtSpotlight_DestroyThisMadBrute.jpg
       PLACE IN: images/S1/L06/
+    PRIORITY: SUPPORTING
       FIND: Specific WWI propaganda poster "Destroy This Mad Brute" by Harry R. Hopps, 1917; shows how propaganda turned the enemy into a monster
       SEARCH: Destroy This Mad Brute Harry R Hopps 1917 Library of Congress Wikimedia Commons
       LINK: https://commons.wikimedia.org/wiki/File:Destroy_this_mad_brute_Enlist_-_U.S._Army_(World_War_I_recruitment_poster).jpg (suggested, not guaranteed)
@@ -437,14 +518,15 @@ footer{background:var(--khaki);color:var(--brass-light);text-align:center;paddin
   <p class="as-fact">The poster does not show trenches, mud, or shell shock. It shows a beast, a club, and one simple message: fight before the monster reaches you. That is how propaganda works at full speed: it turns a complicated war into one scary picture.</p>
 </div>
 
-<section class="content-section clearfix" id="turning-points">
+<section class="content-section clearfix section-animate" id="turning-points">
   <span class="section-kicker">CHAPTER FOUR</span>
   <h2 class="section-heading">REVOLUTION, AMERICA, AND THE END</h2>
-  <p class="para-standard">In 1917, the war shifted. Russia was exhausted by defeats, hunger, and anger at the government. The <span class="vocab">Russian Revolution<span class="tip">The 1917 overthrow of Russia's government.</span></span> removed Russia from the war and changed world politics. Germany could now move more troops west.</p>
+  <p class="para-standard">In 1917, the war shifted. Russia was exhausted by defeats, hunger, and anger at the government. The <span class="vocab" tabindex="0">Russian Revolution<span class="tip">The 1917 overthrow of Russia's government.</span></span> removed Russia from the war and changed world politics. Germany could now move more troops west.</p>
   <p class="para-simple">In 1917, the war changed. Russia was exhausted by hunger, defeats, and anger. The <span class="vocab-red">Russian Revolution</span> removed Russia from the war. Germany could move more troops west.</p>
   <!--
     FILENAME: S1L06_RussianRevolution1917.jpg
     PLACE IN: images/S1/L06/
+    PRIORITY: SUPPORTING
     FIND: Russian Revolution crowd or soldiers in Petrograd, 1917; shows Russia leaving the war
     SEARCH: Russian Revolution 1917 Petrograd soldiers crowd Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/Category:Russian_Revolution_of_1917 (suggested, not guaranteed)
@@ -453,11 +535,12 @@ footer{background:var(--khaki);color:var(--brass-light);text-align:center;paddin
     <img src="images/S1/L06/S1L06_RussianRevolution1917.jpg" alt="Russian Revolution in 1917">
     <figcaption>The Russian Revolution of 1917 pulled Russia out of World War I and changed global politics. Wikimedia Commons.</figcaption>
   </figure>
-  <p class="para-standard">That same year, the United States entered the war. Germany's submarine attacks threatened American ships. Then the <span class="vocab">Zimmermann Telegram<span class="tip">German message asking Mexico to fight the U.S.</span></span> became public. In it, Germany suggested Mexico could join a war against the United States and regain lost territory.</p>
+  <p class="para-standard">That same year, the United States entered the war. Germany's submarine attacks threatened American ships. Then the <span class="vocab" tabindex="0">Zimmermann Telegram<span class="tip">German message asking Mexico to fight the U.S.</span></span> became public. In it, Germany suggested Mexico could join a war against the United States and regain lost territory.</p>
   <p class="para-simple">That same year, the United States entered the war. German submarines threatened American ships. Then the <span class="vocab-red">Zimmermann Telegram</span> became public. Germany had suggested that Mexico could fight the United States.</p>
   <!--
     FILENAME: S1L06_ZimmermannTelegram.jpg
     PLACE IN: images/S1/L06/
+    PRIORITY: SUPPORTING
     FIND: Original or decoded Zimmermann Telegram, 1917; shows the document that helped bring the U.S. into WWI
     SEARCH: Zimmermann Telegram 1917 National Archives Wikimedia Commons
     LINK: https://commons.wikimedia.org/wiki/File:Zimmermann_Telegram.jpeg (suggested, not guaranteed)
@@ -466,110 +549,183 @@ footer{background:var(--khaki);color:var(--brass-light);text-align:center;paddin
     <img src="images/S1/L06/S1L06_ZimmermannTelegram.jpg" alt="Zimmermann Telegram">
     <figcaption>The Zimmermann Telegram, 1917. This message helped turn U.S. public opinion toward war. National Archives / Wikimedia Commons.</figcaption>
   </figure>
-  <p class="para-standard">Fresh American troops helped tip the balance in 1918. Germany launched one last major attack, but it failed. On November 11, 1918, the fighting stopped with an <span class="vocab">armistice<span class="tip">An agreement to stop fighting.</span></span>. The war ended, but the peace would create new problems.</p>
+  <p class="para-standard">Fresh American troops helped tip the balance in 1918. Germany launched one last major attack, but it failed. On November 11, 1918, the fighting stopped with an <span class="vocab" tabindex="0">armistice<span class="tip">An agreement to stop fighting.</span></span>. The war ended, but the peace would create new problems.</p>
   <p class="para-simple">Fresh American troops helped the Allies in 1918. Germany tried one last major attack, but it failed. On November 11, 1918, the fighting stopped with an <span class="vocab-red">armistice</span>. The war ended, but new problems were coming.</p>
-  <div class="timeline">
-    <div class="timeline-event"><div class="timeline-date">1915-1916</div><p>Armenian Genocide takes place under cover of war.</p></div>
-    <div class="timeline-event"><div class="timeline-date">1916</div><p>Somme and Verdun show the terrible cost of stalemate.</p></div>
-    <div class="timeline-event"><div class="timeline-date">1917</div><p>Russia leaves the war. The United States enters.</p></div>
-    <div class="timeline-event"><div class="timeline-date">NOVEMBER 11, 1918</div><p>Armistice stops the fighting on the Western Front.</p></div>
-  </div>
 </section>
 
-<section class="content-section" id="primary-source-moment">
+<section class="content-section section-animate" id="primary-source-moment">
   <span class="section-kicker">PRIMARY SOURCE MOMENT</span>
-  <h2 class="section-heading">VOICES FROM THE WAR</h2>
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE</div>
-    <div class="ps-quote">"Dulce et decorum est pro patria mori."</div>
-    <div class="ps-attribution">Wilfred Owen, poem "Dulce et Decorum Est," written during World War I</div>
-    <div class="ps-narrator">Owen used this old Latin phrase, meaning it is sweet and proper to die for your country, to attack the lie that war was glorious.</div>
-  </div>
-  <div class="primary-source">
-    <div class="ps-label">PRIMARY SOURCE</div>
-    <div class="ps-quote">"I am deeply concerned to learn that certain Armenians have been ordered to be deported from their homes."</div>
-    <div class="ps-attribution">Henry Morgenthau, U.S. ambassador to the Ottoman Empire, telegram, 1915</div>
-    <div class="ps-narrator">Morgenthau's reports helped document what was happening to Armenians while the war was still going on.</div>
-  </div>
-  <div class="ps-questions">
-    <p><strong>Question 1:</strong> How do these sources show that WWI hurt both soldiers and civilians?</p>
-    <p><strong>Question 2:</strong> How do these sources connect to the Essential Question about why so many people died?</p>
+  <h2 class="section-heading">A SOLDIER DESCRIBES THE GAS</h2>
+  <div class="primary-source section-animate">
+    <div class="ps-visual">
+      <figure>
+        <!--
+          FILENAME: S1L06_PrimarySource_WilfredOwen.jpg
+          PLACE IN: images/S1/L06/
+          PRIORITY: ESSENTIAL
+          FIND: Wilfred Owen portrait, World War I poet and soldier; supports the primary source excerpt from “Dulce et Decorum Est”
+          SEARCH: Wilfred Owen portrait Wikimedia Commons
+          LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Wilfred_Owen
+        -->
+        <img src="images/S1/L06/S1L06_PrimarySource_WilfredOwen.jpg" alt="Wilfred Owen, World War I soldier and poet">
+        <figcaption>Wilfred Owen served as a British soldier and wrote poetry about the horror of modern war. Wikimedia Commons.</figcaption>
+      </figure>
+      <div>
+        <div class="ps-label">PRIMARY SOURCE</div>
+        <div class="ps-quote">“Gas! GAS! Quick, boys! ... An ecstasy of fumbling, fitting the clumsy helmets just in time; But someone still was yelling out and stumbling, and floundering like a man in fire or lime ... Dim, through the misty panes and thick green light, as under a green sea, I saw him drowning.”</div>
+        <div class="ps-attribution">Wilfred Owen, “Dulce et Decorum Est,” written 1917, published 1920</div>
+        <div class="ps-narrator">Owen’s poem gives a soldier’s view of poison gas. He wanted readers to understand that the old idea of glorious death in war did not match what soldiers actually experienced.</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="brain-break tn-break" id="then-now">
+<div class="brain-break tn-break section-animate" id="then-now">
   <span class="bb-label">THEN AND NOW</span>
-  <p class="tn-payoff">Modern weapons can kill faster than leaders can rethink their plans.</p>
+  <p class="tn-payoff">Modern weapons can turn open ground into a trap.</p>
   <div class="tn-pair">
     <div class="tn-item">
       <span class="tn-era-label">1916</span>
       <!--
         FILENAME: S1L06_Then_SommeTrench.jpg
         PLACE IN: images/S1/L06/
+        PRIORITY: ESSENTIAL
         FIND: Soldiers or battlefield scene from the Battle of the Somme, 1916; shows industrial war at human scale
         SEARCH: Battle of the Somme 1916 trench soldiers Wikimedia Commons
-        LINK: https://commons.wikimedia.org/wiki/Category:Battle_of_the_Somme (suggested, not guaranteed)
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Battle_of_the_Somme
       -->
       <img src="images/S1/L06/S1L06_Then_SommeTrench.jpg" alt="Battle of the Somme soldiers or battlefield">
       <p class="tn-caption">At the Somme, soldiers crossed open ground into machine guns and artillery.</p>
     </div>
     <div class="tn-item">
-      <span class="tn-era-label">TODAY</span>
+      <span class="tn-era-label">NOW</span>
       <!--
         FILENAME: S1L06_Now_ModernTrenchUkraine.jpg
         PLACE IN: images/S1/L06/
+        PRIORITY: SUPPORTING
         FIND: Modern soldiers in trenches from a recent conflict, preferably public domain or freely licensed; shows that trench warfare still appears in modern war
         SEARCH: modern trench warfare soldiers Wikimedia Commons
-        LINK: https://commons.wikimedia.org/wiki/Category:Trench_warfare (suggested, not guaranteed)
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Trench_warfare
       -->
       <img src="images/S1/L06/S1L06_Now_ModernTrenchUkraine.jpg" alt="Modern soldiers in trenches">
       <p class="tn-caption">Modern wars can still use trenches when firepower makes open ground deadly.</p>
     </div>
   </div>
-  <p class="tn-closing">The uniforms look different, but the human posture is the same: people crouching low because the air above them has become too dangerous.</p>
+  <div class="tn-text-block">
+    <h3>THEN</h3>
+    <p>In World War I, soldiers often survived by staying low in trenches. When leaders ordered attacks across no man's land, modern weapons could kill thousands before the line moved very far.</p>
+    <h3>NOW</h3>
+    <p>Modern conflicts can still include trenches when drones, artillery, and machine guns make open movement dangerous. The technology changes, but soldiers still search for cover when the battlefield punishes anyone who stands exposed.</p>
+    <h3>CONNECTION</h3>
+    <p>The connection is clear: military technology can change faster than tactics, planning, and political decisions. World War I reminds us that leaders must understand what new weapons do to real people before they send them into battle.</p>
+    <p>When technology changes war, what responsibility do leaders have before asking people to fight?</p>
+  </div>
 </div>
 </main>
 
-<footer>WORLD HISTORY — SEMESTER 1, LESSON 06 — FIGHTING WORLD WAR I</footer>
+<footer>WORLD HISTORY : SEMESTER 1, LESSON 06 : FIGHTING WORLD WAR I</footer>
 </div>
 
 <script>
-document.querySelectorAll('.vocab').forEach(function(el){
-  el.addEventListener('click',function(e){
-    e.stopPropagation();
-    document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});
-    el.classList.toggle('active');
-  });
-});
-document.addEventListener('click',function(){document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});});
+(function(){
+  var bar=document.getElementById('reading-progress');
+  window.addEventListener('scroll',function(){
+    var scrollTop=window.scrollY||document.documentElement.scrollTop;
+    var docHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    var progress=docHeight>0?(scrollTop/docHeight)*100:0;
+    bar.style.width=progress+'%';
+  },{passive:true});
+})();
+
 document.getElementById('lexile-toggle').addEventListener('click',function(){
   document.body.classList.toggle('simplified');
   this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';
 });
+
+function repositionTip(el){
+  var tip=el.querySelector('.tip');
+  if(!tip)return;
+  tip.style.left='50%';
+  tip.style.transform='translateX(-50%)';
+  var rect=tip.getBoundingClientRect();
+  if(rect.left<8){
+    var shift=8-rect.left;
+    tip.style.transform='translateX(calc(-50% + '+shift+'px))';
+  }else if(rect.right>window.innerWidth-8){
+    var shift=rect.right-(window.innerWidth-8);
+    tip.style.transform='translateX(calc(-50% - '+shift+'px))';
+  }
+}
+
+document.querySelectorAll('.vocab').forEach(function(el){
+  el.setAttribute('tabindex','0');
+  el.addEventListener('click',function(e){
+    e.stopPropagation();
+    document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});
+    el.classList.toggle('active');
+    if(el.classList.contains('active'))repositionTip(el);
+  });
+  el.addEventListener('focus',function(){el.classList.add('active');repositionTip(el);});
+  el.addEventListener('blur',function(){el.classList.remove('active');});
+  el.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);}
+    if(e.key==='Escape')el.classList.remove('active');
+  });
+});
+
+document.addEventListener('click',function(){
+  document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});
+});
+
 const tocObserver=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     const id=entry.target.getAttribute('id');
-    const link=document.querySelector('.toc-sidebar a[href="#'+id+'"]');
-    if(link){if(entry.isIntersecting)link.classList.add('active');else link.classList.remove('active');}
+    const tocLink=document.querySelector('.toc-sidebar a[href="#'+id+'"]');
+    const navLink=document.querySelector('.section-nav a[href="#'+id+'"]');
+    if(entry.isIntersecting){
+      if(tocLink)tocLink.classList.add('active');
+      if(navLink)navLink.classList.add('active');
+    }else{
+      if(tocLink)tocLink.classList.remove('active');
+      if(navLink)navLink.classList.remove('active');
+    }
   });
 },{threshold:.25});
-document.querySelectorAll('[id]').forEach(el=>tocObserver.observe(el));
+document.querySelectorAll('section[id], div[id="then-now"]').forEach(el=>tocObserver.observe(el));
+
+(function(){
+  var animObserver=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        animObserver.unobserve(entry.target);
+      }
+    });
+  },{threshold:.08});
+  document.querySelectorAll('.section-animate').forEach(function(el){animObserver.observe(el);});
+})();
+
+document.querySelectorAll('img').forEach(function(img){
+  if(img.complete&&img.naturalWidth>0){
+    img.classList.add('loaded');
+  }else{
+    img.addEventListener('load',function(){img.classList.add('loaded');});
+    img.addEventListener('error',function(){img.style.opacity='0.15';img.style.border='2px dashed rgba(255,255,255,0.2)';});
+  }
+});
 </script>
 </body>
 </html>
 
 <!--
-IMAGE CHECKLIST FOR SSW_S1L06.html
-1. S1L06_Header_TrenchSoldiers.jpg — WWI soldiers in a trench, Western Front — Suggested link: https://commons.wikimedia.org/wiki/File:Cheshire_Regiment_trench_Somme_1916.jpg
-2. S1L06_WesternFrontMap.jpg — Map of the Western Front from Belgium to Switzerland — Suggested link: https://commons.wikimedia.org/wiki/Category:Maps_of_the_Western_Front_in_World_War_I
-3. S1L06_TrenchLifeMud.jpg — Soldiers in muddy WWI trenches — Suggested link: https://commons.wikimedia.org/wiki/Category:Trench_warfare_in_World_War_I
-4. S1L06_DYK_TrenchRat.jpg — Rat problem in WWI trenches — Suggested link: https://commons.wikimedia.org/wiki/Category:World_War_I_trenches
-5. S1L06_MachineGunCrew.jpg — WWI machine gun crew — Suggested link: https://commons.wikimedia.org/wiki/Category:Machine_guns_of_World_War_I
-6. S1L06_PoisonGasMasks.jpg — WWI soldiers wearing gas masks — Suggested link: https://commons.wikimedia.org/wiki/Category:Gas_masks_of_World_War_I
-7. S1L06_ArmenianDeportees.jpg — Armenian deportees during the Armenian Genocide — Suggested link: https://commons.wikimedia.org/wiki/Category:Armenian_Genocide_deportation
-8. S1L06_ArtSpotlight_DestroyThisMadBrute.jpg — "Destroy This Mad Brute" poster by Harry R. Hopps, 1917 — Suggested link: https://commons.wikimedia.org/wiki/File:Destroy_this_mad_brute_Enlist_-_U.S._Army_(World_War_I_recruitment_poster).jpg
-9. S1L06_RussianRevolution1917.jpg — Russian Revolution crowd or soldiers, 1917 — Suggested link: https://commons.wikimedia.org/wiki/Category:Russian_Revolution_of_1917
-10. S1L06_ZimmermannTelegram.jpg — Zimmermann Telegram, 1917 — Suggested link: https://commons.wikimedia.org/wiki/File:Zimmermann_Telegram.jpeg
-11. S1L06_Then_SommeTrench.jpg — Battle of the Somme soldiers or battlefield, 1916 — Suggested link: https://commons.wikimedia.org/wiki/Category:Battle_of_the_Somme
-12. S1L06_Now_ModernTrenchUkraine.jpg — Modern trench warfare image — Suggested link: https://commons.wikimedia.org/wiki/Category:Trench_warfare
+  IMAGE CHECK: Open browser DevTools (F12), go to Console, paste and run:
+
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.complete || img.naturalWidth === 0) {
+      console.warn('MISSING:', img.src);
+    } else {
+      console.log('OK:', img.src);
+    }
+  });
 -->
+
