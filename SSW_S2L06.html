@@ -124,6 +124,31 @@ footer{background:#050505;color:#d0d0d0;text-align:center;padding:24px 30px;font
 @media(max-width:880px){.page-wrap{border:0}main{padding:0 22px 50px}.timeline-wrap{padding:0 22px}.header-inner{padding:44px 24px 42px}.img-left,.img-right{float:none;width:100%;margin:24px 0}.policy-grid,.proxy-grid,.collapse-grid,.tn-pair,.timeline{grid-template-columns:1fr}.brain-break,.ff-break,.as-break,.tn-break{margin:36px 0;padding:28px 22px;max-width:100%}.section-nav a{font-size:11px;padding:11px 8px}}
 @media(max-width:700px){.ps-visual{grid-template-columns:1fr}}
 @media(max-width:600px){.page-title{font-size:42px}.section-heading{font-size:31px}.bb-text,.as-fact{font-size:18px}.ff-number{font-size:44px}}
+
+/* V4 REVIEW SAFEGUARDS: contrast, width, and image-concept controls */
+html, body { max-width: 100%; overflow-x: clip; }
+.page-wrap { width: min(920px, 100%); max-width: 100%; overflow-x: clip; }
+main, .timeline-wrap { width: 100%; max-width: 820px; }
+img, figure, .timeline, .primary-source, .policy-grid, .proxy-grid, .collapse-grid, .tn-pair { max-width: 100%; }
+img { height: auto; }
+.section-nav { overflow-x: auto; overscroll-behavior-inline: contain; -webkit-overflow-scrolling: touch; }
+.section-nav a { white-space: nowrap; flex: 0 0 auto; }
+.primary-source figcaption { color: #333333; }
+.primary-source .ps-quote { color: #0a0a0a; }
+.primary-source .ps-label { color: var(--red); }
+.primary-source .ps-narrator { color: #222222; }
+.dyk-break, .dyk-break p, .dyk-break span, .ff-break, .ff-break p, .ff-break span, .as-break, .as-break p, .as-break span, .tn-break, .tn-break p, .tn-break span { color: #ffffff; }
+.ff-context, .ff-desc { color: #fff1c4; }
+.as-caption { color: #ffe8fb; }
+.tn-caption { color: #e9fbff; }
+@media(max-width:980px){
+  .brain-break, .ff-break, .as-break, .tn-break { margin-left: 0; margin-right: 0; padding-left: 28px; padding-right: 28px; max-width: 100%; }
+}
+@media(max-width:880px){
+  .brain-break, .ff-break, .as-break, .tn-break { margin: 36px 0; padding: 28px 22px; }
+  .tn-break { margin: 30px 0 0; }
+}
+
 </style>
 </head>
 <body>
@@ -263,16 +288,16 @@ footer{background:#050505;color:#d0d0d0;text-align:center;padding:24px 30px;font
   <p class="para-standard">One year later, the <span class="vocab" tabindex="0">Korean War<span class="tip">War between communist North Korea and U.S.-backed South Korea.</span></span> began. North Korea invaded South Korea in 1950. The <span class="vocab" tabindex="0">United Nations<span class="tip">World organization created after World War II.</span></span>, led mostly by the United States, defended South Korea. China later joined on North Korea’s side, turning Korea into one of the most dangerous fronts of the Cold War.</p>
   <p class="para-simple">One year later, the <span class="vocab-red">Korean War</span> began. North Korea invaded South Korea in 1950. The <span class="vocab-red">United Nations</span>, led mostly by the United States, defended South Korea. China later joined North Korea's side. Korea became one of the most dangerous Cold War fronts.</p>
   <!--
-    FILENAME: S2L06_KoreanWarRefugees.jpg
+    FILENAME: S2L06_KoreanWar38thParallel.jpg
     PLACE IN: images/S2/L06/
     PRIORITY: ESSENTIAL
-    FIND: Korean War refugees fleeing, 1950; shows human cost of the first hot war of the Cold War
-    SEARCH: Korean War refugees 1950 National Archives Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Korean_War_refugees
+    FIND: Korean War soldiers, civilians, or armistice-related image near the 38th parallel, 1950-1953; shows Korea as a divided Cold War battlefield without repeating the header refugee image concept
+    SEARCH: Korean War 38th parallel soldiers armistice Wikimedia Commons National Archives
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Korean_War
   -->
   <figure>
-    <img src="images/S2/L06/S2L06_KoreanWarRefugees.jpg" alt="Korean War refugees">
-    <figcaption>Korean civilians fleeing during the Korean War. The war killed millions of Koreans and Chinese and about 36,000 Americans. Wikimedia Commons / National Archives.</figcaption>
+    <img src="images/S2/L06/S2L06_KoreanWar38thParallel.jpg" alt="Korean War scene connected to the 38th parallel">
+    <figcaption>Korea became a divided Cold War battlefield. The war ended near the 38th parallel, close to where it began. Wikimedia Commons / National Archives search suggested.</figcaption>
   </figure>
   <p class="para-standard">The war ended in 1953 at almost the same place it began: the 38th parallel. That made it a <span class="vocab" tabindex="0">stalemate<span class="tip">A conflict where neither side clearly wins.</span></span>. About 36,000 Americans died, and an estimated 3 million Korean and Chinese people died. The Cold War had turned into a real war for the people living there.</p>
   <p class="para-simple">The war ended in 1953 near the place it began: the 38th parallel. That made it a <span class="vocab-red">stalemate</span>. About 36,000 Americans died. Around 3 million Korean and Chinese people died. The Cold War became a real war for people in Korea.</p>
@@ -330,17 +355,17 @@ footer{background:#050505;color:#d0d0d0;text-align:center;padding:24px 30px;font
   <span class="bb-label">ART SPOTLIGHT</span>
   <figure>
     <!--
-      FILENAME: S2L06_ArtSpotlight_KoreaUNPoster.jpg
+      FILENAME: S2L06_ArtSpotlight_IsThisTomorrow.jpg
       PLACE IN: images/S2/L06/
-      PRIORITY: SUPPORTING
-      FIND: Specific Korean War United Nations aid poster, early 1950s; shows how the war was framed as a global emergency
-      SEARCH: Korean War United Nations poster Help Korea Wikimedia Commons Library of Congress
-      LINK: Suggested: https://www.loc.gov/pictures/search/?q=Korean%20War%20poster%20United%20Nations
+      PRIORITY: ESSENTIAL
+      FIND: Specific anti-communist comic book cover "Is This Tomorrow: America Under Communism!" published by the Catechetical Guild Educational Society in 1947; shows how fear of communism was turned into dramatic popular culture
+      SEARCH: Is This Tomorrow America Under Communism 1947 cover Wikimedia Commons
+      LINK: Suggested: https://commons.wikimedia.org/wiki/File:Is_this_tomorrow.jpg
     -->
-    <img src="images/S2/L06/S2L06_ArtSpotlight_KoreaUNPoster.jpg" alt="Korean War United Nations poster" class="as-image">
-    <figcaption class="as-caption">Korean War United Nations aid poster, early 1950s.<br>This poster framed Korea as a world emergency, not only a local war.</figcaption>
+    <img src="images/S2/L06/S2L06_ArtSpotlight_IsThisTomorrow.jpg" alt="Is This Tomorrow: America Under Communism comic book cover" class="as-image">
+    <figcaption class="as-caption"><em>Is This Tomorrow: America Under Communism!</em> — Catechetical Guild Educational Society, 1947.<br>This anti-communist comic book cover turned Cold War fear into a dramatic warning about what Americans were told could happen if communism spread.</figcaption>
   </figure>
-  <p class="as-fact">The poster style matters because it makes the war look clean and simple. Real Korea was cities burning, refugees walking, and families split by a border. Propaganda often gives people one clear symbol because the real picture is too messy to fit on a wall.</p>
+  <p class="as-fact">This cover looks like entertainment, but it was also political education. It used the visual language of comic books to make communism feel immediate, emotional, and dangerous. That matters because Cold War conflicts were fought with weapons, money, and alliances, but also with images that trained people what to fear.</p>
 </div>
 
 <section class="content-section clearfix section-animate" id="proxy-collapse">
@@ -385,15 +410,15 @@ footer{background:#050505;color:#d0d0d0;text-align:center;padding:24px 30px;font
     <div class="ps-visual">
       <figure>
         <!--
-          FILENAME: S2L06_PrimarySource_TrumanDoctrineSpeech.jpg
+          FILENAME: S2L06_PrimarySource_TrumanDoctrineDocument.jpg
           PLACE IN: images/S2/L06/
           PRIORITY: ESSENTIAL
-          FIND: President Harry Truman addressing Congress in 1947 about the Truman Doctrine; primary source image beside excerpt
-          SEARCH: Truman Doctrine speech 1947 Congress Wikimedia Commons
-          LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Harry_S._Truman_in_1947
+          FIND: Text page, transcript, or document image from President Harry Truman's March 12, 1947 address to Congress announcing the Truman Doctrine; use a document image so the primary source does not repeat the Truman speech photograph
+          SEARCH: Truman Doctrine address Congress March 12 1947 transcript document National Archives
+          LINK: Suggested: https://www.trumanlibrary.gov/library/public-papers/56/address-joint-session-congress
         -->
-        <img src="images/S2/L06/S2L06_PrimarySource_TrumanDoctrineSpeech.jpg" alt="President Truman speaking to Congress in 1947">
-        <figcaption>President Truman addressed Congress on March 12, 1947, asking for aid to Greece and Turkey. Wikimedia Commons.</figcaption>
+        <img src="images/S2/L06/S2L06_PrimarySource_TrumanDoctrineDocument.jpg" alt="Document image of Truman Doctrine address to Congress">
+        <figcaption>Document or transcript image from Truman's March 12, 1947 address to Congress announcing the Truman Doctrine. Truman Library / National Archives search suggested.</figcaption>
       </figure>
       <div>
         <div class="ps-label">PRIMARY SOURCE</div>
@@ -412,35 +437,35 @@ footer{background:#050505;color:#d0d0d0;text-align:center;padding:24px 30px;font
     <div class="tn-item">
       <span class="tn-era-label">1950S-1980S</span>
       <!--
-        FILENAME: S2L06_Then_ColdWarProxyMap.jpg
+        FILENAME: S2L06_Then_HungarianRevolutionCrowd1956.jpg
         PLACE IN: images/S2/L06/
-        PRIORITY: SUPPORTING
-        FIND: Map of Cold War proxy conflicts around the world; shows global spread of conflicts
-        SEARCH: Cold War proxy wars map Wikimedia Commons
-        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Maps_of_the_Cold_War
+        PRIORITY: ESSENTIAL
+        FIND: Hungarian Revolution demonstrators or crowd in Budapest, 1956, preferably people carrying flags or gathering in the streets; shows ordinary people acting inside a Cold War crisis instead of another map
+        SEARCH: Hungarian Revolution 1956 crowd flag Budapest Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Hungarian_Revolution_of_1956
       -->
-      <img src="images/S2/L06/S2L06_Then_ColdWarProxyMap.jpg" alt="Map of Cold War proxy wars">
-      <p class="tn-caption">Cold War conflicts spread across Asia, Africa, Latin America, and Europe.</p>
+      <img src="images/S2/L06/S2L06_Then_HungarianRevolutionCrowd1956.jpg" alt="Hungarian Revolution crowd in Budapest in 1956">
+      <p class="tn-caption">In 1956, Hungarians filled the streets to demand more freedom from Soviet control.</p>
     </div>
     <div class="tn-item">
       <span class="tn-era-label">NOW</span>
       <!--
-        FILENAME: S2L06_Now_GlobalConflictMap.jpg
+        FILENAME: S2L06_Now_UkraineSolidarityProtest.jpg
         PLACE IN: images/S2/L06/
         PRIORITY: SUPPORTING
-        FIND: Modern map or image showing global alliances, refugee movement, or conflict zones; shows lasting Cold War patterns
-        SEARCH: modern global conflict map Wikimedia Commons
-        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Maps_of_wars
+        FIND: Modern solidarity protest or civic demonstration connected to Ukraine or another present-day conflict shaped by outside powers; image should show people acting, organizing, or standing for sovereignty
+        SEARCH: Ukraine solidarity protest Wikimedia Commons 2022
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Protests_against_the_2022_Russian_invasion_of_Ukraine
       -->
-      <img src="images/S2/L06/S2L06_Now_GlobalConflictMap.jpg" alt="Modern global conflict map">
-      <p class="tn-caption">Modern conflicts can still involve outside powers, weapons, money, and alliances.</p>
+      <img src="images/S2/L06/S2L06_Now_UkraineSolidarityProtest.jpg" alt="Modern solidarity protest supporting Ukraine">
+      <p class="tn-caption">Today, people still organize, protest, and demand sovereignty when powerful countries shape local conflicts.</p>
     </div>
   </div>
   <div class="tn-text-block">
     <h3>THEN</h3>
-    <p>During the Cold War, local conflicts often became part of the larger rivalry between the United States and the Soviet Union. Korea, Vietnam, Afghanistan, Angola, Nicaragua, and other places became battlefields where outside powers tried to shape the outcome.</p>
+    <p>During the Cold War, local conflicts often became part of the larger rivalry between the United States and the Soviet Union. In places like Hungary, Korea, Vietnam, Afghanistan, Angola, and Nicaragua, ordinary people lived inside crises shaped by outside powers. The historical image shows that people were not just dots on a map; they marched, resisted, fled, fought, and demanded a future.</p>
     <h3>NOW</h3>
-    <p>Modern conflicts still often involve outside governments, weapons, sanctions, aid, alliances, and information campaigns. People living in those places may face choices shaped by powers far beyond their borders.</p>
+    <p>Modern conflicts still often involve outside governments, weapons, sanctions, aid, alliances, and information campaigns. People living in those places may face choices shaped by powers far beyond their borders. The modern image shows agency: people still organize publicly to defend sovereignty, support communities, and pressure powerful governments.</p>
     <h3>CONNECTION</h3>
     <p>The connection is that powerful countries can turn local struggles into global contests. Cold War history helps students see why maps of conflict can look simple from far away, while real people experience fear, displacement, and loss up close.</p>
     <p>How should powerful countries think about the people who live inside the conflicts they influence?</p>
