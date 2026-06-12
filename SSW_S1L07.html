@@ -3,72 +3,1482 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSW — S1 L07: The Human Cost of WWI</title>
+  <title>SSW S1L07 | The Human Cost of WWI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --khaki: #5f6242;
+      --khaki-dark: #30321f;
+      --paper: #f4ead8;
+      --paper-deep: #e2d1b8;
+      --ink: #252019;
+      --muted: #6b6256;
+      --blood: #9c241f;
+      --red-dark: #671713;
+      --charcoal: #171715;
+      --gold: #d7aa46;
+      --blue: #17354a;
+      --cream: #fff8ea;
+      --shadow: rgba(0,0,0,0.28);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      z-index: 10000;
+      background: var(--gold);
+      color: #151515;
+      padding: 8px 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transform: translateY(-140%);
+      transition: transform 0.2s ease;
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
     body {
-      min-height: 100vh;
+      margin: 0;
+      color: var(--ink);
+      font-family: "Source Sans 3", Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.8;
+      background:
+        radial-gradient(circle at top left, rgba(156,36,31,0.10), transparent 26rem),
+        linear-gradient(180deg, #d5c1a0 0%, var(--paper) 23%, #d9c5a6 100%);
+      overflow-x: hidden;
+    }
+
+    #reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0%;
+      background: var(--blood);
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+
+    .hero {
+      min-height: 78vh;
+      color: var(--cream);
+      position: relative;
+      display: grid;
+      place-items: center;
+      padding: 110px 24px 70px;
+      text-align: center;
+      background:
+        linear-gradient(rgba(20,19,16,0.62), rgba(20,19,16,0.72)),
+        url("images/S1/L07/S1L07_TrenchAftermathSurvivors.jpg") center/cover no-repeat;
+      border-bottom: 8px solid var(--blood);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 34px 34px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 940px;
+      background: rgba(0,0,0,0.22);
+      padding: 34px 28px;
+      border-top: 2px solid rgba(215,170,70,0.65);
+      border-bottom: 2px solid rgba(215,170,70,0.65);
+      box-shadow: 0 18px 54px rgba(0,0,0,0.45);
+    }
+
+    .course-label {
+      font-family: "Barlow Condensed", sans-serif;
+      letter-spacing: 0.32em;
+      font-size: 16px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: "Libre Baskerville", Georgia, serif;
+      text-transform: uppercase;
+      font-size: clamp(52px, 7vw, 82px);
+      line-height: 1.05;
+      margin: 0 0 22px;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.65);
+    }
+
+    .eq-banner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      background: rgba(156,36,31,0.88);
+      color: #fff;
+      font-size: 22px;
+      line-height: 1.5;
+      border: 1px solid rgba(255,255,255,0.28);
+    }
+
+    .section-nav {
+      position: sticky;
+      top: 4px;
+      z-index: 1000;
+      background: rgba(31,31,25,0.96);
+      border-bottom: 3px solid var(--blood);
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      background: #0f1729;
-      color: #f8f6f2;
-      font-family: Georgia, "Times New Roman", serif;
-      padding: 2.5rem 1.5rem;
+      flex-wrap: wrap;
+      gap: 4px;
+      padding: 10px 12px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+    }
+
+    .section-nav a {
+      font-family: "Barlow Condensed", sans-serif;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #f7ead6;
+      letter-spacing: 0.08em;
+      font-size: 15px;
+      font-weight: 800;
+      padding: 8px 10px 6px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+
+    .section-nav a:hover,
+    .section-nav a.active {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+      background: rgba(255,255,255,0.06);
+    }
+
+    #lexile-toggle {
+      display: block;
+      margin: 20px auto 28px;
+      padding: 10px 24px;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: 2px solid var(--blood);
+      background: rgba(255,248,234,0.72);
+      color: var(--blood);
+      font-weight: 800;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    #lexile-toggle:hover { background: var(--blood); color: var(--cream); }
+
+    .toc-sidebar {
+      position: fixed;
+      left: calc(50% - 570px);
+      top: 50%;
+      transform: translateY(-50%);
+      width: 155px;
+      padding: 14px 12px;
+      z-index: 50;
+      background: rgba(31,31,25,0.88);
+      border-right: 2px solid rgba(215,170,70,0.35);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+    }
+
+    .toc-sidebar .toc-label {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .toc-sidebar a {
+      display: block;
+      color: #d8c7ac;
+      text-decoration: none;
+      padding: 4px 0;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      line-height: 1.35;
+    }
+
+    .toc-sidebar a.active,
+    .toc-sidebar a:hover { color: var(--gold); font-weight: 700; }
+
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 22px 60px;
+    }
+
+    .timeline {
+      max-width: 980px;
+      margin: 36px auto 34px;
+      padding: 28px 24px;
+      background: rgba(255,248,234,0.82);
+      border: 2px solid rgba(95,98,66,0.35);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+    }
+
+    .timeline h2 {
+      font-family: "Barlow Condensed", sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--red-dark);
+      letter-spacing: 0.08em;
+      font-size: 32px;
+      margin: 0 0 22px;
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      position: relative;
+    }
+
+    .timeline-node {
+      background: #fff8ea;
+      border-top: 5px solid var(--blood);
+      padding: 14px 12px;
+      min-height: 168px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    }
+
+    .timeline-date {
+      font-family: "Barlow Condensed", sans-serif;
+      color: var(--blood);
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .timeline-title {
+      font-family: "Barlow Condensed", sans-serif;
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin: 8px 0 6px;
+    }
+
+    .timeline-node p {
+      font-size: 14px;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    .intro-section,
+    .content-section,
+    .primary-source {
+      background: rgba(255,248,234,0.88);
+      border: 1px solid rgba(48,50,31,0.18);
+      box-shadow: 0 14px 35px rgba(0,0,0,0.11);
+      padding: 34px 38px;
+      margin: 34px 0;
+      position: relative;
+    }
+
+    .intro-section::before,
+    .content-section::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 7px;
+      background: linear-gradient(var(--blood), var(--khaki));
+    }
+
+    h2 {
+      font-family: "Libre Baskerville", Georgia, serif;
+      text-transform: uppercase;
+      font-size: clamp(32px, 4vw, 42px);
+      line-height: 1.2;
+      color: var(--red-dark);
+      margin: 0 0 18px;
+    }
+
+    h3 {
+      font-family: "Barlow Condensed", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--khaki-dark);
+      font-size: 24px;
+      margin: 24px 0 8px;
+    }
+
+    p { margin: 0 0 18px; }
+
+    .deck {
+      font-size: 22px;
+      line-height: 1.65;
+      font-weight: 600;
+      color: #3b352d;
+    }
+
+    .section-divider {
+      height: 18px;
+      margin: 38px 0;
+      background:
+        linear-gradient(90deg, transparent, var(--blood), var(--gold), var(--blood), transparent);
+      opacity: 0.72;
+      clip-path: polygon(0 45%, 44% 45%, 50% 0, 56% 45%, 100% 45%, 100% 55%, 56% 55%, 50% 100%, 44% 55%, 0 55%);
+    }
+
+    figure.lesson-figure {
+      margin: 26px 0;
+      background: #1d1c18;
+      color: #e9dcc6;
+      padding: 10px;
+      border: 1px solid rgba(215,170,70,0.42);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    }
+
+    figure.lesson-figure img {
+      width: 100%;
+      display: block;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    figcaption {
+      font-size: 13px;
+      line-height: 1.45;
+      color: #d5c7ae;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    .inset-right {
+      float: right;
+      width: min(330px, 48%);
+      margin: 6px 0 18px 24px;
+    }
+
+    .inset-left {
+      float: left;
+      width: min(330px, 48%);
+      margin: 6px 24px 18px 0;
+    }
+
+    .clearfix::after { content: ""; display: block; clear: both; }
+
+    .para-simple { display: none; }
+    body.simplified .para-standard { display: none; }
+    body.simplified .para-simple { display: block; }
+
+    .vocab {
+      color: var(--blood);
+      text-decoration: underline dotted var(--blood);
+      cursor: help;
+      position: relative;
+      font-weight: 700;
+    }
+
+    .vocab-red { color: var(--blood); font-weight: 700; }
+
+    .vocab .tip {
+      display: none;
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #050505;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 4px;
+      font-size: 14px;
+      line-height: 1.5;
+      z-index: 10;
+      font-style: normal;
+      font-weight: 400;
+      pointer-events: none;
+      max-width: 280px;
+      min-width: 190px;
+      white-space: normal;
+      border: 1px solid var(--blood);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.8);
+    }
+
+    .vocab:hover .tip,
+    .vocab.active .tip { display: block; }
+
+    .vocab:focus {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    .brain-break {
+      font-family: "Barlow Condensed", sans-serif;
+      margin: 44px -50px;
+      padding: 36px 50px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.22);
+    }
+
+    .bb-label {
+      display: block;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.55em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      opacity: 0.75;
+    }
+
+    .bb-text {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .dyk-break {
+      background: #17354a;
+      color: #f7ead6;
+      border-left: 6px solid #f0c356;
+    }
+
+    .dyk-break .bb-label { color: #f0c356; }
+
+    .ff-break {
+      background: #151515;
+      color: #f7ead6;
+      padding: 36px 40px;
+      margin: 44px -50px;
+      border-top: 3px solid #d7aa46;
+      border-bottom: 3px solid #d7aa46;
       text-align: center;
     }
-    a.back {
-      position: fixed;
-      top: 1.25rem;
-      left: 1.25rem;
-      color: #94a3b8;
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.02em;
-    }
-    a.back:hover { color: #f8f6f2; }
-    .badge {
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
+
+    .ff-break .bb-label { text-align:center; margin-bottom:8px; color:#d7aa46; }
+
+    .ff-context {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #64748b;
-      margin-bottom: 1.25rem;
+      color: #d8c7ac;
+      text-align: center;
+      margin-bottom: 28px;
+      opacity: 0.85;
+      font-weight: 700;
     }
-    h1 {
-      font-size: clamp(1.75rem, 4vw, 2.75rem);
-      font-weight: 400;
-      line-height: 1.25;
-      max-width: 52rem;
-      margin-bottom: 1.5rem;
+
+    .ff-grid {
+      display:flex;
+      justify-content:space-around;
+      flex-wrap:wrap;
+      gap:24px;
     }
-    .eq {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      font-style: italic;
-      color: #cbd5e1;
-      max-width: 42rem;
+
+    .ff-item { text-align:center; padding:8px 16px; max-width:180px; }
+
+    .ff-number {
+      display: block;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 58px;
+      font-weight: 900;
+      color: #d7aa46;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .ff-desc {
+      display: block;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: #e2d1b8;
+      line-height: 1.5;
+      margin: 0 auto;
+    }
+
+    .as-break {
+      background: #2b221b;
+      color: #f7ead6;
+      padding: 44px 50px;
+      margin: 44px -50px;
+      border-top: 3px solid #d7aa46;
+      border-bottom: 3px solid #d7aa46;
+      text-align: center;
+    }
+
+    .as-break .bb-label { color: #d7aa46; }
+
+    .as-image {
+      max-width: 580px;
+      width: 100%;
+      display: block;
+      margin: 0 auto 16px;
+      border: 3px solid rgba(215,170,70,0.55);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    }
+
+    .as-caption {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 14px;
+      color: #e2d1b8;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      display: block;
+    }
+
+    .as-fact {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 23px;
+      font-weight: 600;
+      color: #f7ead6;
       line-height: 1.65;
-      margin-bottom: 3rem;
+      max-width: 620px;
+      margin: 0 auto;
+      text-align: center;
     }
-    .eq.final-eq { font-style: normal; color: #94a3b8; }
-    .banner {
-      display: inline-block;
-      padding: 1.1rem 3.25rem;
-      border: 2px solid #334155;
-      background: linear-gradient(180deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 41, 0.95) 100%);
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      letter-spacing: 0.28em;
+
+    .primary-source {
+      background: #f9efd9;
+      border-left: 6px solid var(--blood);
+      padding: 28px 32px;
+      margin: 38px 0;
+    }
+
+    .ps-visual {
+      display: grid;
+      grid-template-columns: minmax(200px, 36%) 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .ps-visual figure { margin: 0; background: #1d1c18; padding: 8px; }
+    .ps-visual img { width: 100%; display: block; }
+
+    .ps-label {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: #e2e8f0;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+      color: var(--blood);
+      margin-bottom: 12px;
+      font-weight: 900;
+    }
+
+    .ps-quote {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 22px;
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .ps-attribution {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .ps-narrator {
+      border-top: 1px solid rgba(103,23,19,0.25);
+      padding-top: 12px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .simple-terms {
+      background: rgba(156,36,31,0.08);
+      border-left: 4px solid var(--gold);
+      padding: 12px 14px;
+      font-size: 16px;
+      line-height: 1.55;
+      margin-top: 14px;
+    }
+
+    .tn-break {
+      background: #1a1a17;
+      color: #f7ead6;
+      padding: 36px 50px;
+      margin: 30px -50px 0;
+    }
+
+    .tn-break .bb-label {
+      color: #d7aa46;
+      text-align: center;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .tn-payoff {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(22px, 3.5vw, 30px);
+      font-weight: 900;
+      line-height: 1.35;
+      text-align: center;
+      color: #d7aa46;
+      margin-bottom: 28px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .tn-pair {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-bottom:20px;
+    }
+
+    .tn-item { text-align: center; }
+
+    .tn-era-label {
+      display: block;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #d7aa46;
+      margin-bottom: 10px;
+      font-weight: 900;
+    }
+
+    .tn-item img {
+      width:100%;
+      display:block;
+      border:2px solid rgba(215,170,70,0.42);
+    }
+
+    .tn-caption {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 12px;
+      font-style: italic;
+      color: #d8c7ac;
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    .tn-text-block {
+      margin-top: 24px;
+      border-top: 1px solid rgba(215,170,70,0.35);
+      padding-top: 20px;
+    }
+
+    .tn-text-block h3 {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #d7aa46;
+      margin: 18px 0 8px;
+    }
+
+    .tn-text-block p {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 18px;
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+
+    .lens-toolbar {
+      max-width: 820px;
+      margin: -10px auto 30px;
+      padding: 16px 18px;
+      background: rgba(31,31,25,0.92);
+      color: #f7ead6;
+      border-top: 3px solid var(--gold);
+      border-bottom: 3px solid var(--blood);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+      text-align: center;
+    }
+
+    .lens-title {
+      font-family: "Barlow Condensed", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      font-weight: 900;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .lens-toolbar button {
+      font-family: "Barlow Condensed", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 14px;
+      font-weight: 900;
+      margin: 4px;
+      padding: 8px 12px;
+      border: 1px solid rgba(215,170,70,0.7);
+      background: transparent;
+      color: #f7ead6;
+      cursor: pointer;
+      transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+    }
+
+    .lens-toolbar button:hover,
+    .lens-toolbar button.active {
+      background: var(--gold);
+      color: #151515;
+      transform: translateY(-1px);
+    }
+
+    .lens-note {
+      font-size: 14px;
+      line-height: 1.45;
+      max-width: 680px;
+      margin: 10px auto 0;
+      opacity: 0.86;
+    }
+
+    .skill-card {
+      clear: both;
+      margin: 30px 0 22px;
+      padding: 18px 20px;
+      background:
+        linear-gradient(135deg, rgba(156,36,31,0.09), transparent 45%),
+        rgba(255,255,255,0.55);
+      border: 1px solid rgba(103,23,19,0.24);
+      border-left: 6px solid var(--gold);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+    }
+
+    .skill-card h3 {
+      margin-top: 0;
+      color: var(--red-dark);
+    }
+
+    .skill-card p {
+      font-size: 16px;
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+
+    .skill-card button {
+      font-family: "Barlow Condensed", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 900;
+      background: var(--red-dark);
+      color: var(--cream);
+      border: 0;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .skill-card button:hover { background: var(--blood); }
+
+    .skill-reveal {
+      display: none;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed rgba(103,23,19,0.35);
+      color: #3b352d;
+      font-weight: 700;
+    }
+
+    .skill-card.open .skill-reveal { display: block; }
+
+    .timeline-node {
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .timeline-node.active {
+      transform: translateY(-5px);
+      border-top-color: var(--gold);
+      box-shadow: 0 14px 28px rgba(103,23,19,0.24);
+    }
+
+    .content-section::after,
+    .intro-section::after,
+    .primary-source::after {
+      content: "DOCUMENTARY READING";
+      position: absolute;
+      right: 16px;
+      bottom: 8px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: rgba(103,23,19,0.42);
+      font-weight: 900;
+    }
+
+    .ps-quote {
+      position: relative;
+      background: rgba(255,255,255,0.46);
+      padding: 16px 18px;
+      border-left: 4px solid var(--gold);
+    }
+
+    .ps-quote::before {
+      content: "READ THE VOICE";
+      display: block;
+      font-family: "Barlow Condensed", sans-serif;
+      font-style: normal;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      color: var(--blood);
+      margin-bottom: 8px;
+    }
+
+    .body-lock-notice {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      max-width: 280px;
+      padding: 12px 14px;
+      background: rgba(20,20,16,0.92);
+      color: #f7ead6;
+      border-left: 4px solid var(--gold);
+      font-family: "Barlow Condensed", sans-serif;
+      letter-spacing: 0.04em;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.32);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      z-index: 1001;
+    }
+
+    .body-lock-notice.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      background: #141410;
+      color: #d8c7ac;
+      text-align: center;
+      padding: 26px 18px;
+      font-family: "Barlow Condensed", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      border-top: 4px solid var(--blood);
+    }
+
+    img {
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    img.loaded { opacity: 1; }
+
+    .section-animate {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+    }
+
+    .section-animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .section-animate {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      html { scroll-behavior: auto; }
+    }
+
+    @media (max-width: 1100px) {
+      .toc-sidebar { display: none; }
+    }
+
+    @media (max-width: 880px) {
+      .brain-break { margin: 36px 0; padding: 28px 22px; }
+      .intro-section, .content-section, .primary-source { padding: 28px 24px; }
+      .timeline-grid { grid-template-columns: 1fr; }
+      .timeline-node { min-height: auto; }
+      .inset-right, .inset-left {
+        float: none;
+        width: 100%;
+        margin: 22px 0;
+      }
+      .hero { min-height: 68vh; }
+      .lens-toolbar { margin-left: 22px; margin-right: 22px; }
+      .skill-card { padding: 16px; }
+    }
+
+    @media (max-width: 700px) {
+      .ps-visual { grid-template-columns: 1fr; }
+      .section-nav { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
+      .section-nav a { flex: 0 0 auto; }
+    }
+
+    @media (max-width: 600px) {
+      body { font-size: 17px; }
+      .ff-break { margin: 36px 0; padding: 28px 22px; }
+      .ff-number { font-size: 44px; }
+      .as-break { padding: 32px 22px; margin: 36px 0; }
+      .as-fact { font-size: 18px; }
+      .tn-pair { grid-template-columns: 1fr; }
+      .tn-break { padding: 28px 22px; margin: 30px 0 0; }
+      .tn-payoff { font-size: 20px; }
+      h1 { font-size: 48px; }
+      .eq-banner { font-size: 18px; }
     }
   </style>
 </head>
+
 <body>
-  <a class="back" href="index.html">&larr; Course Home</a>
-  <p class="badge">World History · Semester 1 · Day 7</p>
-  <h1>The Human Cost of WWI</h1>
-  <p class="eq">Who paid the highest price in WWI, and how did the war change culture and society?</p>
-  <div class="banner">Coming Soon</div>
+  <a class="skip-link" href="#intro">SKIP TO LESSON</a>
+  <div id="reading-progress"></div>
+
+  <!--
+    FILENAME: S1L07_TrenchAftermathSurvivors.jpg
+    PLACE IN: images/S1/L07/
+    PRIORITY: ESSENTIAL
+    FIND: World War I battlefield aftermath with exhausted survivors in a ruined landscape
+    SEARCH: WWI battlefield aftermath soldiers walking ruined landscape Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:World_War_I_aftermath
+  -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="course-label">WORLD HISTORY • SEMESTER 1 • DAY 7</div>
+      <h1>THE HUMAN COST OF WWI</h1>
+      <div class="eq-banner">Who paid the highest price in WWI, and how did the war change culture and society?</div>
+    </div>
+  </header>
+
+  <nav class="section-nav" aria-label="Lesson navigation">
+    <a href="#intro">INTRODUCTION</a>
+    <a href="#generation">A GENERATION DISAPPEARS</a>
+    <a href="#empire-soldiers">AN EMPIRE'S SOLDIERS</a>
+    <a href="#invisible-wounds">THE INVISIBLE WOUNDS</a>
+    <a href="#culture-collapse">FAITH COLLAPSES</a>
+    <a href="#primary-source">PRIMARY SOURCE</a>
+    <a href="#then-now">THEN AND NOW</a>
+  </nav>
+
+  <button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
+
+  <div class="lens-toolbar" aria-label="Reading skill tools">
+    <div class="lens-title">READING SKILL LENS</div>
+    <button type="button" class="lens-btn" data-lens-message="Look for numbers and words that show scale: millions, generation, civilians, wounded, and empire.">SCALE</button>
+    <button type="button" class="lens-btn" data-lens-message="Look for whose voices appear: soldiers, colonial troops, women, poets, families, and communities remembering the dead.">VOICE</button>
+    <button type="button" class="lens-btn" data-lens-message="Look for what changed afterward: culture, politics, memory, and trust in leaders.">LEGACY</button>
+    <p class="lens-note" id="lens-note">Choose a lens before reading, then track that idea across the lesson.</p>
+  </div>
+
+  <aside class="toc-sidebar" aria-label="Table of contents">
+    <span class="toc-label">LESSON</span>
+    <a href="#intro">OPENING MOMENT</a>
+    <a href="#generation">GENERATION LOST</a>
+    <a href="#empire-soldiers">COLONIAL TROOPS</a>
+    <a href="#invisible-wounds">WOUNDS INSIDE</a>
+    <a href="#culture-collapse">LOST GENERATION</a>
+    <a href="#primary-source">OWEN'S VOICE</a>
+    <a href="#then-now">MEMORY TODAY</a>
+  </aside>
+
+  <section class="timeline" aria-label="World War I timeline">
+    <h2>WAR AND AFTERMATH TIMELINE</h2>
+    <div class="timeline-grid">
+      <div class="timeline-node" data-section="intro">
+        <div class="timeline-date">1914</div>
+        <div class="timeline-title">WAR BEGINS</div>
+        <p>European empires enter a war many leaders expect to end quickly.</p>
+      </div>
+      <div class="timeline-node" data-section="generation">
+        <div class="timeline-date">1915</div>
+        <div class="timeline-title">NEW WEAPONS</div>
+        <p>Machine guns, artillery, trenches, and poison gas make fighting deadlier than past wars.</p>
+      </div>
+      <div class="timeline-node" data-section="invisible-wounds">
+        <div class="timeline-date">1916</div>
+        <div class="timeline-title">MASS DEATH</div>
+        <p>Battles such as Verdun and the Somme show that generals can lose hundreds of thousands of men.</p>
+      </div>
+      <div class="timeline-node" data-section="empire-soldiers">
+        <div class="timeline-date">1918</div>
+        <div class="timeline-title">ARMISTICE</div>
+        <p>The fighting stops on November 11, but the damage continues in families, bodies, and memory.</p>
+      </div>
+      <div class="timeline-node" data-section="culture-collapse">
+        <div class="timeline-date">1919</div>
+        <div class="timeline-title">AFTERMATH</div>
+        <p>Peace treaties, grief, memorials, and new art reveal how deeply the war changed society.</p>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="intro-section section-animate" id="intro">
+      <h2>THE WARD AFTER THE BATTLE</h2>
+      <p class="deck para-standard">In a military hospital, rows of wounded men lay under white sheets while nurses moved from bed to bed. Some soldiers had bandaged eyes. Some had missing limbs. Some looked awake but did not seem fully present, as if the battle had followed them into the room.</p>
+      <p class="deck para-simple">In a war hospital, wounded soldiers lay in long rows of beds. Nurses moved quietly from person to person. Some soldiers could not see. Some had lost parts of their bodies. Some were alive, but the fear of battle still seemed trapped inside them.</p>
+
+      <!--
+        FILENAME: S1L07_FieldHospitalWard.jpg
+        PLACE IN: images/S1/L07/
+        PRIORITY: ESSENTIAL
+        FIND: Interior of a World War I military hospital ward with wounded soldiers recovering and nurses assisting patients
+        SEARCH: World War I field hospital ward nurses wounded soldiers Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:World_War_I_hospitals
+      -->
+      <figure class="lesson-figure">
+        <img src="images/S1/L07/S1L07_FieldHospitalWard.jpg" alt="World War I hospital ward with wounded soldiers and nurses">
+        <figcaption>Wounded soldiers in a World War I hospital ward, 1910s. Source: Wikimedia Commons.</figcaption>
+      </figure>
+
+      <p class="para-standard">World War I was not only a military conflict. It was a human disaster that reached soldiers, civilians, families, colonies, workers, artists, and entire nations. The war killed millions, wounded millions more, and left many survivors with damage people could not always see. It also broke trust in old ideas about progress, honor, empire, and patriotic glory. To answer the essential question, we have to look past maps and victories and ask who carried the cost.</p>
+      <p class="para-simple">World War I was not just a war between armies. It hurt soldiers, families, workers, colonies, and whole countries. Millions died. Millions were wounded. Many people survived, but they were changed forever. To answer the question, we have to look at who paid the price.</p>
+
+      <div class="skill-card">
+        <h3>HISTORIAN MOVE: READ THE ROOM</h3>
+        <p>Before you read the lesson, notice the hospital image and name one kind of cost that is not just death.</p>
+        <button type="button" class="skill-toggle">SHOW GUIDE</button>
+        <div class="skill-reveal">A strong answer might mention injury, fear, trauma, grief, or a family changed forever.</div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <section class="content-section section-animate clearfix" id="generation">
+      <h2>A GENERATION DISAPPEARS</h2>
+      <p class="para-standard">By the end of World War I, about 17 million people were dead and about 20 million were wounded. These numbers included soldiers killed in battle, people who died from wounds, and <span class="vocab" tabindex="0">civilian casualties<span class="tip">Non-soldiers who are killed, hurt, or harmed during war.</span></span> caused by invasion, hunger, disease, and ruined cities. The word <span class="vocab" tabindex="0">civilian<span class="tip">A person who is not serving in the military.</span></span> matters because many people who died were not fighting at all. They were farmers, children, factory workers, refugees, and families trapped between armies. When people later said that Europe had lost a generation, they meant that millions of young men never came home to become fathers, workers, teachers, leaders, or neighbors.</p>
+      <p class="para-simple">By the end of World War I, about 17 million people had died and about 20 million were wounded. Some were soldiers. Others were civilians, which means people who were not in the army. Civilians died from fighting, hunger, disease, and destroyed towns. Many young men never came home. That is why people said Europe had lost a generation.</p>
+
+      <!--
+        FILENAME: S1L07_MilitaryCemeteryCrosses.jpg
+        PLACE IN: images/S1/L07/
+        PRIORITY: ESSENTIAL
+        FIND: Long rows of World War I military graves or white crosses stretching into the distance
+        SEARCH: World War I military cemetery rows of crosses Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:World_War_I_cemeteries
+      -->
+      <figure class="lesson-figure inset-right">
+        <img src="images/S1/L07/S1L07_MilitaryCemeteryCrosses.jpg" alt="Rows of World War I military cemetery crosses">
+        <figcaption>Rows of military graves after World War I. Source: Wikimedia Commons.</figcaption>
+      </figure>
+
+      <p class="para-standard">The war also changed how people understood sacrifice. Before 1914, many leaders described war as a test of courage and national honor. After years of machine guns, artillery shells, gas attacks, and trench warfare, that language sounded false to many survivors. A soldier could die without ever seeing the person who killed him. A family could lose three sons in the same month and receive only official letters. The scale of death made many people question whether kings, generals, and politicians had truly understood what they were asking ordinary people to give.</p>
+      <p class="para-simple">Before the war, leaders often said war was brave and honorable. After years of machine guns, bombs, gas, and trenches, many people no longer believed that. A soldier might die without ever seeing the enemy. A family might lose more than one son. Many people began to question the leaders who had sent ordinary people into the war.</p>
+
+      <div class="brain-break dyk-break section-animate">
+        <span class="bb-label">DID YOU KNOW</span>
+        <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
+          <div style="flex:1;min-width:200px;">
+            <!--
+              FILENAME: S1L07_IdentityDiscs.jpg
+              PLACE IN: images/S1/L07/
+              PRIORITY: SUPPORTING
+              FIND: Close-up of original World War I soldier identity discs or dog tags
+              SEARCH: World War I identity disc dog tag Wikimedia Commons
+              LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Military_dog_tags
+            -->
+            <img src="images/S1/L07/S1L07_IdentityDiscs.jpg" alt="World War I soldier identity discs" style="width:100%;display:block;border:3px solid #f0c356;box-shadow:0 4px 18px rgba(0,0,0,0.4);">
+            <p style="font-size:12px;margin-top:8px;opacity:0.75;font-family:'Barlow Condensed',sans-serif;">World War I identity discs, 1910s. Source: Wikimedia Commons.</p>
+          </div>
+          <p class="bb-text" style="flex:1;min-width:200px;">Many soldiers went to war wearing a small identity disc around the neck. For families who never received a body, that little piece of metal could become the only physical proof that someone they loved had existed and died in the war.</p>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3>HISTORIAN MOVE: TURN NUMBERS INTO PEOPLE</h3>
+        <p>Choose one number from this section and explain what real human loss is hidden inside it.</p>
+        <button type="button" class="skill-toggle">SHOW GUIDE</button>
+        <div class="skill-reveal">Do not just repeat the number. Explain what that number meant for families, communities, or a generation that never came home.</div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <section class="content-section section-animate clearfix" id="empire-soldiers">
+      <h2>AN EMPIRE'S SOLDIERS</h2>
+      <p class="para-standard">World War I was called a European war, but Europe did not fight it alone. European empires used troops, workers, supplies, and money from colonies across Africa, India, Southeast Asia, the Caribbean, and the Pacific. About 600,000 Indian soldiers served overseas for the British Empire, and hundreds of thousands of African soldiers and laborers served under European command. These <span class="vocab" tabindex="0">colonial soldiers<span class="tip">Soldiers from lands controlled by an empire, often without equal rights.</span></span> were often asked to fight for freedom while their own countries remained under foreign rule. Their service exposed one of the deepest contradictions of the war.</p>
+      <p class="para-simple">World War I is often called a European war, but people from many colonized places fought in it too. European empires used soldiers and workers from India, Africa, Southeast Asia, the Caribbean, and other regions. About 600,000 Indian soldiers served overseas for Britain. Many African soldiers and workers also served for European powers. They were told to fight for freedom, but their own lands were still controlled by empires.</p>
+
+      <!--
+        FILENAME: S1L07_IndianTroopsFrance.jpg
+        PLACE IN: images/S1/L07/
+        PRIORITY: ESSENTIAL
+        FIND: Indian Army soldiers serving on the Western Front in France during World War I
+        SEARCH: Indian soldiers Western Front France World War I Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Indian_Army_during_World_War_I
+      -->
+      <figure class="lesson-figure inset-left">
+        <img src="images/S1/L07/S1L07_IndianTroopsFrance.jpg" alt="Indian soldiers serving in France during World War I">
+        <figcaption>Indian soldiers serving in France during World War I, 1910s. Source: Wikimedia Commons.</figcaption>
+      </figure>
+
+      <p class="para-standard">Soldiers from Senegal, Algeria, Vietnam, India, and the Caribbean experienced a war that had not been created for their freedom. Some fought in freezing European trenches after growing up in much warmer climates. Some faced racism from officers and civilians while wearing the uniform of the empire. After the <span class="vocab" tabindex="0">armistice<span class="tip">An agreement to stop fighting, usually before a final peace treaty.</span></span> ended the fighting in 1918, many colonial veterans returned home expecting respect or political change. Instead, most empires kept their power and continued denying rights to the people who had served them.</p>
+      <p class="para-simple">Soldiers from places like Senegal, Algeria, Vietnam, India, and the Caribbean fought in a war that did not give their countries freedom. Some fought in cold trenches far from home. Some faced racism even while serving in uniform. When the armistice ended the fighting in 1918, many colonial veterans hoped things would change. Most empires still kept control and denied them equal rights.</p>
+
+      <div class="brain-break ff-break section-animate">
+        <span class="bb-label">FAST FACTS</span>
+        <p class="ff-context">THE HUMAN COST OF WORLD WAR I</p>
+        <div class="ff-grid">
+          <div class="ff-item">
+            <span class="ff-number">17M</span>
+            <span class="ff-desc">people were killed during the war, including soldiers and civilians across several continents</span>
+          </div>
+          <div class="ff-item">
+            <span class="ff-number">20M</span>
+            <span class="ff-desc">people were wounded, leaving families and societies to live with the war long after the guns stopped</span>
+          </div>
+          <div class="ff-item">
+            <span class="ff-number">10M</span>
+            <span class="ff-desc">civilian deaths show that the war harmed people far beyond the battlefield</span>
+          </div>
+          <div class="ff-item">
+            <span class="ff-number">600K</span>
+            <span class="ff-desc">Indian soldiers served overseas for the British Empire, even though India remained colonized</span>
+          </div>
+          <div class="ff-item">
+            <span class="ff-number">1918</span>
+            <span class="ff-desc">the armistice stopped the fighting, but grief, injury, and anger continued afterward</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3>HISTORIAN MOVE: SPOT THE CONTRADICTION</h3>
+        <p>What contradiction did colonial soldiers experience when they fought for European empires?</p>
+        <button type="button" class="skill-toggle">SHOW GUIDE</button>
+        <div class="skill-reveal">They were asked to fight for freedom and empire, but many came from places that were not free and did not receive equal rights afterward.</div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <section class="content-section section-animate clearfix" id="invisible-wounds">
+      <h2>THE INVISIBLE WOUNDS</h2>
+      <p class="para-standard">Some of the worst wounds from World War I were not easy to see. Many soldiers suffered from what doctors and military officers called <span class="vocab" tabindex="0">shell shock<span class="tip">A wartime trauma reaction caused by extreme fear, stress, and violence.</span></span>. Men shook uncontrollably, lost the ability to speak, froze in panic, or could not return to ordinary life. Today, many historians connect shell shock to <span class="vocab" tabindex="0">PTSD<span class="tip">A mental health injury caused by surviving terrifying or violent events.</span></span>, but people at the time often misunderstood it. Some military leaders treated traumatized soldiers as cowards instead of recognizing that industrial warfare had injured their minds.</p>
+      <p class="para-simple">Some wounds from World War I were inside the mind. At the time, people called this shell shock. Some soldiers shook, could not speak, panicked, or could not live normally after battle. Today, many people connect shell shock to PTSD. Back then, many leaders did not understand it and sometimes called suffering soldiers cowards.</p>
+
+      <!--
+        FILENAME: S1L07_ShellShockPatient.jpg
+        PLACE IN: images/S1/L07/
+        PRIORITY: ESSENTIAL
+        FIND: Documentary photograph of a World War I soldier suffering from shell shock during medical treatment or recovery
+        SEARCH: World War I shell shock patient medical photograph Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Shell_shock
+      -->
+      <figure class="lesson-figure inset-right">
+        <img src="images/S1/L07/S1L07_ShellShockPatient.jpg" alt="World War I soldier receiving treatment for shell shock">
+        <figcaption>A World War I soldier connected to shell shock treatment, 1910s. Source: Wikimedia Commons.</figcaption>
+      </figure>
+
+      <p class="para-standard">Women also carried the cost of the war in ways that changed society. During <span class="vocab" tabindex="0">mobilization<span class="tip">Preparing people, industries, and resources for war.</span></span>, governments needed workers for factories, hospitals, farms, offices, and transportation. Women filled jobs making weapons, driving ambulances, nursing wounded soldiers, and keeping economies alive while men were away. After the war, many were told to leave those jobs and return to domestic life. The war had proven that women could do work society had once denied them, but peace did not automatically bring equality.</p>
+      <p class="para-simple">Women also paid a price during the war. Governments needed workers, so women worked in factories, hospitals, farms, offices, and transportation. They made weapons, drove ambulances, nursed soldiers, and kept countries running. After the war, many women were told to go home again. The war showed that women could do many jobs, but it did not give them equal rights right away.</p>
+
+      <div class="brain-break as-break section-animate">
+        <span class="bb-label">ART SPOTLIGHT</span>
+        <figure>
+          <!--
+            FILENAME: S1L07_GassedSargent.jpg
+            PLACE IN: images/S1/L07/
+            PRIORITY: ESSENTIAL
+            FIND: Gassed by John Singer Sargent, 1919, showing blinded soldiers after a gas attack
+            SEARCH: Gassed John Singer Sargent 1919 Wikimedia Commons
+            LINK: Suggested: https://commons.wikimedia.org/wiki/File:Gassed,_by_John_Singer_Sargent.jpg
+          -->
+          <img src="images/S1/L07/S1L07_GassedSargent.jpg" alt="John Singer Sargent painting Gassed showing blinded soldiers after a gas attack" class="as-image">
+          <figcaption class="as-caption">
+            Gassed — John Singer Sargent, 1919.<br>
+            Sargent painted this large work after visiting the Western Front and seeing soldiers blinded by poison gas being led to safety.
+          </figcaption>
+        </figure>
+        <p class="as-fact">Many people expected Sargent to create a heroic victory painting. Instead, he filled the canvas with injured men stumbling forward together, turning one of the most famous war paintings ever made into a reminder of suffering rather than glory.</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>HISTORIAN MOVE: NAME THE INVISIBLE COST</h3>
+        <p>What did shell shock show about the limits of how people understood war injuries in 1918?</p>
+        <button type="button" class="skill-toggle">SHOW GUIDE</button>
+        <div class="skill-reveal">It showed that war could injure the mind, even when people at the time did not yet have the language or care systems to understand trauma fully.</div>
+      </div>
+    </section>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <section class="content-section section-animate clearfix" id="culture-collapse">
+      <h2>WHEN FAITH IN PROGRESS COLLAPSED</h2>
+      <p class="para-standard">World War I changed culture because many writers and artists no longer believed the old promises. Before the war, some Europeans trusted ideas like progress, empire, patriotism, and the moral guidance of kings, churches, and generals. After the war, those promises seemed broken. The <span class="vocab" tabindex="0">Lost Generation<span class="tip">Writers and thinkers shaped by disillusionment after World War I.</span></span> described people who felt cut off from the beliefs that had guided life before 1914. Their work often showed a world where civilization had failed to protect human beings from organized destruction.</p>
+      <p class="para-simple">World War I changed art and writing because many people stopped trusting old ideas. Before the war, many people believed in progress, empire, patriotism, kings, churches, and generals. After the war, those ideas felt broken. The Lost Generation was a group of writers and thinkers shaped by this disappointment. They wrote about a world that seemed damaged and untrustworthy.</p>
+
+      <!--
+        FILENAME: S1L07_WilfredOwenPortrait.jpg
+        PLACE IN: images/S1/L07/
+        PRIORITY: SUPPORTING
+        FIND: Formal portrait of Wilfred Owen in military uniform
+        SEARCH: Wilfred Owen portrait Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Wilfred_Owen
+      -->
+      <figure class="lesson-figure inset-left">
+        <img src="images/S1/L07/S1L07_WilfredOwenPortrait.jpg" alt="Portrait of Wilfred Owen in military uniform">
+        <figcaption>Wilfred Owen, British soldier and poet, 1910s. Source: Wikimedia Commons.</figcaption>
+      </figure>
+
+      <p class="para-standard"><span class="vocab" tabindex="0">Wilfred Owen<span class="tip">A British soldier-poet who wrote honestly about World War I's horror.</span></span> wrote poems that rejected the idea that dying in war was automatically noble or beautiful. Ernest Hemingway's <em>A Farewell to Arms</em> showed love, injury, and escape in a world shattered by war. Later art, including Pablo Picasso's <em>Guernica</em>, carried forward the visual language of industrial slaughter, even though it responded to a later conflict. These works were not just about battles. They showed how World War I made many people question whether modern civilization had become more advanced or simply more efficient at killing.</p>
+      <p class="para-simple">Wilfred Owen was a British soldier and poet. He wrote that war was not noble or beautiful when it destroyed real people. Ernest Hemingway's <em>A Farewell to Arms</em> also showed how war damaged love, bodies, and hope. Later art, including Picasso's <em>Guernica</em>, continued showing the horror of modern war. These works asked whether modern life had become better or just better at killing.</p>
+
+      <p class="para-standard">The war also shaped politics after 1918. Many people felt angry at leaders who had promised victory and delivered catastrophe. Defeated countries faced blame, debt, and <span class="vocab" tabindex="0">reparations<span class="tip">Money or goods a defeated country must pay after a war.</span></span>. Empires weakened. New movements demanded rights, independence, and a different future. The human cost of World War I did not end when the shooting stopped; it became part of the culture, politics, and memory of the twentieth century.</p>
+      <p class="para-simple">The war changed politics after 1918 too. Many people were angry at leaders who had promised victory but caused disaster. Defeated countries faced blame, debt, and reparations, which means payments after a war. Empires became weaker. More people demanded rights and independence. The cost of World War I continued long after the fighting ended.</p>
+
+      <div class="skill-card">
+        <h3>HISTORIAN MOVE: CONNECT CULTURE TO EXPERIENCE</h3>
+        <p>Why would writers and artists stop describing war as glorious after World War I?</p>
+        <button type="button" class="skill-toggle">SHOW GUIDE</button>
+        <div class="skill-reveal">They had seen or inherited evidence of mass death, trauma, broken promises, and technology used to destroy people on a huge scale.</div>
+      </div>
+    </section>
+
+    <section class="primary-source section-animate" id="primary-source">
+      <h2>PRIMARY SOURCE MOMENT</h2>
+      <div class="ps-visual">
+        <figure>
+          <!--
+            FILENAME: S1L07_OwenWritingDesk.jpg
+            PLACE IN: images/S1/L07/
+            PRIORITY: ESSENTIAL
+            FIND: Wilfred Owen manuscript, writing-related archival image, or alternate Owen archival photograph not reused elsewhere
+            SEARCH: Wilfred Owen manuscript photograph Wikimedia Commons
+            LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Wilfred_Owen
+          -->
+          <img src="images/S1/L07/S1L07_OwenWritingDesk.jpg" alt="Archival image connected to Wilfred Owen's wartime writing">
+          <figcaption>Archival image connected to Wilfred Owen's wartime writing, 1910s. Source: Wikimedia Commons.</figcaption>
+        </figure>
+        <div>
+          <div class="ps-label">PRIMARY SOURCE</div>
+          <p class="ps-quote">“Gas! GAS! Quick, boys! An ecstasy of fumbling,<br>
+          Fitting the clumsy helmets just in time;<br>
+          But someone still was yelling out and stumbling,<br>
+          And flound'ring like a man in fire or lime...<br>
+          Dim through the misty panes and thick green light,<br>
+          As under a green sea, I saw him drowning.<br>
+          In all my dreams before my helpless sight,<br>
+          He plunges at me, guttering, choking, drowning.”</p>
+          <p class="ps-attribution">Wilfred Owen, “Dulce et Decorum Est,” written 1917–1918.</p>
+          <p class="ps-narrator">Owen's poem gives evidence of the human cost of industrial war. He does not describe battle as clean, heroic, or distant. He makes readers see panic, poison gas, helplessness, and memory.</p>
+          <div class="simple-terms"><strong>IN SIMPLE TERMS:</strong> Owen is describing a gas attack. One soldier cannot get his mask on in time, and Owen remembers watching him suffer.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="brain-break tn-break section-animate" id="then-now">
+      <span class="bb-label">THEN AND NOW</span>
+      <p class="tn-payoff">THE WAR ENDED, BUT THE WORK OF REMEMBERING DID NOT.</p>
+      <div class="tn-pair">
+        <div class="tn-item">
+          <span class="tn-era-label">1920S</span>
+          <!--
+            FILENAME: S1L07_CenotaphRemembrance1920.jpg
+            PLACE IN: images/S1/L07/
+            PRIORITY: SUPPORTING
+            FIND: Early Remembrance Day ceremony or crowds gathered at the Cenotaph shortly after World War I
+            SEARCH: Cenotaph London Remembrance Day 1920 Wikimedia Commons
+            LINK: Suggested: https://commons.wikimedia.org/wiki/Category:The_Cenotaph,_Whitehall
+          -->
+          <img src="images/S1/L07/S1L07_CenotaphRemembrance1920.jpg" alt="Crowds gathered at an early remembrance ceremony after World War I">
+          <p class="tn-caption">Crowds gather for remembrance after World War I, 1920s. Source: Wikimedia Commons.</p>
+        </div>
+        <div class="tn-item">
+          <span class="tn-era-label">NOW</span>
+          <!--
+            FILENAME: S1L07_ModernRemembrancePoppies.jpg
+            PLACE IN: images/S1/L07/
+            PRIORITY: ESSENTIAL
+            FIND: Modern remembrance ceremony with young people, veterans, or community members placing poppies or wreaths at a World War I memorial
+            SEARCH: modern Remembrance Day ceremony poppies memorial Wikimedia Commons
+            LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Remembrance_Day
+          -->
+          <img src="images/S1/L07/S1L07_ModernRemembrancePoppies.jpg" alt="Modern remembrance ceremony with people placing poppies at a memorial">
+          <p class="tn-caption">Modern remembrance with poppies at a war memorial. Source: Wikimedia Commons or compatible free license.</p>
+        </div>
+      </div>
+      <div class="tn-text-block">
+        <h3>THEN</h3>
+        <p>After World War I, communities built memorials because so many families had no grave nearby to visit. Public ceremonies helped people name the loss and honor those who had died. These ceremonies also showed that the war had become part of national memory, not just military history.</p>
+        <h3>NOW</h3>
+        <p>Today, people still gather at memorials, place poppies, read names, and remember the human cost of World War I. These actions show agency because communities choose to keep memory alive. Remembering is one way people refuse to let mass death become only a number.</p>
+        <h3>CONNECTION</h3>
+        <p>Then and now are connected by the same problem: how can a society make sense of so much loss? World War I changed culture because it forced people to question glory, empire, progress, and leadership. Modern remembrance keeps asking what people owe to those who paid the highest price.</p>
+        <p>How should people remember a war without making war seem glorious?</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="body-lock-notice" id="body-lock-notice" aria-live="polite"></div>
+
+  <footer>
+    WORLD HISTORY • SEMESTER 1 • LESSON 7 • THE HUMAN COST OF WWI
+  </footer>
+
+  <script>
+    (function() {
+      var bar = document.getElementById('reading-progress');
+      window.addEventListener('scroll', function() {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        bar.style.width = progress + '%';
+      }, { passive: true });
+    })();
+
+    document.getElementById('lexile-toggle').addEventListener('click', function() {
+      document.body.classList.toggle('simplified');
+      this.textContent = document.body.classList.contains('simplified') ? 'STANDARD TEXT' : 'SIMPLIFY TEXT';
+    });
+
+    document.querySelectorAll('.lens-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.lens-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var message = btn.getAttribute('data-lens-message');
+        document.getElementById('lens-note').textContent = message;
+        var notice = document.getElementById('body-lock-notice');
+        if (notice) {
+          notice.textContent = message;
+          notice.classList.add('show');
+          window.clearTimeout(window.__lensTimer);
+          window.__lensTimer = window.setTimeout(function() { notice.classList.remove('show'); }, 3200);
+        }
+      });
+    });
+
+    document.querySelectorAll('.skill-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var card = btn.closest('.skill-card');
+        var open = card.classList.toggle('open');
+        btn.textContent = open ? 'HIDE GUIDE' : 'SHOW GUIDE';
+      });
+    });
+
+    function repositionTip(el) {
+      var tip = el.querySelector('.tip');
+      if (!tip) return;
+      tip.style.left = '50%';
+      tip.style.transform = 'translateX(-50%)';
+      var rect = tip.getBoundingClientRect();
+      if (rect.left < 8) {
+        var shift = 8 - rect.left;
+        tip.style.transform = 'translateX(calc(-50% + ' + shift + 'px))';
+      } else if (rect.right > window.innerWidth - 8) {
+        var shift = rect.right - (window.innerWidth - 8);
+        tip.style.transform = 'translateX(calc(-50% - ' + shift + 'px))';
+      }
+    }
+
+    document.querySelectorAll('.vocab').forEach(function(el) {
+      el.setAttribute('tabindex', '0');
+
+      el.addEventListener('click', function(e) {
+        e.stopPropagation();
+        document.querySelectorAll('.vocab.active').forEach(function(v) {
+          if (v !== el) v.classList.remove('active');
+        });
+        el.classList.toggle('active');
+        if (el.classList.contains('active')) repositionTip(el);
+      });
+
+      el.addEventListener('focus', function() {
+        el.classList.add('active');
+        repositionTip(el);
+      });
+
+      el.addEventListener('blur', function() {
+        el.classList.remove('active');
+      });
+
+      el.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          el.classList.toggle('active');
+          if (el.classList.contains('active')) repositionTip(el);
+        }
+        if (e.key === 'Escape') el.classList.remove('active');
+      });
+    });
+
+    document.addEventListener('click', function() {
+      document.querySelectorAll('.vocab.active').forEach(function(v) {
+        v.classList.remove('active');
+      });
+    });
+
+    const tocObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.getAttribute('id');
+
+        document.querySelectorAll('.toc-sidebar a.active, .section-nav a.active, .timeline-node.active').forEach(function(el) {
+          el.classList.remove('active');
+        });
+
+        const tocLink = document.querySelector('.toc-sidebar a[href="#' + id + '"]');
+        const navLink = document.querySelector('.section-nav a[href="#' + id + '"]');
+        const timelineNode = document.querySelector('.timeline-node[data-section="' + id + '"]');
+
+        if (tocLink) tocLink.classList.add('active');
+        if (navLink) navLink.classList.add('active');
+        if (timelineNode) timelineNode.classList.add('active');
+      });
+    }, { rootMargin: '-18% 0px -62% 0px', threshold: 0.01 });
+
+    document.querySelectorAll('section[id], div[id="then-now"]').forEach(el => tocObserver.observe(el));
+
+    (function() {
+      var animObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            animObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('.section-animate').forEach(function(el) { animObserver.observe(el); });
+    })();
+
+    document.querySelectorAll('img').forEach(function(img) {
+      if (img.complete && img.naturalWidth > 0) {
+        img.classList.add('loaded');
+      } else {
+        img.addEventListener('load', function() {
+          img.classList.add('loaded');
+        });
+        img.addEventListener('error', function() {
+          img.style.opacity = '0.15';
+          img.style.border = '2px dashed rgba(255,255,255,0.2)';
+        });
+      }
+    });
+  </script>
+
+  <!--
+    IMAGE CHECK: Open browser DevTools (F12), go to Console, paste and run:
+
+    document.querySelectorAll('img').forEach(img => {
+      if (!img.complete || img.naturalWidth === 0) {
+        console.warn('MISSING:', img.src);
+      } else {
+        console.log('OK:', img.src);
+      }
+    });
+  -->
 </body>
 </html>
