@@ -852,11 +852,6 @@ footer {
   </nav>
 
   <button id="lexile-toggle" type="button">SIMPLIFY READING</button>
-    <button type="button" class="lens-btn" data-lens-message="Look for numbers and words that show scale: millions, generation, civilians, wounded, and empire.">SCALE</button>
-    <button type="button" class="lens-btn" data-lens-message="Look for whose voices appear: soldiers, colonial troops, women, poets, families, and communities remembering the dead.">VOICE</button>
-    <button type="button" class="lens-btn" data-lens-message="Look for what changed afterward: culture, politics, memory, and trust in leaders.">LEGACY</button>
-    <p class="lens-note" id="lens-note">Choose a lens before reading, then track that idea across the lesson.</p>
-  </div>
 
   <aside class="toc-sidebar" aria-label="Table of contents">
     <span class="toc-label">LESSON</span>
@@ -1174,8 +1169,6 @@ footer {
       document.body.classList.toggle('simplified');
       this.textContent = document.body.classList.contains('simplified') ? 'STANDARD READING' : 'SIMPLIFY READING';
     });
-});
-});
 
     function repositionTip(el) {
       var tip = el.querySelector('.tip');
