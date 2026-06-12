@@ -3,1243 +3,445 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Decolonization and Nation-Building</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Barlow+Condensed:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+<title>SSW S2L07 : DECOLONIZATION AND NATION-BUILDING</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet">
 <style>
-/* ===========================
-   READING PROGRESS BAR
-   =========================== */
-#reading-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 4px;
-  width: 0%;
-  background: #D4A017;
-  z-index: 9999;
-  transition: width 0.1s linear;
-}
-
-/* ===========================
-   GLOBAL RESET & BASE
-   =========================== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --ink:        #1A1008;
-  --deep:       #0F1B2D;
-  --midnight:   #162035;
-  --burgundy:   #6B1A1A;
-  --dark-gold:  #A07A10;
-  --gold:       #D4A017;
-  --pale-gold:  #F0D060;
-  --cream:      #F5EDD8;
-  --parchment:  #EDE0C0;
-  --text-main:  #1C1008;
-  --text-light: #F5EDD8;
-  --text-muted: rgba(245,237,216,0.68);
-  --accent:     #D4A017;
-  --accent-red: #8B2020;
-  --border-sub: rgba(212,160,23,0.22);
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-size: 19px;
-  line-height: 1.85;
-  background-color: #F5EDD8;
-  color: var(--text-main);
-  overflow-x: hidden;
-}
-
-img {
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-img.loaded { opacity: 1; }
-
-/* ===========================
-   HEADER
-   =========================== */
-.site-header {
-  position: relative;
-  min-height: 520px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  overflow: hidden;
-  background-color: #0F1B2D;
-}
-.header-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 40%;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  filter: brightness(0.35) saturate(0.8);
-}
-.header-bg.loaded { opacity: 1; }
-.header-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(15,27,45,0.97) 0%, rgba(15,27,45,0.5) 55%, rgba(15,27,45,0.18) 100%);
-}
-.header-content {
-  position: relative;
-  z-index: 2;
-  padding: 0 5% 52px;
-  max-width: 900px;
-}
-.course-label {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.45em;
-  text-transform: uppercase;
-  color: var(--gold);
-  display: block;
-  margin-bottom: 18px;
-}
-.page-title {
-  font-family: 'Libre Baskerville', serif;
-  font-size: clamp(36px, 6vw, 68px);
-  font-weight: 700;
-  color: var(--cream);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  margin-bottom: 24px;
-}
-.eq-banner {
-  background: rgba(212,160,23,0.14);
-  border-left: 4px solid var(--gold);
-  padding: 14px 20px;
-  display: inline-block;
-  max-width: 700px;
-}
-.eq-label {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.5em;
-  text-transform: uppercase;
-  color: var(--gold);
-  display: block;
-  margin-bottom: 6px;
-}
-.eq-text {
-  font-family: 'Source Serif 4', serif;
-  font-size: 18px;
-  font-style: italic;
-  color: var(--cream);
-  line-height: 1.55;
-}
-
-/* ===========================
-   NAV BAR
-   =========================== */
-.section-nav {
-  position: sticky;
-  top: 4px;
-  z-index: 100;
-  background: var(--midnight);
-  border-bottom: 2px solid var(--gold);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0;
-  padding: 0 20px;
-  overflow-x: auto;
-}
-.section-nav a {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(245,237,216,0.65);
-  text-decoration: none;
-  padding: 14px 16px;
-  border-bottom: 3px solid transparent;
-  white-space: nowrap;
-  transition: color 0.2s, border-color 0.2s;
-}
-.section-nav a:hover,
-.section-nav a.active {
-  color: var(--gold);
-  border-bottom-color: var(--gold);
-}
-
-/* ===========================
-   LEXILE TOGGLE
-   =========================== */
-#lexile-toggle {
-  display: block;
-  margin: 24px auto 32px;
-  padding: 10px 28px;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  cursor: pointer;
-  border: 2px solid var(--accent);
-  background: transparent;
-  color: var(--accent);
-  transition: background 0.2s, color 0.2s;
-}
-#lexile-toggle:hover { background: var(--accent); color: var(--deep); }
-
-.para-simple { display: none; }
-body.simplified .para-standard { display: none; }
-body.simplified .para-simple { display: block; }
-
-/* ===========================
-   TIMELINE
-   =========================== */
-.timeline-section {
-  background: var(--midnight);
-  padding: 44px 5%;
-  border-top: 2px solid var(--border-sub);
-  border-bottom: 2px solid var(--border-sub);
-}
-.timeline-heading {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.45em;
-  text-transform: uppercase;
-  color: var(--gold);
-  text-align: center;
-  margin-bottom: 36px;
-}
-.timeline-track {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  position: relative;
-  max-width: 940px;
-  margin: 0 auto;
-  gap: 8px;
-}
-.timeline-track::before {
-  content: '';
-  position: absolute;
-  top: 16px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--gold), transparent);
-}
-.tl-node {
-  flex: 1;
-  min-width: 120px;
-  text-align: center;
-  position: relative;
-  padding-top: 36px;
-}
-.tl-dot {
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 18px;
-  height: 18px;
-  background: var(--gold);
-  border: 3px solid var(--midnight);
-  border-radius: 50%;
-  box-shadow: 0 0 0 2px var(--gold);
-}
-.tl-year {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 22px;
-  font-weight: 900;
-  color: var(--gold);
-  display: block;
-  margin-bottom: 6px;
-}
-.tl-event {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--cream);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 6px;
-  line-height: 1.3;
-}
-.tl-desc {
-  font-family: 'Source Serif 4', serif;
-  font-size: 12.5px;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-@media (max-width: 720px) {
-  .timeline-track { flex-direction: column; gap: 0; }
-  .timeline-track::before { display: none; }
-  .tl-node { padding-top: 0; padding-left: 40px; text-align: left; min-width: 0; border-left: 2px solid var(--gold); padding-bottom: 24px; }
-  .tl-dot { left: -10px; top: 0; }
-  .tl-year { font-size: 18px; }
-}
-
-/* ===========================
-   MAIN LAYOUT
-   =========================== */
-.page-body {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 0 40px 0;
-}
-
-/* ===========================
-   FLOATING TOC
-   =========================== */
-.toc-sidebar {
-  position: fixed;
-  left: calc(50% - 570px);
-  top: 50%;
-  transform: translateY(-50%);
-  width: 148px;
-  padding: 14px 12px;
-  z-index: 50;
-  background: rgba(22,32,53,0.92);
-  border-right: 2px solid rgba(212,160,23,0.28);
-}
-.toc-sidebar .toc-label {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  color: var(--gold);
-  display: block;
-  margin-bottom: 12px;
-}
-.toc-sidebar a {
-  display: block;
-  color: rgba(245,237,216,0.5);
-  text-decoration: none;
-  padding: 4px 0;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  line-height: 1.35;
-  transition: color 0.2s;
-}
-.toc-sidebar a.active,
-.toc-sidebar a:hover { color: var(--gold); font-weight: 700; }
-@media (max-width: 1100px) { .toc-sidebar { display: none; } }
-
-/* ===========================
-   SECTION HEADINGS
-   =========================== */
-.section-heading {
-  font-family: 'Libre Baskerville', serif;
-  font-size: clamp(26px, 4vw, 38px);
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--midnight);
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-  margin-bottom: 28px;
-  padding-bottom: 16px;
-  border-bottom: 3px solid var(--gold);
-}
-.chapter-heading {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 20px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--burgundy);
-  letter-spacing: 0.05em;
-  margin: 36px 0 14px;
-}
-
-/* ===========================
-   CONTENT SECTIONS
-   =========================== */
-.intro-section,
-.content-section {
-  padding: 52px 0 36px;
-  border-bottom: 1px solid rgba(107,26,26,0.12);
-}
-
-/* ===========================
-   IMAGE COMPONENTS
-   =========================== */
-.img-full {
-  width: 100%;
-  display: block;
-  margin: 32px 0;
-}
-.img-caption {
-  font-family: 'Source Serif 4', serif;
-  font-size: 13px;
-  font-style: italic;
-  color: rgba(28,16,8,0.62);
-  line-height: 1.55;
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px solid rgba(107,26,26,0.15);
-}
-.img-inset {
-  float: right;
-  width: 44%;
-  margin: 6px 0 20px 28px;
-}
-.img-inset-left {
-  float: left;
-  width: 44%;
-  margin: 6px 28px 20px 0;
-}
-.img-two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin: 28px 0;
-}
-.img-two-col figure { margin: 0; }
-.clearfix::after { content: ''; display: table; clear: both; }
-@media (max-width: 640px) {
-  .img-inset, .img-inset-left { float: none; width: 100%; margin: 0 0 20px 0; }
-  .img-two-col { grid-template-columns: 1fr; }
-}
-
-/* ===========================
-   SECTION DIVIDER
-   =========================== */
-.section-rule {
-  border: none;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--gold), transparent);
-  margin: 0;
-  opacity: 0.4;
-}
-
-/* ===========================
-   VOCABULARY TOOLTIPS
-   =========================== */
-.vocab {
-  color: var(--accent-red);
-  text-decoration: underline dotted var(--accent-red);
-  cursor: help;
-  position: relative;
-}
-.vocab-red { color: var(--accent-red); font-weight: 600; }
-.vocab .tip {
-  display: none;
-  position: absolute;
-  bottom: 125%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #050505;
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 4px;
-  font-size: 14px;
-  line-height: 1.5;
-  z-index: 200;
-  font-style: normal;
-  font-weight: 400;
-  pointer-events: none;
-  max-width: 280px;
-  white-space: normal;
-  border: 1px solid rgba(212,160,23,0.5);
-  box-shadow: 0 4px 18px rgba(0,0,0,0.8);
-  font-family: 'Source Serif 4', serif;
-}
-.vocab:hover .tip,
-.vocab.active .tip { display: block; }
-.vocab:focus {
-  outline: 2px solid var(--gold);
-  outline-offset: 2px;
-  border-radius: 2px;
-}
-
-/* ===========================
-   ENGAGEMENT BREAKS
-   =========================== */
-.brain-break {
-  font-family: 'Barlow Condensed', sans-serif;
-  margin: 44px -50px;
-  padding: 36px 50px;
-  position: relative;
-  overflow: hidden;
-}
-.bb-label {
-  display: block;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.55em;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-  opacity: 0.75;
-}
-.bb-text {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 22px;
-  font-weight: 500;
-  line-height: 1.65;
-  margin: 0;
-}
-
-/* Did You Know */
-.dyk-break {
-  background: #0D3B4F;
-  color: #E8F4F8;
-  border-left: 6px solid #2BBDE4;
-}
-.dyk-break .bb-label { color: #2BBDE4; }
-
-/* Fast Facts */
-.ff-break {
-  background: #1A0A05;
-  color: var(--cream);
-  padding: 36px 40px;
-  border-top: 3px solid var(--gold);
-  border-bottom: 3px solid var(--gold);
-  text-align: center;
-}
-.ff-break .bb-label { text-align: center; margin-bottom: 8px; color: var(--gold); }
-.ff-context {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(245,237,216,0.72);
-  text-align: center;
-  margin-bottom: 28px;
-  opacity: 0.85;
-  font-weight: 700;
-}
-.ff-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 24px; }
-.ff-item { text-align: center; padding: 8px 16px; max-width: 180px; }
-.ff-number {
-  display: block;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 58px;
-  font-weight: 900;
-  color: var(--gold);
-  line-height: 1;
-  margin-bottom: 10px;
-}
-.ff-desc {
-  display: block;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  color: rgba(245,237,216,0.65);
-  line-height: 1.5;
-  margin: 0 auto;
-}
-
-/* Art Spotlight */
-.as-break {
-  background: #1C0A1A;
-  color: var(--cream);
-  padding: 44px 50px;
-  border-top: 3px solid #A855A0;
-  border-bottom: 3px solid #A855A0;
-  text-align: center;
-}
-.as-break .bb-label { color: #C07FBC; }
-.as-image {
-  max-width: 580px;
-  width: 100%;
-  display: block;
-  margin: 0 auto 16px;
-  border: 3px solid rgba(168,85,160,0.5);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-}
-.as-caption {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 14px;
-  color: rgba(245,237,216,0.65);
-  line-height: 1.6;
-  margin-bottom: 28px;
-  display: block;
-}
-.as-fact {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 22px;
-  font-weight: 500;
-  color: var(--cream);
-  line-height: 1.65;
-  max-width: 620px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-@media (max-width: 880px) {
-  .brain-break { margin: 36px 0; padding: 28px 22px; }
-  .as-break { padding: 32px 22px; margin: 36px 0; }
-}
-@media (max-width: 600px) {
-  .ff-break { margin: 36px 0; padding: 28px 22px; }
-  .ff-number { font-size: 44px; }
-  .as-fact { font-size: 18px; }
-}
-
-/* ===========================
-   PRIMARY SOURCE
-   =========================== */
-.primary-source {
-  background: #F0E4C8;
-  border-left: 6px solid var(--burgundy);
-  padding: 28px 32px;
-  margin: 38px 0;
-}
-.ps-visual {
-  display: grid;
-  grid-template-columns: minmax(200px, 36%) 1fr;
-  gap: 24px;
-  align-items: start;
-}
-.ps-visual figure { margin: 0; }
-.ps-label {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--burgundy);
-  margin-bottom: 12px;
-  display: block;
-}
-.ps-quote {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 20px;
-  font-style: italic;
-  line-height: 1.65;
-  margin-bottom: 14px;
-  color: var(--ink);
-}
-.ps-attribution {
-  font-family: 'Source Serif 4', serif;
-  font-size: 13px;
-  font-style: italic;
-  color: rgba(28,16,8,0.6);
-  margin-bottom: 12px;
-}
-.ps-narrator {
-  border-top: 1px solid rgba(107,26,26,0.2);
-  padding-top: 12px;
-  font-family: 'Source Serif 4', serif;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--ink);
-}
-@media (max-width: 700px) {
-  .ps-visual { grid-template-columns: 1fr; }
-}
-
-/* ===========================
-   THEN AND NOW
-   =========================== */
-.tn-break {
-  background: var(--midnight);
-  color: var(--cream);
-  padding: 36px 50px;
-  margin: 30px -50px 0;
-}
-.tn-break .bb-label {
-  color: var(--gold);
-  text-align: center;
-  display: block;
-  margin-bottom: 20px;
-}
-.tn-payoff {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(22px, 3.5vw, 30px);
-  font-weight: 900;
-  line-height: 1.35;
-  text-align: center;
-  color: var(--gold);
-  margin-bottom: 28px;
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.tn-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 20px; }
-.tn-item { text-align: center; }
-.tn-era-label {
-  display: block;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 10px;
-  font-weight: 900;
-}
-.tn-item img { width: 100%; display: block; border: 2px solid rgba(212,160,23,0.35); }
-.tn-caption {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 12px;
-  font-style: italic;
-  color: var(--text-muted);
-  margin-top: 8px;
-  line-height: 1.4;
-}
-.tn-text-block {
-  margin-top: 24px;
-  border-top: 1px solid rgba(212,160,23,0.25);
-  padding-top: 20px;
-}
-.tn-text-block h3 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 13px;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin: 18px 0 8px;
-}
-.tn-text-block p {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 17px;
-  line-height: 1.65;
-  margin-bottom: 12px;
-}
-@media (max-width: 600px) {
-  .tn-pair { grid-template-columns: 1fr; }
-  .tn-break { padding: 28px 22px; margin: 30px 0 0; }
-  .tn-payoff { font-size: 20px; }
-}
-
-/* ===========================
-   SECTION ENTRANCE ANIMATION
-   =========================== */
-.section-animate {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
-}
-.section-animate.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-@media (prefers-reduced-motion: reduce) {
-  .section-animate { opacity: 1; transform: none; transition: none; }
-}
-
-/* ===========================
-   FOOTER
-   =========================== */
-.site-footer {
-  background: var(--midnight);
-  border-top: 2px solid var(--gold);
-  padding: 30px 5%;
-  text-align: center;
-}
-.site-footer p {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(245,237,216,0.45);
-  line-height: 1.8;
-}
-
-/* ===========================
-   RESPONSIVE PADDING
-   =========================== */
-@media (max-width: 820px) {
-  .page-body { padding: 0 24px; }
-}
-@media (max-width: 500px) {
-  .page-body { padding: 0 16px; }
-}
+:root{
+  --gold:#d4a820;
+  --black:#0a0a0a;
+  --charcoal:#242424;
+  --gray:#585858;
+  --pale:#ece8e0;
+  --cream:#f2eee6;
+  --ink:#c01818;
+  --ink-dark:#8a0e0e;
+  --deep:#0d2342;
+  --vocab:#b03030;
+  --green:#044d37;
+  --lime:#d7ff3f;
+  --purple:#32134d;
+  --pink:#ff4fd8;
+  --cyan:#1bd6ff;
+  --orange:#ff8a21;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}
+body{
+  background:radial-gradient(ellipse at top,#252525 0%,#070707 70%);
+  font-family:'Atkinson Hyperlegible',Arial,sans-serif;
+  font-size:18px;
+  line-height:1.85;
+  color:var(--charcoal);
+  max-width:100%;
+  overflow-x:hidden;
+}
+#reading-progress{position:fixed;top:0;left:0;height:4px;width:0%;background:var(--gold);z-index:9999;transition:width .1s linear}
+.page-wrap{width:min(920px,100%);margin:0 auto;background:var(--cream);box-shadow:0 0 100px rgba(0,0,0,.95);border-left:6px solid var(--black);border-right:6px solid var(--black);overflow-x:hidden}
+.site-header{position:relative;min-height:455px;overflow:hidden;background:var(--black);display:flex;align-items:center;text-align:center}
+.header-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.36;filter:sepia(.35) contrast(1.1)}
+.site-header:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.12),rgba(0,0,0,.72) 55%,rgba(0,0,0,.97))}
+.header-inner{position:relative;z-index:2;max-width:820px;margin:0 auto;padding:56px 34px 50px}
+.course-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.page-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,8vw,80px);font-weight:800;line-height:.98;color:#fff;text-transform:uppercase;letter-spacing:.04em;text-shadow:2px 5px 22px rgba(0,0,0,.9);margin-bottom:30px}
+.eq-banner{display:inline-block;background:rgba(10,60,40,.92);color:#fff;border:3px solid var(--gold);border-left-width:8px;border-right-width:8px;padding:18px 28px;max-width:760px;font-weight:700;font-size:20px;line-height:1.45;text-align:left}
+.eq-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#ffe58a;margin-bottom:8px}
+.section-nav{position:sticky;top:4px;z-index:100;display:flex;flex-wrap:wrap;justify-content:center;background:#151515;border-bottom:4px solid var(--gold);overflow-x:auto}
+.section-nav a{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#e6e6e6;text-decoration:none;padding:14px 12px;border-bottom:4px solid transparent;margin-bottom:-4px;white-space:nowrap}
+.section-nav a:hover{color:#fff;border-bottom-color:var(--gold)}
+.section-nav a.active{color:#fff;border-bottom-color:var(--gold);background:rgba(180,130,0,.28)}
+#lexile-toggle{display:block;margin:20px auto 28px;padding:10px 24px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:2px solid var(--gold);background:transparent;color:var(--gold);transition:background .2s,color .2s}
+#lexile-toggle:hover{background:var(--gold);color:#111}
+.para-simple{display:none}body.simplified .para-standard{display:none}body.simplified .para-simple{display:block}
+.toc-sidebar{position:fixed;left:calc(50% - 570px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;font-family:'Barlow Condensed',sans-serif;z-index:50;background:rgba(10,10,10,.92);border-right:2px solid rgba(212,168,32,.45)}
+.toc-sidebar .toc-label{display:block;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.toc-sidebar a{display:block;color:#e6e6e6;text-decoration:none;padding:4px 0;font-size:11px;letter-spacing:.05em;text-transform:uppercase;transition:color .2s}
+.toc-sidebar a.active,.toc-sidebar a:hover{color:var(--gold);font-weight:700}
+main{max-width:820px;width:100%;margin:0 auto;padding:0 28px 68px}
+.intro-section{padding:48px 0 30px}
+.intro-section p{font-size:19px;line-height:1.9;margin-bottom:18px}
+.content-section{padding:50px 0 28px;border-top:3px double rgba(88,88,88,.45)}
+.section-kicker{display:block;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink);margin-bottom:8px}
+.section-heading{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,48px);line-height:1.05;font-weight:800;color:var(--black);text-transform:uppercase;border-left:7px solid var(--gold);padding-left:16px;margin-bottom:26px}
+p{margin-bottom:20px;color:var(--charcoal)}
+.real-world{background:#dedad0;border-left:5px solid var(--gold);padding:17px 21px;margin:30px 0;font-weight:700}
+.vocab{color:var(--vocab);text-decoration:underline dotted var(--vocab);cursor:help;position:relative;font-weight:700}
+.vocab-red{color:var(--vocab);font-weight:700}
+.vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#050505;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:10;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;font-family:'Atkinson Hyperlegible',Arial,sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.8);border:1px solid var(--gold)}
+.vocab:hover .tip,.vocab.active .tip{display:block}.vocab:focus{outline:2px solid var(--gold);outline-offset:2px;border-radius:2px}
+figure{margin:32px 0}figure img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+figcaption{font-size:13px;font-style:italic;color:#4b4b4b;margin-top:8px;line-height:1.45}
+.img-right{float:right;width:42%;margin:6px 0 20px 28px}.img-left{float:left;width:42%;margin:6px 28px 20px 0}
+.clearfix:after{content:"";display:table;clear:both}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0}
+.compare-card{padding:22px 24px;color:#fff;border-top:5px solid var(--gold)}
+.empire-card{background:#1a0d00}.free-card{background:#0a2a12}
+.compare-card h3{font-family:'Barlow Condensed',sans-serif;color:#ffe58a;font-size:24px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.compare-card p{color:#fff;font-size:16px;line-height:1.7;margin:0}
+.timeline-wrap{max-width:820px;width:100%;margin:0 auto 36px;padding:0 28px}
+.timeline-title{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin:0 0 12px;text-align:center}
+.timeline{margin:0;padding:22px;background:#dedad0;border-top:4px solid var(--gold);border-bottom:4px solid var(--gold);display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:100%}
+.timeline-event{position:relative;border-left:3px solid var(--gold);padding-left:12px}
+.timeline-date{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--ink-dark);letter-spacing:.08em;line-height:1.1;margin-bottom:5px}
+.timeline-event p{font-size:15px;line-height:1.55;margin-bottom:0}
+.primary-source{background:#dedad0;border-left:7px solid var(--gold);padding:30px 34px;margin:38px 0;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.ps-visual{display:grid;grid-template-columns:minmax(200px,36%) 1fr;gap:24px;align-items:start}
+.ps-visual figure{margin:0}.ps-visual img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.ps-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-dark);margin-bottom:12px}
+.ps-quote{font-size:22px;font-style:italic;line-height:1.65;color:var(--black);margin-bottom:14px}
+.ps-attribution{font-size:13px;font-style:italic;color:#444;margin-bottom:12px}
+.ps-narrator{border-top:1px solid #aaa;padding-top:12px;font-size:15px;line-height:1.6;font-weight:700;color:#222}
+.brain-break{font-family:'Roboto Slab',serif;margin:44px -50px;padding:36px 50px;position:relative;overflow:hidden;max-width:calc(100% + 100px)}
+.bb-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.9}
+.bb-text{font-family:'Roboto Slab',serif;font-size:22px;font-weight:500;line-height:1.65;margin:0}
+.dyk-break{background:var(--green);color:#fff;border-left:6px solid var(--lime)}.dyk-break .bb-label{color:var(--lime)}.dyk-break p,.dyk-break span{color:#fff}
+.ff-break{background:#090909;color:#fff;padding:36px 40px;margin:44px -50px;border-top:3px solid var(--orange);border-bottom:3px solid var(--orange);text-align:center}
+.ff-break .bb-label{text-align:center;margin-bottom:8px;color:var(--orange)}
+.ff-context{font-family:'Roboto Slab',serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#fff1c4;text-align:center;margin-bottom:28px;opacity:.9;font-weight:700}
+.ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:24px}
+.ff-item{text-align:center;padding:8px 16px;max-width:180px}
+.ff-number{display:block;font-family:'Roboto Slab',serif;font-size:52px;font-weight:700;color:var(--orange);line-height:1;margin-bottom:8px}
+.ff-desc{display:block;font-family:'Roboto Slab',serif;font-size:13px;letter-spacing:.08em;color:#fff1c4;max-width:180px;margin:0 auto;line-height:1.5}
+.as-break{background:var(--purple);color:#fff;padding:44px 50px;margin:44px -50px;border-top:3px solid var(--pink);border-bottom:3px solid var(--pink);text-align:center}
+.as-break .bb-label{color:var(--pink)}.as-image{max-width:580px;width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(255,79,216,.75);box-shadow:0 8px 32px rgba(0,0,0,.55)}
+.as-caption{font-family:'Roboto Slab',serif;font-style:normal;font-size:14px;color:#ffe8fb;line-height:1.6;margin-bottom:28px;display:block}
+.as-fact{font-family:'Roboto Slab',serif;font-size:22px;font-weight:500;color:#fff;line-height:1.65;max-width:700px;margin:0 auto;text-align:center}
+.tn-break{background:#0d2342;color:#fff;padding:36px 50px;margin:30px -50px 0}
+.tn-break .bb-label{color:var(--cyan);text-align:center;display:block;margin-bottom:20px}
+.tn-payoff{font-family:'Roboto Slab',serif;font-size:clamp(22px,3.5vw,30px);font-weight:700;line-height:1.35;text-align:center;color:var(--cyan);margin-bottom:28px;max-width:720px;margin-left:auto;margin-right:auto}
+.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}.tn-item{text-align:center}
+.tn-era-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px;font-weight:700}
+.tn-item img{width:100%;display:block;border:2px solid rgba(27,214,255,.65)}.tn-caption{font-family:'Roboto Slab',serif;font-size:12px;font-style:italic;color:#e9fbff;margin-top:8px;line-height:1.4}
+.tn-text-block{margin-top:24px;border-top:1px solid rgba(27,214,255,.35);padding-top:20px}
+.tn-text-block h3{font-family:'Roboto Slab',serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--cyan);margin:18px 0 8px}
+.tn-text-block p{font-family:'Roboto Slab',serif;font-size:17px;line-height:1.65;margin-bottom:12px;color:#fff}
+img{opacity:0;transition:opacity .4s ease}img.loaded{opacity:1}
+.section-animate{opacity:0;transform:translateY(24px);transition:opacity .45s ease-out,transform .45s ease-out}
+.section-animate.visible{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion: reduce){.section-animate{opacity:1;transform:none;transition:none}}
+footer{background:#050505;color:#d0d0d0;text-align:center;padding:24px 30px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.24em;text-transform:uppercase;border-top:5px solid var(--gold)}
+@media(max-width:1100px){.toc-sidebar{display:none}}
+@media(max-width:880px){.page-wrap{border:0}main{padding:0 22px 50px}.timeline-wrap{padding:0 22px}.header-inner{padding:44px 24px 42px}.img-left,.img-right{float:none;width:100%;margin:24px 0}.compare-grid,.tn-pair,.timeline{grid-template-columns:1fr}.brain-break,.ff-break,.as-break,.tn-break{margin:36px 0;padding:28px 22px;max-width:100%}.section-nav a{font-size:11px;padding:11px 8px}}
+@media(max-width:700px){.ps-visual{grid-template-columns:1fr}}
+@media(max-width:600px){.page-title{font-size:42px}.section-heading{font-size:31px}.bb-text,.as-fact{font-size:18px}.ff-number{font-size:44px}}
+html,body{max-width:100%;overflow-x:hidden}
+.page-wrap{width:min(920px,100%);max-width:100%;overflow-x:hidden}
+main,.timeline-wrap{width:100%;max-width:820px}
+img,figure,.timeline,.primary-source,.compare-grid,.tn-pair{max-width:100%}
+img{height:auto}
+.section-nav{overflow-x:auto;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}
+.section-nav a{white-space:nowrap;flex:0 0 auto}
+.primary-source figcaption{color:#333}
+.primary-source .ps-quote{color:#0a0a0a}
+.primary-source .ps-label{color:var(--ink-dark)}
+.primary-source .ps-narrator{color:#222}
+.dyk-break,.dyk-break p,.dyk-break span,.ff-break,.ff-break p,.ff-break span,.as-break,.as-break p,.as-break span,.tn-break,.tn-break p,.tn-break span{color:#fff}
+.ff-context,.ff-desc{color:#fff1c4}
+.as-caption{color:#ffe8fb}
+.tn-caption{color:#e9fbff}
+@media(max-width:980px){.brain-break,.ff-break,.as-break,.tn-break{margin-left:0;margin-right:0;padding-left:28px;padding-right:28px;max-width:100%}}
+@media(max-width:880px){.brain-break,.ff-break,.as-break,.tn-break{margin:36px 0;padding:28px 22px}.tn-break{margin:30px 0 0}}
 </style>
 </head>
-
 <body>
 
-<!-- READING PROGRESS BAR -->
 <div id="reading-progress"></div>
 
-<!-- ===========================
-     HEADER
-     =========================== -->
+<div class="page-wrap">
+
+<!-- HEADER -->
 <header class="site-header">
   <!--
-    FILENAME: S2L07_AlgeriaIndependence.jpg
+    FILENAME: S2L07_GhanaIndependenceCrowd.jpg
     PLACE IN: images/S2/L07/
     PRIORITY: ESSENTIAL
-    FIND: Algerian independence celebration crowd, July 1962, Algiers, large crowd celebrating end of French colonial rule
-    SEARCH: Algerian independence 1962 celebration crowd Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Algerian_War_of_Independence
+    FIND: Crowd celebrating Ghana independence, Accra, March 6 1957 — large outdoor gathering, people cheering
+    SEARCH: Ghana independence 1957 Accra crowd celebration Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:History_of_Ghana
   -->
-  <img src="images/S2/L07/S2L07_AlgeriaIndependence.jpg" alt="Crowds celebrating Algerian independence, 1962" class="header-bg">
-  <div class="header-overlay"></div>
-  <div class="header-content">
-    <span class="course-label">World History &mdash; Semester 2 &mdash; Lesson 7</span>
+  <img src="images/S2/L07/S2L07_GhanaIndependenceCrowd.jpg" alt="Crowd celebrating Ghana's independence in Accra, 1957" class="header-bg">
+  <div class="header-inner">
+    <p class="course-label">World History &mdash; Semester 2 &mdash; Lesson 07</p>
     <h1 class="page-title">Decolonization<br>&amp; Nation-Building</h1>
     <div class="eq-banner">
       <span class="eq-label">Essential Question</span>
-      <p class="eq-text">What challenges did newly independent nations face, and did independence deliver what people hoped for?</p>
+      What challenges did newly independent nations face, and did independence deliver what people hoped for?
     </div>
   </div>
 </header>
 
-<!-- ===========================
-     NAVIGATION BAR
-     =========================== -->
-<nav class="section-nav" aria-label="Lesson sections">
+<!-- NAV BAR -->
+<nav class="section-nav">
   <a href="#introduction">INTRODUCTION</a>
-  <a href="#context">THE COLONIAL WORLD</a>
-  <a href="#escalation">THE WAVE BREAKS</a>
-  <a href="#human-impact">LIVES TORN APART</a>
-  <a href="#legacy">BROKEN PROMISES</a>
-  <a href="#primary-source">PRIMARY SOURCE</a>
+  <a href="#empires-fall">EMPIRES FALL</a>
+  <a href="#independence-moments">INDEPENDENCE</a>
+  <a href="#broken-promises">BROKEN PROMISES</a>
+  <a href="#primary-source-moment">SOURCE</a>
   <a href="#then-now">THEN AND NOW</a>
 </nav>
 
-<!-- LEXILE TOGGLE -->
-<div class="page-body">
-  <button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
-</div>
-
-<!-- FLOATING TOC SIDEBAR -->
-<nav class="toc-sidebar" aria-label="Table of contents">
+<!-- TOC SIDEBAR -->
+<aside class="toc-sidebar">
   <span class="toc-label">ON THIS PAGE</span>
   <a href="#introduction">Introduction</a>
-  <a href="#context">The Colonial World</a>
-  <a href="#escalation">The Wave Breaks</a>
-  <a href="#human-impact">Lives Torn Apart</a>
-  <a href="#legacy">Broken Promises</a>
-  <a href="#primary-source">Primary Source</a>
+  <a href="#empires-fall">Empires Fall</a>
+  <a href="#independence-moments">Independence</a>
+  <a href="#broken-promises">Broken Promises</a>
+  <a href="#primary-source-moment">Primary Source</a>
   <a href="#then-now">Then &amp; Now</a>
-</nav>
+</aside>
 
-<!-- ===========================
-     TIMELINE
-     =========================== -->
-<div class="timeline-section">
-  <p class="timeline-heading">THE DECOLONIZATION TIMELINE &mdash; 1945 TO 1975</p>
-  <div class="timeline-track">
-    <div class="tl-node">
-      <div class="tl-dot"></div>
-      <span class="tl-year">1947</span>
-      <span class="tl-event">India &amp; Pakistan</span>
-      <span class="tl-desc">Britain grants independence; partition divides South Asia with catastrophic violence</span>
+<main>
+
+<!-- TIMELINE -->
+<div class="timeline-wrap" aria-label="Decolonization timeline">
+  <div class="timeline-title">DECOLONIZATION TIMELINE &mdash; 1947 TO 1975</div>
+  <div class="timeline">
+    <div class="timeline-event"><div class="timeline-date">1947</div><p>India and Pakistan win independence from Britain; partition violence kills up to 2 million people.</p></div>
+    <div class="timeline-event"><div class="timeline-date">1948</div><p>Israel is founded; 700,000 Palestinians are expelled or flee in what Palestinians call the Nakba.</p></div>
+    <div class="timeline-event"><div class="timeline-date">1957</div><p>Ghana becomes the first sub-Saharan African colony to gain independence, under Kwame Nkrumah.</p></div>
+    <div class="timeline-event"><div class="timeline-date">1960</div><p>17 African nations gain independence in a single year; Patrice Lumumba is assassinated in the Congo.</p></div>
+    <div class="timeline-event"><div class="timeline-date">1962</div><p>Algeria wins independence after eight years of brutal war against France.</p></div>
+  </div>
+</div>
+
+<!-- LEXILE TOGGLE -->
+<button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
+
+<!-- INTRODUCTION -->
+<section class="intro-section section-animate" id="introduction">
+  <p class="para-standard">On March 6, 1957, a man named <span class="vocab" tabindex="0">Kwame Nkrumah<span class="tip">The leader of Ghana's independence movement and its first prime minister.</span></span> stood before a crowd in Accra, Ghana, and announced that after decades of British rule, his country was free. People wept, lifted children into the air, and chanted through the night. The celebration was real. But what came next — for Ghana, for India, for the Congo, for Algeria, for dozens of nations across Africa, Asia, and the Middle East — was far more complicated than any celebration could contain.</p>
+  <p class="para-simple">On March 6, 1957, Kwame Nkrumah stood before a huge crowd in Ghana and announced that their country was finally free from British rule. People cried and cheered all night. The celebration was real. But what came after independence — for Ghana, India, the Congo, Algeria, and dozens of other countries — turned out to be much harder than people had hoped.</p>
+  <p class="para-standard">Between 1945 and 1980, over 80 new nations were born as European empires collapsed. It was one of the largest political transformations in human history. But <span class="vocab" tabindex="0">decolonization<span class="tip">The process by which colonies break free from the countries that ruled them and become independent nations.</span></span> rarely came peacefully, and the problems the new nations inherited were not ones independence alone could solve.</p>
+  <p class="para-simple">Between 1945 and 1980, over 80 new nations were created as European empires fell apart. It was one of the biggest changes in history. But decolonization was rarely peaceful, and the new countries faced huge problems that freedom by itself could not fix.</p>
+</section>
+
+<!-- SECTION 1: EMPIRES FALL -->
+<section class="content-section clearfix section-animate" id="empires-fall">
+  <span class="section-kicker">CHAPTER ONE</span>
+  <h2 class="section-heading">WHY EMPIRES FELL</h2>
+
+  <!--
+    FILENAME: S2L07_ColonialAfricaMap.jpg
+    PLACE IN: images/S2/L07/
+    PRIORITY: ESSENTIAL
+    FIND: 1913 map of colonial Africa showing European territorial divisions, color-coded by colonial power
+    SEARCH: Colonial Africa 1913 map European partition Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/File:Colonial_Africa_1913_map.svg
+  -->
+  <figure class="img-right">
+    <img src="images/S2/L07/S2L07_ColonialAfricaMap.jpg" alt="Map of colonial Africa circa 1913, showing European-drawn borders">
+    <figcaption>Colonial Africa, circa 1913 — nearly the entire continent divided among European powers. The borders were drawn in European capitals with no input from the people who already lived there. Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard">By 1900, European powers controlled roughly 85 percent of the world's land surface. In 1884, European leaders met in Berlin to divide Africa among themselves. No African leader was invited. The borders they drew were straight lines on a map — clean, geometric, and completely disconnected from the people already living there. These lines split ethnic communities that had existed for centuries and forced longtime enemies inside the same territory. Those borders did not change when independence came.</p>
+  <p class="para-simple">By 1900, European countries controlled about 85 percent of all land on Earth. In 1884, European leaders met in Berlin to divide Africa. No African was invited. They drew straight-line borders on a map with no regard for the people living there. These lines broke apart communities and forced enemies to share the same country. Those same borders remained when independence arrived decades later.</p>
+
+  <p class="para-standard">World War II broke the empires in ways they had not anticipated. The war left Britain, France, and the Netherlands economically ruined — they could no longer afford to police the world. Hundreds of thousands of colonial soldiers had fought and died for their colonizers in Europe, then returned home demanding to know why freedom was for Europeans only. <span class="vocab" tabindex="0">Nationalist movements<span class="tip">Organized groups of people who fought to make their country independent from foreign control.</span></span> across Asia and Africa had been growing for decades, and now they had the momentum — and a world that was watching.</p>
+  <p class="para-simple">World War II weakened the European empires in ways they did not expect. The war left Britain and France broke — they could not afford to control their colonies anymore. Colonial soldiers who had fought for Europe came home asking why freedom was only for Europeans. Nationalist movements — groups fighting for independence — had been growing for years, and now they saw their chance.</p>
+
+  <p class="para-standard">Colonial economies made the problem worse. They were built to extract raw materials — cotton, rubber, gold, cocoa, copper — and ship them to European factories. Local industries were kept small on purpose. Schools trained clerks and low-level administrators, not engineers or leaders. When independence came, the new nations inherited economies that still exported raw materials to the same countries that had just colonized them. Being politically free did not automatically mean being economically free — a pattern called <span class="vocab" tabindex="0">neo-colonialism<span class="tip">When a country is officially independent but its economy is still controlled by wealthier foreign nations.</span></span>.</p>
+  <p class="para-simple">Colonial economies were also a problem. They were designed to help Europe, not the people in the colonies. Crops and minerals were exported to European factories. Schools trained people for low-level government jobs, not to run a country. When independence came, new nations were still economically tied to the same countries that had ruled them. This is called neo-colonialism: being politically free but economically still controlled from outside.</p>
+
+  <p class="real-world para-standard">Real-world connection: The borders drawn by colonial powers in the 1800s still define the countries of Africa and the Middle East today — including many of the conflict zones students see in the news.</p>
+  <p class="real-world para-simple">Real-world connection: The borders drawn by Europeans in the 1800s still shape the countries and conflicts students see in the news today.</p>
+</section>
+
+<!-- DID YOU KNOW -->
+<div class="brain-break dyk-break section-animate">
+  <span class="bb-label">DID YOU KNOW</span>
+  <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
+    <div style="flex:1;min-width:200px;">
+      <!--
+        FILENAME: S2L07_DYK_BerlinConference.jpg
+        PLACE IN: images/S2/L07/
+        PRIORITY: SUPPORTING
+        FIND: 1884 Berlin Conference illustration or engraving showing European leaders gathered around Africa map
+        SEARCH: Berlin Conference 1884 Scramble for Africa illustration engraving Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Berlin_Conference_(1884%E2%80%9385)
+      -->
+      <img src="images/S2/L07/S2L07_DYK_BerlinConference.jpg" alt="Illustration of the 1884 Berlin Conference where European powers divided Africa" style="width:100%;display:block;border:3px solid var(--lime);box-shadow:0 4px 18px rgba(0,0,0,.4);">
+      <p style="font-size:12px;margin-top:8px;color:#fff;font-family:'Roboto Slab',serif;">The 1884 Berlin Conference — Africa divided without a single African in the room.</p>
     </div>
-    <div class="tl-node">
-      <div class="tl-dot"></div>
-      <span class="tl-year">1948</span>
-      <span class="tl-event">Israel Founded; Nakba</span>
-      <span class="tl-desc">State of Israel declared; 700,000 Palestinians expelled or flee</span>
+    <p class="bb-text" style="flex:1;min-width:200px;">The 1884 Berlin Conference lasted only three months, but the borders drawn in that room lasted more than a century. Of the 54 countries in Africa today, the vast majority still use boundaries created at that meeting. Not one African person was present when it happened.</p>
+  </div>
+</div>
+
+<!-- SECTION 2: INDEPENDENCE MOMENTS -->
+<section class="content-section clearfix section-animate" id="independence-moments">
+  <span class="section-kicker">CHAPTER TWO</span>
+  <h2 class="section-heading">INDEPENDENCE AROUND THE WORLD</h2>
+
+  <!--
+    FILENAME: S2L07_IndiaPartitionRefugees.jpg
+    PLACE IN: images/S2/L07/
+    PRIORITY: ESSENTIAL
+    FIND: 1947 India Pakistan partition refugees on road or train, massive crowd of displaced people, Punjab
+    SEARCH: India Pakistan partition 1947 refugees migration Punjab Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Partition_of_India
+  -->
+  <figure class="img-left">
+    <img src="images/S2/L07/S2L07_IndiaPartitionRefugees.jpg" alt="Refugees displaced during the 1947 partition of India and Pakistan">
+    <figcaption>Refugees during the 1947 partition of India and Pakistan. An estimated 10 to 20 million people were displaced; up to 2 million were killed in communal violence. Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard">India's independence in 1947 was a moment decades in the making — but it came paired with something devastating. Britain divided its colony into two nations: Hindu-majority India and Muslim-majority Pakistan. The logic was to separate communities that officials claimed could not coexist. The result was catastrophic. Between 10 and 20 million people were forced to move in a matter of weeks. Up to 2 million were killed in communal violence as Hindus, Muslims, and Sikhs attacked each other across the new border. <span class="vocab" tabindex="0">Partition<span class="tip">Dividing a territory into two or more separate countries, often along religious or ethnic lines.</span></span> created two new nations — and destroyed millions of old lives at the same time.</p>
+  <p class="para-simple">India became free from Britain in 1947, but independence came with a terrible cost. Britain split the colony into two countries: India for Hindus and Pakistan for Muslims. Between 10 and 20 million people had to flee their homes in just a few weeks. Up to 2 million people were killed as communities attacked each other across the new border. Partition created new countries and destroyed millions of lives at the same time.</p>
+
+  <!--
+    FILENAME: S2L07_LumumbaPortrait.jpg
+    PLACE IN: images/S2/L07/
+    PRIORITY: ESSENTIAL
+    FIND: Patrice Lumumba, first Prime Minister of the Democratic Republic of the Congo, 1960, portrait or press photograph
+    SEARCH: Patrice Lumumba Congo prime minister 1960 portrait Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Patrice_Lumumba
+  -->
+  <figure class="img-right">
+    <img src="images/S2/L07/S2L07_LumumbaPortrait.jpg" alt="Patrice Lumumba, first Prime Minister of the Congo, 1960">
+    <figcaption>Patrice Lumumba, the Congo's first elected prime minister, 1960. He was assassinated within months of independence, with documented CIA and Belgian involvement. Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard">In 1960, Ghana inspired Africa — but the Congo showed the dangers waiting for newly independent nations. Belgium had deliberately kept Congolese people out of higher education, so when independence arrived in June 1960, the country had almost no trained doctors, lawyers, or senior officials. <span class="vocab" tabindex="0">Patrice Lumumba<span class="tip">The Congo's first elected prime minister, assassinated in 1961 with CIA and Belgian involvement.</span></span>, the Congo's first elected prime minister, faced an immediate military mutiny and a secessionist crisis in the mineral-rich Katanga province. When he asked the Soviet Union for help, the United States labeled him a communist threat. The CIA organized his removal, and within months of independence, Lumumba was captured and executed. His assassination was a defining example of <span class="vocab" tabindex="0">Cold War interference<span class="tip">When the United States or Soviet Union intervened in other countries' politics to control outcomes in the Cold War competition.</span></span> in the decolonizing world.</p>
+  <p class="para-simple">In 1960, the Congo became free from Belgium, but not for long. Belgium had kept Congolese people out of schools and leadership on purpose, so there were almost no trained leaders when independence arrived. Prime Minister Patrice Lumumba quickly faced a military rebellion. When he asked the Soviet Union for help, the United States called him a communist enemy. The CIA helped remove him from power, and within months of independence, Lumumba was captured and killed. His murder showed how Cold War competition was destroying new nations before they had a chance to survive.</p>
+
+  <p class="para-standard">In Algeria, France did not treat independence as possible at all. French leaders insisted Algeria was not a colony — it was part of France itself. When Algerians launched an armed uprising in 1954, France responded with overwhelming military force, including the systematic use of torture against suspected rebels. The Algerian War lasted eight brutal years. Estimates suggest between 300,000 and 1.5 million Algerians died. France withdrew in 1962, but the war showed the world exactly how far colonial powers would go to hold what they had taken.</p>
+  <p class="para-simple">In Algeria, France refused to let go. French leaders said Algeria was part of France, not a colony. When Algerians started fighting for independence in 1954, France used torture, napalm, and prison camps to stop them. The war lasted eight years and killed hundreds of thousands of Algerians. France finally left in 1962. The Algerian War showed how brutal a colonial power could be when it refused to accept independence.</p>
+
+</section>
+
+<!-- FAST FACTS -->
+<div class="brain-break ff-break section-animate">
+  <span class="bb-label">FAST FACTS</span>
+  <p class="ff-context">THE SCALE OF DECOLONIZATION, 1945&ndash;1980</p>
+  <div class="ff-grid">
+    <div class="ff-item">
+      <span class="ff-number">80+</span>
+      <span class="ff-desc">new nations created during the decolonization era — more than in any other period in recorded history</span>
     </div>
-    <div class="tl-node">
-      <div class="tl-dot"></div>
-      <span class="tl-year">1957</span>
-      <span class="tl-event">Ghana Independent</span>
-      <span class="tl-desc">First sub-Saharan African colony gains independence under Nkrumah</span>
+    <div class="ff-item">
+      <span class="ff-number">2M</span>
+      <span class="ff-desc">people killed in communal violence during the 1947 partition of India and Pakistan alone</span>
     </div>
-    <div class="tl-node">
-      <div class="tl-dot"></div>
-      <span class="tl-year">1960</span>
-      <span class="tl-event">"Year of Africa"</span>
-      <span class="tl-desc">17 African nations gain independence; Congo crisis and Lumumba's assassination follow</span>
+    <div class="ff-item">
+      <span class="ff-number">17</span>
+      <span class="ff-desc">African nations that became independent in 1960 alone — a year so historic it is called "The Year of Africa"</span>
     </div>
-    <div class="tl-node">
-      <div class="tl-dot"></div>
-      <span class="tl-year">1962</span>
-      <span class="tl-event">Algeria Free</span>
-      <span class="tl-desc">After 8 years of brutal war, France withdraws from Algeria</span>
-    </div>
-    <div class="tl-node">
-      <div class="tl-dot"></div>
-      <span class="tl-year">1975</span>
-      <span class="tl-event">Africa Mostly Free</span>
-      <span class="tl-desc">Portugal gives up its African colonies; over 80 new nations now exist</span>
+    <div class="ff-item">
+      <span class="ff-number">700K</span>
+      <span class="ff-desc">Palestinians forced from their homes in 1948, an event Palestinians call the Nakba — Arabic for "catastrophe"</span>
     </div>
   </div>
 </div>
 
-<!-- ===========================
-     INTRODUCTION
-     =========================== -->
-<div class="page-body">
-
-<section class="intro-section section-animate" id="introduction">
-  <h2 class="section-heading">INTRODUCTION</h2>
-
-  <div class="img-inset">
-    <!--
-      FILENAME: S2L07_NkrumahIndependence.jpg
-      PLACE IN: images/S2/L07/
-      PRIORITY: ESSENTIAL
-      FIND: Kwame Nkrumah declaring Ghana's independence, March 6 1957, Accra, Ghana, addressing crowd
-      SEARCH: Kwame Nkrumah Ghana independence 1957 speech Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/Kwame_Nkrumah
-    -->
-    <figure>
-      <img src="images/S2/L07/S2L07_NkrumahIndependence.jpg" alt="Kwame Nkrumah speaks at Ghana's independence ceremony, 1957">
-      <figcaption class="img-caption">Kwame Nkrumah declares Ghana's independence, March 6, 1957 — the first sub-Saharan African colony to break free. (Wikimedia Commons)</figcaption>
-    </figure>
-  </div>
-
-  <p class="para-standard">On March 6, 1957, in the capital city of Accra, a man named <span class="vocab" tabindex="0">Kwame Nkrumah<span class="tip">The leader of Ghana's independence movement and its first prime minister; one of the most important figures in the story of African liberation.</span></span> stepped onto a stage and told a crowd of thousands that their country had a new name. It was no longer called the Gold Coast — the name Britain had given it when they took it. Now it was Ghana. The people screamed. Mothers lifted children. Men wept. And somewhere across the ocean, the British government signed the last papers and let go of another piece of its empire. What happened next was not simple. The joy was real. But what came after — for Ghana, for India, for the Congo, for Algeria, for dozens of countries all around the world — was far more complicated than a celebration in a crowd.</p>
-
-  <p class="para-simple">On March 6, 1957, a man named Kwame Nkrumah stood in front of thousands of people in Africa. He told them their country had a new name: Ghana. Before that day, Britain had ruled it and called it the Gold Coast. People cried, cheered, and held their children up high. It was a moment of real joy. But the years after that moment were hard. Getting free from an empire was one thing. Building a country from scratch — that was something else entirely.</p>
-
-  <p class="para-standard">Between 1945 and 1980, over 80 new nations were born. European empires that had controlled most of Asia, Africa, and the Middle East for centuries collapsed with breathtaking speed. <span class="vocab" tabindex="0">Decolonization<span class="tip">The process by which colonies break free from the countries that ruled them and become independent nations.</span></span> was one of the largest political transformations in human history. But liberation rarely came peacefully, and the problems the new nations inherited were not ones independence alone could solve.</p>
-
-  <p class="para-simple">Between 1945 and 1980, more than 80 new nations were created. European empires that had ruled most of the world for hundreds of years fell apart quickly. This process of colonies becoming free is called decolonization. It was one of the biggest changes in history. But freedom was often violent, and the new countries faced enormous problems that independence by itself could not fix.</p>
-
-  <div class="clearfix"></div>
-</section>
-
-<!-- ===========================
-     SECTION 1: THE COLONIAL WORLD
-     =========================== -->
-<section class="content-section section-animate" id="context">
-  <h2 class="section-heading">THE COLONIAL WORLD — AND WHY IT COLLAPSED</h2>
+<!-- SECTION 3: BROKEN PROMISES -->
+<section class="content-section clearfix section-animate" id="broken-promises">
+  <span class="section-kicker">CHAPTER THREE</span>
+  <h2 class="section-heading">BROKEN PROMISES</h2>
 
   <!--
-    FILENAME: S2L07_BerlinConferencMap.jpg
+    FILENAME: S2L07_IsraelDeclaration1948.jpg
     PLACE IN: images/S2/L07/
     PRIORITY: ESSENTIAL
-    FIND: 1884-1885 Berlin Conference map showing European partition of Africa, showing colonial territories and borders
-    SEARCH: Scramble for Africa map Berlin Conference 1884 colonial partition Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/File:Colonial_Africa_1913_map.svg
+    FIND: David Ben-Gurion declaring Israeli independence May 14 1948 in Tel Aviv beneath portrait of Theodor Herzl
+    SEARCH: Israel independence declaration 1948 Ben-Gurion Tel Aviv Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/File:Ben_gurion_independence.jpg
   -->
-  <figure>
-    <img src="images/S2/L07/S2L07_ColonialAfricaMap.jpg" alt="Map of colonial Africa showing European-drawn borders, circa 1913" class="img-full">
-    <figcaption class="img-caption">A map of colonial Africa, circa 1913 — nearly the entire continent divided among Britain, France, Belgium, Germany, Portugal, Italy, and Spain. The borders were drawn in European capitals, with no regard for the peoples who already lived there. (Wikimedia Commons)</figcaption>
+  <figure class="img-right">
+    <img src="images/S2/L07/S2L07_IsraelDeclaration1948.jpg" alt="David Ben-Gurion declares Israeli independence, May 14, 1948">
+    <figcaption>David Ben-Gurion declares the State of Israel, May 14, 1948, beneath a portrait of Theodor Herzl. On the same day, Arab states attacked; 700,000 Palestinians fled or were expelled. Wikimedia Commons.</figcaption>
   </figure>
 
-  <h3 class="chapter-heading">HOW EMPIRES TOOK THE WORLD</h3>
+  <p class="para-standard">The conflict in Palestine showed how decolonization could mean different things to different peoples at the same time. Jewish survivors of the Holocaust poured into Palestine after World War II, seeking a homeland after six million Jews had been killed in Europe. In 1948, the State of Israel was declared. Arab states immediately invaded and lost. In the fighting, approximately 700,000 Palestinians were expelled from or fled their homes — an event Palestinians call the <span class="vocab" tabindex="0">Nakba<span class="tip">Arabic word meaning "catastrophe" — the 1948 displacement of Palestinians during the Arab-Israeli War.</span></span>. For Jewish survivors of genocide, Israel was liberation. For Palestinians, it was catastrophe. The conflict between these two peoples — rooted in the same geography, shaped by European colonialism and the Holocaust — has never been resolved.</p>
+  <p class="para-simple">In Palestine, the story of decolonization was especially complicated. Jewish survivors of the Holocaust came to Palestine after World War II looking for safety. In 1948, Israel declared independence. Arab countries attacked and lost. During the war, about 700,000 Palestinians were forced from their homes — an event Palestinians call the Nakba, meaning "catastrophe." For Jewish Holocaust survivors, Israel was freedom. For Palestinians, it was disaster. This conflict, shaped by European colonialism and World War II, has continued ever since.</p>
 
-  <p class="para-standard">By 1900, European powers controlled roughly 85 percent of the world's land surface. Britain, France, Belgium, the Netherlands, Portugal, and others had seized territories across Africa, Asia, the Caribbean, and the Pacific over the previous three centuries. They called it empire. The people who lived under it called it something else. Colonial rule meant that the laws, the economy, the schools, the military, and even the language of a place were controlled by a foreign government on the other side of the ocean. <span class="vocab" tabindex="0">Self-determination<span class="tip">The idea that people have the right to choose their own government and control their own country.</span></span> — the idea that people should govern themselves — was a principle Europeans declared at home but refused to apply abroad.</p>
-
-  <p class="para-simple">By 1900, European countries controlled about 85 percent of all land on Earth. Britain, France, Belgium, and others had taken over large parts of Africa, Asia, and other regions. Colonial rule meant that a foreign government far away controlled your laws, schools, money, and military. Europeans believed in freedom for themselves — but not for the people they ruled.</p>
-
-  <h3 class="chapter-heading">THREE THINGS THAT BROKE THE EMPIRES</h3>
-
-  <p class="para-standard">World War II destroyed European empires in three ways they had not anticipated. First, the war left Britain, France, and the Netherlands economically ruined — they no longer had the money to police the world. Second, hundreds of thousands of colonial soldiers had fought and died for their colonizers in Europe; they returned home demanding to know why freedom was for Europeans only. Third, the United States and the Soviet Union — the two new superpowers — both publicly opposed European colonialism, though each had their own reasons. The age of unchallenged empire was over, and <span class="vocab" tabindex="0">nationalist movements<span class="tip">Organized groups of people who fought to make their country independent from foreign control.</span></span> across Asia and Africa knew it.</p>
-
-  <p class="para-simple">World War II ended European empires in three big ways. First, the war left European countries broke — they could not afford to keep controlling their colonies. Second, soldiers from the colonies had fought for Europe in the war and came home asking why freedom was only for white Europeans. Third, the United States and the Soviet Union — the world's two new superpowers — both said they were against colonialism. Nationalist movements everywhere saw their chance.</p>
-
-  <h3 class="chapter-heading">THE BORDERS THAT CAUSED EVERYTHING</h3>
-
-  <p class="para-standard">In 1884 and 1885, European leaders gathered in Berlin to divide Africa among themselves. No African leader attended. The borders they drew were straight lines on a map — clean, geometric, and completely disconnected from the actual human geography of the continent. These lines split ethnic groups, language communities, and kingdoms that had existed for centuries. They also forced longtime enemies into the same territory. When independence came, these borders did not change. The new nations of Africa, Asia, and the Middle East inherited colonial maps — which meant they inherited the conflicts those maps had created.</p>
-
-  <p class="para-simple">In 1884, European leaders met in Berlin to split Africa between them. No African was invited. They drew borders as straight lines on a map, with no idea or care about the people already living there. These lines cut apart communities that had lived together for centuries. They also trapped enemies inside the same borders. When independence arrived, the new nations kept those same borders — and inherited all the problems that came with them.</p>
-
-  <!-- DID YOU KNOW — placed here after colonial system is established -->
-  <div class="brain-break dyk-break section-animate">
-    <span class="bb-label">DID YOU KNOW</span>
-    <p class="bb-text">When European leaders met in Berlin in 1884 to divide Africa, the meeting lasted only three months — but the borders they drew lasted over a century. Of the 54 countries in Africa today, the vast majority still use borders created by that conference. Not a single African person was in the room when it happened.</p>
-  </div>
-
-  <h3 class="chapter-heading">THE ECONOMY OF DEPENDENCE</h3>
-
-  <p class="para-standard">Colonial economies were not built for the people who lived in them. They were built to extract raw materials — cotton, rubber, gold, oil, cocoa, copper — and ship them to European factories. Local industries that might compete with European goods were actively discouraged or made illegal. Schools taught colonial languages and trained clerks and low-level administrators, not engineers or doctors or political scientists. When independence came, the new nations had economies that exported raw materials to the same countries that had just colonized them. This economic structure — <span class="vocab" tabindex="0">neo-colonialism<span class="tip">A situation where a country is officially independent but its economy is still controlled by wealthier foreign nations.</span></span> — meant that formal political independence did not automatically produce economic freedom.</p>
-
-  <p class="para-simple">Colonial economies were designed to help Europe, not the people living in the colonies. Colonies grew crops or mined minerals and sent them to European factories. Local industries were kept small on purpose. Schools trained local people to work for the colonial government — not to run their own country. When independence came, many new nations were still selling raw materials to the same countries that had colonized them. Being politically free did not automatically mean being economically free — a situation called neo-colonialism.</p>
-
-</section>
-
-<!-- ===========================
-     SECTION 2: THE WAVE BREAKS
-     =========================== -->
-<section class="content-section section-animate" id="escalation">
-  <h2 class="section-heading">THE WAVE BREAKS — INDEPENDENCE AROUND THE WORLD</h2>
-
-  <h3 class="chapter-heading">INDIA AND PAKISTAN: FREEDOM AT MIDNIGHT</h3>
-
-  <div class="img-inset-left">
-    <!--
-      FILENAME: S2L07_IndiaPartitionRefugees.jpg
-      PLACE IN: images/S2/L07/
-      PRIORITY: ESSENTIAL
-      FIND: 1947 India Pakistan partition refugees train or road, massive crowd of displaced people, Punjab partition migration
-      SEARCH: India Pakistan partition 1947 refugees migration Punjab Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/Partition_of_India
-    -->
-    <figure>
-      <img src="images/S2/L07/S2L07_IndiaPartitionRefugees.jpg" alt="Refugees displaced during the 1947 partition of India and Pakistan">
-      <figcaption class="img-caption">Refugees fleeing during the 1947 partition of India and Pakistan. An estimated 10 to 20 million people were displaced in one of history's largest forced migrations. (Wikimedia Commons)</figcaption>
-    </figure>
-  </div>
-
-  <p class="para-standard">At midnight on August 15, 1947, India became independent from Britain. It was a moment decades in the making — the result of a mass movement led in part by <span class="vocab" tabindex="0">Mahatma Gandhi<span class="tip">The leader of India's independence movement who used nonviolent protest to challenge British rule.</span></span> and the Indian National Congress. But independence came paired with something devastating: <span class="vocab" tabindex="0">partition<span class="tip">The dividing of a territory into two or more separate countries, often along religious or ethnic lines.</span></span>. Britain divided its colony into two nations — Hindu-majority India and Muslim-majority Pakistan. The logic was to separate communities that British rulers claimed could not coexist. The result was catastrophic. Between 10 and 20 million people were forced to move. Up to 2 million were killed in communal violence as Hindus, Muslims, and Sikhs attacked each other across the new border. Families that had lived in the same village for generations were suddenly on opposite sides of a new country.</p>
-
-  <p class="para-simple">At midnight on August 15, 1947, India became free from British rule. It was a huge moment people had fought and waited for. But independence came with a terrible cost. Britain split the colony into two countries: India for Hindus and Pakistan for Muslims. Between 10 and 20 million people had to leave their homes. Up to 2 million people were killed as communities turned on each other across the new border. Families who had lived as neighbors for their whole lives were suddenly on opposite sides of two different countries.</p>
-
-  <div class="clearfix"></div>
-
-  <h3 class="chapter-heading">GHANA: THE FIRST LIGHT IN SUB-SAHARAN AFRICA</h3>
-
-  <p class="para-standard">When Ghana gained independence on March 6, 1957, it sent a message across the entire African continent: it was possible. Under Kwame Nkrumah, Ghana became a symbol of what <span class="vocab" tabindex="0">nationalism<span class="tip">A strong belief in independence and pride in one's own nation, often as a force against foreign rule.</span></span> could achieve. Nkrumah called for "Africa for Africans" and pushed for unity among newly independent African nations. He hosted independence leaders from across the continent and attempted to build a modern industrial economy. But within a decade, Ghana's economy was struggling, Cold War pressures were intensifying, and in 1966, while Nkrumah was abroad, his own military overthrew him in a <span class="vocab" tabindex="0">coup<span class="tip">When the military or another group illegally takes over a government, usually by force.</span></span>. The pattern of elected leaders replaced by military governments would repeat across the continent.</p>
-
-  <p class="para-simple">When Ghana became free in 1957, it inspired the rest of Africa. Their leader, Kwame Nkrumah, said Africa should belong to Africans and called for African nations to work together. He tried to build a modern economy. But within ten years, the economy was in trouble and Cold War pressures were making things harder. In 1966, while Nkrumah was traveling, his own military took over the government. This kind of military takeover — called a coup — would happen again and again in newly independent countries across Africa and Asia.</p>
-
-  <h3 class="chapter-heading">THE CONGO: INDEPENDENCE AND ASSASSINATION</h3>
-
-  <div class="img-inset">
-    <!--
-      FILENAME: S2L07_LumumbaPortrait.jpg
-      PLACE IN: images/S2/L07/
-      PRIORITY: ESSENTIAL
-      FIND: Patrice Lumumba portrait photograph, first prime minister of the Congo, circa 1960
-      SEARCH: Patrice Lumumba Congo prime minister 1960 portrait Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/Patrice_Lumumba
-    -->
-    <figure>
-      <img src="images/S2/L07/S2L07_LumumbaPortrait.jpg" alt="Patrice Lumumba, first Prime Minister of the Democratic Republic of the Congo, 1960">
-      <figcaption class="img-caption">Patrice Lumumba, the Congo's first elected prime minister, 1960. He was assassinated within months of independence, with documented CIA and Belgian involvement. (Wikimedia Commons)</figcaption>
-    </figure>
-  </div>
-
-  <p class="para-standard">Belgium had ruled the Congo for over 70 years, and when it finally granted independence in June 1960, it handed over a country with almost no trained doctors, lawyers, or engineers — by Belgian design. The Congo's first elected prime minister, <span class="vocab" tabindex="0">Patrice Lumumba<span class="tip">The first elected prime minister of the Congo, whose assassination in 1961 was later linked to the CIA and Belgian government.</span></span>, immediately faced a military mutiny and a secessionist crisis in the mineral-rich Katanga province. When Lumumba asked the Soviet Union for help — something the United States refused to provide — American officials labeled him a communist threat. The CIA organized his removal from power, and within months of independence, Lumumba was arrested, handed over to his enemies, and executed. His assassination became a defining symbol of <span class="vocab" tabindex="0">Cold War interference<span class="tip">When the United States or Soviet Union intervened in other countries' politics to make sure their side won the Cold War competition.</span></span> in the decolonizing world: newly independent nations were pressured, manipulated, or overthrown if they made choices the superpowers did not approve of.</p>
-
-  <p class="para-simple">Belgium ruled the Congo for over 70 years and on purpose kept Congolese people from getting advanced education. When the Congo became free in 1960, there were almost no trained doctors, lawyers, or engineers. The new prime minister, Patrice Lumumba, quickly faced a military rebellion and a crisis in the diamond-rich Katanga region. When he asked the Soviet Union for help, the United States labeled him a communist enemy. The CIA helped remove him from power, and within months of independence, Lumumba was captured and killed. His assassination showed how the Cold War had reached into the heart of Africa: new nations that made choices the superpowers disliked could be destroyed.</p>
-
-  <div class="clearfix"></div>
-
-  <h3 class="chapter-heading">ALGERIA: THE WAR THAT FRANCE REFUSED TO CALL A WAR</h3>
-
-  <p class="para-standard">France did not treat Algeria as a colony — it treated it as France itself. Over a million French settlers called Algeria home, and French officials insisted Algeria was as French as Paris. When Algerian nationalists launched an armed uprising in November 1954, France responded with overwhelming military force, including the systematic use of torture against suspected insurgents. The war lasted eight brutal years. France used napalm, collective punishment, and mass detention camps. The <span class="vocab" tabindex="0">FLN<span class="tip">Front de Libération Nationale — the Algerian nationalist organization that fought for independence from France.</span></span> (National Liberation Front) used bombings, assassinations, and an urban guerrilla campaign. Estimates suggest between 300,000 and 1.5 million Algerians died before France finally withdrew in 1962. The Algerian War of Independence became one of the most studied examples of anti-colonial resistance in history — and a template for liberation movements on every continent.</p>
-
-  <p class="para-simple">France considered Algeria to be part of France itself — not just a colony. Over a million French settlers lived there, and when Algerians started fighting for independence in 1954, France refused to give up without a brutal war. French forces used torture, napalm, and prison camps. The Algerian independence movement used bombings and guerrilla fighting. The war lasted eight years and killed hundreds of thousands of Algerians. France finally withdrew in 1962. The Algerian War became famous around the world as an example of how hard — and how violent — it could be to break free from a colonial power.</p>
-
-  <!-- FAST FACTS — placed here after multiple independence stories have been told -->
-  <div class="brain-break ff-break section-animate">
-    <span class="bb-label">FAST FACTS</span>
-    <p class="ff-context">THE SCALE OF DECOLONIZATION: 1945 TO 1980</p>
-    <div class="ff-grid">
-      <div class="ff-item">
-        <span class="ff-number">80+</span>
-        <span class="ff-desc">new nations created during the decolonization era — more than any other period in recorded history</span>
-      </div>
-      <div class="ff-item">
-        <span class="ff-number">2M</span>
-        <span class="ff-desc">people killed in communal violence during the 1947 partition of India and Pakistan alone</span>
-      </div>
-      <div class="ff-item">
-        <span class="ff-number">17</span>
-        <span class="ff-desc">African nations that gained independence in 1960 alone — a single year so historic it is called "The Year of Africa"</span>
-      </div>
-      <div class="ff-item">
-        <span class="ff-number">700K</span>
-        <span class="ff-desc">Palestinians displaced or forced to flee during the 1948 Arab-Israeli War — an event Palestinians call the Nakba, meaning "catastrophe"</span>
-      </div>
-      <div class="ff-item">
-        <span class="ff-number">85%</span>
-        <span class="ff-desc">of the world's land surface controlled by European empires at their peak — a statistic that fell dramatically in just 35 years</span>
-      </div>
-    </div>
-  </div>
-
-  <h3 class="chapter-heading">ISRAEL, PALESTINE, AND THE QUESTION THAT REMAINS OPEN</h3>
-
-  <div class="img-two-col">
-    <!--
-      FILENAME: S2L07_PalestineRefugees1948.jpg
-      PLACE IN: images/S2/L07/
-      PRIORITY: ESSENTIAL
-      FIND: Palestinian refugees 1948 Nakba, families walking with belongings, displacement during Arab-Israeli War
-      SEARCH: Palestinian refugees 1948 Nakba displacement Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/1948_Palestinian_exodus
-    -->
-    <figure>
-      <img src="images/S2/L07/S2L07_PalestineRefugees1948.jpg" alt="Palestinian refugees displaced during the 1948 Arab-Israeli War">
-      <figcaption class="img-caption">Palestinian families displaced during the 1948 Arab-Israeli War. This event is called the Nakba — Arabic for "catastrophe." (Wikimedia Commons)</figcaption>
-    </figure>
-    <!--
-      FILENAME: S2L07_IsraelDeclaration1948.jpg
-      PLACE IN: images/S2/L07/
-      PRIORITY: ESSENTIAL
-      FIND: David Ben-Gurion declaring Israel's independence May 14 1948 in Tel Aviv beneath portrait of Theodor Herzl
-      SEARCH: Israel independence declaration 1948 Ben-Gurion Tel Aviv Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/File:Ben_gurion_independence.jpg
-    -->
-    <figure>
-      <img src="images/S2/L07/S2L07_IsraelDeclaration1948.jpg" alt="David Ben-Gurion declaring Israeli independence, May 14, 1948, Tel Aviv">
-      <figcaption class="img-caption">David Ben-Gurion declares the establishment of the State of Israel, May 14, 1948, beneath a portrait of Theodor Herzl, founder of modern Zionism. (Wikimedia Commons)</figcaption>
-    </figure>
-  </div>
-
-  <p class="para-standard">The origins of the Israel-Palestine conflict reach into the late 1800s, when a European Jewish nationalist movement called <span class="vocab" tabindex="0">Zionism<span class="tip">A movement supporting the creation of a Jewish homeland in the historical land of Israel, called Palestine by Arab residents.</span></span> began advocating for a Jewish state in Palestine. At that time, Palestine was home to a majority Arab Muslim and Christian population, and it was ruled by the Ottoman Empire. After World War I, Britain took control of Palestine under what was called the British Mandate and made contradictory promises: one to Jewish immigrants and one to Arab residents. Jewish immigration accelerated in the 1930s and 1940s as the Holocaust killed six million Jews and survivors desperate for a safe homeland poured into Palestine. In 1947, the United Nations voted to divide Palestine into two states. Arab leaders rejected the plan. In May 1948, the State of Israel was declared. The Arab states immediately invaded. Israel won the war. In the process, approximately 700,000 Palestinians were expelled from or fled their homes — an event Palestinians call the <span class="vocab" tabindex="0">Nakba<span class="tip">Arabic word meaning "catastrophe" — used by Palestinians to describe the displacement of their people during the 1948 Arab-Israeli War.</span></span>. The conflict created by these events has never been resolved.</p>
-
-  <p class="para-simple">The conflict between Israelis and Palestinians has roots going back to the late 1800s. Jewish nationalists — called Zionists — wanted a homeland in Palestine. Palestine at that time was mostly Arab. After World War I, Britain controlled Palestine and made promises to both Jewish immigrants and Arab residents. The Holocaust killed six million Jews, and many survivors moved to Palestine hoping for safety. In 1948, Israel declared independence. Arab countries attacked and lost. About 700,000 Palestinians were forced from their homes in the fighting — an event Palestinians call the Nakba, meaning "catastrophe." The conflict between Israelis and Palestinians has continued ever since.</p>
-
-</section>
-
-<!-- ===========================
-     SECTION 3: HUMAN IMPACT
-     =========================== -->
-<section class="content-section section-animate" id="human-impact">
-  <h2 class="section-heading">LIVES TORN APART — WHAT INDEPENDENCE ACTUALLY FELT LIKE</h2>
+  <p class="para-standard">Nearly every newly independent nation also had to navigate the <span class="vocab" tabindex="0">Cold War<span class="tip">The tense political and military competition between the United States and Soviet Union from 1945 to 1991.</span></span> — a global competition that treated new nations as pieces to be moved, not countries with the right to choose their own path. The CIA helped overthrow elected governments in Iran (1953), Guatemala (1954), and the Congo (1960). The Soviet Union did the same on its side. Leaders who made choices the superpowers disliked were removed, imprisoned, or killed. <span class="vocab" tabindex="0">Self-determination<span class="tip">The idea that people have the right to choose their own government and control their own country.</span></span> — the principle the independence movements had fought for — ran directly into <span class="vocab" tabindex="0">geopolitics<span class="tip">The way powerful countries use global strategy and geography to advance their own interests.</span></span>.</p>
+  <p class="para-simple">Almost every new nation also faced the Cold War. The United States and the Soviet Union were competing to control as much of the world as possible. New countries that made choices the superpowers did not like were punished. The CIA overthrew elected governments in Iran, Guatemala, and the Congo. The Soviets did the same elsewhere. The freedom that independence movements had fought for was constantly threatened by powerful countries with their own interests.</p>
 
   <!--
-    FILENAME: S2L07_AlgeriaWar.jpg
+    FILENAME: S2L07_NkrumahCoupPoster.jpg
     PLACE IN: images/S2/L07/
     PRIORITY: SUPPORTING
-    FIND: Algerian War of Independence, French soldiers or Algerian resistance, 1954-1962 war scene documentary photograph
-    SEARCH: Algerian War of Independence 1954 1962 photograph Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Algerian_War
+    FIND: Soldiers or military imagery from a 1960s African coup — soldiers near government building or military takeover scene
+    SEARCH: African military coup 1960s soldiers government building Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Coups_in_Africa
   -->
-  <figure>
-    <img src="images/S2/L07/S2L07_AlgeriaWar.jpg" alt="Scene from the Algerian War of Independence, 1954-1962" class="img-full">
-    <figcaption class="img-caption">A documentary photograph from the Algerian War of Independence, which lasted from 1954 to 1962. France used massive military force to hold its colony; Algeria paid in hundreds of thousands of lives. (Wikimedia Commons)</figcaption>
+  <figure class="img-left">
+    <img src="images/S2/L07/S2L07_AfricanCoupSoldiers.jpg" alt="Soldiers during a military coup, 1960s Africa">
+    <figcaption>Soldiers during a military coup in Africa, 1960s. Between 1960 and 1980, at least 30 coups overthrew elected governments across newly independent African nations. Wikimedia Commons.</figcaption>
   </figure>
 
-  <h3 class="chapter-heading">PARTITION: WHEN NEW BORDERS CUT THROUGH PEOPLE</h3>
+  <p class="para-standard">Military coups became one of the defining patterns of the decolonization era. Between 1960 and 1980, at least 30 military governments replaced elected ones across Africa alone. The reasons repeated everywhere: colonial powers had built armies designed to suppress people, not protect democracy. Civilian governments were new and fragile. Economies were struggling. When a crisis hit — and a crisis always hit — the military stepped in. Sometimes a Cold War superpower was quietly involved. The result was the same everywhere: the democratic promise that people had fought and died for was erased, often within years of independence. Even Ghana — the symbol of everything possible — lost Nkrumah to a <span class="vocab" tabindex="0">coup<span class="tip">When the military takes over a government by force, removing elected leaders.</span></span> in 1966 while he was traveling abroad.</p>
+  <p class="para-simple">Military coups were another pattern that repeated everywhere. Between 1960 and 1980, at least 30 military governments overthrew elected ones in Africa alone. Colonial armies were trained to control people — not to protect elections. New civilian governments were fragile. Economies were struggling. When a crisis hit, soldiers took over. Sometimes a Cold War superpower quietly helped. Even Ghana — the symbol of African independence — had Nkrumah removed by his own military in 1966. The democratic future that people had fought for disappeared again and again.</p>
 
-  <p class="para-standard">The human cost of partition — the drawing of new borders — was staggering in every country where it happened. In India and Pakistan, an estimated 10 to 20 million people were displaced in a matter of weeks. Trains carrying refugees in both directions were attacked; entire villages were massacred. The violence was not only between Hindus and Muslims: it was between neighbors, between communities that had shared markets, festivals, and languages for generations. A Sikh farmer in Punjab who had never thought of himself as anything but Punjabi suddenly found himself on the Pakistani side of a line and was told to leave everything he owned. Meanwhile, a Muslim family in Delhi who had lived there for five generations was told their home now belonged to someone else. Independence created new countries — but it also destroyed old lives.</p>
+  <p class="para-standard">Independence did deliver real things. Schools, hospitals, and universities were built. Cultural traditions that colonialism had suppressed were revived. The United Nations grew from 51 members in 1945 to over 140 by 1975, giving formerly colonized nations a voice in world affairs for the first time. The simple fact of governing oneself — making one's own mistakes, flying one's own flag — mattered enormously to people who had spent their entire lives under foreign control. Independence was not everything people had hoped. But it was not nothing.</p>
+  <p class="para-simple">Independence did bring real gains. New schools, hospitals, and universities were built. Languages and traditions that colonialism had suppressed came back. The United Nations grew as more countries joined. New nations had a voice in world affairs for the first time. And the simple fact of governing yourself — making your own decisions — mattered deeply to people who had never had that before. Independence was not everything people dreamed of. But it was not nothing, either.</p>
 
-  <p class="para-simple">When new borders were drawn, real people had to leave their homes with only what they could carry. In India and Pakistan, 10 to 20 million people were forced to move in just a few weeks. Trains carrying refugees were attacked. Entire villages were killed. People who had been neighbors for generations suddenly became enemies. A family that had lived somewhere for generations might be told to leave because the new border put them on the "wrong" side. Independence created new countries — but it destroyed millions of lives in the process.</p>
-
-  <h3 class="chapter-heading">THE COLD WAR CHOOSING SIDES</h3>
-
-  <p class="para-standard">Every newly independent nation had to navigate a world divided between two superpowers. The United States and Soviet Union were locked in the <span class="vocab" tabindex="0">Cold War<span class="tip">The tense political and military competition between the United States and Soviet Union from 1945 to 1991, which played out in countries around the world.</span></span> — a global competition between capitalism and communism that neither side was willing to lose. For a new nation like the Congo or Vietnam, this meant that any choice — whom to trade with, whose military advisors to accept, which political party to support — was interpreted by one superpower or the other as a declaration of loyalty or a threat. The CIA helped overthrow elected governments in Iran (1953), Guatemala (1954), and the Congo (1960). Soviet intelligence did the same on their side. <span class="vocab" tabindex="0">Geopolitics<span class="tip">The way countries use geography and global power to advance their political and military interests.</span></span> — the game of global power — treated newly independent nations as pieces to be moved, not countries with the right to choose their own path.</p>
-
-  <p class="para-simple">Every new nation also had to deal with two superpowers — the United States and the Soviet Union — who each wanted them on their side. This global competition between capitalism and communism was called the Cold War. For a new country like the Congo or Vietnam, every decision was seen by one superpower as either a threat or a sign of loyalty. The United States helped overthrow elected governments in Iran, Guatemala, and the Congo when those governments made choices America did not like. The Soviet Union did the same. New countries that were supposed to be free often found their choices controlled by outside powers anyway.</p>
-
-  <!-- ART SPOTLIGHT — placed here after the human impact of Cold War interference has landed -->
-  <div class="brain-break as-break section-animate">
-    <span class="bb-label">ART SPOTLIGHT</span>
-    <figure>
-      <!--
-        FILENAME: S2L07_KahloWounded.jpg
-        PLACE IN: images/S2/L07/
-        PRIORITY: ENHANCEMENT
-        FIND: "The Wounded Deer" (El venado herido) — Frida Kahlo, 1946, oil painting showing deer with Kahlo's face pierced by arrows in a forest
-        SEARCH: Frida Kahlo Wounded Deer 1946 painting Wikimedia Commons
-        LINK: Suggested: https://commons.wikimedia.org/wiki/File:The_Wounded_Deer.jpg
-      -->
-      <img src="images/S2/L07/S2L07_KahloWoundedDeer.jpg" alt="The Wounded Deer — Frida Kahlo, 1946, showing a deer with the artist's face pierced by arrows" class="as-image">
-      <figcaption class="as-caption">
-        The Wounded Deer (El venado herido) — Frida Kahlo, 1946<br>
-        Mexican painter Frida Kahlo painted this self-portrait during the same years that decolonization movements were accelerating across Latin America, Asia, and Africa. Kahlo, who had faced Mexican colonialism's legacies throughout her own life, became an icon for resistance movements worldwide.
-      </figcaption>
-    </figure>
-    <p class="as-fact">Kahlo completed this painting while recovering from her eighteenth surgery — and despite the pain, she deliberately left the deer's expression calm rather than anguished. She later said the calm face was intentional: suffering was not the same as defeat. Resistance movements across the decolonizing world adopted Kahlo's images as symbols of survival precisely because her work showed that a person could be wounded and still refuse to break.</p>
-  </div>
-
-  <h3 class="chapter-heading">WOMEN AND INDEPENDENCE MOVEMENTS</h3>
-
-  <p class="para-standard">Across the decolonizing world, women played central roles in independence movements — organizing, fighting, and sacrificing — and then found themselves pushed aside when independence arrived. In Algeria, women served as fighters, messengers, and bomb carriers for the FLN. In India, women marched, went to prison, and led boycotts against British goods. In Ghana, market women organized economic protests that destabilized British rule. But in country after country, the constitutions and governments that emerged after independence concentrated power in the hands of men. The promise of liberation — which many women understood to include liberation from patriarchy as well as colonialism — was only partially kept.</p>
-
-  <p class="para-simple">Women were central to independence movements everywhere. In Algeria, women fought and risked their lives for the independence cause. In India, women marched and went to prison. In Ghana, women organized economic protests. But when independence came, the new governments were mostly run by men. Women who had fought for freedom often found that the new country did not give them equal rights. Independence from colonialism did not automatically mean equality at home.</p>
-
+  <p class="real-world para-standard">Real-world connection: Many of the conflicts that look like "civil wars" or "ethnic conflicts" in today's news are rooted in colonial borders, Cold War interference, and economic systems inherited from the decolonization era.</p>
+  <p class="real-world para-simple">Real-world connection: Many conflicts in today's news are rooted in the colonial borders, Cold War interference, and economic problems left over from the decolonization era.</p>
 </section>
 
-<!-- ===========================
-     SECTION 4: BROKEN PROMISES
-     =========================== -->
-<section class="content-section section-animate" id="legacy">
-  <h2 class="section-heading">BROKEN PROMISES — WHAT INDEPENDENCE DID AND DID NOT DELIVER</h2>
-
-  <div class="img-inset">
+<!-- ART SPOTLIGHT -->
+<div class="brain-break as-break section-animate">
+  <span class="bb-label">ART SPOTLIGHT</span>
+  <figure>
     <!--
-      FILENAME: S2L07_AfricanCoupSoldiers.jpg
+      FILENAME: S2L07_FannonPortrait.jpg
       PLACE IN: images/S2/L07/
-      PRIORITY: SUPPORTING
-      FIND: African military coup soldiers taking over government building, 1960s Africa, tanks or soldiers outside government building
-      SEARCH: African military coup 1960s soldiers government takeover Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Coups_in_Africa
+      PRIORITY: ENHANCEMENT
+      FIND: "Third World" — Renato Guttuso, 1968, painting depicting colonial subjects and liberation — OR use Jacob Lawrence "Toussaint L'Ouverture" series panel, 1937-38
+      SEARCH: Jacob Lawrence Toussaint L'Ouverture series panel 1937 painting Wikimedia Commons
+      LINK: Suggested: https://commons.wikimedia.org/wiki/Jacob_Lawrence
+      NOTE: Jacob Lawrence painted the Toussaint L'Ouverture series as a young Black American artist; connects to themes of anti-colonial resistance and is held in major public collections.
     -->
-    <figure>
-      <img src="images/S2/L07/S2L07_AfricanCoupSoldiers.jpg" alt="Soldiers during a military coup in an African nation, 1960s">
-      <figcaption class="img-caption">Military coups replaced elected governments across newly independent Africa and Asia in the 1960s and 1970s — often with quiet support from Cold War powers. (Wikimedia Commons)</figcaption>
-    </figure>
-  </div>
-
-  <h3 class="chapter-heading">THE PATTERN OF COUPS</h3>
-
-  <p class="para-standard">Between 1960 and 1980, at least 30 military coups toppled governments in newly independent African nations alone. The reasons were not random. Colonial powers had built colonial armies to suppress local populations — not to guard democratic elections. When independence came, these armies were the most organized and powerful institutions in the country. Civilian governments were new, untested, and often politically fractured because they represented populations that colonialism had deliberately divided. When an elected leader faced economic crisis or political opposition — and nearly all of them did — the military often stepped in. Sometimes a coup had Cold War backing. Sometimes it did not. The result was the same: the democratic promise of independence, which people had fought and died for, was erased. <span class="vocab" tabindex="0">Neo-colonialism<span class="tip">A situation where a country is officially independent but its economy is still controlled by wealthier foreign nations.</span></span> operated alongside these coups: foreign corporations kept extracting the country's resources under new political arrangements, just with local strongmen instead of colonial administrators.</p>
-
-  <p class="para-simple">Between 1960 and 1980, at least 30 military coups overthrew elected governments in Africa alone. This was not a coincidence. Colonial powers had trained armies to control people — not to support democracy. When independence came, those armies were the strongest organizations in the country. When elected governments faced problems — and they all did — the military often took over. Cold War powers sometimes helped these coups happen. The democracy people had fought for was destroyed again and again. And foreign companies kept taking the country's resources just as before — only now there was a local military leader in charge instead of a European colonial governor.</p>
-
-  <div class="clearfix"></div>
-
-  <h3 class="chapter-heading">THE NATION-STATE PROBLEM</h3>
-
-  <p class="para-standard">The concept of a <span class="vocab" tabindex="0">nation-state<span class="tip">A country where the borders and the government are supposed to reflect a single people or national identity.</span></span> — a country where borders match a single people or national identity — was a European invention that did not map cleanly onto the rest of the world. In Europe, nation-states had been built over centuries, often through wars that sorted populations, expelled minorities, and created reasonably homogeneous national identities. In Africa and Asia, decolonization created nation-states almost overnight out of territories that contained dozens of ethnic groups, languages, and religious communities — all inside borders drawn by foreigners for entirely different purposes. The challenge of building national unity out of this diversity was real. It was not impossible — many newly independent nations succeeded over time — but it was a problem that European colonialism had created and that the new governments were left to solve alone.</p>
-
-  <p class="para-simple">A nation-state is supposed to be a country where the borders match one unified people. But in Europe, these identities were built over centuries of wars and migrations. In Africa and Asia, new countries were created overnight, inside borders drawn by Europeans that put dozens of different ethnic groups, languages, and religions together. Building a sense of national unity out of all that diversity was enormously difficult. It was a problem colonialism had created — and the new governments had to solve it themselves, with very little money and very little time.</p>
-
-  <h3 class="chapter-heading">WHAT INDEPENDENCE DID DELIVER</h3>
-
-  <p class="para-standard">Despite all the complications, the decolonization era produced real and lasting achievements. Schools, hospitals, roads, and universities were built. Countries that had never trained a generation of their own doctors or lawyers began doing so. Languages and cultural traditions that colonialism had tried to suppress were revived and celebrated. The United Nations, which grew from 51 members in 1945 to 144 members by 1975, became a genuine forum where formerly colonized nations had a voice. Pan-African and Pan-Asian solidarity movements created new forms of international cooperation. And the sheer fact of independence — of governing oneself, of flying one's own flag, of making one's own mistakes — mattered enormously to people who had lived under foreign rule. Independence did not deliver everything that people had hoped. But it was not nothing.</p>
-
-  <p class="para-simple">Despite all the problems, independence brought real gains. New schools, hospitals, universities, and roads were built. Languages and traditions that colonialism had tried to destroy came back. The United Nations grew as more countries joined and had a real voice in world affairs. Pan-African and Pan-Asian movements created new connections between countries that had been separated by colonialism. And the simple fact of self-rule — of governing your own country, making your own choices — mattered deeply to people who had never had that before. Independence was not perfect. But it was not nothing either.</p>
-
-  <!--
-    FILENAME: S2L07_AfricanUnionFlags.jpg
-    PLACE IN: images/S2/L07/
-    PRIORITY: SUPPORTING
-    FIND: African Unity or pan-African congress meeting, 1960s-1970s, leaders of African nations gathered, or flags of African nations
-    SEARCH: Organisation African Unity OAU 1963 Addis Ababa founding meeting Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Organisation_of_African_Unity
-  -->
-  <figure>
-    <img src="images/S2/L07/S2L07_OAUFounding.jpg" alt="Founding of the Organisation of African Unity, Addis Ababa, 1963" class="img-full">
-    <figcaption class="img-caption">The founding of the Organisation of African Unity (OAU) in Addis Ababa, Ethiopia, May 1963 — an attempt by newly independent African nations to coordinate their political futures and resist external interference. (Wikimedia Commons)</figcaption>
+    <img src="images/S2/L07/S2L07_LawrenceToussaint.jpg" alt="Toussaint L'Ouverture series panel — Jacob Lawrence, 1937-38" class="as-image">
+    <figcaption class="as-caption">
+      Toussaint L'Ouverture Series, Panel 36 &mdash; Jacob Lawrence, 1938<br>
+      Lawrence painted this 41-panel series documenting the Haitian Revolution leader Toussaint L'Ouverture at age 21. The series is held in the Amistad Research Center in New Orleans.
+    </figcaption>
   </figure>
+  <p class="as-fact">Lawrence painted the entire Toussaint series using only four colors — black, white, red, and yellow — because he could not afford more paint. The limitation became a visual signature: the same four colors, used in dozens of variations, gave the series a unity that art critics later called one of the most powerful examples of storytelling through constraint in 20th-century American art.</p>
+</div>
 
-</section>
-
-<!-- ===========================
-     PRIMARY SOURCE
-     =========================== -->
-<section class="content-section section-animate primary-source" id="primary-source">
-  <span class="ps-label">PRIMARY SOURCE MOMENT</span>
+<!-- PRIMARY SOURCE -->
+<div class="primary-source section-animate" id="primary-source-moment">
+  <p class="ps-label">PRIMARY SOURCE MOMENT</p>
   <div class="ps-visual">
     <figure>
       <!--
         FILENAME: S2L07_NkrumahSpeech.jpg
         PLACE IN: images/S2/L07/
         PRIORITY: ESSENTIAL
-        FIND: Kwame Nkrumah addressing crowd or giving speech at independence ceremony or pan-African meeting, 1957-1960
+        FIND: Kwame Nkrumah giving a speech or addressing a crowd, 1957-1960 — at independence ceremony, rally, or pan-African meeting
         SEARCH: Kwame Nkrumah speech independence address photograph 1957 Wikimedia Commons
         LINK: Suggested: https://commons.wikimedia.org/wiki/Kwame_Nkrumah
       -->
-      <img src="images/S2/L07/S2L07_NkrumahSpeech.jpg" alt="Kwame Nkrumah addressing a crowd, circa 1957-1960">
-      <figcaption class="img-caption">Kwame Nkrumah addresses a crowd, circa 1957-1960. Wikimedia Commons.</figcaption>
+      <img src="images/S2/L07/S2L07_NkrumahSpeech.jpg" alt="Kwame Nkrumah addresses a crowd, circa 1957">
+      <figcaption>Kwame Nkrumah, circa 1957. Wikimedia Commons.</figcaption>
     </figure>
     <div>
-      <p class="ps-quote">"We have awakened. We will not sleep anymore. Today, from now on, there is a new African in the world! That new African is ready to fight his own battles and show that after all, the black man is capable of managing his own affairs. We are going to demonstrate to the world, to the other nations, that we are prepared to lay our own foundation."</p>
-      <p class="ps-attribution">— Kwame Nkrumah, Independence Address, Accra, Ghana, March 6, 1957</p>
-      <p class="ps-narrator">WHY THIS MATTERS: Nkrumah's speech was heard around the world — by independence movements from Algeria to Vietnam. Notice that he is not only celebrating freedom from Britain. He is making a larger argument: that the "black man is capable of managing his own affairs." This was a direct challenge to the racist foundation that had justified colonialism — the claim that non-European peoples needed European guidance. As you read this speech, consider: what specific promises is Nkrumah making? And given everything that happened in the following decade — the coups, the Cold War interference, the economic struggles — how would you judge whether those promises were kept?</p>
+      <p class="ps-quote">"We have awakened. We will not sleep anymore. Today, from now on, there is a new African in the world. That new African is ready to fight his own battles and show that after all, the black man is capable of managing his own affairs. We are going to demonstrate to the world, to the other nations, that we are prepared to lay our own foundation."</p>
+      <p class="ps-attribution">&mdash; Kwame Nkrumah, Independence Address, Accra, Ghana, March 6, 1957</p>
+      <p class="ps-narrator">WHY THIS MATTERS: Nkrumah is not only celebrating freedom from Britain. He is directly challenging the racist argument that had justified colonialism for centuries — that non-European peoples needed European guidance to govern themselves. Notice what he is promising: not just independence, but proof. As you read this, consider: what specific promises does Nkrumah make? And given what happened in the Congo, in Algeria, in Ghana itself — how would you judge whether independence delivered what he described?</p>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ===========================
-     THEN AND NOW
-     =========================== -->
+<!-- THEN AND NOW -->
 <div class="brain-break tn-break section-animate" id="then-now">
   <span class="bb-label">THEN AND NOW</span>
-  <p class="tn-payoff">THE BORDERS DRAWN IN 1884 STILL DIVIDE PEOPLE TODAY — BUT THE PEOPLE ARE FIGHTING BACK ON THEIR OWN TERMS.</p>
-
+  <p class="tn-payoff">THE BORDERS AND PROBLEMS CREATED BY COLONIALISM ARE STILL HERE — BUT SO IS THE RESISTANCE THAT FOUGHT AGAINST THEM.</p>
   <div class="tn-pair">
     <div class="tn-item">
       <span class="tn-era-label">1957</span>
       <!--
-        FILENAME: S2L07_ThenGhanaIndependence.jpg
+        FILENAME: S2L07_ThenNkrumahCrowd.jpg
         PLACE IN: images/S2/L07/
         PRIORITY: ESSENTIAL
-        FIND: Ghana independence celebration crowd 1957, Accra, people celebrating, joyful crowds
-        SEARCH: Ghana independence 1957 Accra celebration crowd Wikimedia Commons
-        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:History_of_Ghana
+        FIND: Crowd at Ghana independence or Nkrumah speaking to large gathering, 1957 — different image from header if possible
+        SEARCH: Nkrumah Ghana independence 1957 crowd Accra Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Kwame_Nkrumah
       -->
-      <img src="images/S2/L07/S2L07_ThenGhanaIndependence.jpg" alt="Crowds celebrating Ghana's independence, Accra, 1957">
-      <p class="tn-caption">Crowds in Accra celebrating Ghana's independence, 1957. Wikimedia Commons.</p>
+      <img src="images/S2/L07/S2L07_ThenNkrumahCrowd.jpg" alt="Kwame Nkrumah and the crowd at Ghana's independence, 1957">
+      <p class="tn-caption">Nkrumah at Ghana's independence ceremony, 1957. Wikimedia Commons.</p>
     </div>
     <div class="tn-item">
       <span class="tn-era-label">NOW</span>
@@ -1247,158 +449,121 @@ body.simplified .para-simple { display: block; }
         FILENAME: S2L07_NowAfricanUnionSummit.jpg
         PLACE IN: images/S2/L07/
         PRIORITY: ESSENTIAL
-        FIND: African Union summit meeting, leaders gathered, modern African heads of state meeting, recent year — Wikimedia Commons or CC-licensed press photography
+        FIND: African Union summit, recent years (2015-present) — African heads of state gathered, flags of African nations, leadership and agency in modern context
         SEARCH: African Union summit leaders 2020s Wikimedia Commons CC license
         LINK: Suggested: https://commons.wikimedia.org/wiki/African_Union
+        LICENSE: CC-licensed photography acceptable if Wikimedia has no strong recent image. Note license.
       -->
-      <img src="images/S2/L07/S2L07_NowAfricanUnionSummit.jpg" alt="African Union summit, leaders of African nations, recent years">
-      <p class="tn-caption">African heads of state at a recent African Union summit — independent nations choosing their collective future. Wikimedia Commons / CC license.</p>
+      <img src="images/S2/L07/S2L07_NowAfricanUnionSummit.jpg" alt="African Union summit with heads of state, recent years">
+      <p class="tn-caption">African heads of state at a recent African Union summit — independent nations choosing their collective future. Wikimedia Commons / CC.</p>
     </div>
   </div>
-
   <div class="tn-text-block">
     <h3>THEN</h3>
-    <p>In 1957, Ghana became the first sub-Saharan African colony to gain independence. In the photograph, crowds in Accra fill the streets in genuine celebration. They are not celebrating a gift from Britain. They are celebrating something they had fought for, organized for, and sacrificed for across decades. Kwame Nkrumah stood before them and promised a future they would build themselves.</p>
-
+    <p>In 1957, Nkrumah stood before a crowd in Accra and promised that Africa would prove itself. He was speaking to his own people — and to the colonial world watching. The independence celebration was a declaration: that the argument used to justify colonialism was a lie, and that African nations would govern themselves.</p>
     <h3>NOW</h3>
-    <p>Today, 55 African nations send representatives to the African Union, a continental organization that coordinates political, economic, and security decisions across Africa. Its motto is "An Integrated, Prosperous and Peaceful Africa." The African Union operates entirely on African terms, with African leadership — something that would have been unimaginable when European powers were dividing the continent in 1884.</p>
-
+    <p>Today, 55 African nations send representatives to the African Union, a continental organization that coordinates political, economic, and security decisions entirely on African terms. Its existence would have been unimaginable when European powers were dividing the continent at the Berlin Conference in 1884.</p>
     <h3>CONNECTION</h3>
-    <p>The problems that decolonization created — colonial borders, extracted economies, Cold War interference — did not disappear with independence. Many of them are still present today. But what also continued was the determination that Nkrumah represented in 1957: the belief that African nations have the right and the capacity to shape their own futures. The African Union is imperfect and faces serious challenges. But its existence is the direct consequence of the independence movements of the 20th century. The work Nkrumah's generation started is still unfinished — and still being carried forward.</p>
-
-    <p>When you think about what happened in the Congo, India, Algeria, and Palestine — where the promises of independence ran into Cold War interference, colonial borders, and economic dependency — what would you say is the most important unfinished task left by the decolonization era?</p>
+    <p>The problems that decolonization left behind — colonial borders, extracted economies, Cold War interference, fragile governments — did not disappear with independence. Many are present in today's headlines. But what also continued was exactly what Nkrumah represented in 1957: the determination that people have the right to govern themselves, and the willingness to keep fighting for it. The work his generation started is still unfinished.</p>
+    <p>When you think about India, the Congo, Algeria, and the dozens of other nations that became free and then faced coups, Cold War manipulation, and economic dependency — what would you say is the most important thing the decolonization era proved?</p>
   </div>
 </div>
 
-</div><!-- end .page-body -->
+</main>
 
-<!-- ===========================
-     FOOTER
-     =========================== -->
-<footer class="site-footer">
-  <p>World History &mdash; Semester 2 &mdash; Lesson 7</p>
-  <p>Day 7: Decolonization and Nation-Building</p>
-  <p>Standard 10.10</p>
-</footer>
+<footer>WORLD HISTORY &mdash; SEMESTER 2, LESSON 07 &mdash; DECOLONIZATION AND NATION-BUILDING</footer>
+</div>
 
-<!-- ===========================
-     JAVASCRIPT BLOCK
-     =========================== -->
 <script>
-// 1. READING PROGRESS BAR
-(function() {
-  var bar = document.getElementById('reading-progress');
-  window.addEventListener('scroll', function() {
-    var scrollTop = window.scrollY || document.documentElement.scrollTop;
-    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    bar.style.width = progress + '%';
-  }, { passive: true });
+(function(){
+  var bar=document.getElementById('reading-progress');
+  window.addEventListener('scroll',function(){
+    var scrollTop=window.scrollY||document.documentElement.scrollTop;
+    var docHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    var progress=docHeight>0?(scrollTop/docHeight)*100:0;
+    bar.style.width=progress+'%';
+  },{passive:true});
 })();
 
-// 2. LEXILE TOGGLE
-document.getElementById('lexile-toggle').addEventListener('click', function() {
+document.getElementById('lexile-toggle').addEventListener('click',function(){
   document.body.classList.toggle('simplified');
-  this.textContent = document.body.classList.contains('simplified') ? 'STANDARD TEXT' : 'SIMPLIFY TEXT';
+  this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';
 });
 
-// 3. VOCABULARY TOOLTIP HANDLER
-function repositionTip(el) {
-  var tip = el.querySelector('.tip');
-  if (!tip) return;
-  tip.style.left = '50%';
-  tip.style.transform = 'translateX(-50%)';
-  var rect = tip.getBoundingClientRect();
-  if (rect.left < 8) {
-    var shift = 8 - rect.left;
-    tip.style.transform = 'translateX(calc(-50% + ' + shift + 'px))';
-  } else if (rect.right > window.innerWidth - 8) {
-    var shift = rect.right - (window.innerWidth - 8);
-    tip.style.transform = 'translateX(calc(-50% - ' + shift + 'px))';
+function repositionTip(el){
+  var tip=el.querySelector('.tip');
+  if(!tip)return;
+  tip.style.left='50%';
+  tip.style.transform='translateX(-50%)';
+  var rect=tip.getBoundingClientRect();
+  if(rect.left<8){
+    var shift=8-rect.left;
+    tip.style.transform='translateX(calc(-50% + '+shift+'px))';
+  }else if(rect.right>window.innerWidth-8){
+    var shift=rect.right-(window.innerWidth-8);
+    tip.style.transform='translateX(calc(-50% - '+shift+'px))';
   }
 }
 
-document.querySelectorAll('.vocab').forEach(function(el) {
-  el.setAttribute('tabindex', '0');
-  el.addEventListener('click', function(e) {
+document.querySelectorAll('.vocab').forEach(function(el){
+  el.setAttribute('tabindex','0');
+  el.addEventListener('click',function(e){
     e.stopPropagation();
-    document.querySelectorAll('.vocab.active').forEach(function(v) {
-      if (v !== el) v.classList.remove('active');
-    });
+    document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});
     el.classList.toggle('active');
-    if (el.classList.contains('active')) repositionTip(el);
+    if(el.classList.contains('active'))repositionTip(el);
   });
-  el.addEventListener('focus', function() {
-    el.classList.add('active');
-    repositionTip(el);
-  });
-  el.addEventListener('blur', function() {
-    el.classList.remove('active');
-  });
-  el.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      el.classList.toggle('active');
-      if (el.classList.contains('active')) repositionTip(el);
-    }
-    if (e.key === 'Escape') el.classList.remove('active');
+  el.addEventListener('focus',function(){el.classList.add('active');repositionTip(el);});
+  el.addEventListener('blur',function(){el.classList.remove('active');});
+  el.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);}
+    if(e.key==='Escape')el.classList.remove('active');
   });
 });
 
-document.addEventListener('click', function() {
-  document.querySelectorAll('.vocab.active').forEach(function(v) {
-    v.classList.remove('active');
-  });
+document.addEventListener('click',function(){
+  document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});
 });
 
-// 4. INTERSECTION OBSERVER — TOC + NAV ACTIVE STATES
-const tocObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    const id = entry.target.getAttribute('id');
-    const tocLink = document.querySelector('.toc-sidebar a[href="#' + id + '"]');
-    const navLink = document.querySelector('.section-nav a[href="#' + id + '"]');
-    if (entry.isIntersecting) {
-      if (tocLink) tocLink.classList.add('active');
-      if (navLink) navLink.classList.add('active');
-    } else {
-      if (tocLink) tocLink.classList.remove('active');
-      if (navLink) navLink.classList.remove('active');
+const tocObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    const id=entry.target.getAttribute('id');
+    const tocLink=document.querySelector('.toc-sidebar a[href="#'+id+'"]');
+    const navLink=document.querySelector('.section-nav a[href="#'+id+'"]');
+    if(entry.isIntersecting){
+      if(tocLink)tocLink.classList.add('active');
+      if(navLink)navLink.classList.add('active');
+    }else{
+      if(tocLink)tocLink.classList.remove('active');
+      if(navLink)navLink.classList.remove('active');
     }
   });
-}, { threshold: 0.25 });
+},{threshold:.25});
+document.querySelectorAll('section[id], div[id="then-now"]').forEach(el=>tocObserver.observe(el));
 
-document.querySelectorAll('section[id], div[id="then-now"]').forEach(el => tocObserver.observe(el));
-
-// 5. SECTION ENTRANCE ANIMATION
-(function() {
-  var animObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
+(function(){
+  var animObserver=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
         entry.target.classList.add('visible');
         animObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.section-animate').forEach(function(el) {
-    animObserver.observe(el);
-  });
+  },{threshold:.08});
+  document.querySelectorAll('.section-animate').forEach(function(el){animObserver.observe(el);});
 })();
 
-// 6. IMAGE FADE-IN HANDLER
-document.querySelectorAll('img').forEach(function(img) {
-  if (img.complete && img.naturalWidth > 0) {
+document.querySelectorAll('img').forEach(function(img){
+  if(img.complete&&img.naturalWidth>0){
     img.classList.add('loaded');
-  } else {
-    img.addEventListener('load', function() {
-      img.classList.add('loaded');
-    });
-    img.addEventListener('error', function() {
-      img.style.opacity = '0.15';
-      img.style.border = '2px dashed rgba(255,255,255,0.2)';
-    });
+  }else{
+    img.addEventListener('load',function(){img.classList.add('loaded');});
+    img.addEventListener('error',function(){img.style.opacity='0.15';img.style.border='2px dashed rgba(255,255,255,0.2)';});
   }
 });
 </script>
+</body>
+</html>
 
 <!--
   IMAGE CHECK: Open browser DevTools (F12), go to Console, paste and run:
@@ -1411,6 +576,3 @@ document.querySelectorAll('img').forEach(function(img) {
     }
   });
 -->
-
-</body>
-</html>
