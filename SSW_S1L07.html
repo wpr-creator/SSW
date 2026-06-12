@@ -745,7 +745,8 @@
       color: var(--blood);
       margin-bottom: 8px;
     }
-footer {
+
+    footer {
       background: #141410;
       color: #d8c7ac;
       text-align: center;
@@ -1150,7 +1151,8 @@ footer {
       </div>
     </div>
   </main>
-<footer>
+
+  <footer>
     WORLD HISTORY • SEMESTER 1 • LESSON 7 • THE HUMAN COST OF WWI
   </footer>
 
@@ -1251,7 +1253,7 @@ footer {
             animObserver.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.08 });
+      }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
       document.querySelectorAll('.section-animate').forEach(function(el) { animObserver.observe(el); });
     })();
 
