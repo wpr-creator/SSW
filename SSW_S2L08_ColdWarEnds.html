@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSW S2L08 : THE COLD WAR ENDS</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#c01818;
+  --red-dark:#8a0e0e;
+  --black:#0a0a0a;
+  --charcoal:#242424;
+  --gray:#585858;
+  --cream:#f2eee6;
+  --gold:#d4a820;
+  --blue:#173a70;
+  --vocab:#b03030;
+  --green:#044d37;
+  --lime:#d7ff3f;
+  --purple:#32134d;
+  --pink:#ff4fd8;
+  --cyan:#1bd6ff;
+  --orange:#ff8a21;
+  --silver:#c8d0d8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}
+body{background:radial-gradient(ellipse at top,#1a1a1a 0%,#050505 70%);font-family:'Atkinson Hyperlegible',Arial,sans-serif;font-size:18px;line-height:1.85;color:var(--charcoal);max-width:100%;overflow-x:hidden}
+#reading-progress{position:fixed;top:0;left:0;height:4px;width:0%;background:var(--red);z-index:9999;transition:width .1s linear}
+.page-wrap{width:min(920px,100%);margin:0 auto;background:var(--cream);box-shadow:0 0 100px rgba(0,0,0,.95);border-left:6px solid var(--black);border-right:6px solid var(--black);overflow-x:hidden}
+.site-header{position:relative;min-height:455px;overflow:hidden;background:var(--black);display:flex;align-items:center;text-align:center}
+.header-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;filter:grayscale(.5) contrast(1.15)}
+.site-header:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.12),rgba(0,0,0,.75) 55%,rgba(0,0,0,.97))}
+.header-inner{position:relative;z-index:2;max-width:820px;margin:0 auto;padding:56px 34px 50px}
+.course-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.page-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,8vw,80px);font-weight:800;line-height:.98;color:#fff;text-transform:uppercase;letter-spacing:.04em;text-shadow:2px 5px 22px rgba(0,0,0,.9);margin-bottom:30px}
+.eq-banner{display:inline-block;background:rgba(192,24,24,.92);color:#fff;border:3px solid var(--gold);border-left-width:8px;border-right-width:8px;padding:18px 28px;max-width:760px;font-weight:700;font-size:20px;line-height:1.45;text-align:left}
+.eq-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#ffe58a;margin-bottom:8px}
+.section-nav{position:sticky;top:4px;z-index:100;display:flex;flex-wrap:wrap;justify-content:center;background:#151515;border-bottom:4px solid var(--red);overflow-x:auto}
+.section-nav a{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#e6e6e6;text-decoration:none;padding:14px 12px;border-bottom:4px solid transparent;margin-bottom:-4px;white-space:nowrap}
+.section-nav a:hover{color:#fff;border-bottom-color:var(--gold)}
+.section-nav a.active{color:#fff;border-bottom-color:var(--gold);background:rgba(192,24,24,.42)}
+#lexile-toggle{display:block;margin:20px auto 28px;padding:10px 24px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:2px solid var(--red);background:transparent;color:var(--red);transition:background .2s,color .2s}
+#lexile-toggle:hover{background:var(--red);color:#fff}
+.para-simple{display:none}body.simplified .para-standard{display:none}body.simplified .para-simple{display:block}
+.toc-sidebar{position:fixed;left:calc(50% - 570px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;font-family:'Barlow Condensed',sans-serif;z-index:50;background:rgba(10,10,10,.92);border-right:2px solid rgba(212,168,32,.45)}
+.toc-sidebar .toc-label{display:block;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.toc-sidebar a{display:block;color:#e6e6e6;text-decoration:none;padding:4px 0;font-size:11px;letter-spacing:.05em;text-transform:uppercase;transition:color .2s}
+.toc-sidebar a.active,.toc-sidebar a:hover{color:var(--gold);font-weight:700}
+main{max-width:820px;width:100%;margin:0 auto;padding:0 28px 68px}
+.intro-section{padding:48px 0 30px}
+.intro-section p{font-size:19px;line-height:1.9;margin-bottom:18px}
+.content-section{padding:50px 0 28px;border-top:3px double rgba(88,88,88,.45)}
+.section-kicker{display:block;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.section-heading{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,48px);line-height:1.05;font-weight:800;color:var(--black);text-transform:uppercase;border-left:7px solid var(--red);padding-left:16px;margin-bottom:26px}
+p{margin-bottom:20px;color:var(--charcoal)}
+.real-world{background:#dedad0;border-left:5px solid var(--red);padding:17px 21px;margin:30px 0;font-weight:700}
+.vocab{color:var(--vocab);text-decoration:underline dotted var(--vocab);cursor:help;position:relative;font-weight:700}
+.vocab-red{color:var(--vocab);font-weight:700}
+.vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#050505;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:10;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;font-family:'Atkinson Hyperlegible',Arial,sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.8);border:1px solid var(--red)}
+.vocab:hover .tip,.vocab.active .tip{display:block}.vocab:focus{outline:2px solid var(--gold);outline-offset:2px;border-radius:2px}
+figure{margin:32px 0}figure img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+figcaption{font-size:13px;font-style:italic;color:#4b4b4b;margin-top:8px;line-height:1.45}
+.img-right{float:right;width:42%;margin:6px 0 20px 28px}.img-left{float:left;width:42%;margin:6px 28px 20px 0}
+.clearfix:after{content:"";display:table;clear:both}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0}
+.compare-card{padding:22px 24px;color:#fff;border-top:5px solid var(--gold)}
+.dark-card{background:#1a1a1a}.blue-card{background:var(--blue)}.red-card{background:var(--red-dark)}
+.compare-card h3{font-family:'Barlow Condensed',sans-serif;color:#ffe58a;font-size:22px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.compare-card p{color:#fff;font-size:16px;line-height:1.7;margin:0}
+.timeline-wrap{max-width:820px;width:100%;margin:0 auto 36px;padding:0 28px}
+.timeline-title{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--red);margin:0 0 12px;text-align:center}
+.timeline{margin:0;padding:22px;background:#dedad0;border-top:4px solid var(--red);border-bottom:4px solid var(--red);display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:100%}
+.timeline-event{position:relative;border-left:3px solid var(--gold);padding-left:12px}
+.timeline-date{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--red);letter-spacing:.08em;line-height:1.1;margin-bottom:5px}
+.timeline-event p{font-size:15px;line-height:1.55;margin-bottom:0}
+.primary-source{background:#dedad0;border-left:7px solid var(--red);padding:30px 34px;margin:38px 0;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.ps-visual{display:grid;grid-template-columns:minmax(200px,36%) 1fr;gap:24px;align-items:start}
+.ps-visual figure{margin:0}.ps-visual img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.ps-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.ps-quote{font-size:22px;font-style:italic;line-height:1.65;color:var(--black);margin-bottom:14px}
+.ps-attribution{font-size:13px;font-style:italic;color:#444;margin-bottom:12px}
+.ps-narrator{border-top:1px solid #aaa;padding-top:12px;font-size:15px;line-height:1.6;font-weight:700;color:#222}
+.brain-break{font-family:'Roboto Slab',serif;margin:44px -50px;padding:36px 50px;position:relative;overflow:hidden;max-width:calc(100% + 100px)}
+.bb-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.9}
+.bb-text{font-family:'Roboto Slab',serif;font-size:22px;font-weight:500;line-height:1.65;margin:0}
+.dyk-break{background:var(--green);color:#fff;border-left:6px solid var(--lime)}.dyk-break .bb-label{color:var(--lime)}.dyk-break p,.dyk-break span{color:#fff}
+.ff-break{background:#090909;color:#fff;padding:36px 40px;margin:44px -50px;border-top:3px solid var(--orange);border-bottom:3px solid var(--orange);text-align:center}
+.ff-break .bb-label{text-align:center;margin-bottom:8px;color:var(--orange)}
+.ff-context{font-family:'Roboto Slab',serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#fff1c4;text-align:center;margin-bottom:28px;opacity:.9;font-weight:700}
+.ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:24px}
+.ff-item{text-align:center;padding:8px 16px;max-width:180px}
+.ff-number{display:block;font-family:'Roboto Slab',serif;font-size:52px;font-weight:700;color:var(--orange);line-height:1;margin-bottom:8px}
+.ff-desc{display:block;font-family:'Roboto Slab',serif;font-size:13px;letter-spacing:.08em;color:#fff1c4;max-width:180px;margin:0 auto;line-height:1.5}
+.as-break{background:var(--purple);color:#fff;padding:44px 50px;margin:44px -50px;border-top:3px solid var(--pink);border-bottom:3px solid var(--pink);text-align:center}
+.as-break .bb-label{color:var(--pink)}.as-image{max-width:580px;width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(255,79,216,.75);box-shadow:0 8px 32px rgba(0,0,0,.55)}
+.as-caption{font-family:'Roboto Slab',serif;font-style:normal;font-size:14px;color:#ffe8fb;line-height:1.6;margin-bottom:28px;display:block}
+.as-fact{font-family:'Roboto Slab',serif;font-size:22px;font-weight:500;color:#fff;line-height:1.65;max-width:700px;margin:0 auto;text-align:center}
+.tn-break{background:#0d2342;color:#fff;padding:36px 50px;margin:30px -50px 0}
+.tn-break .bb-label{color:var(--cyan);text-align:center;display:block;margin-bottom:20px}
+.tn-payoff{font-family:'Roboto Slab',serif;font-size:clamp(22px,3.5vw,30px);font-weight:700;line-height:1.35;text-align:center;color:var(--cyan);margin-bottom:28px;max-width:720px;margin-left:auto;margin-right:auto}
+.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}.tn-item{text-align:center}
+.tn-era-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px;font-weight:700}
+.tn-item img{width:100%;display:block;border:2px solid rgba(27,214,255,.65)}.tn-caption{font-family:'Roboto Slab',serif;font-size:12px;font-style:italic;color:#e9fbff;margin-top:8px;line-height:1.4}
+.tn-text-block{margin-top:24px;border-top:1px solid rgba(27,214,255,.35);padding-top:20px}
+.tn-text-block h3{font-family:'Roboto Slab',serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--cyan);margin:18px 0 8px}
+.tn-text-block p{font-family:'Roboto Slab',serif;font-size:17px;line-height:1.65;margin-bottom:12px;color:#fff}
+img{opacity:0;transition:opacity .4s ease}img.loaded{opacity:1}
+.section-animate{opacity:0;transform:translateY(24px);transition:opacity .45s ease-out,transform .45s ease-out}
+.section-animate.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.section-animate{opacity:1;transform:none;transition:none}}
+footer{background:#050505;color:#d0d0d0;text-align:center;padding:24px 30px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.24em;text-transform:uppercase;border-top:5px solid var(--red)}
+@media(max-width:1100px){.toc-sidebar{display:none}}
+@media(max-width:880px){.page-wrap{border:0}main{padding:0 22px 50px}.timeline-wrap{padding:0 22px}.header-inner{padding:44px 24px 42px}.img-left,.img-right{float:none;width:100%;margin:24px 0}.two-col,.tn-pair,.timeline{grid-template-columns:1fr}.brain-break,.ff-break,.as-break,.tn-break{margin:36px 0;padding:28px 22px;max-width:100%}.section-nav a{font-size:11px;padding:11px 8px}}
+@media(max-width:700px){.ps-visual{grid-template-columns:1fr}}
+@media(max-width:600px){.page-title{font-size:42px}.section-heading{font-size:31px}.bb-text,.as-fact{font-size:18px}.ff-number{font-size:44px}}
+html,body{max-width:100%;overflow-x:hidden}.page-wrap{width:min(920px,100%);max-width:100%;overflow-x:hidden}main,.timeline-wrap{width:100%;max-width:820px}img,figure,.timeline,.primary-source,.two-col,.tn-pair{max-width:100%}img{height:auto}.section-nav{overflow-x:auto;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}.section-nav a{white-space:nowrap;flex:0 0 auto}
+.primary-source figcaption{color:#333}.primary-source .ps-quote{color:#0a0a0a}.primary-source .ps-label{color:var(--red)}.primary-source .ps-narrator{color:#222}
+.dyk-break,.dyk-break p,.dyk-break span,.ff-break,.ff-break p,.ff-break span,.as-break,.as-break p,.as-break span,.tn-break,.tn-break p,.tn-break span{color:#fff}
+.ff-context,.ff-desc{color:#fff1c4}.as-caption{color:#ffe8fb}.tn-caption{color:#e9fbff}
+@media(max-width:980px){.brain-break,.ff-break,.as-break,.tn-break{margin-left:0;margin-right:0;padding-left:28px;padding-right:28px;max-width:100%}}
+@media(max-width:880px){.brain-break,.ff-break,.as-break,.tn-break{margin:36px 0;padding:28px 22px}.tn-break{margin:30px 0 0}}
+</style>
+</head>
+<body>
+<div id="reading-progress"></div>
+<div class="page-wrap">
+
+<header class="site-header">
+  <!--
+    FILENAME: S2L08_BerlinWallFall.jpg
+    PLACE IN: images/S2/L08/
+    PRIORITY: ESSENTIAL
+    FIND: Fall of the Berlin Wall, November 9-10 1989 — crowds on top of the wall, people celebrating, Brandenburg Gate visible or wall being torn down
+    SEARCH: Berlin Wall fall November 1989 crowd celebration Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/File:Fall_of_the_Berlin_Wall_1989.jpg
+  -->
+  <img src="images/S2/L08/S2L08_BerlinWallFall.jpg" alt="Crowds celebrate atop the Berlin Wall, November 1989" class="header-bg">
+  <div class="header-inner">
+    <p class="course-label">World History &mdash; Semester 2 &mdash; Lesson 08 &mdash; Standard 10.9</p>
+    <h1 class="page-title">The Cold War<br>Ends</h1>
+    <div class="eq-banner">
+      <span class="eq-label">Essential Question</span>
+      Can a superpower collapse from the inside, and what happens to the world when it does?
+    </div>
+  </div>
+</header>
+
+<nav class="section-nav">
+  <a href="#introduction">INTRODUCTION</a>
+  <a href="#soviet-cracks">THE SYSTEM CRACKS</a>
+  <a href="#gorbachev">GORBACHEV'S GAMBLE</a>
+  <a href="#revolutions-1989">1989</a>
+  <a href="#dissolution">THE USSR DISSOLVES</a>
+  <a href="#primary-source-moment">SOURCE</a>
+  <a href="#then-now">THEN AND NOW</a>
+</nav>
+
+<aside class="toc-sidebar">
+  <span class="toc-label">ON THIS PAGE</span>
+  <a href="#introduction">Introduction</a>
+  <a href="#soviet-cracks">The System Cracks</a>
+  <a href="#gorbachev">Gorbachev's Gamble</a>
+  <a href="#revolutions-1989">1989</a>
+  <a href="#dissolution">The USSR Dissolves</a>
+  <a href="#primary-source-moment">Source</a>
+  <a href="#then-now">Then &amp; Now</a>
+</aside>
+
+<main>
+
+<div class="timeline-wrap">
+  <div class="timeline-title">THE END OF THE COLD WAR &mdash; 1985 TO 1991</div>
+  <div class="timeline">
+    <div class="timeline-event"><div class="timeline-date">1985</div><p>Mikhail Gorbachev becomes Soviet leader; introduces glasnost and perestroika.</p></div>
+    <div class="timeline-event"><div class="timeline-date">1989</div><p>Eastern European revolutions sweep Poland, Hungary, East Germany; Berlin Wall falls November 9.</p></div>
+    <div class="timeline-event"><div class="timeline-date">1990</div><p>Germany reunifies; Soviet republics begin declaring independence one by one.</p></div>
+    <div class="timeline-event"><div class="timeline-date">Aug 1991</div><p>Hardline coup attempt against Gorbachev fails; accelerates the collapse.</p></div>
+    <div class="timeline-event"><div class="timeline-date">Dec 1991</div><p>Gorbachev resigns; Soviet flag replaced by Russian flag over the Kremlin. USSR ceases to exist.</p></div>
+  </div>
+</div>
+
+<button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
+
+<!-- INTRODUCTION -->
+<section class="intro-section section-animate" id="introduction">
+  <p class="para-standard">On the night of November 9, 1989, a confused East German government spokesman announced at a press conference that citizens could cross the Berlin Wall freely — effective immediately. He meant it would happen eventually, with paperwork and waiting periods. But people watching on live television heard something different. They heard: now. Within hours, crowds gathered at the Wall. Border guards who had no orders stood aside. And then people started climbing. They stood on top of the most hated symbol of the Cold War and waved at each other across a border that had divided families, killed escapees, and split a city for 28 years. By midnight, people were swinging sledgehammers.</p>
+  <p class="para-simple">On November 9, 1989, a confused East German official announced on live TV that citizens could cross the Berlin Wall — immediately. He meant it would happen eventually. But people heard: now. Crowds rushed to the Wall. Guards stood aside. People climbed on top and waved at each other across a border that had divided families and killed people trying to cross for 28 years. By midnight, they were smashing it with sledgehammers.</p>
+  <p class="para-standard">What looked sudden had been building for years. The Soviet Union — the superpower that had faced the United States across every major crisis of the Cold War — was collapsing from the inside. Not from a military defeat. Not from a nuclear war. From its own contradictions.</p>
+  <p class="para-simple">What looked sudden had been building for years. The Soviet Union was not defeated in a war. It collapsed from the inside — from problems it could no longer hide or fix.</p>
+</section>
+
+<!-- SECTION 1: THE SYSTEM CRACKS -->
+<section class="content-section clearfix section-animate" id="soviet-cracks">
+  <span class="section-kicker">CHAPTER ONE</span>
+  <h2 class="section-heading">THE SYSTEM CRACKS</h2>
+
+  <!--
+    FILENAME: S2L08_SovietBreadLine.jpg
+    PLACE IN: images/S2/L08/
+    PRIORITY: ESSENTIAL
+    FIND: Soviet citizens waiting in a bread or food line, 1980s — long queue outside a store in Moscow or other Soviet city, showing economic shortage
+    SEARCH: Soviet bread line food shortage 1980s Moscow Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Economy_of_the_Soviet_Union
+  -->
+  <figure class="img-right">
+    <img src="images/S2/L08/S2L08_SovietBreadLine.jpg" alt="Soviet citizens waiting in a food line, 1980s">
+    <figcaption>Soviet citizens in a food line, 1980s. The Soviet economic system could not produce enough basic goods to meet the needs of its own population. Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard">By the early 1980s, the Soviet Union had serious structural problems it was hiding from the world and from itself. The <span class="vocab" tabindex="0">command economy<span class="tip">An economic system where the government controls all production, prices, and distribution rather than the market.</span></span> — in which the government decided what was produced, at what price, and in what quantities — had worked well enough to industrialize a poor country in the 1930s and win World War II in the 1940s. But by the 1980s it was failing. Factories produced quotas, not quality. Stores were stocked with goods nobody wanted and empty of goods everybody needed. The Soviet Union was secretly importing grain from the United States just to feed its own people.</p>
+  <p class="para-simple">By the early 1980s, the Soviet Union had serious hidden problems. Its command economy — where the government controlled all production — had worked in earlier decades. But by the 1980s it was failing. Factories made whatever met their quota, not what people actually needed. Stores had empty shelves. The Soviet Union was secretly buying grain from the United States to feed its own citizens.</p>
+
+  <p class="para-standard">The military budget was consuming roughly 25 percent of the Soviet GDP — an enormous share compared to the United States spending around 6 percent. The arms race was bankrupting the country. Soviet technology was falling behind. American consumers had personal computers, VCRs, and consumer goods the Soviet system simply could not match. Soviet citizens who picked up foreign radio broadcasts knew it. The leadership knew it too — but admitting failure was politically dangerous in a system built on the claim that communism was winning.</p>
+  <p class="para-simple">The Soviet military was spending about 25 percent of everything the country produced — just to keep up with the United States in the arms race. American consumers had personal computers and other modern goods the Soviet system could not produce. Soviet citizens who listened to foreign radio knew their country was falling behind. The leadership knew too — but admitting failure was dangerous in a system built on claiming that communism was winning.</p>
+
+  <p class="para-standard">The Soviet Union also controlled Eastern Europe through threat and force. It had crushed reform movements in Hungary in 1956 and Czechoslovakia in 1968 by sending in tanks. But these occupations cost money, generated international outrage, and required keeping millions of soldiers stationed abroad. The empire was becoming too expensive to maintain, and the people living inside it were running out of patience.</p>
+  <p class="para-simple">The Soviet Union also controlled Eastern Europe by force. It had sent tanks to crush reform movements in Hungary in 1956 and Czechoslovakia in 1968. But keeping troops in Eastern Europe cost money the USSR did not have, and the people living under Soviet control were losing patience. The empire was too expensive to hold together.</p>
+
+  <p class="real-world para-standard">Real-world connection: The Soviet experience is a case study in how powerful systems can collapse not from external attack but from internal contradictions they refuse to honestly address.</p>
+  <p class="real-world para-simple">Real-world connection: The Soviet collapse shows how powerful systems can fall apart from the inside when they stop being honest about their own problems.</p>
+</section>
+
+<!-- DID YOU KNOW -->
+<div class="brain-break dyk-break section-animate">
+  <span class="bb-label">DID YOU KNOW</span>
+  <p class="bb-text">In 1986, a Soviet nuclear reactor at Chernobyl exploded in what became the worst nuclear accident in history. Gorbachev later said the Chernobyl disaster was the single event that most convinced him the Soviet system had to change — not because of the explosion itself, but because the government's instinct was to lie about it for weeks while radiation spread across Europe. A system that hid a nuclear meltdown from its own people, he realized, could not survive the modern world.</p>
+</div>
+
+<!-- SECTION 2: GORBACHEV'S GAMBLE -->
+<section class="content-section clearfix section-animate" id="gorbachev">
+  <span class="section-kicker">CHAPTER TWO</span>
+  <h2 class="section-heading">GORBACHEV'S GAMBLE</h2>
+
+  <!--
+    FILENAME: S2L08_GorbachevSpeech.jpg
+    PLACE IN: images/S2/L08/
+    PRIORITY: ESSENTIAL
+    FIND: Mikhail Gorbachev speaking at a podium or press conference, 1985-1991 — clear photograph showing him as a public leader
+    SEARCH: Mikhail Gorbachev speech podium 1980s Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Mikhail_Gorbachev
+  -->
+  <figure class="img-left">
+    <img src="images/S2/L08/S2L08_GorbachevSpeech.jpg" alt="Mikhail Gorbachev speaking, circa 1985-1990">
+    <figcaption>Mikhail Gorbachev, General Secretary of the Soviet Communist Party from 1985. He tried to save the Soviet system through reform. Instead, he ended it. Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard">When <span class="vocab" tabindex="0">Mikhail Gorbachev<span class="tip">Soviet leader from 1985 to 1991 who introduced reforms that ultimately led to the collapse of the USSR.</span></span> came to power in 1985, he was not trying to end the Soviet Union. He was trying to save it. He believed that the system needed to be opened up and modernized — not replaced. He introduced two major reforms. <span class="vocab" tabindex="0">Glasnost<span class="tip">Russian for "openness" — Gorbachev's policy of allowing more freedom of speech and press in the Soviet Union.</span></span>, meaning openness, allowed Soviet citizens and journalists to criticize the government, discuss failures, and access information that had previously been forbidden. <span class="vocab" tabindex="0">Perestroika<span class="tip">Russian for "restructuring" — Gorbachev's attempt to reform the Soviet economy by introducing limited market elements.</span></span>, meaning restructuring, attempted to reform the economy by introducing limited market elements and reducing government micromanagement of production.</p>
+  <p class="para-simple">When Mikhail Gorbachev became Soviet leader in 1985, he was not trying to destroy the USSR. He wanted to save it through reform. He introduced two major changes. Glasnost — meaning "openness" — allowed Soviet citizens to criticize the government and access information that had been forbidden. Perestroika — meaning "restructuring" — tried to modernize the economy by introducing some market elements and giving factories more independence.</p>
+
+  <p class="para-standard">Both reforms backfired in ways Gorbachev had not anticipated. Glasnost opened a door that could not be closed. Once Soviet citizens could speak freely, decades of pent-up frustration came pouring out. Newspapers published stories about Stalin's mass murders, the true costs of the Afghan war, the failures of the economy. People who had been afraid to speak discovered there were millions of others who felt exactly the same way. Perestroika was worse: it loosened central controls without creating functioning market alternatives, producing chaos rather than efficiency. Both reforms simultaneously weakened the government's grip and amplified the anger of the people it governed.</p>
+  <p class="para-simple">Both reforms backfired badly. Glasnost opened a door that could not be closed. Once people could speak freely, decades of frustration poured out. Newspapers exposed Stalin's mass murders, the failures of the economy, the true costs of the Afghan war. Perestroika was even worse — it loosened government control of the economy without building anything to replace it, creating chaos instead of improvement. Together, the two reforms weakened the government's control while making people angrier than ever.</p>
+
+  <p class="para-standard">Gorbachev also made a decision with enormous consequences: he would not send tanks into Eastern Europe to crush reform movements the way his predecessors had. When Poland held free elections in 1989 and the communist party lost, the Soviet Union did not invade. When Hungary opened its border with Austria, allowing East Germans to escape to the West through a gap in the Iron Curtain, the Soviet Union did not invade. The message reached every Eastern European country simultaneously: Moscow would not save their communist governments this time. The revolutions that followed moved with astonishing speed.</p>
+  <p class="para-simple">Gorbachev also made a huge decision: he would not use tanks to crush reform movements in Eastern Europe the way previous Soviet leaders had. When Poland held free elections and the communists lost, the Soviets did nothing. When Hungary opened its border with Austria — letting East Germans escape to the West — the Soviets did nothing. Every Eastern European country got the same message: Moscow would not save their communist governments this time. What happened next moved incredibly fast.</p>
+</section>
+
+<!-- FAST FACTS -->
+<div class="brain-break ff-break section-animate">
+  <span class="bb-label">FAST FACTS</span>
+  <p class="ff-context">THE SOVIET COLLAPSE BY THE NUMBERS</p>
+  <div class="ff-grid">
+    <div class="ff-item">
+      <span class="ff-number">25%</span>
+      <span class="ff-desc">of Soviet GDP spent on the military by the 1980s — compared to roughly 6% for the United States</span>
+    </div>
+    <div class="ff-item">
+      <span class="ff-number">15</span>
+      <span class="ff-desc">new independent countries that appeared on the world map when the Soviet Union dissolved in 1991</span>
+    </div>
+    <div class="ff-item">
+      <span class="ff-number">28</span>
+      <span class="ff-desc">years the Berlin Wall divided the city of Berlin — built in 1961, torn down in 1989</span>
+    </div>
+    <div class="ff-item">
+      <span class="ff-number">69</span>
+      <span class="ff-desc">years the Soviet Union existed — from its founding in 1922 to its dissolution on December 25, 1991</span>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: 1989 -->
+<section class="content-section clearfix section-animate" id="revolutions-1989">
+  <span class="section-kicker">CHAPTER THREE</span>
+  <h2 class="section-heading">1989</h2>
+
+  <!--
+    FILENAME: S2L08_BerlinWallCrowd.jpg
+    PLACE IN: images/S2/L08/
+    PRIORITY: ESSENTIAL
+    FIND: People on top of or dismantling the Berlin Wall, November 9-10 1989 — different angle from header image if possible; crowds, hammers, celebration
+    SEARCH: Berlin Wall November 1989 people hammers celebrating Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Fall_of_the_Berlin_Wall
+  -->
+  <figure class="img-right">
+    <img src="images/S2/L08/S2L08_BerlinWallCrowd.jpg" alt="People dismantle the Berlin Wall, November 1989">
+    <figcaption>Citizens dismantle the Berlin Wall, November 1989. The wall that had killed over 140 people trying to cross it came down in a single night — without a single shot fired. Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard">1989 was the year communism fell in Eastern Europe. In Poland, the <span class="vocab" tabindex="0">Solidarity<span class="tip">A Polish trade union and political movement that challenged communist rule — the first legal independent labor union in a Soviet-bloc country.</span></span> movement — an independent labor union that had been fighting the government for nearly a decade — won the first free elections. In Czechoslovakia, a "Velvet Revolution" peacefully transferred power in a matter of weeks. In Romania, the communist dictator Nicolae Ceaușescu was captured and executed by his own army on Christmas Day. Each revolution fed the next: people watching on television saw that it was possible, and the next country moved.</p>
+  <p class="para-simple">1989 was the year communist governments fell across Eastern Europe. In Poland, the Solidarity movement won the first free elections. In Czechoslovakia, a peaceful revolution transferred power in weeks. In Romania, the communist dictator was captured and executed by his own army. Each revolution inspired the next — people watching on TV saw that it was possible and acted.</p>
+
+  <p class="para-standard">The fall of the <span class="vocab" tabindex="0">Berlin Wall<span class="tip">A wall built in 1961 dividing communist East Berlin from democratic West Berlin; its fall on November 9, 1989 became the defining symbol of the Cold War's end.</span></span> on November 9 became the single most iconic moment of the Cold War's end. Over 140 people had been killed trying to cross it since it was built in 1961. The East German government had used it as a symbol of protection — claiming it kept Western influence out — when everyone knew it was really there to keep East Germans in. When it came down, without a single shot fired, the image went around the world in hours. The Cold War, which had been built on the idea that nuclear-armed superpowers would hold their positions forever, was suddenly, visibly, over.</p>
+  <p class="para-simple">The Berlin Wall fell on November 9, 1989. Over 140 people had been killed trying to cross it since it was built in 1961. The East German government called it protection from Western influence — but everyone knew it was really there to keep East Germans in. When it came down without a single shot fired, the image spread around the world in hours. The Cold War — which seemed like it would last forever — was suddenly, visibly, over.</p>
+
+  <p class="para-standard">Germany reunified in October 1990. NATO expanded eastward. And the Soviet Union's own republics — watching what had just happened in Eastern Europe — began demanding independence of their own. The <span class="vocab" tabindex="0">nationalism<span class="tip">A strong belief in the independence and identity of one's own nation, often as a force against outside control.</span></span> that the Soviet system had suppressed for decades was suddenly alive everywhere at once.</p>
+  <p class="para-simple">Germany reunified in 1990. And the Soviet Union's own internal republics — watching what had just happened in Eastern Europe — started demanding independence too. Nationalism that the Soviet system had suppressed for decades suddenly came alive everywhere at once.</p>
+</section>
+
+<!-- ART SPOTLIGHT -->
+<div class="brain-break as-break section-animate">
+  <span class="bb-label">ART SPOTLIGHT</span>
+  <figure>
+    <!--
+      FILENAME: S2L08_BerlinWallMural.jpg
+      PLACE IN: images/S2/L08/
+      PRIORITY: ENHANCEMENT
+      FIND: "My God, Help Me to Survive This Deadly Love" — Dmitri Vrubel, 1990, East Side Gallery, Berlin — famous mural showing Brezhnev and Honecker kissing, painted on remaining section of the Berlin Wall
+      SEARCH: Dmitri Vrubel My God Help Me Survive Deadly Love Berlin Wall mural 1990 Wikimedia Commons
+      LINK: Suggested: https://commons.wikimedia.org/wiki/File:Mural_on_the_Berlin_Wall.jpg
+    -->
+    <img src="images/S2/L08/S2L08_BerlinWallMural.jpg" alt="My God, Help Me to Survive This Deadly Love — Dmitri Vrubel, East Side Gallery, Berlin, 1990" class="as-image">
+    <figcaption class="as-caption">
+      "My God, Help Me to Survive This Deadly Love" &mdash; Dmitri Vrubel, East Side Gallery, Berlin, 1990<br>
+      After the Berlin Wall fell, artists were invited to paint murals on the remaining sections. Russian artist Vrubel painted this image — based on a famous photograph — of Soviet leader Leonid Brezhnev and East German leader Erich Honecker in a "socialist fraternal kiss," a standard greeting between communist leaders.
+    </figcaption>
+  </figure>
+  <p class="as-fact">The original mural deteriorated over the years and Vrubel was asked to repaint it in 2009 for the Wall's 20th anniversary. When he did, he secretly changed the German text beneath it — the original read "My God, Help Me to Survive This Deadly Love"; the restoration added "Such is Life" below it. The Wall that had once been the most closely guarded border in the world had become a canvas for the people who had once been imprisoned by it.</p>
+</div>
+
+<!-- SECTION 4: THE USSR DISSOLVES -->
+<section class="content-section clearfix section-animate" id="dissolution">
+  <span class="section-kicker">CHAPTER FOUR</span>
+  <h2 class="section-heading">THE USSR DISSOLVES</h2>
+
+  <!--
+    FILENAME: S2L08_SovietFlagKremlin.jpg
+    PLACE IN: images/S2/L08/
+    PRIORITY: ESSENTIAL
+    FIND: Soviet flag being lowered over the Kremlin, December 25 1991, replaced by Russian flag — the moment the USSR formally ceased to exist
+    SEARCH: Soviet flag lowered Kremlin December 1991 dissolution USSR Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Dissolution_of_the_Soviet_Union
+  -->
+  <figure class="img-left">
+    <img src="images/S2/L08/S2L08_SovietFlagKremlin.jpg" alt="Soviet flag lowered over the Kremlin, December 25, 1991">
+    <figcaption>The Soviet flag is lowered over the Kremlin for the last time, December 25, 1991 — the formal end of the USSR after 69 years. Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard">Through 1990 and 1991, the Soviet republics declared independence one by one: the Baltic states of Estonia, Latvia, and Lithuania went first; then Ukraine, Georgia, Armenia, and the Central Asian republics followed. Each declaration weakened the central government further. In August 1991, hardline Communist Party members attempted a coup against Gorbachev, placing him under house arrest. The coup failed within three days when ordinary citizens surrounded tanks in Moscow and soldiers refused to fire. But the failure of the coup accelerated the <span class="vocab" tabindex="0">dissolution<span class="tip">The formal breaking apart of a country or organization — in this case, the Soviet Union splitting into 15 independent nations.</span></span> of the union. The Communist Party was suspended. The republics accelerated their independence declarations.</p>
+  <p class="para-simple">Through 1990 and 1991, Soviet republics declared independence one by one. The Baltic states went first, then Ukraine, Georgia, and the Central Asian republics. In August 1991, communist hardliners tried to overthrow Gorbachev and stop the collapse. The coup failed in three days when citizens surrounded tanks in Moscow and soldiers refused to shoot. But the failure actually sped up the dissolution — the Communist Party was suspended and the remaining republics moved faster toward independence.</p>
+
+  <p class="para-standard">On December 25, 1991, Mikhail Gorbachev resigned as president of a country that no longer existed. The Soviet flag over the Kremlin was lowered and replaced by the Russian flag. The <span class="vocab" tabindex="0">Soviet Union<span class="tip">The Union of Soviet Socialist Republics — a communist superpower that existed from 1922 to 1991, encompassing Russia and 14 other republics.</span></span> had ceased to exist. Fifteen new countries appeared on the world map. The United States became the world's only superpower — what analysts called a <span class="vocab" tabindex="0">unipolar<span class="tip">A world order with a single dominant superpower, rather than two competing ones.</span></span> moment. The Cold War that had organized global politics for 45 years was over.</p>
+  <p class="para-simple">On December 25, 1991, Gorbachev resigned as president of a country that no longer existed. The Soviet flag over the Kremlin was lowered and the Russian flag went up. The Soviet Union was gone. Fifteen new countries appeared on the world map. The United States became the world's only superpower. The Cold War that had shaped world politics for 45 years was over.</p>
+
+  <p class="para-standard">The aftermath was not a simple triumph. Russia under Boris Yeltsin stumbled through a chaotic decade of economic collapse, corruption, and organized crime as the command economy was dismantled with no replacement ready. Nuclear weapons from the former Soviet arsenal were suddenly in multiple new countries with uncertain security. Ethnic wars exploded in Yugoslavia as the Cold War framework that had suppressed those tensions disappeared. American foreign policy, confident that history had validated its model, made a series of costly overreach decisions in the 1990s and 2000s. The end of the Cold War created a new world — but not necessarily a safer or simpler one.</p>
+  <p class="para-simple">The aftermath was not simple. Russia collapsed economically in the 1990s as the command economy was dismantled with nothing to replace it. Nuclear weapons were now in multiple new countries with uncertain security. Ethnic wars broke out in Yugoslavia once the Cold War order that had suppressed them disappeared. The United States, convinced it had won history, made costly foreign policy mistakes in the years that followed. The end of the Cold War created a new world — but not a simpler or safer one.</p>
+
+  <p class="real-world para-standard">Real-world connection: Russia's relationship with its former Soviet neighbors — Ukraine, Georgia, the Baltic states — is directly shaped by the unfinished business of the 1991 dissolution and what came after.</p>
+  <p class="real-world para-simple">Real-world connection: Russia's conflicts with Ukraine and other former Soviet countries today are directly connected to how the Soviet Union fell apart in 1991 and what was left unresolved.</p>
+</section>
+
+<!-- PRIMARY SOURCE -->
+<div class="primary-source section-animate" id="primary-source-moment">
+  <p class="ps-label">PRIMARY SOURCE MOMENT</p>
+  <div class="ps-visual">
+    <figure>
+      <!--
+        FILENAME: S2L08_GorbachevResignation.jpg
+        PLACE IN: images/S2/L08/
+        PRIORITY: ESSENTIAL
+        FIND: Gorbachev giving his resignation speech on Soviet television, December 25 1991 — seated at desk or podium, Soviet/Russian flag visible
+        SEARCH: Gorbachev resignation speech December 25 1991 television Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Mikhail_Gorbachev
+      -->
+      <img src="images/S2/L08/S2L08_GorbachevResignation.jpg" alt="Mikhail Gorbachev delivers his resignation address, December 25, 1991">
+      <figcaption>Gorbachev delivers his resignation address, December 25, 1991. Wikimedia Commons.</figcaption>
+    </figure>
+    <div>
+      <p class="ps-quote">"I hereby discontinue my activities at the post of President of the Union of Soviet Socialist Republics... We're now living in a new world. An end has been put to the Cold War and to the arms race... The world was transformed with extraordinary speed... All these changes demanded immense strain. They were carried out under conditions of an intense struggle against the background of increasing resistance from the old, obsolete structures."</p>
+      <p class="ps-attribution">&mdash; Mikhail Gorbachev, Resignation Address, Soviet Television, December 25, 1991</p>
+      <p class="ps-narrator">WHY THIS MATTERS: Gorbachev is speaking at the moment a superpower ceases to exist — live on television. Notice what he claims: that the changes were necessary and that the Cold War's end was an achievement, not a defeat. As you read this, consider: is he right that the world was transformed for the better? And given what followed — the chaos in Russia, the wars in Yugoslavia, the nuclear security problems — how do you evaluate his claim that "we're now living in a new world"?</p>
+    </div>
+  </div>
+</div>
+
+<!-- THEN AND NOW -->
+<div class="brain-break tn-break section-animate" id="then-now">
+  <span class="bb-label">THEN AND NOW</span>
+  <p class="tn-payoff">THE COLD WAR ENDED — BUT THE WORLD IT LEFT BEHIND IS STILL BEING SORTED OUT.</p>
+  <div class="tn-pair">
+    <div class="tn-item">
+      <span class="tn-era-label">1989</span>
+      <!--
+        FILENAME: S2L08_ThenBerlinWall.jpg
+        PLACE IN: images/S2/L08/
+        PRIORITY: ESSENTIAL
+        FIND: Berlin Wall falling or crowds on the wall, November 1989 — iconic image of the Cold War ending, different from header and chapter images
+        SEARCH: Berlin Wall 1989 fall crowd celebration Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Fall_of_the_Berlin_Wall
+      -->
+      <img src="images/S2/L08/S2L08_ThenBerlinWall.jpg" alt="The Berlin Wall falls, November 1989">
+      <p class="tn-caption">The Berlin Wall falls, November 1989. Wikimedia Commons.</p>
+    </div>
+    <div class="tn-item">
+      <span class="tn-era-label">NOW</span>
+      <!--
+        FILENAME: S2L08_NowEastSideGallery.jpg
+        PLACE IN: images/S2/L08/
+        PRIORITY: ESSENTIAL
+        FIND: East Side Gallery in Berlin today — the remaining section of the Berlin Wall covered in murals, visitors walking alongside it
+        SEARCH: East Side Gallery Berlin Wall murals visitors today Wikimedia Commons CC license
+        LINK: Suggested: https://commons.wikimedia.org/wiki/East_Side_Gallery
+      -->
+      <img src="images/S2/L08/S2L08_NowEastSideGallery.jpg" alt="The East Side Gallery — Berlin Wall murals today">
+      <p class="tn-caption">The East Side Gallery in Berlin today — the remaining section of the Berlin Wall, now an open-air art museum visited by millions. Wikimedia Commons / CC.</p>
+    </div>
+  </div>
+  <div class="tn-text-block">
+    <h3>THEN</h3>
+    <p>In 1989, the Berlin Wall was the most recognizable symbol of the Cold War — a concrete barrier that divided not just a city but an entire world system. When it came down, it felt to many like the end of history itself: democracy had won, the argument was over, and a peaceful new world order was beginning.</p>
+    <h3>NOW</h3>
+    <p>Today the remaining section of the Wall is the East Side Gallery — one of the world's largest open-air art museums, covered in murals painted by artists from around the world. Millions of tourists visit every year. But the questions the Cold War raised — about power, about sovereignty, about what happens when empires dissolve — are still being answered, sometimes violently, in the countries the Soviet Union left behind.</p>
+    <h3>CONNECTION</h3>
+    <p>The Cold War ended in 1991, but its consequences have not. Russia's 2022 invasion of Ukraine, the tensions with NATO, and the authoritarian turn in several former Soviet states are all direct outgrowths of how the Soviet Union collapsed and what was — and was not — resolved. The Wall became a museum. The questions it represented did not.</p>
+    <p>Gorbachev said he was trying to save the Soviet system, not destroy it — but his reforms ended it anyway. Can you think of another example in history where a leader's attempt to fix a system instead caused it to collapse?</p>
+  </div>
+</div>
+
+</main>
+<footer>WORLD HISTORY &mdash; SEMESTER 2, LESSON 08 &mdash; THE COLD WAR ENDS &mdash; STANDARD 10.9</footer>
+</div>
+
+<script>
+(function(){var bar=document.getElementById('reading-progress');window.addEventListener('scroll',function(){var s=window.scrollY||document.documentElement.scrollTop;var d=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(d>0?(s/d)*100:0)+'%';},{passive:true});})();
+document.getElementById('lexile-toggle').addEventListener('click',function(){document.body.classList.toggle('simplified');this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';});
+function repositionTip(el){var tip=el.querySelector('.tip');if(!tip)return;tip.style.left='50%';tip.style.transform='translateX(-50%)';var rect=tip.getBoundingClientRect();if(rect.left<8){tip.style.transform='translateX(calc(-50% + '+(8-rect.left)+'px))';}else if(rect.right>window.innerWidth-8){tip.style.transform='translateX(calc(-50% - '+(rect.right-(window.innerWidth-8))+'px))';}}
+document.querySelectorAll('.vocab').forEach(function(el){el.setAttribute('tabindex','0');el.addEventListener('click',function(e){e.stopPropagation();document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);});el.addEventListener('focus',function(){el.classList.add('active');repositionTip(el);});el.addEventListener('blur',function(){el.classList.remove('active');});el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);}if(e.key==='Escape')el.classList.remove('active');});});
+document.addEventListener('click',function(){document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});});
+const tocObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{const id=entry.target.getAttribute('id');const tl=document.querySelector('.toc-sidebar a[href="#'+id+'"]');const nl=document.querySelector('.section-nav a[href="#'+id+'"]');if(entry.isIntersecting){if(tl)tl.classList.add('active');if(nl)nl.classList.add('active');}else{if(tl)tl.classList.remove('active');if(nl)nl.classList.remove('active');}});},{threshold:.25});
+document.querySelectorAll('section[id],div[id="then-now"]').forEach(el=>tocObserver.observe(el));
+(function(){var ao=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');ao.unobserve(entry.target);}});},{threshold:.08});document.querySelectorAll('.section-animate').forEach(function(el){ao.observe(el);});})();
+document.querySelectorAll('img').forEach(function(img){if(img.complete&&img.naturalWidth>0){img.classList.add('loaded');}else{img.addEventListener('load',function(){img.classList.add('loaded');});img.addEventListener('error',function(){img.style.opacity='0.15';img.style.border='2px dashed rgba(255,255,255,0.2)';});}});
+</script>
+</body>
+</html>
+<!--
+  IMAGE CHECK: Open browser DevTools (F12), go to Console, paste and run:
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.complete || img.naturalWidth === 0) { console.warn('MISSING:', img.src); }
+    else { console.log('OK:', img.src); }
+  });
+-->
