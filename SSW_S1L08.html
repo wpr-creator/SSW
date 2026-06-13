@@ -1,74 +1,511 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSW — S1 L08: Nationalism and the Long Road to WWI</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: #0f1729;
-      color: #f8f6f2;
-      font-family: Georgia, "Times New Roman", serif;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-    }
-    a.back {
-      position: fixed;
-      top: 1.25rem;
-      left: 1.25rem;
-      color: #94a3b8;
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.02em;
-    }
-    a.back:hover { color: #f8f6f2; }
-    .badge {
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #64748b;
-      margin-bottom: 1.25rem;
-    }
-    h1 {
-      font-size: clamp(1.75rem, 4vw, 2.75rem);
-      font-weight: 400;
-      line-height: 1.25;
-      max-width: 52rem;
-      margin-bottom: 1.5rem;
-    }
-    .eq {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      font-style: italic;
-      color: #cbd5e1;
-      max-width: 42rem;
-      line-height: 1.65;
-      margin-bottom: 3rem;
-    }
-    .eq.final-eq { font-style: normal; color: #94a3b8; }
-    .banner {
-      display: inline-block;
-      padding: 1.1rem 3.25rem;
-      border: 2px solid #334155;
-      background: linear-gradient(180deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 41, 0.95) 100%);
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #e2e8f0;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSW S1L08 : NATIONALISM AND THE ROAD TO WWI</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Atkinson+Hyperlegible:wght@400;700&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0e1f3d;
+  --navy-dark:#070e1f;
+  --gold:#c8a43a;
+  --gold-light:#e8c45a;
+  --cream:#f3edd8;
+  --parchment:#e8dfc0;
+  --ink:#1c1408;
+  --charcoal:#2a2010;
+  --gray:#5a5040;
+  --red:#8a1c1c;
+  --vocab:#7a1818;
+  --green:#044d37;
+  --lime:#d7ff3f;
+  --purple:#32134d;
+  --pink:#ff4fd8;
+  --cyan:#1bd6ff;
+  --orange:#ff8a21;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}
+body{background:radial-gradient(ellipse at top,#1a1408 0%,#05030a 80%);font-family:'Atkinson Hyperlegible',Georgia,serif;font-size:18px;line-height:1.88;color:var(--charcoal);overflow-x:hidden}
+#reading-progress{position:fixed;top:0;left:0;height:4px;width:0%;background:var(--gold);z-index:9999;transition:width .1s linear}
+.page-wrap{width:min(920px,100%);margin:0 auto;background:var(--cream);box-shadow:0 0 120px rgba(0,0,0,.98);border-left:6px solid var(--navy-dark);border-right:6px solid var(--navy-dark);overflow-x:hidden}
+
+/* HEADER */
+.site-header{position:relative;min-height:470px;overflow:hidden;background:var(--navy-dark);display:flex;align-items:center;text-align:center}
+.header-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32;filter:sepia(.5) contrast(1.1)}
+.site-header:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(7,14,31,.1),rgba(7,14,31,.72) 50%,rgba(7,14,31,.97))}
+.header-inner{position:relative;z-index:2;max-width:820px;margin:0 auto;padding:60px 34px 52px}
+.course-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.page-title{font-family:'Playfair Display',serif;font-size:clamp(44px,7vw,74px);font-weight:900;line-height:1.02;color:#fff;text-transform:uppercase;letter-spacing:.03em;text-shadow:2px 6px 28px rgba(0,0,0,.9);margin-bottom:30px}
+.eq-banner{display:inline-block;background:rgba(14,31,61,.92);color:#fff;border:3px solid var(--gold);border-left-width:8px;border-right-width:8px;padding:18px 28px;max-width:760px;font-weight:700;font-size:19px;line-height:1.5;text-align:left}
+.eq-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px}
+
+/* NAV */
+.section-nav{position:sticky;top:4px;z-index:100;display:flex;flex-wrap:wrap;justify-content:center;background:var(--navy-dark);border-bottom:4px solid var(--gold);overflow-x:auto}
+.section-nav a{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(232,220,190,.65);text-decoration:none;padding:13px 11px;border-bottom:4px solid transparent;margin-bottom:-4px;white-space:nowrap;transition:color .2s,border-color .2s}
+.section-nav a:hover{color:#fff;border-bottom-color:var(--gold)}
+.section-nav a.active{color:#fff;border-bottom-color:var(--gold);background:rgba(200,164,58,.18)}
+
+/* LEXILE */
+#lexile-toggle{display:block;margin:22px auto 30px;padding:10px 26px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;border:2px solid var(--navy);background:transparent;color:var(--navy);transition:background .2s,color .2s}
+#lexile-toggle:hover{background:var(--navy);color:#fff}
+.para-simple{display:none}body.simplified .para-standard{display:none}body.simplified .para-simple{display:block}
+
+/* TOC */
+.toc-sidebar{position:fixed;left:calc(50% - 572px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;font-family:'Barlow Condensed',sans-serif;z-index:50;background:rgba(7,14,31,.93);border-right:2px solid rgba(200,164,58,.4)}
+.toc-sidebar .toc-label{display:block;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.toc-sidebar a{display:block;color:rgba(232,220,190,.55);text-decoration:none;padding:4px 0;font-size:11px;letter-spacing:.05em;text-transform:uppercase;line-height:1.35;transition:color .2s}
+.toc-sidebar a.active,.toc-sidebar a:hover{color:var(--gold);font-weight:700}
+@media(max-width:1100px){.toc-sidebar{display:none}}
+
+/* TIMELINE */
+.timeline-wrap{max-width:820px;margin:0 auto 0;padding:0 28px}
+.timeline-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:var(--navy);text-align:center;margin:0 0 12px}
+.timeline{padding:22px;background:var(--parchment);border-top:4px solid var(--navy);border-bottom:4px solid var(--navy);display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.tl-node{border-left:3px solid var(--gold);padding-left:12px}
+.tl-date{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--navy);line-height:1.1;margin-bottom:5px}
+.tl-node p{font-size:14.5px;line-height:1.55;color:var(--charcoal);margin:0}
+@media(max-width:720px){.timeline{grid-template-columns:1fr}.tl-node{border-left:3px solid var(--gold);padding-bottom:18px}}
+
+/* LAYOUT */
+main{max-width:820px;margin:0 auto;padding:0 28px 68px}
+.intro-section{padding:50px 0 30px}
+.intro-section p{font-size:19px;line-height:1.92;margin-bottom:18px}
+.content-section{padding:52px 0 30px;border-top:2px solid rgba(14,31,61,.14)}
+.section-kicker{display:block;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.section-heading{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,46px);font-weight:900;color:var(--navy-dark);text-transform:uppercase;border-left:7px solid var(--gold);padding-left:16px;line-height:1.1;margin-bottom:26px}
+p{margin-bottom:20px;color:var(--charcoal)}
+.real-world{background:var(--parchment);border-left:5px solid var(--navy);padding:17px 21px;margin:30px 0;font-weight:700;color:var(--ink)}
+
+/* IMAGES */
+figure{margin:32px 0}
+figure img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 8px 26px rgba(0,0,0,.3)}
+figcaption{font-size:13px;font-style:italic;color:#5a5040;margin-top:8px;line-height:1.45}
+.img-right{float:right;width:42%;margin:6px 0 20px 28px}
+.img-left{float:left;width:42%;margin:6px 28px 20px 0}
+.img-full{float:none;width:100%}
+.clearfix:after{content:"";display:table;clear:both}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0}
+@media(max-width:680px){.img-right,.img-left{float:none;width:100%;margin:20px 0}.two-col{grid-template-columns:1fr}}
+
+/* VOCAB */
+.vocab{color:var(--vocab);text-decoration:underline dotted var(--vocab);cursor:help;position:relative;font-weight:700}
+.vocab-red{color:var(--vocab);font-weight:700}
+.vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#050505;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:200;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;font-family:'Atkinson Hyperlegible',sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.85);border:1px solid var(--gold)}
+.vocab:hover .tip,.vocab.active .tip{display:block}
+.vocab:focus{outline:2px solid var(--gold);outline-offset:2px;border-radius:2px}
+
+/* ENGAGEMENT BREAKS */
+.brain-break{font-family:'Barlow Condensed',sans-serif;margin:44px -50px;padding:36px 50px;position:relative;overflow:hidden;max-width:calc(100% + 100px)}
+.bb-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.88}
+.bb-text{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:500;line-height:1.65;margin:0}
+.dyk-break{background:var(--green);color:#fff;border-left:6px solid var(--lime)}.dyk-break .bb-label{color:var(--lime)}.dyk-break p,.dyk-break span{color:#fff}
+.ff-break{background:#090a12;color:#fff;padding:36px 40px;margin:44px -50px;border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);text-align:center}
+.ff-break .bb-label{color:var(--gold);text-align:center;margin-bottom:8px}
+.ff-context{font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(232,196,90,.8);text-align:center;margin-bottom:28px;font-weight:700}
+.ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:24px}
+.ff-item{text-align:center;padding:8px 16px;max-width:185px}
+.ff-number{display:block;font-family:'Barlow Condensed',sans-serif;font-size:54px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:8px}
+.ff-desc{display:block;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.08em;color:rgba(232,196,90,.75);max-width:185px;margin:0 auto;line-height:1.5}
+.as-break{background:var(--purple);color:#fff;padding:44px 50px;margin:44px -50px;border-top:3px solid var(--pink);border-bottom:3px solid var(--pink);text-align:center}
+.as-break .bb-label{color:var(--pink)}
+.as-image{max-width:580px;width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(255,79,216,.65);box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.as-caption{font-family:'Barlow Condensed',sans-serif;font-size:14px;color:rgba(255,232,251,.75);line-height:1.6;margin-bottom:28px;display:block;font-style:normal}
+.as-fact{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:500;color:#fff;line-height:1.65;max-width:680px;margin:0 auto;text-align:center}
+
+/* PRIMARY SOURCE */
+.primary-source{background:var(--parchment);border-left:7px solid var(--navy);padding:30px 34px;margin:38px 0;box-shadow:0 6px 20px rgba(0,0,0,.15)}
+.ps-visual{display:grid;grid-template-columns:minmax(200px,36%) 1fr;gap:24px;align-items:start}
+.ps-visual figure{margin:0}
+.ps-visual img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.ps-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--navy);margin-bottom:12px;display:block}
+.ps-quote{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;line-height:1.65;color:var(--ink);margin-bottom:14px}
+.ps-attribution{font-size:13px;font-style:italic;color:#5a4820;margin-bottom:12px}
+.ps-narrator{border-top:1px solid rgba(14,31,61,.25);padding-top:12px;font-size:15px;line-height:1.6;font-weight:700;color:var(--ink)}
+@media(max-width:700px){.ps-visual{grid-template-columns:1fr}}
+
+/* THEN AND NOW */
+.tn-break{background:var(--navy-dark);color:#fff;padding:36px 50px;margin:30px -50px 0}
+.tn-break .bb-label{color:var(--gold-light);text-align:center;display:block;margin-bottom:20px}
+.tn-payoff{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3.5vw,30px);font-weight:900;line-height:1.32;text-align:center;color:var(--gold-light);margin:0 auto 28px;max-width:720px}
+.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
+.tn-item{text-align:center}
+.tn-era-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold-light);margin-bottom:10px;font-weight:900}
+.tn-item img{width:100%;display:block;border:2px solid rgba(200,164,58,.45)}
+.tn-caption{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-style:italic;color:rgba(232,220,190,.7);margin-top:8px;line-height:1.4}
+.tn-text-block{margin-top:24px;border-top:1px solid rgba(200,164,58,.28);padding-top:20px}
+.tn-text-block h3{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-light);margin:18px 0 8px}
+.tn-text-block p{font-family:'Barlow Condensed',sans-serif;font-size:17px;line-height:1.65;margin-bottom:12px;color:#fff}
+
+/* ANIMATION */
+img{opacity:0;transition:opacity .4s ease}img.loaded{opacity:1}
+.section-animate{opacity:0;transform:translateY(24px);transition:opacity .45s ease-out,transform .45s ease-out}
+.section-animate.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.section-animate{opacity:1;transform:none;transition:none}}
+
+/* FOOTER */
+footer{background:var(--navy-dark);color:rgba(232,220,190,.5);text-align:center;padding:24px 30px;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;border-top:5px solid var(--gold)}
+
+/* RESPONSIVE */
+@media(max-width:880px){.page-wrap{border:0}main{padding:0 22px 50px}.timeline-wrap{padding:0 22px}.header-inner{padding:44px 22px 42px}.brain-break,.ff-break,.as-break,.tn-break{margin:36px 0;padding:28px 22px;max-width:100%}.section-nav a{font-size:11px;padding:11px 8px}}
+@media(max-width:600px){.page-title{font-size:40px}.section-heading{font-size:30px}.ff-number{font-size:44px}.as-fact{font-size:18px}.tn-pair{grid-template-columns:1fr}.tn-break{padding:28px 22px;margin:30px 0 0}.bb-text{font-size:18px}}
+@media(max-width:980px){.brain-break,.ff-break,.as-break,.tn-break{margin-left:0;margin-right:0;padding-left:28px;padding-right:28px;max-width:100%}}
+.dyk-break p,.dyk-break span,.ff-break p,.ff-break span,.as-break p,.as-break span,.tn-break p,.tn-break span{color:#fff}
+.ff-context,.ff-desc{color:rgba(232,196,90,.8)}.as-caption{color:rgba(255,232,251,.75)}.tn-caption{color:rgba(232,220,190,.7)}
+</style>
 </head>
 <body>
-  <a class="back" href="index.html">&larr; Course Home</a>
-  <p class="badge">World History · Semester 1 · Day 8</p>
-  <h1>Nationalism and the Long Road to WWI</h1>
-  <p class="eq">How did nationalism spread across Europe, get repressed, and finally explode into the 20th century?</p>
-  <div class="banner">Coming Soon</div>
+<div id="reading-progress"></div>
+<div class="page-wrap">
+
+<header class="site-header">
+  <!--
+    FILENAME: S1L08_GaribaldiRedShirts.jpg
+    PLACE IN: images/S1/L08/
+    PRIORITY: ESSENTIAL
+    FIND: Giuseppe Garibaldi and his Red Shirts, 1860 — troops marching or landing in Sicily/southern Italy during the unification campaign; dramatic military scene
+    SEARCH: Garibaldi Red Shirts 1860 Sicily unification Italy Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Giuseppe_Garibaldi
+  -->
+  <img src="images/S1/L08/S1L08_GaribaldiRedShirts.jpg" alt="Garibaldi and his Red Shirts during the Italian unification campaign, 1860" class="header-bg">
+  <div class="header-inner">
+    <p class="course-label">World History &mdash; Semester 1 &mdash; Lesson 08 &mdash; Standards 10.2 / 10.5</p>
+    <h1 class="page-title">Nationalism &amp;<br>the Road to WWI</h1>
+    <div class="eq-banner">
+      <span class="eq-label">Essential Question</span>
+      How did nationalism spread across Europe after Napoleon, get repressed, and finally explode into the 20th century?
+    </div>
+  </div>
+</header>
+
+<nav class="section-nav">
+  <a href="#introduction">INTRODUCTION</a>
+  <a href="#napoleon-vienna">NAPOLEON AND VIENNA</a>
+  <a href="#revolutions-rise">REVOLUTIONS AND RISE</a>
+  <a href="#balkans-powder-keg">BALKANS POWDER KEG</a>
+  <a href="#road-to-war">ROAD TO WAR</a>
+  <a href="#primary-source-moment">SOURCE</a>
+  <a href="#then-now">THEN AND NOW</a>
+</nav>
+
+<aside class="toc-sidebar">
+  <span class="toc-label">ON THIS PAGE</span>
+  <a href="#introduction">Introduction</a>
+  <a href="#napoleon-vienna">Napoleon &amp; Vienna</a>
+  <a href="#revolutions-rise">Revolutions &amp; Rise</a>
+  <a href="#balkans-powder-keg">Balkans Powder Keg</a>
+  <a href="#road-to-war">Road to War</a>
+  <a href="#primary-source-moment">Source</a>
+  <a href="#then-now">Then &amp; Now</a>
+</aside>
+
+<main>
+
+<div class="timeline-wrap">
+  <p class="timeline-label">NATIONALISM AND EUROPE &mdash; 1815 TO 1914</p>
+  <div class="timeline">
+    <div class="tl-node"><div class="tl-date">1815</div><p>Congress of Vienna redraws Europe after Napoleon; suppresses nationalist movements to restore old order.</p></div>
+    <div class="tl-node"><div class="tl-date">1848</div><p>Revolutions sweep France, Germany, Austria, and Italy — briefly threatening every major monarchy before being crushed.</p></div>
+    <div class="tl-node"><div class="tl-date">1871</div><p>Italy unifies under Garibaldi and Cavour; Germany unifies under Bismarck — permanently shifting the European balance of power.</p></div>
+    <div class="tl-node"><div class="tl-date">1878–1913</div><p>Balkan Wars of independence from the Ottoman Empire; Serbia, Bulgaria, and Romania emerge as new nationalist states.</p></div>
+    <div class="tl-node"><div class="tl-date">1914</div><p>Assassination of Franz Ferdinand in Sarajevo — the spark that lights the powder keg nationalism had built for a century.</p></div>
+  </div>
+</div>
+
+<button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
+
+<!-- INTRODUCTION -->
+<section class="intro-section section-animate" id="introduction">
+  <p class="para-standard">On June 28, 1914, a nineteen-year-old named Gavrilo Princip stepped out of a delicatessen in Sarajevo and fired two shots into an open car. The man he killed was Archduke Franz Ferdinand, heir to the Austro-Hungarian Empire. The world Princip believed he was fighting for — a free South Slavic nation, a land where his people governed themselves — had been a dream suppressed and crushed and reborn for nearly a hundred years. That dream had a name. <span class="vocab" tabindex="0">Nationalism<span class="tip">The belief that people who share a common language, culture, or ethnicity should govern themselves in their own independent country.</span></span> — the idea that people who share a language, a culture, and a history should have their own country — was not new in 1914. It had been building since Napoleon's armies first marched across Europe a century before, spreading an idea that conservative governments spent the next hundred years trying to stamp out. They failed.</p>
+  <p class="para-simple">On June 28, 1914, a nineteen-year-old named Gavrilo Princip stepped out of a shop in Sarajevo and fired two shots into an open car, killing Archduke Franz Ferdinand, heir to the Austro-Hungarian Empire. Princip was fighting for a dream: a free homeland where South Slavic people could govern themselves. That dream — called nationalism — had been building for a hundred years. European governments had spent that entire century trying to crush it. They failed. And when nationalism finally exploded, it started a world war.</p>
+</section>
+
+<!-- SECTION 1: NAPOLEON AND VIENNA -->
+<section class="content-section clearfix section-animate" id="napoleon-vienna">
+  <span class="section-kicker">CHAPTER ONE</span>
+  <h2 class="section-heading">NAPOLEON AND THE CONGRESS OF VIENNA</h2>
+
+  <!--
+    FILENAME: S1L08_CongressOfVienna.jpg
+    PLACE IN: images/S1/L08/
+    PRIORITY: ESSENTIAL
+    FIND: Congress of Vienna, 1814-1815 — painting or engraving of delegates gathered around a table; Jean-Baptiste Isabey painting is well-known
+    SEARCH: Congress of Vienna 1814 1815 painting delegates Isabey Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Congress_of_Vienna
+  -->
+  <figure class="img-right">
+    <img src="images/S1/L08/S1L08_CongressOfVienna.jpg" alt="The Congress of Vienna, 1814-1815, painting by Jean-Baptiste Isabey">
+    <figcaption>The Congress of Vienna, 1814–1815, painted by Jean-Baptiste Isabey. The great powers of Europe gathered to restore the old order after Napoleon's defeat — drawing new maps without asking the people who lived there. Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard">Napoleon Bonaparte spread two contradictory things across Europe at the same time. His armies conquered and occupied nations — but they also carried the ideas of the French Revolution: liberty, equality, fraternity, and above all, the idea that a people could and should govern themselves. When Napoleonic troops marched into the German states, the Italian peninsula, and Poland, local populations encountered both oppression and inspiration. After Napoleon fell in 1815, the rulers of Europe knew they had to deal with the ideas his armies had unleashed. They gathered at the Congress of Vienna to try.</p>
+  <p class="para-simple">Napoleon's armies did two things at once: they conquered countries, and they spread the ideas of the French Revolution — especially the idea that people should govern themselves. When French troops marched into Germany, Italy, and Poland, locals experienced both occupation and inspiration. After Napoleon was defeated in 1815, European rulers gathered at the Congress of Vienna to restore the old order and deal with the dangerous ideas his armies had spread.</p>
+
+  <p class="para-standard">The <span class="vocab" tabindex="0">Congress of Vienna<span class="tip">A 1814-1815 meeting of European powers that redrawn the map of Europe after Napoleon's defeat to restore conservative monarchies.</span></span>, led by Austrian diplomat Klemens von Metternich, was designed to restore the old monarchies and prevent revolutions from ever happening again. The great powers — Austria, Prussia, Russia, Britain, and France — redrew the map of Europe based on what was convenient for them, not on the languages, ethnicities, or wishes of the people living in the territories they were dividing. Poles were split between Russia, Prussia, and Austria. Germans remained divided into dozens of small states. Italians were divided across multiple kingdoms and foreign occupations. The idea that borders should reflect the identities of the people living inside them was treated as a revolutionary threat to be suppressed.</p>
+  <p class="para-simple">The Congress of Vienna, led by Austrian diplomat Metternich, was designed to bring back the old kings and prevent revolutions. The major European powers redrew the map of Europe based on what was convenient for them — not on the languages or identities of the people living there. Poles were split between three different empires. Germans remained divided into small separate states. Italians were divided across multiple kingdoms. The idea that borders should match the people who lived inside them was seen as a dangerous threat to be crushed.</p>
+
+  <p class="para-standard">The result was the <span class="vocab" tabindex="0">Concert of Europe<span class="tip">An agreement among the major European powers after 1815 to coordinate and suppress any nationalist or revolutionary uprisings.</span></span> — a system in which the major powers agreed to intervene collectively wherever nationalist or revolutionary movements threatened the established order. It worked for a while. But it could not work forever. The people it was suppressing had not forgotten what Napoleon's soldiers had told them about the rights of nations.</p>
+  <p class="para-simple">The result was the Concert of Europe — an agreement among major powers to work together to crush any nationalist or revolutionary movements. It worked for a while. But it could not work forever. The people being suppressed had not forgotten the idea that they deserved to govern themselves.</p>
+
+  <p class="real-world para-standard">Real-world connection: The Congress of Vienna's approach — drawing borders based on the convenience of powerful states rather than the identities of local people — created conflicts that lasted for generations. The same pattern repeated at the Paris Peace Conference in 1919 and at the Bretton Woods era decolonization.</p>
+  <p class="real-world para-simple">Real-world connection: Drawing borders based on what powerful countries want, not on who actually lives there, creates conflicts that last for generations. This same mistake was made again and again throughout the 1900s.</p>
+</section>
+
+<!-- DID YOU KNOW -->
+<div class="brain-break dyk-break section-animate">
+  <span class="bb-label">DID YOU KNOW</span>
+  <p class="bb-text">The Congress of Vienna hosted so many balls, parties, and banquets alongside its political meetings that Austrian diplomat Charles de Ligne famously quipped that "the Congress dances, but does not progress." The Austrian government spent an estimated 50 million florins — roughly the equivalent of hundreds of millions of dollars today — entertaining the delegates. While kings and diplomats danced, they redrew the map of an entire continent.</p>
+</div>
+
+<!-- SECTION 2: REVOLUTIONS AND RISE -->
+<section class="content-section clearfix section-animate" id="revolutions-rise">
+  <span class="section-kicker">CHAPTER TWO</span>
+  <h2 class="section-heading">REVOLUTIONS, UNIFICATION, AND A NEW EUROPE</h2>
+
+  <!--
+    FILENAME: S1L08_Revolutions1848Paris.jpg
+    PLACE IN: images/S1/L08/
+    PRIORITY: ESSENTIAL
+    FIND: 1848 revolution in Paris — barricades in the streets, citizens fighting, dramatic scene from the February or June Days uprising
+    SEARCH: 1848 revolution Paris barricades France Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Revolutions_of_1848
+  -->
+  <figure class="img-left">
+    <img src="images/S1/L08/S1L08_Revolutions1848Paris.jpg" alt="Barricades during the 1848 revolution in Paris, France">
+    <figcaption>Barricades during the 1848 revolution in Paris. The revolutions of 1848 swept across France, the German states, Austria, and Italy — briefly threatening every major European monarchy. Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard">In 1848, nationalist and liberal uprisings erupted simultaneously across almost every major European country. In February, a revolution in Paris overthrew the French monarchy. Within weeks, revolts spread to the German states, the Austrian Empire, and the Italian peninsula. Students, workers, intellectuals, and middle-class professionals took to the streets demanding constitutions, national unity, and <span class="vocab" tabindex="0">self-determination<span class="tip">The right of people to choose their own government and decide their own political future.</span></span>. For a few months, it looked as though the old order might collapse entirely. Then the monarchies regrouped, called in their armies, and crushed the revolutions one by one. By 1849, every uprising had failed. The old powers were back in control.</p>
+  <p class="para-simple">In 1848, uprisings broke out almost simultaneously across Europe. Revolutions swept France, Germany, Austria, and Italy. Students, workers, and professionals took to the streets demanding national unity and the right to self-government. For a few months, it seemed like the old monarchies might fall. But the kings called in their armies and crushed the revolutions one by one. By 1849, every uprising had failed. The old order had survived.</p>
+
+  <p class="para-standard">The failure of 1848 changed nationalism. Before 1848, most nationalist movements had been idealistic and liberal — they believed that all peoples deserved freedom and that nations could coexist peacefully once freed from monarchies. After 1848, nationalism became harder, more ethnic, and more willing to use force. A new word entered political vocabulary: <span class="vocab" tabindex="0">Realpolitik<span class="tip">German for "politics of reality" — the idea that nations should pursue their interests through power and strategy, not ideals.</span></span>, meaning politics based not on ideals but on power, strategy, and what actually works. The man who embodied this new approach most completely was Otto von Bismarck.</p>
+  <p class="para-simple">The failure of 1848 changed nationalism. Before 1848, nationalists had been idealistic — they believed all peoples deserved freedom and could live peacefully once freed from kings. After 1848, nationalism became harder, more focused on ethnic identity, and more willing to use force. A new idea called Realpolitik — politics based on power rather than ideals — gained influence. The man who embodied this approach most completely was Otto von Bismarck.</p>
+
+  <!--
+    FILENAME: S1L08_BismarckPortrait.jpg
+    PLACE IN: images/S1/L08/
+    PRIORITY: ESSENTIAL
+    FIND: Otto von Bismarck portrait — formal photograph or painting, circa 1870s, showing him in Prussian military uniform or statesman's attire
+    SEARCH: Otto von Bismarck portrait photograph 1870s Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Otto_von_Bismarck
+  -->
+  <figure class="img-right">
+    <img src="images/S1/L08/S1L08_BismarckPortrait.jpg" alt="Otto von Bismarck, Chancellor of Prussia and Germany, circa 1870s">
+    <figcaption>Otto von Bismarck, Minister-President of Prussia and first Chancellor of the German Empire. He unified Germany through three carefully engineered wars between 1864 and 1871. Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard"><span class="vocab" tabindex="0">Bismarck<span class="tip">Otto von Bismarck, the Prussian statesman who unified Germany through military strategy and political manipulation between 1864 and 1871.</span></span>, as Prussia's Minister-President from 1862, set out to unify the German states not through speeches and idealism but through "blood and iron" — his own phrase. He engineered three wars in seven years: against Denmark in 1864, Austria in 1866, and France in 1870-71. Each war was carefully designed to isolate Prussia's enemy diplomatically before destroying it militarily. When France fell in 1871, Bismarck declared the German Empire in the Hall of Mirrors at Versailles — choosing the French king's most magnificent palace deliberately, to humiliate France on its own soil. The new Germany was the most powerful state on the continent, and every other European power immediately had to reckon with what that meant.</p>
+  <p class="para-simple">Bismarck became Prussia's most powerful minister in 1862 and set out to unite the German states through war, not speeches. He engineered three wars in seven years — against Denmark, Austria, and France — each carefully planned to isolate Prussia's enemy before defeating it. When France was defeated in 1871, Bismarck declared the new German Empire in the French king's own palace at Versailles to humiliate France on its own soil. The new Germany was immediately the strongest power in Europe, and every other country had to figure out how to respond.</p>
+
+  <p class="para-standard">Italy unified during the same period through a different partnership: <span class="vocab" tabindex="0">Garibaldi<span class="tip">Giuseppe Garibaldi, the military leader who conquered southern Italy with his volunteer Red Shirts and helped unify the Italian peninsula.</span></span>, a charismatic military leader who conquered southern Italy with his volunteer army of "Red Shirts," and Cavour, the shrewd political strategist who managed the diplomacy. By 1871, the Italian peninsula was unified for the first time since the Roman Empire. Two new nation-states — Germany and Italy — had appeared on the map of Europe, both created through wars and both driven by nationalist ideology. Europe was not the same continent it had been in 1848, let alone 1815.</p>
+  <p class="para-simple">Italy unified during the same years through a different combination: Garibaldi, a military leader who conquered southern Italy with his volunteer "Red Shirts," and Cavour, who handled the diplomacy and politics. By 1871, Italy was unified for the first time since ancient Rome. Two powerful new nation-states — Germany and Italy — had appeared on the European map in just a few years, both created through wars, both driven by nationalism. Europe was unrecognizable from what it had been in 1815.</p>
+
+  <p class="real-world para-standard">Real-world connection: The unification of Germany and Italy through ethnic nationalism in the 1860s and 1870s created a model that other nationalist movements — in the Balkans, in colonial Asia and Africa — tried to follow for the next hundred years.</p>
+  <p class="real-world para-simple">Real-world connection: The success of German and Italian nationalism in the 1860s-70s became a model for nationalist movements everywhere — in the Balkans, in Asia, and in Africa — for the next hundred years.</p>
+</section>
+
+<!-- FAST FACTS -->
+<div class="brain-break ff-break section-animate">
+  <span class="bb-label">FAST FACTS</span>
+  <p class="ff-context">NATIONALISM BY THE NUMBERS, 1815&ndash;1914</p>
+  <div class="ff-grid">
+    <div class="ff-item">
+      <span class="ff-number">39</span>
+      <span class="ff-desc">separate German states that existed before Bismarck unified them into a single German Empire in 1871</span>
+    </div>
+    <div class="ff-item">
+      <span class="ff-number">50+</span>
+      <span class="ff-desc">years the Concert of Europe tried to suppress nationalist movements — from the Congress of Vienna in 1815 to the Revolutions of 1848 and beyond</span>
+    </div>
+    <div class="ff-item">
+      <span class="ff-number">3</span>
+      <span class="ff-desc">wars Bismarck deliberately engineered between 1864 and 1871 to unify Germany under Prussian leadership</span>
+    </div>
+    <div class="ff-item">
+      <span class="ff-number">99</span>
+      <span class="ff-desc">years between the Congress of Vienna in 1815 — which tried to prevent nationalist war — and WWI in 1914, when nationalism finally ignited one</span>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: BALKANS POWDER KEG -->
+<section class="content-section clearfix section-animate" id="balkans-powder-keg">
+  <span class="section-kicker">CHAPTER THREE</span>
+  <h2 class="section-heading">THE BALKANS: POWDER KEG OF EUROPE</h2>
+
+  <!--
+    FILENAME: S1L08_BalkanMapNationalism.jpg
+    PLACE IN: images/S1/L08/
+    PRIORITY: ESSENTIAL
+    FIND: Map of the Balkans showing nationalist movements and ethnic boundaries circa 1870-1914 — Ottoman and Austro-Hungarian territories, new Balkan nations
+    SEARCH: Balkan nationalism map 1878 ethnic boundaries Ottoman Empire Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Balkans
+  -->
+  <figure class="img-right">
+    <img src="images/S1/L08/S1L08_BalkanMapNationalism.jpg" alt="Map of the Balkans showing ethnic and national boundaries, circa 1870-1914">
+    <figcaption>The Balkans in the late 19th century — a region where Serbs, Bulgarians, Greeks, Romanians, and Bosnians lived under Ottoman and Austro-Hungarian rule and fought for independence. Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard">The <span class="vocab" tabindex="0">Balkans<span class="tip">The peninsula in southeastern Europe — home to Serbia, Bulgaria, Bosnia, and other territories — where multiple empires and nationalist movements collided in the late 1800s and early 1900s.</span></span> — the southeastern peninsula of Europe, home to Serbs, Bulgarians, Greeks, Romanians, Bosnians, and Albanians — was the region where nationalist ambitions collided most dangerously. For centuries, most of the Balkans had been ruled by the Ottoman Empire. As the Ottomans weakened through the 1800s, Balkan peoples fought for independence: Greece won its independence in 1829, Serbia gained autonomy, Bulgaria emerged as a state in 1878, and Romania unified. Each new nation became a model and an inspiration for those still under foreign rule.</p>
+  <p class="para-simple">The Balkans — southeastern Europe, home to Serbs, Bulgarians, Greeks, Romanians, and Bosnians — was the most dangerous collision point for nationalism in Europe. Most of the Balkans had been ruled by the Ottoman Empire for centuries. As the Ottomans weakened in the 1800s, Balkan peoples fought for independence: Greece won freedom in 1829, Serbia gained autonomy, Bulgaria emerged in 1878, Romania unified. Each new free nation inspired the next group still living under foreign rule.</p>
+
+  <p class="para-standard">The problem was that two empires still claimed large Balkan territories: the declining Ottoman Empire and the Austro-Hungarian Empire, a patchwork state that contained dozens of nationalities — Germans, Hungarians, Czechs, Slovaks, Croatians, Serbs, and more — held together by a common monarchy. Serbian nationalists dreamed of a "Greater Serbia" uniting all South Slavic peoples. Austria-Hungary saw this as an existential threat. If Serbia could pull South Slavic peoples away from the Habsburg Empire, the whole multi-ethnic structure might unravel. By 1914, the <span class="vocab" tabindex="0">ethnic nationalism<span class="tip">A form of nationalism based on shared ethnic identity, language, or ancestry — often used to justify redrawing borders or creating new states.</span></span> of the Balkans had turned the region into what journalists of the era called "the powder keg of Europe."</p>
+  <p class="para-simple">Two empires still controlled parts of the Balkans. The declining Ottoman Empire held some territories. The Austro-Hungarian Empire — a patchwork of dozens of ethnic groups held together by one royal family — controlled others. Serbian nationalists dreamed of uniting all South Slavic peoples into a greater Serbia. Austria-Hungary saw this as a deadly threat: if Serbia could pull its people away, the whole multi-ethnic empire might fall apart. By 1914, the Balkans had become what journalists called "the powder keg of Europe" — a region that could ignite a world war.</p>
+</section>
+
+<!-- ART SPOTLIGHT -->
+<div class="brain-break as-break section-animate">
+  <span class="bb-label">ART SPOTLIGHT</span>
+  <figure>
+    <!--
+      FILENAME: S1L08_DelacroixLiberty.jpg
+      PLACE IN: images/S1/L08/
+      PRIORITY: ENHANCEMENT
+      FIND: "Liberty Leading the People" — Eugène Delacroix, 1830, Louvre Museum — iconic painting of a woman personifying Liberty leading armed citizens over barricades after the 1830 French Revolution
+      SEARCH: Delacroix Liberty Leading the People 1830 painting Louvre Wikimedia Commons
+      LINK: Suggested: https://commons.wikimedia.org/wiki/File:Eug%C3%A8ne_Delacroix_-_La_libert%C3%A9_guidant_le_peuple.jpg
+    -->
+    <img src="images/S1/L08/S1L08_DelacroixLiberty.jpg" alt="Liberty Leading the People — Eugène Delacroix, 1830" class="as-image">
+    <figcaption class="as-caption">
+      Liberty Leading the People &mdash; Eug&egrave;ne Delacroix, 1830<br>
+      Delacroix painted this monumental work in the weeks after the 1830 French revolution — showing Liberty as a real woman leading armed citizens of every social class over the barricades, with Paris burning in the background. The painting is held at the Louvre Museum in Paris.
+    </figcaption>
+  </figure>
+  <p class="as-fact">Delacroix was not himself a political revolutionary — he was a conservative aristocrat who found the revolution of 1830 messy and alarming. He painted this image not as a call to arms but as documentation of something he witnessed and could not look away from. Napoleon III later banned the painting from public display for years because he feared it would inspire new uprisings. A painting meant to document a revolution kept causing one.</p>
+</div>
+
+<!-- SECTION 4: ROAD TO WAR -->
+<section class="content-section clearfix section-animate" id="road-to-war">
+  <span class="section-kicker">CHAPTER FOUR</span>
+  <h2 class="section-heading">THE ROAD FROM SARAJEVO TO WAR</h2>
+
+  <div class="two-col">
+    <!--
+      FILENAME: S1L08_FranzFerdinandCar.jpg
+      PLACE IN: images/S1/L08/
+      PRIORITY: ESSENTIAL
+      FIND: Archduke Franz Ferdinand and Duchess Sophie arriving in Sarajevo on June 28 1914, in the open car just before the assassination — historically documented photograph
+      SEARCH: Franz Ferdinand Sarajevo 1914 car assassination photograph Wikimedia Commons
+      LINK: Suggested: https://commons.wikimedia.org/wiki/Assassination_of_Archduke_Franz_Ferdinand
+    -->
+    <figure>
+      <img src="images/S1/L08/S1L08_FranzFerdinandCar.jpg" alt="Archduke Franz Ferdinand and Sophie arriving in Sarajevo, June 28, 1914">
+      <figcaption>Archduke Franz Ferdinand and Duchess Sophie arrive in Sarajevo on June 28, 1914 — minutes before their assassination. Wikimedia Commons.</figcaption>
+    </figure>
+    <!--
+      FILENAME: S1L08_PrinciplMap.jpg
+      PLACE IN: images/S1/L08/
+      PRIORITY: SUPPORTING
+      FIND: Map of Europe showing alliance systems in 1914 — Triple Alliance (Germany, Austria-Hungary, Italy) vs Triple Entente (France, Russia, Britain), showing how one assassination triggered a cascade
+      SEARCH: WWI alliance system 1914 Europe map Triple Alliance Triple Entente Wikimedia Commons
+      LINK: Suggested: https://commons.wikimedia.org/wiki/World_War_I
+    -->
+    <figure>
+      <img src="images/S1/L08/S1L08_AllianceMap1914.jpg" alt="Map of European alliance systems in 1914 showing Triple Alliance and Triple Entente">
+      <figcaption>Europe's alliance systems in 1914 — two armed blocs connected by secret treaties that turned a local assassination into a world war within six weeks. Wikimedia Commons.</figcaption>
+    </figure>
+  </div>
+
+  <p class="para-standard">What made the assassination of Franz Ferdinand so catastrophic was not the act itself — assassinations happened frequently in this era — but the system that surrounded it. Europe in 1914 was divided into two armed alliance blocs connected by secret treaties that obligated each country to defend its allies if attacked. When Austria-Hungary blamed Serbia for the assassination and issued an ultimatum, Serbia's response triggered Austrian mobilization, which triggered Russian mobilization to protect Serbia, which triggered German mobilization to support Austria, which triggered French mobilization to honor its alliance with Russia, which triggered British mobilization to protect Belgium when Germany invaded it. In six weeks, a local act of nationalist terrorism had become a world war.</p>
+  <p class="para-simple">What made the assassination so catastrophic was not the killing itself but the system surrounding it. Europe in 1914 was divided into two armed alliance blocs with secret treaties requiring each country to defend its allies if attacked. When Austria-Hungary blamed Serbia and issued an ultimatum, a chain reaction followed: Austria mobilized, Russia mobilized to protect Serbia, Germany mobilized to support Austria, France mobilized to honor its alliance with Russia, Britain mobilized when Germany invaded Belgium. In six weeks, one nationalist act of terrorism had set off a world war.</p>
+
+  <p class="para-standard">The direct thread from 1848 to 1914 is visible in hindsight. The Congress of Vienna suppressed nationalism but could not kill it. The failure of 1848 drove nationalism underground and made it more radical and ethnic. The unifications of Germany and Italy showed that nationalism could succeed through military force. The Balkan independence movements showed that empires were losing their grip. And in 1914, the <span class="vocab" tabindex="0">nationalism<span class="tip">The belief that a people sharing common culture or ethnicity deserve their own independent country.</span></span> that had been building and boiling for a century finally overflowed. Gavrilo Princip did not start a war. He lit a fuse that a hundred years of suppressed nationalist energy had been building.</p>
+  <p class="para-simple">Looking back, the path from 1848 to 1914 is clear. Vienna suppressed nationalism but could not kill it. The failure of 1848 made nationalism harder and more willing to use violence. Germany and Italy showed that nationalism could succeed through military force. Balkan independence movements showed empires were losing control. In 1914, a hundred years of suppressed nationalist energy finally exploded. Gavrilo Princip did not start a war on his own. He lit a fuse that a century of suppressed nationalism had already built.</p>
+
+  <p class="real-world para-standard">Real-world connection: The same dynamic — ethnic and nationalist movements colliding with multi-ethnic empires and great-power alliance systems — continues to generate conflict in the Balkans, the Middle East, and Central Asia today.</p>
+  <p class="real-world para-simple">Real-world connection: The collision of ethnic nationalism with multi-ethnic empires and alliance systems continues to generate conflict in the Balkans, the Middle East, and Central Asia today.</p>
+</section>
+
+<!-- PRIMARY SOURCE -->
+<div class="primary-source section-animate" id="primary-source-moment">
+  <span class="ps-label">PRIMARY SOURCE MOMENT</span>
+  <div class="ps-visual">
+    <figure>
+      <!--
+        FILENAME: S1L08_BismarckBloodIron.jpg
+        PLACE IN: images/S1/L08/
+        PRIORITY: ESSENTIAL
+        FIND: Bismarck speaking in the Prussian parliament, 1862, or formal portrait of Bismarck as statesman — ideally from around the time of the "blood and iron" speech
+        SEARCH: Bismarck Prussian parliament 1862 statesman portrait Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Otto_von_Bismarck
+      -->
+      <img src="images/S1/L08/S1L08_BismarckParliament.jpg" alt="Otto von Bismarck, circa 1862, around the time of the Blood and Iron speech">
+      <figcaption>Otto von Bismarck, circa 1862. Wikimedia Commons.</figcaption>
+    </figure>
+    <div>
+      <p class="ps-quote">"Germany is not looking to Prussia's liberalism for its salvation, but to its power... The great questions of the time will not be resolved by speeches and majority decisions — that was the great mistake of 1848 and 1849 — but by iron and blood."</p>
+      <p class="ps-attribution">&mdash; Otto von Bismarck, address to the Prussian parliament's Budget Committee, September 30, 1862</p>
+      <p class="ps-narrator">WHY THIS MATTERS: Bismarck is directly responding to the failure of the 1848 revolutions. He is arguing that nationalism will not be achieved through idealism, voting, or speeches — it will be achieved through military power. Notice what he calls "the great mistake of 1848": the belief that democratic methods could unify Germany. He proved his argument by fighting three wars in seven years. As you read this, consider: was Bismarck right that power works better than idealism? And what were the long-term consequences of building German national identity on that foundation?</p>
+    </div>
+  </div>
+</div>
+
+<!-- THEN AND NOW -->
+<div class="brain-break tn-break section-animate" id="then-now">
+  <span class="bb-label">THEN AND NOW</span>
+  <p class="tn-payoff">NATIONALISM DIDN'T END IN 1914 OR 1918. THE SAME FORCE THAT BUILT MODERN EUROPE IS STILL RESHAPING IT.</p>
+  <div class="tn-pair">
+    <div class="tn-item">
+      <span class="tn-era-label">1914</span>
+      <!--
+        FILENAME: S1L08_ThenSarajevo1914.jpg
+        PLACE IN: images/S1/L08/
+        PRIORITY: ESSENTIAL
+        FIND: Sarajevo 1914 — crowds in the streets after the assassination, or the scene near the Latin Bridge where the shooting occurred, or soldiers mobilizing
+        SEARCH: Sarajevo 1914 assassination crowds Franz Ferdinand Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Assassination_of_Archduke_Franz_Ferdinand
+      -->
+      <img src="images/S1/L08/S1L08_ThenSarajevo1914.jpg" alt="Sarajevo, June 1914, the day of Franz Ferdinand's assassination">
+      <p class="tn-caption">Sarajevo, June 28, 1914 — the day one nationalist's act set off a world war. Wikimedia Commons.</p>
+    </div>
+    <div class="tn-item">
+      <span class="tn-era-label">NOW</span>
+      <!--
+        FILENAME: S1L08_NowSarajevoMemorial.jpg
+        PLACE IN: images/S1/L08/
+        PRIORITY: ESSENTIAL
+        FIND: Sarajevo today — the Latin Bridge where the assassination took place, now a memorial site with visitors; modern Sarajevo showing the city rebuilt after the 1990s siege
+        SEARCH: Sarajevo Latin Bridge memorial today visitors Wikimedia Commons CC license
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Latin_Bridge
+        LICENSE: CC-licensed photography acceptable.
+      -->
+      <img src="images/S1/L08/S1L08_NowSarajevoMemorial.jpg" alt="The Latin Bridge in Sarajevo today, site of the 1914 assassination, now a memorial and tourist site">
+      <p class="tn-caption">The Latin Bridge in Sarajevo today — where WWI began, now a memorial visited by people from around the world. Wikimedia Commons / CC.</p>
+    </div>
+  </div>
+  <div class="tn-text-block">
+    <h3>THEN</h3>
+    <p>In 1914, Sarajevo was a city where Austro-Hungarian rule met Bosnian, Serbian, and South Slavic nationalist aspirations. Gavrilo Princip stood at a corner near the Latin Bridge and fired two shots that set off a chain reaction of alliances, mobilizations, and declarations of war that killed 20 million people. The city became the place where a century of suppressed nationalism finally broke open.</p>
+    <h3>NOW</h3>
+    <p>Today, Sarajevo's Latin Bridge is a peaceful tourist destination and memorial site. The museum beside it tells the story of the assassination and World War I. But Sarajevo also survived its own nationalist siege in the 1990s, when Serbian nationalist forces surrounded the city for nearly four years during the Bosnian War — the longest siege of a capital city in modern history. The same tensions nationalism created in 1914 reappeared in 1992.</p>
+    <h3>CONNECTION</h3>
+    <p>The nationalism that the Congress of Vienna tried to suppress in 1815, that erupted in 1848, that unified Germany and Italy by 1871, that blew up the world in 1914, and that tore Yugoslavia apart in the 1990s is the same force — the belief that people who share an ethnic or cultural identity deserve their own state, at whatever cost. It has built countries and destroyed them. The question it keeps forcing is the same one it forced on Gavrilo Princip: how far is it right to go for the nation you believe in?</p>
+    <p>Bismarck argued that nationalism could only succeed through "blood and iron" — military force rather than democratic ideals. Given what you know about how European nationalism played out from 1815 to 1914, do you think he was right, or wrong, or both at the same time?</p>
+  </div>
+</div>
+
+</main>
+<footer>WORLD HISTORY &mdash; SEMESTER 1, LESSON 08 &mdash; NATIONALISM AND THE ROAD TO WWI &mdash; STANDARDS 10.2 / 10.5</footer>
+</div>
+
+<script>
+(function(){var bar=document.getElementById('reading-progress');window.addEventListener('scroll',function(){var s=window.scrollY||document.documentElement.scrollTop;var d=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(d>0?(s/d)*100:0)+'%';},{passive:true});})();
+document.getElementById('lexile-toggle').addEventListener('click',function(){document.body.classList.toggle('simplified');this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';});
+function repositionTip(el){var tip=el.querySelector('.tip');if(!tip)return;tip.style.left='50%';tip.style.transform='translateX(-50%)';var rect=tip.getBoundingClientRect();if(rect.left<8){tip.style.transform='translateX(calc(-50% + '+(8-rect.left)+'px))';}else if(rect.right>window.innerWidth-8){tip.style.transform='translateX(calc(-50% - '+(rect.right-(window.innerWidth-8))+'px))';}}
+document.querySelectorAll('.vocab').forEach(function(el){el.setAttribute('tabindex','0');el.addEventListener('click',function(e){e.stopPropagation();document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);});el.addEventListener('focus',function(){el.classList.add('active');repositionTip(el);});el.addEventListener('blur',function(){el.classList.remove('active');});el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);}if(e.key==='Escape')el.classList.remove('active');});});
+document.addEventListener('click',function(){document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});});
+const tocObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{const id=entry.target.getAttribute('id');const tl=document.querySelector('.toc-sidebar a[href="#'+id+'"]');const nl=document.querySelector('.section-nav a[href="#'+id+'"]');if(entry.isIntersecting){if(tl)tl.classList.add('active');if(nl)nl.classList.add('active');}else{if(tl)tl.classList.remove('active');if(nl)nl.classList.remove('active');}});},{threshold:.25});
+document.querySelectorAll('section[id],div[id="then-now"]').forEach(el=>tocObserver.observe(el));
+(function(){var ao=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');ao.unobserve(entry.target);}});},{threshold:.08});document.querySelectorAll('.section-animate').forEach(function(el){ao.observe(el);});})();
+document.querySelectorAll('img').forEach(function(img){if(img.complete&&img.naturalWidth>0){img.classList.add('loaded');}else{img.addEventListener('load',function(){img.classList.add('loaded');});img.addEventListener('error',function(){img.style.opacity='0.15';img.style.border='2px dashed rgba(255,255,255,0.2)';});}});
+</script>
 </body>
 </html>
+<!--
+  IMAGE CHECK: Open browser DevTools (F12), go to Console, paste and run:
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.complete || img.naturalWidth === 0) { console.warn('MISSING:', img.src); }
+    else { console.log('OK:', img.src); }
+  });
+-->

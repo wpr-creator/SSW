@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSW S1L09 : THE WORLD WWI LEFT BEHIND</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Atkinson+Hyperlegible:wght@400;700&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mud:#2a2218;
+  --mud-dark:#100e0a;
+  --khaki:#7a6a4a;
+  --khaki-light:#a89870;
+  --cream:#f0ead8;
+  --pale:#e5ddc8;
+  --blood:#8a1818;
+  --blood-dark:#5a0e0e;
+  --charcoal:#1e1a12;
+  --gray:#5a5040;
+  --vocab:#8a1818;
+  --ink:#1a1408;
+  --green:#044d37;
+  --lime:#d7ff3f;
+  --purple:#32134d;
+  --pink:#ff4fd8;
+  --cyan:#1bd6ff;
+  --orange:#ff8a21;
+  --steel:#3a4a5a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}
+body{background:radial-gradient(ellipse at top,#18140c 0%,#05040200 80%),#090704;font-family:'Atkinson Hyperlegible',Georgia,serif;font-size:18px;line-height:1.88;color:var(--charcoal);overflow-x:hidden}
+#reading-progress{position:fixed;top:0;left:0;height:4px;width:0%;background:var(--blood);z-index:9999;transition:width .1s linear}
+.page-wrap{width:min(920px,100%);margin:0 auto;background:var(--cream);box-shadow:0 0 120px rgba(0,0,0,.98);border-left:6px solid var(--mud-dark);border-right:6px solid var(--mud-dark);overflow-x:hidden}
+
+/* HEADER */
+.site-header{position:relative;min-height:470px;overflow:hidden;background:var(--mud-dark);display:flex;align-items:center;text-align:center}
+.header-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.34;filter:grayscale(.65) sepia(.3) contrast(1.1)}
+.site-header:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(16,14,10,.08),rgba(16,14,10,.72) 50%,rgba(16,14,10,.97))}
+.header-inner{position:relative;z-index:2;max-width:820px;margin:0 auto;padding:60px 34px 52px}
+.course-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.38em;text-transform:uppercase;color:var(--khaki-light);margin-bottom:18px}
+.page-title{font-family:'Libre Baskerville',serif;font-size:clamp(40px,7vw,70px);font-weight:700;line-height:1.05;color:#fff;text-transform:uppercase;letter-spacing:.04em;text-shadow:2px 6px 28px rgba(0,0,0,.9);margin-bottom:30px}
+.eq-banner{display:inline-block;background:rgba(42,34,24,.94);color:#fff;border:3px solid var(--blood);border-left-width:8px;border-right-width:8px;padding:18px 28px;max-width:760px;font-weight:700;font-size:19px;line-height:1.5;text-align:left}
+.eq-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--khaki-light);margin-bottom:8px}
+
+/* NAV */
+.section-nav{position:sticky;top:4px;z-index:100;display:flex;flex-wrap:wrap;justify-content:center;background:var(--mud-dark);border-bottom:4px solid var(--blood);overflow-x:auto}
+.section-nav a{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(200,185,155,.65);text-decoration:none;padding:13px 11px;border-bottom:4px solid transparent;margin-bottom:-4px;white-space:nowrap;transition:color .2s,border-color .2s}
+.section-nav a:hover{color:#fff;border-bottom-color:var(--khaki-light)}
+.section-nav a.active{color:#fff;border-bottom-color:var(--khaki-light);background:rgba(138,24,24,.25)}
+
+/* LEXILE */
+#lexile-toggle{display:block;margin:22px auto 30px;padding:10px 26px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;border:2px solid var(--blood);background:transparent;color:var(--blood);transition:background .2s,color .2s}
+#lexile-toggle:hover{background:var(--blood);color:#fff}
+.para-simple{display:none}body.simplified .para-standard{display:none}body.simplified .para-simple{display:block}
+
+/* TOC */
+.toc-sidebar{position:fixed;left:calc(50% - 572px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;font-family:'Barlow Condensed',sans-serif;z-index:50;background:rgba(16,14,10,.94);border-right:2px solid rgba(138,24,24,.4)}
+.toc-sidebar .toc-label{display:block;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--khaki-light);margin-bottom:12px}
+.toc-sidebar a{display:block;color:rgba(200,185,155,.55);text-decoration:none;padding:4px 0;font-size:11px;letter-spacing:.05em;text-transform:uppercase;line-height:1.35;transition:color .2s}
+.toc-sidebar a.active,.toc-sidebar a:hover{color:var(--khaki-light);font-weight:700}
+@media(max-width:1100px){.toc-sidebar{display:none}}
+
+/* TIMELINE */
+.timeline-wrap{max-width:820px;margin:0 auto 0;padding:0 28px}
+.timeline-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:var(--blood);text-align:center;margin:0 0 12px}
+.timeline{padding:22px;background:var(--pale);border-top:4px solid var(--blood);border-bottom:4px solid var(--blood);display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.tl-node{border-left:3px solid var(--khaki-light);padding-left:12px}
+.tl-date{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--blood-dark);line-height:1.1;margin-bottom:5px}
+.tl-node p{font-size:14.5px;line-height:1.55;color:var(--charcoal);margin:0}
+@media(max-width:720px){.timeline{grid-template-columns:1fr}.tl-node{padding-bottom:18px}}
+
+/* LAYOUT */
+main{max-width:820px;margin:0 auto;padding:0 28px 68px}
+.intro-section{padding:50px 0 30px}
+.intro-section p{font-size:19px;line-height:1.92;margin-bottom:18px}
+.content-section{padding:52px 0 30px;border-top:2px solid rgba(90,80,64,.18)}
+.section-kicker{display:block;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--blood);margin-bottom:8px}
+.section-heading{font-family:'Libre Baskerville',serif;font-size:clamp(30px,4vw,44px);font-weight:700;color:var(--mud-dark);text-transform:uppercase;border-left:7px solid var(--blood);padding-left:16px;line-height:1.12;margin-bottom:26px}
+p{margin-bottom:20px;color:var(--charcoal)}
+.real-world{background:var(--pale);border-left:5px solid var(--blood);padding:17px 21px;margin:30px 0;font-weight:700;color:var(--ink)}
+
+/* IMAGES */
+figure{margin:32px 0}
+figure img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 8px 26px rgba(0,0,0,.32)}
+figcaption{font-size:13px;font-style:italic;color:#5a5040;margin-top:8px;line-height:1.45}
+.img-right{float:right;width:42%;margin:6px 0 20px 28px}
+.img-left{float:left;width:42%;margin:6px 28px 20px 0}
+.clearfix:after{content:"";display:table;clear:both}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0}
+@media(max-width:680px){.img-right,.img-left{float:none;width:100%;margin:20px 0}.two-col{grid-template-columns:1fr}}
+
+/* VOCAB */
+.vocab{color:var(--vocab);text-decoration:underline dotted var(--vocab);cursor:help;position:relative;font-weight:700}
+.vocab-red{color:var(--vocab);font-weight:700}
+.vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#050505;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:200;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;font-family:'Atkinson Hyperlegible',sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.85);border:1px solid var(--blood)}
+.vocab:hover .tip,.vocab.active .tip{display:block}
+.vocab:focus{outline:2px solid var(--khaki-light);outline-offset:2px;border-radius:2px}
+
+/* PULL QUOTE */
+.pull-quote{border-left:5px solid var(--blood);background:var(--pale);padding:22px 28px;margin:30px 0;font-family:'Libre Baskerville',serif;font-style:italic;font-size:20px;line-height:1.65;color:var(--mud-dark)}
+.pull-quote cite{display:block;font-size:13px;font-style:normal;margin-top:10px;color:var(--gray);font-family:'Atkinson Hyperlegible',sans-serif}
+
+/* ENGAGEMENT BREAKS */
+.brain-break{font-family:'Barlow Condensed',sans-serif;margin:44px -50px;padding:36px 50px;position:relative;overflow:hidden;max-width:calc(100% + 100px)}
+.bb-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.88}
+.bb-text{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:500;line-height:1.65;margin:0}
+.dyk-break{background:var(--green);color:#fff;border-left:6px solid var(--lime)}.dyk-break .bb-label{color:var(--lime)}.dyk-break p,.dyk-break span{color:#fff}
+.ff-break{background:#090704;color:#fff;padding:36px 40px;margin:44px -50px;border-top:3px solid var(--blood);border-bottom:3px solid var(--blood);text-align:center}
+.ff-break .bb-label{color:var(--khaki-light);text-align:center;margin-bottom:8px}
+.ff-context{font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(168,152,112,.85);text-align:center;margin-bottom:28px;font-weight:700}
+.ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:24px}
+.ff-item{text-align:center;padding:8px 16px;max-width:185px}
+.ff-number{display:block;font-family:'Barlow Condensed',sans-serif;font-size:54px;font-weight:900;color:var(--khaki-light);line-height:1;margin-bottom:8px}
+.ff-desc{display:block;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.08em;color:rgba(168,152,112,.8);max-width:185px;margin:0 auto;line-height:1.5}
+.as-break{background:var(--purple);color:#fff;padding:44px 50px;margin:44px -50px;border-top:3px solid var(--pink);border-bottom:3px solid var(--pink);text-align:center}
+.as-break .bb-label{color:var(--pink)}
+.as-image{max-width:580px;width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(255,79,216,.65);box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.as-caption{font-family:'Barlow Condensed',sans-serif;font-size:14px;color:rgba(255,232,251,.75);line-height:1.6;margin-bottom:28px;display:block;font-style:normal}
+.as-fact{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:500;color:#fff;line-height:1.65;max-width:680px;margin:0 auto;text-align:center}
+
+/* PRIMARY SOURCE */
+.primary-source{background:var(--pale);border-left:7px solid var(--blood);padding:30px 34px;margin:38px 0;box-shadow:0 6px 20px rgba(0,0,0,.15)}
+.ps-visual{display:grid;grid-template-columns:minmax(200px,36%) 1fr;gap:24px;align-items:start}
+.ps-visual figure{margin:0}
+.ps-visual img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.ps-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--blood);margin-bottom:12px;display:block}
+.ps-quote{font-family:'Libre Baskerville',serif;font-size:19px;font-style:italic;line-height:1.68;color:var(--ink);margin-bottom:14px}
+.ps-attribution{font-size:13px;font-style:italic;color:var(--gray);margin-bottom:12px}
+.ps-narrator{border-top:1px solid rgba(90,80,64,.28);padding-top:12px;font-size:15px;line-height:1.6;font-weight:700;color:var(--ink)}
+@media(max-width:700px){.ps-visual{grid-template-columns:1fr}}
+
+/* THEN AND NOW */
+.tn-break{background:var(--mud-dark);color:#fff;padding:36px 50px;margin:30px -50px 0}
+.tn-break .bb-label{color:var(--khaki-light);text-align:center;display:block;margin-bottom:20px}
+.tn-payoff{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3.5vw,30px);font-weight:900;line-height:1.32;text-align:center;color:var(--khaki-light);margin:0 auto 28px;max-width:720px}
+.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
+.tn-item{text-align:center}
+.tn-era-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--khaki-light);margin-bottom:10px;font-weight:900}
+.tn-item img{width:100%;display:block;border:2px solid rgba(168,152,112,.4)}
+.tn-caption{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-style:italic;color:rgba(200,185,155,.7);margin-top:8px;line-height:1.4}
+.tn-text-block{margin-top:24px;border-top:1px solid rgba(168,152,112,.28);padding-top:20px}
+.tn-text-block h3{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--khaki-light);margin:18px 0 8px}
+.tn-text-block p{font-family:'Barlow Condensed',sans-serif;font-size:17px;line-height:1.65;margin-bottom:12px;color:#fff}
+
+/* ANIMATION */
+img{opacity:0;transition:opacity .4s ease}img.loaded{opacity:1}
+.section-animate{opacity:0;transform:translateY(24px);transition:opacity .45s ease-out,transform .45s ease-out}
+.section-animate.visible{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.section-animate{opacity:1;transform:none;transition:none}}
+
+/* FOOTER */
+footer{background:var(--mud-dark);color:rgba(200,185,155,.45);text-align:center;padding:24px 30px;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;border-top:5px solid var(--blood)}
+
+/* RESPONSIVE */
+@media(max-width:880px){.page-wrap{border:0}main{padding:0 22px 50px}.timeline-wrap{padding:0 22px}.header-inner{padding:44px 22px 42px}.brain-break,.ff-break,.as-break,.tn-break{margin:36px 0;padding:28px 22px;max-width:100%}.section-nav a{font-size:11px;padding:11px 8px}}
+@media(max-width:600px){.page-title{font-size:38px}.section-heading{font-size:28px}.ff-number{font-size:44px}.as-fact{font-size:18px}.tn-pair{grid-template-columns:1fr}.tn-break{padding:28px 22px;margin:30px 0 0}.bb-text{font-size:18px}}
+@media(max-width:980px){.brain-break,.ff-break,.as-break,.tn-break{margin-left:0;margin-right:0;padding-left:28px;padding-right:28px;max-width:100%}}
+.dyk-break p,.dyk-break span,.ff-break p,.ff-break span,.as-break p,.as-break span,.tn-break p,.tn-break span{color:#fff}
+.ff-context,.ff-desc{color:rgba(168,152,112,.85)}.as-caption{color:rgba(255,232,251,.75)}.tn-caption{color:rgba(200,185,155,.7)}
+</style>
+</head>
+<body>
+<div id="reading-progress"></div>
+<div class="page-wrap">
+
+<header class="site-header">
+  <!--
+    FILENAME: S1L09_TrenchSoldiers.jpg
+    PLACE IN: images/S1/L09/
+    PRIORITY: ESSENTIAL
+    FIND: WWI soldiers in trenches — men standing or sitting in a muddy trench, Western Front, showing the exhaustion and human cost of trench warfare; documentary photojournalism register
+    SEARCH: WWI soldiers trench Western Front mud exhaustion photograph Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/World_War_I
+  -->
+  <img src="images/S1/L09/S1L09_TrenchSoldiers.jpg" alt="Soldiers in the trenches of the Western Front, World War I" class="header-bg">
+  <div class="header-inner">
+    <p class="course-label">World History &mdash; Semester 1 &mdash; Lesson 09 &mdash; Standard 10.5</p>
+    <h1 class="page-title">The World<br>WWI Left<br>Behind</h1>
+    <div class="eq-banner">
+      <span class="eq-label">Essential Question</span>
+      How does a generation make sense of a war that destroyed everything they believed in?
+    </div>
+  </div>
+</header>
+
+<nav class="section-nav">
+  <a href="#introduction">INTRODUCTION</a>
+  <a href="#lost-generation">THE LOST GENERATION</a>
+  <a href="#shell-shock">SHELL SHOCK</a>
+  <a href="#left-behind">WHO GOT LEFT BEHIND</a>
+  <a href="#vacuum">THE VACUUM</a>
+  <a href="#primary-source-moment">SOURCE</a>
+  <a href="#then-now">THEN AND NOW</a>
+</nav>
+
+<aside class="toc-sidebar">
+  <span class="toc-label">ON THIS PAGE</span>
+  <a href="#introduction">Introduction</a>
+  <a href="#lost-generation">The Lost Generation</a>
+  <a href="#shell-shock">Shell Shock</a>
+  <a href="#left-behind">Who Got Left Behind</a>
+  <a href="#vacuum">The Vacuum</a>
+  <a href="#primary-source-moment">Source</a>
+  <a href="#then-now">Then &amp; Now</a>
+</aside>
+
+<main>
+
+<div class="timeline-wrap">
+  <p class="timeline-label">THE AFTERMATH OF WWI &mdash; 1918 TO 1933</p>
+  <div class="timeline">
+    <div class="tl-node"><div class="tl-date">1918</div><p>WWI ends; 20 million dead, 21 million wounded, an entire generation's faith in civilization shattered.</p></div>
+    <div class="tl-node"><div class="tl-date">1918–22</div><p>Writers, artists, and veterans who survived attempt to make sense of what they experienced — producing a wave of literature, art, and cultural change.</p></div>
+    <div class="tl-node"><div class="tl-date">1920s</div><p>Shell shock forces medicine to confront psychological wounds; women who served return home; colonial soldiers return to empires that offer nothing.</p></div>
+    <div class="tl-node"><div class="tl-date">1929</div><p>The Great Depression hits a world already weakened by war debt, wounded institutions, and shattered faith in liberal democracy.</p></div>
+    <div class="tl-node"><div class="tl-date">1933</div><p>Hitler takes power in Germany — filling the vacuum left by a generation that stopped believing in the old institutions.</p></div>
+  </div>
+</div>
+
+<button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
+
+<!-- INTRODUCTION -->
+<section class="intro-section section-animate" id="introduction">
+  <p class="para-standard">In the autumn of 1917, a young British officer named Wilfred Owen was carried out of the trenches suffering from what his commanders called "shell shock." He spent several months recovering in a hospital in Edinburgh, where a doctor named W.H.R. Rivers helped him begin to process what he had seen. Owen went back to the front in 1918, was killed one week before the armistice, and was twenty-five years old when he died. The poems he wrote in those months — including a description of watching a man die in a gas attack that ends with the line "the old lie: dulce et decorum est pro patria mori" — became some of the most-read poetry in the English language. He did not live to see it. He did not live to see anything that came after. Neither did ten million other soldiers. The ones who survived had to figure out what to do with a world that would never look the same again.</p>
+  <p class="para-simple">In autumn 1917, a young British officer named Wilfred Owen was carried out of the trenches suffering from what doctors called "shell shock." He recovered in a hospital in Edinburgh, wrote some of the most powerful anti-war poetry in history, went back to the front, and was killed one week before the war ended. He was twenty-five years old. Ten million soldiers died in WWI. The ones who survived had to figure out how to live in a world that WWI had permanently broken.</p>
+</section>
+
+<!-- SECTION 1: THE LOST GENERATION -->
+<section class="content-section clearfix section-animate" id="lost-generation">
+  <span class="section-kicker">CHAPTER ONE</span>
+  <h2 class="section-heading">THE LOST GENERATION</h2>
+
+  <!--
+    FILENAME: S1L09_WilfredOwen.jpg
+    PLACE IN: images/S1/L09/
+    PRIORITY: ESSENTIAL
+    FIND: Wilfred Owen portrait photograph — formal military portrait, 1916-1918, showing him in British officer's uniform
+    SEARCH: Wilfred Owen portrait photograph officer uniform Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Wilfred_Owen
+  -->
+  <figure class="img-right">
+    <img src="images/S1/L09/S1L09_WilfredOwen.jpg" alt="Wilfred Owen, British poet and WWI officer, circa 1916">
+    <figcaption>Wilfred Owen, WWI poet and British officer, circa 1916. He was killed in action on November 4, 1918 — one week before the armistice. His poems were published posthumously. Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard">The writer Gertrude Stein is credited with coining the term <span class="vocab" tabindex="0">Lost Generation<span class="tip">The generation of writers, artists, and intellectuals who came of age during WWI and whose beliefs were shattered by the experience of industrial warfare.</span></span> to describe the young men and women who had survived WWI and could no longer go back to believing what they had believed before. The war had been sold to them with the language of honor, glory, heroism, and the defense of civilization. What they encountered instead was industrial slaughter — men killed by gas attacks, artillery barrages, and machine guns in quantities that no previous war had come close to matching. The tools of modern civilization — the chemistry that made dye also made poison gas; the factories that made cars also made artillery shells — had been turned to the most efficient killing in human history. Something had broken in how this generation understood the world.</p>
+  <p class="para-simple">The writer Gertrude Stein coined the term "Lost Generation" for the young men and women who survived WWI and could no longer believe what they had believed before it. The war had been sold to them as honorable, glorious, and necessary. What they found was industrial slaughter — men killed by gas attacks, machine guns, and artillery in numbers that no previous war had come close to. The modern civilization they had been told to fight for had built the most efficient killing machines in history. Something had broken.</p>
+
+  <p class="para-standard">The <span class="vocab" tabindex="0">disillusionment<span class="tip">The feeling of having lost one's beliefs, ideals, or faith in something that seemed important — in this case, faith in war, government, and the promise of civilization.</span></span> showed up everywhere in the decade after the war. Ernest Hemingway, who had driven an ambulance on the Italian front and been seriously wounded, developed a prose style so stripped of sentiment and ornamentation that it amounted to a new way of writing: short sentences, no grand abstractions, no beautiful lies. His characters survived things they could not fully explain and carried wounds they could not fully express. Wilfred Owen's poetry described the physical reality of the trenches in clinical, unsparing detail specifically to destroy the romantic language that had sent men to die there. Both writers were making the same argument: the old language had been used to lie to people, and a new language was needed.</p>
+  <p class="para-simple">The disillusionment showed up everywhere after the war. Ernest Hemingway, who had driven an ambulance at the Italian front, developed a writing style of short, stripped-down sentences with no grand heroic language. His characters survived things they could barely explain. Wilfred Owen described the trenches in cold, precise detail specifically to destroy the romantic language that had been used to send men to die there. Both writers were making the same argument: the old language had been used to lie to people. A new language was needed.</p>
+
+  <p class="para-standard"><span class="vocab" tabindex="0">Dadaism<span class="tip">An artistic movement that responded to WWI by deliberately making art that was nonsensical, absurd, or anti-rational — as a protest against a civilization that had produced the war.</span></span> and <span class="vocab" tabindex="0">modernism<span class="tip">A broad movement in art, literature, and architecture that broke with traditional forms after WWI, arguing that the old ways of representing the world were no longer adequate.</span></span> went further. Artists like Marcel Duchamp placed a urinal in an art gallery and called it sculpture. Poets broke apart traditional meter and rhyme. Architects abandoned ornament. The argument behind all of it was the same: the traditional forms of Western civilization — its art, its literature, its architecture, its institutions — had been complicit in producing a war that killed twenty million people. Those forms could no longer be trusted to tell the truth about the world. Something entirely new had to be built.</p>
+  <p class="para-simple">Dadaism and modernism went even further. Artists deliberately made nonsensical work to protest a civilization that had produced the war. Poets broke traditional forms. Architects abandoned decoration. The argument was the same: the traditional art and culture of Western civilization had been part of building a world that killed twenty million people. Those traditions could no longer be trusted. Something entirely new had to replace them.</p>
+</section>
+
+<!-- DID YOU KNOW -->
+<div class="brain-break dyk-break section-animate">
+  <span class="bb-label">DID YOU KNOW</span>
+  <p class="bb-text">Wilfred Owen's most famous poem, "Dulce et Decorum Est," ends with a phrase from the Roman poet Horace: "dulce et decorum est pro patria mori" — "it is sweet and honorable to die for one's country." Owen calls it "the old lie." The Latin phrase had been used by British schools, churches, and government for centuries to inspire young men to see dying in war as noble. Owen had watched a man die in a gas attack at close range. He used the phrase precisely because it was so familiar — and he wanted to destroy it permanently. He was twenty-four years old when he wrote it.</p>
+</div>
+
+<!-- SECTION 2: SHELL SHOCK -->
+<section class="content-section clearfix section-animate" id="shell-shock">
+  <span class="section-kicker">CHAPTER TWO</span>
+  <h2 class="section-heading">SHELL SHOCK AND THE BIRTH OF MODERN PSYCHOLOGY</h2>
+
+  <!--
+    FILENAME: S1L09_ShellShockPatients.jpg
+    PLACE IN: images/S1/L09/
+    PRIORITY: ESSENTIAL
+    FIND: WWI shell shock patients or veterans — soldiers being treated at a hospital, or photographs of psychological trauma cases; documentary and serious register, not sensational
+    SEARCH: WWI shell shock patients veterans hospital treatment photograph Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Shell_shock
+  -->
+  <figure class="img-left">
+    <img src="images/S1/L09/S1L09_ShellShockPatients.jpg" alt="WWI veterans being treated for shell shock in a military hospital">
+    <figcaption>WWI veterans being treated for shell shock in a military hospital. Doctors had no framework for understanding psychological wounds before the war. By the end of it, the field of modern psychology had been permanently changed. Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard"><span class="vocab" tabindex="0">Shell shock<span class="tip">A term used during WWI for what we now call PTSD (Post-Traumatic Stress Disorder) — psychological trauma caused by exposure to combat, death, and extreme violence.</span></span> — the term soldiers used for what they were experiencing — was a psychological wound unlike anything the medical establishment had prepared for. Soldiers were returning from the front unable to speak, unable to sleep, shaking uncontrollably, reliving combat in waking nightmares, unable to function. Military doctors initially treated it as cowardice. Some soldiers were court-martialed and executed for desertion when they were suffering from what we would now call PTSD. Eventually, enough cases piled up — hundreds of thousands across all the warring nations — that doctors could no longer ignore what they were seeing.</p>
+  <p class="para-simple">Shell shock — the term soldiers used for what we now call PTSD — was a psychological wound that the medical world had no preparation for. Soldiers came back unable to speak, unable to sleep, shaking uncontrollably, reliving combat in waking nightmares. Military doctors initially called it cowardice. Some soldiers were executed for what was actually psychological trauma. But eventually the sheer number of cases — hundreds of thousands — forced doctors to take it seriously.</p>
+
+  <p class="para-standard">The effort to understand and treat shell shock forced the development of modern psychology and psychiatry. Doctors like W.H.R. Rivers began doing what was essentially talk therapy with soldiers — sitting with them, having them describe their experiences, working through the trauma verbally. Freud's theories of the unconscious mind, which had been largely theoretical before the war, suddenly had enormous populations of patients whose symptoms fit his models. The <span class="vocab" tabindex="0">psychological wound<span class="tip">An invisible injury to the mind and emotions caused by trauma — as real and as serious as a physical wound, even though it cannot be seen.</span></span> became recognized as a real medical condition rather than a moral failing. The war that broke everything else also, unexpectedly, built the foundations of modern mental health treatment.</p>
+  <p class="para-simple">Trying to understand and treat shell shock forced the development of modern psychology and psychiatry. Doctors began doing what was essentially talk therapy — sitting with soldiers and working through trauma by talking about it. Theories of the unconscious mind suddenly had huge numbers of patients whose symptoms matched them. The psychological wound became recognized as a real medical condition, not a sign of weakness or cowardice. The war that destroyed so much accidentally helped build the foundations of modern mental health care.</p>
+
+  <p class="para-standard">The vast majority of soldiers who experienced shell shock received little or no treatment and returned home to families and communities that had no idea what to do with them. They were expected to return to work, to be husbands and fathers, to resume the normal routines of peacetime life. Many could not. The rates of alcoholism, unemployment, domestic violence, and suicide in veteran populations across Europe in the 1920s were devastating — but largely invisible, because <span class="vocab" tabindex="0">propaganda<span class="tip">Information, often misleading or incomplete, used to promote a particular cause or point of view — in this case, the image of war as glorious and heroic.</span></span> had trained everyone to see suffering veterans as evidence that something had gone wrong with the men, not with the war.</p>
+  <p class="para-simple">Most soldiers with shell shock received little or no treatment and returned home to families that had no idea what to do with them. They were expected to get back to normal life. Many could not. Rates of alcoholism, unemployment, and suicide in veteran communities across Europe in the 1920s were devastating. But because propaganda had trained people to see war as glorious, suffering veterans were seen as broken individuals rather than evidence of what the war had actually done.</p>
+</section>
+
+<!-- FAST FACTS -->
+<div class="brain-break ff-break section-animate">
+  <span class="bb-label">FAST FACTS</span>
+  <p class="ff-context">THE HUMAN COST OF WWI BEYOND THE BATTLEFIELD</p>
+  <div class="ff-grid">
+    <div class="ff-item">
+      <span class="ff-number">20M</span>
+      <span class="ff-desc">military and civilian deaths in WWI — more than any previous war in human history, made possible by industrial weapons</span>
+    </div>
+    <div class="ff-item">
+      <span class="ff-number">21M</span>
+      <span class="ff-desc">soldiers wounded, many permanently disabled — more wounded survivors than in any previous conflict</span>
+    </div>
+    <div class="ff-item">
+      <span class="ff-number">306</span>
+      <span class="ff-desc">British soldiers executed by their own military for "cowardice" or desertion — many of whom were almost certainly suffering from shell shock</span>
+    </div>
+    <div class="ff-item">
+      <span class="ff-number">600K</span>
+      <span class="ff-desc">colonial soldiers from French West Africa, Senegal, Madagascar, and other colonies who fought for France — and returned home to the same colonial status they had left</span>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: WHO GOT LEFT BEHIND -->
+<section class="content-section clearfix section-animate" id="left-behind">
+  <span class="section-kicker">CHAPTER THREE</span>
+  <h2 class="section-heading">WHO GOT LEFT BEHIND</h2>
+
+  <!--
+    FILENAME: S1L09_WomenMunitionWorkers.jpg
+    PLACE IN: images/S1/L09/
+    PRIORITY: ESSENTIAL
+    FIND: Women working in a WWI munitions factory, 1914-1918 — women operating machinery, assembling shells, or doing industrial work that had been exclusively male before the war
+    SEARCH: WWI women munitions factory workers 1914 1918 Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Women_in_World_War_I
+  -->
+  <figure class="img-right">
+    <img src="images/S1/L09/S1L09_WomenMunitionWorkers.jpg" alt="Women workers in a WWI munitions factory, circa 1916-1918">
+    <figcaption>Women workers in a WWI munitions factory, circa 1916-1918. Women drove ambulances, managed factories, and organized supply lines during the war — and were then expected to return to domestic life when it ended. Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard">Women across the warring nations had driven ambulances, operated field hospitals, managed factories, organized supply chains, and held together the economies of countries whose male workforce had gone to the front. When the war ended, many governments held women's wartime service up as proof of their capabilities — and then told them to go back to the domestic sphere now that men were returning. Some countries granted women the vote after the war: Britain in 1918 (for women over 30), Germany in 1919, the United States in 1920. But the expectation remained that women would step aside from the economic and professional roles they had proven themselves in. Many did not go quietly.</p>
+  <p class="para-simple">During the war, women had driven ambulances, run factories, managed supply chains, and kept their countries' economies running while millions of men were at the front. When the war ended, governments praised women's service and then told them to go back to domestic life. Some countries gave women the vote after the war: Britain in 1918, Germany in 1919, the United States in 1920. But the expectation was that women would step aside for returning men. Many women refused to simply go back to how things were before.</p>
+
+  <!--
+    FILENAME: S1L09_SenegaleseWWI.jpg
+    PLACE IN: images/S1/L09/
+    PRIORITY: ESSENTIAL
+    FIND: Senegalese Tirailleurs (Senegalese infantry soldiers) in WWI — French colonial troops from West Africa fighting in France or North Africa, 1914-1918; documentary photograph
+    SEARCH: Senegalese Tirailleurs WWI French colonial soldiers West Africa Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Tirailleurs_s%C3%A9n%C3%A9galais
+  -->
+  <figure class="img-left">
+    <img src="images/S1/L09/S1L09_SenegaleseWWI.jpg" alt="Senegalese Tirailleurs, French colonial soldiers, WWI">
+    <figcaption>Senegalese Tirailleurs — colonial soldiers from West Africa fighting for France in WWI. Over 600,000 colonial soldiers fought for France during the war. Most returned home to the same colonial system, their service unrecognized and unrewarded. Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard">Colonial soldiers from Senegal, Indochina, India, West Africa, Algeria, and dozens of other territories had fought and died for the empires that controlled them. The French army alone mobilized over 600,000 soldiers from its African and Asian colonies. Many of them had been told, explicitly or implicitly, that their service would be rewarded with greater rights and recognition. When the war ended, those promises were forgotten. <span class="vocab" tabindex="0">Colonial nationalism<span class="tip">The growth of independence movements in colonized countries, often accelerated by the experience of colonial soldiers fighting for empires that refused to grant them equal rights.</span></span> — the desire for self-determination in colonized territories — accelerated dramatically after WWI, fueled by the bitter recognition that the principles of freedom and self-determination that European powers claimed to be fighting for did not extend to their own colonies.</p>
+  <p class="para-simple">Colonial soldiers from Senegal, Indochina, India, West Africa, and Algeria had fought and died for the empires that colonized them. The French army alone mobilized over 600,000 soldiers from Africa and Asia. Many had been promised greater rights in return for their service. When the war ended, those promises were broken. Colonial nationalism — independence movements in colonized countries — grew dramatically after WWI, fueled by the anger of soldiers who had fought for freedom and come home to the same colonial status they had left.</p>
+
+  <p class="para-standard">Blaise Diagne from Senegal had recruited 600,000 African soldiers for France and been rewarded with a position in the French cabinet — the first Black man to hold such a role. Ho Chi Minh, a young Vietnamese man working in Paris during the war, presented a petition for Vietnamese self-determination to the Paris Peace Conference in 1919. He was ignored. Within twenty years he was leading an armed independence movement. The soldiers who came home from WWI to find that empire still controlled every aspect of their lives began building the independence movements that would reshape the world after 1945.</p>
+  <p class="para-simple">Blaise Diagne from Senegal recruited 600,000 African soldiers for France and became the first Black man to hold a position in the French cabinet. Ho Chi Minh, a young Vietnamese man in Paris during the war, brought a petition for Vietnamese independence to the Paris Peace Conference in 1919. He was completely ignored. Within twenty years he was leading an armed independence movement. Colonial soldiers who came home to the same empire they had left would build the independence movements that reshaped the world after 1945.</p>
+</section>
+
+<!-- ART SPOTLIGHT -->
+<div class="brain-break as-break section-animate">
+  <span class="bb-label">ART SPOTLIGHT</span>
+  <figure>
+    <!--
+      FILENAME: S1L09_NevinsonsWar.jpg
+      PLACE IN: images/S1/L09/
+      PRIORITY: ENHANCEMENT
+      FIND: "Paths of Glory" — Christopher R.W. Nevinson, 1917 — painting of two dead British soldiers lying face-down in the mud, rejected by British military censors as too demoralizing; or "La Mitrailleuse" (The Machine Gunner), Nevinson, 1915
+      SEARCH: Christopher Nevinson "Paths of Glory" 1917 painting WWI Wikimedia Commons
+      LINK: Suggested: https://commons.wikimedia.org/wiki/C._R._W._Nevinson
+    -->
+    <img src="images/S1/L09/S1L09_NevinsonsPathsOfGlory.jpg" alt="Paths of Glory — Christopher R.W. Nevinson, 1917" class="as-image">
+    <figcaption class="as-caption">
+      Paths of Glory &mdash; Christopher R.W. Nevinson, 1917<br>
+      Nevinson painted this image of two dead British soldiers lying face-down in the mud of the Western Front. British military censors refused to allow it to be exhibited — it was too honest about what the war was actually doing to men. The painting is held at the Imperial War Museum in London.
+    </figcaption>
+  </figure>
+  <p class="as-fact">When the British military censors refused to display "Paths of Glory," Nevinson exhibited it anyway — but with a strip of brown paper pasted diagonally across the canvas labeled "CENSORED." The censored painting drew more attention and outrage than the uncensored version ever would have. The censor's attempt to hide the truth of the war made it impossible to look away. The painting is still exhibited with the brown paper strip intact, as a document of both the war and the effort to suppress what the war had done.</p>
+</div>
+
+<!-- SECTION 4: THE VACUUM -->
+<section class="content-section clearfix section-animate" id="vacuum">
+  <span class="section-kicker">CHAPTER FOUR</span>
+  <h2 class="section-heading">THE VACUUM</h2>
+
+  <!--
+    FILENAME: S1L09_WeimarGermanyInflation.jpg
+    PLACE IN: images/S1/L09/
+    PRIORITY: SUPPORTING
+    FIND: Weimar Germany hyperinflation, 1923 — woman using banknotes as fuel, workers receiving wages in wheelbarrows, or stacks of worthless currency showing the collapse of the German economy
+    SEARCH: Weimar Germany hyperinflation 1923 banknotes wheelbarrow Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Hyperinflation_in_the_Weimar_Republic
+  -->
+  <figure class="img-right">
+    <img src="images/S1/L09/S1L09_WeimarInflation.jpg" alt="Weimar Germany hyperinflation, 1923 — German citizens dealing with worthless currency">
+    <figcaption>Weimar Germany hyperinflation, 1923 — German workers received wages in wheelbarrows of cash that were nearly worthless. The economic collapse of the 1920s followed directly from the war's devastation and the punishing peace terms of the Treaty of Versailles. Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard">WWI did not just kill people and shatter individual faith. It delegitimized institutions. The monarchies that had sent millions to die — the German, Austrian, Ottoman, and Russian empires — collapsed during or after the war. The liberal democratic governments that had survived — France, Britain, the United States — had used <span class="vocab" tabindex="0">propaganda<span class="tip">Information deliberately shaped to promote a cause or government — often hiding uncomfortable truths or manipulating emotions.</span></span> to hide the realities of the war from their citizens, and people knew it. The churches that had blessed the armies of all sides and declared God's favor on contradictory causes had revealed their own complicity. The scientists and engineers whose inventions had built the most efficient killing machines in history had shown what <span class="vocab" tabindex="0">modernism<span class="tip">A cultural movement that broke with traditional forms after WWI, responding to the failure of "progress" to prevent industrial slaughter.</span></span> and progress actually meant when applied to warfare.</p>
+  <p class="para-simple">WWI did not just kill people. It destroyed faith in institutions. The monarchies that had sent millions to die — Germany, Austria-Hungary, the Ottoman Empire, Russia — collapsed. The democratic governments that survived had used propaganda to hide the war's realities from their citizens, and people knew it. The churches that had blessed both sides and declared God's favor on contradictory causes had exposed themselves. Scientists whose inventions had made mass killing possible had revealed what "progress" actually meant. Trust in the institutions that had organized civilization — governments, churches, armies, schools — was gone.</p>
+
+  <p class="para-standard">Into that vacuum came movements that offered total certainty in place of the doubt that the war had created. Fascism in Italy and Germany promised national rebirth, strength, and a return to greatness. Communism in the Soviet Union promised a complete break from the old capitalist order that had produced the war. <span class="vocab" tabindex="0">Pacifism<span class="tip">The belief that war is never justified and that conflicts should be resolved through nonviolent means.</span></span> movements across Europe and America argued that any war was better avoided at almost any cost — a conviction so strong that it would contribute to the delayed response to Hitler's rise in the 1930s. The generation that survived WWI was not simply disillusioned. It was searching desperately for something to believe in again. What it found, in many cases, was something far more dangerous than what the war had replaced.</p>
+  <p class="para-simple">Into the vacuum left by destroyed trust, new movements offered total certainty. Fascism in Italy and Germany promised national rebirth and strength. Communism in the Soviet Union promised a complete break from the system that had caused the war. Pacifism argued that war was never worth it and should be avoided at any cost — a belief so strong it contributed to the slow response to Hitler in the 1930s. The generation that survived WWI was not just disillusioned. It was desperately searching for something new to believe in. What it found, in many cases, was far more dangerous than what had been destroyed.</p>
+
+  <p class="real-world para-standard">Real-world connection: The collapse of faith in traditional institutions that WWI accelerated is the direct cause of the political chaos of the 1920s and 1930s — including the rise of fascism and the conditions that led to World War II.</p>
+  <p class="real-world para-simple">Real-world connection: The collapse of trust in governments, churches, and institutions that WWI caused is the direct reason for the chaos of the 1920s and 1930s — and why fascism was able to rise when it did.</p>
+</section>
+
+<!-- PRIMARY SOURCE -->
+<div class="primary-source section-animate" id="primary-source-moment">
+  <span class="ps-label">PRIMARY SOURCE MOMENT</span>
+  <div class="ps-visual">
+    <figure>
+      <!--
+        FILENAME: S1L09_WilfredOwenManuscript.jpg
+        PLACE IN: images/S1/L09/
+        PRIORITY: ESSENTIAL
+        FIND: Wilfred Owen handwritten manuscript of "Dulce et Decorum Est" — the original draft in his handwriting showing corrections and revisions, held at British Library
+        SEARCH: Wilfred Owen Dulce et Decorum Est manuscript handwriting British Library Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Wilfred_Owen
+      -->
+      <img src="images/S1/L09/S1L09_OwenManuscript.jpg" alt="Wilfred Owen's handwritten manuscript of Dulce et Decorum Est">
+      <figcaption>Wilfred Owen's handwritten manuscript of "Dulce et Decorum Est," showing his corrections and revisions. British Library / Wikimedia Commons.</figcaption>
+    </figure>
+    <div>
+      <p class="ps-quote">"If in some smothering dreams, you too could pace behind the wagon that we flung him in, and watch the white eyes writhing in his face... My friend, you would not tell with such high zest to children ardent for some desperate glory, the old lie: Dulce et decorum est pro patria mori."</p>
+      <p class="ps-attribution">&mdash; Wilfred Owen, "Dulce et Decorum Est," written 1917, published posthumously 1920. The Latin phrase means: "It is sweet and honorable to die for your country."</p>
+      <p class="ps-narrator">WHY THIS MATTERS: Owen is describing a gas attack — the wagon carrying a dying soldier, the "white eyes writhing" in his face. He addresses the poem directly to someone back home — "My friend" — who is telling children that dying in war is sweet and honorable. He calls that "the old lie." As you read this, consider: what is Owen arguing that poetry can do that a government report or a news article cannot? And who is he angry at — the enemy, or someone else entirely?</p>
+    </div>
+  </div>
+</div>
+
+<!-- THEN AND NOW -->
+<div class="brain-break tn-break section-animate" id="then-now">
+  <span class="bb-label">THEN AND NOW</span>
+  <p class="tn-payoff">THE QUESTIONS WWI FORCED — ABOUT WHAT WAR DOES TO PEOPLE AND WHAT GOVERNMENTS OWE VETERANS — ARE STILL BEING ANSWERED.</p>
+  <div class="tn-pair">
+    <div class="tn-item">
+      <span class="tn-era-label">1918</span>
+      <!--
+        FILENAME: S1L09_ThenVeteransReturn.jpg
+        PLACE IN: images/S1/L09/
+        PRIORITY: ESSENTIAL
+        FIND: WWI veterans returning home, 1918 — soldiers arriving back in a city, crowds greeting them, or a more quiet homecoming scene; serious documentary register
+        SEARCH: WWI veterans returning home 1918 armistice homecoming photograph Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/World_War_I_casualties
+      -->
+      <img src="images/S1/L09/S1L09_ThenVeteransReturn.jpg" alt="WWI veterans returning home, 1918">
+      <p class="tn-caption">WWI veterans returning home, 1918. Wikimedia Commons.</p>
+    </div>
+    <div class="tn-item">
+      <span class="tn-era-label">NOW</span>
+      <!--
+        FILENAME: S1L09_NowVeteransCounseling.jpg
+        PLACE IN: images/S1/L09/
+        PRIORITY: ESSENTIAL
+        FIND: Modern veterans' mental health or PTSD counseling session, or veterans' support group; shows agency, community, and treatment — NOT victimhood or hardship alone
+        SEARCH: veterans PTSD counseling support group community healing Wikimedia Commons CC license
+        LINK: Suggested: Unsplash free license or CC-licensed photography acceptable.
+        LICENSE: CC or Unsplash free license acceptable.
+      -->
+      <img src="images/S1/L09/S1L09_NowVeteransCounseling.jpg" alt="Modern veterans in a PTSD support group or counseling session">
+      <p class="tn-caption">Modern veterans in a PTSD support group. The psychological wounds first named during WWI are still treated — and still inadequately resourced. CC license.</p>
+    </div>
+  </div>
+  <div class="tn-text-block">
+    <h3>THEN</h3>
+    <p>In 1918, hundreds of thousands of soldiers returned home with what doctors were only beginning to call shell shock. Many were expected to simply recover on their own. Some were punished for symptoms their commanding officers read as cowardice. The tools to understand or treat psychological trauma barely existed, and the social pressure to appear whole and functional was enormous. The damage many veterans carried went unacknowledged for the rest of their lives.</p>
+    <h3>NOW</h3>
+    <p>Today, Post-Traumatic Stress Disorder is a recognized and diagnosable medical condition — a direct result of the medical reckoning that WWI forced. Veterans' support organizations, therapy programs, and PTSD treatment centers exist because a generation of WWI doctors refused to accept that psychological wounds were a moral failing. But underfunding, understaffing, and stigma continue to prevent many veterans from accessing the care they need.</p>
+    <h3>CONNECTION</h3>
+    <p>The recognition that war leaves psychological wounds that deserve treatment — not punishment, not silence, not the instruction to "move on" — began in WWI. Every veteran who receives mental health treatment today benefits from what those early doctors and patients built. And every gap in that system is a reminder that the work Wilfred Owen and Siegfried Sassoon and W.H.R. Rivers started is still unfinished: the work of making honest the actual cost of sending people to war.</p>
+    <p>Owen called the idea that dying in war is "sweet and honorable" an old lie. Do you think that the way war is talked about today — in news coverage, movies, politics, and school — is more honest than the propaganda of 1914? What would it look like to tell the whole truth?</p>
+  </div>
+</div>
+
+</main>
+<footer>WORLD HISTORY &mdash; SEMESTER 1, LESSON 09 &mdash; THE WORLD WWI LEFT BEHIND &mdash; STANDARD 10.5</footer>
+</div>
+
+<script>
+(function(){var bar=document.getElementById('reading-progress');window.addEventListener('scroll',function(){var s=window.scrollY||document.documentElement.scrollTop;var d=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(d>0?(s/d)*100:0)+'%';},{passive:true});})();
+document.getElementById('lexile-toggle').addEventListener('click',function(){document.body.classList.toggle('simplified');this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';});
+function repositionTip(el){var tip=el.querySelector('.tip');if(!tip)return;tip.style.left='50%';tip.style.transform='translateX(-50%)';var rect=tip.getBoundingClientRect();if(rect.left<8){tip.style.transform='translateX(calc(-50% + '+(8-rect.left)+'px))';}else if(rect.right>window.innerWidth-8){tip.style.transform='translateX(calc(-50% - '+(rect.right-(window.innerWidth-8))+'px))';}}
+document.querySelectorAll('.vocab').forEach(function(el){el.setAttribute('tabindex','0');el.addEventListener('click',function(e){e.stopPropagation();document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);});el.addEventListener('focus',function(){el.classList.add('active');repositionTip(el);});el.addEventListener('blur',function(){el.classList.remove('active');});el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);}if(e.key==='Escape')el.classList.remove('active');});});
+document.addEventListener('click',function(){document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});});
+const tocObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{const id=entry.target.getAttribute('id');const tl=document.querySelector('.toc-sidebar a[href="#'+id+'"]');const nl=document.querySelector('.section-nav a[href="#'+id+'"]');if(entry.isIntersecting){if(tl)tl.classList.add('active');if(nl)nl.classList.add('active');}else{if(tl)tl.classList.remove('active');if(nl)nl.classList.remove('active');}});},{threshold:.25});
+document.querySelectorAll('section[id],div[id="then-now"]').forEach(el=>tocObserver.observe(el));
+(function(){var ao=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');ao.unobserve(entry.target);}});},{threshold:.08});document.querySelectorAll('.section-animate').forEach(function(el){ao.observe(el);});})();
+document.querySelectorAll('img').forEach(function(img){if(img.complete&&img.naturalWidth>0){img.classList.add('loaded');}else{img.addEventListener('load',function(){img.classList.add('loaded');});img.addEventListener('error',function(){img.style.opacity='0.15';img.style.border='2px dashed rgba(255,255,255,0.2)';});}});
+</script>
+</body>
+</html>
+<!--
+  IMAGE CHECK: Open browser DevTools (F12), go to Console, paste and run:
+  document.querySelectorAll('img').forEach(img => {
+    if (!img.complete || img.naturalWidth === 0) { console.warn('MISSING:', img.src); }
+    else { console.log('OK:', img.src); }
+  });
+-->
