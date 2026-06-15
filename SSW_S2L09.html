@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSW S2L09 : ONE DEVICE, ONE WORLD</title>
+<title>SSW S2L09: GLOBALIZATION IN YOUR POCKET</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -31,15 +31,15 @@ body{background:radial-gradient(ellipse at top,#051820 0%,#020a10 70%);font-fami
 #reading-progress{position:fixed;top:0;left:0;height:4px;width:0%;background:var(--electric);z-index:9999;transition:width .1s linear}
 .page-wrap{width:min(920px,100%);margin:0 auto;background:var(--cream);box-shadow:0 0 100px rgba(0,0,0,.95);border-left:6px solid var(--black);border-right:6px solid var(--black);overflow-x:hidden}
 .site-header{position:relative;min-height:455px;overflow:hidden;background:#020a10;display:flex;align-items:center;text-align:center}
-.header-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38;filter:saturate(.7) contrast(1.1)}
-.site-header:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.1),rgba(2,10,16,.75) 55%,rgba(2,10,16,.97))}
+.header-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.36;filter:saturate(.85) contrast(1.15)}
+.site-header:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.12),rgba(2,10,16,.72) 55%,rgba(2,10,16,.98))}
 .header-inner{position:relative;z-index:2;max-width:820px;margin:0 auto;padding:56px 34px 50px}
 .course-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.34em;text-transform:uppercase;color:var(--electric);margin-bottom:18px}
 .page-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,8vw,80px);font-weight:800;line-height:.98;color:#fff;text-transform:uppercase;letter-spacing:.04em;text-shadow:2px 5px 22px rgba(0,0,0,.9);margin-bottom:30px}
 .eq-banner{display:inline-block;background:rgba(0,85,119,.92);color:#fff;border:3px solid var(--electric);border-left-width:8px;border-right-width:8px;padding:18px 28px;max-width:760px;font-weight:700;font-size:20px;line-height:1.45;text-align:left}
 .eq-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--electric);margin-bottom:8px}
 .section-nav{position:sticky;top:4px;z-index:100;display:flex;flex-wrap:wrap;justify-content:center;background:#071018;border-bottom:4px solid var(--teal);overflow-x:auto}
-.section-nav a{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#e6e6e6;text-decoration:none;padding:14px 12px;border-bottom:4px solid transparent;margin-bottom:-4px;white-space:nowrap;flex:0 0 auto;transition:color .2s,border-color .2s}
+.section-nav a{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#e6e6e6;text-decoration:none;padding:14px 12px;border-bottom:4px solid transparent;margin-bottom:-4px;white-space:nowrap;flex:0 0 auto;transition:color .2s,border-color .2s,background .2s}
 .section-nav a:hover{color:#fff;border-bottom-color:var(--electric)}
 .section-nav a.active{color:#fff;border-bottom-color:var(--electric);background:rgba(0,229,255,.12)}
 #lexile-toggle{display:block;margin:20px auto 28px;padding:10px 24px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:2px solid var(--teal);background:transparent;color:var(--teal);transition:background .2s,color .2s}
@@ -51,7 +51,6 @@ body.simplified .para-simple{display:block}
 .toc-sidebar .toc-label{display:block;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--electric);margin-bottom:10px}
 .toc-sidebar a{display:block;color:#e6e6e6;text-decoration:none;padding:4px 0;font-size:11px;letter-spacing:.05em;text-transform:uppercase;line-height:1.35;transition:color .2s}
 .toc-sidebar a.active,.toc-sidebar a:hover{color:var(--electric);font-weight:700}
-@media(max-width:1100px){.toc-sidebar{display:none}}
 .timeline-wrap{max-width:820px;width:100%;margin:0 auto 36px;padding:0 28px}
 .timeline-title{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--teal-dark);margin:0 0 12px;text-align:center}
 .timeline{margin:0;padding:22px;background:#dce8e8;border-top:4px solid var(--teal);border-bottom:4px solid var(--teal);display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:100%}
@@ -72,7 +71,6 @@ figcaption{font-size:13px;font-style:italic;color:#4b4b4b;margin-top:8px;line-he
 .img-left{float:left;width:42%;margin:6px 28px 20px 0}
 .clearfix:after{content:"";display:table;clear:both}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0}
-@media(max-width:680px){.img-right,.img-left{float:none;width:100%;margin:24px 0}.two-col{grid-template-columns:1fr}}
 .vocab{color:var(--vocab);text-decoration:underline dotted var(--vocab);cursor:help;position:relative;font-weight:700}
 .vocab-red{color:var(--vocab);font-weight:700}
 .vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#050505;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:200;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;font-family:'Atkinson Hyperlegible',Arial,sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.8);border:1px solid var(--teal)}
@@ -83,7 +81,6 @@ figcaption{font-size:13px;font-style:italic;color:#4b4b4b;margin-top:8px;line-he
 .bb-text{font-family:'Roboto Slab',serif;font-size:22px;font-weight:500;line-height:1.65;margin:0}
 .dyk-break{background:linear-gradient(135deg,#0a2a10,#041808);color:#fff;border-left:6px solid var(--lime)}
 .dyk-break .bb-label{color:var(--lime)}
-.dyk-break p,.dyk-break span{color:#fff}
 .ff-break{background:#060e14;color:#fff;padding:36px 40px;margin:44px -50px;border-top:3px solid var(--electric);border-bottom:3px solid var(--electric);text-align:center}
 .ff-break .bb-label{text-align:center;margin-bottom:8px;color:var(--electric)}
 .ff-context{font-family:'Roboto Slab',serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#b0eeff;text-align:center;margin-bottom:28px;opacity:.9;font-weight:700}
@@ -104,7 +101,6 @@ figcaption{font-size:13px;font-style:italic;color:#4b4b4b;margin-top:8px;line-he
 .ps-quote{font-size:22px;font-style:italic;line-height:1.65;color:var(--black);margin-bottom:14px}
 .ps-attribution{font-size:13px;font-style:italic;color:#444;margin-bottom:12px}
 .ps-narrator{border-top:1px solid #aaa;padding-top:12px;font-size:15px;line-height:1.6;font-weight:700;color:#222}
-@media(max-width:700px){.ps-visual{grid-template-columns:1fr}}
 .tn-break{background:#0d2342;color:#fff;padding:36px 50px;margin:30px -50px 0}
 .tn-break .bb-label{color:var(--cyan);text-align:center;display:block;margin-bottom:20px}
 .tn-payoff{font-family:'Roboto Slab',serif;font-size:clamp(22px,3.5vw,30px);font-weight:700;line-height:1.35;text-align:center;color:var(--cyan);margin-bottom:28px;max-width:720px;margin-left:auto;margin-right:auto}
@@ -127,7 +123,6 @@ footer{background:#040c12;color:#d0d0d0;text-align:center;padding:24px 30px;font
 @media(max-width:700px){.ps-visual{grid-template-columns:1fr}}
 @media(max-width:600px){.page-title{font-size:42px}.section-heading{font-size:31px}.bb-text,.as-fact{font-size:18px}.ff-number{font-size:44px}.tn-break{margin:30px 0 0;padding:28px 22px}}
 @media(max-width:980px){.brain-break,.ff-break,.as-break,.tn-break{margin-left:0;margin-right:0;padding-left:28px;padding-right:28px;max-width:100%}}
-@media(max-width:880px){.brain-break,.ff-break,.as-break,.tn-break{margin:36px 0;padding:28px 22px}.tn-break{margin:30px 0 0}}
 html,body{max-width:100%;overflow-x:hidden}.page-wrap{max-width:100%;overflow-x:hidden}main,.timeline-wrap{width:100%;max-width:820px}img,figure,.timeline,.primary-source,.two-col,.tn-pair{max-width:100%}img{height:auto}.section-nav{overflow-x:auto;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}
 .dyk-break,.dyk-break p,.dyk-break span,.ff-break,.ff-break p,.ff-break span,.as-break,.as-break p,.as-break span,.tn-break,.tn-break p,.tn-break span{color:#fff}
 .ff-context,.ff-desc{color:#b0eeff}.as-caption{color:#ffe8fb}.tn-caption{color:#e9fbff}
@@ -138,22 +133,19 @@ html,body{max-width:100%;overflow-x:hidden}.page-wrap{max-width:100%;overflow-x:
 <div id="reading-progress"></div>
 <div class="page-wrap">
 
-<!-- HEADER -->
 <header class="site-header">
   <!--
-    FILENAME: S2L09_JobsiPhoneReveal.jpg
+    FILENAME: S2L09_ContainerPortGlobalTrade.jpg
     PLACE IN: images/S2/L09/
     PRIORITY: ESSENTIAL
-    FIND: Steve Jobs holding up the original iPhone on stage at Macworld Conference,
-          San Francisco, January 9, 2007; Jobs in his black turtleneck raising the
-          small device to the audience — the defining moment of the product launch
-    SEARCH: Steve Jobs iPhone reveal Macworld 2007 stage holding Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Steve_Jobs
+    FIND: A crowded modern container port with cranes, stacked shipping containers, and cargo ships; shows the physical system that makes global trade possible
+    SEARCH: container port cranes global trade shipping containers Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Container_ports
   -->
-  <img src="images/S2/L09/S2L09_JobsiPhoneReveal.jpg" alt="Steve Jobs holding up the first iPhone on stage at Macworld, January 9, 2007" class="header-bg">
+  <img src="images/S2/L09/S2L09_ContainerPortGlobalTrade.jpg" alt="A large container port filled with cranes, ships, and stacked containers" class="header-bg">
   <div class="header-inner">
     <p class="course-label">WORLD HISTORY &bull; SEMESTER 2 &bull; LESSON 09 &bull; STANDARD 10.11</p>
-    <h1 class="page-title">ONE DEVICE,<br>ONE WORLD</h1>
+    <h1 class="page-title">GLOBALIZATION<br>IN YOUR POCKET</h1>
     <div class="eq-banner">
       <span class="eq-label">ESSENTIAL QUESTION</span>
       What does a single smartphone reveal about who globalization connected, who it enriched, and who paid the price?
@@ -161,212 +153,214 @@ html,body{max-width:100%;overflow-x:hidden}.page-wrap{max-width:100%;overflow-x:
   </div>
 </header>
 
-<!-- NAV -->
 <nav class="section-nav">
   <a href="#introduction">INTRO</a>
-  <a href="#the-reveal">THE REVEAL</a>
-  <a href="#before-it-reaches-you">BEFORE IT REACHES YOU</a>
-  <a href="#what-it-unleashed">WHAT IT UNLEASHED</a>
-  <a href="#who-won">WHO WON, WHO DIDN'T</a>
+  <a href="#connected-world">CONNECTED WORLD</a>
+  <a href="#supply-chain">SUPPLY CHAIN</a>
+  <a href="#digital-network">DIGITAL NETWORK</a>
+  <a href="#unequal-results">UNEQUAL RESULTS</a>
   <a href="#primary-source-moment">SOURCE</a>
   <a href="#then-now">THEN AND NOW</a>
 </nav>
 
 <aside class="toc-sidebar">
   <span class="toc-label">ON THIS PAGE</span>
-  <a href="#introduction">Introduction</a>
-  <a href="#the-reveal">The Reveal</a>
-  <a href="#before-it-reaches-you">Before It Reaches You</a>
-  <a href="#what-it-unleashed">What It Unleashed</a>
-  <a href="#who-won">Who Won, Who Didn't</a>
+  <a href="#introduction">A Device Arrives</a>
+  <a href="#connected-world">Worlds Connect</a>
+  <a href="#supply-chain">The Supply Chain</a>
+  <a href="#digital-network">The Digital Network</a>
+  <a href="#unequal-results">Unequal Results</a>
   <a href="#primary-source-moment">Source</a>
   <a href="#then-now">Then &amp; Now</a>
 </aside>
 
 <main>
 
-<!-- TIMELINE -->
 <div class="timeline-wrap">
-  <div class="timeline-title">THE IPHONE AND THE WORLD IT MADE &bull; 2000 TO 2020</div>
+  <div class="timeline-title">GLOBALIZATION AND THE SMARTPHONE AGE &bull; 2001 TO TODAY</div>
   <div class="timeline">
     <div class="timeline-event">
       <div class="timeline-date">2001</div>
-      <p>China joins the World Trade Organization. Global supply chains expand rapidly as corporations shift manufacturing to cheaper labor markets.</p>
+      <p>China joins the World Trade Organization. Global companies expand manufacturing networks across Asia.</p>
     </div>
     <div class="timeline-event">
-      <div class="timeline-date">Jan. 2007</div>
-      <p>Steve Jobs introduces the iPhone at Macworld in San Francisco. It combines a phone, internet browser, and music player in one device.</p>
+      <div class="timeline-date">2007</div>
+      <p>The first iPhone is introduced. A consumer device becomes a window into global design, labor, shipping, and minerals.</p>
     </div>
     <div class="timeline-event">
       <div class="timeline-date">2008</div>
-      <p>Apple launches the App Store with 500 apps. Within two years it has 100,000. A new global economy built on software is born.</p>
+      <p>The App Store opens. Smartphones become platforms for work, banking, communication, entertainment, and organizing.</p>
     </div>
     <div class="timeline-event">
-      <div class="timeline-date">2010</div>
-      <p>Foxconn factory in Shenzhen sees a wave of worker suicides. International attention briefly falls on the labor conditions inside Apple's supply chain.</p>
+      <div class="timeline-date">2010S</div>
+      <p>Consumers, journalists, and watchdog groups pay closer attention to factory labor, mineral mining, data collection, and electronic waste.</p>
     </div>
     <div class="timeline-event">
-      <div class="timeline-date">2018</div>
-      <p>Apple becomes the first company in history to reach a market value of $1 trillion. The Democratic Republic of Congo remains one of the world's poorest countries.</p>
+      <div class="timeline-date">TODAY</div>
+      <p>Countries debate how to make global technology cleaner, fairer, safer, and less dependent on fragile supply chains.</p>
     </div>
   </div>
 </div>
 
 <button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
 
-<!-- INTRODUCTION -->
 <section class="intro-section section-animate" id="introduction">
-
-  <p class="para-standard">On January 9, 2007, Steve Jobs walked onto a stage in San Francisco and held up a small rectangle of glass and aluminum. He told the audience he was introducing three revolutionary products: a widescreen iPod with touch controls, a revolutionary mobile phone, and a breakthrough internet communications device. Then he paused. "These are not three separate devices," he said. "This is one device." The crowd went wild. What Jobs was holding was not just a phone. It was the entire globalized world compressed into something that fit in a shirt pocket.</p>
-  <p class="para-simple">On January 9, 2007, Steve Jobs walked onto a stage in San Francisco and held up a small rectangle of glass and aluminum. He told the audience he was introducing three things at once: a music player, a phone, and an internet device. Then he paused. "These are not three separate devices," he said. "This is one device." The crowd went wild. What Jobs was holding was not just a phone. It was the entire globalized world compressed into something that fit in a pocket.</p>
-
-  <p class="para-standard">To make that device possible, Apple had assembled one of the most complex <span class="vocab" tabindex="0">supply chains<span class="tip">The network of people, companies, and countries involved in producing a product — from raw materials to finished goods.</span></span> in human history. Minerals pulled from the ground in the Democratic Republic of Congo. Chips designed in California and fabricated in Taiwan. Glass manufactured in Kentucky and shipped to China. Assembly by hundreds of thousands of workers in a factory city in Shenzhen. Software written on multiple continents. The iPhone was not made in one place or by one company. It was made by the entire world — and the story of how that happened, who it helped, and who it cost is the story of globalization itself.</p>
-  <p class="para-simple">To make that device, Apple had built one of the most complex production networks in human history. Minerals came from Congo. Chips were designed in California. Glass was made in Kentucky and shipped to China. Hundreds of thousands of workers in Shenzhen assembled the pieces. Software was written on multiple continents. The iPhone was not made in one place. It was made by the entire world. The story of how that happened — and who it helped and hurt — is the story of globalization.</p>
-
-</section>
-
-<!-- SECTION 1: THE REVEAL -->
-<section class="content-section clearfix section-animate" id="the-reveal">
-  <span class="section-kicker">CHAPTER ONE</span>
-  <h2 class="section-heading">THE REVEAL: WHAT MADE IT POSSIBLE</h2>
+  <p class="para-standard">On January 9, 2007, Steve Jobs walked onto a stage in San Francisco and held up a small rectangle of glass and metal. The crowd saw a new phone, but the object in his hand had already traveled through a world most customers would never see. Its minerals began underground. Its parts crossed oceans. Its design, software, labor, shipping, advertising, and sales depended on people in many countries working inside one connected system.</p>
+  <p class="para-simple">On January 9, 2007, Steve Jobs walked onto a stage in San Francisco and held up a small rectangle of glass and metal. The crowd saw a new phone. But that phone had already traveled through a world most customers would never see. Its minerals came from underground. Its parts crossed oceans. Its design, labor, shipping, and sales depended on people in many countries.</p>
 
   <!--
-    FILENAME: S2L09_FoxconnShenzhen.jpg
+    FILENAME: S2L09_JobsiPhoneReveal.jpg
     PLACE IN: images/S2/L09/
-    PRIORITY: ESSENTIAL
-    FIND: Foxconn factory floor in Shenzhen, China — workers on an electronics
-          assembly line, showing the scale of manufacturing; rows of workers
-          at stations assembling small components; industrial scale
-    SEARCH: Foxconn factory Shenzhen workers assembly line electronics Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Foxconn
+    PRIORITY: SUPPORTING
+    FIND: Steve Jobs holding the original iPhone at Macworld in San Francisco, January 9, 2007; use as the human entry point but not as the lesson's main visual center
+    SEARCH: Steve Jobs original iPhone reveal Macworld 2007 Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Steve_Jobs
   -->
-  <figure class="img-right">
-    <img src="images/S2/L09/S2L09_FoxconnShenzhen.jpg" alt="Workers on the Foxconn assembly line in Shenzhen, China">
-    <figcaption>Workers on an electronics assembly line in Shenzhen, China. Foxconn employs over 200,000 workers at its Shenzhen campus alone — one of the largest manufacturing facilities in the world. Source: Wikimedia Commons.</figcaption>
+  <figure>
+    <img src="images/S2/L09/S2L09_JobsiPhoneReveal.jpg" alt="Steve Jobs presenting the first iPhone in 2007">
+    <figcaption>Steve Jobs presenting the first iPhone in 2007. The device looked simple in the customer's hand, but it depended on global systems of minerals, labor, shipping, software, and trade. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard">The iPhone was only possible because of two decades of <span class="vocab" tabindex="0">globalization<span class="tip">The process by which the world's economies became deeply connected through trade, technology, and the movement of goods, capital, and people.</span></span> that had already reorganized how things were made. When China joined the <span class="vocab" tabindex="0">World Trade Organization<span class="tip">An international organization that sets rules for trade between countries and works to lower barriers to buying and selling across borders.</span></span> in 2001, it opened the world's largest workforce to global corporations. Apple could design products in California, manufacture components in Taiwan, South Korea, and Japan, assemble the finished device in China, and sell it everywhere — all within a single integrated system.</p>
-  <p class="para-simple">The iPhone was only possible because of twenty years of globalization. When China joined the World Trade Organization in 2001, it opened its enormous workforce to global corporations. Apple could design in California, make components in Asia, assemble the device in China, and sell it everywhere — all as one connected system.</p>
-
-  <p class="para-standard"><span class="vocab" tabindex="0">Foxconn<span class="tip">A Taiwanese electronics manufacturing company that assembles Apple products and employs over one million workers across China.</span></span>, the Taiwanese company that assembled iPhones, built enormous factory campuses in Shenzhen that were essentially self-contained cities. Workers lived in dormitories, ate in company cafeterias, and worked twelve-hour shifts. At its peak, the Shenzhen campus employed over 350,000 workers. They earned roughly $1.50 to $2.00 per hour. The precision required was extraordinary: assembling an iPhone required 141 separate steps, and workers performed the same motions thousands of times each shift. When Apple launched a new model, Foxconn could scale from prototype to mass production in weeks — a speed no factory in the United States could have matched.</p>
-  <p class="para-simple">Foxconn, the company that assembled iPhones, built enormous factory cities in Shenzhen. Workers lived in dormitories and worked twelve-hour shifts. At its peak, the Shenzhen campus had over 350,000 workers earning about $1.50 to $2.00 per hour. Assembling an iPhone required 141 separate steps. Workers repeated the same motions thousands of times each shift. When Apple launched a new model, Foxconn could go from prototype to mass production in weeks — a pace no American factory could have matched.</p>
-
-  <p class="para-standard">Apple kept its design, software, and marketing in California — the highest-paying, highest-skill parts of the business. Everything else was distributed around the world to wherever it could be done most cheaply. This model — called <span class="vocab" tabindex="0">offshoring<span class="tip">Moving parts of a company's production to another country, usually to take advantage of lower labor costs.</span></span> — was not unique to Apple. But Apple perfected it. By keeping its most valuable work at home and moving everything else overseas, Apple captured most of the profit from a device built by workers earning wages that no American worker would accept.</p>
-  <p class="para-simple">Apple kept its design, software, and marketing in California — the highest-paying parts of the business. Everything else was moved to wherever it could be done most cheaply. This is called offshoring. Apple did not invent this model, but it perfected it. By keeping the most valuable work at home and moving everything else overseas, Apple captured most of the profit from a product built by workers earning wages that no American worker would accept.</p>
-
+  <p class="para-standard">This lesson uses the iPhone as a case study, not because one phone explains everything, but because it makes <span class="vocab" tabindex="0">globalization<span class="tip">The process by which countries became deeply connected through trade, technology, money, migration, and culture.</span></span> easier to see. Globalization is not just a word in economics. It is a system that decides where goods are made, whose labor is cheap, who earns profit, whose environment is affected, and who gets access to technology. The smartphone is a small object, but it reveals a giant world history story.</p>
+  <p class="para-simple">This lesson uses the iPhone as a case study. One phone does not explain everything, but it helps us see globalization. Globalization is the way countries became deeply connected through trade, technology, money, migration, and culture. It decides where goods are made, who earns profit, whose labor is cheap, and who gets access to technology. A smartphone is small, but it reveals a huge world history story.</p>
 </section>
 
-<!-- DID YOU KNOW — after Foxconn labor is understood, before supply chain minerals -->
+<section class="content-section clearfix section-animate" id="connected-world">
+  <span class="section-kicker">CHAPTER ONE</span>
+  <h2 class="section-heading">THE WORLD BECOMES A FACTORY</h2>
+
+  <!--
+    FILENAME: S2L09_WTOChinaTrade.jpg
+    PLACE IN: images/S2/L09/
+    PRIORITY: ESSENTIAL
+    FIND: World Trade Organization building, trade meeting, or China WTO accession visual from 2001; shows the rules and institutions behind global trade
+    SEARCH: China joins World Trade Organization 2001 Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/World_Trade_Organization
+  -->
+  <figure class="img-right">
+    <img src="images/S2/L09/S2L09_WTOChinaTrade.jpg" alt="World Trade Organization building or meeting representing global trade rules">
+    <figcaption>The World Trade Organization helps set the rules for international trade. China's entry in 2001 helped speed up the movement of manufacturing into global supply chains. Source: Wikimedia Commons.</figcaption>
+  </figure>
+
+  <p class="para-standard">The iPhone was possible because the world economy had changed before it arrived. In the late 20th century, governments lowered trade barriers, shipping became cheaper, and corporations learned to divide production across many countries. China became especially important after it joined the <span class="vocab" tabindex="0">World Trade Organization<span class="tip">An international group that sets trade rules and encourages countries to lower barriers to trade.</span></span> in 2001. This gave global companies access to a huge workforce and powerful factory networks. A product could now be designed in one country, assembled in another, and sold almost everywhere.</p>
+  <p class="para-simple">The iPhone was possible because the world economy had already changed. Governments lowered trade barriers. Shipping became cheaper. Companies learned to divide production across many countries. China became especially important after joining the World Trade Organization in 2001. Global companies gained access to a huge workforce and strong factory networks. A product could be designed in one country, assembled in another, and sold almost everywhere.</p>
+
+  <p class="para-standard">This system changed world history because it made distance matter less. A corporation no longer needed to build every part of a product near its headquarters. It could search the world for the lowest costs, the fastest factories, the best parts, and the biggest consumer markets. This created cheaper goods and enormous profits. It also made workers in different countries compete against each other for jobs, wages, and contracts.</p>
+  <p class="para-simple">This system changed world history because distance mattered less than before. A company did not need to build every part near its headquarters. It could search the world for cheaper labor, faster factories, better parts, and more customers. This made goods cheaper and profits bigger. It also made workers in different countries compete with each other for jobs and wages.</p>
+
+  <p class="para-standard">Apple did not invent this system, but it used it better than almost any company. The company kept design, branding, and software in California because those parts created the highest value. It used <span class="vocab" tabindex="0">offshoring<span class="tip">Moving work to another country, often because labor or production costs are lower there.</span></span> for much of the manufacturing and assembly. The phone became a symbol of innovation, but it also became a symbol of a world where production was split into many invisible steps. The customer saw one clean object; history shows the network behind it.</p>
+  <p class="para-simple">Apple did not invent this system, but it used it extremely well. The company kept design, branding, and software in California because those jobs created the most value. It moved much of the manufacturing and assembly overseas. This is called offshoring. The phone became a symbol of innovation. It also became a symbol of a world where production was split into many steps most customers never see.</p>
+</section>
+
 <div class="brain-break dyk-break section-animate">
   <span class="bb-label">DID YOU KNOW</span>
   <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
     <div style="flex:1;min-width:200px;">
       <!--
-        FILENAME: S2L09_ColtanMining.jpg
+        FILENAME: S2L09_ContainerStack.jpg
         PLACE IN: images/S2/L09/
         PRIORITY: SUPPORTING
-        FIND: Artisanal coltan or mineral miners in the Democratic Republic of
-              Congo — workers mining by hand in an open pit mine, showing the
-              manual labor conditions in Congo's mineral extraction industry
-        SEARCH: coltan mining Democratic Republic Congo miners hand Wikimedia Commons
-        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Mining_in_the_Democratic_Republic_of_the_Congo
+        FIND: Stacked shipping containers at a port or container yard; shows how standardized containers made global trade faster and cheaper
+        SEARCH: stacked shipping containers port global trade Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Intermodal_container
       -->
-      <img src="images/S2/L09/S2L09_ColtanMining.jpg" alt="Artisanal miners extracting coltan in the Democratic Republic of Congo" style="width:100%;display:block;border:3px solid var(--lime);box-shadow:0 4px 18px rgba(0,0,0,0.5);">
-      <p style="font-size:12px;margin-top:8px;opacity:0.75;font-family:'Roboto Slab',serif;color:#fff;">Artisanal coltan miners, Democratic Republic of Congo. Source: Wikimedia Commons.</p>
+      <img src="images/S2/L09/S2L09_ContainerStack.jpg" alt="Stacks of shipping containers at a port" style="width:100%;display:block;border:3px solid var(--lime);box-shadow:0 4px 18px rgba(0,0,0,0.5);">
+      <p style="font-size:12px;margin-top:8px;opacity:0.75;font-family:'Roboto Slab',serif;color:#fff;">Stacks of standardized shipping containers at a port. Source: Wikimedia Commons.</p>
     </div>
-    <p class="bb-text" style="flex:1;min-width:200px;">Inside every smartphone is a mineral called coltan — short for columbite-tantalite — that makes the capacitors work. The Democratic Republic of Congo holds roughly 80 percent of the world's known coltan reserves. Much of it is mined by hand, in dangerous conditions, by workers earning a few dollars a day. The country sitting on one of the world's most valuable technology minerals is also one of the world's poorest. The iPhone that sold for $499 at launch contained materials that cost the people who dug them out of the ground almost nothing.</p>
+    <p class="bb-text" style="flex:1;min-width:200px;">A shipping container looks boring, but it helped change the world. Because containers are the same basic size, they can move from ship to train to truck without unpacking the goods inside. That simple box helped make global supply chains fast enough for companies to build products across oceans.</p>
   </div>
 </div>
 
-<!-- SECTION 2: BEFORE IT REACHES YOU -->
-<section class="content-section clearfix section-animate" id="before-it-reaches-you">
+<section class="content-section clearfix section-animate" id="supply-chain">
   <span class="section-kicker">CHAPTER TWO</span>
-  <h2 class="section-heading">BEFORE IT REACHES YOU: THE SUPPLY CHAIN</h2>
+  <h2 class="section-heading">THE JOURNEY BEFORE THE STORE</h2>
 
   <!--
-    FILENAME: S2L09_ContainerShip.jpg
+    FILENAME: S2L09_ColtanMining.jpg
     PLACE IN: images/S2/L09/
     PRIORITY: ESSENTIAL
-    FIND: Large container ship fully loaded with shipping containers at sea or
-          in port — showing the scale of global trade and the physical movement
-          of goods across oceans; massive modern cargo vessel
-    SEARCH: container ship cargo global trade ocean port Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Container_ship
+    FIND: Artisanal coltan or cobalt miners in the Democratic Republic of Congo; documentary image of workers mining by hand in a dignified register
+    SEARCH: coltan cobalt mining Democratic Republic Congo miners Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Mining_in_the_Democratic_Republic_of_the_Congo
   -->
   <figure class="img-left">
-    <img src="images/S2/L09/S2L09_ContainerShip.jpg" alt="A fully loaded container ship at sea, representing global trade networks">
-    <figcaption>A container ship carrying goods across the Pacific Ocean. The global shipping network moves over 90 percent of international trade by volume — including the components and finished products that make up every smartphone. Source: Wikimedia Commons.</figcaption>
+    <img src="images/S2/L09/S2L09_ColtanMining.jpg" alt="Artisanal miners working in the Democratic Republic of Congo">
+    <figcaption>Artisanal miners in the Democratic Republic of Congo. Minerals from places like the DRC are part of the hidden foundation of smartphones, batteries, and many other electronics. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard">Tracing a single iPhone from raw materials to finished product means traveling through at least a dozen countries. It begins underground. The cobalt in the battery comes largely from the Democratic Republic of Congo, where an estimated 40,000 children work in artisanal mines in dangerous conditions. Lithium comes from salt flats in Bolivia and Chile. Tungsten, used in the vibration motor, comes from mines in China, Rwanda, and Australia. These <span class="vocab" tabindex="0">rare earth minerals<span class="tip">A group of metals found in small quantities around the world that are essential for electronics, magnets, and batteries.</span></span> are the invisible foundation of the digital economy.</p>
-  <p class="para-simple">Tracing a single iPhone from raw materials to finished product means traveling through at least a dozen countries. It starts underground. The cobalt in the battery comes mostly from the Democratic Republic of Congo, where an estimated 40,000 children work in dangerous mines. Lithium comes from Bolivia and Chile. Tungsten comes from mines in China, Rwanda, and Australia. These minerals are the invisible foundation of every smartphone — and of the digital economy itself.</p>
+  <p class="para-standard">A smartphone begins long before it reaches a store shelf. The process starts with raw materials: cobalt, lithium, copper, gold, tungsten, and <span class="vocab" tabindex="0">coltan<span class="tip">A mineral refined into tantalum, a metal used in small electronic parts inside phones and laptops.</span></span>. Many of these minerals come from countries that have been shaped by colonialism, weak governments, foreign investment, and global demand for resources. In the Democratic Republic of Congo, some mining is industrial, but some is <span class="vocab" tabindex="0">artisanal mining<span class="tip">Small-scale mining where people often dig by hand using simple tools.</span></span>. Workers may dig by hand for minerals that eventually become part of expensive electronics.</p>
+  <p class="para-simple">A smartphone begins long before it reaches a store. It starts with raw materials like cobalt, lithium, copper, gold, tungsten, and coltan. Many of these minerals come from countries shaped by colonialism, weak governments, foreign investment, and global demand. In the Democratic Republic of Congo, some mining is done by large companies. Some is artisanal mining, where people dig by hand using simple tools. Workers may dig for minerals that later become part of expensive electronics.</p>
 
-  <p class="para-standard">From there, the components travel through a <span class="vocab" tabindex="0">supply chain<span class="tip">The full network of suppliers, manufacturers, shippers, and sellers that move a product from raw material to customer.</span></span> spanning multiple continents. The processor chip — the brain of the device — is designed by Apple in California but fabricated by TSMC in Taiwan, using equipment made in the Netherlands. The glass screen is made by Corning in Kentucky, then chemically strengthened and shipped to China. Samsung in South Korea supplies the memory chips. The finished components arrive at Foxconn in Shenzhen, where workers assemble them into a finished device. That device then travels by container ship across the Pacific to a warehouse in the United States, then to a store, then into your pocket.</p>
-  <p class="para-simple">From there, the parts travel across multiple continents. The processor chip is designed in California but made in Taiwan. The glass screen is made in Kentucky and shipped to China. Memory chips come from South Korea. All the parts arrive at Foxconn in Shenzhen, where workers assemble them into a finished phone. That phone then travels by cargo ship across the Pacific to a warehouse, then to a store, then into your pocket.</p>
+  <p class="para-standard">After mining, the parts move through a <span class="vocab" tabindex="0">supply chain<span class="tip">The network of people, companies, and countries that move a product from raw material to customer.</span></span> that crosses several continents. A chip may be designed in the United States, produced in Taiwan, and made with machines from the Netherlands. A memory component may come from South Korea. A screen may be made with glass technology developed in the United States and processed elsewhere. These parts travel by ship, plane, train, and truck before they become one finished device.</p>
+  <p class="para-simple">After mining, the parts move through a supply chain that crosses several continents. A chip may be designed in the United States and produced in Taiwan. Machines from the Netherlands may help make it. Memory parts may come from South Korea. Screen glass may use technology from the United States and be processed somewhere else. These parts travel by ship, plane, train, and truck before they become one device.</p>
 
-  <p class="para-standard">The entire system was designed for efficiency and low cost — not for the wellbeing of the people inside it. Apple earned a profit of roughly $200 to $400 on every iPhone sold. The workers who assembled it earned less than $20 for the labor that went into each device. The miners who extracted the cobalt earned perhaps a few cents per phone's worth of material. The global supply chain created an iPhone that was remarkable and affordable. It did so by distributing costs and benefits in a way that was not even close to equal.</p>
-  <p class="para-simple">The entire system was built for efficiency and low cost — not for the wellbeing of the people inside it. Apple earned roughly $200 to $400 profit on each iPhone sold. The workers who assembled it earned less than $20 for their labor on each device. The miners who dug the cobalt earned perhaps a few cents per phone. The supply chain made an amazing, affordable product. It did so by distributing costs and benefits in a deeply unequal way.</p>
+  <!--
+    FILENAME: S2L09_FoxconnShenzhen.jpg
+    PLACE IN: images/S2/L09/
+    PRIORITY: ESSENTIAL
+    FIND: Foxconn or electronics factory assembly line in Shenzhen, China; workers at stations assembling electronics
+    SEARCH: Foxconn Shenzhen electronics assembly line workers Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Foxconn
+  -->
+  <figure class="img-right">
+    <img src="images/S2/L09/S2L09_FoxconnShenzhen.jpg" alt="Workers assembling electronics in a factory in Shenzhen, China">
+    <figcaption>Electronics workers on an assembly line in Shenzhen, China. Final assembly is one of the most visible parts of the smartphone supply chain, but it captures far less profit than design, software, and branding. Source: Wikimedia Commons.</figcaption>
+  </figure>
 
+  <p class="para-standard">Final assembly often happens in enormous factory systems. At Foxconn facilities in China, workers have assembled phones, tablets, and laptops for global brands. Factory work can provide wages to people who migrated from rural areas to cities, but it can also involve long hours, strict supervision, repetitive tasks, and pressure to meet production goals. This is the human side of the global supply chain. The finished product looks smooth and simple because the labor behind it has been hidden.</p>
+  <p class="para-simple">Final assembly often happens in huge factory systems. At Foxconn facilities in China, workers have assembled phones, tablets, and laptops for global brands. Factory jobs can provide wages for people who moved from rural areas to cities. But the work can also mean long hours, strict rules, repeated tasks, and pressure to work faster. This is the human side of the supply chain. The finished phone looks simple because the labor behind it is hidden.</p>
 </section>
 
-<!-- FAST FACTS — after supply chain scale is understood -->
 <div class="brain-break ff-break section-animate">
   <span class="bb-label">FAST FACTS</span>
-  <p class="ff-context">THE IPHONE IN NUMBERS: ONE DEVICE, ONE WORLD</p>
+  <p class="ff-context">WHAT ONE SMARTPHONE CAN REVEAL ABOUT GLOBALIZATION</p>
   <div class="ff-grid">
     <div class="ff-item">
-      <span class="ff-number">43</span>
-      <span class="ff-desc">countries involved in producing a single iPhone, from mineral extraction through component manufacturing to final assembly and shipping</span>
+      <span class="ff-number">5+</span>
+      <span class="ff-desc">major world regions can be involved before one smartphone reaches a customer: Africa, East Asia, Europe, North America, and South America</span>
     </div>
     <div class="ff-item">
-      <span class="ff-number">$499</span>
-      <span class="ff-desc">original retail price of the first iPhone in 2007 — while Foxconn workers assembling it earned roughly $1.50 per hour</span>
+      <span class="ff-number">90%</span>
+      <span class="ff-desc">of world trade by volume moves by sea, which makes container shipping a backbone of the global economy</span>
     </div>
     <div class="ff-item">
-      <span class="ff-number">2.3B</span>
-      <span class="ff-desc">iPhones sold between 2007 and 2023, making it the best-selling consumer electronics product in history</span>
+      <span class="ff-number">3</span>
+      <span class="ff-desc">main groups shape the phone's journey: resource workers, factory workers, and companies that own design, software, and branding</span>
     </div>
     <div class="ff-item">
-      <span class="ff-number">$1T</span>
-      <span class="ff-desc">Apple's market value in 2018 when it became the first company in history to reach that milestone — while Congo remained one of the world's poorest nations</span>
+      <span class="ff-number">1</span>
+      <span class="ff-desc">small device can connect millions of people while also hiding the unequal labor and environmental costs behind the screen</span>
     </div>
   </div>
 </div>
 
-<!-- SECTION 3: WHAT IT UNLEASHED -->
-<section class="content-section clearfix section-animate" id="what-it-unleashed">
+<section class="content-section clearfix section-animate" id="digital-network">
   <span class="section-kicker">CHAPTER THREE</span>
-  <h2 class="section-heading">WHAT IT UNLEASHED: THE ECONOMY THAT FOLLOWED</h2>
+  <h2 class="section-heading">THE PHONE BECOMES A GLOBAL NETWORK</h2>
 
   <!--
-    FILENAME: S2L09_AppStoreGlobal.jpg
+    FILENAME: S2L09_MobileUsersGlobal.jpg
     PLACE IN: images/S2/L09/
     PRIORITY: ESSENTIAL
-    FIND: People using smartphones in a global context — a crowd of people in
-          a public space in Asia, Africa, or Latin America using mobile phones;
-          showing the global spread of smartphone use and mobile internet access
-    SEARCH: people using smartphones mobile internet developing world crowd
-            public space Wikimedia Commons CC license
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Smartphones
-    LICENSE: CC-licensed photography acceptable.
+    FIND: People using mobile phones in a public place outside the United States, preferably Africa, South Asia, or Southeast Asia; shows global spread of mobile internet
+    SEARCH: people using smartphones public space Africa Asia Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Mobile_phones
   -->
   <figure class="img-right">
-    <img src="images/S2/L09/S2L09_AppStoreGlobal.jpg" alt="People using smartphones in a public space, showing the global spread of mobile technology">
-    <figcaption>Smartphone users in a public space. More than 4 billion people worldwide now access the internet through mobile devices — transforming how information, commerce, and political organizing work across the globe. Source: Wikimedia Commons / CC.</figcaption>
+    <img src="images/S2/L09/S2L09_MobileUsersGlobal.jpg" alt="People using smartphones in a public space outside the United States">
+    <figcaption>Smartphone users in a public space. Mobile internet changed how people communicate, buy and sell, learn, organize, and share information across national borders. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard">When Apple launched the App Store in 2008, it created something that had never existed before: a global marketplace for software that anyone, anywhere, could access instantly. Within two years, the App Store had 100,000 applications. A developer in Lagos could write an app and sell it to a user in Oslo. A farmer in rural Kenya could download a program that told him commodity prices before he decided whether to sell his crop. A teenager in Jakarta could build a business. The smartphone did not just connect people to information — it connected people to economic opportunity in ways that no previous technology had reached.</p>
-  <p class="para-simple">When Apple launched the App Store in 2008, it created a global marketplace for software that anyone could access anywhere. Within two years it had 100,000 apps. A developer in Nigeria could sell an app to a user in Norway. A farmer in Kenya could check prices before selling his crops. A teenager in Indonesia could build a business from a phone. The smartphone connected people to economic opportunity in ways no previous technology had managed.</p>
+  <p class="para-standard">The smartphone did more than move through globalization; it also made globalization faster. With mobile internet, people could communicate across borders instantly, follow news from other countries, send money, sell products, and organize political action. Apps turned phones into banks, maps, classrooms, cameras, marketplaces, and newsrooms. This mattered especially in places where many people skipped desktop computers and went straight to mobile internet. A device built by global trade also became a tool that connected everyday people to the global economy.</p>
+  <p class="para-simple">The smartphone did more than move through globalization. It also made globalization faster. With mobile internet, people could communicate across borders, follow news, send money, sell products, and organize. Apps turned phones into banks, maps, classrooms, cameras, marketplaces, and newsrooms. This mattered in places where many people never owned desktop computers. A device built by global trade became a tool that connected everyday people to the global economy.</p>
 
-  <p class="para-standard">But the economy the smartphone created had a shadow side that its designers did not fully anticipate. Every app a person used collected data: location, habits, preferences, relationships, movements, purchases, and emotions. That data was the raw material of a new industry — sometimes called <span class="vocab" tabindex="0">surveillance capitalism<span class="tip">An economic system in which companies collect detailed data about users' behavior and sell it to advertisers, often without users' full understanding or consent.</span></span> — in which the product being sold was not the phone or the app, but the user's attention and personal information. Facebook, Google, and hundreds of smaller companies built trillion-dollar businesses on information that users generated for free, often without understanding what they were giving away.</p>
-  <p class="para-simple">But the economy smartphones created had a dark side. Every app collected data: location, habits, preferences, relationships, purchases, and emotions. That data became the raw material of a new industry — surveillance capitalism — in which the product being sold was not the app but the user's own information and attention. Facebook, Google, and hundreds of other companies built trillion-dollar businesses on information that users gave away for free, usually without understanding what they were trading.</p>
+  <p class="para-standard">The same network also created new dangers. Companies collected user data: location, purchases, messages, searches, videos watched, and time spent on apps. This data became valuable because it could predict behavior and sell advertising. Scholars call this <span class="vocab" tabindex="0">surveillance capitalism<span class="tip">A system where companies collect personal data and use it to make money, often through targeted advertising.</span></span>. The user felt like the customer, but in many apps the user's attention and information became the product being sold.</p>
+  <p class="para-simple">The same network also created new dangers. Companies collected user data like location, purchases, searches, messages, and time spent on apps. That data became valuable because companies could use it to predict behavior and sell ads. This is called surveillance capitalism. The user may feel like the customer. But in many apps, the user's attention and information become the product being sold.</p>
 
-  <p class="para-standard">Authoritarian governments saw the same technology and recognized a different opportunity. China built a national mobile surveillance system that used smartphones as tracking devices, linked to facial recognition cameras and social credit monitoring. Governments in Russia, Iran, Belarus, and elsewhere monitored protesters through their phones, arrested activists based on their digital activity, and shut down mobile networks to suppress uprisings. The device that opened the world also gave states new tools to close it back down — selectively, precisely, and at a scale that no previous government had been able to achieve.</p>
-  <p class="para-simple">Authoritarian governments saw the same technology differently. China used smartphones as tracking devices linked to facial recognition cameras and social monitoring systems. Governments in Russia, Iran, and elsewhere tracked protesters through their phones, arrested activists based on their digital activity, and shut down mobile networks to suppress uprisings. The device that opened the world also gave governments new tools to close it back down — precisely and at a scale that was never before possible.</p>
-
+  <p class="para-standard">Governments also used mobile technology in different ways. In democracies, activists used smartphones to record police violence, spread protest information, and organize campaigns. In authoritarian states, governments used phones to track activists, monitor speech, and shut down networks during unrest. This is why the smartphone is not simply good or bad. It is a tool of globalization, and tools can expand freedom or strengthen control depending on who uses them and who has power.</p>
+  <p class="para-simple">Governments also used mobile technology in different ways. In democracies, activists used phones to record violence, share protest information, and organize campaigns. In authoritarian states, governments used phones to track activists, monitor speech, and shut down networks during protests. This means the smartphone is not simply good or bad. It is a tool. It can expand freedom or strengthen control, depending on who uses it and who has power.</p>
 </section>
 
-<!-- ART SPOTLIGHT — after the human cost of labor has been established, before Winners/Losers -->
 <div class="brain-break as-break section-animate">
   <span class="bb-label">ART SPOTLIGHT</span>
   <figure>
@@ -374,74 +368,60 @@ html,body{max-width:100%;overflow-x:hidden}.page-wrap{max-width:100%;overflow-x:
       FILENAME: S2L09_LiuBolin.jpg
       PLACE IN: images/S2/L09/
       PRIORITY: ESSENTIAL
-      FIND: Liu Bolin, "Hiding in the City" series — the Chinese artist who
-            paints himself to blend invisibly into urban backgrounds; specifically
-            a work showing him camouflaged against a wall of consumer electronics
-            or technology products; his work addresses invisibility, labor, and
-            the relationship between people and objects in modern China
-      SEARCH: Liu Bolin Hiding in the City camouflage art China electronics
-              consumer goods Wikimedia Commons
+      FIND: Liu Bolin, Hiding in the City series; Chinese artist camouflaged against consumer goods, electronics, shelves, or urban background; exact work from the series connected to invisibility in consumer society
+      SEARCH: Liu Bolin Hiding in the City electronics consumer goods Wikimedia Commons
       LINK: Suggested: https://commons.wikimedia.org/wiki/Liu_Bolin
     -->
-    <img src="images/S2/L09/S2L09_LiuBolin.jpg" alt="Liu Bolin, Hiding in the City series, artist camouflaged against consumer products" class="as-image">
+    <img src="images/S2/L09/S2L09_LiuBolin.jpg" alt="Liu Bolin camouflaged against consumer goods in the Hiding in the City series" class="as-image">
     <figcaption class="as-caption">
-      "Hiding in the City" &mdash; Liu Bolin, begun 2005<br>
-      Chinese artist Liu Bolin paints his body and clothing to blend invisibly into urban backgrounds — factories, storefronts, walls of consumer products — standing motionless for hours while assistants apply the paint.
+      Hiding in the City series: Liu Bolin, begun 2005<br>
+      Chinese artist Liu Bolin paints his body and clothing so he disappears into places like streets, stores, shelves, and walls of consumer goods.
     </figcaption>
   </figure>
-  <p class="as-fact">Liu Bolin began this series in 2005 after the Chinese government demolished his Beijing art studio without compensation or notice. He called the work a response to feeling invisible — erased by the system around him. When he camouflages himself against walls of electronics and consumer goods, he is not celebrating the products. He is asking a question: how many people does it take to make all this, and why can't we see any of them?</p>
+  <p class="as-fact">Liu Bolin began this series after officials demolished his Beijing art studio without warning or compensation. His hidden body turns the image into a warning: modern life can be full of products while the people behind those products disappear. In a lesson about globalization, that is exactly the point students should notice.</p>
 </div>
 
-<!-- SECTION 4: WHO WON, WHO DIDN'T -->
-<section class="content-section clearfix section-animate" id="who-won">
+<section class="content-section clearfix section-animate" id="unequal-results">
   <span class="section-kicker">CHAPTER FOUR</span>
-  <h2 class="section-heading">WHO WON, WHO DIDN'T</h2>
+  <h2 class="section-heading">THE UNEQUAL RESULTS OF CONNECTION</h2>
 
   <div class="two-col">
     <!--
-      FILENAME: S2L09_AppleStoreLaunch.jpg
+      FILENAME: S2L09_AppleHeadquarters.jpg
       PLACE IN: images/S2/L09/
-      PRIORITY: ESSENTIAL
-      FIND: Line of customers waiting outside an Apple Store for a new iPhone
-            launch, 2007-2015; people camping out or standing in a long queue
-            outside an Apple retail store; showing consumer enthusiasm
-      SEARCH: Apple Store iPhone launch line customers waiting queue Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/Apple_Store
+      PRIORITY: SUPPORTING
+      FIND: Apple Park or modern technology company headquarters in California; shows high-value design and corporate profit side of globalization
+      SEARCH: Apple Park headquarters Cupertino Wikimedia Commons
+      LINK: Suggested: https://commons.wikimedia.org/wiki/Apple_Park
     -->
     <figure>
-      <img src="images/S2/L09/S2L09_AppleStoreLaunch.jpg" alt="Customers lined up outside an Apple Store for an iPhone launch">
-      <figcaption>Customers waiting outside an Apple Store for an iPhone launch. Apple stores became cultural phenomena, with fans camping overnight to be among the first to buy each new model. Source: Wikimedia Commons.</figcaption>
+      <img src="images/S2/L09/S2L09_AppleHeadquarters.jpg" alt="Apple Park or a major technology company headquarters in California">
+      <figcaption>A major technology headquarters in California. In global supply chains, design, software, patents, and branding usually capture the most profit. Source: Wikimedia Commons.</figcaption>
     </figure>
     <!--
-      FILENAME: S2L09_CongoMinerWorking.jpg
+      FILENAME: S2L09_EWasteWorkers.jpg
       PLACE IN: images/S2/L09/
-      PRIORITY: ESSENTIAL
-      FIND: A miner working in the Democratic Republic of Congo — a single
-            worker or small group digging or processing minerals by hand in
-            an artisanal mine; showing the human labor conditions at the start
-            of the supply chain; documentary register, dignified not exploitative
-      SEARCH: artisanal miner Democratic Republic Congo mining by hand
-              Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Mining_in_the_Democratic_Republic_of_the_Congo
+      PRIORITY: SUPPORTING
+      FIND: Workers sorting electronic waste, repair workers, or recycling site; shows what happens to devices after use, preferably documentary and dignified
+      SEARCH: electronic waste recycling workers Wikimedia Commons
+      LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Electronic_waste
     -->
     <figure>
-      <img src="images/S2/L09/S2L09_CongoMinerWorking.jpg" alt="An artisanal miner working in the Democratic Republic of Congo">
-      <figcaption>An artisanal miner in the Democratic Republic of Congo. The DRC holds some of the world's largest reserves of cobalt and coltan — minerals essential for smartphone batteries — yet remains one of the world's poorest countries. Source: Wikimedia Commons.</figcaption>
+      <img src="images/S2/L09/S2L09_EWasteWorkers.jpg" alt="Workers sorting or repairing electronic waste">
+      <figcaption>Workers handling electronic waste. Global technology also creates environmental problems after devices are thrown away, repaired, resold, or recycled. Source: Wikimedia Commons.</figcaption>
     </figure>
   </div>
 
-  <p class="para-standard">Apple's rise along the globalized supply chain produced one of the most dramatic concentrations of wealth in corporate history. In 2018, Apple became the first company in history to be valued at one trillion dollars. By 2022, its valuation had reached nearly three trillion dollars — more than the entire GDP of France. Its founders and early investors became among the wealthiest people who had ever lived. The engineers, designers, and executives who worked at Apple's California headquarters earned median salaries of over $200,000 per year.</p>
-  <p class="para-simple">Apple's rise made it one of the wealthiest companies in history. In 2018, it became the first company ever valued at one trillion dollars. By 2022, it was worth nearly three trillion — more than the entire economy of France. Its founders and early investors became some of the richest people who ever lived. Engineers and executives at Apple's California headquarters earned median salaries over $200,000 per year.</p>
+  <p class="para-standard">Globalization created real benefits. It lowered prices for many goods, spread new technology, expanded consumer choice, and helped some countries build powerful export economies. It also created new kinds of work in design, logistics, software, shipping, advertising, finance, and retail. For many people, global connection meant opportunity. The smartphone allowed people to learn, work, create, and communicate in ways that were difficult or impossible before.</p>
+  <p class="para-simple">Globalization created real benefits. It lowered prices for many goods. It spread new technology and gave consumers more choices. It helped some countries build strong export economies. It also created jobs in design, shipping, software, advertising, finance, and retail. For many people, global connection meant opportunity. Smartphones helped people learn, work, create, and communicate in new ways.</p>
 
-  <p class="para-standard">At the other end of the supply chain, the picture was different. The Democratic Republic of Congo — which holds an estimated 80 percent of the world's <span class="vocab" tabindex="0">coltan<span class="tip">A mineral found mainly in the Democratic Republic of Congo that is refined into tantalum, a key material in the capacitors inside smartphones and laptops.</span></span> reserves, along with massive deposits of cobalt and other minerals essential to smartphone batteries — ranked among the five poorest countries on earth by per capita income throughout this period. Artisanal miners earned a few dollars per day. Armed militias controlled mining regions and profited from mineral sales. Children as young as seven worked in mine shafts. The country that produced the raw materials at the base of the digital economy received almost none of its benefits.</p>
-  <p class="para-simple">At the other end of the supply chain, things looked very different. The Democratic Republic of Congo holds most of the world's coltan reserves and massive cobalt deposits — both essential for smartphone batteries. But the DRC ranked among the five poorest countries on earth throughout this period. Artisanal miners earned a few dollars per day. Armed groups controlled mining regions and took a cut of mineral sales. Children as young as seven worked underground. The country that produced the raw materials at the foundation of the digital economy received almost none of its benefits.</p>
+  <p class="para-standard">But the benefits were not shared equally. The people and companies that owned the brand, software, patents, and platforms often captured the most wealth. Workers who mined raw materials or assembled products usually captured much less. Some communities also faced pollution, dangerous work, and electronic waste after devices were discarded. Globalization connected the world, but connection did not automatically mean fairness.</p>
+  <p class="para-simple">But the benefits were not shared equally. Companies that owned the brand, software, patents, and platforms often got the most wealth. Workers who mined minerals or assembled products usually got much less. Some communities also faced pollution, unsafe work, and electronic waste. Globalization connected the world. But connection did not automatically mean fairness.</p>
 
-  <p class="para-standard">This gap is not an accident or an oversight. It is the structure of the global economy as it was designed. The countries and people at the bottom of supply chains — those who extract raw materials or perform assembly labor — capture the least value. The companies and workers at the top — those who own the intellectual property, the brand, and the software — capture the most. Globalization created enormous total wealth. The question it could not answer on its own was how that wealth would be shared. The answer, so far, has been: unequally, in ways that reflect and reinforce the existing gaps between the powerful and the powerless.</p>
-  <p class="para-simple">This gap is not an accident. It is how the global economy was built. The people at the bottom of supply chains — those who dig minerals or assemble parts — capture the least value from their work. The companies and workers at the top — those who own the designs, the brand, and the software — capture the most. Globalization created enormous wealth overall. But the question of how to share that wealth was never fully answered. So far, the answer has been: very unequally.</p>
-
+  <p class="para-standard">This is the central lesson of the smartphone as world history. A single device can show global trade, migration to factory cities, resource extraction, container shipping, digital culture, data collection, worker activism, and environmental debate. It can show both opportunity and inequality at the same time. The question is not whether globalization connected people; it clearly did. The harder question is who gained power from that connection, and who carried the costs.</p>
+  <p class="para-simple">This is the main lesson of the smartphone as world history. One device can show trade, migration to factory cities, mining, shipping, digital culture, data collection, worker activism, and environmental debate. It can show opportunity and inequality at the same time. Globalization clearly connected people. The harder question is who gained power from that connection and who paid the costs.</p>
 </section>
 
-<!-- PRIMARY SOURCE MOMENT -->
 <div class="primary-source section-animate" id="primary-source-moment">
   <span class="ps-label">PRIMARY SOURCE MOMENT</span>
   <div class="ps-visual">
@@ -450,80 +430,66 @@ html,body{max-width:100%;overflow-x:hidden}.page-wrap{max-width:100%;overflow-x:
         FILENAME: S2L09_FoxconnWorkerPortrait.jpg
         PLACE IN: images/S2/L09/
         PRIORITY: ESSENTIAL
-        FIND: A Foxconn worker or Chinese electronics factory worker portrait —
-              a worker at their station or a dignified portrait of a young
-              factory worker in Shenzhen; showing the human face of the people
-              who build the devices; documentary photojournalism register
-        SEARCH: Foxconn worker portrait Shenzhen electronics factory China
-                Wikimedia Commons
+        FIND: A dignified portrait or workplace image of a Foxconn worker or Chinese electronics factory worker in Shenzhen; shows the human face of final assembly labor
+        SEARCH: Foxconn worker portrait Shenzhen electronics factory Wikimedia Commons
         LINK: Suggested: https://commons.wikimedia.org/wiki/Foxconn
       -->
-      <img src="images/S2/L09/S2L09_FoxconnWorkerPortrait.jpg" alt="Portrait of a Foxconn factory worker in Shenzhen, China">
-      <figcaption>A Foxconn factory worker in Shenzhen, China. Source: Wikimedia Commons.</figcaption>
+      <img src="images/S2/L09/S2L09_FoxconnWorkerPortrait.jpg" alt="A Foxconn factory worker or electronics assembly worker in Shenzhen, China">
+      <figcaption>A Foxconn factory worker or electronics assembly worker in Shenzhen, China. Source: Wikimedia Commons.</figcaption>
     </figure>
     <div>
-      <p class="ps-quote">"We get up at 6 a.m. and go to work at 7. We work until 7 p.m. and have a one-hour lunch break. After work we go to eat, and then at about 9 p.m. we go back to the dormitory to sleep. I can only call home on Sundays. Every day is like this, repeating over and over... We feel like we're like automatons. We keep going to work, keep working, keep working — and then the money is all gone."</p>
-      <p class="ps-attribution">&mdash; Foxconn factory worker, Shenzhen, China, interviewed by the New York Times, January 2012</p>
-      <p class="ps-narrator">WHY THIS MATTERS: This worker is describing the daily life of someone who builds devices that sell for hundreds of dollars — while earning roughly $1.50 per hour. Notice the specific details: the schedule that leaves no time for anything outside of work and sleep, the sense of being mechanical rather than human, the money disappearing. The iPhone in your pocket was assembled by a person living this life. When you read the Essential Question — "what does a single smartphone reveal about who globalization connected, who it enriched, and who paid the price?" — this testimony is part of the answer. What does this worker's account make visible that an advertisement for the iPhone would hide?</p>
+      <p class="ps-quote">"We get up at 6 a.m. and go to work at 7. We work until 7 p.m. and have a one-hour lunch break. After work we go to eat, and then at about 9 p.m. we go back to the dormitory to sleep. I can only call home on Sundays. Every day is like this, repeating over and over... We feel like we're like automatons."</p>
+      <p class="ps-attribution">Foxconn factory worker, interview from Shenzhen, China, 2012</p>
+      <p class="ps-narrator">WHY THIS MATTERS: This worker's account makes the hidden labor of globalization visible. The quote does not talk about technology as a miracle; it describes time, exhaustion, separation from home, and repeated motion. It helps answer the Essential Question because it shows that global connection can create useful products while also placing heavy costs on workers whose names customers never learn.</p>
     </div>
   </div>
 </div>
 
-<!-- THEN AND NOW -->
 <div class="brain-break tn-break section-animate" id="then-now">
   <span class="bb-label">THEN AND NOW</span>
-  <p class="tn-payoff">THE IPHONE CONNECTED THE WORLD. THE PEOPLE WHO BUILT IT ARE STILL FIGHTING TO BE PART OF IT.</p>
+  <p class="tn-payoff">GLOBALIZATION MAKES THE WORLD FEEL CLOSE, BUT ITS COSTS ARE OFTEN KEPT FAR AWAY.</p>
   <div class="tn-pair">
     <div class="tn-item">
-      <span class="tn-era-label">2007</span>
+      <span class="tn-era-label">2000S</span>
       <!--
-        FILENAME: S2L09_ThenFirstiPhoneLine.jpg
+        FILENAME: S2L09_ThenFactoryDormitory.jpg
         PLACE IN: images/S2/L09/
         PRIORITY: ESSENTIAL
-        FIND: The line of customers waiting outside the original Apple Store on
-              Fifth Avenue or another location for the first iPhone launch,
-              June 29, 2007; people camping on sidewalks waiting to buy the
-              very first iPhone
-        SEARCH: first iPhone launch line June 2007 Apple Store customers
-                waiting Wikimedia Commons
-        LINK: Suggested: https://commons.wikimedia.org/wiki/iPhone
+        FIND: Factory dormitories or workers outside an electronics factory in Shenzhen, China, 2000s; shows migrant labor and factory city life behind global manufacturing
+        SEARCH: Shenzhen factory dormitory migrant workers electronics Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Shenzhen
       -->
-      <img src="images/S2/L09/S2L09_ThenFirstiPhoneLine.jpg" alt="Customers waiting in line for the first iPhone launch, June 29, 2007">
-      <p class="tn-caption">Customers camped outside an Apple Store on the day the first iPhone went on sale, June 29, 2007. Source: Wikimedia Commons.</p>
+      <img src="images/S2/L09/S2L09_ThenFactoryDormitory.jpg" alt="Factory dormitories or workers near an electronics factory in Shenzhen during the 2000s">
+      <p class="tn-caption">Factory dormitories or workers near an electronics manufacturing site in Shenzhen during the rise of global technology supply chains. Source: Wikimedia Commons.</p>
     </div>
     <div class="tn-item">
       <span class="tn-era-label">NOW</span>
       <!--
-        FILENAME: S2L09_NowCongoMinerOrganizing.jpg
+        FILENAME: S2L09_NowRepairMovement.jpg
         PLACE IN: images/S2/L09/
         PRIORITY: ESSENTIAL
-        FIND: Congolese mine workers organizing, a community meeting, or
-              workers' cooperative in the DRC mining sector; showing agency,
-              organizing, community action, or advocacy among mining communities;
-              NOT poverty or hardship imagery — show people acting, speaking,
-              leading, or demanding rights
-        SEARCH: Congo mining workers community organizing cooperative rights
-                advocacy Wikimedia Commons CC license
-        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Mining_in_the_Democratic_Republic_of_the_Congo
-        LICENSE: CC-licensed photography acceptable.
+        FIND: People at a repair cafe, right-to-repair workshop, electronics repair collective, or community technology reuse event; shows agency and action around making technology more sustainable and fair
+        SEARCH: repair cafe electronics right to repair workshop Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Repair_Caf%C3%A9
+        LICENSE: Wikimedia Commons or CC-licensed image acceptable.
       -->
-      <img src="images/S2/L09/S2L09_NowCongoMinerOrganizing.jpg" alt="Congolese mining community members organizing or meeting to advocate for fair conditions, present day">
-      <p class="tn-caption">Mining community members in the DRC meeting to advocate for fair wages and safer conditions. Across the supply chain, workers are organizing to demand a share of the wealth their labor creates. Source: Wikimedia Commons / CC.</p>
+      <img src="images/S2/L09/S2L09_NowRepairMovement.jpg" alt="People repairing electronics together at a community repair workshop">
+      <p class="tn-caption">People repairing electronics at a community repair workshop. Repair movements argue that technology should last longer, create less waste, and give users more control. Source: Wikimedia Commons / CC.</p>
     </div>
   </div>
   <div class="tn-text-block">
     <h3>THEN</h3>
-    <p>On June 29, 2007, the first iPhone went on sale. Customers lined up for days outside Apple Stores across the United States. The device sold out in hours. It was celebrated as a triumph of American innovation — designed in California, marketed as a miracle, priced at $499. Almost nothing in that celebration mentioned the supply chain that made it possible, the workers in Shenzhen who assembled it, or the miners in Congo who dug the materials from the ground.</p>
+    <p>In the 2000s, factory cities like Shenzhen became symbols of the global manufacturing system. Migrant workers left rural areas for city jobs that connected them to the world economy. Their labor helped build devices sold across the planet, but much of their work stayed invisible to consumers.</p>
     <h3>NOW</h3>
-    <p>Today, workers and communities throughout the iPhone supply chain are organizing to demand a fairer share of the wealth they help create. In the DRC, mining cooperatives and international advocacy organizations are pushing technology companies to source minerals ethically and pay fair prices. In China, labor activists have documented conditions inside Foxconn facilities and pushed for better wages and overtime limits. Some companies — under pressure from consumers, investors, and regulators — have begun publishing supply chain audits and committing to eliminate child labor from their mineral sourcing. Progress is slow, but the pressure is real.</p>
+    <p>Today, people are still debating how technology should be made, repaired, reused, and recycled. Workers, journalists, repair advocates, environmental groups, and consumers have pushed companies to reveal more about supply chains and reduce waste. The modern repair movement shows agency because people are not only buying devices; they are challenging the rules that make devices disposable.</p>
     <h3>CONNECTION</h3>
-    <p>The iPhone made the globalized economy visible in a way no textbook description could. It showed that the things people use every day are built on a network that stretches across dozens of countries and involves millions of people whose names and lives never appear on the product. The workers at the bottom of that network are now demanding to be seen — and the question of whether globalization's benefits can be redistributed more fairly is one of the central political and economic arguments of the 21st century.</p>
-    <p>If the true cost of building a smartphone fairly — paying miners, factory workers, and assemblers wages they could actually live on — raised the retail price significantly, would that change how you think about buying one? What do you think a company owes the people who make its products?</p>
+    <p>The past and present connect through the same question: who controls the benefits of technology? In the early smartphone era, companies used global supply chains to make devices quickly and cheaply. Today, communities are asking whether those systems can become more transparent, more sustainable, and more fair to the people who mine, assemble, repair, and live with the effects of technology.</p>
+    <p>When you use a device every day, what responsibility do companies and consumers have to the people and places behind it?</p>
   </div>
 </div>
 
 </main>
-<footer>WORLD HISTORY &bull; SEMESTER 2, LESSON 09 &bull; ONE DEVICE, ONE WORLD &bull; STANDARD 10.11</footer>
+<footer>WORLD HISTORY &bull; SEMESTER 2, LESSON 09 &bull; GLOBALIZATION IN YOUR POCKET &bull; STANDARD 10.11</footer>
 </div>
 
 <script>
@@ -577,7 +543,7 @@ document.addEventListener('click', function() {
   document.querySelectorAll('.vocab.active').forEach(function(v) { v.classList.remove('active'); });
 });
 
-// 4. INTERSECTION OBSERVER — TOC + NAV
+// 4. INTERSECTION OBSERVER: TOC + NAV
 const tocObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     const id = entry.target.getAttribute('id');
@@ -592,7 +558,7 @@ const tocObserver = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.25 });
-document.querySelectorAll('section[id], div[id="then-now"]').forEach(el => tocObserver.observe(el));
+document.querySelectorAll('section[id], .primary-source[id], div[id="then-now"]').forEach(el => tocObserver.observe(el));
 
 // 5. SECTION ENTRANCE ANIMATION
 (function(){
