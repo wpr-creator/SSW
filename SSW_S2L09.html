@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSW S2L09 : GLOBALIZATION AND THE INFORMATION REVOLUTION</title>
+<title>SSW S2L09 : ONE DEVICE, ONE WORLD</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -23,6 +23,7 @@
   --cyan:#1bd6ff;
   --orange:#ff8a21;
   --electric:#00e5ff;
+  --silver:#c8d8e0;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}
@@ -38,16 +39,25 @@ body{background:radial-gradient(ellipse at top,#051820 0%,#020a10 70%);font-fami
 .eq-banner{display:inline-block;background:rgba(0,85,119,.92);color:#fff;border:3px solid var(--electric);border-left-width:8px;border-right-width:8px;padding:18px 28px;max-width:760px;font-weight:700;font-size:20px;line-height:1.45;text-align:left}
 .eq-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--electric);margin-bottom:8px}
 .section-nav{position:sticky;top:4px;z-index:100;display:flex;flex-wrap:wrap;justify-content:center;background:#071018;border-bottom:4px solid var(--teal);overflow-x:auto}
-.section-nav a{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#e6e6e6;text-decoration:none;padding:14px 12px;border-bottom:4px solid transparent;margin-bottom:-4px;white-space:nowrap}
+.section-nav a{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#e6e6e6;text-decoration:none;padding:14px 12px;border-bottom:4px solid transparent;margin-bottom:-4px;white-space:nowrap;flex:0 0 auto;transition:color .2s,border-color .2s}
 .section-nav a:hover{color:#fff;border-bottom-color:var(--electric)}
 .section-nav a.active{color:#fff;border-bottom-color:var(--electric);background:rgba(0,229,255,.12)}
 #lexile-toggle{display:block;margin:20px auto 28px;padding:10px 24px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:2px solid var(--teal);background:transparent;color:var(--teal);transition:background .2s,color .2s}
 #lexile-toggle:hover{background:var(--teal);color:#fff}
-.para-simple{display:none}body.simplified .para-standard{display:none}body.simplified .para-simple{display:block}
+.para-simple{display:none}
+body.simplified .para-standard{display:none}
+body.simplified .para-simple{display:block}
 .toc-sidebar{position:fixed;left:calc(50% - 570px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;font-family:'Barlow Condensed',sans-serif;z-index:50;background:rgba(2,10,16,.93);border-right:2px solid rgba(0,229,255,.3)}
 .toc-sidebar .toc-label{display:block;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--electric);margin-bottom:10px}
-.toc-sidebar a{display:block;color:#e6e6e6;text-decoration:none;padding:4px 0;font-size:11px;letter-spacing:.05em;text-transform:uppercase;transition:color .2s}
+.toc-sidebar a{display:block;color:#e6e6e6;text-decoration:none;padding:4px 0;font-size:11px;letter-spacing:.05em;text-transform:uppercase;line-height:1.35;transition:color .2s}
 .toc-sidebar a.active,.toc-sidebar a:hover{color:var(--electric);font-weight:700}
+@media(max-width:1100px){.toc-sidebar{display:none}}
+.timeline-wrap{max-width:820px;width:100%;margin:0 auto 36px;padding:0 28px}
+.timeline-title{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--teal-dark);margin:0 0 12px;text-align:center}
+.timeline{margin:0;padding:22px;background:#dce8e8;border-top:4px solid var(--teal);border-bottom:4px solid var(--teal);display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:100%}
+.timeline-event{position:relative;border-left:3px solid var(--teal);padding-left:12px}
+.timeline-date{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--teal-dark);letter-spacing:.08em;line-height:1.1;margin-bottom:5px}
+.timeline-event p{font-size:15px;line-height:1.55;margin-bottom:0}
 main{max-width:820px;width:100%;margin:0 auto;padding:0 28px 68px}
 .intro-section{padding:48px 0 30px}
 .intro-section p{font-size:19px;line-height:1.9;margin-bottom:18px}
@@ -55,33 +65,25 @@ main{max-width:820px;width:100%;margin:0 auto;padding:0 28px 68px}
 .section-kicker{display:block;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:8px}
 .section-heading{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,48px);line-height:1.05;font-weight:800;color:var(--black);text-transform:uppercase;border-left:7px solid var(--teal);padding-left:16px;margin-bottom:26px}
 p{margin-bottom:20px;color:var(--charcoal)}
-.real-world{background:#dce8e8;border-left:5px solid var(--teal);padding:17px 21px;margin:30px 0;font-weight:700}
-.vocab{color:var(--vocab);text-decoration:underline dotted var(--vocab);cursor:help;position:relative;font-weight:700}
-.vocab-red{color:var(--vocab);font-weight:700}
-.vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#050505;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:10;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;font-family:'Atkinson Hyperlegible',Arial,sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.8);border:1px solid var(--teal)}
-.vocab:hover .tip,.vocab.active .tip{display:block}.vocab:focus{outline:2px solid var(--electric);outline-offset:2px;border-radius:2px}
-figure{margin:32px 0}figure img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+figure{margin:32px 0}
+figure img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 8px 24px rgba(0,0,0,.28)}
 figcaption{font-size:13px;font-style:italic;color:#4b4b4b;margin-top:8px;line-height:1.45}
-.img-right{float:right;width:42%;margin:6px 0 20px 28px}.img-left{float:left;width:42%;margin:6px 28px 20px 0}
+.img-right{float:right;width:42%;margin:6px 0 20px 28px}
+.img-left{float:left;width:42%;margin:6px 28px 20px 0}
 .clearfix:after{content:"";display:table;clear:both}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0}
-.timeline-wrap{max-width:820px;width:100%;margin:0 auto 36px;padding:0 28px}
-.timeline-title{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--teal-dark);margin:0 0 12px;text-align:center}
-.timeline{margin:0;padding:22px;background:#dce8e8;border-top:4px solid var(--teal);border-bottom:4px solid var(--teal);display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:100%}
-.timeline-event{position:relative;border-left:3px solid var(--teal);padding-left:12px}
-.timeline-date{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--teal-dark);letter-spacing:.08em;line-height:1.1;margin-bottom:5px}
-.timeline-event p{font-size:15px;line-height:1.55;margin-bottom:0}
-.primary-source{background:#dce8e8;border-left:7px solid var(--teal);padding:30px 34px;margin:38px 0;box-shadow:0 6px 18px rgba(0,0,0,.18)}
-.ps-visual{display:grid;grid-template-columns:minmax(200px,36%) 1fr;gap:24px;align-items:start}
-.ps-visual figure{margin:0}.ps-visual img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 6px 18px rgba(0,0,0,.25)}
-.ps-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:12px}
-.ps-quote{font-size:22px;font-style:italic;line-height:1.65;color:var(--black);margin-bottom:14px}
-.ps-attribution{font-size:13px;font-style:italic;color:#444;margin-bottom:12px}
-.ps-narrator{border-top:1px solid #aaa;padding-top:12px;font-size:15px;line-height:1.6;font-weight:700;color:#222}
+@media(max-width:680px){.img-right,.img-left{float:none;width:100%;margin:24px 0}.two-col{grid-template-columns:1fr}}
+.vocab{color:var(--vocab);text-decoration:underline dotted var(--vocab);cursor:help;position:relative;font-weight:700}
+.vocab-red{color:var(--vocab);font-weight:700}
+.vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#050505;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:200;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;font-family:'Atkinson Hyperlegible',Arial,sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.8);border:1px solid var(--teal)}
+.vocab:hover .tip,.vocab.active .tip{display:block}
+.vocab:focus{outline:2px solid var(--electric);outline-offset:2px;border-radius:2px}
 .brain-break{font-family:'Roboto Slab',serif;margin:44px -50px;padding:36px 50px;position:relative;overflow:hidden;max-width:calc(100% + 100px)}
 .bb-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.9}
 .bb-text{font-family:'Roboto Slab',serif;font-size:22px;font-weight:500;line-height:1.65;margin:0}
-.dyk-break{background:var(--green);color:#fff;border-left:6px solid var(--lime)}.dyk-break .bb-label{color:var(--lime)}.dyk-break p,.dyk-break span{color:#fff}
+.dyk-break{background:linear-gradient(135deg,#0a2a10,#041808);color:#fff;border-left:6px solid var(--lime)}
+.dyk-break .bb-label{color:var(--lime)}
+.dyk-break p,.dyk-break span{color:#fff}
 .ff-break{background:#060e14;color:#fff;padding:36px 40px;margin:44px -50px;border-top:3px solid var(--electric);border-bottom:3px solid var(--electric);text-align:center}
 .ff-break .bb-label{text-align:center;margin-bottom:8px;color:var(--electric)}
 .ff-context{font-family:'Roboto Slab',serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#b0eeff;text-align:center;margin-bottom:28px;opacity:.9;font-weight:700}
@@ -90,19 +92,32 @@ figcaption{font-size:13px;font-style:italic;color:#4b4b4b;margin-top:8px;line-he
 .ff-number{display:block;font-family:'Roboto Slab',serif;font-size:52px;font-weight:700;color:var(--electric);line-height:1;margin-bottom:8px}
 .ff-desc{display:block;font-family:'Roboto Slab',serif;font-size:13px;letter-spacing:.08em;color:#b0eeff;max-width:180px;margin:0 auto;line-height:1.5}
 .as-break{background:var(--purple);color:#fff;padding:44px 50px;margin:44px -50px;border-top:3px solid var(--pink);border-bottom:3px solid var(--pink);text-align:center}
-.as-break .bb-label{color:var(--pink)}.as-image{max-width:580px;width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(255,79,216,.75);box-shadow:0 8px 32px rgba(0,0,0,.55)}
+.as-break .bb-label{color:var(--pink)}
+.as-image{max-width:580px;width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(255,79,216,.75);box-shadow:0 8px 32px rgba(0,0,0,.55)}
 .as-caption{font-family:'Roboto Slab',serif;font-style:normal;font-size:14px;color:#ffe8fb;line-height:1.6;margin-bottom:28px;display:block}
 .as-fact{font-family:'Roboto Slab',serif;font-size:22px;font-weight:500;color:#fff;line-height:1.65;max-width:700px;margin:0 auto;text-align:center}
+.primary-source{background:#dce8e8;border-left:7px solid var(--teal);padding:30px 34px;margin:38px 0;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.ps-visual{display:grid;grid-template-columns:minmax(200px,36%) 1fr;gap:24px;align-items:start}
+.ps-visual figure{margin:0}
+.ps-visual img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.ps-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:12px;display:block}
+.ps-quote{font-size:22px;font-style:italic;line-height:1.65;color:var(--black);margin-bottom:14px}
+.ps-attribution{font-size:13px;font-style:italic;color:#444;margin-bottom:12px}
+.ps-narrator{border-top:1px solid #aaa;padding-top:12px;font-size:15px;line-height:1.6;font-weight:700;color:#222}
+@media(max-width:700px){.ps-visual{grid-template-columns:1fr}}
 .tn-break{background:#0d2342;color:#fff;padding:36px 50px;margin:30px -50px 0}
 .tn-break .bb-label{color:var(--cyan);text-align:center;display:block;margin-bottom:20px}
 .tn-payoff{font-family:'Roboto Slab',serif;font-size:clamp(22px,3.5vw,30px);font-weight:700;line-height:1.35;text-align:center;color:var(--cyan);margin-bottom:28px;max-width:720px;margin-left:auto;margin-right:auto}
-.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}.tn-item{text-align:center}
+.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
+.tn-item{text-align:center}
 .tn-era-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px;font-weight:700}
-.tn-item img{width:100%;display:block;border:2px solid rgba(27,214,255,.65)}.tn-caption{font-family:'Roboto Slab',serif;font-size:12px;font-style:italic;color:#e9fbff;margin-top:8px;line-height:1.4}
+.tn-item img{width:100%;display:block;border:2px solid rgba(27,214,255,.65)}
+.tn-caption{font-family:'Roboto Slab',serif;font-size:12px;font-style:italic;color:#e9fbff;margin-top:8px;line-height:1.4}
 .tn-text-block{margin-top:24px;border-top:1px solid rgba(27,214,255,.35);padding-top:20px}
 .tn-text-block h3{font-family:'Roboto Slab',serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--cyan);margin:18px 0 8px}
 .tn-text-block p{font-family:'Roboto Slab',serif;font-size:17px;line-height:1.65;margin-bottom:12px;color:#fff}
-img{opacity:0;transition:opacity .4s ease}img.loaded{opacity:1}
+img{opacity:0;transition:opacity .4s ease}
+img.loaded{opacity:1}
 .section-animate{opacity:0;transform:translateY(24px);transition:opacity .45s ease-out,transform .45s ease-out}
 .section-animate.visible{opacity:1;transform:translateY(0)}
 @media(prefers-reduced-motion:reduce){.section-animate{opacity:1;transform:none;transition:none}}
@@ -110,45 +125,49 @@ footer{background:#040c12;color:#d0d0d0;text-align:center;padding:24px 30px;font
 @media(max-width:1100px){.toc-sidebar{display:none}}
 @media(max-width:880px){.page-wrap{border:0}main{padding:0 22px 50px}.timeline-wrap{padding:0 22px}.header-inner{padding:44px 24px 42px}.img-left,.img-right{float:none;width:100%;margin:24px 0}.two-col,.tn-pair,.timeline{grid-template-columns:1fr}.brain-break,.ff-break,.as-break,.tn-break{margin:36px 0;padding:28px 22px;max-width:100%}.section-nav a{font-size:11px;padding:11px 8px}}
 @media(max-width:700px){.ps-visual{grid-template-columns:1fr}}
-@media(max-width:600px){.page-title{font-size:42px}.section-heading{font-size:31px}.bb-text,.as-fact{font-size:18px}.ff-number{font-size:44px}}
-html,body{max-width:100%;overflow-x:hidden}.page-wrap{width:min(920px,100%);max-width:100%;overflow-x:hidden}main,.timeline-wrap{width:100%;max-width:820px}img,figure,.timeline,.primary-source,.two-col,.tn-pair{max-width:100%}img{height:auto}.section-nav{overflow-x:auto;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}.section-nav a{white-space:nowrap;flex:0 0 auto}
-.primary-source figcaption{color:#333}.primary-source .ps-quote{color:#0a0a0a}.primary-source .ps-label{color:var(--teal-dark)}.primary-source .ps-narrator{color:#222}
-.dyk-break,.dyk-break p,.dyk-break span,.ff-break,.ff-break p,.ff-break span,.as-break,.as-break p,.as-break span,.tn-break,.tn-break p,.tn-break span{color:#fff}
-.ff-context,.ff-desc{color:#b0eeff}.as-caption{color:#ffe8fb}.tn-caption{color:#e9fbff}
+@media(max-width:600px){.page-title{font-size:42px}.section-heading{font-size:31px}.bb-text,.as-fact{font-size:18px}.ff-number{font-size:44px}.tn-break{margin:30px 0 0;padding:28px 22px}}
 @media(max-width:980px){.brain-break,.ff-break,.as-break,.tn-break{margin-left:0;margin-right:0;padding-left:28px;padding-right:28px;max-width:100%}}
 @media(max-width:880px){.brain-break,.ff-break,.as-break,.tn-break{margin:36px 0;padding:28px 22px}.tn-break{margin:30px 0 0}}
+html,body{max-width:100%;overflow-x:hidden}.page-wrap{max-width:100%;overflow-x:hidden}main,.timeline-wrap{width:100%;max-width:820px}img,figure,.timeline,.primary-source,.two-col,.tn-pair{max-width:100%}img{height:auto}.section-nav{overflow-x:auto;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}
+.dyk-break,.dyk-break p,.dyk-break span,.ff-break,.ff-break p,.ff-break span,.as-break,.as-break p,.as-break span,.tn-break,.tn-break p,.tn-break span{color:#fff}
+.ff-context,.ff-desc{color:#b0eeff}.as-caption{color:#ffe8fb}.tn-caption{color:#e9fbff}
+.primary-source figcaption{color:#333}.primary-source .ps-quote{color:#0a0a0a}.primary-source .ps-label{color:var(--teal-dark)}.primary-source .ps-narrator{color:#222}
 </style>
 </head>
 <body>
 <div id="reading-progress"></div>
 <div class="page-wrap">
 
+<!-- HEADER -->
 <header class="site-header">
   <!--
-    FILENAME: S2L09_InternetCafe.jpg
+    FILENAME: S2L09_JobsiPhoneReveal.jpg
     PLACE IN: images/S2/L09/
     PRIORITY: ESSENTIAL
-    FIND: Early internet cafe or computer lab, 1990s — people at desktop computers in a public setting, showing the spread of internet access globally
-    SEARCH: 1990s internet cafe computers public access Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Internet_cafes
+    FIND: Steve Jobs holding up the original iPhone on stage at Macworld Conference,
+          San Francisco, January 9, 2007; Jobs in his black turtleneck raising the
+          small device to the audience — the defining moment of the product launch
+    SEARCH: Steve Jobs iPhone reveal Macworld 2007 stage holding Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Steve_Jobs
   -->
-  <img src="images/S2/L09/S2L09_InternetCafe.jpg" alt="People using computers at an internet cafe, 1990s" class="header-bg">
+  <img src="images/S2/L09/S2L09_JobsiPhoneReveal.jpg" alt="Steve Jobs holding up the first iPhone on stage at Macworld, January 9, 2007" class="header-bg">
   <div class="header-inner">
-    <p class="course-label">World History &mdash; Semester 2 &mdash; Lesson 09 &mdash; Standard 10.11</p>
-    <h1 class="page-title">Globalization &amp;<br>the Information<br>Revolution</h1>
+    <p class="course-label">WORLD HISTORY &bull; SEMESTER 2 &bull; LESSON 09 &bull; STANDARD 10.11</p>
+    <h1 class="page-title">ONE DEVICE,<br>ONE WORLD</h1>
     <div class="eq-banner">
-      <span class="eq-label">Essential Question</span>
-      How have technology and global economic integration changed what it means to live in the modern world?
+      <span class="eq-label">ESSENTIAL QUESTION</span>
+      What does a single smartphone reveal about who globalization connected, who it enriched, and who paid the price?
     </div>
   </div>
 </header>
 
+<!-- NAV -->
 <nav class="section-nav">
-  <a href="#introduction">INTRODUCTION</a>
-  <a href="#bretton-woods">A NEW ECONOMIC ORDER</a>
-  <a href="#screens-change">SCREENS CHANGE EVERYTHING</a>
-  <a href="#internet-economy">THE INTERNET ECONOMY</a>
-  <a href="#winners-losers">WINNERS AND LOSERS</a>
+  <a href="#introduction">INTRO</a>
+  <a href="#the-reveal">THE REVEAL</a>
+  <a href="#before-it-reaches-you">BEFORE IT REACHES YOU</a>
+  <a href="#what-it-unleashed">WHAT IT UNLEASHED</a>
+  <a href="#who-won">WHO WON, WHO DIDN'T</a>
   <a href="#primary-source-moment">SOURCE</a>
   <a href="#then-now">THEN AND NOW</a>
 </nav>
@@ -156,24 +175,40 @@ html,body{max-width:100%;overflow-x:hidden}.page-wrap{width:min(920px,100%);max-
 <aside class="toc-sidebar">
   <span class="toc-label">ON THIS PAGE</span>
   <a href="#introduction">Introduction</a>
-  <a href="#bretton-woods">New Economic Order</a>
-  <a href="#screens-change">Screens Change Everything</a>
-  <a href="#internet-economy">The Internet Economy</a>
-  <a href="#winners-losers">Winners and Losers</a>
+  <a href="#the-reveal">The Reveal</a>
+  <a href="#before-it-reaches-you">Before It Reaches You</a>
+  <a href="#what-it-unleashed">What It Unleashed</a>
+  <a href="#who-won">Who Won, Who Didn't</a>
   <a href="#primary-source-moment">Source</a>
   <a href="#then-now">Then &amp; Now</a>
 </aside>
 
 <main>
 
+<!-- TIMELINE -->
 <div class="timeline-wrap">
-  <div class="timeline-title">THE INFORMATION REVOLUTION &mdash; 1944 TO 2000</div>
+  <div class="timeline-title">THE IPHONE AND THE WORLD IT MADE &bull; 2000 TO 2020</div>
   <div class="timeline">
-    <div class="timeline-event"><div class="timeline-date">1944</div><p>Bretton Woods conference creates the World Bank, IMF, and a new global economic framework.</p></div>
-    <div class="timeline-event"><div class="timeline-date">1973</div><p>OPEC oil embargo reveals how economically interdependent the world has become.</p></div>
-    <div class="timeline-event"><div class="timeline-date">1981</div><p>IBM releases the personal computer; the PC revolution begins transforming homes and offices.</p></div>
-    <div class="timeline-event"><div class="timeline-date">1991</div><p>The World Wide Web goes public; internet use begins its exponential growth.</p></div>
-    <div class="timeline-event"><div class="timeline-date">2001</div><p>China joins the World Trade Organization; its manufacturing boom reshapes the global economy.</p></div>
+    <div class="timeline-event">
+      <div class="timeline-date">2001</div>
+      <p>China joins the World Trade Organization. Global supply chains expand rapidly as corporations shift manufacturing to cheaper labor markets.</p>
+    </div>
+    <div class="timeline-event">
+      <div class="timeline-date">Jan. 2007</div>
+      <p>Steve Jobs introduces the iPhone at Macworld in San Francisco. It combines a phone, internet browser, and music player in one device.</p>
+    </div>
+    <div class="timeline-event">
+      <div class="timeline-date">2008</div>
+      <p>Apple launches the App Store with 500 apps. Within two years it has 100,000. A new global economy built on software is born.</p>
+    </div>
+    <div class="timeline-event">
+      <div class="timeline-date">2010</div>
+      <p>Foxconn factory in Shenzhen sees a wave of worker suicides. International attention briefly falls on the labor conditions inside Apple's supply chain.</p>
+    </div>
+    <div class="timeline-event">
+      <div class="timeline-date">2018</div>
+      <p>Apple becomes the first company in history to reach a market value of $1 trillion. The Democratic Republic of Congo remains one of the world's poorest countries.</p>
+    </div>
   </div>
 </div>
 
@@ -181,214 +216,255 @@ html,body{max-width:100%;overflow-x:hidden}.page-wrap{width:min(920px,100%);max-
 
 <!-- INTRODUCTION -->
 <section class="intro-section section-animate" id="introduction">
-  <p class="para-standard">In 1973, Americans pulled into gas stations and found something they had never seen before: empty pumps or lines stretching around the block. Oil-producing Arab nations, angry at American support for Israel during the Yom Kippur War, had cut off oil exports to the United States. Within weeks, gas prices quadrupled. Factories slowed. Airlines cancelled flights. For the first time in most Americans' lives, something that happened in the Middle East had directly changed how they lived — what they paid, what they could buy, whether they could get to work. The oil shock of 1973 made something visible that had been quietly building for decades: the world's economies were no longer separate. They were one system.</p>
-  <p class="para-simple">In 1973, Americans pulled into gas stations and found empty pumps or hour-long lines. Arab oil-producing nations had cut off oil exports to the United States as punishment for American support of Israel. Gas prices quadrupled. Factories slowed. For most Americans, something that happened in the Middle East had directly changed their daily lives. The 1973 oil shock made something visible that had been building for years: the world's economies were no longer separate. They were one connected system.</p>
-  <p class="para-standard">This is the story of <span class="vocab" tabindex="0">globalization<span class="tip">The process by which the world's economies, cultures, and governments have become increasingly connected.</span></span> and the <span class="vocab" tabindex="0">information revolution<span class="tip">The dramatic transformation in how information is created, shared, and accessed — driven by computers and the internet.</span></span> — how the second half of the 20th century knit the world together in ways that created enormous wealth, lifted hundreds of millions out of poverty, and also created new forms of inequality, dependence, and control.</p>
-  <p class="para-simple">This is the story of globalization — how the world's economies became deeply connected — and the information revolution — how computers and the internet changed how people live, work, and communicate. Together these forces created enormous wealth, lifted millions out of poverty, and also created new inequalities and new dangers.</p>
+
+  <p class="para-standard">On January 9, 2007, Steve Jobs walked onto a stage in San Francisco and held up a small rectangle of glass and aluminum. He told the audience he was introducing three revolutionary products: a widescreen iPod with touch controls, a revolutionary mobile phone, and a breakthrough internet communications device. Then he paused. "These are not three separate devices," he said. "This is one device." The crowd went wild. What Jobs was holding was not just a phone. It was the entire globalized world compressed into something that fit in a shirt pocket.</p>
+  <p class="para-simple">On January 9, 2007, Steve Jobs walked onto a stage in San Francisco and held up a small rectangle of glass and aluminum. He told the audience he was introducing three things at once: a music player, a phone, and an internet device. Then he paused. "These are not three separate devices," he said. "This is one device." The crowd went wild. What Jobs was holding was not just a phone. It was the entire globalized world compressed into something that fit in a pocket.</p>
+
+  <p class="para-standard">To make that device possible, Apple had assembled one of the most complex <span class="vocab" tabindex="0">supply chains<span class="tip">The network of people, companies, and countries involved in producing a product — from raw materials to finished goods.</span></span> in human history. Minerals pulled from the ground in the Democratic Republic of Congo. Chips designed in California and fabricated in Taiwan. Glass manufactured in Kentucky and shipped to China. Assembly by hundreds of thousands of workers in a factory city in Shenzhen. Software written on multiple continents. The iPhone was not made in one place or by one company. It was made by the entire world — and the story of how that happened, who it helped, and who it cost is the story of globalization itself.</p>
+  <p class="para-simple">To make that device, Apple had built one of the most complex production networks in human history. Minerals came from Congo. Chips were designed in California. Glass was made in Kentucky and shipped to China. Hundreds of thousands of workers in Shenzhen assembled the pieces. Software was written on multiple continents. The iPhone was not made in one place. It was made by the entire world. The story of how that happened — and who it helped and hurt — is the story of globalization.</p>
+
 </section>
 
-<!-- SECTION 1: BRETTON WOODS -->
-<section class="content-section clearfix section-animate" id="bretton-woods">
+<!-- SECTION 1: THE REVEAL -->
+<section class="content-section clearfix section-animate" id="the-reveal">
   <span class="section-kicker">CHAPTER ONE</span>
-  <h2 class="section-heading">A NEW ECONOMIC ORDER</h2>
+  <h2 class="section-heading">THE REVEAL: WHAT MADE IT POSSIBLE</h2>
 
   <!--
-    FILENAME: S2L09_BrettonWoodsConference.jpg
+    FILENAME: S2L09_FoxconnShenzhen.jpg
     PLACE IN: images/S2/L09/
     PRIORITY: ESSENTIAL
-    FIND: Bretton Woods Conference, July 1944 — delegates at the United Nations Monetary and Financial Conference, New Hampshire; large conference hall with delegates
-    SEARCH: Bretton Woods Conference 1944 United Nations Monetary Financial delegates Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Bretton_Woods_Conference
+    FIND: Foxconn factory floor in Shenzhen, China — workers on an electronics
+          assembly line, showing the scale of manufacturing; rows of workers
+          at stations assembling small components; industrial scale
+    SEARCH: Foxconn factory Shenzhen workers assembly line electronics Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Foxconn
   -->
   <figure class="img-right">
-    <img src="images/S2/L09/S2L09_BrettonWoodsConference.jpg" alt="Delegates at the Bretton Woods Conference, July 1944">
-    <figcaption>Delegates at the Bretton Woods Conference, New Hampshire, July 1944. Representatives from 44 nations designed the global economic system that still shapes the world today. Wikimedia Commons.</figcaption>
+    <img src="images/S2/L09/S2L09_FoxconnShenzhen.jpg" alt="Workers on the Foxconn assembly line in Shenzhen, China">
+    <figcaption>Workers on an electronics assembly line in Shenzhen, China. Foxconn employs over 200,000 workers at its Shenzhen campus alone — one of the largest manufacturing facilities in the world. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard">Before World War II was even over, the major Allied powers gathered in Bretton Woods, New Hampshire in 1944 to design the economic system that would govern the postwar world. They had watched the 1930s Great Depression ripple catastrophically from country to country through unregulated global trade, and they were determined to prevent it from happening again. The <span class="vocab" tabindex="0">Bretton Woods<span class="tip">A 1944 international agreement that created the World Bank, IMF, and a new framework for global trade and currency.</span></span> agreements created three major institutions: the World Bank to fund reconstruction and development, the <span class="vocab" tabindex="0">IMF<span class="tip">International Monetary Fund — an organization that provides financial support and stability to countries in economic crisis.</span></span> (International Monetary Fund) to stabilize currencies and help countries in financial crisis, and what would become the General Agreement on Tariffs and Trade (GATT) to lower barriers to international trade.</p>
-  <p class="para-simple">Before World War II ended, leaders of the Allied nations met in Bretton Woods, New Hampshire in 1944 to design the global economic system. They wanted to prevent another Great Depression, which had spread from country to country through unregulated trade in the 1930s. They created the World Bank to fund reconstruction and development, the IMF to help countries in financial crisis, and a trade agreement to reduce barriers to international commerce. These institutions still shape the world economy today.</p>
+  <p class="para-standard">The iPhone was only possible because of two decades of <span class="vocab" tabindex="0">globalization<span class="tip">The process by which the world's economies became deeply connected through trade, technology, and the movement of goods, capital, and people.</span></span> that had already reorganized how things were made. When China joined the <span class="vocab" tabindex="0">World Trade Organization<span class="tip">An international organization that sets rules for trade between countries and works to lower barriers to buying and selling across borders.</span></span> in 2001, it opened the world's largest workforce to global corporations. Apple could design products in California, manufacture components in Taiwan, South Korea, and Japan, assemble the finished device in China, and sell it everywhere — all within a single integrated system.</p>
+  <p class="para-simple">The iPhone was only possible because of twenty years of globalization. When China joined the World Trade Organization in 2001, it opened its enormous workforce to global corporations. Apple could design in California, make components in Asia, assemble the device in China, and sell it everywhere — all as one connected system.</p>
 
-  <p class="para-standard">The system was built around American economic dominance. The U.S. dollar became the world's reserve currency — the money other countries used to trade with each other and hold as savings. This gave the United States enormous advantages: it could print money, borrow cheaply, and set the terms of global trade. In the following decades, <span class="vocab" tabindex="0">multinational corporations<span class="tip">Companies that operate in many countries at once, manufacturing in low-wage countries and selling products globally.</span></span> based largely in the United States, Europe, and Japan began manufacturing goods in low-wage developing countries and selling them globally. A shoe made in Vietnam, assembled in Taiwan, sold in Ohio — this supply chain model became the default structure of the global economy.</p>
-  <p class="para-simple">The new system was built around American economic power. The U.S. dollar became the world's main currency — used by other countries to trade and save. This gave America enormous advantages. In the following decades, multinational corporations — companies operating in many countries — began making products in low-wage countries like Vietnam or Indonesia and selling them globally. A shoe made in Southeast Asia and sold in California became the normal model of the global economy.</p>
+  <p class="para-standard"><span class="vocab" tabindex="0">Foxconn<span class="tip">A Taiwanese electronics manufacturing company that assembles Apple products and employs over one million workers across China.</span></span>, the Taiwanese company that assembled iPhones, built enormous factory campuses in Shenzhen that were essentially self-contained cities. Workers lived in dormitories, ate in company cafeterias, and worked twelve-hour shifts. At its peak, the Shenzhen campus employed over 350,000 workers. They earned roughly $1.50 to $2.00 per hour. The precision required was extraordinary: assembling an iPhone required 141 separate steps, and workers performed the same motions thousands of times each shift. When Apple launched a new model, Foxconn could scale from prototype to mass production in weeks — a speed no factory in the United States could have matched.</p>
+  <p class="para-simple">Foxconn, the company that assembled iPhones, built enormous factory cities in Shenzhen. Workers lived in dormitories and worked twelve-hour shifts. At its peak, the Shenzhen campus had over 350,000 workers earning about $1.50 to $2.00 per hour. Assembling an iPhone required 141 separate steps. Workers repeated the same motions thousands of times each shift. When Apple launched a new model, Foxconn could go from prototype to mass production in weeks — a pace no American factory could have matched.</p>
 
-  <p class="para-standard">The oil shocks of 1973 and 1979 cracked the system's confidence. When oil prices quadrupled, inflation spread globally, growth stalled, and governments realized how dependent their entire industrial economies were on a single commodity controlled by a small group of countries. <span class="vocab" tabindex="0">Interdependence<span class="tip">When countries' economies are so connected that what happens in one directly affects the others.</span></span> — the quality of being so economically connected that a crisis anywhere becomes a crisis everywhere — was no longer an abstract concept. It was a gas line.</p>
-  <p class="para-simple">The oil shocks of 1973 and 1979 shook the whole system. When oil prices quadrupled, inflation spread, factories slowed, and governments realized how dependent they were on oil controlled by a small group of countries. Interdependence — the quality of being so connected that a crisis in one country becomes a crisis everywhere — was no longer just an idea. It was visible in every gas station line.</p>
+  <p class="para-standard">Apple kept its design, software, and marketing in California — the highest-paying, highest-skill parts of the business. Everything else was distributed around the world to wherever it could be done most cheaply. This model — called <span class="vocab" tabindex="0">offshoring<span class="tip">Moving parts of a company's production to another country, usually to take advantage of lower labor costs.</span></span> — was not unique to Apple. But Apple perfected it. By keeping its most valuable work at home and moving everything else overseas, Apple captured most of the profit from a device built by workers earning wages that no American worker would accept.</p>
+  <p class="para-simple">Apple kept its design, software, and marketing in California — the highest-paying parts of the business. Everything else was moved to wherever it could be done most cheaply. This is called offshoring. Apple did not invent this model, but it perfected it. By keeping the most valuable work at home and moving everything else overseas, Apple captured most of the profit from a product built by workers earning wages that no American worker would accept.</p>
 
-  <p class="real-world para-standard">Real-world connection: The World Bank, IMF, and World Trade Organization (the successor to GATT) are still active institutions today, and debates about their fairness to developing nations continue.</p>
-  <p class="real-world para-simple">Real-world connection: The World Bank, IMF, and World Trade Organization still operate today, and arguments about whether they fairly serve developing nations are still happening.</p>
 </section>
 
-<!-- DID YOU KNOW -->
+<!-- DID YOU KNOW — after Foxconn labor is understood, before supply chain minerals -->
 <div class="brain-break dyk-break section-animate">
   <span class="bb-label">DID YOU KNOW</span>
-  <p class="bb-text">The first email was sent in 1971 — a full 20 years before the internet was available to the public. The programmer who sent it, Ray Tomlinson, later admitted he couldn't remember what it said. He chose the @ symbol to separate usernames from computer addresses because it wasn't commonly used in names and would cause no confusion. That single design decision — choosing @ — is still in every email address on earth today.</p>
+  <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
+    <div style="flex:1;min-width:200px;">
+      <!--
+        FILENAME: S2L09_ColtanMining.jpg
+        PLACE IN: images/S2/L09/
+        PRIORITY: SUPPORTING
+        FIND: Artisanal coltan or mineral miners in the Democratic Republic of
+              Congo — workers mining by hand in an open pit mine, showing the
+              manual labor conditions in Congo's mineral extraction industry
+        SEARCH: coltan mining Democratic Republic Congo miners hand Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Mining_in_the_Democratic_Republic_of_the_Congo
+      -->
+      <img src="images/S2/L09/S2L09_ColtanMining.jpg" alt="Artisanal miners extracting coltan in the Democratic Republic of Congo" style="width:100%;display:block;border:3px solid var(--lime);box-shadow:0 4px 18px rgba(0,0,0,0.5);">
+      <p style="font-size:12px;margin-top:8px;opacity:0.75;font-family:'Roboto Slab',serif;color:#fff;">Artisanal coltan miners, Democratic Republic of Congo. Source: Wikimedia Commons.</p>
+    </div>
+    <p class="bb-text" style="flex:1;min-width:200px;">Inside every smartphone is a mineral called coltan — short for columbite-tantalite — that makes the capacitors work. The Democratic Republic of Congo holds roughly 80 percent of the world's known coltan reserves. Much of it is mined by hand, in dangerous conditions, by workers earning a few dollars a day. The country sitting on one of the world's most valuable technology minerals is also one of the world's poorest. The iPhone that sold for $499 at launch contained materials that cost the people who dug them out of the ground almost nothing.</p>
+  </div>
 </div>
 
-<!-- SECTION 2: SCREENS CHANGE EVERYTHING -->
-<section class="content-section clearfix section-animate" id="screens-change">
+<!-- SECTION 2: BEFORE IT REACHES YOU -->
+<section class="content-section clearfix section-animate" id="before-it-reaches-you">
   <span class="section-kicker">CHAPTER TWO</span>
-  <h2 class="section-heading">SCREENS CHANGE EVERYTHING</h2>
+  <h2 class="section-heading">BEFORE IT REACHES YOU: THE SUPPLY CHAIN</h2>
 
   <!--
-    FILENAME: S2L09_MoonLandingTV.jpg
+    FILENAME: S2L09_ContainerShip.jpg
     PLACE IN: images/S2/L09/
     PRIORITY: ESSENTIAL
-    FIND: People watching the 1969 moon landing on television — family or crowd gathered around a TV set, 1969, showing television's power to unite global audience
-    SEARCH: Moon landing 1969 people watching television Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Apollo_11
+    FIND: Large container ship fully loaded with shipping containers at sea or
+          in port — showing the scale of global trade and the physical movement
+          of goods across oceans; massive modern cargo vessel
+    SEARCH: container ship cargo global trade ocean port Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Container_ship
   -->
   <figure class="img-left">
-    <img src="images/S2/L09/S2L09_MoonLandingTV.jpg" alt="People watching the moon landing on television, 1969">
-    <figcaption>People watch the Apollo 11 moon landing on television, July 1969. For the first time in history, a single event was watched simultaneously by an estimated 600 million people worldwide. Wikimedia Commons.</figcaption>
+    <img src="images/S2/L09/S2L09_ContainerShip.jpg" alt="A fully loaded container ship at sea, representing global trade networks">
+    <figcaption>A container ship carrying goods across the Pacific Ocean. The global shipping network moves over 90 percent of international trade by volume — including the components and finished products that make up every smartphone. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard">Television changed the world before the internet did. In the 1960s and 1970s, television brought images of war, famine, and revolution into living rooms for the first time — and changed what governments could hide from their own people. Americans watching the Vietnam War on the evening news saw something different from what the government was telling them. Viewers watching footage of civil rights protesters being beaten in Selma, Alabama, in 1965 responded differently than readers of newspaper accounts. Images moved people in ways that words alone did not. The term "the living room war" was coined for Vietnam because for the first time, combat was broadcast into family homes in real time.</p>
-  <p class="para-simple">Television changed the world before the internet did. In the 1960s and 1970s, TV brought images of war and injustice into living rooms for the first time. Americans watching the Vietnam War on the news saw something different from what the government was telling them. When civil rights protesters were beaten in Selma in 1965, television footage reached millions of Americans and changed public opinion in ways written descriptions alone could not. For the first time, war and social movements were broadcast directly into family homes.</p>
+  <p class="para-standard">Tracing a single iPhone from raw materials to finished product means traveling through at least a dozen countries. It begins underground. The cobalt in the battery comes largely from the Democratic Republic of Congo, where an estimated 40,000 children work in artisanal mines in dangerous conditions. Lithium comes from salt flats in Bolivia and Chile. Tungsten, used in the vibration motor, comes from mines in China, Rwanda, and Australia. These <span class="vocab" tabindex="0">rare earth minerals<span class="tip">A group of metals found in small quantities around the world that are essential for electronics, magnets, and batteries.</span></span> are the invisible foundation of the digital economy.</p>
+  <p class="para-simple">Tracing a single iPhone from raw materials to finished product means traveling through at least a dozen countries. It starts underground. The cobalt in the battery comes mostly from the Democratic Republic of Congo, where an estimated 40,000 children work in dangerous mines. Lithium comes from Bolivia and Chile. Tungsten comes from mines in China, Rwanda, and Australia. These minerals are the invisible foundation of every smartphone — and of the digital economy itself.</p>
 
-  <!--
-    FILENAME: S2L09_IBMPersonalComputer.jpg
-    PLACE IN: images/S2/L09/
-    PRIORITY: ESSENTIAL
-    FIND: IBM 5150 personal computer, 1981 — the original IBM PC, showing the machine that launched the personal computer revolution in offices and homes
-    SEARCH: IBM 5150 personal computer 1981 Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/File:IBM_PC_5150.jpg
-  -->
-  <figure class="img-right">
-    <img src="images/S2/L09/S2L09_IBMPersonalComputer.jpg" alt="IBM 5150 personal computer, 1981">
-    <figcaption>The IBM 5150 personal computer, released in 1981. Within a decade, personal computers had transformed offices, schools, and homes around the world. Wikimedia Commons.</figcaption>
-  </figure>
+  <p class="para-standard">From there, the components travel through a <span class="vocab" tabindex="0">supply chain<span class="tip">The full network of suppliers, manufacturers, shippers, and sellers that move a product from raw material to customer.</span></span> spanning multiple continents. The processor chip — the brain of the device — is designed by Apple in California but fabricated by TSMC in Taiwan, using equipment made in the Netherlands. The glass screen is made by Corning in Kentucky, then chemically strengthened and shipped to China. Samsung in South Korea supplies the memory chips. The finished components arrive at Foxconn in Shenzhen, where workers assemble them into a finished device. That device then travels by container ship across the Pacific to a warehouse in the United States, then to a store, then into your pocket.</p>
+  <p class="para-simple">From there, the parts travel across multiple continents. The processor chip is designed in California but made in Taiwan. The glass screen is made in Kentucky and shipped to China. Memory chips come from South Korea. All the parts arrive at Foxconn in Shenzhen, where workers assemble them into a finished phone. That phone then travels by cargo ship across the Pacific to a warehouse, then to a store, then into your pocket.</p>
 
-  <p class="para-standard">The personal computer revolution of the 1980s moved information from institutions to individuals. Before the PC, computers were enormous, expensive machines owned by governments, universities, and large corporations. The IBM Personal Computer, released in 1981, and the Apple Macintosh, released in 1984, brought computing into offices and homes. By the end of the decade, businesses, schools, and households around the world were being reorganized around desktop computers. Work that required a room full of clerks could now be done by one person with a spreadsheet. The <span class="vocab" tabindex="0">technology<span class="tip">Tools and systems — especially computers and the internet — that transform how information is created, shared, and used.</span></span> was changing not just what people did, but how they thought about information itself.</p>
-  <p class="para-simple">The personal computer revolution of the 1980s put information in the hands of individuals. Before the PC, computers were giant expensive machines owned by governments and corporations. When IBM released its personal computer in 1981 and Apple released the Macintosh in 1984, computing moved into offices and homes. By the end of the decade, schools, businesses, and households were being reorganized around desktop computers. Work that used to require many people could now be done by one person with the right software.</p>
+  <p class="para-standard">The entire system was designed for efficiency and low cost — not for the wellbeing of the people inside it. Apple earned a profit of roughly $200 to $400 on every iPhone sold. The workers who assembled it earned less than $20 for the labor that went into each device. The miners who extracted the cobalt earned perhaps a few cents per phone's worth of material. The global supply chain created an iPhone that was remarkable and affordable. It did so by distributing costs and benefits in a way that was not even close to equal.</p>
+  <p class="para-simple">The entire system was built for efficiency and low cost — not for the wellbeing of the people inside it. Apple earned roughly $200 to $400 profit on each iPhone sold. The workers who assembled it earned less than $20 for their labor on each device. The miners who dug the cobalt earned perhaps a few cents per phone. The supply chain made an amazing, affordable product. It did so by distributing costs and benefits in a deeply unequal way.</p>
 
-  <p class="para-standard">Satellite technology accelerated the transformation. CNN launched in 1980 as the world's first 24-hour news network — and proved in 1991 during the Gulf War that it was possible to broadcast a war live as it happened. By the time the Soviet Union collapsed in 1991, satellite dishes were poking up from rooftops in Eastern Europe and across the developing world, pulling in signals from beyond any government's ability to fully control. Information was becoming harder to suppress — which was both a tool for democracy and, as governments would eventually discover, a tool for something more complicated.</p>
-  <p class="para-simple">Satellites accelerated the change. CNN launched in 1980 as the world's first 24-hour news network and broadcast the 1991 Gulf War live. By the time the Soviet Union collapsed, satellite dishes were appearing on rooftops across Eastern Europe and the developing world, receiving signals no government could fully block. Information was becoming harder to suppress — which was a tool for democracy, but also, as governments would discover, for something more complicated.</p>
 </section>
 
-<!-- FAST FACTS -->
+<!-- FAST FACTS — after supply chain scale is understood -->
 <div class="brain-break ff-break section-animate">
   <span class="bb-label">FAST FACTS</span>
-  <p class="ff-context">THE INTERNET IN NUMBERS</p>
+  <p class="ff-context">THE IPHONE IN NUMBERS: ONE DEVICE, ONE WORLD</p>
   <div class="ff-grid">
     <div class="ff-item">
-      <span class="ff-number">1991</span>
-      <span class="ff-desc">the year the World Wide Web became publicly available — invented by Tim Berners-Lee at CERN in Switzerland</span>
+      <span class="ff-number">43</span>
+      <span class="ff-desc">countries involved in producing a single iPhone, from mineral extraction through component manufacturing to final assembly and shipping</span>
     </div>
     <div class="ff-item">
-      <span class="ff-number">16M</span>
-      <span class="ff-desc">internet users worldwide in 1995 — four years after the web went public</span>
+      <span class="ff-number">$499</span>
+      <span class="ff-desc">original retail price of the first iPhone in 2007 — while Foxconn workers assembling it earned roughly $1.50 per hour</span>
     </div>
     <div class="ff-item">
-      <span class="ff-number">4.9B</span>
-      <span class="ff-desc">internet users worldwide by 2021 — more than 60% of the entire human population</span>
+      <span class="ff-number">2.3B</span>
+      <span class="ff-desc">iPhones sold between 2007 and 2023, making it the best-selling consumer electronics product in history</span>
     </div>
     <div class="ff-item">
-      <span class="ff-number">$4T</span>
-      <span class="ff-desc">estimated value of global e-commerce in 2020 — a form of commerce that did not exist in 1990</span>
+      <span class="ff-number">$1T</span>
+      <span class="ff-desc">Apple's market value in 2018 when it became the first company in history to reach that milestone — while Congo remained one of the world's poorest nations</span>
     </div>
   </div>
 </div>
 
-<!-- SECTION 3: THE INTERNET ECONOMY -->
-<section class="content-section clearfix section-animate" id="internet-economy">
+<!-- SECTION 3: WHAT IT UNLEASHED -->
+<section class="content-section clearfix section-animate" id="what-it-unleashed">
   <span class="section-kicker">CHAPTER THREE</span>
-  <h2 class="section-heading">THE INTERNET ECONOMY</h2>
+  <h2 class="section-heading">WHAT IT UNLEASHED: THE ECONOMY THAT FOLLOWED</h2>
 
   <!--
-    FILENAME: S2L09_ChinaFactoryWorkers.jpg
+    FILENAME: S2L09_AppStoreGlobal.jpg
     PLACE IN: images/S2/L09/
     PRIORITY: ESSENTIAL
-    FIND: Chinese factory workers on an assembly line, 1990s-2000s — workers manufacturing electronics or goods in a large factory, showing China as global manufacturing hub
-    SEARCH: China factory workers assembly line manufacturing 1990s 2000s Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Manufacturing_in_China
+    FIND: People using smartphones in a global context — a crowd of people in
+          a public space in Asia, Africa, or Latin America using mobile phones;
+          showing the global spread of smartphone use and mobile internet access
+    SEARCH: people using smartphones mobile internet developing world crowd
+            public space Wikimedia Commons CC license
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Smartphones
+    LICENSE: CC-licensed photography acceptable.
   -->
   <figure class="img-right">
-    <img src="images/S2/L09/S2L09_ChinaFactoryWorkers.jpg" alt="Factory workers on an assembly line in China, 1990s-2000s">
-    <figcaption>Workers on a manufacturing assembly line in China, 1990s-2000s. China became the world's factory floor — producing a vast share of global consumer goods and lifting hundreds of millions of Chinese citizens out of poverty. Wikimedia Commons.</figcaption>
+    <img src="images/S2/L09/S2L09_AppStoreGlobal.jpg" alt="People using smartphones in a public space, showing the global spread of mobile technology">
+    <figcaption>Smartphone users in a public space. More than 4 billion people worldwide now access the internet through mobile devices — transforming how information, commerce, and political organizing work across the globe. Source: Wikimedia Commons / CC.</figcaption>
   </figure>
 
-  <p class="para-standard">When the internet became publicly available in the early 1990s, it did not just create new communication tools — it created a new kind of economy. Capital could now move across borders instantly. A company in New York could manage a supply chain that touched factories in 12 countries simultaneously. A designer in São Paulo could sell to a customer in Tokyo without a middleman. Information — which had always been difficult and expensive to move — became essentially free to transmit. This fundamentally changed what was valuable: not physical products, but the knowledge, code, and data that organized their production.</p>
-  <p class="para-simple">When the internet went public in the early 1990s, it didn't just change communication — it created a new kind of economy. Money could move across borders instantly. A company in New York could manage factories in 12 countries at once. A designer anywhere could sell to customers everywhere. Information — which had always been expensive to move — became essentially free to transmit. What became valuable was not physical products but the knowledge and code that organized making them.</p>
+  <p class="para-standard">When Apple launched the App Store in 2008, it created something that had never existed before: a global marketplace for software that anyone, anywhere, could access instantly. Within two years, the App Store had 100,000 applications. A developer in Lagos could write an app and sell it to a user in Oslo. A farmer in rural Kenya could download a program that told him commodity prices before he decided whether to sell his crop. A teenager in Jakarta could build a business. The smartphone did not just connect people to information — it connected people to economic opportunity in ways that no previous technology had reached.</p>
+  <p class="para-simple">When Apple launched the App Store in 2008, it created a global marketplace for software that anyone could access anywhere. Within two years it had 100,000 apps. A developer in Nigeria could sell an app to a user in Norway. A farmer in Kenya could check prices before selling his crops. A teenager in Indonesia could build a business from a phone. The smartphone connected people to economic opportunity in ways no previous technology had managed.</p>
 
-  <p class="para-standard">China's rise as a global manufacturing hub was the defining economic story of this period. After Deng Xiaoping's market reforms in the 1980s, China opened its enormous workforce — hundreds of millions of people willing to work for wages far below what American or European workers required — to multinational corporations. When China joined the World Trade Organization in 2001, the process accelerated dramatically. Between 2000 and 2010, the United States lost approximately 5.5 million manufacturing jobs — a transformation that restructured entire regions, devastated factory towns, and fueled political anger that reshaped American politics for decades. Meanwhile, hundreds of millions of Chinese citizens were lifted out of poverty in what economists called the largest reduction in poverty in human history.</p>
-  <p class="para-simple">China becoming a global manufacturing center was the biggest economic story of this era. After opening its economy to foreign investment in the 1980s, China offered corporations hundreds of millions of workers at wages far below American or European levels. When China joined the World Trade Organization in 2001, the shift accelerated. Between 2000 and 2010, the United States lost about 5.5 million manufacturing jobs — devastating factory towns and reshaping American politics. At the same time, hundreds of millions of Chinese citizens escaped poverty — the largest poverty reduction in history.</p>
+  <p class="para-standard">But the economy the smartphone created had a shadow side that its designers did not fully anticipate. Every app a person used collected data: location, habits, preferences, relationships, movements, purchases, and emotions. That data was the raw material of a new industry — sometimes called <span class="vocab" tabindex="0">surveillance capitalism<span class="tip">An economic system in which companies collect detailed data about users' behavior and sell it to advertisers, often without users' full understanding or consent.</span></span> — in which the product being sold was not the phone or the app, but the user's attention and personal information. Facebook, Google, and hundreds of smaller companies built trillion-dollar businesses on information that users generated for free, often without understanding what they were giving away.</p>
+  <p class="para-simple">But the economy smartphones created had a dark side. Every app collected data: location, habits, preferences, relationships, purchases, and emotions. That data became the raw material of a new industry — surveillance capitalism — in which the product being sold was not the app but the user's own information and attention. Facebook, Google, and hundreds of other companies built trillion-dollar businesses on information that users gave away for free, usually without understanding what they were trading.</p>
 
-  <p class="para-standard">The internet also gave authoritarian governments powerful new tools. <span class="vocab" tabindex="0">Surveillance<span class="tip">The monitoring and tracking of people's behavior, communications, and movements — increasingly done digitally by governments and corporations.</span></span> technology — cameras, facial recognition systems, social media monitoring, and mobile tracking — allowed governments to watch their citizens at a scale that no previous authoritarian system had been able to achieve. China built what became known as the "Great Firewall" — a national internet filtering system blocking foreign websites and monitoring domestic content. But ordinary people also gained tools: smartphones and social media allowed citizens to organize movements, share video of abuses, and coordinate protests faster than governments could respond, as the Arab Spring uprisings of 2010 and 2011 demonstrated.</p>
-  <p class="para-simple">The internet also gave authoritarian governments powerful new tools. Surveillance technology — cameras, facial recognition, social media monitoring — allowed governments to watch their citizens at a scale that was never possible before. China built a national filtering system that blocked foreign websites and monitored what citizens posted online. But ordinary people gained tools too. Smartphones and social media let citizens organize movements and share video of abuses faster than governments could respond — as the Arab Spring uprisings of 2010 and 2011 showed.</p>
+  <p class="para-standard">Authoritarian governments saw the same technology and recognized a different opportunity. China built a national mobile surveillance system that used smartphones as tracking devices, linked to facial recognition cameras and social credit monitoring. Governments in Russia, Iran, Belarus, and elsewhere monitored protesters through their phones, arrested activists based on their digital activity, and shut down mobile networks to suppress uprisings. The device that opened the world also gave states new tools to close it back down — selectively, precisely, and at a scale that no previous government had been able to achieve.</p>
+  <p class="para-simple">Authoritarian governments saw the same technology differently. China used smartphones as tracking devices linked to facial recognition cameras and social monitoring systems. Governments in Russia, Iran, and elsewhere tracked protesters through their phones, arrested activists based on their digital activity, and shut down mobile networks to suppress uprisings. The device that opened the world also gave governments new tools to close it back down — precisely and at a scale that was never before possible.</p>
+
 </section>
 
-<!-- ART SPOTLIGHT -->
+<!-- ART SPOTLIGHT — after the human cost of labor has been established, before Winners/Losers -->
 <div class="brain-break as-break section-animate">
   <span class="bb-label">ART SPOTLIGHT</span>
   <figure>
     <!--
-      FILENAME: S2L09_WarhomolSilkscreen.jpg
+      FILENAME: S2L09_LiuBolin.jpg
       PLACE IN: images/S2/L09/
-      PRIORITY: ENHANCEMENT
-      FIND: Andy Warhol, "Campbell's Soup Cans" — 1962, oil on canvas, 32 panels — the most iconic image of American consumer culture and globalization's consumer foundation
-      SEARCH: Andy Warhol Campbell's Soup Cans 1962 painting MoMA Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/File:Warhol_-_Campbell_Soup_-_MoMA.jpg
+      PRIORITY: ESSENTIAL
+      FIND: Liu Bolin, "Hiding in the City" series — the Chinese artist who
+            paints himself to blend invisibly into urban backgrounds; specifically
+            a work showing him camouflaged against a wall of consumer electronics
+            or technology products; his work addresses invisibility, labor, and
+            the relationship between people and objects in modern China
+      SEARCH: Liu Bolin Hiding in the City camouflage art China electronics
+              consumer goods Wikimedia Commons
+      LINK: Suggested: https://commons.wikimedia.org/wiki/Liu_Bolin
     -->
-    <img src="images/S2/L09/S2L09_WarholSoupCans.jpg" alt="Campbell's Soup Cans — Andy Warhol, 1962" class="as-image">
+    <img src="images/S2/L09/S2L09_LiuBolin.jpg" alt="Liu Bolin, Hiding in the City series, artist camouflaged against consumer products" class="as-image">
     <figcaption class="as-caption">
-      Campbell's Soup Cans &mdash; Andy Warhol, 1962<br>
-      Warhol created this series of 32 canvases — one for each variety of Campbell's Soup — as a commentary on mass production, consumer culture, and the blurring of art and advertising in postwar American society. The work is held at the Museum of Modern Art in New York.
+      "Hiding in the City" &mdash; Liu Bolin, begun 2005<br>
+      Chinese artist Liu Bolin paints his body and clothing to blend invisibly into urban backgrounds — factories, storefronts, walls of consumer products — standing motionless for hours while assistants apply the paint.
     </figcaption>
   </figure>
-  <p class="as-fact">Warhol deliberately chose Campbell's Soup because he had eaten it for lunch every day for 20 years. The choice was not random — it was a statement: the most "ordinary" mass-produced product in America, repeated 32 times, could be art. When globalization later moved the manufacturing of those soup cans to facilities across multiple countries, Warhol's celebration of American mass production became unintentionally a portrait of a world economy that was about to be restructured beyond recognition.</p>
+  <p class="as-fact">Liu Bolin began this series in 2005 after the Chinese government demolished his Beijing art studio without compensation or notice. He called the work a response to feeling invisible — erased by the system around him. When he camouflages himself against walls of electronics and consumer goods, he is not celebrating the products. He is asking a question: how many people does it take to make all this, and why can't we see any of them?</p>
 </div>
 
-<!-- SECTION 4: WINNERS AND LOSERS -->
-<section class="content-section clearfix section-animate" id="winners-losers">
+<!-- SECTION 4: WHO WON, WHO DIDN'T -->
+<section class="content-section clearfix section-animate" id="who-won">
   <span class="section-kicker">CHAPTER FOUR</span>
-  <h2 class="section-heading">WINNERS AND LOSERS</h2>
+  <h2 class="section-heading">WHO WON, WHO DIDN'T</h2>
 
-  <!--
-    FILENAME: S2L09_WTOProtest.jpg
-    PLACE IN: images/S2/L09/
-    PRIORITY: SUPPORTING
-    FIND: WTO Seattle protests 1999 — crowds of protesters in Seattle during the World Trade Organization meeting, "Battle of Seattle"
-    SEARCH: WTO Seattle protests 1999 Battle of Seattle Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/1999_Seattle_WTO_protests
-  -->
-  <figure class="img-left">
-    <img src="images/S2/L09/S2L09_WTOProtest.jpg" alt="Protesters during the WTO Seattle meeting, 1999">
-    <figcaption>Protesters at the 1999 World Trade Organization meeting in Seattle — the "Battle of Seattle" — where tens of thousands demonstrated against globalization's impact on workers and the environment. Wikimedia Commons.</figcaption>
-  </figure>
+  <div class="two-col">
+    <!--
+      FILENAME: S2L09_AppleStoreLaunch.jpg
+      PLACE IN: images/S2/L09/
+      PRIORITY: ESSENTIAL
+      FIND: Line of customers waiting outside an Apple Store for a new iPhone
+            launch, 2007-2015; people camping out or standing in a long queue
+            outside an Apple retail store; showing consumer enthusiasm
+      SEARCH: Apple Store iPhone launch line customers waiting queue Wikimedia Commons
+      LINK: Suggested: https://commons.wikimedia.org/wiki/Apple_Store
+    -->
+    <figure>
+      <img src="images/S2/L09/S2L09_AppleStoreLaunch.jpg" alt="Customers lined up outside an Apple Store for an iPhone launch">
+      <figcaption>Customers waiting outside an Apple Store for an iPhone launch. Apple stores became cultural phenomena, with fans camping overnight to be among the first to buy each new model. Source: Wikimedia Commons.</figcaption>
+    </figure>
+    <!--
+      FILENAME: S2L09_CongoMinerWorking.jpg
+      PLACE IN: images/S2/L09/
+      PRIORITY: ESSENTIAL
+      FIND: A miner working in the Democratic Republic of Congo — a single
+            worker or small group digging or processing minerals by hand in
+            an artisanal mine; showing the human labor conditions at the start
+            of the supply chain; documentary register, dignified not exploitative
+      SEARCH: artisanal miner Democratic Republic Congo mining by hand
+              Wikimedia Commons
+      LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Mining_in_the_Democratic_Republic_of_the_Congo
+    -->
+    <figure>
+      <img src="images/S2/L09/S2L09_CongoMinerWorking.jpg" alt="An artisanal miner working in the Democratic Republic of Congo">
+      <figcaption>An artisanal miner in the Democratic Republic of Congo. The DRC holds some of the world's largest reserves of cobalt and coltan — minerals essential for smartphone batteries — yet remains one of the world's poorest countries. Source: Wikimedia Commons.</figcaption>
+    </figure>
+  </div>
 
-  <p class="para-standard">The promise of <span class="vocab" tabindex="0">free trade<span class="tip">Trade between countries with few or no government restrictions, tariffs, or barriers.</span></span> was simple: if countries specialized in what they produced most efficiently and traded freely, everyone would benefit. The reality was more complicated. Global trade did create enormous wealth — but it was captured unequally. Corporations and their shareholders benefited. Consumers in wealthy countries benefited from cheaper goods. Hundreds of millions of workers in developing countries got factory jobs that, while difficult, paid more than subsistence farming. But workers in American and European manufacturing towns lost their jobs, their industries, and sometimes their communities — without the retraining, safety nets, or support to transition to new livelihoods. The gains from globalization were real. So was the damage, and it was not distributed equally.</p>
-  <p class="para-simple">The promise of free trade — trading without barriers between countries — was that everyone would benefit. The reality was more complicated. Global trade created enormous wealth, but it wasn't shared equally. Corporations and shareholders won. Consumers in rich countries got cheaper goods. Factory workers in developing countries got jobs. But workers in American and European manufacturing towns lost their jobs and their communities without support to find new ones. The gains from globalization were real. So was the damage — and the damage fell hardest on people who had the least power.</p>
+  <p class="para-standard">Apple's rise along the globalized supply chain produced one of the most dramatic concentrations of wealth in corporate history. In 2018, Apple became the first company in history to be valued at one trillion dollars. By 2022, its valuation had reached nearly three trillion dollars — more than the entire GDP of France. Its founders and early investors became among the wealthiest people who had ever lived. The engineers, designers, and executives who worked at Apple's California headquarters earned median salaries of over $200,000 per year.</p>
+  <p class="para-simple">Apple's rise made it one of the wealthiest companies in history. In 2018, it became the first company ever valued at one trillion dollars. By 2022, it was worth nearly three trillion — more than the entire economy of France. Its founders and early investors became some of the richest people who ever lived. Engineers and executives at Apple's California headquarters earned median salaries over $200,000 per year.</p>
 
-  <p class="para-standard">The information economy created similar patterns of unequal gain. Companies like Apple, Google, Amazon, and Meta became among the most valuable corporations in history. Their founders and early investors became extraordinarily wealthy. But the workers who physically assembled devices in factories, drove delivery trucks, or moderated content online were often paid low wages with few benefits, their work deliberately classified to avoid labor protections. Meanwhile, the data that users generated for free — every search, purchase, and social media post — was being collected, analyzed, and sold as the raw material of a new industry worth trillions of dollars. Users were, in a very real sense, the product.</p>
-  <p class="para-simple">The information economy created similar patterns. Tech companies like Apple, Google, and Amazon became enormously valuable. Their founders got rich beyond imagination. But workers assembling devices in factories or driving delivery trucks were paid low wages with few protections. Meanwhile, the data that users created for free — every search, click, and post — was being collected and sold. Users were not just customers of the internet. They were, in a real sense, the raw material it ran on.</p>
+  <p class="para-standard">At the other end of the supply chain, the picture was different. The Democratic Republic of Congo — which holds an estimated 80 percent of the world's <span class="vocab" tabindex="0">coltan<span class="tip">A mineral found mainly in the Democratic Republic of Congo that is refined into tantalum, a key material in the capacitors inside smartphones and laptops.</span></span> reserves, along with massive deposits of cobalt and other minerals essential to smartphone batteries — ranked among the five poorest countries on earth by per capita income throughout this period. Artisanal miners earned a few dollars per day. Armed militias controlled mining regions and profited from mineral sales. Children as young as seven worked in mine shafts. The country that produced the raw materials at the base of the digital economy received almost none of its benefits.</p>
+  <p class="para-simple">At the other end of the supply chain, things looked very different. The Democratic Republic of Congo holds most of the world's coltan reserves and massive cobalt deposits — both essential for smartphone batteries. But the DRC ranked among the five poorest countries on earth throughout this period. Artisanal miners earned a few dollars per day. Armed groups controlled mining regions and took a cut of mineral sales. Children as young as seven worked underground. The country that produced the raw materials at the foundation of the digital economy received almost none of its benefits.</p>
 
-  <p class="para-standard">By the early 2000s, globalization had become one of the most contested ideas in world politics. At the 1999 World Trade Organization meeting in Seattle, tens of thousands of protesters — labor unions, environmental groups, and human rights advocates from around the world — shut down the meeting and confronted police in what became known as the "Battle of Seattle." The protests represented something real: that the benefits of economic integration were not reaching everyone, that the institutions managing globalization were not accountable to those most affected by their decisions, and that the question of who benefits and who bears the cost was not being honestly answered.</p>
-  <p class="para-simple">By the early 2000s, globalization was deeply controversial. At the 1999 WTO meeting in Seattle, tens of thousands of protesters — workers, environmentalists, and human rights advocates — shut the meeting down. The protests showed something real: that globalization's benefits were not reaching everyone, that the institutions managing it were not accountable to the people most affected, and that the question of who wins and who loses was not being answered honestly.</p>
+  <p class="para-standard">This gap is not an accident or an oversight. It is the structure of the global economy as it was designed. The countries and people at the bottom of supply chains — those who extract raw materials or perform assembly labor — capture the least value. The companies and workers at the top — those who own the intellectual property, the brand, and the software — capture the most. Globalization created enormous total wealth. The question it could not answer on its own was how that wealth would be shared. The answer, so far, has been: unequally, in ways that reflect and reinforce the existing gaps between the powerful and the powerless.</p>
+  <p class="para-simple">This gap is not an accident. It is how the global economy was built. The people at the bottom of supply chains — those who dig minerals or assemble parts — capture the least value from their work. The companies and workers at the top — those who own the designs, the brand, and the software — capture the most. Globalization created enormous wealth overall. But the question of how to share that wealth was never fully answered. So far, the answer has been: very unequally.</p>
 
-  <p class="real-world para-standard">Real-world connection: The political debates about trade, immigration, manufacturing jobs, tech monopolies, and data privacy that appear constantly in today's news are all direct descendants of the globalization and information revolution story.</p>
-  <p class="real-world para-simple">Real-world connection: Arguments about trade, jobs, tech companies, and data privacy that fill today's news are all products of the globalization and information revolution that began in the 1990s.</p>
 </section>
 
-<!-- PRIMARY SOURCE -->
+<!-- PRIMARY SOURCE MOMENT -->
 <div class="primary-source section-animate" id="primary-source-moment">
-  <p class="ps-label">PRIMARY SOURCE MOMENT</p>
+  <span class="ps-label">PRIMARY SOURCE MOMENT</span>
   <div class="ps-visual">
     <figure>
       <!--
-        FILENAME: S2L09_TimBernersLee.jpg
+        FILENAME: S2L09_FoxconnWorkerPortrait.jpg
         PLACE IN: images/S2/L09/
         PRIORITY: ESSENTIAL
-        FIND: Tim Berners-Lee, inventor of the World Wide Web — portrait or working at computer, early 1990s, CERN
-        SEARCH: Tim Berners-Lee World Wide Web inventor CERN 1990s Wikimedia Commons
-        LINK: Suggested: https://commons.wikimedia.org/wiki/Tim_Berners-Lee
+        FIND: A Foxconn worker or Chinese electronics factory worker portrait —
+              a worker at their station or a dignified portrait of a young
+              factory worker in Shenzhen; showing the human face of the people
+              who build the devices; documentary photojournalism register
+        SEARCH: Foxconn worker portrait Shenzhen electronics factory China
+                Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Foxconn
       -->
-      <img src="images/S2/L09/S2L09_TimBernersLee.jpg" alt="Tim Berners-Lee, inventor of the World Wide Web, circa 1990s">
-      <figcaption>Tim Berners-Lee, inventor of the World Wide Web, circa 1990s. Wikimedia Commons.</figcaption>
+      <img src="images/S2/L09/S2L09_FoxconnWorkerPortrait.jpg" alt="Portrait of a Foxconn factory worker in Shenzhen, China">
+      <figcaption>A Foxconn factory worker in Shenzhen, China. Source: Wikimedia Commons.</figcaption>
     </figure>
     <div>
-      <p class="ps-quote">"The original design of the Web was that it should be a universal space... The fact that you can link to any piece of information and there are no boundaries — that was the exciting thing. The dream was to make it a medium that would allow people to work together, across distance and across disciplines... What I did not anticipate was the way in which it would also become a medium for misinformation, for hate speech, for surveillance, for manipulation."</p>
-      <p class="ps-attribution">&mdash; Tim Berners-Lee, inventor of the World Wide Web, reflecting on the internet's development, 2019</p>
-      <p class="ps-narrator">WHY THIS MATTERS: Berners-Lee invented the World Wide Web in 1991 and gave it away for free — he deliberately did not patent it, because he wanted it to be accessible to everyone. He is describing the gap between what the internet was designed to be and what it became. As you read this, consider: what does it mean that the person who invented the most transformative communication technology in history did not fully anticipate its consequences? And given what you know about how the internet has changed the world — for better and worse — how would you respond to him?</p>
+      <p class="ps-quote">"We get up at 6 a.m. and go to work at 7. We work until 7 p.m. and have a one-hour lunch break. After work we go to eat, and then at about 9 p.m. we go back to the dormitory to sleep. I can only call home on Sundays. Every day is like this, repeating over and over... We feel like we're like automatons. We keep going to work, keep working, keep working — and then the money is all gone."</p>
+      <p class="ps-attribution">&mdash; Foxconn factory worker, Shenzhen, China, interviewed by the New York Times, January 2012</p>
+      <p class="ps-narrator">WHY THIS MATTERS: This worker is describing the daily life of someone who builds devices that sell for hundreds of dollars — while earning roughly $1.50 per hour. Notice the specific details: the schedule that leaves no time for anything outside of work and sleep, the sense of being mechanical rather than human, the money disappearing. The iPhone in your pocket was assembled by a person living this life. When you read the Essential Question — "what does a single smartphone reveal about who globalization connected, who it enriched, and who paid the price?" — this testimony is part of the answer. What does this worker's account make visible that an advertisement for the iPhone would hide?</p>
     </div>
   </div>
 </div>
@@ -396,68 +472,165 @@ html,body{max-width:100%;overflow-x:hidden}.page-wrap{width:min(920px,100%);max-
 <!-- THEN AND NOW -->
 <div class="brain-break tn-break section-animate" id="then-now">
   <span class="bb-label">THEN AND NOW</span>
-  <p class="tn-payoff">THE INTERNET WAS BUILT TO CONNECT THE WORLD — AND IT DID, IN WAYS NO ONE FULLY PLANNED FOR.</p>
+  <p class="tn-payoff">THE IPHONE CONNECTED THE WORLD. THE PEOPLE WHO BUILT IT ARE STILL FIGHTING TO BE PART OF IT.</p>
   <div class="tn-pair">
     <div class="tn-item">
-      <span class="tn-era-label">1990s</span>
+      <span class="tn-era-label">2007</span>
       <!--
-        FILENAME: S2L09_ThenEarlyInternet.jpg
+        FILENAME: S2L09_ThenFirstiPhoneLine.jpg
         PLACE IN: images/S2/L09/
         PRIORITY: ESSENTIAL
-        FIND: Early internet or computer use, 1990s — person at desktop computer with early web browser visible, or early internet cafe; conveys the novelty of online access
-        SEARCH: 1990s internet computer use early web browser desktop Wikimedia Commons
-        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:1990s_computers
+        FIND: The line of customers waiting outside the original Apple Store on
+              Fifth Avenue or another location for the first iPhone launch,
+              June 29, 2007; people camping on sidewalks waiting to buy the
+              very first iPhone
+        SEARCH: first iPhone launch line June 2007 Apple Store customers
+                waiting Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/iPhone
       -->
-      <img src="images/S2/L09/S2L09_ThenEarlyInternet.jpg" alt="Person using an early internet browser on a desktop computer, 1990s">
-      <p class="tn-caption">Early internet use on a desktop computer, 1990s. Wikimedia Commons.</p>
+      <img src="images/S2/L09/S2L09_ThenFirstiPhoneLine.jpg" alt="Customers waiting in line for the first iPhone launch, June 29, 2007">
+      <p class="tn-caption">Customers camped outside an Apple Store on the day the first iPhone went on sale, June 29, 2007. Source: Wikimedia Commons.</p>
     </div>
     <div class="tn-item">
       <span class="tn-era-label">NOW</span>
       <!--
-        FILENAME: S2L09_NowMobileInternet.jpg
+        FILENAME: S2L09_NowCongoMinerOrganizing.jpg
         PLACE IN: images/S2/L09/
         PRIORITY: ESSENTIAL
-        FIND: People using smartphones in a public space in a developing country — showing global mobile internet access, agency, and connectivity in the present day
-        SEARCH: people smartphones mobile internet developing country public space Wikimedia Commons CC license
-        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Smartphones
+        FIND: Congolese mine workers organizing, a community meeting, or
+              workers' cooperative in the DRC mining sector; showing agency,
+              organizing, community action, or advocacy among mining communities;
+              NOT poverty or hardship imagery — show people acting, speaking,
+              leading, or demanding rights
+        SEARCH: Congo mining workers community organizing cooperative rights
+                advocacy Wikimedia Commons CC license
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Mining_in_the_Democratic_Republic_of_the_Congo
         LICENSE: CC-licensed photography acceptable.
       -->
-      <img src="images/S2/L09/S2L09_NowMobileInternet.jpg" alt="People using smartphones, present day">
-      <p class="tn-caption">Mobile internet users today — over 4.9 billion people worldwide access the internet, most through smartphones. Wikimedia Commons / CC.</p>
+      <img src="images/S2/L09/S2L09_NowCongoMinerOrganizing.jpg" alt="Congolese mining community members organizing or meeting to advocate for fair conditions, present day">
+      <p class="tn-caption">Mining community members in the DRC meeting to advocate for fair wages and safer conditions. Across the supply chain, workers are organizing to demand a share of the wealth their labor creates. Source: Wikimedia Commons / CC.</p>
     </div>
   </div>
   <div class="tn-text-block">
     <h3>THEN</h3>
-    <p>In the 1990s, internet access required a desktop computer, a phone line, and a subscription. It was slow, expensive, and available mostly to people in wealthy countries. The excitement was real: for the first time, anyone with access could publish, communicate, and access information globally. But "anyone with access" excluded most of the world.</p>
+    <p>On June 29, 2007, the first iPhone went on sale. Customers lined up for days outside Apple Stores across the United States. The device sold out in hours. It was celebrated as a triumph of American innovation — designed in California, marketed as a miracle, priced at $499. Almost nothing in that celebration mentioned the supply chain that made it possible, the workers in Shenzhen who assembled it, or the miners in Congo who dug the materials from the ground.</p>
     <h3>NOW</h3>
-    <p>Today more than 4.9 billion people use the internet — most through smartphones that are more powerful than the computers that ran NASA's moon missions. Farmers in Kenya check commodity prices before selling crops. Students in rural India attend classes online. Activists in authoritarian countries share footage of abuses before governments can remove it. The internet became the infrastructure of daily life for more than half the human population.</p>
+    <p>Today, workers and communities throughout the iPhone supply chain are organizing to demand a fairer share of the wealth they help create. In the DRC, mining cooperatives and international advocacy organizations are pushing technology companies to source minerals ethically and pay fair prices. In China, labor activists have documented conditions inside Foxconn facilities and pushed for better wages and overtime limits. Some companies — under pressure from consumers, investors, and regulators — have begun publishing supply chain audits and committing to eliminate child labor from their mineral sourcing. Progress is slow, but the pressure is real.</p>
     <h3>CONNECTION</h3>
-    <p>The spread of the internet fulfilled part of its original promise — connecting people across distance and giving individuals access to information that was once controlled by institutions. But it also enabled mass surveillance, the rapid spread of misinformation, the concentration of enormous wealth in a handful of tech companies, and new forms of manipulation that the people who built it did not design and could not prevent. The information revolution is still happening. Its final shape is not yet clear.</p>
-    <p>Tim Berners-Lee gave the World Wide Web away for free so everyone could benefit from it — but the companies that built on it became among the most powerful and wealthy in history. Do you think the benefits of the internet have been fairly shared? What would "fairly shared" even look like?</p>
+    <p>The iPhone made the globalized economy visible in a way no textbook description could. It showed that the things people use every day are built on a network that stretches across dozens of countries and involves millions of people whose names and lives never appear on the product. The workers at the bottom of that network are now demanding to be seen — and the question of whether globalization's benefits can be redistributed more fairly is one of the central political and economic arguments of the 21st century.</p>
+    <p>If the true cost of building a smartphone fairly — paying miners, factory workers, and assemblers wages they could actually live on — raised the retail price significantly, would that change how you think about buying one? What do you think a company owes the people who make its products?</p>
   </div>
 </div>
 
 </main>
-<footer>WORLD HISTORY &mdash; SEMESTER 2, LESSON 09 &mdash; GLOBALIZATION AND THE INFORMATION REVOLUTION &mdash; STANDARD 10.11</footer>
+<footer>WORLD HISTORY &bull; SEMESTER 2, LESSON 09 &bull; ONE DEVICE, ONE WORLD &bull; STANDARD 10.11</footer>
 </div>
 
 <script>
-(function(){var bar=document.getElementById('reading-progress');window.addEventListener('scroll',function(){var s=window.scrollY||document.documentElement.scrollTop;var d=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(d>0?(s/d)*100:0)+'%';},{passive:true});})();
-document.getElementById('lexile-toggle').addEventListener('click',function(){document.body.classList.toggle('simplified');this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';});
-function repositionTip(el){var tip=el.querySelector('.tip');if(!tip)return;tip.style.left='50%';tip.style.transform='translateX(-50%)';var rect=tip.getBoundingClientRect();if(rect.left<8){tip.style.transform='translateX(calc(-50% + '+(8-rect.left)+'px))';}else if(rect.right>window.innerWidth-8){tip.style.transform='translateX(calc(-50% - '+(rect.right-(window.innerWidth-8))+'px))';}}
-document.querySelectorAll('.vocab').forEach(function(el){el.setAttribute('tabindex','0');el.addEventListener('click',function(e){e.stopPropagation();document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);});el.addEventListener('focus',function(){el.classList.add('active');repositionTip(el);});el.addEventListener('blur',function(){el.classList.remove('active');});el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);}if(e.key==='Escape')el.classList.remove('active');});});
-document.addEventListener('click',function(){document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});});
-const tocObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{const id=entry.target.getAttribute('id');const tl=document.querySelector('.toc-sidebar a[href="#'+id+'"]');const nl=document.querySelector('.section-nav a[href="#'+id+'"]');if(entry.isIntersecting){if(tl)tl.classList.add('active');if(nl)nl.classList.add('active');}else{if(tl)tl.classList.remove('active');if(nl)nl.classList.remove('active');}});},{threshold:.25});
-document.querySelectorAll('section[id],div[id="then-now"]').forEach(el=>tocObserver.observe(el));
-(function(){var ao=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');ao.unobserve(entry.target);}});},{threshold:.08});document.querySelectorAll('.section-animate').forEach(function(el){ao.observe(el);});})();
-document.querySelectorAll('img').forEach(function(img){if(img.complete&&img.naturalWidth>0){img.classList.add('loaded');}else{img.addEventListener('load',function(){img.classList.add('loaded');});img.addEventListener('error',function(){img.style.opacity='0.15';img.style.border='2px dashed rgba(255,255,255,0.2)';});}});
+// 1. READING PROGRESS BAR
+(function(){
+  var bar = document.getElementById('reading-progress');
+  window.addEventListener('scroll', function(){
+    var s = window.scrollY || document.documentElement.scrollTop;
+    var d = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    bar.style.width = (d > 0 ? (s / d) * 100 : 0) + '%';
+  }, {passive: true});
+})();
+
+// 2. LEXILE TOGGLE
+document.getElementById('lexile-toggle').addEventListener('click', function(){
+  document.body.classList.toggle('simplified');
+  this.textContent = document.body.classList.contains('simplified') ? 'STANDARD TEXT' : 'SIMPLIFY TEXT';
+});
+
+// 3. VOCABULARY TOOLTIPS
+function repositionTip(el) {
+  var tip = el.querySelector('.tip');
+  if (!tip) return;
+  tip.style.left = '50%';
+  tip.style.transform = 'translateX(-50%)';
+  var rect = tip.getBoundingClientRect();
+  if (rect.left < 8) {
+    var shift = 8 - rect.left;
+    tip.style.transform = 'translateX(calc(-50% + ' + shift + 'px))';
+  } else if (rect.right > window.innerWidth - 8) {
+    var shift = rect.right - (window.innerWidth - 8);
+    tip.style.transform = 'translateX(calc(-50% - ' + shift + 'px))';
+  }
+}
+document.querySelectorAll('.vocab').forEach(function(el) {
+  el.setAttribute('tabindex', '0');
+  el.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelectorAll('.vocab.active').forEach(function(v) { if (v !== el) v.classList.remove('active'); });
+    el.classList.toggle('active');
+    if (el.classList.contains('active')) repositionTip(el);
+  });
+  el.addEventListener('focus', function() { el.classList.add('active'); repositionTip(el); });
+  el.addEventListener('blur', function() { el.classList.remove('active'); });
+  el.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.classList.toggle('active'); if (el.classList.contains('active')) repositionTip(el); }
+    if (e.key === 'Escape') el.classList.remove('active');
+  });
+});
+document.addEventListener('click', function() {
+  document.querySelectorAll('.vocab.active').forEach(function(v) { v.classList.remove('active'); });
+});
+
+// 4. INTERSECTION OBSERVER — TOC + NAV
+const tocObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const id = entry.target.getAttribute('id');
+    const tl = document.querySelector('.toc-sidebar a[href="#' + id + '"]');
+    const nl = document.querySelector('.section-nav a[href="#' + id + '"]');
+    if (entry.isIntersecting) {
+      if (tl) tl.classList.add('active');
+      if (nl) nl.classList.add('active');
+    } else {
+      if (tl) tl.classList.remove('active');
+      if (nl) nl.classList.remove('active');
+    }
+  });
+}, { threshold: 0.25 });
+document.querySelectorAll('section[id], div[id="then-now"]').forEach(el => tocObserver.observe(el));
+
+// 5. SECTION ENTRANCE ANIMATION
+(function(){
+  var ao = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        ao.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.section-animate').forEach(function(el) { ao.observe(el); });
+})();
+
+// 6. IMAGE FADE-IN
+document.querySelectorAll('img').forEach(function(img) {
+  if (img.complete && img.naturalWidth > 0) {
+    img.classList.add('loaded');
+  } else {
+    img.addEventListener('load', function() { img.classList.add('loaded'); });
+    img.addEventListener('error', function() {
+      img.style.opacity = '0.15';
+      img.style.border = '2px dashed rgba(255,255,255,0.2)';
+    });
+  }
+});
 </script>
+
 </body>
 </html>
 <!--
   IMAGE CHECK: Open browser DevTools (F12), go to Console, paste and run:
+
   document.querySelectorAll('img').forEach(img => {
-    if (!img.complete || img.naturalWidth === 0) { console.warn('MISSING:', img.src); }
-    else { console.log('OK:', img.src); }
+    if (!img.complete || img.naturalWidth === 0) {
+      console.warn('MISSING:', img.src);
+    } else {
+      console.log('OK:', img.src);
+    }
   });
 -->
