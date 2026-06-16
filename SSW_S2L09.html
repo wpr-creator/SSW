@@ -3,600 +3,187 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSW S2L09: GLOBALIZATION IN YOUR POCKET</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet">
+<title>SSW S2L09 : A WORLD WITHOUT WALLS</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Atkinson+Hyperlegible:wght@400;700&family=Roboto+Slab:wght@500;700;900&display=swap" rel="stylesheet">
 <style>
-:root{
-  --teal:#007a7a;
-  --teal-dark:#005555;
-  --black:#0a0a0a;
-  --charcoal:#242424;
-  --gray:#585858;
-  --cream:#f0f4f2;
-  --gold:#d4a820;
-  --blue:#0d3b5e;
-  --vocab:#005577;
-  --green:#044d37;
-  --lime:#d7ff3f;
-  --purple:#32134d;
-  --pink:#ff4fd8;
-  --cyan:#1bd6ff;
-  --orange:#ff8a21;
-  --electric:#00e5ff;
-  --silver:#c8d8e0;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}
-body{background:radial-gradient(ellipse at top,#051820 0%,#020a10 70%);font-family:'Atkinson Hyperlegible',Arial,sans-serif;font-size:18px;line-height:1.85;color:var(--charcoal);max-width:100%;overflow-x:hidden}
-#reading-progress{position:fixed;top:0;left:0;height:4px;width:0%;background:var(--electric);z-index:9999;transition:width .1s linear}
-.page-wrap{width:min(920px,100%);margin:0 auto;background:var(--cream);box-shadow:0 0 100px rgba(0,0,0,.95);border-left:6px solid var(--black);border-right:6px solid var(--black);overflow-x:hidden}
-.site-header{position:relative;min-height:455px;overflow:hidden;background:#020a10;display:flex;align-items:center;text-align:center}
-.header-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.36;filter:saturate(.85) contrast(1.15)}
-.site-header:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.12),rgba(2,10,16,.72) 55%,rgba(2,10,16,.98))}
-.header-inner{position:relative;z-index:2;max-width:820px;margin:0 auto;padding:56px 34px 50px}
-.course-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.34em;text-transform:uppercase;color:var(--electric);margin-bottom:18px}
-.page-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,8vw,80px);font-weight:800;line-height:.98;color:#fff;text-transform:uppercase;letter-spacing:.04em;text-shadow:2px 5px 22px rgba(0,0,0,.9);margin-bottom:30px}
-.eq-banner{display:inline-block;background:rgba(0,85,119,.92);color:#fff;border:3px solid var(--electric);border-left-width:8px;border-right-width:8px;padding:18px 28px;max-width:760px;font-weight:700;font-size:20px;line-height:1.45;text-align:left}
-.eq-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--electric);margin-bottom:8px}
-.section-nav{position:sticky;top:4px;z-index:100;display:flex;flex-wrap:wrap;justify-content:center;background:#071018;border-bottom:4px solid var(--teal);overflow-x:auto}
-.section-nav a{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#e6e6e6;text-decoration:none;padding:14px 12px;border-bottom:4px solid transparent;margin-bottom:-4px;white-space:nowrap;flex:0 0 auto;transition:color .2s,border-color .2s,background .2s}
-.section-nav a:hover{color:#fff;border-bottom-color:var(--electric)}
-.section-nav a.active{color:#fff;border-bottom-color:var(--electric);background:rgba(0,229,255,.12)}
-#lexile-toggle{display:block;margin:20px auto 28px;padding:10px 24px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:2px solid var(--teal);background:transparent;color:var(--teal);transition:background .2s,color .2s}
-#lexile-toggle:hover{background:var(--teal);color:#fff}
-.para-simple{display:none}
-body.simplified .para-standard{display:none}
-body.simplified .para-simple{display:block}
-.toc-sidebar{position:fixed;left:calc(50% - 570px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;font-family:'Barlow Condensed',sans-serif;z-index:50;background:rgba(2,10,16,.93);border-right:2px solid rgba(0,229,255,.3)}
-.toc-sidebar .toc-label{display:block;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--electric);margin-bottom:10px}
-.toc-sidebar a{display:block;color:#e6e6e6;text-decoration:none;padding:4px 0;font-size:11px;letter-spacing:.05em;text-transform:uppercase;line-height:1.35;transition:color .2s}
-.toc-sidebar a.active,.toc-sidebar a:hover{color:var(--electric);font-weight:700}
-.timeline-wrap{max-width:820px;width:100%;margin:0 auto 36px;padding:0 28px}
-.timeline-title{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--teal-dark);margin:0 0 12px;text-align:center}
-.timeline{margin:0;padding:22px;background:#dce8e8;border-top:4px solid var(--teal);border-bottom:4px solid var(--teal);display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:100%}
-.timeline-event{position:relative;border-left:3px solid var(--teal);padding-left:12px}
-.timeline-date{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--teal-dark);letter-spacing:.08em;line-height:1.1;margin-bottom:5px}
-.timeline-event p{font-size:15px;line-height:1.55;margin-bottom:0}
-main{max-width:820px;width:100%;margin:0 auto;padding:0 28px 68px}
-.intro-section{padding:48px 0 30px}
-.intro-section p{font-size:19px;line-height:1.9;margin-bottom:18px}
-.content-section{padding:50px 0 28px;border-top:3px double rgba(88,88,88,.45)}
-.section-kicker{display:block;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:8px}
-.section-heading{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,48px);line-height:1.05;font-weight:800;color:var(--black);text-transform:uppercase;border-left:7px solid var(--teal);padding-left:16px;margin-bottom:26px}
-p{margin-bottom:20px;color:var(--charcoal)}
-figure{margin:32px 0}
-figure img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 8px 24px rgba(0,0,0,.28)}
-figcaption{font-size:13px;font-style:italic;color:#4b4b4b;margin-top:8px;line-height:1.45}
-.img-right{float:right;width:42%;margin:6px 0 20px 28px}
-.img-left{float:left;width:42%;margin:6px 28px 20px 0}
-.clearfix:after{content:"";display:table;clear:both}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0}
-.vocab{color:var(--vocab);text-decoration:underline dotted var(--vocab);cursor:help;position:relative;font-weight:700}
-.vocab-red{color:var(--vocab);font-weight:700}
-.vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#050505;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:200;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;font-family:'Atkinson Hyperlegible',Arial,sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.8);border:1px solid var(--teal)}
-.vocab:hover .tip,.vocab.active .tip{display:block}
-.vocab:focus{outline:2px solid var(--electric);outline-offset:2px;border-radius:2px}
-.brain-break{font-family:'Roboto Slab',serif;margin:44px -50px;padding:36px 50px;position:relative;overflow:hidden;max-width:calc(100% + 100px)}
-.bb-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.9}
-.bb-text{font-family:'Roboto Slab',serif;font-size:22px;font-weight:500;line-height:1.65;margin:0}
-.dyk-break{background:linear-gradient(135deg,#0a2a10,#041808);color:#fff;border-left:6px solid var(--lime)}
-.dyk-break .bb-label{color:var(--lime)}
-.ff-break{background:#060e14;color:#fff;padding:36px 40px;margin:44px -50px;border-top:3px solid var(--electric);border-bottom:3px solid var(--electric);text-align:center}
-.ff-break .bb-label{text-align:center;margin-bottom:8px;color:var(--electric)}
-.ff-context{font-family:'Roboto Slab',serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#b0eeff;text-align:center;margin-bottom:28px;opacity:.9;font-weight:700}
-.ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:24px}
-.ff-item{text-align:center;padding:8px 16px;max-width:180px}
-.ff-number{display:block;font-family:'Roboto Slab',serif;font-size:52px;font-weight:700;color:var(--electric);line-height:1;margin-bottom:8px}
-.ff-desc{display:block;font-family:'Roboto Slab',serif;font-size:13px;letter-spacing:.08em;color:#b0eeff;max-width:180px;margin:0 auto;line-height:1.5}
-.as-break{background:var(--purple);color:#fff;padding:44px 50px;margin:44px -50px;border-top:3px solid var(--pink);border-bottom:3px solid var(--pink);text-align:center}
-.as-break .bb-label{color:var(--pink)}
-.as-image{max-width:580px;width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(255,79,216,.75);box-shadow:0 8px 32px rgba(0,0,0,.55)}
-.as-caption{font-family:'Roboto Slab',serif;font-style:normal;font-size:14px;color:#ffe8fb;line-height:1.6;margin-bottom:28px;display:block}
-.as-fact{font-family:'Roboto Slab',serif;font-size:22px;font-weight:500;color:#fff;line-height:1.65;max-width:700px;margin:0 auto;text-align:center}
-.primary-source{background:#dce8e8;border-left:7px solid var(--teal);padding:30px 34px;margin:38px 0;box-shadow:0 6px 18px rgba(0,0,0,.18)}
-.ps-visual{display:grid;grid-template-columns:minmax(200px,36%) 1fr;gap:24px;align-items:start}
-.ps-visual figure{margin:0}
-.ps-visual img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 6px 18px rgba(0,0,0,.25)}
-.ps-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:12px;display:block}
-.ps-quote{font-size:22px;font-style:italic;line-height:1.65;color:var(--black);margin-bottom:14px}
-.ps-attribution{font-size:13px;font-style:italic;color:#444;margin-bottom:12px}
-.ps-narrator{border-top:1px solid #aaa;padding-top:12px;font-size:15px;line-height:1.6;font-weight:700;color:#222}
-.tn-break{background:#0d2342;color:#fff;padding:36px 50px;margin:30px -50px 0}
-.tn-break .bb-label{color:var(--cyan);text-align:center;display:block;margin-bottom:20px}
-.tn-payoff{font-family:'Roboto Slab',serif;font-size:clamp(22px,3.5vw,30px);font-weight:700;line-height:1.35;text-align:center;color:var(--cyan);margin-bottom:28px;max-width:720px;margin-left:auto;margin-right:auto}
-.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
-.tn-item{text-align:center}
-.tn-era-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px;font-weight:700}
-.tn-item img{width:100%;display:block;border:2px solid rgba(27,214,255,.65)}
-.tn-caption{font-family:'Roboto Slab',serif;font-size:12px;font-style:italic;color:#e9fbff;margin-top:8px;line-height:1.4}
-.tn-text-block{margin-top:24px;border-top:1px solid rgba(27,214,255,.35);padding-top:20px}
-.tn-text-block h3{font-family:'Roboto Slab',serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--cyan);margin:18px 0 8px}
-.tn-text-block p{font-family:'Roboto Slab',serif;font-size:17px;line-height:1.65;margin-bottom:12px;color:#fff}
-img{opacity:0;transition:opacity .4s ease}
-img.loaded{opacity:1}
-.section-animate{opacity:0;transform:translateY(24px);transition:opacity .45s ease-out,transform .45s ease-out}
-.section-animate.visible{opacity:1;transform:translateY(0)}
-@media(prefers-reduced-motion:reduce){.section-animate{opacity:1;transform:none;transition:none}}
-footer{background:#040c12;color:#d0d0d0;text-align:center;padding:24px 30px;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.24em;text-transform:uppercase;border-top:5px solid var(--teal)}
-@media(max-width:1100px){.toc-sidebar{display:none}}
-@media(max-width:880px){.page-wrap{border:0}main{padding:0 22px 50px}.timeline-wrap{padding:0 22px}.header-inner{padding:44px 24px 42px}.img-left,.img-right{float:none;width:100%;margin:24px 0}.two-col,.tn-pair,.timeline{grid-template-columns:1fr}.brain-break,.ff-break,.as-break,.tn-break{margin:36px 0;padding:28px 22px;max-width:100%}.section-nav a{font-size:11px;padding:11px 8px}}
-@media(max-width:700px){.ps-visual{grid-template-columns:1fr}}
-@media(max-width:600px){.page-title{font-size:42px}.section-heading{font-size:31px}.bb-text,.as-fact{font-size:18px}.ff-number{font-size:44px}.tn-break{margin:30px 0 0;padding:28px 22px}}
-@media(max-width:980px){.brain-break,.ff-break,.as-break,.tn-break{margin-left:0;margin-right:0;padding-left:28px;padding-right:28px;max-width:100%}}
-html,body{max-width:100%;overflow-x:hidden}.page-wrap{max-width:100%;overflow-x:hidden}main,.timeline-wrap{width:100%;max-width:820px}img,figure,.timeline,.primary-source,.two-col,.tn-pair{max-width:100%}img{height:auto}.section-nav{overflow-x:auto;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}
-.dyk-break,.dyk-break p,.dyk-break span,.ff-break,.ff-break p,.ff-break span,.as-break,.as-break p,.as-break span,.tn-break,.tn-break p,.tn-break span{color:#fff}
-.ff-context,.ff-desc{color:#b0eeff}.as-caption{color:#ffe8fb}.tn-caption{color:#e9fbff}
-.primary-source figcaption{color:#333}.primary-source .ps-quote{color:#0a0a0a}.primary-source .ps-label{color:var(--teal-dark)}.primary-source .ps-narrator{color:#222}
+:root{--night:#02070d;--paper:#f7fbfc;--ink:#16222e;--muted:#52606d;--cyan:#00d7ff;--blue:#125d98;--green:#033f35;--lime:#d9ff45;--purple:#2a1344;--pink:#ff4fd8;--steel:#d8e8ed;--vocab:#bf2f2f}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}body{background:radial-gradient(circle at top left,rgba(0,215,255,.22),transparent 38%),linear-gradient(135deg,#02070d,#061420 62%,#031018);font-family:'Atkinson Hyperlegible',Arial,sans-serif;font-size:18px;line-height:1.84;color:var(--ink);overflow-x:hidden}#reading-progress{position:fixed;top:0;left:0;height:4px;width:0;background:var(--cyan);z-index:9999;transition:width .1s linear}.page-wrap{width:min(920px,100%);margin:0 auto;background:var(--paper);box-shadow:0 0 110px rgba(0,0,0,.95);border-left:6px solid var(--night);border-right:6px solid var(--night);overflow-x:hidden}.site-header{position:relative;min-height:470px;overflow:hidden;background:var(--night);display:flex;align-items:center;text-align:center}.header-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.36;filter:saturate(.85) contrast(1.08)}.site-header:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,7,13,.18),rgba(2,7,13,.68) 54%,rgba(2,7,13,.98))}.header-inner{position:relative;z-index:2;max-width:820px;margin:0 auto;padding:58px 34px 52px}.course-label{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--cyan);margin-bottom:18px}.page-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(52px,8vw,82px);font-weight:800;line-height:.98;color:#fff;text-transform:uppercase;letter-spacing:.02em;text-shadow:2px 5px 25px rgba(0,0,0,.9);margin-bottom:30px}.eq-banner{display:inline-block;background:rgba(7,19,31,.94);color:#fff;border:3px solid var(--cyan);border-left-width:8px;border-right-width:8px;padding:18px 28px;max-width:760px;font-weight:700;font-size:20px;line-height:1.45;text-align:left}.eq-label{display:block;font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--cyan);margin-bottom:8px}.section-nav{position:sticky;top:4px;z-index:100;display:flex;flex-wrap:wrap;justify-content:center;background:#06111c;border-bottom:4px solid var(--blue);overflow-x:auto}.section-nav a{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#dbe9ee;text-decoration:none;padding:14px 10px;border-bottom:4px solid transparent;margin-bottom:-4px;white-space:nowrap;flex:0 0 auto;transition:color .2s,border-color .2s,background .2s}.section-nav a:hover{color:#fff;border-bottom-color:var(--cyan)}.section-nav a.active{color:#fff;border-bottom-color:var(--cyan);background:rgba(0,215,255,.12)}#lexile-toggle{display:block;margin:20px auto 28px;padding:10px 24px;font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:2px solid var(--blue);background:transparent;color:var(--blue);transition:background .2s,color .2s}#lexile-toggle:hover{background:var(--blue);color:#fff}.para-simple{display:none}body.simplified .para-standard{display:none}body.simplified .para-simple{display:block}.toc-sidebar{position:fixed;left:calc(50% - 570px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;font-family:'Space Grotesk',sans-serif;z-index:50;background:rgba(2,7,13,.94);border-right:2px solid rgba(0,215,255,.32)}.toc-sidebar .toc-label{display:block;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px}.toc-sidebar a{display:block;color:#dbe9ee;text-decoration:none;padding:4px 0;font-size:10px;letter-spacing:.05em;text-transform:uppercase;line-height:1.35;transition:color .2s}.toc-sidebar a.active,.toc-sidebar a:hover{color:var(--cyan);font-weight:700}@media(max-width:1100px){.toc-sidebar{display:none}}.timeline-wrap{max-width:820px;width:100%;margin:0 auto 36px;padding:0 28px}.timeline-title{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);margin:0 0 12px;text-align:center}.timeline{margin:0;padding:22px;background:var(--steel);border-top:4px solid var(--blue);border-bottom:4px solid var(--blue);display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:100%}.timeline-event{border-left:3px solid var(--cyan);padding-left:12px}.timeline-date{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:800;color:var(--blue);letter-spacing:.04em;line-height:1.1;margin-bottom:5px}.timeline-event p{font-size:14.5px;line-height:1.55;margin-bottom:0}main{max-width:820px;width:100%;margin:0 auto;padding:0 28px 68px}.intro-section{padding:48px 0 30px}.intro-section p{font-size:19px;line-height:1.9;margin-bottom:18px}.content-section{padding:50px 0 28px;border-top:3px double rgba(82,96,109,.38)}.section-kicker{display:block;font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.23em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}.section-heading{font-family:'Space Grotesk',sans-serif;font-size:clamp(34px,5vw,48px);line-height:1.05;font-weight:800;color:var(--night);text-transform:uppercase;border-left:7px solid var(--blue);padding-left:16px;margin-bottom:26px}p{margin-bottom:20px;color:var(--ink)}.real-world{background:#e5f2f6;border-left:5px solid var(--blue);padding:17px 21px;margin:30px 0;font-weight:700;color:var(--ink)}figure{margin:32px 0}figure img{width:100%;height:auto;display:block;border:3px solid var(--muted);box-shadow:0 8px 24px rgba(0,0,0,.28)}figcaption{font-size:13px;font-style:italic;color:#4b5963;margin-top:8px;line-height:1.45}.img-right{float:right;width:42%;margin:6px 0 20px 28px}.img-left{float:left;width:42%;margin:6px 28px 20px 0}.clearfix:after{content:"";display:table;clear:both}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0}@media(max-width:680px){.img-right,.img-left{float:none;width:100%;margin:24px 0}.two-col{grid-template-columns:1fr}}.vocab{color:var(--vocab);text-decoration:underline dotted var(--vocab);cursor:help;position:relative;font-weight:700}.vocab-red{color:var(--vocab);font-weight:700}.vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#050505;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:200;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;font-family:'Atkinson Hyperlegible',Arial,sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.8);border:1px solid var(--cyan)}.vocab:hover .tip,.vocab.active .tip{display:block}.vocab:focus{outline:2px solid var(--cyan);outline-offset:2px;border-radius:2px}.brain-break{font-family:'Roboto Slab',serif;margin:44px -50px;padding:36px 50px;position:relative;overflow:hidden;max-width:calc(100% + 100px)}.bb-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.9}.bb-text{font-family:'Roboto Slab',serif;font-size:22px;font-weight:500;line-height:1.65;margin:0}.dyk-break{background:linear-gradient(135deg,#0a2a10,#041808);color:#fff;border-left:6px solid var(--lime)}.dyk-break .bb-label{color:var(--lime)}.ff-break{background:#07131f;color:#fff;padding:36px 40px;margin:44px -50px;border-top:3px solid var(--cyan);border-bottom:3px solid var(--cyan);text-align:center}.ff-break .bb-label{text-align:center;margin-bottom:8px;color:var(--cyan)}.ff-context{font-family:'Roboto Slab',serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#b9effa;text-align:center;margin-bottom:28px;opacity:.9;font-weight:700}.ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:24px}.ff-item{text-align:center;padding:8px 16px;max-width:180px}.ff-number{display:block;font-family:'Roboto Slab',serif;font-size:52px;font-weight:900;color:var(--cyan);line-height:1;margin-bottom:8px}.ff-desc{display:block;font-family:'Roboto Slab',serif;font-size:13px;letter-spacing:.06em;color:#b9effa;max-width:180px;margin:0 auto;line-height:1.5}.as-break{background:var(--purple);color:#fff;padding:44px 50px;margin:44px -50px;border-top:3px solid var(--pink);border-bottom:3px solid var(--pink);text-align:center}.as-break .bb-label{color:var(--pink)}.as-image{max-width:580px;width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(255,79,216,.75);box-shadow:0 8px 32px rgba(0,0,0,.55)}.as-caption{font-family:'Roboto Slab',serif;font-style:normal;font-size:14px;color:#ffe8fb;line-height:1.6;margin-bottom:28px;display:block}.as-fact{font-family:'Roboto Slab',serif;font-size:22px;font-weight:500;color:#fff;line-height:1.65;max-width:700px;margin:0 auto;text-align:center}.primary-source{background:#e5f2f6;border-left:7px solid var(--blue);padding:30px 34px;margin:38px 0;box-shadow:0 6px 18px rgba(0,0,0,.18)}.ps-visual{display:grid;grid-template-columns:minmax(200px,36%) 1fr;gap:24px;align-items:start}.ps-visual figure{margin:0}.ps-visual img{width:100%;height:auto;display:block;border:3px solid var(--muted);box-shadow:0 6px 18px rgba(0,0,0,.25)}.ps-label{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;display:block}.ps-quote{font-size:21px;font-style:italic;line-height:1.65;color:var(--night);margin-bottom:14px}.ps-attribution{font-size:13px;font-style:italic;color:#444;margin-bottom:12px}.ps-narrator{border-top:1px solid #a7bbc5;padding-top:12px;font-size:15px;line-height:1.6;font-weight:700;color:#152536}.simple-terms{margin-top:10px;background:#fff;border-left:4px solid var(--cyan);padding:10px 12px;font-size:15px;line-height:1.6;color:#152536}@media(max-width:700px){.ps-visual{grid-template-columns:1fr}}.tn-break{background:#08192a;color:#fff;padding:36px 50px;margin:30px -50px 0}.tn-break .bb-label{color:var(--cyan);text-align:center;display:block;margin-bottom:20px}.tn-payoff{font-family:'Roboto Slab',serif;font-size:clamp(22px,3.5vw,30px);font-weight:900;line-height:1.35;text-align:center;color:var(--cyan);margin-bottom:28px;max-width:720px;margin-left:auto;margin-right:auto}.tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}.tn-item{text-align:center}.tn-era-label{display:block;font-family:'Roboto Slab',serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px;font-weight:900}.tn-item img{width:100%;display:block;border:2px solid rgba(0,215,255,.55)}.tn-caption{font-family:'Roboto Slab',serif;font-size:12px;font-style:italic;color:#e9fbff;margin-top:8px;line-height:1.4}.tn-text-block{margin-top:24px;border-top:1px solid rgba(0,215,255,.35);padding-top:20px}.tn-text-block h3{font-family:'Roboto Slab',serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--cyan);margin:18px 0 8px}.tn-text-block p{font-family:'Roboto Slab',serif;font-size:17px;line-height:1.65;margin-bottom:12px;color:#fff}img{opacity:0;transition:opacity .4s ease}img.loaded{opacity:1}.section-animate{opacity:0;transform:translateY(24px);transition:opacity .45s ease-out,transform .45s ease-out}.section-animate.visible{opacity:1;transform:translateY(0)}@media(prefers-reduced-motion:reduce){.section-animate{opacity:1;transform:none;transition:none}}footer{background:#030b12;color:#d0dfe4;text-align:center;padding:24px 30px;font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;border-top:5px solid var(--blue)}@media(max-width:880px){.page-wrap{border:0}main{padding:0 22px 50px}.timeline-wrap{padding:0 22px}.header-inner{padding:44px 24px 42px}.two-col,.tn-pair,.timeline{grid-template-columns:1fr}.brain-break,.ff-break,.as-break,.tn-break{margin:36px 0;padding:28px 22px;max-width:100%}.section-nav a{font-size:11px;padding:11px 8px}}@media(max-width:600px){.page-title{font-size:42px}.section-heading{font-size:31px}.bb-text,.as-fact{font-size:18px}.ff-number{font-size:44px}.tn-break{margin:30px 0 0;padding:28px 22px}}html,body{max-width:100%;overflow-x:hidden}.page-wrap{max-width:100%;overflow-x:hidden}main,.timeline-wrap{width:100%;max-width:820px}img,figure,.timeline,.primary-source,.two-col,.tn-pair{max-width:100%}img{height:auto}.section-nav{overflow-x:auto;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}.dyk-break,.dyk-break p,.dyk-break span,.ff-break,.ff-break p,.ff-break span,.as-break,.as-break p,.as-break span,.tn-break,.tn-break p,.tn-break span{color:#fff}.ff-context,.ff-desc{color:#b9effa}.as-caption{color:#ffe8fb}.tn-caption{color:#e9fbff}
 </style>
 </head>
 <body>
 <div id="reading-progress"></div>
 <div class="page-wrap">
-
 <header class="site-header">
   <!--
-    FILENAME: S2L09_ContainerPortGlobalTrade.jpg
+    FILENAME: S2L09_GlobalCityPhones.jpg
     PLACE IN: images/S2/L09/
     PRIORITY: ESSENTIAL
-    FIND: A crowded modern container port with cranes, stacked shipping containers, and cargo ships; shows the physical system that makes global trade possible
-    SEARCH: container port cranes global trade shipping containers Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Container_ports
+    FIND: Diverse crowd in a modern global city using smartphones, public transit, signs, and digital screens; emotional center of people moving through a connected world
+    SEARCH: global city crowd smartphones digital screens Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Smartphones
   -->
-  <img src="images/S2/L09/S2L09_ContainerPortGlobalTrade.jpg" alt="A large container port filled with cranes, ships, and stacked containers" class="header-bg">
+  <img src="images/S2/L09/S2L09_GlobalCityPhones.jpg" alt="People in a modern global city using smartphones and moving through a connected public space" class="header-bg">
   <div class="header-inner">
-    <p class="course-label">WORLD HISTORY &bull; SEMESTER 2 &bull; LESSON 09 &bull; STANDARD 10.11</p>
-    <h1 class="page-title">GLOBALIZATION<br>IN YOUR POCKET</h1>
-    <div class="eq-banner">
-      <span class="eq-label">ESSENTIAL QUESTION</span>
-      What does a single smartphone reveal about who globalization connected, who it enriched, and who paid the price?
-    </div>
+    <p class="course-label">WORLD HISTORY : SEMESTER 2 : LESSON 09 : STANDARD 10.11</p>
+    <h1 class="page-title">A WORLD<br>WITHOUT WALLS</h1>
+    <div class="eq-banner"><span class="eq-label">ESSENTIAL QUESTION</span>What happens when a world built to connect people also gives governments, corporations, and algorithms new ways to shape what we see, believe, and do?</div>
   </div>
 </header>
-
-<nav class="section-nav">
-  <a href="#introduction">INTRO</a>
-  <a href="#connected-world">CONNECTED WORLD</a>
-  <a href="#supply-chain">SUPPLY CHAIN</a>
-  <a href="#digital-network">DIGITAL NETWORK</a>
-  <a href="#unequal-results">UNEQUAL RESULTS</a>
-  <a href="#primary-source-moment">SOURCE</a>
-  <a href="#then-now">THEN AND NOW</a>
-</nav>
-
-<aside class="toc-sidebar">
-  <span class="toc-label">ON THIS PAGE</span>
-  <a href="#introduction">A Device Arrives</a>
-  <a href="#connected-world">Worlds Connect</a>
-  <a href="#supply-chain">The Supply Chain</a>
-  <a href="#digital-network">The Digital Network</a>
-  <a href="#unequal-results">Unequal Results</a>
-  <a href="#primary-source-moment">Source</a>
-  <a href="#then-now">Then &amp; Now</a>
-</aside>
-
+<nav class="section-nav"><a href="#introduction">INTRO</a><a href="#everything-connects">EVERYTHING CONNECTS</a><a href="#internet-turned">THE INTERNET TURNED</a><a href="#politics-anger">POLITICS OF ANGER</a><a href="#crisis-years">CRISIS YEARS</a><a href="#primary-source-moment">SOURCE</a><a href="#then-now">THEN AND NOW</a></nav>
+<aside class="toc-sidebar"><span class="toc-label">ON THIS PAGE</span><a href="#introduction">Introduction</a><a href="#everything-connects">Everything Connects</a><a href="#internet-turned">The Internet Turned</a><a href="#politics-anger">Politics of Anger</a><a href="#crisis-years">Crisis Years</a><a href="#primary-source-moment">Source</a><a href="#then-now">Then &amp; Now</a></aside>
 <main>
-
-<div class="timeline-wrap">
-  <div class="timeline-title">GLOBALIZATION AND THE SMARTPHONE AGE &bull; 2001 TO TODAY</div>
-  <div class="timeline">
-    <div class="timeline-event">
-      <div class="timeline-date">2001</div>
-      <p>China joins the World Trade Organization. Global companies expand manufacturing networks across Asia.</p>
-    </div>
-    <div class="timeline-event">
-      <div class="timeline-date">2007</div>
-      <p>The first iPhone is introduced. A consumer device becomes a window into global design, labor, shipping, and minerals.</p>
-    </div>
-    <div class="timeline-event">
-      <div class="timeline-date">2008</div>
-      <p>The App Store opens. Smartphones become platforms for work, banking, communication, entertainment, and organizing.</p>
-    </div>
-    <div class="timeline-event">
-      <div class="timeline-date">2010S</div>
-      <p>Consumers, journalists, and watchdog groups pay closer attention to factory labor, mineral mining, data collection, and electronic waste.</p>
-    </div>
-    <div class="timeline-event">
-      <div class="timeline-date">TODAY</div>
-      <p>Countries debate how to make global technology cleaner, fairer, safer, and less dependent on fragile supply chains.</p>
-    </div>
-  </div>
-</div>
-
 <button id="lexile-toggle" type="button">SIMPLIFY TEXT</button>
-
-<section class="intro-section section-animate" id="introduction">
-  <p class="para-standard">On January 9, 2007, Steve Jobs walked onto a stage in San Francisco and held up a small rectangle of glass and metal. The crowd saw a new phone, but the object in his hand had already traveled through a world most customers would never see. Its minerals began underground. Its parts crossed oceans. Its design, software, labor, shipping, advertising, and sales depended on people in many countries working inside one connected system.</p>
-  <p class="para-simple">On January 9, 2007, Steve Jobs walked onto a stage in San Francisco and held up a small rectangle of glass and metal. The crowd saw a new phone. But that phone had already traveled through a world most customers would never see. Its minerals came from underground. Its parts crossed oceans. Its design, labor, shipping, and sales depended on people in many countries.</p>
-
-  <!--
-    FILENAME: S2L09_JobsiPhoneReveal.jpg
-    PLACE IN: images/S2/L09/
-    PRIORITY: SUPPORTING
-    FIND: Steve Jobs holding the original iPhone at Macworld in San Francisco, January 9, 2007; use as the human entry point but not as the lesson's main visual center
-    SEARCH: Steve Jobs original iPhone reveal Macworld 2007 Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Steve_Jobs
-  -->
-  <figure>
-    <img src="images/S2/L09/S2L09_JobsiPhoneReveal.jpg" alt="Steve Jobs presenting the first iPhone in 2007">
-    <figcaption>Steve Jobs presenting the first iPhone in 2007. The device looked simple in the customer's hand, but it depended on global systems of minerals, labor, shipping, software, and trade. Source: Wikimedia Commons.</figcaption>
-  </figure>
-
-  <p class="para-standard">This lesson uses the iPhone as a case study, not because one phone explains everything, but because it makes <span class="vocab" tabindex="0">globalization<span class="tip">The process by which countries became deeply connected through trade, technology, money, migration, and culture.</span></span> easier to see. Globalization is not just a word in economics. It is a system that decides where goods are made, whose labor is cheap, who earns profit, whose environment is affected, and who gets access to technology. The smartphone is a small object, but it reveals a giant world history story.</p>
-  <p class="para-simple">This lesson uses the iPhone as a case study. One phone does not explain everything, but it helps us see globalization. Globalization is the way countries became deeply connected through trade, technology, money, migration, and culture. It decides where goods are made, who earns profit, whose labor is cheap, and who gets access to technology. A smartphone is small, but it reveals a huge world history story.</p>
-</section>
-
-<section class="content-section clearfix section-animate" id="connected-world">
-  <span class="section-kicker">CHAPTER ONE</span>
-  <h2 class="section-heading">THE WORLD BECOMES A FACTORY</h2>
-
-  <!--
-    FILENAME: S2L09_WTOChinaTrade.jpg
+<div class="timeline-wrap"><div class="timeline-title">THE CONNECTED WORLD : 1991 TO TODAY</div><div class="timeline"><div class="timeline-event"><div class="timeline-date">1991</div><p>The Cold War ends. Many leaders believe democracy, trade, and open markets will spread across the world.</p></div><div class="timeline-event"><div class="timeline-date">2001</div><p>China joins the World Trade Organization. Global manufacturing and supply chains expand rapidly.</p></div><div class="timeline-event"><div class="timeline-date">2010</div><p>The Arab Spring begins. Protesters use phones and social media to challenge authoritarian governments.</p></div><div class="timeline-event"><div class="timeline-date">2016</div><p>Populist movements gain power in several democracies. Online politics becomes more emotional and polarized.</p></div><div class="timeline-event"><div class="timeline-date">2020s</div><p>Covid and AI reveal how powerful, fragile, and uncertain the connected world has become.</p></div></div></div>
+<section class="intro-section section-animate" id="introduction"><p class="para-standard">Before school even starts, a student can wake up to an alarm built into a phone designed in California, assembled in Asia, and powered by minerals mined in Africa and South America. They might watch a video made in Korea, message a friend across town, read a rumor from another country, and ask an AI tool for help with homework. None of that feels unusual anymore. But for most of human history, ordinary people could not speak, shop, learn, or argue across the planet in seconds.</p><p class="para-simple">Before school even starts, a student can wake up to a phone designed in California and assembled in Asia. They might watch a video from Korea, message a friend, read news from another country, and use AI for homework. This feels normal now. But for most of history, ordinary people could not connect across the world in seconds.</p><p class="para-standard">After the Cold War ended in 1991, many people believed the world was entering a new era. They hoped that <span class="vocab" tabindex="0">globalization<span class="tip">The process of countries becoming connected through trade, technology, culture, and travel.</span></span>, the internet, and global trade would make countries more open and peaceful. The old walls between countries seemed to be coming down. Yet the same connected world also created new tools for <span class="vocab" tabindex="0">surveillance<span class="tip">Watching people closely, often by collecting information about where they go and what they do.</span></span>, misinformation, political anger, and control. The final chapter of modern world history is not just about connection. It is about who controls that connection.</p><p class="para-simple">After the Cold War ended in 1991, many people believed the world would become freer and more peaceful. They thought trade, the internet, and global connection would bring people together. Some walls between countries did come down. But the connected world also created new ways to watch people, spread false information, and control what people see. This lesson asks who controls connection.</p></section>
+<section class="content-section clearfix section-animate" id="everything-connects"><span class="section-kicker">CHAPTER ONE</span><h2 class="section-heading">EVERYTHING CONNECTS</h2><!--
+    FILENAME: S2L09_ContainerPort.jpg
     PLACE IN: images/S2/L09/
     PRIORITY: ESSENTIAL
-    FIND: World Trade Organization building, trade meeting, or China WTO accession visual from 2001; shows the rules and institutions behind global trade
-    SEARCH: China joins World Trade Organization 2001 Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/World_Trade_Organization
-  -->
-  <figure class="img-right">
-    <img src="images/S2/L09/S2L09_WTOChinaTrade.jpg" alt="World Trade Organization building or meeting representing global trade rules">
-    <figcaption>The World Trade Organization helps set the rules for international trade. China's entry in 2001 helped speed up the movement of manufacturing into global supply chains. Source: Wikimedia Commons.</figcaption>
-  </figure>
-
-  <p class="para-standard">The iPhone was possible because the world economy had changed before it arrived. In the late 20th century, governments lowered trade barriers, shipping became cheaper, and corporations learned to divide production across many countries. China became especially important after it joined the <span class="vocab" tabindex="0">World Trade Organization<span class="tip">An international group that sets trade rules and encourages countries to lower barriers to trade.</span></span> in 2001. This gave global companies access to a huge workforce and powerful factory networks. A product could now be designed in one country, assembled in another, and sold almost everywhere.</p>
-  <p class="para-simple">The iPhone was possible because the world economy had already changed. Governments lowered trade barriers. Shipping became cheaper. Companies learned to divide production across many countries. China became especially important after joining the World Trade Organization in 2001. Global companies gained access to a huge workforce and strong factory networks. A product could be designed in one country, assembled in another, and sold almost everywhere.</p>
-
-  <p class="para-standard">This system changed world history because it made distance matter less. A corporation no longer needed to build every part of a product near its headquarters. It could search the world for the lowest costs, the fastest factories, the best parts, and the biggest consumer markets. This created cheaper goods and enormous profits. It also made workers in different countries compete against each other for jobs, wages, and contracts.</p>
-  <p class="para-simple">This system changed world history because distance mattered less than before. A company did not need to build every part near its headquarters. It could search the world for cheaper labor, faster factories, better parts, and more customers. This made goods cheaper and profits bigger. It also made workers in different countries compete with each other for jobs and wages.</p>
-
-  <p class="para-standard">Apple did not invent this system, but it used it better than almost any company. The company kept design, branding, and software in California because those parts created the highest value. It used <span class="vocab" tabindex="0">offshoring<span class="tip">Moving work to another country, often because labor or production costs are lower there.</span></span> for much of the manufacturing and assembly. The phone became a symbol of innovation, but it also became a symbol of a world where production was split into many invisible steps. The customer saw one clean object; history shows the network behind it.</p>
-  <p class="para-simple">Apple did not invent this system, but it used it extremely well. The company kept design, branding, and software in California because those jobs created the most value. It moved much of the manufacturing and assembly overseas. This is called offshoring. The phone became a symbol of innovation. It also became a symbol of a world where production was split into many steps most customers never see.</p>
-</section>
-
-<div class="brain-break dyk-break section-animate">
-  <span class="bb-label">DID YOU KNOW</span>
-  <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
-    <div style="flex:1;min-width:200px;">
-      <!--
-        FILENAME: S2L09_ContainerStack.jpg
+    FIND: Large modern container port with stacked shipping containers, cranes, and cargo ships; physical infrastructure of globalization
+    SEARCH: container port cranes global trade shipping containers Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Container_terminals
+  --><figure class="img-right"><img src="images/S2/L09/S2L09_ContainerPort.jpg" alt="A modern container port with cranes, cargo ships, and stacked shipping containers"><figcaption>A modern container port. Global trade depends on ships, ports, warehouses, and workers most consumers never see. Source: Wikimedia Commons.</figcaption></figure><p class="para-standard">When the Cold War ended, many leaders believed democracy and global capitalism had won the major argument of the twentieth century. Countries opened markets, lowered trade barriers, and joined international organizations. Companies built <span class="vocab" tabindex="0">supply chains<span class="tip">Networks of workers, companies, and countries that help make and move a product.</span></span> that stretched across continents. A shirt could be designed in one country, sewn in another, shipped through a third, and sold in a fourth. For students, this world shows up in clothes, shoes, phones, games, music, and food.</p><p class="para-simple">After the Cold War, many leaders believed democracy and global capitalism had won. Countries opened markets and traded more with each other. Companies built supply chains across many countries. A shirt could be designed in one place, made in another, shipped through another, and sold somewhere else. Students see this global system in clothes, shoes, phones, games, music, and food.</p><p class="para-standard">China became one of the clearest examples of the new global age. In 2001, China joined the <span class="vocab" tabindex="0">World Trade Organization<span class="tip">An international group that sets rules for trade between countries.</span></span>, which connected its factories more deeply to the world economy. Many leaders in the United States and Europe believed that economic growth would lead China toward greater freedom. They thought that a larger middle class, more trade, and more access to information would naturally push the country toward democracy. Instead, China grew richer while the Communist Party kept tight political control.</p><p class="para-simple">China became a major example of the new global age. In 2001, China joined the World Trade Organization, which connected its factories more deeply to the world economy. Many leaders thought trade would lead China toward greater freedom. They believed a growing middle class and more information would push China toward democracy. Instead, China became richer while the Communist Party kept tight control.</p><p class="para-standard">The internet made this connected world feel even smaller. In the 1990s, going online often meant using a slow computer, a noisy dial-up modem, and a few basic websites. By the 2000s and 2010s, billions of people could carry the internet in their pockets. Information, culture, and anger could move across borders instantly. The world had fewer walls, but that did not mean it had fewer conflicts.</p><p class="para-simple">The internet made the connected world feel even smaller. In the 1990s, people used slow computers and basic websites. By the 2000s and 2010s, billions of people carried the internet in their pockets. Information, culture, and anger could move across borders instantly. The world had fewer walls, but it did not have fewer conflicts.</p><p class="real-world para-standard">Real-world connection: When students buy something online, stream a song, follow a creator, or read a post from another country, they are participating in the global system built after the Cold War.</p><p class="real-world para-simple">Real-world connection: When students shop online, stream music, watch a creator, or read a post from another country, they are using the global system built after the Cold War.</p></section>
+<div class="brain-break dyk-break section-animate"><span class="bb-label">DID YOU KNOW</span><div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;"><div style="flex:1;min-width:200px;"><!--
+        FILENAME: S2L09_DialUpModem.jpg
         PLACE IN: images/S2/L09/
         PRIORITY: SUPPORTING
-        FIND: Stacked shipping containers at a port or container yard; shows how standardized containers made global trade faster and cheaper
-        SEARCH: stacked shipping containers port global trade Wikimedia Commons
-        LINK: Suggested: https://commons.wikimedia.org/wiki/Intermodal_container
-      -->
-      <img src="images/S2/L09/S2L09_ContainerStack.jpg" alt="Stacks of shipping containers at a port" style="width:100%;display:block;border:3px solid var(--lime);box-shadow:0 4px 18px rgba(0,0,0,0.5);">
-      <p style="font-size:12px;margin-top:8px;opacity:0.75;font-family:'Roboto Slab',serif;color:#fff;">Stacks of standardized shipping containers at a port. Source: Wikimedia Commons.</p>
-    </div>
-    <p class="bb-text" style="flex:1;min-width:200px;">A shipping container looks boring, but it helped change the world. Because containers are the same basic size, they can move from ship to train to truck without unpacking the goods inside. That simple box helped make global supply chains fast enough for companies to build products across oceans.</p>
-  </div>
-</div>
-
-<section class="content-section clearfix section-animate" id="supply-chain">
-  <span class="section-kicker">CHAPTER TWO</span>
-  <h2 class="section-heading">THE JOURNEY BEFORE THE STORE</h2>
-
-  <!--
-    FILENAME: S2L09_ColtanMining.jpg
+        FIND: 1990s dial-up modem or early home computer setup; shows how recent and awkward early internet access was compared with modern smartphones
+        SEARCH: 1990s dial up modem home computer Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Modems
+      --><img src="images/S2/L09/S2L09_DialUpModem.jpg" alt="A 1990s dial-up modem and early home computer setup" style="width:100%;display:block;border:3px solid var(--lime);box-shadow:0 4px 18px rgba(0,0,0,0.5);"><p style="font-size:12px;margin-top:8px;opacity:0.75;font-family:'Roboto Slab',serif;color:#fff;">A dial-up modem from the early internet era. Source: Wikimedia Commons.</p></div><p class="bb-text" style="flex:1;min-width:200px;">In 1995, only a tiny share of the world's population used the internet, and many homes could not use the phone while someone was online. A single image could load line by line like a curtain slowly opening. Within one generation, the internet went from a strange sound coming through a modem to the place where billions of people learn, shop, date, protest, argue, and create.</p></div></div>
+<section class="content-section clearfix section-animate" id="internet-turned"><span class="section-kicker">CHAPTER TWO</span><h2 class="section-heading">WHEN THE INTERNET TURNED BOTH WAYS</h2><!--
+    FILENAME: S2L09_ArabSpringPhones.jpg
     PLACE IN: images/S2/L09/
     PRIORITY: ESSENTIAL
-    FIND: Artisanal coltan or cobalt miners in the Democratic Republic of Congo; documentary image of workers mining by hand in a dignified register
-    SEARCH: coltan cobalt mining Democratic Republic Congo miners Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Mining_in_the_Democratic_Republic_of_the_Congo
-  -->
-  <figure class="img-left">
-    <img src="images/S2/L09/S2L09_ColtanMining.jpg" alt="Artisanal miners working in the Democratic Republic of Congo">
-    <figcaption>Artisanal miners in the Democratic Republic of Congo. Minerals from places like the DRC are part of the hidden foundation of smartphones, batteries, and many other electronics. Source: Wikimedia Commons.</figcaption>
-  </figure>
-
-  <p class="para-standard">A smartphone begins long before it reaches a store shelf. The process starts with raw materials: cobalt, lithium, copper, gold, tungsten, and <span class="vocab" tabindex="0">coltan<span class="tip">A mineral refined into tantalum, a metal used in small electronic parts inside phones and laptops.</span></span>. Many of these minerals come from countries that have been shaped by colonialism, weak governments, foreign investment, and global demand for resources. In the Democratic Republic of Congo, some mining is industrial, but some is <span class="vocab" tabindex="0">artisanal mining<span class="tip">Small-scale mining where people often dig by hand using simple tools.</span></span>. Workers may dig by hand for minerals that eventually become part of expensive electronics.</p>
-  <p class="para-simple">A smartphone begins long before it reaches a store. It starts with raw materials like cobalt, lithium, copper, gold, tungsten, and coltan. Many of these minerals come from countries shaped by colonialism, weak governments, foreign investment, and global demand. In the Democratic Republic of Congo, some mining is done by large companies. Some is artisanal mining, where people dig by hand using simple tools. Workers may dig for minerals that later become part of expensive electronics.</p>
-
-  <p class="para-standard">After mining, the parts move through a <span class="vocab" tabindex="0">supply chain<span class="tip">The network of people, companies, and countries that move a product from raw material to customer.</span></span> that crosses several continents. A chip may be designed in the United States, produced in Taiwan, and made with machines from the Netherlands. A memory component may come from South Korea. A screen may be made with glass technology developed in the United States and processed elsewhere. These parts travel by ship, plane, train, and truck before they become one finished device.</p>
-  <p class="para-simple">After mining, the parts move through a supply chain that crosses several continents. A chip may be designed in the United States and produced in Taiwan. Machines from the Netherlands may help make it. Memory parts may come from South Korea. Screen glass may use technology from the United States and be processed somewhere else. These parts travel by ship, plane, train, and truck before they become one device.</p>
-
-  <!--
-    FILENAME: S2L09_FoxconnShenzhen.jpg
-    PLACE IN: images/S2/L09/
-    PRIORITY: ESSENTIAL
-    FIND: Foxconn or electronics factory assembly line in Shenzhen, China; workers at stations assembling electronics
-    SEARCH: Foxconn Shenzhen electronics assembly line workers Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Foxconn
-  -->
-  <figure class="img-right">
-    <img src="images/S2/L09/S2L09_FoxconnShenzhen.jpg" alt="Workers assembling electronics in a factory in Shenzhen, China">
-    <figcaption>Electronics workers on an assembly line in Shenzhen, China. Final assembly is one of the most visible parts of the smartphone supply chain, but it captures far less profit than design, software, and branding. Source: Wikimedia Commons.</figcaption>
-  </figure>
-
-  <p class="para-standard">Final assembly often happens in enormous factory systems. At Foxconn facilities in China, workers have assembled phones, tablets, and laptops for global brands. Factory work can provide wages to people who migrated from rural areas to cities, but it can also involve long hours, strict supervision, repetitive tasks, and pressure to meet production goals. This is the human side of the global supply chain. The finished product looks smooth and simple because the labor behind it has been hidden.</p>
-  <p class="para-simple">Final assembly often happens in huge factory systems. At Foxconn facilities in China, workers have assembled phones, tablets, and laptops for global brands. Factory jobs can provide wages for people who moved from rural areas to cities. But the work can also mean long hours, strict rules, repeated tasks, and pressure to work faster. This is the human side of the supply chain. The finished phone looks simple because the labor behind it is hidden.</p>
-</section>
-
-<div class="brain-break ff-break section-animate">
-  <span class="bb-label">FAST FACTS</span>
-  <p class="ff-context">WHAT ONE SMARTPHONE CAN REVEAL ABOUT GLOBALIZATION</p>
-  <div class="ff-grid">
-    <div class="ff-item">
-      <span class="ff-number">5+</span>
-      <span class="ff-desc">major world regions can be involved before one smartphone reaches a customer: Africa, East Asia, Europe, North America, and South America</span>
-    </div>
-    <div class="ff-item">
-      <span class="ff-number">90%</span>
-      <span class="ff-desc">of world trade by volume moves by sea, which makes container shipping a backbone of the global economy</span>
-    </div>
-    <div class="ff-item">
-      <span class="ff-number">3</span>
-      <span class="ff-desc">main groups shape the phone's journey: resource workers, factory workers, and companies that own design, software, and branding</span>
-    </div>
-    <div class="ff-item">
-      <span class="ff-number">1</span>
-      <span class="ff-desc">small device can connect millions of people while also hiding the unequal labor and environmental costs behind the screen</span>
-    </div>
-  </div>
-</div>
-
-<section class="content-section clearfix section-animate" id="digital-network">
-  <span class="section-kicker">CHAPTER THREE</span>
-  <h2 class="section-heading">THE PHONE BECOMES A GLOBAL NETWORK</h2>
-
-  <!--
-    FILENAME: S2L09_MobileUsersGlobal.jpg
-    PLACE IN: images/S2/L09/
-    PRIORITY: ESSENTIAL
-    FIND: People using mobile phones in a public place outside the United States, preferably Africa, South Asia, or Southeast Asia; shows global spread of mobile internet
-    SEARCH: people using smartphones public space Africa Asia Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Mobile_phones
-  -->
-  <figure class="img-right">
-    <img src="images/S2/L09/S2L09_MobileUsersGlobal.jpg" alt="People using smartphones in a public space outside the United States">
-    <figcaption>Smartphone users in a public space. Mobile internet changed how people communicate, buy and sell, learn, organize, and share information across national borders. Source: Wikimedia Commons.</figcaption>
-  </figure>
-
-  <p class="para-standard">The smartphone did more than move through globalization; it also made globalization faster. With mobile internet, people could communicate across borders instantly, follow news from other countries, send money, sell products, and organize political action. Apps turned phones into banks, maps, classrooms, cameras, marketplaces, and newsrooms. This mattered especially in places where many people skipped desktop computers and went straight to mobile internet. A device built by global trade also became a tool that connected everyday people to the global economy.</p>
-  <p class="para-simple">The smartphone did more than move through globalization. It also made globalization faster. With mobile internet, people could communicate across borders, follow news, send money, sell products, and organize. Apps turned phones into banks, maps, classrooms, cameras, marketplaces, and newsrooms. This mattered in places where many people never owned desktop computers. A device built by global trade became a tool that connected everyday people to the global economy.</p>
-
-  <p class="para-standard">The same network also created new dangers. Companies collected user data: location, purchases, messages, searches, videos watched, and time spent on apps. This data became valuable because it could predict behavior and sell advertising. Scholars call this <span class="vocab" tabindex="0">surveillance capitalism<span class="tip">A system where companies collect personal data and use it to make money, often through targeted advertising.</span></span>. The user felt like the customer, but in many apps the user's attention and information became the product being sold.</p>
-  <p class="para-simple">The same network also created new dangers. Companies collected user data like location, purchases, searches, messages, and time spent on apps. That data became valuable because companies could use it to predict behavior and sell ads. This is called surveillance capitalism. The user may feel like the customer. But in many apps, the user's attention and information become the product being sold.</p>
-
-  <p class="para-standard">Governments also used mobile technology in different ways. In democracies, activists used smartphones to record police violence, spread protest information, and organize campaigns. In authoritarian states, governments used phones to track activists, monitor speech, and shut down networks during unrest. This is why the smartphone is not simply good or bad. It is a tool of globalization, and tools can expand freedom or strengthen control depending on who uses them and who has power.</p>
-  <p class="para-simple">Governments also used mobile technology in different ways. In democracies, activists used phones to record violence, share protest information, and organize campaigns. In authoritarian states, governments used phones to track activists, monitor speech, and shut down networks during protests. This means the smartphone is not simply good or bad. It is a tool. It can expand freedom or strengthen control, depending on who uses it and who has power.</p>
-</section>
-
-<div class="brain-break as-break section-animate">
-  <span class="bb-label">ART SPOTLIGHT</span>
-  <figure>
-    <!--
-      FILENAME: S2L09_LiuBolin.jpg
+    FIND: Arab Spring protesters holding phones or gathering in a public square, 2011; ordinary people using digital communication to challenge power
+    SEARCH: Arab Spring protesters smartphones Tahrir Square 2011 Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Egyptian_revolution_of_2011
+  --><figure class="img-left"><img src="images/S2/L09/S2L09_ArabSpringPhones.jpg" alt="Arab Spring protesters gathered in a public square with phones and signs, 2011"><figcaption>Protesters during the Arab Spring, 2011. Phones and social media helped ordinary people share images, organize crowds, and challenge governments. Source: Wikimedia Commons.</figcaption></figure><p class="para-standard">In late 2010, a Tunisian street vendor named Mohamed Bouazizi set himself on fire after police harassment. News of his protest spread quickly, and demonstrations grew across Tunisia. Soon, protests spread through Egypt, Libya, Yemen, Syria, and other countries. Many young people used Facebook, Twitter, YouTube, and phones to share videos, call people into the streets, and show the world what governments were doing. For a moment, it looked like the internet had given ordinary people a tool powerful enough to challenge dictators.</p><p class="para-simple">In late 2010, a Tunisian street vendor named Mohamed Bouazizi set himself on fire after police harassment. News of his protest spread quickly. Demonstrations grew in Tunisia and then spread to Egypt, Libya, Yemen, Syria, and other countries. Many young people used Facebook, Twitter, YouTube, and phones to share videos and organize crowds. For a moment, it looked like the internet could help ordinary people challenge dictators.</p><p class="para-standard">The hope did not last in the way many people expected. Some governments fell, but others fought back brutally. Syria descended into civil war, and millions of people became refugees. Governments also learned from the protests. They realized that the same internet that helped people organize could also help states track activists, block websites, shut down networks, spread propaganda, and flood social media with false information.</p><p class="para-simple">The hope did not last the way many people expected. Some governments fell, but others fought back brutally. Syria became a civil war, and millions of people became refugees. Governments also learned from the protests. They saw that the internet could help them track activists, block websites, shut down networks, and spread false information.</p><p class="para-standard">China built one of the world's most advanced systems of <span class="vocab" tabindex="0">censorship<span class="tip">Government control over what people can read, say, watch, or share.</span></span> and digital monitoring. Russia became skilled at using online propaganda and disinformation to weaken trust in elections, news, and democratic institutions. Other governments watched and adapted. The internet did not automatically make the world freer. It became a battlefield over attention, memory, truth, and power.</p><p class="para-simple">China built one of the world's strongest systems for online censorship and digital monitoring. Russia became skilled at using online propaganda and false information to weaken trust in elections and news. Other governments watched and learned. The internet did not automatically make the world freer. It became a battlefield over attention, truth, and power.</p></section>
+<div class="brain-break ff-break section-animate"><span class="bb-label">FAST FACTS</span><p class="ff-context">THE CONNECTED WORLD IN NUMBERS</p><div class="ff-grid"><div class="ff-item"><span class="ff-number">2001</span><span class="ff-desc">the year China joined the World Trade Organization, linking its factories more deeply to global trade</span></div><div class="ff-item"><span class="ff-number">5B+</span><span class="ff-desc">people now use the internet, meaning most of humanity can send and receive information across borders</span></div><div class="ff-item"><span class="ff-number">90%</span><span class="ff-desc">of world trade by volume moves by sea, showing that the digital world still depends on ships, ports, and workers</span></div><div class="ff-item"><span class="ff-number">2020</span><span class="ff-desc">the year Covid pushed school, work, medicine, shopping, and politics even deeper into online life</span></div></div></div>
+<section class="content-section clearfix section-animate" id="politics-anger"><span class="section-kicker">CHAPTER THREE</span><h2 class="section-heading">THE POLITICS OF ANGER</h2><div class="two-col"><figure><!--
+        FILENAME: S2L09_ClosedFactory.jpg
+        PLACE IN: images/S2/L09/
+        PRIORITY: SUPPORTING
+        FIND: Closed factory or abandoned industrial building in a former manufacturing region; communities affected by deindustrialization and globalization
+        SEARCH: closed factory deindustrialization abandoned manufacturing Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Abandoned_factories
+      --><img src="images/S2/L09/S2L09_ClosedFactory.jpg" alt="A closed factory building in a former manufacturing area"><figcaption>A closed factory. Globalization lowered prices and created wealth, but some communities lost stable industrial jobs. Source: Wikimedia Commons.</figcaption></figure><figure><!--
+        FILENAME: S2L09_PopulistCrowd.jpg
+        PLACE IN: images/S2/L09/
+        PRIORITY: SUPPORTING
+        FIND: Large political rally crowd with national flags, 2010s; populist politics as mass participation and anger, not a single leader portrait
+        SEARCH: populist political rally crowd national flags 2010s Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Political_rallies
+      --><img src="images/S2/L09/S2L09_PopulistCrowd.jpg" alt="A large political rally crowd with national flags during the 2010s"><figcaption>A political rally in the 2010s. Populist movements often used mass rallies and social media to present politics as a battle between ordinary people and powerful elites. Source: Wikimedia Commons.</figcaption></figure></div><p class="para-standard">Globalization created huge amounts of wealth, but it did not share that wealth evenly. Some workers benefited from new markets and new technology. Others watched factories close, wages stall, and local communities weaken as production moved overseas. Immigration and rapid cultural change also made some people feel that their countries were changing too quickly. These feelings did not come from one place or one political party. They appeared in many countries at the same time.</p><p class="para-simple">Globalization created a lot of wealth, but it did not share that wealth equally. Some workers benefited from new markets and technology. Others saw factories close, wages stop growing, and local communities weaken. Immigration and fast cultural change also made some people feel their countries were changing too quickly. These feelings appeared in many countries at the same time.</p><p class="para-standard"><span class="vocab" tabindex="0">Populism<span class="tip">A political style that claims to speak for ordinary people against powerful elites or outsiders.</span></span> grew in this environment. Populist leaders often argued that they alone represented the real people against elites, experts, immigrants, journalists, judges, or international organizations. In Hungary, Viktor Orban used elections to build a system that weakened courts, media, and opposition parties. In Russia, Vladimir Putin used nationalism, media control, and state power to recentralize authority. In many democracies, politics became more emotional, more tribal, and more suspicious of institutions.</p><p class="para-simple">Populism grew in this environment. Populist leaders often said they spoke for the real people against elites, experts, immigrants, journalists, judges, or international organizations. In Hungary, Viktor Orban used elections to weaken courts, media, and opposition parties. In Russia, Vladimir Putin used nationalism, media control, and state power to centralize authority. In many democracies, politics became more emotional and more suspicious of institutions.</p><p class="para-standard">Social media made this anger faster and louder. <span class="vocab" tabindex="0">Algorithms<span class="tip">Computer rules that decide what content people see online.</span></span> learned that emotional content kept people watching, clicking, and sharing. Posts that made people afraid or angry often traveled farther than careful explanations. This did not create political division by itself, but it amplified division that already existed. The connected world made it easier to find community, but it also made it easier to find enemies.</p><p class="para-simple">Social media made anger faster and louder. Algorithms decide what people see online. They learned that emotional posts keep people watching, clicking, and sharing. Posts that make people afraid or angry often spread farther than careful explanations. The connected world made it easier to find community, but it also made it easier to find enemies.</p></section>
+<div class="brain-break as-break section-animate"><span class="bb-label">ART SPOTLIGHT</span><figure><!--
+      FILENAME: S2L09_AiWeiweiStudyOfPerspective.jpg
       PLACE IN: images/S2/L09/
       PRIORITY: ESSENTIAL
-      FIND: Liu Bolin, Hiding in the City series; Chinese artist camouflaged against consumer goods, electronics, shelves, or urban background; exact work from the series connected to invisibility in consumer society
-      SEARCH: Liu Bolin Hiding in the City electronics consumer goods Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/Liu_Bolin
-    -->
-    <img src="images/S2/L09/S2L09_LiuBolin.jpg" alt="Liu Bolin camouflaged against consumer goods in the Hiding in the City series" class="as-image">
-    <figcaption class="as-caption">
-      Hiding in the City series: Liu Bolin, begun 2005<br>
-      Chinese artist Liu Bolin paints his body and clothing so he disappears into places like streets, stores, shelves, and walls of consumer goods.
-    </figcaption>
-  </figure>
-  <p class="as-fact">Liu Bolin began this series after officials demolished his Beijing art studio without warning or compensation. His hidden body turns the image into a warning: modern life can be full of products while the people behind those products disappear. In a lesson about globalization, that is exactly the point students should notice.</p>
-</div>
-
-<section class="content-section clearfix section-animate" id="unequal-results">
+      FIND: Ai Weiwei, Study of Perspective: Tiananmen Square, 1995; controversial photograph of the artist extending his middle finger toward Tiananmen Gate, challenging political authority and censorship
+      SEARCH: Ai Weiwei Study of Perspective Tiananmen Square 1995 image
+      LINK: Suggested: https://www.moma.org/collection/works/117098
+    --><img src="images/S2/L09/S2L09_AiWeiweiStudyOfPerspective.jpg" alt="Ai Weiwei, Study of Perspective: Tiananmen Square, 1995" class="as-image"><figcaption class="as-caption">Study of Perspective: Tiananmen Square : Ai Weiwei, 1995<br>Ai Weiwei photographed his hand making a rude gesture toward Tiananmen Square in Beijing, a place tied to state power and to the memory of the 1989 pro-democracy protests.</figcaption></figure><p class="as-fact">The image looks simple, almost like a tourist snapshot, but that is what makes it dangerous. Ai Weiwei turned a small hand gesture into a direct challenge to political authority and public memory. Years later, Chinese authorities detained him, monitored him, and took away his passport, showing how art, the internet, and state power could collide in the connected age.</p></div>
+<section class="content-section clearfix section-animate" id="crisis-years">
   <span class="section-kicker">CHAPTER FOUR</span>
-  <h2 class="section-heading">THE UNEQUAL RESULTS OF CONNECTION</h2>
-
-  <div class="two-col">
-    <!--
-      FILENAME: S2L09_AppleHeadquarters.jpg
-      PLACE IN: images/S2/L09/
-      PRIORITY: SUPPORTING
-      FIND: Apple Park or modern technology company headquarters in California; shows high-value design and corporate profit side of globalization
-      SEARCH: Apple Park headquarters Cupertino Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/Apple_Park
-    -->
-    <figure>
-      <img src="images/S2/L09/S2L09_AppleHeadquarters.jpg" alt="Apple Park or a major technology company headquarters in California">
-      <figcaption>A major technology headquarters in California. In global supply chains, design, software, patents, and branding usually capture the most profit. Source: Wikimedia Commons.</figcaption>
-    </figure>
-    <!--
-      FILENAME: S2L09_EWasteWorkers.jpg
-      PLACE IN: images/S2/L09/
-      PRIORITY: SUPPORTING
-      FIND: Workers sorting electronic waste, repair workers, or recycling site; shows what happens to devices after use, preferably documentary and dignified
-      SEARCH: electronic waste recycling workers Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Electronic_waste
-    -->
-    <figure>
-      <img src="images/S2/L09/S2L09_EWasteWorkers.jpg" alt="Workers sorting or repairing electronic waste">
-      <figcaption>Workers handling electronic waste. Global technology also creates environmental problems after devices are thrown away, repaired, resold, or recycled. Source: Wikimedia Commons.</figcaption>
-    </figure>
-  </div>
-
-  <p class="para-standard">Globalization created real benefits. It lowered prices for many goods, spread new technology, expanded consumer choice, and helped some countries build powerful export economies. It also created new kinds of work in design, logistics, software, shipping, advertising, finance, and retail. For many people, global connection meant opportunity. The smartphone allowed people to learn, work, create, and communicate in ways that were difficult or impossible before.</p>
-  <p class="para-simple">Globalization created real benefits. It lowered prices for many goods. It spread new technology and gave consumers more choices. It helped some countries build strong export economies. It also created jobs in design, shipping, software, advertising, finance, and retail. For many people, global connection meant opportunity. Smartphones helped people learn, work, create, and communicate in new ways.</p>
-
-  <p class="para-standard">But the benefits were not shared equally. The people and companies that owned the brand, software, patents, and platforms often captured the most wealth. Workers who mined raw materials or assembled products usually captured much less. Some communities also faced pollution, dangerous work, and electronic waste after devices were discarded. Globalization connected the world, but connection did not automatically mean fairness.</p>
-  <p class="para-simple">But the benefits were not shared equally. Companies that owned the brand, software, patents, and platforms often got the most wealth. Workers who mined minerals or assembled products usually got much less. Some communities also faced pollution, unsafe work, and electronic waste. Globalization connected the world. But connection did not automatically mean fairness.</p>
-
-  <p class="para-standard">This is the central lesson of the smartphone as world history. A single device can show global trade, migration to factory cities, resource extraction, container shipping, digital culture, data collection, worker activism, and environmental debate. It can show both opportunity and inequality at the same time. The question is not whether globalization connected people; it clearly did. The harder question is who gained power from that connection, and who carried the costs.</p>
-  <p class="para-simple">This is the main lesson of the smartphone as world history. One device can show trade, migration to factory cities, mining, shipping, digital culture, data collection, worker activism, and environmental debate. It can show opportunity and inequality at the same time. Globalization clearly connected people. The harder question is who gained power from that connection and who paid the costs.</p>
+  <h2 class="section-heading">THE CRISIS YEARS</h2>
+  <!--
+    FILENAME: S2L09_CovidEmptyStreet.jpg
+    PLACE IN: images/S2/L09/
+    PRIORITY: ESSENTIAL
+    FIND: Empty city street or public square during Covid lockdown, 2020; shows how a connected world suddenly stopped moving
+    SEARCH: COVID lockdown empty city street 2020 Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Category:COVID-19_lockdowns
+  -->
+  <figure class="img-right"><img src="images/S2/L09/S2L09_CovidEmptyStreet.jpg" alt="An empty city street during a Covid lockdown in 2020"><figcaption>An empty city street during a Covid lockdown, 2020. The pandemic showed how quickly a crisis could move through a connected world. Source: Wikimedia Commons.</figcaption></figure>
+  <p class="para-standard">Covid-19 revealed how connected the world had become and how fragile that connection could be. A virus first identified in late 2019 traveled through global transportation networks and became a pandemic in 2020. Schools, workplaces, churches, courts, stores, and doctor visits moved online almost overnight. Supply chains broke down, and people suddenly noticed how much daily life depended on factories, ships, truck drivers, nurses, grocery workers, and internet access. The world did not stop being connected during Covid. It became connected in more stressful and unequal ways.</p>
+  <p class="para-simple">Covid-19 showed how connected and fragile the world had become. A virus first identified in late 2019 spread through global travel and became a pandemic in 2020. Schools, jobs, stores, churches, doctor visits, and courts moved online almost overnight. Supply chains broke down. People saw how much daily life depended on workers, shipping, factories, nurses, grocery stores, and internet access. The world stayed connected during Covid, but in more stressful and unequal ways.</p>
+  <p class="para-standard">The pandemic also became an information crisis. People needed accurate information about masks, vaccines, hospitals, and risk. At the same time, false claims spread quickly online. Some people lost trust in experts, governments, and news organizations. The crisis showed that a connected world can move medicine and knowledge faster than ever before, but it can also move fear and falsehood just as quickly.</p>
+  <p class="para-simple">The pandemic also became a crisis of information. People needed accurate information about masks, vaccines, hospitals, and risk. At the same time, false claims spread quickly online. Some people lost trust in experts, governments, and news. Covid showed that a connected world can spread medicine and knowledge quickly, but it can also spread fear and falsehood quickly.</p>
+  <p class="para-standard"><span class="vocab" tabindex="0">Artificial intelligence<span class="tip">Computer systems that can perform tasks that usually require human thinking, such as writing or recognizing images.</span></span> raised the next question. AI tools can translate languages, write essays, make images, detect disease, and help solve problems. They can also create fake voices, fake photos, fake videos, and convincing misinformation. If the internet made information move instantly, AI makes information easier to manufacture. The students living through this moment will have to decide how a world without walls can still protect truth, privacy, and human dignity.</p>
+  <p class="para-simple">Artificial intelligence raises the next big question. AI tools can translate languages, write essays, make images, detect disease, and help solve problems. They can also create fake voices, fake photos, fake videos, and convincing false information. If the internet made information move instantly, AI makes information easier to create. Students living through this moment will have to decide how a connected world can protect truth, privacy, and human dignity.</p>
 </section>
-
 <div class="primary-source section-animate" id="primary-source-moment">
   <span class="ps-label">PRIMARY SOURCE MOMENT</span>
   <div class="ps-visual">
     <figure>
       <!--
-        FILENAME: S2L09_FoxconnWorkerPortrait.jpg
+        FILENAME: S2L09_GretaUNSpeech.jpg
         PLACE IN: images/S2/L09/
         PRIORITY: ESSENTIAL
-        FIND: A dignified portrait or workplace image of a Foxconn worker or Chinese electronics factory worker in Shenzhen; shows the human face of final assembly labor
-        SEARCH: Foxconn worker portrait Shenzhen electronics factory Wikimedia Commons
-        LINK: Suggested: https://commons.wikimedia.org/wiki/Foxconn
+        FIND: Greta Thunberg speaking at the United Nations Climate Action Summit, New York City, September 23, 2019; young climate activist at podium addressing world leaders
+        SEARCH: Greta Thunberg UN Climate Action Summit 2019 speech Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Greta_Thunberg_in_2019
       -->
-      <img src="images/S2/L09/S2L09_FoxconnWorkerPortrait.jpg" alt="A Foxconn factory worker or electronics assembly worker in Shenzhen, China">
-      <figcaption>A Foxconn factory worker or electronics assembly worker in Shenzhen, China. Source: Wikimedia Commons.</figcaption>
+      <img src="images/S2/L09/S2L09_GretaUNSpeech.jpg" alt="Greta Thunberg speaking at the United Nations Climate Action Summit in 2019">
+      <figcaption>Greta Thunberg speaks at the United Nations Climate Action Summit, New York City, September 23, 2019. Source: Wikimedia Commons.</figcaption>
     </figure>
     <div>
-      <p class="ps-quote">"We get up at 6 a.m. and go to work at 7. We work until 7 p.m. and have a one-hour lunch break. After work we go to eat, and then at about 9 p.m. we go back to the dormitory to sleep. I can only call home on Sundays. Every day is like this, repeating over and over... We feel like we're like automatons."</p>
-      <p class="ps-attribution">Foxconn factory worker, interview from Shenzhen, China, 2012</p>
-      <p class="ps-narrator">WHY THIS MATTERS: This worker's account makes the hidden labor of globalization visible. The quote does not talk about technology as a miracle; it describes time, exhaustion, separation from home, and repeated motion. It helps answer the Essential Question because it shows that global connection can create useful products while also placing heavy costs on workers whose names customers never learn.</p>
+      <p class="ps-quote">"You have stolen my dreams and my childhood with your empty words. And yet I am one of the lucky ones. People are suffering. People are dying. Entire ecosystems are collapsing. We are in the beginning of a mass extinction. You are failing us. But the young people are starting to understand your betrayal."</p>
+      <p class="ps-attribution">Greta Thunberg, United Nations Climate Action Summit speech, 2019.</p>
+      <p class="ps-narrator">WHY THIS MATTERS: Thunberg shows how the connected world gave young people a global stage. A teenager could speak directly to world leaders, and the clip could travel across the planet in hours. Her speech also shows the pressure young people place on systems they believe are moving too slowly.</p>
+      <p class="simple-terms"><strong>IN SIMPLE TERMS:</strong> Thunberg is saying that adults promised progress but left young people with the consequences. She uses public anger to demand responsibility.</p>
     </div>
   </div>
 </div>
-
 <div class="brain-break tn-break section-animate" id="then-now">
   <span class="bb-label">THEN AND NOW</span>
-  <p class="tn-payoff">GLOBALIZATION MAKES THE WORLD FEEL CLOSE, BUT ITS COSTS ARE OFTEN KEPT FAR AWAY.</p>
+  <p class="tn-payoff">THE WORLD HAS FEWER WALLS, BUT THE FIGHT OVER POWER HAS NOT DISAPPEARED.</p>
   <div class="tn-pair">
     <div class="tn-item">
-      <span class="tn-era-label">2000S</span>
+      <span class="tn-era-label">1990S</span>
       <!--
-        FILENAME: S2L09_ThenFactoryDormitory.jpg
+        FILENAME: S2L09_ThenEarlyInternetLab.jpg
         PLACE IN: images/S2/L09/
         PRIORITY: ESSENTIAL
-        FIND: Factory dormitories or workers outside an electronics factory in Shenzhen, China, 2000s; shows migrant labor and factory city life behind global manufacturing
-        SEARCH: Shenzhen factory dormitory migrant workers electronics Wikimedia Commons
-        LINK: Suggested: https://commons.wikimedia.org/wiki/Shenzhen
+        FIND: 1990s computer lab or early internet users at desktop computers; shows the hopeful beginning of public internet access
+        SEARCH: 1990s computer lab internet users Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Computer_labs
       -->
-      <img src="images/S2/L09/S2L09_ThenFactoryDormitory.jpg" alt="Factory dormitories or workers near an electronics factory in Shenzhen during the 2000s">
-      <p class="tn-caption">Factory dormitories or workers near an electronics manufacturing site in Shenzhen during the rise of global technology supply chains. Source: Wikimedia Commons.</p>
+      <img src="images/S2/L09/S2L09_ThenEarlyInternetLab.jpg" alt="Students or users in a 1990s computer lab using early internet-connected computers">
+      <p class="tn-caption">Early public internet use in a computer lab, 1990s. Many people saw the internet as a doorway to knowledge and freedom. Source: Wikimedia Commons.</p>
     </div>
     <div class="tn-item">
       <span class="tn-era-label">NOW</span>
       <!--
-        FILENAME: S2L09_NowRepairMovement.jpg
+        FILENAME: S2L09_NowYouthClimatePhones.jpg
         PLACE IN: images/S2/L09/
         PRIORITY: ESSENTIAL
-        FIND: People at a repair cafe, right-to-repair workshop, electronics repair collective, or community technology reuse event; shows agency and action around making technology more sustainable and fair
-        SEARCH: repair cafe electronics right to repair workshop Wikimedia Commons
-        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:Repair_Caf%C3%A9
-        LICENSE: Wikimedia Commons or CC-licensed image acceptable.
+        FIND: Youth climate activists or civic protestors using phones, signs, and cameras in a peaceful public action; shows agency, organizing, and student connection
+        SEARCH: youth climate strike phones protest signs Wikimedia Commons CC license
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Category:School_strikes_for_climate
+        LICENSE: CC-licensed photography acceptable.
       -->
-      <img src="images/S2/L09/S2L09_NowRepairMovement.jpg" alt="People repairing electronics together at a community repair workshop">
-      <p class="tn-caption">People repairing electronics at a community repair workshop. Repair movements argue that technology should last longer, create less waste, and give users more control. Source: Wikimedia Commons / CC.</p>
+      <img src="images/S2/L09/S2L09_NowYouthClimatePhones.jpg" alt="Young people at a climate strike using phones and signs in a peaceful civic action">
+      <p class="tn-caption">Young people at a climate strike using signs and phones to organize, document, and speak publicly. Source: Wikimedia Commons / CC.</p>
     </div>
   </div>
   <div class="tn-text-block">
     <h3>THEN</h3>
-    <p>In the 2000s, factory cities like Shenzhen became symbols of the global manufacturing system. Migrant workers left rural areas for city jobs that connected them to the world economy. Their labor helped build devices sold across the planet, but much of their work stayed invisible to consumers.</p>
+    <p>In the 1990s, the internet looked like a doorway into a more open world. Students, workers, journalists, and activists could find information and connect across borders in ways earlier generations could barely imagine. Many people believed this new access would naturally make societies freer.</p>
     <h3>NOW</h3>
-    <p>Today, people are still debating how technology should be made, repaired, reused, and recycled. Workers, journalists, repair advocates, environmental groups, and consumers have pushed companies to reveal more about supply chains and reduce waste. The modern repair movement shows agency because people are not only buying devices; they are challenging the rules that make devices disposable.</p>
+    <p>Today, young people use the same connected world to learn, create, organize, and challenge leaders. They also live with algorithms, surveillance, misinformation, online anger, and AI-generated content. The tool that opens the world also shapes what people see.</p>
     <h3>CONNECTION</h3>
-    <p>The past and present connect through the same question: who controls the benefits of technology? In the early smartphone era, companies used global supply chains to make devices quickly and cheaply. Today, communities are asking whether those systems can become more transparent, more sustainable, and more fair to the people who mine, assemble, repair, and live with the effects of technology.</p>
-    <p>When you use a device every day, what responsibility do companies and consumers have to the people and places behind it?</p>
+    <p>The post-Cold War world promised connection, but connection alone never guaranteed freedom. Technology can help ordinary people speak, but it can also help powerful institutions watch, influence, and divide. The central question of the connected age is not whether the world has walls. It is who gets to build the invisible ones.</p>
+    <p>If the tools that connect people can also shape what they believe, who should be responsible for protecting truth and freedom?</p>
   </div>
 </div>
-
 </main>
-<footer>WORLD HISTORY &bull; SEMESTER 2, LESSON 09 &bull; GLOBALIZATION IN YOUR POCKET &bull; STANDARD 10.11</footer>
+<footer>WORLD HISTORY : SEMESTER 2, LESSON 09 : A WORLD WITHOUT WALLS : STANDARD 10.11</footer>
 </div>
-
 <script>
-// 1. READING PROGRESS BAR
-(function(){
-  var bar = document.getElementById('reading-progress');
-  window.addEventListener('scroll', function(){
-    var s = window.scrollY || document.documentElement.scrollTop;
-    var d = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    bar.style.width = (d > 0 ? (s / d) * 100 : 0) + '%';
-  }, {passive: true});
-})();
-
-// 2. LEXILE TOGGLE
-document.getElementById('lexile-toggle').addEventListener('click', function(){
-  document.body.classList.toggle('simplified');
-  this.textContent = document.body.classList.contains('simplified') ? 'STANDARD TEXT' : 'SIMPLIFY TEXT';
-});
-
-// 3. VOCABULARY TOOLTIPS
-function repositionTip(el) {
-  var tip = el.querySelector('.tip');
-  if (!tip) return;
-  tip.style.left = '50%';
-  tip.style.transform = 'translateX(-50%)';
-  var rect = tip.getBoundingClientRect();
-  if (rect.left < 8) {
-    var shift = 8 - rect.left;
-    tip.style.transform = 'translateX(calc(-50% + ' + shift + 'px))';
-  } else if (rect.right > window.innerWidth - 8) {
-    var shift = rect.right - (window.innerWidth - 8);
-    tip.style.transform = 'translateX(calc(-50% - ' + shift + 'px))';
-  }
-}
-document.querySelectorAll('.vocab').forEach(function(el) {
-  el.setAttribute('tabindex', '0');
-  el.addEventListener('click', function(e) {
-    e.stopPropagation();
-    document.querySelectorAll('.vocab.active').forEach(function(v) { if (v !== el) v.classList.remove('active'); });
-    el.classList.toggle('active');
-    if (el.classList.contains('active')) repositionTip(el);
-  });
-  el.addEventListener('focus', function() { el.classList.add('active'); repositionTip(el); });
-  el.addEventListener('blur', function() { el.classList.remove('active'); });
-  el.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.classList.toggle('active'); if (el.classList.contains('active')) repositionTip(el); }
-    if (e.key === 'Escape') el.classList.remove('active');
-  });
-});
-document.addEventListener('click', function() {
-  document.querySelectorAll('.vocab.active').forEach(function(v) { v.classList.remove('active'); });
-});
-
-// 4. INTERSECTION OBSERVER: TOC + NAV
-const tocObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    const id = entry.target.getAttribute('id');
-    const tl = document.querySelector('.toc-sidebar a[href="#' + id + '"]');
-    const nl = document.querySelector('.section-nav a[href="#' + id + '"]');
-    if (entry.isIntersecting) {
-      if (tl) tl.classList.add('active');
-      if (nl) nl.classList.add('active');
-    } else {
-      if (tl) tl.classList.remove('active');
-      if (nl) nl.classList.remove('active');
-    }
-  });
-}, { threshold: 0.25 });
-document.querySelectorAll('section[id], .primary-source[id], div[id="then-now"]').forEach(el => tocObserver.observe(el));
-
-// 5. SECTION ENTRANCE ANIMATION
-(function(){
-  var ao = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        ao.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.section-animate').forEach(function(el) { ao.observe(el); });
-})();
-
-// 6. IMAGE FADE-IN
-document.querySelectorAll('img').forEach(function(img) {
-  if (img.complete && img.naturalWidth > 0) {
-    img.classList.add('loaded');
-  } else {
-    img.addEventListener('load', function() { img.classList.add('loaded'); });
-    img.addEventListener('error', function() {
-      img.style.opacity = '0.15';
-      img.style.border = '2px dashed rgba(255,255,255,0.2)';
-    });
-  }
-});
+(function(){var bar=document.getElementById('reading-progress');window.addEventListener('scroll',function(){var s=window.scrollY||document.documentElement.scrollTop;var d=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(d>0?(s/d)*100:0)+'%';},{passive:true});})();
+document.getElementById('lexile-toggle').addEventListener('click',function(){document.body.classList.toggle('simplified');this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';});
+function repositionTip(el){var tip=el.querySelector('.tip');if(!tip)return;tip.style.left='50%';tip.style.transform='translateX(-50%)';var rect=tip.getBoundingClientRect();if(rect.left<8){tip.style.transform='translateX(calc(-50% + '+(8-rect.left)+'px))';}else if(rect.right>window.innerWidth-8){tip.style.transform='translateX(calc(-50% - '+(rect.right-(window.innerWidth-8))+'px))';}}
+document.querySelectorAll('.vocab').forEach(function(el){el.setAttribute('tabindex','0');el.addEventListener('click',function(e){e.stopPropagation();document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);});el.addEventListener('focus',function(){el.classList.add('active');repositionTip(el);});el.addEventListener('blur',function(){el.classList.remove('active');});el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);}if(e.key==='Escape')el.classList.remove('active');});});document.addEventListener('click',function(){document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});});
+const tocObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{const id=entry.target.getAttribute('id');const tl=document.querySelector('.toc-sidebar a[href="#'+id+'"]');const nl=document.querySelector('.section-nav a[href="#'+id+'"]');if(entry.isIntersecting){if(tl)tl.classList.add('active');if(nl)nl.classList.add('active');}else{if(tl)tl.classList.remove('active');if(nl)nl.classList.remove('active');}});},{threshold:.25});document.querySelectorAll('section[id],div[id="then-now"]').forEach(el=>tocObserver.observe(el));
+(function(){var ao=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');ao.unobserve(entry.target);}});},{threshold:.08});document.querySelectorAll('.section-animate').forEach(function(el){ao.observe(el);});})();
+document.querySelectorAll('img').forEach(function(img){if(img.complete&&img.naturalWidth>0){img.classList.add('loaded');}else{img.addEventListener('load',function(){img.classList.add('loaded');});img.addEventListener('error',function(){img.style.opacity='0.15';img.style.border='2px dashed rgba(255,255,255,0.2)';});}});
 </script>
-
 </body>
 </html>
 <!--
   IMAGE CHECK: Open browser DevTools (F12), go to Console, paste and run:
-
   document.querySelectorAll('img').forEach(img => {
-    if (!img.complete || img.naturalWidth === 0) {
-      console.warn('MISSING:', img.src);
-    } else {
-      console.log('OK:', img.src);
-    }
+    if (!img.complete || img.naturalWidth === 0) { console.warn('MISSING:', img.src); }
+    else { console.log('OK:', img.src); }
   });
 -->
