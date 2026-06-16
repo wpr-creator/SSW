@@ -3,188 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSW S1L08 : NATIONALISM AND THE ROAD TO WWI</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Atkinson+Hyperlegible:wght@400;700&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
+<title>SSW S1L08 : REVOLUTION</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Atkinson+Hyperlegible:wght@400;700&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#0e1f3d;
-  --navy-dark:#070e1f;
-  --gold:#c8a43a;
-  --gold-light:#e8c45a;
-  --cream:#f3edd8;
-  --parchment:#e8dfc0;
-  --ink:#1c1408;
-  --charcoal:#2a2010;
-  --gray:#5a5040;
-  --red:#8a1c1c;
-  --vocab:#7a1818;
-  --green:#044d37;
-  --lime:#d7ff3f;
-  --purple:#32134d;
-  --pink:#ff4fd8;
-  --cyan:#1bd6ff;
-  --orange:#ff8a21;
+  --red:#b01010;
+  --red-dark:#700808;
+  --red-bright:#e02020;
+  --black:#080808;
+  --charcoal:#181818;
+  --iron:#2a2a2a;
+  --cream:#f0ece0;
+  --pale:#e4dfd0;
+  --silver:#c8c0b0;
+  --gold:#c8980a;
+  --ink:#1a1008;
+  --gray:#585050;
+  --vocab:#a01010;
+  --lime:#d8ff30;
+  --teal:#035d60;
+  --white:#faf8f4;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}
-body{background:radial-gradient(ellipse at top,#1a1408 0%,#05030a 80%);font-family:'Atkinson Hyperlegible',Georgia,serif;font-size:18px;line-height:1.88;color:var(--charcoal);overflow-x:hidden}
-#reading-progress{position:fixed;top:0;left:0;height:4px;width:0%;background:var(--gold);z-index:9999;transition:width .1s linear}
-.page-wrap{width:min(920px,100%);margin:0 auto;background:var(--cream);box-shadow:0 0 120px rgba(0,0,0,.98);border-left:6px solid var(--navy-dark);border-right:6px solid var(--navy-dark);overflow-x:hidden}
+body{background:radial-gradient(ellipse at top,#200808 0%,#080404 80%);font-family:'Atkinson Hyperlegible',Arial,sans-serif;font-size:18px;line-height:1.88;color:var(--ink);overflow-x:hidden}
+#reading-progress{position:fixed;top:0;left:0;height:4px;width:0%;background:var(--red-bright);z-index:9999;transition:width .1s linear}
+.page-wrap{width:min(920px,100%);margin:0 auto;background:var(--cream);box-shadow:0 0 120px rgba(0,0,0,.98);border-left:6px solid var(--black);border-right:6px solid var(--black);overflow-x:hidden}
 
 /* HEADER */
-.site-header{position:relative;min-height:470px;overflow:hidden;background:var(--navy-dark);display:flex;align-items:center;text-align:center}
-.header-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32;filter:sepia(.5) contrast(1.1)}
-.site-header:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(7,14,31,.1),rgba(7,14,31,.72) 50%,rgba(7,14,31,.97))}
-.header-inner{position:relative;z-index:2;max-width:820px;margin:0 auto;padding:60px 34px 52px}
-.course-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
-.page-title{font-family:'Playfair Display',serif;font-size:clamp(44px,7vw,74px);font-weight:900;line-height:1.02;color:#fff;text-transform:uppercase;letter-spacing:.03em;text-shadow:2px 6px 28px rgba(0,0,0,.9);margin-bottom:30px}
-.eq-banner{display:inline-block;background:rgba(14,31,61,.92);color:#fff;border:3px solid var(--gold);border-left-width:8px;border-right-width:8px;padding:18px 28px;max-width:760px;font-weight:700;font-size:19px;line-height:1.5;text-align:left}
-.eq-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px}
+.site-header{position:relative;min-height:460px;overflow:hidden;background:var(--black);display:flex;align-items:center;text-align:center}
+.header-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;filter:grayscale(.3) contrast(1.15)}
+.site-header:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,4,4,.1),rgba(8,4,4,.72) 52%,rgba(8,4,4,.97))}
+.header-inner{position:relative;z-index:2;max-width:820px;margin:0 auto;padding:56px 34px 50px}
+.course-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.36em;text-transform:uppercase;color:var(--silver);margin-bottom:18px}
+.page-title{font-family:'Oswald',sans-serif;font-size:clamp(56px,9vw,88px);font-weight:700;line-height:.95;color:#fff;text-transform:uppercase;letter-spacing:.06em;text-shadow:2px 5px 22px rgba(0,0,0,.95);margin-bottom:30px}
+.eq-banner{display:inline-block;background:rgba(176,16,16,.92);color:#fff;border:3px solid var(--gold);border-left-width:8px;border-right-width:8px;padding:18px 28px;max-width:760px;font-weight:700;font-size:19px;line-height:1.5;text-align:left}
+.eq-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
 
 /* NAV */
-.section-nav{position:sticky;top:4px;z-index:100;display:flex;flex-wrap:wrap;justify-content:center;background:var(--navy-dark);border-bottom:4px solid var(--gold);overflow-x:auto}
-.section-nav a{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(232,220,190,.65);text-decoration:none;padding:13px 11px;border-bottom:4px solid transparent;margin-bottom:-4px;white-space:nowrap;transition:color .2s,border-color .2s}
+.section-nav{position:sticky;top:4px;z-index:100;display:flex;flex-wrap:wrap;justify-content:center;background:var(--black);border-bottom:4px solid var(--red);overflow-x:auto}
+.section-nav a{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(200,192,176,.65);text-decoration:none;padding:13px 11px;border-bottom:4px solid transparent;margin-bottom:-4px;white-space:nowrap;transition:color .2s,border-color .2s}
 .section-nav a:hover{color:#fff;border-bottom-color:var(--gold)}
-.section-nav a.active{color:#fff;border-bottom-color:var(--gold);background:rgba(200,164,58,.18)}
+.section-nav a.active{color:#fff;border-bottom-color:var(--gold);background:rgba(176,16,16,.28)}
 
-/* LEXILE */
-#lexile-toggle{display:block;margin:22px auto 30px;padding:10px 26px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;border:2px solid var(--navy);background:transparent;color:var(--navy);transition:background .2s,color .2s}
-#lexile-toggle:hover{background:var(--navy);color:#fff}
-.para-simple{display:none}body.simplified .para-standard{display:none}body.simplified .para-simple{display:block}
+/* LEXILE TOGGLE */
+#lexile-toggle{display:block;margin:22px auto 30px;padding:10px 26px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;border:2px solid var(--red);background:transparent;color:var(--red);transition:background .2s,color .2s}
+#lexile-toggle:hover{background:var(--red);color:#fff}
+.para-simple{display:none}
+body.simplified .para-standard{display:none}
+body.simplified .para-simple{display:block}
 
-/* TOC */
-.toc-sidebar{position:fixed;left:calc(50% - 572px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;font-family:'Barlow Condensed',sans-serif;z-index:50;background:rgba(7,14,31,.93);border-right:2px solid rgba(200,164,58,.4)}
+/* TOC SIDEBAR */
+.toc-sidebar{position:fixed;left:calc(50% - 572px);top:50%;transform:translateY(-50%);width:155px;padding:14px 12px;font-family:'Barlow Condensed',sans-serif;z-index:50;background:rgba(8,4,4,.94);border-right:2px solid rgba(176,16,16,.45)}
 .toc-sidebar .toc-label{display:block;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-.toc-sidebar a{display:block;color:rgba(232,220,190,.55);text-decoration:none;padding:4px 0;font-size:11px;letter-spacing:.05em;text-transform:uppercase;line-height:1.35;transition:color .2s}
+.toc-sidebar a{display:block;color:rgba(200,192,176,.55);text-decoration:none;padding:4px 0;font-size:11px;letter-spacing:.05em;text-transform:uppercase;line-height:1.35;transition:color .2s}
 .toc-sidebar a.active,.toc-sidebar a:hover{color:var(--gold);font-weight:700}
 @media(max-width:1100px){.toc-sidebar{display:none}}
 
 /* TIMELINE */
-.timeline-wrap{max-width:820px;margin:0 auto 0;padding:0 28px}
-.timeline-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:var(--navy);text-align:center;margin:0 0 12px}
-.timeline{padding:22px;background:var(--parchment);border-top:4px solid var(--navy);border-bottom:4px solid var(--navy);display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.tl-node{border-left:3px solid var(--gold);padding-left:12px}
-.tl-date{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--navy);line-height:1.1;margin-bottom:5px}
-.tl-node p{font-size:14.5px;line-height:1.55;color:var(--charcoal);margin:0}
-@media(max-width:720px){.timeline{grid-template-columns:1fr}.tl-node{border-left:3px solid var(--gold);padding-bottom:18px}}
+.timeline-wrap{max-width:820px;margin:0 auto;padding:0 28px}
+.timeline-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:var(--red-dark);text-align:center;margin:0 0 12px}
+.timeline{padding:22px;background:var(--pale);border-top:4px solid var(--red);border-bottom:4px solid var(--red);display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.tl-node{border-left:3px solid var(--red);padding-left:12px}
+.tl-date{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--red-dark);line-height:1.1;margin-bottom:5px}
+.tl-node p{font-size:14.5px;line-height:1.55;color:var(--ink);margin:0}
+@media(max-width:720px){.timeline{grid-template-columns:1fr}.tl-node{padding-bottom:18px}}
 
-/* LAYOUT */
+/* MAIN CONTENT */
 main{max-width:820px;margin:0 auto;padding:0 28px 68px}
 .intro-section{padding:50px 0 30px}
 .intro-section p{font-size:19px;line-height:1.92;margin-bottom:18px}
-.content-section{padding:52px 0 30px;border-top:2px solid rgba(14,31,61,.14)}
+.content-section{padding:50px 0 28px;border-top:3px solid rgba(176,16,16,.2)}
 .section-kicker{display:block;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
-.section-heading{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,46px);font-weight:900;color:var(--navy-dark);text-transform:uppercase;border-left:7px solid var(--gold);padding-left:16px;line-height:1.1;margin-bottom:26px}
-p{margin-bottom:20px;color:var(--charcoal)}
-.real-world{background:var(--parchment);border-left:5px solid var(--navy);padding:17px 21px;margin:30px 0;font-weight:700;color:var(--ink)}
-
-/* IMAGES */
+.section-heading{font-family:'Oswald',sans-serif;font-size:clamp(32px,5vw,48px);font-weight:700;color:var(--black);text-transform:uppercase;border-left:7px solid var(--red);padding-left:16px;line-height:1.05;margin-bottom:26px}
+p{margin-bottom:20px;color:var(--ink)}
 figure{margin:32px 0}
 figure img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 8px 26px rgba(0,0,0,.3)}
-figcaption{font-size:13px;font-style:italic;color:#5a5040;margin-top:8px;line-height:1.45}
+figcaption{font-size:13px;font-style:italic;color:var(--gray);margin-top:8px;line-height:1.45}
 .img-right{float:right;width:42%;margin:6px 0 20px 28px}
 .img-left{float:left;width:42%;margin:6px 28px 20px 0}
-.img-full{float:none;width:100%}
 .clearfix:after{content:"";display:table;clear:both}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0}
-@media(max-width:680px){.img-right,.img-left{float:none;width:100%;margin:20px 0}.two-col{grid-template-columns:1fr}}
+@media(max-width:680px){.img-right,.img-left{float:none;width:100%;margin:20px 0}}
 
 /* VOCAB */
 .vocab{color:var(--vocab);text-decoration:underline dotted var(--vocab);cursor:help;position:relative;font-weight:700}
 .vocab-red{color:var(--vocab);font-weight:700}
-.vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#050505;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:200;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;font-family:'Atkinson Hyperlegible',sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.85);border:1px solid var(--gold)}
+.vocab .tip{display:none;position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:#050505;color:#fff;padding:8px 14px;border-radius:4px;font-size:14px;line-height:1.5;z-index:200;font-style:normal;font-weight:400;pointer-events:none;max-width:280px;white-space:normal;font-family:'Atkinson Hyperlegible',sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.85);border:1px solid var(--red-dark)}
 .vocab:hover .tip,.vocab.active .tip{display:block}
 .vocab:focus{outline:2px solid var(--gold);outline-offset:2px;border-radius:2px}
 
 /* ENGAGEMENT BREAKS */
 .brain-break{font-family:'Barlow Condensed',sans-serif;margin:44px -50px;padding:36px 50px;position:relative;overflow:hidden;max-width:calc(100% + 100px)}
 .bb-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.55em;text-transform:uppercase;margin-bottom:14px;opacity:.88}
-.bb-text{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:500;line-height:1.65;margin:0}
-.dyk-break{background:var(--green);color:#fff;border-left:6px solid var(--lime)}.dyk-break .bb-label{color:var(--lime)}.dyk-break p,.dyk-break span{color:#fff}
-.ff-break{background:#090a12;color:#fff;padding:36px 40px;margin:44px -50px;border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);text-align:center}
-.ff-break .bb-label{color:var(--gold);text-align:center;margin-bottom:8px}
-.ff-context{font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(232,196,90,.8);text-align:center;margin-bottom:28px;font-weight:700}
+.bb-text{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:500;line-height:1.65;margin:0;color:#fff}
+
+/* DID YOU KNOW */
+.dyk-break{background:var(--teal);color:#fff;border-left:6px solid var(--lime)}
+.dyk-break .bb-label{color:var(--lime)}
+
+/* FAST FACTS */
+.ff-break{background:var(--black);color:#fff;padding:36px 40px;margin:44px -50px;border-top:3px solid var(--red-bright);border-bottom:3px solid var(--red-bright);text-align:center}
+.ff-break .bb-label{color:var(--red-bright);text-align:center;margin-bottom:8px}
+.ff-context{font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:rgba(220,180,160,.85);text-align:center;margin-bottom:28px;font-weight:700}
 .ff-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:24px}
 .ff-item{text-align:center;padding:8px 16px;max-width:185px}
-.ff-number{display:block;font-family:'Barlow Condensed',sans-serif;font-size:54px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:8px}
-.ff-desc{display:block;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.08em;color:rgba(232,196,90,.75);max-width:185px;margin:0 auto;line-height:1.5}
-.as-break{background:var(--purple);color:#fff;padding:44px 50px;margin:44px -50px;border-top:3px solid var(--pink);border-bottom:3px solid var(--pink);text-align:center}
-.as-break .bb-label{color:var(--pink)}
-.as-image{max-width:580px;width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(255,79,216,.65);box-shadow:0 8px 32px rgba(0,0,0,.6)}
-.as-caption{font-family:'Barlow Condensed',sans-serif;font-size:14px;color:rgba(255,232,251,.75);line-height:1.6;margin-bottom:28px;display:block;font-style:normal}
+.ff-number{display:block;font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:900;color:var(--red-bright);line-height:1;margin-bottom:8px}
+.ff-desc{display:block;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.08em;color:rgba(220,180,160,.85);max-width:185px;margin:0 auto;line-height:1.5}
+
+/* ART SPOTLIGHT */
+.as-break{background:var(--iron);color:#fff;padding:44px 50px;margin:44px -50px;border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);text-align:center}
+.as-break .bb-label{color:var(--gold)}
+.as-image{max-width:580px;width:100%;display:block;margin:0 auto 16px;border:3px solid rgba(200,152,10,.65);box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.as-caption{font-family:'Barlow Condensed',sans-serif;font-size:14px;color:rgba(240,220,180,.8);line-height:1.6;margin-bottom:28px;display:block;font-style:normal}
 .as-fact{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:500;color:#fff;line-height:1.65;max-width:680px;margin:0 auto;text-align:center}
 
 /* PRIMARY SOURCE */
-.primary-source{background:var(--parchment);border-left:7px solid var(--navy);padding:30px 34px;margin:38px 0;box-shadow:0 6px 20px rgba(0,0,0,.15)}
+.primary-source{background:var(--pale);border-left:7px solid var(--red);padding:30px 34px;margin:38px 0;box-shadow:0 6px 20px rgba(0,0,0,.15)}
 .ps-visual{display:grid;grid-template-columns:minmax(200px,36%) 1fr;gap:24px;align-items:start}
 .ps-visual figure{margin:0}
 .ps-visual img{width:100%;height:auto;display:block;border:3px solid var(--gray);box-shadow:0 6px 18px rgba(0,0,0,.25)}
-.ps-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--navy);margin-bottom:12px;display:block}
-.ps-quote{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;line-height:1.65;color:var(--ink);margin-bottom:14px}
-.ps-attribution{font-size:13px;font-style:italic;color:#5a4820;margin-bottom:12px}
-.ps-narrator{border-top:1px solid rgba(14,31,61,.25);padding-top:12px;font-size:15px;line-height:1.6;font-weight:700;color:var(--ink)}
+.ps-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:12px;display:block}
+.ps-quote{font-size:20px;font-style:italic;line-height:1.65;color:var(--ink);margin-bottom:14px}
+.ps-attribution{font-size:13px;font-style:italic;color:var(--gray);margin-bottom:12px}
+.ps-narrator{border-top:1px solid rgba(88,80,80,.28);padding-top:12px;font-size:15px;line-height:1.6;font-weight:700;color:var(--ink)}
 @media(max-width:700px){.ps-visual{grid-template-columns:1fr}}
 
 /* THEN AND NOW */
-.tn-break{background:var(--navy-dark);color:#fff;padding:36px 50px;margin:30px -50px 0}
-.tn-break .bb-label{color:var(--gold-light);text-align:center;display:block;margin-bottom:20px}
-.tn-payoff{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3.5vw,30px);font-weight:900;line-height:1.32;text-align:center;color:var(--gold-light);margin:0 auto 28px;max-width:720px}
+.tn-break{background:var(--black);color:#fff;padding:36px 50px;margin:30px -50px 0}
+.tn-break .bb-label{color:var(--gold);text-align:center;display:block;margin-bottom:20px}
+.tn-payoff{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3.5vw,30px);font-weight:900;line-height:1.32;text-align:center;color:var(--gold);margin:0 auto 28px;max-width:720px}
 .tn-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px}
 .tn-item{text-align:center}
-.tn-era-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold-light);margin-bottom:10px;font-weight:900}
-.tn-item img{width:100%;display:block;border:2px solid rgba(200,164,58,.45)}
-.tn-caption{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-style:italic;color:rgba(232,220,190,.7);margin-top:8px;line-height:1.4}
-.tn-text-block{margin-top:24px;border-top:1px solid rgba(200,164,58,.28);padding-top:20px}
-.tn-text-block h3{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-light);margin:18px 0 8px}
+.tn-era-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:900}
+.tn-item img{width:100%;display:block;border:2px solid rgba(200,152,10,.38)}
+.tn-caption{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-style:italic;color:rgba(200,192,176,.7);margin-top:8px;line-height:1.4}
+.tn-text-block{margin-top:24px;border-top:1px solid rgba(200,152,10,.25);padding-top:20px}
+.tn-text-block h3{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin:18px 0 8px}
 .tn-text-block p{font-family:'Barlow Condensed',sans-serif;font-size:17px;line-height:1.65;margin-bottom:12px;color:#fff}
 
-/* ANIMATION */
-img{opacity:0;transition:opacity .4s ease}img.loaded{opacity:1}
+/* IMAGE AND ANIMATION */
+img{opacity:0;transition:opacity .4s ease}
+img.loaded{opacity:1}
 .section-animate{opacity:0;transform:translateY(24px);transition:opacity .45s ease-out,transform .45s ease-out}
 .section-animate.visible{opacity:1;transform:translateY(0)}
 @media(prefers-reduced-motion:reduce){.section-animate{opacity:1;transform:none;transition:none}}
 
 /* FOOTER */
-footer{background:var(--navy-dark);color:rgba(232,220,190,.5);text-align:center;padding:24px 30px;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;border-top:5px solid var(--gold)}
+footer{background:var(--black);color:rgba(200,192,176,.45);text-align:center;padding:24px 30px;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;border-top:5px solid var(--red)}
 
 /* RESPONSIVE */
 @media(max-width:880px){.page-wrap{border:0}main{padding:0 22px 50px}.timeline-wrap{padding:0 22px}.header-inner{padding:44px 22px 42px}.brain-break,.ff-break,.as-break,.tn-break{margin:36px 0;padding:28px 22px;max-width:100%}.section-nav a{font-size:11px;padding:11px 8px}}
-@media(max-width:600px){.page-title{font-size:40px}.section-heading{font-size:30px}.ff-number{font-size:44px}.as-fact{font-size:18px}.tn-pair{grid-template-columns:1fr}.tn-break{padding:28px 22px;margin:30px 0 0}.bb-text{font-size:18px}}
+@media(max-width:600px){.page-title{font-size:50px}.section-heading{font-size:30px}.ff-number{font-size:44px}.as-fact{font-size:18px}.tn-pair{grid-template-columns:1fr}.tn-break{padding:28px 22px;margin:30px 0 0}.bb-text{font-size:18px}}
 @media(max-width:980px){.brain-break,.ff-break,.as-break,.tn-break{margin-left:0;margin-right:0;padding-left:28px;padding-right:28px;max-width:100%}}
-.dyk-break p,.dyk-break span,.ff-break p,.ff-break span,.as-break p,.as-break span,.tn-break p,.tn-break span{color:#fff}
-.ff-context,.ff-desc{color:rgba(232,196,90,.8)}.as-caption{color:rgba(255,232,251,.75)}.tn-caption{color:rgba(232,220,190,.7)}
+.ff-context,.ff-desc{color:rgba(220,180,160,.85)}.as-caption{color:rgba(240,220,180,.8)}.tn-caption{color:rgba(200,192,176,.7)}
 </style>
 </head>
 <body>
 <div id="reading-progress"></div>
 <div class="page-wrap">
 
+<!-- HEADER -->
 <header class="site-header">
   <!--
-    FILENAME: S1L08_GaribaldiRedShirts.jpg
+    FILENAME: S1L08_BolshevikCrowd1917.jpg
     PLACE IN: images/S1/L08/
     PRIORITY: ESSENTIAL
-    FIND: Giuseppe Garibaldi and his Red Shirts, 1860: troops marching or landing in Sicily/southern Italy during the unification campaign; dramatic military scene
-    SEARCH: Garibaldi Red Shirts 1860 Sicily unification Italy Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Giuseppe_Garibaldi
+    FIND: Bolshevik revolutionary crowd or Red Guards in Petrograd,
+          October/November 1917; workers and soldiers marching with
+          red banners during the October Revolution; the emotional
+          center of the lesson — what revolution looks like in the
+          streets
+    SEARCH: Bolshevik October Revolution 1917 Petrograd crowd Red
+            Guards soldiers street Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/October_Revolution
   -->
-  <img src="images/S1/L08/S1L08_GaribaldiRedShirts.jpg" alt="Garibaldi and his Red Shirts during the Italian unification campaign, 1860" class="header-bg">
+  <img src="images/S1/L08/S1L08_BolshevikCrowd1917.jpg" alt="Bolshevik revolutionary crowd in Petrograd during the October Revolution, 1917" class="header-bg">
   <div class="header-inner">
-    <p class="course-label">World History : Semester 1 : Lesson 08 : Standards 10.2 / 10.5</p>
-    <h1 class="page-title">Nationalism &amp;<br>the Road to WWI</h1>
+    <p class="course-label">WORLD HISTORY &bull; SEMESTER 1 &bull; LESSON 08 &bull; STANDARD 10.6</p>
+    <h1 class="page-title">REVOLUTION</h1>
     <div class="eq-banner">
-      <span class="eq-label">Essential Question</span>
-      How did nationalism spread across Europe after Napoleon, get repressed, and finally explode into the 20th century?
+      <span class="eq-label">ESSENTIAL QUESTION</span>
+      How did a world war break a 300-year empire and hand power to a group of radicals that nobody expected to win?
     </div>
   </div>
 </header>
 
+<!-- NAV -->
 <nav class="section-nav">
-  <a href="#introduction">INTRODUCTION</a>
-  <a href="#napoleon-vienna">NAPOLEON AND VIENNA</a>
-  <a href="#revolutions-rise">REVOLUTIONS AND RISE</a>
-  <a href="#balkans-powder-keg">BALKANS POWDER KEG</a>
-  <a href="#road-to-war">ROAD TO WAR</a>
+  <a href="#introduction">INTRO</a>
+  <a href="#broken-empire">A BROKEN EMPIRE</a>
+  <a href="#two-revolutions">TWO REVOLUTIONS</a>
+  <a href="#what-it-cost">WHAT IT COST</a>
+  <a href="#new-world">A NEW KIND OF POWER</a>
   <a href="#primary-source-moment">SOURCE</a>
   <a href="#then-now">THEN AND NOW</a>
 </nav>
@@ -192,24 +202,40 @@ footer{background:var(--navy-dark);color:rgba(232,220,190,.5);text-align:center;
 <aside class="toc-sidebar">
   <span class="toc-label">ON THIS PAGE</span>
   <a href="#introduction">Introduction</a>
-  <a href="#napoleon-vienna">Napoleon &amp; Vienna</a>
-  <a href="#revolutions-rise">Revolutions &amp; Rise</a>
-  <a href="#balkans-powder-keg">Balkans Powder Keg</a>
-  <a href="#road-to-war">Road to War</a>
+  <a href="#broken-empire">A Broken Empire</a>
+  <a href="#two-revolutions">Two Revolutions</a>
+  <a href="#what-it-cost">What It Cost</a>
+  <a href="#new-world">A New Kind of Power</a>
   <a href="#primary-source-moment">Source</a>
   <a href="#then-now">Then &amp; Now</a>
 </aside>
 
 <main>
 
+<!-- TIMELINE -->
 <div class="timeline-wrap">
-  <p class="timeline-label">NATIONALISM AND EUROPE : 1815 TO 1914</p>
+  <p class="timeline-label">THE RUSSIAN REVOLUTION &bull; 1914 TO 1922</p>
   <div class="timeline">
-    <div class="tl-node"><div class="tl-date">1815</div><p>Congress of Vienna redraws Europe after Napoleon; suppresses nationalist movements to restore old order.</p></div>
-    <div class="tl-node"><div class="tl-date">1848</div><p>Revolutions sweep France, Germany, Austria, and Italy: briefly threatening every major monarchy before being crushed.</p></div>
-    <div class="tl-node"><div class="tl-date">1871</div><p>Italy unifies under Garibaldi and Cavour; Germany unifies under Bismarck: permanently shifting the European balance of power.</p></div>
-    <div class="tl-node"><div class="tl-date">1878–1913</div><p>Balkan Wars of independence from the Ottoman Empire; Serbia, Bulgaria, and Romania emerge as new nationalist states.</p></div>
-    <div class="tl-node"><div class="tl-date">1914</div><p>Assassination of Franz Ferdinand in Sarajevo: the spark that lights the powder keg nationalism had built for a century.</p></div>
+    <div class="tl-node">
+      <div class="tl-date">1914</div>
+      <p>Russia enters World War I. The army is massive but badly equipped. Within two years, over two million Russian soldiers are dead.</p>
+    </div>
+    <div class="tl-node">
+      <div class="tl-date">Feb. 1917</div>
+      <p>Bread riots in Petrograd turn into a revolution. Tsar Nicholas II abdicates. The 300-year Romanov dynasty ends in a week.</p>
+    </div>
+    <div class="tl-node">
+      <div class="tl-date">Oct. 1917</div>
+      <p>Lenin's Bolsheviks seize the government in a near-bloodless coup. A second revolution, eight months after the first.</p>
+    </div>
+    <div class="tl-node">
+      <div class="tl-date">1918–21</div>
+      <p>Civil war between the Red Army and anti-Bolshevik forces. An estimated seven million people die. The Tsar and his family are executed.</p>
+    </div>
+    <div class="tl-node">
+      <div class="tl-date">1922</div>
+      <p>The Union of Soviet Socialist Republics is officially formed. The world's first communist state begins reshaping global politics.</p>
+    </div>
   </div>
 </div>
 
@@ -217,259 +243,241 @@ footer{background:var(--navy-dark);color:rgba(232,220,190,.5);text-align:center;
 
 <!-- INTRODUCTION -->
 <section class="intro-section section-animate" id="introduction">
-  <p class="para-standard">On June 28, 1914, nineteen-year-old Gavrilo Princip stepped out of a shop in Sarajevo and fired two shots into an open car. He killed Archduke Franz Ferdinand, heir to the <span class="vocab" tabindex="0">Austro-Hungarian Empire<span class="tip">A large Central European empire that ruled many ethnic groups until World War I.</span></span>. Princip wanted a homeland where <span class="vocab" tabindex="0">South Slavic<span class="tip">A group of related Slavic peoples in southeastern Europe, including Serbs, Croats, and Bosnians.</span></span> people could govern themselves. That dream had a name: <span class="vocab" tabindex="0">nationalism<span class="tip">The belief that people with shared language, culture, or history should govern themselves.</span></span>.</p>
-  <p class="para-simple">On June 28, 1914, a nineteen-year-old named Gavrilo Princip fired two shots into a car in Sarajevo. He killed Archduke Franz Ferdinand, the next ruler of the Austro-Hungarian Empire. Princip wanted South Slavic people to have their own country. That dream was called nationalism.</p>
-  <p class="para-standard">Nationalism was not new in 1914. For nearly one hundred years, European leaders had tried to control it, silence it, or use it for their own power. Some people saw nationalism as freedom. Others saw it as a threat that could destroy empires. By 1914, that tension was ready to explode.</p>
-  <p class="para-simple">Nationalism had been growing for about one hundred years. Some people saw it as freedom. Kings and empires saw it as dangerous. By 1914, the pressure had built up so much that one event could set off a war.</p>
+
+  <p class="para-standard">On the morning of March 8, 1917, women factory workers in Petrograd walked off the job. They were hungry. Bread was being rationed. Their husbands were dying in the trenches of World War I. They took to the streets and started shouting. By the end of the week, the most powerful emperor in Europe had resigned and the 300-year-old Romanov dynasty was gone. Nobody planned it. Nobody predicted it. It just happened.</p>
+  <p class="para-simple">On March 8, 1917, women factory workers in Petrograd walked off the job. They were hungry. Bread was being rationed. Their husbands were dying in the war. They took to the streets and started shouting. By the end of the week, the most powerful emperor in Europe had resigned. The 300-year-old Romanov dynasty was finished. Nobody planned this. It just happened.</p>
+
+  <p class="para-standard">But that was only the first revolution. Eight months later, a second group seized power: a small, disciplined political party called the Bolsheviks, led by a man named Vladimir Lenin. By 1922 they had won a brutal civil war and built the world's first communist state. Russia would never be the same, and neither would the world. This lesson tells the story of how a single war cracked open an empire and let an entirely new kind of government pour out.</p>
+  <p class="para-simple">But that was only the first revolution. Eight months later, a small political party called the Bolsheviks seized power. Their leader was Vladimir Lenin. By 1922 they had won a brutal civil war and built the world's first communist state. Russia was never the same. Neither was the world. This lesson tells the story of how a war cracked open an empire and let a new kind of government pour out.</p>
+
 </section>
 
-<!-- SECTION 1: NAPOLEON AND VIENNA -->
-<section class="content-section clearfix section-animate" id="napoleon-vienna">
-  <span class="section-kicker">CHAPTER ONE</span>
-  <h2 class="section-heading">NAPOLEON AND THE CONGRESS OF VIENNA</h2>
+<!-- SECTION 1: A BROKEN EMPIRE -->
+<section class="content-section clearfix section-animate" id="broken-empire">
+  <span class="section-kicker">PHASE ONE</span>
+  <h2 class="section-heading">A BROKEN EMPIRE</h2>
 
   <!--
-    FILENAME: S1L08_CongressOfVienna.jpg
+    FILENAME: S1L08_RussianTrenchesWWI.jpg
     PLACE IN: images/S1/L08/
     PRIORITY: ESSENTIAL
-    FIND: Congress of Vienna, 1814-1815: painting or engraving of delegates gathered around a table; Jean-Baptiste Isabey painting is well-known
-    SEARCH: Congress of Vienna 1814 1815 painting delegates Isabey Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Congress_of_Vienna
+    FIND: Russian soldiers in WWI trenches or marching to the front,
+          1914-1917; showing the scale and suffering of the Russian
+          war effort; documentary register, serious not glorifying
+    SEARCH: Russian soldiers World War I trenches Eastern Front 1915
+            1916 Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/World_War_I
   -->
-  <figure class="img-right">
-    <img src="images/S1/L08/S1L08_CongressOfVienna.jpg" alt="The Congress of Vienna, 1814-1815, painting by Jean-Baptiste Isabey">
-    <figcaption>The Congress of Vienna, 1814–1815, painted by Jean-Baptiste Isabey. The great powers of Europe gathered to restore the old order after Napoleon's defeat: drawing new maps without asking the people who lived there. Wikimedia Commons.</figcaption>
+  <figure class="img-right clearfix">
+    <img src="images/S1/L08/S1L08_RussianTrenchesWWI.jpg" alt="Russian soldiers in WWI trenches on the Eastern Front, circa 1915-1916">
+    <figcaption>Russian soldiers on the Eastern Front, circa 1915-1916. By 1917, Russia had suffered over two million military deaths and five million wounded in a war with no end in sight. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard">Napoleon Bonaparte changed Europe in two opposite ways. His armies conquered lands and forced people to live under French control. At the same time, his armies spread ideas from the French Revolution: liberty, equality, and the belief that people could govern themselves. Many Europeans hated French occupation, but they remembered those ideas.</p>
-  <p class="para-simple">Napoleon changed Europe in two ways. His armies conquered many places and controlled people. But they also spread ideas from the French Revolution. One big idea was that people should be able to govern themselves.</p>
+  <p class="para-standard">In 1914, <span class="vocab" tabindex="0">Tsar Nicholas II<span class="tip">The last emperor of Russia, who ruled with absolute power and was overthrown in 1917.</span></span> ruled an empire of 165 million people spanning eleven time zones. It was the largest country on earth by land. It was also deeply troubled. Most Russians were desperately poor peasant farmers. The government was an absolute <span class="vocab" tabindex="0">autocracy<span class="tip">A system of government where one person holds total, unlimited power.</span></span> with no elected parliament and no way for ordinary people to influence decisions. When Nicholas took Russia into World War I, he did not ask anyone. He just did it.</p>
+  <p class="para-simple">In 1914, Tsar Nicholas II ruled an empire of 165 million people. It was the largest country on earth. But most Russians were desperately poor. The government was a total autocracy. One person held all the power. There was no parliament. When Nicholas took Russia into World War I, he made that decision alone.</p>
 
-  <p class="para-standard">After Napoleon fell in 1815, Europe's rulers feared those ideas. They knew nationalism could encourage Germans, Italians, Poles, and others to demand their own countries. So they gathered at the Congress of Vienna. Their goal was to restore the old order and stop future revolutions.</p>
-  <p class="para-simple">After Napoleon lost, Europe's rulers were afraid. They knew people might ask for their own countries. German, Italian, and Polish nationalists could challenge kings and empires. So leaders met at the Congress of Vienna to bring back the old order.</p>
+  <p class="para-standard">The war exposed everything that was wrong with Russia. The army was enormous but badly equipped: soldiers were sometimes sent to the front without rifles and told to pick up weapons from the dead. Supply lines collapsed. Food stopped reaching cities. By 1917, more than two million Russian soldiers were dead, five million more were wounded, and the country was starving. Soldiers began deserting by the hundreds of thousands.</p>
+  <p class="para-simple">The war exposed everything wrong with Russia. Soldiers were sometimes sent to the front without rifles. Supply lines collapsed. Food stopped reaching cities. By 1917, more than two million Russian soldiers were dead. Five million more were wounded. The country was starving. Soldiers began deserting by the hundreds of thousands.</p>
 
-  <p class="para-standard">The <span class="vocab" tabindex="0">Congress of Vienna<span class="tip">An 1814 to 1815 meeting where European powers redrew borders after Napoleon's defeat.</span></span> was led by Austrian diplomat Klemens von Metternich. The great powers: Austria, Prussia, Russia, Britain, and France, redrew Europe's map to protect monarchies. They did not ask what local people wanted. Poles were divided among empires, Germans stayed split into many states, and Italians remained divided across kingdoms and foreign rule.</p>
-  <p class="para-simple">The Congress of Vienna was a meeting of powerful countries after Napoleon lost. Leaders redrew the map of Europe to protect kings and empires. They did not ask local people what they wanted. Poles, Germans, and Italians stayed divided.</p>
+  <p class="para-standard">Nicholas refused to change anything. He believed God had chosen him to rule and that questioning his decisions was a form of sacrilege. His wife, Alexandra, was deeply influenced by a mysterious faith healer named <span class="vocab" tabindex="0">Rasputin<span class="tip">A controversial mystic who had enormous influence over the Russian royal family, which further damaged the Tsar's reputation with the public and the nobility.</span></span>, whose influence over the royal family scandalized the country. By early 1917, even the nobles and military generals who had always supported the Tsar had lost faith in him.</p>
+  <p class="para-simple">Nicholas refused to change anything. He believed God had chosen him to rule. His wife Alexandra trusted a mysterious man named Rasputin, whose influence over the royal family shocked the country. By early 1917, even the nobles and generals who had always supported the Tsar no longer believed in him.</p>
 
-  <p class="para-standard">To Metternich and other conservative leaders, nationalism looked dangerous. If people believed borders should match language, culture, or ethnic identity, old empires could break apart. The leaders wanted stability, not self-government. For many Europeans, that meant their national hopes were pushed down instead of solved.</p>
-  <p class="para-simple">To conservative leaders, nationalism looked dangerous. If people wanted borders based on language or culture, old empires could fall apart. Leaders wanted stability. Many people who wanted their own countries were told no.</p>
-
-  <p class="para-standard">The result was the <span class="vocab" tabindex="0">Concert of Europe<span class="tip">An agreement among major European powers to work together against revolutions.</span></span>. The major powers agreed to stop nationalist or revolutionary uprisings wherever they appeared. This system worked for a while because armies could crush protests. But it could not erase the idea that people deserved to govern themselves.</p>
-  <p class="para-simple">The result was the Concert of Europe. Powerful countries agreed to stop revolutions together. Their armies could crush protests for a while. But they could not erase the idea of self-government.</p>
-
-  <p class="real-world para-standard">Real-world connection: The Congress of Vienna shows what can happen when powerful leaders draw borders for their own convenience. If borders ignore local identities, conflict can last for generations. Similar problems appeared again after World War I and during decolonization.</p>
-  <p class="real-world para-simple">Real-world connection: Powerful leaders often draw borders to help themselves. When they ignore the people who live there, problems can last for many years. This happened again after World War I and during decolonization.</p>
 </section>
 
-<!-- DID YOU KNOW -->
+<!-- DID YOU KNOW — placed after Lenin's role is about to be introduced, before Section 2 -->
 <div class="brain-break dyk-break section-animate">
   <span class="bb-label">DID YOU KNOW</span>
-  <p class="bb-text">The Congress of Vienna became famous for its balls, parties, and banquets. One diplomat joked that "the Congress dances, but does not progress." While kings and diplomats danced, they redrew the map of an entire continent.</p>
+  <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
+    <div style="flex:1;min-width:200px;">
+      <!--
+        FILENAME: S1L08_LeninSealedTrain.jpg
+        PLACE IN: images/S1/L08/
+        PRIORITY: SUPPORTING
+        FIND: Vladimir Lenin portrait or photograph, circa 1917; ideally
+              a photograph connected to his return to Russia or his
+              political activity in 1917; not a later Soviet propaganda
+              portrait
+        SEARCH: Vladimir Lenin photograph 1917 portrait Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Vladimir_Lenin
+      -->
+      <img src="images/S1/L08/S1L08_LeninSealedTrain.jpg" alt="Vladimir Lenin, circa 1917" style="width:100%;display:block;border:3px solid var(--lime);box-shadow:0 4px 18px rgba(0,0,0,0.5);">
+      <p style="font-size:12px;margin-top:8px;opacity:.8;font-family:'Barlow Condensed',sans-serif;color:#fff;">Vladimir Lenin, circa 1917. Source: Wikimedia Commons.</p>
+    </div>
+    <p class="bb-text" style="flex:1;min-width:200px;">When the February Revolution broke out, Lenin was not even in Russia. He was living in exile in Switzerland and had been for years. Germany — wanting to knock Russia out of the war — secretly arranged to transport him across Europe in a sealed train car, like a political weapon in a box. Lenin arrived at Petrograd's Finland Station on April 16, 1917, and within six months his party had seized the government. Germany's plan worked almost exactly as intended.</p>
+  </div>
 </div>
 
-<!-- SECTION 2: REVOLUTIONS AND RISE -->
-<section class="content-section clearfix section-animate" id="revolutions-rise">
-  <span class="section-kicker">CHAPTER TWO</span>
-  <h2 class="section-heading">REVOLUTIONS, UNIFICATION, AND A NEW EUROPE</h2>
+<!-- SECTION 2: TWO REVOLUTIONS -->
+<section class="content-section clearfix section-animate" id="two-revolutions">
+  <span class="section-kicker">PHASE TWO</span>
+  <h2 class="section-heading">TWO REVOLUTIONS IN ONE YEAR</h2>
 
   <!--
-    FILENAME: S1L08_Revolutions1848Paris.jpg
+    FILENAME: S1L08_TsarAbdicates1917.jpg
     PLACE IN: images/S1/L08/
     PRIORITY: ESSENTIAL
-    FIND: 1848 revolution in Paris: barricades in the streets, citizens fighting, dramatic scene from the February or June Days uprising
-    SEARCH: 1848 revolution Paris barricades France Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Revolutions_of_1848
+    FIND: Tsar Nicholas II abdicating or the February Revolution crowds
+          in Petrograd, March 1917; workers or soldiers gathered in
+          the streets after the fall of the Tsar; must be different from
+          the header image which shows the October Revolution
+    SEARCH: February Revolution 1917 Petrograd crowds Tsar Nicholas
+            abdication Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/February_Revolution
   -->
-  <figure class="img-left">
-    <img src="images/S1/L08/S1L08_Revolutions1848Paris.jpg" alt="Barricades during the 1848 revolution in Paris, France">
-    <figcaption>Barricades during the 1848 revolution in Paris. The revolutions of 1848 swept across France, the German states, Austria, and Italy: briefly threatening every major European monarchy. Wikimedia Commons.</figcaption>
+  <figure class="img-left clearfix">
+    <img src="images/S1/L08/S1L08_TsarAbdicates1917.jpg" alt="Crowds in Petrograd during the February Revolution, March 1917, following the abdication of Tsar Nicholas II">
+    <figcaption>Crowds in Petrograd after the Tsar's abdication, March 1917. The February Revolution was spontaneous and leaderless. Within days, 300 years of Romanov rule had ended. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard">In 1848, uprisings broke out across Europe almost at the same time. A revolution in Paris overthrew the French monarchy. Soon revolts spread to the German states, the Austrian Empire, and the Italian peninsula. Students, workers, and middle-class professionals demanded constitutions, national unity, and <span class="vocab" tabindex="0">self-determination<span class="tip">The right of people to choose their government and political future.</span></span>.</p>
-  <p class="para-simple">In 1848, revolutions broke out across Europe. People protested in France, Germany, Austria, and Italy. Students, workers, and professionals wanted constitutions and national unity. They wanted the right to choose their own future.</p>
+  <p class="para-standard">The February Revolution began not with a plan but with hunger. On March 8, 1917, women textile workers in Petrograd went on strike over bread shortages. Other workers joined them. Soldiers sent to break up the protests refused to fire on the crowds and joined the demonstrators instead. Within five days, the government had no army to enforce its orders. Nicholas II abdicated on March 15. A <span class="vocab" tabindex="0">Provisional Government<span class="tip">A temporary government that took power after the Tsar resigned in 1917, intending to hold elections and continue the war.</span></span> of liberal politicians took power and promised democratic elections.</p>
+  <p class="para-simple">The February Revolution began with hunger. On March 8, 1917, women workers in Petrograd went on strike over bread shortages. More workers joined them. Soldiers sent to stop the protests refused and joined the crowds instead. Within five days the government had no army to enforce its orders. Nicholas II resigned on March 15. A Provisional Government of politicians took power and promised elections.</p>
 
-  <p class="para-standard">For a short time, the old order looked weak. Then the monarchies regrouped and called in their armies. One by one, the revolutions were crushed. By 1849, every major uprising had failed, but the desire for national unity had not disappeared.</p>
-  <p class="para-simple">For a few months, it looked like the old kings might fall. Then the kings used armies to stop the revolutions. By 1849, the uprisings had failed. But the desire for national unity stayed alive.</p>
+  <p class="para-standard">The Provisional Government made one fatal mistake: it kept Russia in the war. Ordinary Russians were exhausted and wanted peace. Lenin saw the opening. When his sealed train delivered him to Petrograd in April, he immediately declared that the Provisional Government should be overthrown and the war ended at once. His <span class="vocab" tabindex="0">Bolsheviks<span class="tip">Lenin's radical political party that believed in immediate communist revolution, worker control of the government, and ending the war.</span></span> were a small minority, but they were disciplined, organized, and they said exactly what millions of desperate people wanted to hear: land, peace, bread.</p>
+  <p class="para-simple">The Provisional Government made one fatal mistake: it kept Russia in the war. Ordinary Russians were exhausted and wanted peace. Lenin saw the opening. When he arrived in April, he immediately called for the Provisional Government to be overthrown. His Bolsheviks were small in number but very organized. They said exactly what millions of desperate people wanted to hear: land, peace, bread.</p>
 
-  <p class="para-standard">The failure of 1848 changed nationalism. Before 1848, many nationalists were idealistic. They believed free nations could live peacefully once they escaped old monarchies. After the revolutions failed, nationalism became harder, more focused on ethnic identity, and more willing to use force.</p>
-  <p class="para-simple">The failure of 1848 changed nationalism. Before 1848, many nationalists were idealistic. They believed free countries could live peacefully. After the revolutions failed, more nationalists believed force might be necessary.</p>
+  <p class="para-standard">On the night of October 25, 1917, Bolshevik forces seized control of key buildings in Petrograd: railway stations, telephone exchanges, bridges, and finally the Winter Palace. The Provisional Government fell in a matter of hours. It was less a popular uprising than a precise military operation. Lenin announced the next morning that the workers and peasants had taken power. In reality, his party had.</p>
+  <p class="para-simple">On the night of October 25, 1917, Bolshevik forces seized key buildings in Petrograd: train stations, telephone exchanges, bridges, and the Winter Palace. The Provisional Government fell in hours. It was more a military operation than a popular uprising. Lenin announced that workers and peasants had taken power. In reality, his party had.</p>
 
-  <p class="para-standard">A new political idea gained influence: <span class="vocab" tabindex="0">Realpolitik<span class="tip">Politics based on power and strategy instead of ideals or moral arguments.</span></span>. Realpolitik meant using power, strategy, and timing instead of relying on speeches or ideals. The leader who used this approach most successfully was Otto von Bismarck of Prussia. He believed German unity would come through war and diplomacy, not democratic debate.</p>
-  <p class="para-simple">A new idea called Realpolitik became important. It meant using power and strategy instead of just ideals. Otto von Bismarck of Prussia used this approach. He believed Germany would unite through war and diplomacy, not speeches.</p>
-
-  <!--
-    FILENAME: S1L08_BismarckPortrait.jpg
-    PLACE IN: images/S1/L08/
-    PRIORITY: ESSENTIAL
-    FIND: Otto von Bismarck portrait: formal photograph or painting, circa 1870s, showing him in Prussian military uniform or statesman's attire
-    SEARCH: Otto von Bismarck portrait photograph 1870s Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Otto_von_Bismarck
-  -->
-  <figure class="img-right">
-    <img src="images/S1/L08/S1L08_BismarckPortrait.jpg" alt="Otto von Bismarck, Chancellor of Prussia and Germany, circa 1870s">
-    <figcaption>Otto von Bismarck, Minister-President of Prussia and first Chancellor of the German Empire. He unified Germany through three carefully engineered wars between 1864 and 1871. Wikimedia Commons.</figcaption>
-  </figure>
-
-  <p class="para-standard"><span class="vocab" tabindex="0">Bismarck<span class="tip">The Prussian statesman who unified Germany through war and diplomacy.</span></span> became Prussia's Minister-President in 1862. He set out to unify the German states through "blood and iron," his phrase for military power. He led Prussia into three wars: against Denmark, Austria, and France. Each war helped Prussia gain more control over the German states.</p>
-  <p class="para-simple">Bismarck became one of Prussia's most powerful leaders in 1862. He wanted to unite Germany through "blood and iron," meaning military power. He led Prussia into three wars. Each war made Prussia stronger.</p>
-
-  <p class="para-standard">In 1871, after France was defeated, Bismarck declared the German Empire in the Hall of Mirrors at Versailles. This was not an accident. Versailles was one of France's most important royal palaces, so the announcement humiliated France. The new Germany immediately became the strongest power on the European continent.</p>
-  <p class="para-simple">In 1871, Bismarck announced the new German Empire inside the French palace of Versailles. This humiliated France after its defeat. The new Germany became the strongest country in Europe. Every other European power had to respond.</p>
-
-  <p class="para-standard">Italy unified during the same period through a different partnership. <span class="vocab" tabindex="0">Garibaldi<span class="tip">The military leader who helped unify Italy with his volunteer Red Shirts.</span></span> led volunteer fighters called the Red Shirts in southern Italy. Cavour, a skilled political leader, handled diplomacy in the north. By 1871, Italy was unified for the first time since ancient Rome.</p>
-  <p class="para-simple">Italy unified during the same years. Garibaldi led volunteer fighters called the Red Shirts in southern Italy. Cavour handled politics and diplomacy in the north. By 1871, Italy was one country for the first time in centuries.</p>
-
-  <p class="para-standard">Germany and Italy changed the map of Europe. Both were new nation-states created through war, diplomacy, and nationalist belief. Their success proved that nationalism could defeat the old order. It also showed that nationalism could make Europe more unstable, not more peaceful.</p>
-  <p class="para-simple">Germany and Italy changed Europe. Both became new nation-states through war, diplomacy, and nationalism. Their success showed that nationalism could defeat old empires and kingdoms. It also made Europe less stable.</p>
-
-  <p class="real-world para-standard">Real-world connection: German and Italian unification became a model for other nationalist movements. People in the Balkans, Asia, and Africa later used similar arguments for independence. But the model also connected nationalism with military power.</p>
-  <p class="real-world para-simple">Real-world connection: Germany and Italy became examples for other nationalist movements. People in the Balkans, Asia, and Africa later demanded independence too. But this also linked nationalism with war.</p>
 </section>
 
-<!-- FAST FACTS -->
+<!-- FAST FACTS — placed after two revolutions are understood -->
 <div class="brain-break ff-break section-animate">
   <span class="bb-label">FAST FACTS</span>
-  <p class="ff-context">NATIONALISM BY THE NUMBERS, 1815&ndash;1914</p>
+  <p class="ff-context">THE COST OF REVOLUTION AND CIVIL WAR</p>
   <div class="ff-grid">
     <div class="ff-item">
-      <span class="ff-number">39</span>
-      <span class="ff-desc">German states existed before Bismarck helped unite them into one German Empire in 1871</span>
+      <span class="ff-number">2M+</span>
+      <span class="ff-desc">Russian soldiers killed in World War I before the revolution — a toll that destroyed public support for the Tsar and the war</span>
     </div>
     <div class="ff-item">
-      <span class="ff-number">50+</span>
-      <span class="ff-desc">years the Concert of Europe tried to suppress nationalist movements after 1815</span>
+      <span class="ff-number">7M</span>
+      <span class="ff-desc">people estimated to have died in the Russian Civil War between 1918 and 1921, mostly from disease, famine, and mass executions</span>
     </div>
     <div class="ff-item">
-      <span class="ff-number">3</span>
-      <span class="ff-desc">wars Bismarck used between 1864 and 1871 to unify Germany under Prussian leadership</span>
+      <span class="ff-number">300</span>
+      <span class="ff-desc">years the Romanov dynasty had ruled Russia before collapsing in a single week of bread riots in March 1917</span>
     </div>
     <div class="ff-item">
-      <span class="ff-number">99</span>
-      <span class="ff-desc">years passed between the Congress of Vienna in 1815 and the start of World War I in 1914</span>
+      <span class="ff-number">7</span>
+      <span class="ff-desc">members of the Romanov royal family executed by the Bolsheviks in a basement in Yekaterinburg on July 17, 1918</span>
     </div>
   </div>
 </div>
 
-<!-- SECTION 3: BALKANS POWDER KEG -->
-<section class="content-section clearfix section-animate" id="balkans-powder-keg">
-  <span class="section-kicker">CHAPTER THREE</span>
-  <h2 class="section-heading">THE BALKANS: POWDER KEG OF EUROPE</h2>
+<!-- SECTION 3: WHAT IT COST -->
+<section class="content-section clearfix section-animate" id="what-it-cost">
+  <span class="section-kicker">PHASE THREE</span>
+  <h2 class="section-heading">WHAT IT COST</h2>
 
   <!--
-    FILENAME: S1L08_BalkanMapNationalism.jpg
+    FILENAME: S1L08_RedArmyCivilWar.jpg
     PLACE IN: images/S1/L08/
     PRIORITY: ESSENTIAL
-    FIND: Map of the Balkans showing nationalist movements and ethnic boundaries circa 1870-1914: Ottoman and Austro-Hungarian territories, new Balkan nations
-    SEARCH: Balkan nationalism map 1878 ethnic boundaries Ottoman Empire Wikimedia Commons
-    LINK: Suggested: https://commons.wikimedia.org/wiki/Balkans
+    FIND: Red Army soldiers or a Civil War scene from Russia 1918-1921;
+          soldiers marching, a military encampment, or a documentary
+          photograph of the Bolshevik forces fighting the White Army;
+          serious documentary register
+    SEARCH: Red Army Russian Civil War 1918 1919 1920 soldiers Wikimedia
+            Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Russian_Civil_War
   -->
-  <figure class="img-right">
-    <img src="images/S1/L08/S1L08_BalkanMapNationalism.jpg" alt="Map of the Balkans showing ethnic and national boundaries, circa 1870-1914">
-    <figcaption>The Balkans in the late 19th century: a region where Serbs, Bulgarians, Greeks, Romanians, and Bosnians lived under Ottoman and Austro-Hungarian rule and fought for independence. Wikimedia Commons.</figcaption>
+  <figure class="img-right clearfix">
+    <img src="images/S1/L08/S1L08_RedArmyCivilWar.jpg" alt="Red Army soldiers during the Russian Civil War, 1918-1921">
+    <figcaption>Red Army soldiers during the Russian Civil War, 1918-1921. The Bolsheviks fought anti-revolutionary forces for three years before consolidating control. An estimated seven million people died. Source: Wikimedia Commons.</figcaption>
   </figure>
 
-  <p class="para-standard">The <span class="vocab" tabindex="0">Balkans<span class="tip">A region in southeastern Europe where empires and nationalist movements collided.</span></span> became the most dangerous place for nationalism in Europe. Serbs, Bulgarians, Greeks, Romanians, Bosnians, and Albanians lived there. For centuries, much of the region had been ruled by the Ottoman Empire. As the empire weakened, Balkan peoples fought for independence.</p>
-  <p class="para-simple">The Balkans became Europe's most dangerous place for nationalism. Many groups lived there, including Serbs, Bulgarians, Greeks, Romanians, and Bosnians. Much of the region had been ruled by the Ottoman Empire. As the empire weakened, people fought for independence.</p>
+  <p class="para-standard">The Bolsheviks had seized power easily, but keeping it was another matter. Almost immediately, a civil war broke out between the <span class="vocab" tabindex="0">Red Army<span class="tip">The Bolshevik military force that fought to keep Lenin's government in power during the Russian Civil War.</span></span> and a loose alliance of anti-Bolshevik forces known as the White Army, backed by foreign governments including Britain, France, and the United States. The war lasted three years and was extraordinarily brutal. Villages were burned. Populations were executed. Disease and famine spread across the country.</p>
+  <p class="para-simple">Seizing power was easy. Keeping it was not. Almost immediately a civil war broke out. The Bolshevik Red Army fought a loose group of anti-Bolshevik forces called the White Army. Foreign countries including Britain and the United States sent support to the White Army. The war lasted three years. Villages burned. People were executed. Disease and famine spread across the country.</p>
 
-  <p class="para-standard">Each new Balkan nation inspired others. Greece won independence in 1829. Serbia gained more self-rule, Bulgaria became a state in 1878, and Romania unified. These victories made nationalism feel possible. They also made the remaining empires more afraid.</p>
-  <p class="para-simple">Each new Balkan nation inspired others. Greece became independent in 1829. Serbia, Bulgaria, and Romania gained more freedom. These victories made nationalism feel possible. They also made empires nervous.</p>
+  <p class="para-standard">In the middle of the civil war, the Bolsheviks made a decision that shocked the world. Tsar Nicholas II and his entire family had been held under arrest since his abdication. On the night of July 17, 1918, worried that the White Army was advancing and might free the Tsar and use him as a symbol, Bolshevik guards shot Nicholas, his wife Alexandra, their five children, and three servants in a basement in the city of Yekaterinburg. The Romanov dynasty ended in that room.</p>
+  <p class="para-simple">In the middle of the civil war, the Bolsheviks made a shocking decision. Tsar Nicholas II and his family had been held prisoner since his abdication. On July 17, 1918, Bolshevik guards shot Nicholas, his wife, their five children, and three servants in a basement. The Bolsheviks were afraid the White Army might free the Tsar and use him as a symbol. The Romanov dynasty ended in that basement.</p>
 
-  <p class="para-standard">Two empires still controlled parts of the Balkans: the declining Ottoman Empire and the Austro-Hungarian Empire. Austria-Hungary was a <span class="vocab" tabindex="0">multi-ethnic empire<span class="tip">An empire that rules many different ethnic groups inside one political system.</span></span> with Germans, Hungarians, Czechs, Slovaks, Croatians, Serbs, and others. Serbian nationalists wanted a "Greater Serbia" that united South Slavic peoples. Austria-Hungary saw that dream as a threat to its survival.</p>
-  <p class="para-simple">Two empires still controlled parts of the Balkans: the Ottoman Empire and Austria-Hungary. Austria-Hungary ruled many different ethnic groups. Serbian nationalists wanted to unite South Slavic peoples into a bigger Serbia. Austria-Hungary saw this as a serious threat.</p>
+  <p class="para-standard">Lenin also unleashed what became known as the <span class="vocab" tabindex="0">Red Terror<span class="tip">A campaign of mass arrests, executions, and intimidation by the Bolshevik secret police to eliminate political opponents and anyone seen as an enemy of the revolution.</span></span>: a campaign of mass arrests and executions by the secret police targeting anyone seen as an enemy of the revolution. Estimates suggest that tens of thousands of people were shot without trial during this period. The revolution that had promised liberation used fear and violence to stay in power.</p>
+  <p class="para-simple">Lenin also launched what became known as the Red Terror. The secret police arrested and executed anyone seen as an enemy of the revolution. Tens of thousands of people were shot without trial. The revolution that had promised liberation used fear and violence to hold onto power.</p>
 
-  <p class="para-standard">If Serbia inspired South Slavic people inside Austria-Hungary to leave, the whole empire could unravel. This is why Balkan nationalism frightened Austria's leaders so much. By 1914, the <span class="vocab" tabindex="0">ethnic nationalism<span class="tip">Nationalism based on shared ethnicity, language, or ancestry.</span></span> of the Balkans had made the region explosive. Journalists called it "the powder keg of Europe."</p>
-  <p class="para-simple">If Serbia inspired South Slavic people to leave Austria-Hungary, the empire could fall apart. That is why Balkan nationalism scared Austria's leaders. By 1914, the Balkans were so tense that people called the region "the powder keg of Europe."</p>
 </section>
 
-<!-- ART SPOTLIGHT -->
+<!-- ART SPOTLIGHT — placed after the human cost of the civil war -->
 <div class="brain-break as-break section-animate">
   <span class="bb-label">ART SPOTLIGHT</span>
   <figure>
     <!--
-      FILENAME: S1L08_DelacroixLiberty.jpg
-      PLACE IN: images/S1/L08/
-      PRIORITY: ENHANCEMENT
-      FIND: "Liberty Leading the People": Eugène Delacroix, 1830, Louvre Museum: iconic painting of a woman personifying Liberty leading armed citizens over barricades after the 1830 French Revolution
-      SEARCH: Delacroix Liberty Leading the People 1830 painting Louvre Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/File:Eug%C3%A8ne_Delacroix_-_La_libert%C3%A9_guidant_le_peuple.jpg
-    -->
-    <img src="images/S1/L08/S1L08_DelacroixLiberty.jpg" alt="Liberty Leading the People: Eugène Delacroix, 1830" class="as-image">
-    <figcaption class="as-caption">
-      Liberty Leading the People : Eug&egrave;ne Delacroix, 1830<br>
-      Delacroix painted this monumental work in the weeks after the 1830 French revolution: showing Liberty as a real woman leading armed citizens of every social class over the barricades, with Paris burning in the background. The painting is held at the Louvre Museum in Paris.
-    </figcaption>
-  </figure>
-  <p class="as-fact">Delacroix was not a political radical; he was an artist who found the revolution alarming but impossible to ignore. Napoleon III later kept the painting from public display because he feared it could inspire new uprisings. A painting meant to remember a revolution kept feeling dangerous.</p>
-</div>
-
-<!-- SECTION 4: ROAD TO WAR -->
-<section class="content-section clearfix section-animate" id="road-to-war">
-  <span class="section-kicker">CHAPTER FOUR</span>
-  <h2 class="section-heading">THE ROAD FROM SARAJEVO TO WAR</h2>
-
-  <div class="two-col">
-    <!--
-      FILENAME: S1L08_FranzFerdinandCar.jpg
+      FILENAME: S1L08_LissitzkyRedWedge.jpg
       PLACE IN: images/S1/L08/
       PRIORITY: ESSENTIAL
-      FIND: Archduke Franz Ferdinand and Duchess Sophie arriving in Sarajevo on June 28 1914, in the open car just before the assassination: historically documented photograph
-      SEARCH: Franz Ferdinand Sarajevo 1914 car assassination photograph Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/Assassination_of_Archduke_Franz_Ferdinand
+      FIND: El Lissitzky, "Beat the Whites with the Red Wedge," 1919 —
+            a Soviet propaganda poster showing a red triangle piercing
+            a white circle; one of the most famous works of Russian
+            Constructivist political art; the geometric shapes represent
+            the Red Army defeating the White Army
+      SEARCH: El Lissitzky Beat the Whites Red Wedge 1919 propaganda
+              poster Constructivism Wikimedia Commons
+      LINK: Suggested: https://commons.wikimedia.org/wiki/File:El_Lissitzky_-_Beat_the_Whites_with_the_Red_Wedge.jpg
     -->
-    <figure>
-      <img src="images/S1/L08/S1L08_FranzFerdinandCar.jpg" alt="Archduke Franz Ferdinand and Sophie arriving in Sarajevo, June 28, 1914">
-      <figcaption>Archduke Franz Ferdinand and Duchess Sophie arrive in Sarajevo on June 28, 1914: minutes before their assassination. Wikimedia Commons.</figcaption>
-    </figure>
-    <!--
-      FILENAME: S1L08_AllianceMap1914.jpg
-      PLACE IN: images/S1/L08/
-      PRIORITY: SUPPORTING
-      FIND: Map of Europe showing alliance systems in 1914: Triple Alliance (Germany, Austria-Hungary, Italy) vs Triple Entente (France, Russia, Britain), showing how one assassination triggered a cascade
-      SEARCH: WWI alliance system 1914 Europe map Triple Alliance Triple Entente Wikimedia Commons
-      LINK: Suggested: https://commons.wikimedia.org/wiki/World_War_I
-    -->
-    <figure>
-      <img src="images/S1/L08/S1L08_AllianceMap1914.jpg" alt="Map of European alliance systems in 1914 showing Triple Alliance and Triple Entente">
-      <figcaption>Europe's alliance systems in 1914: two armed blocs connected by secret treaties that turned a local assassination into a world war within six weeks. Wikimedia Commons.</figcaption>
-    </figure>
-  </div>
+    <img src="images/S1/L08/S1L08_LissitzkyRedWedge.jpg" alt="El Lissitzky, Beat the Whites with the Red Wedge, 1919, Soviet propaganda poster showing a red triangle piercing a white circle" class="as-image">
+    <figcaption class="as-caption">
+      "Beat the Whites with the Red Wedge" &mdash; El Lissitzky, 1919<br>
+      This propaganda poster was made during the Russian Civil War to encourage support for the Bolshevik Red Army. The red triangle represents the Bolsheviks. The white circle represents their opponents.
+    </figcaption>
+  </figure>
+  <p class="as-fact">El Lissitzky designed this poster while working as an art teacher. He used pure geometry because he believed that shapes and colors could communicate political ideas to people who could not read. At the time, roughly half of the Russian population was illiterate. The Bolsheviks invested heavily in visual propaganda precisely because they knew words alone would not reach everyone they needed to convince. This poster is now considered one of the most influential works of 20th-century graphic design.</p>
+</div>
 
-  <p class="para-standard">The assassination became catastrophic because of the system around it. Europe in 1914 was divided into two armed alliance blocs. Secret treaties promised that countries would defend their allies if war began. This meant a local crisis could pull in far larger powers.</p>
-  <p class="para-simple">The assassination became dangerous because of Europe's alliance system. Countries had promised to defend their allies. This meant one local crisis could pull in many countries. A small conflict could become a huge war.</p>
+<!-- SECTION 4: A NEW KIND OF POWER -->
+<section class="content-section clearfix section-animate" id="new-world">
+  <span class="section-kicker">PHASE FOUR</span>
+  <h2 class="section-heading">A NEW KIND OF POWER</h2>
 
-  <p class="para-standard">Austria-Hungary blamed Serbia and issued an <span class="vocab" tabindex="0">ultimatum<span class="tip">A final demand that can lead to punishment or war if refused.</span></span>. Serbia's reply did not satisfy Austria, so Austria prepared for war. Russia began <span class="vocab" tabindex="0">mobilization<span class="tip">Preparing soldiers, weapons, and supplies for war.</span></span> to protect Serbia. Germany mobilized to support Austria, France mobilized to support Russia, and Britain entered after Germany invaded Belgium. In six weeks, a nationalist assassination became a world war.</p>
-  <p class="para-simple">Austria-Hungary blamed Serbia and gave Serbia an ultimatum, or final demand. Serbia's answer did not satisfy Austria, so Austria prepared for war. Russia prepared to defend Serbia. Germany backed Austria, France backed Russia, and Britain joined after Germany invaded Belgium. In six weeks, one assassination had become a world war.</p>
+  <!--
+    FILENAME: S1L08_SovietUnionFounded.jpg
+    PLACE IN: images/S1/L08/
+    PRIORITY: ESSENTIAL
+    FIND: Lenin addressing a crowd or Soviet officials at a formal
+          ceremony, 1922-1924; Lenin speaking from a podium or
+          balcony to a large crowd; showing the Bolsheviks in their
+          role as the new governing power; not a later Stalin-era image
+    SEARCH: Lenin speech crowd podium 1920 1921 1922 Soviet government
+            Wikimedia Commons
+    LINK: Suggested: https://commons.wikimedia.org/wiki/Vladimir_Lenin
+  -->
+  <figure class="img-left clearfix">
+    <img src="images/S1/L08/S1L08_SovietUnionFounded.jpg" alt="Lenin addressing a crowd, circa 1920-1922, as the Bolsheviks consolidate power">
+    <figcaption>Lenin addresses a crowd, circa 1920-1922. By 1922, the Bolsheviks had established the Union of Soviet Socialist Republics, the world's first communist state. Source: Wikimedia Commons.</figcaption>
+  </figure>
 
-  <p class="para-standard">The path from 1815 to 1914 becomes clearer in hindsight. The Congress of Vienna tried to suppress nationalism, but it could not erase it. The failure of 1848 made some nationalists more willing to use force. German and Italian unification showed that military power could build nations.</p>
-  <p class="para-simple">Looking back, the pattern is clear. The Congress of Vienna tried to stop nationalism, but it failed. The revolutions of 1848 failed too, but they made some nationalists more willing to use force. Germany and Italy showed that war could create new nations.</p>
+  <p class="para-standard">By 1921, the Bolsheviks had won the civil war. In December 1922, they formally established the <span class="vocab" tabindex="0">Union of Soviet Socialist Republics<span class="tip">The USSR, or Soviet Union: the communist state that replaced the Russian Empire and lasted from 1922 until 1991.</span></span>. The new government abolished private ownership of land and businesses. Banks, factories, and farms came under state control. The Communist Party became the only legal political party. Elections were held, but only approved candidates could run.</p>
+  <p class="para-simple">By 1921 the Bolsheviks had won the civil war. In 1922 they established the Union of Soviet Socialist Republics, the USSR. The new government abolished private ownership of land and businesses. Banks, factories, and farms came under state control. The Communist Party became the only legal party. Elections were held, but only approved candidates could run.</p>
 
-  <p class="para-standard">The Balkans showed that empires were losing control. In 1914, nationalism that had been building for a century finally overflowed. Gavrilo Princip did not create all the causes of World War I by himself. He lit a fuse that Europe's leaders, empires, alliances, and nationalist movements had already built.</p>
-  <p class="para-simple">The Balkans showed that empires were losing control. In 1914, nationalism finally exploded. Gavrilo Princip did not create all the causes of World War I by himself. He lit a fuse that Europe had already built.</p>
+  <p class="para-standard">The revolution transformed not just Russia but world history. For the next seven decades, the Soviet Union would stand as an alternative model of government and economics, challenging the capitalist democracies of Western Europe and the United States. Every major conflict of the 20th century — World War II, the Cold War, independence movements in Asia and Africa — was shaped by the existence of the Soviet Union. It all traced back to those hungry women who walked off the job in Petrograd in March 1917.</p>
+  <p class="para-simple">The revolution changed not just Russia but world history. For the next seventy years, the Soviet Union stood as an alternative to Western democracy and capitalism. Every major conflict of the 20th century was shaped by the Soviet Union's existence. It all traced back to the hungry women who walked off the job in Petrograd in March 1917.</p>
 
-  <p class="real-world para-standard">Real-world connection: Conflicts can still grow when ethnic nationalism, fragile states, and alliance systems collide. The lesson of 1914 is not that nationalism always causes war. It is that nationalism becomes dangerous when leaders use it with fear, military planning, and rigid alliances.</p>
-  <p class="real-world para-simple">Real-world connection: Nationalism does not always cause war. But it can become dangerous when leaders add fear, armies, and alliances. That is one lesson of 1914.</p>
 </section>
 
-<!-- PRIMARY SOURCE -->
+<!-- PRIMARY SOURCE MOMENT -->
 <div class="primary-source section-animate" id="primary-source-moment">
   <span class="ps-label">PRIMARY SOURCE MOMENT</span>
   <div class="ps-visual">
     <figure>
       <!--
-        FILENAME: S1L08_BismarckParliament.jpg
+        FILENAME: S1L08_LeninAprilTheses.jpg
         PLACE IN: images/S1/L08/
         PRIORITY: ESSENTIAL
-        FIND: Prussian parliament or Prussian Landtag chamber, 1860s, connected to Bismarck's 1862 Blood and Iron speech; use a chamber/interior image rather than another Bismarck portrait
-        SEARCH: Prussian Landtag chamber 1862 Bismarck blood and iron Wikimedia Commons
-        LINK: Suggested: https://commons.wikimedia.org/wiki/Prussian_House_of_Representatives
+        FIND: Lenin delivering a speech or addressing the Petrograd
+              Soviet in April 1917, connected to the April Theses;
+              Lenin at a podium or speaking to workers and soldiers;
+              must be a different image from the Lenin portrait in
+              Did You Know and the Lenin crowd image in Section 4
+        SEARCH: Lenin Petrograd Soviet April 1917 speech workers
+                soldiers Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Vladimir_Lenin
       -->
-      <img src="images/S1/L08/S1L08_BismarckParliament.jpg" alt="Prussian parliament chamber connected to Bismarck's Blood and Iron speech, 1862">
-      <figcaption>Prussian parliamentary chamber connected to Bismarck's 1862 Blood and Iron speech. Wikimedia Commons.</figcaption>
+      <img src="images/S1/L08/S1L08_LeninAprilTheses.jpg" alt="Lenin addressing the Petrograd Soviet, April 1917, presenting the April Theses">
+      <figcaption>Lenin addresses workers and soldiers in Petrograd, April 1917. Source: Wikimedia Commons.</figcaption>
     </figure>
     <div>
-      <p class="ps-quote">"Prussia must concentrate and maintain its power for the favorable moment, which has already slipped by several times. Prussia's borders under the Vienna treaties are not favorable for a healthy state life. The great questions of the time will not be resolved by speeches and majority decisions: that was the great mistake of 1848 and 1849: but by iron and blood."</p>
-      <p class="ps-attribution">: Otto von Bismarck, "Blood and Iron" speech to the Prussian parliament's Budget Committee, 1862</p>
-      <p class="ps-narrator">WHY THIS MATTERS: Bismarck argued that speeches and votes had failed in 1848. He believed German unity required power, timing, and military force. His words help explain how nationalism changed from a movement for freedom into a tool that statesmen could use to build stronger armies and new empires.</p>
-      <p class="ps-narrator">IN SIMPLE TERMS: Bismarck is saying that Germany would not be unified by debate. He believed it would be unified by force.</p>
+      <p class="ps-quote">"The specific feature of the present situation in Russia is that the country is passing from the first stage of the revolution — which, owing to the insufficient class-consciousness and organization of the proletariat, placed power in the hands of the bourgeoisie — to its second stage, which must place power in the hands of the proletariat and the poorest sections of the peasants... No support for the Provisional Government."</p>
+      <p class="ps-attribution">&mdash; Vladimir Lenin, "The April Theses," April 7, 1917</p>
+      <p class="ps-narrator">WHY THIS MATTERS: Lenin is saying that the February Revolution was only the beginning. He is telling his followers that a second revolution is necessary — one that takes power away from the politicians and gives it to workers and poor farmers. He is also saying directly that the Bolsheviks will not support the Provisional Government. This document, written just days after his return to Russia, is the roadmap for everything the Bolsheviks did next. Ask yourself: what does this tell you about Lenin's goals compared to what most Russians thought the revolution would bring?</p>
     </div>
   </div>
 </div>
@@ -477,61 +485,122 @@ footer{background:var(--navy-dark);color:rgba(232,220,190,.5);text-align:center;
 <!-- THEN AND NOW -->
 <div class="brain-break tn-break section-animate" id="then-now">
   <span class="bb-label">THEN AND NOW</span>
-  <p class="tn-payoff">NATIONALISM DIDN'T END IN 1914 OR 1918. THE SAME FORCE THAT BUILT MODERN EUROPE IS STILL RESHAPING IT.</p>
+  <p class="tn-payoff">THE RUSSIAN REVOLUTION CREATED A GOVERNMENT THAT LASTED 69 YEARS AND SHAPED EVERY MAJOR CONFLICT OF THE 20TH CENTURY.</p>
   <div class="tn-pair">
     <div class="tn-item">
-      <span class="tn-era-label">1914</span>
+      <span class="tn-era-label">1917</span>
       <!--
-        FILENAME: S1L08_ThenSarajevo1914.jpg
+        FILENAME: S1L08_ThenWinterPalace.jpg
         PLACE IN: images/S1/L08/
         PRIORITY: ESSENTIAL
-        FIND: Sarajevo 1914: crowds in the streets after the assassination, or the scene near the Latin Bridge where the shooting occurred, or soldiers mobilizing
-        SEARCH: Sarajevo 1914 assassination crowds Franz Ferdinand Wikimedia Commons
-        LINK: Suggested: https://commons.wikimedia.org/wiki/Assassination_of_Archduke_Franz_Ferdinand
+        FIND: The storming of the Winter Palace, Petrograd, October 1917;
+              Bolshevik forces or crowds surrounding or entering the
+              Winter Palace during the October Revolution; must be a
+              different image from the header which shows a general
+              revolutionary crowd
+        SEARCH: Winter Palace storming October 1917 Bolshevik Petrograd
+                Wikimedia Commons
+        LINK: Suggested: https://commons.wikimedia.org/wiki/October_Revolution
       -->
-      <img src="images/S1/L08/S1L08_ThenSarajevo1914.jpg" alt="Sarajevo, June 1914, the day of Franz Ferdinand's assassination">
-      <p class="tn-caption">Sarajevo, June 28, 1914: the day one nationalist's act set off a world war. Wikimedia Commons.</p>
+      <img src="images/S1/L08/S1L08_ThenWinterPalace.jpg" alt="Bolshevik forces at the Winter Palace during the October Revolution, 1917">
+      <p class="tn-caption">Bolshevik forces at the Winter Palace, October 1917. The seat of the Provisional Government fell in hours. Source: Wikimedia Commons.</p>
     </div>
     <div class="tn-item">
       <span class="tn-era-label">NOW</span>
       <!--
-        FILENAME: S1L08_NowSarajevoMemorial.jpg
+        FILENAME: S1L08_NowRomanovMemorial.jpg
         PLACE IN: images/S1/L08/
         PRIORITY: ESSENTIAL
-        FIND: Sarajevo today: the Latin Bridge where the assassination took place, now a memorial site with visitors; modern Sarajevo showing the city rebuilt after the 1990s siege
-        SEARCH: Sarajevo Latin Bridge memorial today visitors Wikimedia Commons CC license
-        LINK: Suggested: https://commons.wikimedia.org/wiki/Latin_Bridge
+        FIND: Present-day memorial or ceremony at the site where the
+              Romanov family was executed in Yekaterinburg, Russia; or
+              Russians visiting the Church on the Blood built on that
+              site; showing remembrance, reflection, and people actively
+              engaging with this history
+        SEARCH: Church on the Blood Yekaterinburg Romanov memorial
+                visitors Russia Wikimedia Commons CC license
+        LINK: Suggested: https://commons.wikimedia.org/wiki/Church_on_the_Blood
         LICENSE: CC-licensed photography acceptable.
       -->
-      <img src="images/S1/L08/S1L08_NowSarajevoMemorial.jpg" alt="The Latin Bridge in Sarajevo today, site of the 1914 assassination, now a memorial and tourist site">
-      <p class="tn-caption">The Latin Bridge in Sarajevo today: where WWI began, now a memorial visited by people from around the world. Wikimedia Commons / CC.</p>
+      <img src="images/S1/L08/S1L08_NowRomanovMemorial.jpg" alt="Visitors at the Church on the Blood in Yekaterinburg, Russia, built on the site where the Romanov family was executed">
+      <p class="tn-caption">The Church on the Blood in Yekaterinburg, Russia, built on the site where the Romanov family was executed in 1918. Russians visit today to remember and reflect. Source: CC license.</p>
     </div>
   </div>
   <div class="tn-text-block">
     <h3>THEN</h3>
-    <p>In 1914, Sarajevo was a city where Austro-Hungarian rule met South Slavic nationalism. Gavrilo Princip fired two shots near the Latin Bridge. Those shots triggered alliances, mobilization, and declarations of war across Europe.</p>
+    <p>On the night of October 25, 1917, Bolshevik forces took the Winter Palace and ended the Provisional Government. It was the moment Lenin's party officially seized control of Russia. What began as hungry women striking over bread had become a revolution that would change the world. The Soviet Union that grew from this moment would last until 1991 and shape global politics for nearly a century.</p>
     <h3>NOW</h3>
-    <p>Today, Sarajevo's Latin Bridge is a memorial site visited by people from around the world. The city also reminds visitors that nationalism did not end in 1914. In the 1990s, Sarajevo survived a long siege during the Bosnian War, when nationalist conflict again tore the region apart.</p>
+    <p>Today the Church on the Blood stands in Yekaterinburg on the exact site where Tsar Nicholas II and his family were executed in 1918. Russians visit to remember the last royal family and to wrestle with what the revolution meant. The Soviet Union itself collapsed in 1991. But the questions the Russian Revolution raised — about who should hold power, what governments owe their people, and what happens when ordinary citizens can no longer survive — are still being asked everywhere.</p>
     <h3>CONNECTION</h3>
-    <p>Nationalism can build unity, pride, and independence. It can also divide people when leaders define the nation too narrowly or use fear to gain power. The history from 1815 to 1914 shows that nationalism becomes especially dangerous when it joins military planning, empire, and rigid alliances.</p>
-    <p>Can nationalism bring people together without creating conflict with other groups? Why or why not?</p>
+    <p>The Russian Revolution connects directly to the next lesson and to the next semester. It is why the peace treaty after World War I was so complicated. It is why totalitarian governments rose across Europe in the 1920s and 1930s. It is why the Cold War happened. A chain of causes runs from those hungry women in Petrograd in 1917 all the way to the world you were born into. Understanding the revolution means understanding how the modern world was made.</p>
+    <p>The women who started the February Revolution were not political leaders. They were factory workers who were hungry and exhausted. What does it tell you about how history works that the people who changed the world in 1917 were not the ones who planned to?</p>
   </div>
 </div>
 
 </main>
-<footer>WORLD HISTORY : SEMESTER 1, LESSON 08 : NATIONALISM AND THE ROAD TO WWI : STANDARDS 10.2 / 10.5</footer>
+<footer>WORLD HISTORY &bull; SEMESTER 1, LESSON 08 &bull; REVOLUTION: RUSSIA 1917 &bull; STANDARD 10.6</footer>
 </div>
 
 <script>
-(function(){var bar=document.getElementById('reading-progress');window.addEventListener('scroll',function(){var s=window.scrollY||document.documentElement.scrollTop;var d=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(d>0?(s/d)*100:0)+'%';},{passive:true});})();
-document.getElementById('lexile-toggle').addEventListener('click',function(){document.body.classList.toggle('simplified');this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';});
-function repositionTip(el){var tip=el.querySelector('.tip');if(!tip)return;tip.style.left='50%';tip.style.transform='translateX(-50%)';var rect=tip.getBoundingClientRect();if(rect.left<8){tip.style.transform='translateX(calc(-50% + '+(8-rect.left)+'px))';}else if(rect.right>window.innerWidth-8){tip.style.transform='translateX(calc(-50% - '+(rect.right-(window.innerWidth-8))+'px))';}}
-document.querySelectorAll('.vocab').forEach(function(el){el.setAttribute('tabindex','0');el.addEventListener('click',function(e){e.stopPropagation();document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);});el.addEventListener('focus',function(){el.classList.add('active');repositionTip(el);});el.addEventListener('blur',function(){el.classList.remove('active');});el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);}if(e.key==='Escape')el.classList.remove('active');});});
+// 1. READING PROGRESS BAR
+(function(){
+  var bar=document.getElementById('reading-progress');
+  window.addEventListener('scroll',function(){
+    var s=window.scrollY||document.documentElement.scrollTop;
+    var d=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    bar.style.width=(d>0?(s/d)*100:0)+'%';
+  },{passive:true});
+})();
+
+// 2. LEXILE TOGGLE
+document.getElementById('lexile-toggle').addEventListener('click',function(){
+  document.body.classList.toggle('simplified');
+  this.textContent=document.body.classList.contains('simplified')?'STANDARD TEXT':'SIMPLIFY TEXT';
+});
+
+// 3. VOCABULARY TOOLTIPS
+function repositionTip(el){
+  var tip=el.querySelector('.tip');
+  if(!tip)return;
+  tip.style.left='50%';
+  tip.style.transform='translateX(-50%)';
+  var rect=tip.getBoundingClientRect();
+  if(rect.left<8){tip.style.transform='translateX(calc(-50% + '+(8-rect.left)+'px))';}
+  else if(rect.right>window.innerWidth-8){tip.style.transform='translateX(calc(-50% - '+(rect.right-(window.innerWidth-8))+'px))';}
+}
+document.querySelectorAll('.vocab').forEach(function(el){
+  el.setAttribute('tabindex','0');
+  el.addEventListener('click',function(e){e.stopPropagation();document.querySelectorAll('.vocab.active').forEach(function(v){if(v!==el)v.classList.remove('active');});el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);});
+  el.addEventListener('focus',function(){el.classList.add('active');repositionTip(el);});
+  el.addEventListener('blur',function(){el.classList.remove('active');});
+  el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('active');if(el.classList.contains('active'))repositionTip(el);}if(e.key==='Escape')el.classList.remove('active');});
+});
 document.addEventListener('click',function(){document.querySelectorAll('.vocab.active').forEach(function(v){v.classList.remove('active');});});
-const tocObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{const id=entry.target.getAttribute('id');const tl=document.querySelector('.toc-sidebar a[href="#'+id+'"]');const nl=document.querySelector('.section-nav a[href="#'+id+'"]');if(entry.isIntersecting){if(tl)tl.classList.add('active');if(nl)nl.classList.add('active');}else{if(tl)tl.classList.remove('active');if(nl)nl.classList.remove('active');}});},{threshold:.25});
+
+// 4. INTERSECTION OBSERVER — TOC + NAV
+const tocObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    const id=entry.target.getAttribute('id');
+    const tl=document.querySelector('.toc-sidebar a[href="#'+id+'"]');
+    const nl=document.querySelector('.section-nav a[href="#'+id+'"]');
+    if(entry.isIntersecting){if(tl)tl.classList.add('active');if(nl)nl.classList.add('active');}
+    else{if(tl)tl.classList.remove('active');if(nl)nl.classList.remove('active');}
+  });
+},{threshold:0.25});
 document.querySelectorAll('section[id],div[id="then-now"]').forEach(el=>tocObserver.observe(el));
-(function(){var ao=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');ao.unobserve(entry.target);}});},{threshold:.08});document.querySelectorAll('.section-animate').forEach(function(el){ao.observe(el);});})();
-document.querySelectorAll('img').forEach(function(img){if(img.complete&&img.naturalWidth>0){img.classList.add('loaded');}else{img.addEventListener('load',function(){img.classList.add('loaded');});img.addEventListener('error',function(){img.style.opacity='0.15';img.style.border='2px dashed rgba(255,255,255,0.2)';});}});
+
+// 5. SECTION ENTRANCE ANIMATION
+(function(){
+  var ao=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');ao.unobserve(entry.target);}});
+  },{threshold:0.08});
+  document.querySelectorAll('.section-animate').forEach(function(el){ao.observe(el);});
+})();
+
+// 6. IMAGE FADE-IN
+document.querySelectorAll('img').forEach(function(img){
+  if(img.complete&&img.naturalWidth>0){img.classList.add('loaded');}
+  else{img.addEventListener('load',function(){img.classList.add('loaded');});img.addEventListener('error',function(){img.style.opacity='0.15';img.style.border='2px dashed rgba(255,255,255,0.2)';});}
+});
 </script>
 </body>
 </html>
